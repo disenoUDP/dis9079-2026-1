@@ -241,3 +241,296 @@
 1771264744: New connection from 127.0.0.1:63374 on port 1883.
 1771264744: Client montoyamoraga [127.0.0.1:63374] disconnected: not authorised.
 1771264955: mosquitto version 2.1.2 terminating
+1771265157: mosquitto version 2.1.2 starting
+1771265157: Config loaded from mosquitto.conf.
+1771265157: Bridge support available.
+1771265157: Persistence support available.
+1771265157: TLS support available.
+1771265157: TLS-PSK support available.
+1771265157: Websockets support available.
+1771265157: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771265157: Opening ipv6 listen socket on port 1883.
+1771265157: Opening ipv4 listen socket on port 1883.
+1771265157: mosquitto version 2.1.2 running
+1771265166: New connection from 127.0.0.1:63525 on port 1883.
+1771265166: New client connected from 127.0.0.1:63525 as mqttjs_04712fee (p4, c1, k60, u'montoyamoraga').
+1771265357: mosquitto version 2.1.2 terminating
+1771265374: mosquitto version 2.1.2 starting
+1771265374: Config loaded from mosquitto.conf.
+1771265374: Bridge support available.
+1771265374: Persistence support available.
+1771265374: TLS support available.
+1771265374: TLS-PSK support available.
+1771265374: Websockets support available.
+1771265374: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771265374: Opening ipv6 listen socket on port 1883.
+1771265374: Opening ipv4 listen socket on port 1883.
+1771265374: mosquitto version 2.1.2 running
+1771265382: mosquitto version 2.1.2 terminating
+1771265383: mosquitto version 2.1.2 starting
+1771265383: Config loaded from mosquitto.conf.
+1771265383: Bridge support available.
+1771265383: Persistence support available.
+1771265383: TLS support available.
+1771265383: TLS-PSK support available.
+1771265383: Websockets support available.
+1771265383: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771265383: Opening ipv6 listen socket on port 1883.
+1771265383: Opening ipv4 listen socket on port 1883.
+1771265383: mosquitto version 2.1.2 running
+1771265389: New connection from 127.0.0.1:63598 on port 1883.
+1771265389: Client 127.0.0.1 [127.0.0.1:63598] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265390: New connection from 127.0.0.1:63599 on port 1883.
+1771265390: Client 127.0.0.1 [127.0.0.1:63599] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265391: New connection from 127.0.0.1:63600 on port 1883.
+1771265391: Client 127.0.0.1 [127.0.0.1:63600] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265392: New connection from 127.0.0.1:63601 on port 1883.
+1771265392: Client 127.0.0.1 [127.0.0.1:63601] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265393: New connection from 127.0.0.1:63602 on port 1883.
+1771265393: Client 127.0.0.1 [127.0.0.1:63602] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265394: New connection from 127.0.0.1:63603 on port 1883.
+1771265394: Client 127.0.0.1 [127.0.0.1:63603] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265395: New connection from 127.0.0.1:63604 on port 1883.
+1771265395: Client 127.0.0.1 [127.0.0.1:63604] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265396: New connection from 127.0.0.1:63605 on port 1883.
+1771265396: Client 127.0.0.1 [127.0.0.1:63605] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265397: New connection from 127.0.0.1:63606 on port 1883.
+1771265397: Client 127.0.0.1 [127.0.0.1:63606] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265398: New connection from 127.0.0.1:63607 on port 1883.
+1771265398: Client 127.0.0.1 [127.0.0.1:63607] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265399: New connection from 127.0.0.1:63608 on port 1883.
+1771265399: Client 127.0.0.1 [127.0.0.1:63608] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265400: New connection from 127.0.0.1:63609 on port 1883.
+1771265400: Client 127.0.0.1 [127.0.0.1:63609] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265401: New connection from 127.0.0.1:63611 on port 1883.
+1771265401: Client 127.0.0.1 [127.0.0.1:63611] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265402: New connection from 127.0.0.1:63612 on port 1883.
+1771265402: Client 127.0.0.1 [127.0.0.1:63612] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265403: New connection from 127.0.0.1:63614 on port 1883.
+1771265403: Client 127.0.0.1 [127.0.0.1:63614] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265404: New connection from 127.0.0.1:63615 on port 1883.
+1771265404: Client 127.0.0.1 [127.0.0.1:63615] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265405: New connection from 127.0.0.1:63616 on port 1883.
+1771265405: Client 127.0.0.1 [127.0.0.1:63616] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265406: New connection from 127.0.0.1:63617 on port 1883.
+1771265406: Client 127.0.0.1 [127.0.0.1:63617] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265407: New connection from 127.0.0.1:63618 on port 1883.
+1771265407: Client 127.0.0.1 [127.0.0.1:63618] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265408: New connection from 127.0.0.1:63619 on port 1883.
+1771265408: Client 127.0.0.1 [127.0.0.1:63619] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265409: New connection from 127.0.0.1:63620 on port 1883.
+1771265409: Client 127.0.0.1 [127.0.0.1:63620] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265410: New connection from 127.0.0.1:63621 on port 1883.
+1771265410: Client 127.0.0.1 [127.0.0.1:63621] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265411: New connection from 127.0.0.1:63622 on port 1883.
+1771265411: Client 127.0.0.1 [127.0.0.1:63622] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265412: New connection from 127.0.0.1:63623 on port 1883.
+1771265412: Client 127.0.0.1 [127.0.0.1:63623] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265413: New connection from 127.0.0.1:63624 on port 1883.
+1771265413: Client 127.0.0.1 [127.0.0.1:63624] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265414: New connection from 127.0.0.1:63625 on port 1883.
+1771265414: Client 127.0.0.1 [127.0.0.1:63625] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265415: New connection from 127.0.0.1:63626 on port 1883.
+1771265415: Client 127.0.0.1 [127.0.0.1:63626] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265416: New connection from 127.0.0.1:63627 on port 1883.
+1771265416: Client 127.0.0.1 [127.0.0.1:63627] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265417: New connection from 127.0.0.1:63628 on port 1883.
+1771265417: Client 127.0.0.1 [127.0.0.1:63628] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265418: New connection from 127.0.0.1:63630 on port 1883.
+1771265418: Client 127.0.0.1 [127.0.0.1:63630] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265419: New connection from 127.0.0.1:63631 on port 1883.
+1771265419: Client 127.0.0.1 [127.0.0.1:63631] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265420: New connection from 127.0.0.1:63633 on port 1883.
+1771265420: Client 127.0.0.1 [127.0.0.1:63633] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265421: New connection from 127.0.0.1:63647 on port 1883.
+1771265421: Client 127.0.0.1 [127.0.0.1:63647] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265422: New connection from 127.0.0.1:63650 on port 1883.
+1771265422: Client 127.0.0.1 [127.0.0.1:63650] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265423: New connection from 127.0.0.1:63652 on port 1883.
+1771265423: Client 127.0.0.1 [127.0.0.1:63652] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265424: New connection from 127.0.0.1:63653 on port 1883.
+1771265424: Client 127.0.0.1 [127.0.0.1:63653] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265425: New connection from 127.0.0.1:63655 on port 1883.
+1771265425: Client 127.0.0.1 [127.0.0.1:63655] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265426: New connection from 127.0.0.1:63665 on port 1883.
+1771265426: Client 127.0.0.1 [127.0.0.1:63665] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265427: New connection from 127.0.0.1:63666 on port 1883.
+1771265427: Client 127.0.0.1 [127.0.0.1:63666] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265428: New connection from 127.0.0.1:63670 on port 1883.
+1771265428: Client 127.0.0.1 [127.0.0.1:63670] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265429: New connection from 127.0.0.1:63671 on port 1883.
+1771265429: Client 127.0.0.1 [127.0.0.1:63671] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265430: New connection from 127.0.0.1:63674 on port 1883.
+1771265430: Client 127.0.0.1 [127.0.0.1:63674] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265431: New connection from 127.0.0.1:63675 on port 1883.
+1771265431: Client 127.0.0.1 [127.0.0.1:63675] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265432: New connection from 127.0.0.1:63676 on port 1883.
+1771265432: Client 127.0.0.1 [127.0.0.1:63676] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265433: New connection from 127.0.0.1:63678 on port 1883.
+1771265433: Client 127.0.0.1 [127.0.0.1:63678] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265434: New connection from 127.0.0.1:63679 on port 1883.
+1771265434: Client 127.0.0.1 [127.0.0.1:63679] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265435: New connection from 127.0.0.1:63680 on port 1883.
+1771265435: Client 127.0.0.1 [127.0.0.1:63680] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265436: New connection from 127.0.0.1:63681 on port 1883.
+1771265436: Client 127.0.0.1 [127.0.0.1:63681] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265437: New connection from 127.0.0.1:63682 on port 1883.
+1771265437: Client 127.0.0.1 [127.0.0.1:63682] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265438: New connection from 127.0.0.1:63684 on port 1883.
+1771265438: Client 127.0.0.1 [127.0.0.1:63684] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265439: New connection from 127.0.0.1:63685 on port 1883.
+1771265439: Client 127.0.0.1 [127.0.0.1:63685] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265440: New connection from 127.0.0.1:63686 on port 1883.
+1771265440: Client 127.0.0.1 [127.0.0.1:63686] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265441: New connection from 127.0.0.1:63687 on port 1883.
+1771265441: Client 127.0.0.1 [127.0.0.1:63687] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265442: New connection from 127.0.0.1:63688 on port 1883.
+1771265442: Client 127.0.0.1 [127.0.0.1:63688] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265443: New connection from 127.0.0.1:63689 on port 1883.
+1771265443: Client 127.0.0.1 [127.0.0.1:63689] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265444: New connection from 127.0.0.1:63690 on port 1883.
+1771265444: Client 127.0.0.1 [127.0.0.1:63690] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265445: New connection from 127.0.0.1:63691 on port 1883.
+1771265445: Client 127.0.0.1 [127.0.0.1:63691] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265446: New connection from 127.0.0.1:63692 on port 1883.
+1771265446: Client 127.0.0.1 [127.0.0.1:63692] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265447: New connection from 127.0.0.1:63693 on port 1883.
+1771265447: Client 127.0.0.1 [127.0.0.1:63693] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265448: New connection from 127.0.0.1:63695 on port 1883.
+1771265448: Client 127.0.0.1 [127.0.0.1:63695] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265449: New connection from 127.0.0.1:63696 on port 1883.
+1771265449: Client 127.0.0.1 [127.0.0.1:63696] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265450: New connection from 127.0.0.1:63697 on port 1883.
+1771265450: Client 127.0.0.1 [127.0.0.1:63697] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265451: New connection from 127.0.0.1:63698 on port 1883.
+1771265451: Client 127.0.0.1 [127.0.0.1:63698] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265452: New connection from 127.0.0.1:63699 on port 1883.
+1771265452: Client 127.0.0.1 [127.0.0.1:63699] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265453: New connection from 127.0.0.1:63700 on port 1883.
+1771265453: Client 127.0.0.1 [127.0.0.1:63700] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265454: New connection from 127.0.0.1:63701 on port 1883.
+1771265454: Client 127.0.0.1 [127.0.0.1:63701] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265455: New connection from 127.0.0.1:63702 on port 1883.
+1771265455: Client 127.0.0.1 [127.0.0.1:63702] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265456: New connection from 127.0.0.1:63703 on port 1883.
+1771265456: Client 127.0.0.1 [127.0.0.1:63703] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265457: New connection from 127.0.0.1:63704 on port 1883.
+1771265457: Client 127.0.0.1 [127.0.0.1:63704] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265458: New connection from 127.0.0.1:63705 on port 1883.
+1771265458: Client 127.0.0.1 [127.0.0.1:63705] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265459: New connection from 127.0.0.1:63706 on port 1883.
+1771265459: Client 127.0.0.1 [127.0.0.1:63706] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265460: New connection from 127.0.0.1:63707 on port 1883.
+1771265460: Client 127.0.0.1 [127.0.0.1:63707] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265461: New connection from 127.0.0.1:63708 on port 1883.
+1771265461: Client 127.0.0.1 [127.0.0.1:63708] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265462: New connection from 127.0.0.1:63709 on port 1883.
+1771265462: Client 127.0.0.1 [127.0.0.1:63709] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265463: New connection from 127.0.0.1:63711 on port 1883.
+1771265463: Client 127.0.0.1 [127.0.0.1:63711] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265464: New connection from 127.0.0.1:63712 on port 1883.
+1771265464: Client 127.0.0.1 [127.0.0.1:63712] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265465: New connection from 127.0.0.1:63713 on port 1883.
+1771265465: Client 127.0.0.1 [127.0.0.1:63713] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265466: New connection from 127.0.0.1:63714 on port 1883.
+1771265466: Client 127.0.0.1 [127.0.0.1:63714] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265467: New connection from 127.0.0.1:63715 on port 1883.
+1771265467: Client 127.0.0.1 [127.0.0.1:63715] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265468: New connection from 127.0.0.1:63716 on port 1883.
+1771265468: Client 127.0.0.1 [127.0.0.1:63716] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265469: New connection from 127.0.0.1:63717 on port 1883.
+1771265469: Client 127.0.0.1 [127.0.0.1:63717] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265470: New connection from 127.0.0.1:63718 on port 1883.
+1771265470: Client 127.0.0.1 [127.0.0.1:63718] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265471: New connection from 127.0.0.1:63719 on port 1883.
+1771265471: Client 127.0.0.1 [127.0.0.1:63719] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265472: New connection from 127.0.0.1:63720 on port 1883.
+1771265472: Client 127.0.0.1 [127.0.0.1:63720] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265473: New connection from 127.0.0.1:63721 on port 1883.
+1771265473: Client 127.0.0.1 [127.0.0.1:63721] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265474: New connection from 127.0.0.1:63722 on port 1883.
+1771265474: Client 127.0.0.1 [127.0.0.1:63722] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265475: New connection from 127.0.0.1:63723 on port 1883.
+1771265475: Client 127.0.0.1 [127.0.0.1:63723] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265476: New connection from 127.0.0.1:63724 on port 1883.
+1771265476: Client 127.0.0.1 [127.0.0.1:63724] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265477: New connection from 127.0.0.1:63725 on port 1883.
+1771265477: Client 127.0.0.1 [127.0.0.1:63725] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265478: New connection from 127.0.0.1:63727 on port 1883.
+1771265478: Client 127.0.0.1 [127.0.0.1:63727] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265479: New connection from 127.0.0.1:63728 on port 1883.
+1771265479: Client 127.0.0.1 [127.0.0.1:63728] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265480: New connection from 127.0.0.1:63729 on port 1883.
+1771265480: Client 127.0.0.1 [127.0.0.1:63729] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265481: New connection from 127.0.0.1:63730 on port 1883.
+1771265481: Client 127.0.0.1 [127.0.0.1:63730] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265482: New connection from 127.0.0.1:63731 on port 1883.
+1771265482: Client 127.0.0.1 [127.0.0.1:63731] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265483: New connection from 127.0.0.1:63732 on port 1883.
+1771265483: Client 127.0.0.1 [127.0.0.1:63732] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265484: New connection from 127.0.0.1:63733 on port 1883.
+1771265484: Client 127.0.0.1 [127.0.0.1:63733] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265485: New connection from 127.0.0.1:63734 on port 1883.
+1771265485: Client 127.0.0.1 [127.0.0.1:63734] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265486: New connection from 127.0.0.1:63735 on port 1883.
+1771265486: Client 127.0.0.1 [127.0.0.1:63735] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265487: New connection from 127.0.0.1:63736 on port 1883.
+1771265487: Client 127.0.0.1 [127.0.0.1:63736] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265488: New connection from 127.0.0.1:63737 on port 1883.
+1771265488: Client 127.0.0.1 [127.0.0.1:63737] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265489: New connection from 127.0.0.1:63738 on port 1883.
+1771265489: Client 127.0.0.1 [127.0.0.1:63738] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265491: New connection from 127.0.0.1:63739 on port 1883.
+1771265491: Client 127.0.0.1 [127.0.0.1:63739] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265492: New connection from 127.0.0.1:63740 on port 1883.
+1771265492: Client 127.0.0.1 [127.0.0.1:63740] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265493: New connection from 127.0.0.1:63741 on port 1883.
+1771265493: Client 127.0.0.1 [127.0.0.1:63741] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265494: New connection from 127.0.0.1:63743 on port 1883.
+1771265494: Client 127.0.0.1 [127.0.0.1:63743] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265495: New connection from 127.0.0.1:63744 on port 1883.
+1771265495: Client 127.0.0.1 [127.0.0.1:63744] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265496: New connection from 127.0.0.1:63745 on port 1883.
+1771265496: Client 127.0.0.1 [127.0.0.1:63745] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265497: New connection from 127.0.0.1:63746 on port 1883.
+1771265497: Client 127.0.0.1 [127.0.0.1:63746] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265498: New connection from 127.0.0.1:63747 on port 1883.
+1771265498: Client 127.0.0.1 [127.0.0.1:63747] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265499: New connection from 127.0.0.1:63748 on port 1883.
+1771265499: Client 127.0.0.1 [127.0.0.1:63748] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265500: New connection from 127.0.0.1:63750 on port 1883.
+1771265500: Client 127.0.0.1 [127.0.0.1:63750] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265501: New connection from 127.0.0.1:63751 on port 1883.
+1771265501: Client 127.0.0.1 [127.0.0.1:63751] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265502: New connection from 127.0.0.1:63752 on port 1883.
+1771265502: Client 127.0.0.1 [127.0.0.1:63752] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265503: New connection from 127.0.0.1:63753 on port 1883.
+1771265503: Client 127.0.0.1 [127.0.0.1:63753] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265504: New connection from 127.0.0.1:63754 on port 1883.
+1771265504: Client 127.0.0.1 [127.0.0.1:63754] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265505: New connection from 127.0.0.1:63755 on port 1883.
+1771265505: Client 127.0.0.1 [127.0.0.1:63755] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265506: New connection from 127.0.0.1:63757 on port 1883.
+1771265506: Client 127.0.0.1 [127.0.0.1:63757] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265507: New connection from 127.0.0.1:63758 on port 1883.
+1771265507: Client 127.0.0.1 [127.0.0.1:63758] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265508: New connection from 127.0.0.1:63759 on port 1883.
+1771265508: Client 127.0.0.1 [127.0.0.1:63759] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265508: mosquitto version 2.1.2 terminating
+1771265509: mosquitto version 2.1.2 starting
+1771265509: Config loaded from mosquitto.conf.
+1771265509: Bridge support available.
+1771265509: Persistence support available.
+1771265509: TLS support available.
+1771265509: TLS-PSK support available.
+1771265509: Websockets support available.
+1771265509: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771265509: Opening ipv6 listen socket on port 1883.
+1771265509: Opening ipv4 listen socket on port 1883.
+1771265509: mosquitto version 2.1.2 running
+1771265510: New connection from 127.0.0.1:63763 on port 1883.
+1771265510: Client 127.0.0.1 [127.0.0.1:63763] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771265511: New connection from 127.0.0.1:63764 on port 1883.
+1771265511: New client connected from 127.0.0.1:63764 as montoyamoraga (p5, c1, k60, u'montoyamoraga').
+1771265542: Client montoyamoraga [127.0.0.1:63764] disconnected: connection closed by client.
+1771265542: Client montoyamoraga [127.0.0.1:63764] disconnected: connection closed by client.
