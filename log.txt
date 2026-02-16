@@ -176,3 +176,68 @@
 1771264231: New connection from 127.0.0.1:63207 on port 1883.
 1771264231: Client processing [127.0.0.1:63207] disconnected: not authorised.
 1771264438: mosquitto version 2.1.2 terminating
+1771264525: mosquitto version 2.1.2 starting
+1771264525: Config loaded from mosquitto.conf.
+1771264525: Bridge support available.
+1771264525: Persistence support available.
+1771264525: TLS support available.
+1771264525: TLS-PSK support available.
+1771264525: Websockets support available.
+1771264525: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1771264525: Create a configuration file which defines a listener to allow remote access.
+1771264525: For more details see https://mosquitto.org/documentation/authentication-methods/
+1771264525: Opening ipv4 listen socket on port 1883.
+1771264525: Opening ipv6 listen socket on port 1883.
+1771264525: mosquitto version 2.1.2 running
+1771264567: New connection from 127.0.0.1:63289 on port 1883.
+1771264567: Client processing [127.0.0.1:63289] disconnected: not authorised.
+1771264567: New connection from 127.0.0.1:63290 on port 1883.
+1771264567: Client processing [127.0.0.1:63290] disconnected: not authorised.
+1771264572: New connection from 127.0.0.1:63293 on port 1883.
+1771264572: Client montoyamoraga [127.0.0.1:63293] disconnected: not authorised.
+1771264572: New connection from 127.0.0.1:63294 on port 1883.
+1771264572: Client montoyamoraga [127.0.0.1:63294] disconnected: not authorised.
+1771264589: New connection from 127.0.0.1:63298 on port 1883.
+1771264589: Client montoyamoraga [127.0.0.1:63298] disconnected: not authorised.
+1771264589: New connection from 127.0.0.1:63299 on port 1883.
+1771264589: Client montoyamoraga [127.0.0.1:63299] disconnected: not authorised.
+1771264596: New connection from 127.0.0.1:63303 on port 1883.
+1771264596: Client montoyamoraga [127.0.0.1:63303] disconnected: not authorised.
+1771264596: New connection from 127.0.0.1:63304 on port 1883.
+1771264596: Client montoyamoraga [127.0.0.1:63304] disconnected: not authorised.
+1771264605: mosquitto version 2.1.2 terminating
+1771264605: mosquitto version 2.1.2 starting
+1771264605: Config loaded from mosquitto.conf.
+1771264605: Bridge support available.
+1771264605: Persistence support available.
+1771264605: TLS support available.
+1771264605: TLS-PSK support available.
+1771264605: Websockets support available.
+1771264605: Opening ipv6 listen socket on port 1883.
+1771264605: Opening ipv4 listen socket on port 1883.
+1771264605: mosquitto version 2.1.2 running
+1771264608: New connection from 127.0.0.1:63312 on port 1883.
+1771264608: Client montoyamoraga [127.0.0.1:63312] disconnected: not authorised.
+1771264608: New connection from 127.0.0.1:63313 on port 1883.
+1771264608: Client montoyamoraga [127.0.0.1:63313] disconnected: not authorised.
+1771264725: mosquitto version 2.1.2 terminating
+1771264726: mosquitto version 2.1.2 starting
+1771264726: Config loaded from mosquitto.conf.
+1771264726: Bridge support available.
+1771264726: Persistence support available.
+1771264726: TLS support available.
+1771264726: TLS-PSK support available.
+1771264726: Websockets support available.
+1771264726: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771264726: Opening ipv6 listen socket on port 1883.
+1771264726: Opening ipv4 listen socket on port 1883.
+1771264726: mosquitto version 2.1.2 running
+1771264734: New connection from 127.0.0.1:63367 on port 1883.
+1771264734: Client montoyamoraga [127.0.0.1:63367] disconnected: not authorised.
+1771264734: New connection from 127.0.0.1:63368 on port 1883.
+1771264734: Client montoyamoraga [127.0.0.1:63368] disconnected: not authorised.
+1771264744: New connection from 127.0.0.1:63373 on port 1883.
+1771264744: Client montoyamoraga [127.0.0.1:63373] disconnected: not authorised.
+1771264744: New connection from 127.0.0.1:63374 on port 1883.
+1771264744: Client montoyamoraga [127.0.0.1:63374] disconnected: not authorised.
+1771264955: mosquitto version 2.1.2 terminating
