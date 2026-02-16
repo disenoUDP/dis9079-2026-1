@@ -1,0 +1,178 @@
+1771263863: mosquitto version 2.1.2 starting
+1771263863: Config loaded from mosquitto.conf.
+1771263863: Bridge support available.
+1771263863: Persistence support available.
+1771263863: TLS support available.
+1771263863: TLS-PSK support available.
+1771263863: Websockets support available.
+1771263863: Opening ipv6 listen socket on port 1883.
+1771263863: Opening ipv4 listen socket on port 1883.
+1771263863: Opening ipv6 listen socket on port 1883.
+1771263863: Error: Address already in use
+1771263863: mosquitto version 2.1.2 terminating
+1771263892: mosquitto version 2.1.2 starting
+1771263892: Config loaded from mosquitto.conf.
+1771263892: Bridge support available.
+1771263892: Persistence support available.
+1771263892: TLS support available.
+1771263892: TLS-PSK support available.
+1771263892: Websockets support available.
+1771263892: Opening ipv6 listen socket on port 1883.
+1771263892: Opening ipv4 listen socket on port 1883.
+1771263892: mosquitto version 2.1.2 running
+1771263929: New connection from 127.0.0.1:63101 on port 1883.
+1771263929: Client 127.0.0.1 [127.0.0.1:63101] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771263929: New connection from 127.0.0.1:63102 on port 1883.
+1771263929: Client 127.0.0.1 [127.0.0.1:63102] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771263944: mosquitto version 2.1.2 terminating
+1771263944: mosquitto version 2.1.2 starting
+1771263944: Config loaded from mosquitto.conf.
+1771263944: Bridge support available.
+1771263944: Persistence support available.
+1771263944: TLS support available.
+1771263944: TLS-PSK support available.
+1771263944: Websockets support available.
+1771263944: Opening ipv6 listen socket on port 1883.
+1771263944: Opening ipv4 listen socket on port 1883.
+1771263944: mosquitto version 2.1.2 running
+1771263947: New connection from 127.0.0.1:63109 on port 1883.
+1771263947: Client 127.0.0.1 [127.0.0.1:63109] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771263947: New connection from 127.0.0.1:63110 on port 1883.
+1771263947: Client 127.0.0.1 [127.0.0.1:63110] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771263961: mosquitto version 2.1.2 terminating
+1771263962: mosquitto version 2.1.2 starting
+1771263962: Config loaded from mosquitto.conf.
+1771263962: Bridge support available.
+1771263962: Persistence support available.
+1771263962: TLS support available.
+1771263962: TLS-PSK support available.
+1771263962: Websockets support available.
+1771263962: Opening ipv6 listen socket on port 1883.
+1771263962: Opening ipv4 listen socket on port 1883.
+1771263962: mosquitto version 2.1.2 running
+1771263988: mosquitto version 2.1.2 terminating
+1771263989: mosquitto version 2.1.2 starting
+1771263989: Config loaded from mosquitto.conf.
+1771263989: Bridge support available.
+1771263989: Persistence support available.
+1771263989: TLS support available.
+1771263989: TLS-PSK support available.
+1771263989: Websockets support available.
+1771263989: Opening ipv6 listen socket on port 1883.
+1771263989: Opening ipv4 listen socket on port 1883.
+1771263989: mosquitto version 2.1.2 running
+1771264005: New connection from 127.0.0.1:63123 on port 1883.
+1771264005: Client processing [127.0.0.1:63123] disconnected: not authorised.
+1771264005: New connection from 127.0.0.1:63124 on port 1883.
+1771264005: Client processing [127.0.0.1:63124] disconnected: not authorised.
+1771264020: mosquitto version 2.1.2 terminating
+1771264020: mosquitto version 2.1.2 starting
+1771264020: Config loaded from mosquitto.conf.
+1771264020: Bridge support available.
+1771264020: Persistence support available.
+1771264020: TLS support available.
+1771264020: TLS-PSK support available.
+1771264020: Websockets support available.
+1771264020: Opening ipv6 listen socket on port 1883.
+1771264020: Opening ipv4 listen socket on port 1883.
+1771264020: mosquitto version 2.1.2 running
+1771264041: New connection from 127.0.0.1:63139 on port 1883.
+1771264041: Client processing [127.0.0.1:63139] disconnected: not authorised.
+1771264041: New connection from 127.0.0.1:63140 on port 1883.
+1771264041: Client processing [127.0.0.1:63140] disconnected: not authorised.
+1771264068: mosquitto version 2.1.2 terminating
+1771264086: mosquitto version 2.1.2 starting
+1771264086: Config loaded from mosquitto.conf.
+1771264086: Bridge support available.
+1771264086: Persistence support available.
+1771264086: TLS support available.
+1771264086: TLS-PSK support available.
+1771264086: Websockets support available.
+1771264086: Opening ipv6 listen socket on port 1883.
+1771264086: Opening ipv4 listen socket on port 1883.
+1771264086: mosquitto version 2.1.2 running
+1771264088: New connection from 127.0.0.1:63150 on port 1883.
+1771264088: Client processing [127.0.0.1:63150] disconnected: not authorised.
+1771264088: New connection from 127.0.0.1:63151 on port 1883.
+1771264088: Client processing [127.0.0.1:63151] disconnected: not authorised.
+1771264104: New connection from 127.0.0.1:63161 on port 1883.
+1771264104: Client montoyamoraga [127.0.0.1:63161] disconnected: not authorised.
+1771264104: New connection from 127.0.0.1:63162 on port 1883.
+1771264104: Client montoyamoraga [127.0.0.1:63162] disconnected: not authorised.
+1771264119: mosquitto version 2.1.2 terminating
+1771264120: mosquitto version 2.1.2 starting
+1771264120: Config loaded from mosquitto.conf.
+1771264120: Bridge support available.
+1771264120: Persistence support available.
+1771264120: TLS support available.
+1771264120: TLS-PSK support available.
+1771264120: Websockets support available.
+1771264120: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1771264120: Create a configuration file which defines a listener to allow remote access.
+1771264120: For more details see https://mosquitto.org/documentation/authentication-methods/
+1771264120: Opening ipv4 listen socket on port 1883.
+1771264120: Opening ipv6 listen socket on port 1883.
+1771264120: mosquitto version 2.1.2 running
+1771264123: New connection from 127.0.0.1:63174 on port 1883.
+1771264123: New client connected from 127.0.0.1:63174 as montoyamoraga (p4, c1, k60).
+1771264128: mosquitto version 2.1.2 terminating
+1771264129: mosquitto version 2.1.2 starting
+1771264129: Config loaded from mosquitto.conf.
+1771264129: Bridge support available.
+1771264129: Persistence support available.
+1771264129: TLS support available.
+1771264129: TLS-PSK support available.
+1771264129: Websockets support available.
+1771264129: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1771264129: Create a configuration file which defines a listener to allow remote access.
+1771264129: For more details see https://mosquitto.org/documentation/authentication-methods/
+1771264129: Opening ipv4 listen socket on port 1883.
+1771264129: Opening ipv6 listen socket on port 1883.
+1771264129: mosquitto version 2.1.2 running
+1771264129: New connection from 127.0.0.1:63177 on port 1883.
+1771264129: New client connected from 127.0.0.1:63177 as montoyamoraga (p4, c1, k60).
+1771264134: Client montoyamoraga [127.0.0.1:63177] disconnected: connection closed by client.
+1771264134: Client montoyamoraga [127.0.0.1:63177] disconnected: connection closed by client.
+1771264135: New connection from 127.0.0.1:63180 on port 1883.
+1771264135: New client connected from 127.0.0.1:63180 as montoyamoraga (p4, c1, k60).
+1771264139: Client montoyamoraga [127.0.0.1:63180] disconnected.
+1771264198: New connection from 127.0.0.1:63195 on port 1883.
+1771264198: New client connected from 127.0.0.1:63195 as processing (p4, c1, k60).
+1771264207: Client processing [127.0.0.1:63195] disconnected: connection closed by client.
+1771264207: Client processing [127.0.0.1:63195] disconnected: connection closed by client.
+1771264216: mosquitto version 2.1.2 terminating
+1771264216: mosquitto version 2.1.2 starting
+1771264216: Config loaded from mosquitto.conf.
+1771264216: Bridge support available.
+1771264216: Persistence support available.
+1771264216: TLS support available.
+1771264216: TLS-PSK support available.
+1771264216: Websockets support available.
+1771264216: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1771264216: Create a configuration file which defines a listener to allow remote access.
+1771264216: For more details see https://mosquitto.org/documentation/authentication-methods/
+1771264216: Opening ipv4 listen socket on port 1883.
+1771264216: Opening ipv6 listen socket on port 1883.
+1771264216: mosquitto version 2.1.2 running
+1771264219: New connection from 127.0.0.1:63201 on port 1883.
+1771264219: New client connected from 127.0.0.1:63201 as processing (p4, c1, k60).
+1771264221: Client processing [127.0.0.1:63201] disconnected.
+1771264227: mosquitto version 2.1.2 terminating
+1771264228: mosquitto version 2.1.2 starting
+1771264228: Config loaded from mosquitto.conf.
+1771264228: Bridge support available.
+1771264228: Persistence support available.
+1771264228: TLS support available.
+1771264228: TLS-PSK support available.
+1771264228: Websockets support available.
+1771264228: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1771264228: Create a configuration file which defines a listener to allow remote access.
+1771264228: For more details see https://mosquitto.org/documentation/authentication-methods/
+1771264228: Opening ipv4 listen socket on port 1883.
+1771264228: Opening ipv6 listen socket on port 1883.
+1771264228: mosquitto version 2.1.2 running
+1771264231: New connection from 127.0.0.1:63206 on port 1883.
+1771264231: Client processing [127.0.0.1:63206] disconnected: not authorised.
+1771264231: New connection from 127.0.0.1:63207 on port 1883.
+1771264231: Client processing [127.0.0.1:63207] disconnected: not authorised.
+1771264438: mosquitto version 2.1.2 terminating
