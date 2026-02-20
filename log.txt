@@ -534,3 +534,307 @@
 1771265511: New client connected from 127.0.0.1:63764 as montoyamoraga (p5, c1, k60, u'montoyamoraga').
 1771265542: Client montoyamoraga [127.0.0.1:63764] disconnected: connection closed by client.
 1771265542: Client montoyamoraga [127.0.0.1:63764] disconnected: connection closed by client.
+1771611426: mosquitto version 2.1.2 starting
+1771611426: Config loaded from mosquitto.conf.
+1771611426: Bridge support available.
+1771611426: Persistence support available.
+1771611426: TLS support available.
+1771611426: TLS-PSK support available.
+1771611426: Websockets support available.
+1771611426: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771611426: Opening ipv6 listen socket on port 1883.
+1771611426: Opening ipv4 listen socket on port 1883.
+1771611426: mosquitto version 2.1.2 running
+1771611457: New connection from ::1:49909 on port 1883.
+1771611457: New client connected from ::1:49909 as montoyamoraga (p5, c1, k60, u'montoyamoraga').
+1771611457: Client montoyamoraga [::1:49909] disconnected: connection closed by client.
+1771611457: Client montoyamoraga [::1:49909] disconnected: connection closed by client.
+1771611587: mosquitto version 2.1.2 terminating
+1771611588: mosquitto version 2.1.2 starting
+1771611588: Config loaded from mosquitto.conf.
+1771611588: Bridge support available.
+1771611588: Persistence support available.
+1771611588: TLS support available.
+1771611588: TLS-PSK support available.
+1771611588: Websockets support available.
+1771611588: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771611588: Opening ipv6 listen socket on port 1883.
+1771611588: Opening ipv4 listen socket on port 1883.
+1771611588: mosquitto version 2.1.2 running
+1771611599: New connection from ::1:49939 on port 1883.
+1771611599: New client connected from ::1:49939 as matbutom (p5, c1, k60, u'matbutom').
+1771611599: Client matbutom [::1:49939] disconnected: connection closed by client.
+1771611599: Client matbutom [::1:49939] disconnected: connection closed by client.
+1771611826: New connection from ::1:49961 on port 1883.
+1771611826: New client connected from ::1:49961 as matbutom (p5, c1, k60, u'matbutom').
+1771611840: Client matbutom [::1:49961] disconnected: connection closed by client.
+1771611840: Client matbutom [::1:49961] disconnected: connection closed by client.
+1771611853: New connection from ::1:49968 on port 1883.
+1771611853: New client connected from ::1:49968 as matbutom (p5, c1, k60, u'matbutom').
+1771611969: New connection from 127.0.0.1:49978 on port 1883.
+1771611969: Client 127.0.0.1 [127.0.0.1:49978] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771611985: New connection from 127.0.0.1:49979 on port 1883.
+1771611985: Client 127.0.0.1 [127.0.0.1:49979] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771611989: Client matbutom [::1:49968] disconnected: connection closed by client.
+1771611989: Client matbutom [::1:49968] disconnected: connection closed by client.
+1771611991: New connection from ::1:49982 on port 1883.
+1771611991: New client connected from ::1:49982 as matbutom (p5, c1, k60, u'matbutom').
+1771611993: New connection from 127.0.0.1:49983 on port 1883.
+1771611993: Client 127.0.0.1 [127.0.0.1:49983] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771611994: New connection from 127.0.0.1:49984 on port 1883.
+1771611994: Client 127.0.0.1 [127.0.0.1:49984] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771611994: New connection from 127.0.0.1:49985 on port 1883.
+1771611994: Client 127.0.0.1 [127.0.0.1:49985] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771611995: New connection from 127.0.0.1:49986 on port 1883.
+1771611995: Client 127.0.0.1 [127.0.0.1:49986] disconnected: used disallowed feature (QoS too high, retain not supported, or bad AUTH method).
+1771612035: mosquitto version 2.1.2 terminating
+1771612036: mosquitto version 2.1.2 starting
+1771612036: Config loaded from mosquitto.conf.
+1771612036: Bridge support available.
+1771612036: Persistence support available.
+1771612036: TLS support available.
+1771612036: TLS-PSK support available.
+1771612036: Websockets support available.
+1771612036: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771612036: Opening ipv6 listen socket on port 1883.
+1771612036: Opening ipv4 listen socket on port 1883.
+1771612036: mosquitto version 2.1.2 running
+1771612037: New connection from ::1:49992 on port 1883.
+1771612037: New client connected from ::1:49992 as matbutom (p5, c1, k60, u'matbutom').
+1771612045: New connection from 127.0.0.1:49994 on port 1883.
+1771612045: Client matbutom [::1:49992] disconnected: session taken over.
+1771612045: New client connected from 127.0.0.1:49994 as matbutom (p4, c1, k60, u'matbutom').
+1771612046: New connection from ::1:49995 on port 1883.
+1771612046: Client matbutom [127.0.0.1:49994] disconnected: session taken over.
+1771612046: New client connected from ::1:49995 as matbutom (p5, c1, k60, u'matbutom').
+1771612047: New connection from 127.0.0.1:49996 on port 1883.
+1771612047: Client matbutom [::1:49995] disconnected: session taken over.
+1771612047: New client connected from 127.0.0.1:49996 as matbutom (p4, c1, k60, u'matbutom').
+1771612048: New connection from ::1:49997 on port 1883.
+1771612048: Client matbutom [127.0.0.1:49996] disconnected: session taken over.
+1771612048: New client connected from ::1:49997 as matbutom (p5, c1, k60, u'matbutom').
+1771612049: New connection from 127.0.0.1:49998 on port 1883.
+1771612049: Client matbutom [::1:49997] disconnected: session taken over.
+1771612049: New client connected from 127.0.0.1:49998 as matbutom (p4, c1, k60, u'matbutom').
+1771612050: New connection from ::1:49999 on port 1883.
+1771612050: Client matbutom [127.0.0.1:49998] disconnected: session taken over.
+1771612050: New client connected from ::1:49999 as matbutom (p5, c1, k60, u'matbutom').
+1771612051: New connection from 127.0.0.1:50000 on port 1883.
+1771612051: Client matbutom [::1:49999] disconnected: session taken over.
+1771612051: New client connected from 127.0.0.1:50000 as matbutom (p4, c1, k60, u'matbutom').
+1771612052: Client matbutom [127.0.0.1:50000] disconnected.
+1771612052: New connection from ::1:50001 on port 1883.
+1771612052: New client connected from ::1:50001 as matbutom (p5, c1, k60, u'matbutom').
+1771612053: New connection from 127.0.0.1:50002 on port 1883.
+1771612053: Client matbutom [::1:50001] disconnected: session taken over.
+1771612053: New client connected from 127.0.0.1:50002 as matbutom (p4, c1, k60, u'matbutom').
+1771612054: New connection from ::1:50003 on port 1883.
+1771612054: Client matbutom [127.0.0.1:50002] disconnected: session taken over.
+1771612054: New client connected from ::1:50003 as matbutom (p5, c1, k60, u'matbutom').
+1771612055: New connection from 127.0.0.1:50004 on port 1883.
+1771612055: Client matbutom [::1:50003] disconnected: session taken over.
+1771612055: New client connected from 127.0.0.1:50004 as matbutom (p4, c1, k60, u'matbutom').
+1771612056: New connection from ::1:50005 on port 1883.
+1771612056: Client matbutom [127.0.0.1:50004] disconnected: session taken over.
+1771612056: New client connected from ::1:50005 as matbutom (p5, c1, k60, u'matbutom').
+1771612057: New connection from 127.0.0.1:50006 on port 1883.
+1771612057: Client matbutom [::1:50005] disconnected: session taken over.
+1771612057: New client connected from 127.0.0.1:50006 as matbutom (p4, c1, k60, u'matbutom').
+1771612058: New connection from ::1:50007 on port 1883.
+1771612058: Client matbutom [127.0.0.1:50006] disconnected: session taken over.
+1771612058: New client connected from ::1:50007 as matbutom (p5, c1, k60, u'matbutom').
+1771612059: New connection from 127.0.0.1:50008 on port 1883.
+1771612059: Client matbutom [::1:50007] disconnected: session taken over.
+1771612059: New client connected from 127.0.0.1:50008 as matbutom (p4, c1, k60, u'matbutom').
+1771612060: New connection from ::1:50009 on port 1883.
+1771612060: Client matbutom [127.0.0.1:50008] disconnected: session taken over.
+1771612060: New client connected from ::1:50009 as matbutom (p5, c1, k60, u'matbutom').
+1771612061: New connection from 127.0.0.1:50010 on port 1883.
+1771612061: Client matbutom [::1:50009] disconnected: session taken over.
+1771612061: New client connected from 127.0.0.1:50010 as matbutom (p4, c1, k60, u'matbutom').
+1771612062: New connection from ::1:50011 on port 1883.
+1771612062: Client matbutom [127.0.0.1:50010] disconnected: session taken over.
+1771612062: New client connected from ::1:50011 as matbutom (p5, c1, k60, u'matbutom').
+1771612063: New connection from 127.0.0.1:50012 on port 1883.
+1771612063: Client matbutom [::1:50011] disconnected: session taken over.
+1771612063: New client connected from 127.0.0.1:50012 as matbutom (p4, c1, k60, u'matbutom').
+1771612064: New connection from ::1:50013 on port 1883.
+1771612064: Client matbutom [127.0.0.1:50012] disconnected: session taken over.
+1771612064: New client connected from ::1:50013 as matbutom (p5, c1, k60, u'matbutom').
+1771612065: New connection from 127.0.0.1:50014 on port 1883.
+1771612065: Client matbutom [::1:50013] disconnected: session taken over.
+1771612065: New client connected from 127.0.0.1:50014 as matbutom (p4, c1, k60, u'matbutom').
+1771612066: New connection from ::1:50015 on port 1883.
+1771612066: Client matbutom [127.0.0.1:50014] disconnected: session taken over.
+1771612066: New client connected from ::1:50015 as matbutom (p5, c1, k60, u'matbutom').
+1771612067: New connection from 127.0.0.1:50016 on port 1883.
+1771612067: Client matbutom [::1:50015] disconnected: session taken over.
+1771612067: New client connected from 127.0.0.1:50016 as matbutom (p4, c1, k60, u'matbutom').
+1771612068: New connection from ::1:50018 on port 1883.
+1771612068: Client matbutom [127.0.0.1:50016] disconnected: session taken over.
+1771612068: New client connected from ::1:50018 as matbutom (p5, c1, k60, u'matbutom').
+1771612069: New connection from 127.0.0.1:50019 on port 1883.
+1771612069: Client matbutom [::1:50018] disconnected: session taken over.
+1771612069: New client connected from 127.0.0.1:50019 as matbutom (p4, c1, k60, u'matbutom').
+1771612070: New connection from ::1:50020 on port 1883.
+1771612070: Client matbutom [127.0.0.1:50019] disconnected: session taken over.
+1771612070: New client connected from ::1:50020 as matbutom (p5, c1, k60, u'matbutom').
+1771612071: New connection from 127.0.0.1:50021 on port 1883.
+1771612071: Client matbutom [::1:50020] disconnected: session taken over.
+1771612071: New client connected from 127.0.0.1:50021 as matbutom (p4, c1, k60, u'matbutom').
+1771612072: New connection from ::1:50022 on port 1883.
+1771612072: Client matbutom [127.0.0.1:50021] disconnected: session taken over.
+1771612072: New client connected from ::1:50022 as matbutom (p5, c1, k60, u'matbutom').
+1771612073: New connection from 127.0.0.1:50023 on port 1883.
+1771612073: Client matbutom [::1:50022] disconnected: session taken over.
+1771612073: New client connected from 127.0.0.1:50023 as matbutom (p4, c1, k60, u'matbutom').
+1771612074: Client matbutom [127.0.0.1:50023] disconnected.
+1771612074: New connection from ::1:50024 on port 1883.
+1771612074: New client connected from ::1:50024 as matbutom (p5, c1, k60, u'matbutom').
+1771612076: New connection from 127.0.0.1:50025 on port 1883.
+1771612076: Client matbutom [::1:50024] disconnected: session taken over.
+1771612076: New client connected from 127.0.0.1:50025 as matbutom (p4, c1, k60, u'matbutom').
+1771612077: New connection from ::1:50026 on port 1883.
+1771612077: Client matbutom [127.0.0.1:50025] disconnected: session taken over.
+1771612077: New client connected from ::1:50026 as matbutom (p5, c1, k60, u'matbutom').
+1771612078: New connection from 127.0.0.1:50029 on port 1883.
+1771612078: Client matbutom [::1:50026] disconnected: session taken over.
+1771612078: New client connected from 127.0.0.1:50029 as matbutom (p4, c1, k60, u'matbutom').
+1771612079: New connection from ::1:50030 on port 1883.
+1771612079: Client matbutom [127.0.0.1:50029] disconnected: session taken over.
+1771612079: New client connected from ::1:50030 as matbutom (p5, c1, k60, u'matbutom').
+1771612080: New connection from 127.0.0.1:50031 on port 1883.
+1771612080: Client matbutom [::1:50030] disconnected: session taken over.
+1771612080: New client connected from 127.0.0.1:50031 as matbutom (p4, c1, k60, u'matbutom').
+1771612081: New connection from ::1:50032 on port 1883.
+1771612081: Client matbutom [127.0.0.1:50031] disconnected: session taken over.
+1771612081: New client connected from ::1:50032 as matbutom (p5, c1, k60, u'matbutom').
+1771612082: New connection from 127.0.0.1:50033 on port 1883.
+1771612082: Client matbutom [::1:50032] disconnected: session taken over.
+1771612082: New client connected from 127.0.0.1:50033 as matbutom (p4, c1, k60, u'matbutom').
+1771612083: New connection from ::1:50034 on port 1883.
+1771612083: Client matbutom [127.0.0.1:50033] disconnected: session taken over.
+1771612083: New client connected from ::1:50034 as matbutom (p5, c1, k60, u'matbutom').
+1771612084: New connection from 127.0.0.1:50035 on port 1883.
+1771612084: Client matbutom [::1:50034] disconnected: session taken over.
+1771612084: New client connected from 127.0.0.1:50035 as matbutom (p4, c1, k60, u'matbutom').
+1771612085: New connection from ::1:50036 on port 1883.
+1771612085: Client matbutom [127.0.0.1:50035] disconnected: session taken over.
+1771612085: New client connected from ::1:50036 as matbutom (p5, c1, k60, u'matbutom').
+1771612086: New connection from 127.0.0.1:50037 on port 1883.
+1771612086: Client matbutom [::1:50036] disconnected: session taken over.
+1771612086: New client connected from 127.0.0.1:50037 as matbutom (p4, c1, k60, u'matbutom').
+1771612087: New connection from ::1:50038 on port 1883.
+1771612087: Client matbutom [127.0.0.1:50037] disconnected: session taken over.
+1771612087: New client connected from ::1:50038 as matbutom (p5, c1, k60, u'matbutom').
+1771612088: New connection from 127.0.0.1:50039 on port 1883.
+1771612088: Client matbutom [::1:50038] disconnected: session taken over.
+1771612088: New client connected from 127.0.0.1:50039 as matbutom (p4, c1, k60, u'matbutom').
+1771612089: New connection from ::1:50041 on port 1883.
+1771612089: Client matbutom [127.0.0.1:50039] disconnected: session taken over.
+1771612089: New client connected from ::1:50041 as matbutom (p5, c1, k60, u'matbutom').
+1771612090: New connection from 127.0.0.1:50042 on port 1883.
+1771612090: Client matbutom [::1:50041] disconnected: session taken over.
+1771612090: New client connected from 127.0.0.1:50042 as matbutom (p4, c1, k60, u'matbutom').
+1771612091: New connection from ::1:50043 on port 1883.
+1771612091: Client matbutom [127.0.0.1:50042] disconnected: session taken over.
+1771612091: New client connected from ::1:50043 as matbutom (p5, c1, k60, u'matbutom').
+1771612092: New connection from 127.0.0.1:50044 on port 1883.
+1771612092: Client matbutom [::1:50043] disconnected: session taken over.
+1771612092: New client connected from 127.0.0.1:50044 as matbutom (p4, c1, k60, u'matbutom').
+1771612093: New connection from ::1:50045 on port 1883.
+1771612093: Client matbutom [127.0.0.1:50044] disconnected: session taken over.
+1771612093: New client connected from ::1:50045 as matbutom (p5, c1, k60, u'matbutom').
+1771612094: New connection from 127.0.0.1:50046 on port 1883.
+1771612094: Client matbutom [::1:50045] disconnected: session taken over.
+1771612094: New client connected from 127.0.0.1:50046 as matbutom (p4, c1, k60, u'matbutom').
+1771612095: New connection from ::1:50047 on port 1883.
+1771612095: Client matbutom [127.0.0.1:50046] disconnected: session taken over.
+1771612095: New client connected from ::1:50047 as matbutom (p5, c1, k60, u'matbutom').
+1771612096: New connection from 127.0.0.1:50048 on port 1883.
+1771612096: Client matbutom [::1:50047] disconnected: session taken over.
+1771612096: New client connected from 127.0.0.1:50048 as matbutom (p4, c1, k60, u'matbutom').
+1771612097: New connection from ::1:50049 on port 1883.
+1771612097: Client matbutom [127.0.0.1:50048] disconnected: session taken over.
+1771612097: New client connected from ::1:50049 as matbutom (p5, c1, k60, u'matbutom').
+1771612098: New connection from 127.0.0.1:50050 on port 1883.
+1771612098: Client matbutom [::1:50049] disconnected: session taken over.
+1771612098: New client connected from 127.0.0.1:50050 as matbutom (p4, c1, k60, u'matbutom').
+1771612099: New connection from ::1:50051 on port 1883.
+1771612099: Client matbutom [127.0.0.1:50050] disconnected: session taken over.
+1771612099: New client connected from ::1:50051 as matbutom (p5, c1, k60, u'matbutom').
+1771612100: New connection from 127.0.0.1:50052 on port 1883.
+1771612100: Client matbutom [::1:50051] disconnected: session taken over.
+1771612100: New client connected from 127.0.0.1:50052 as matbutom (p4, c1, k60, u'matbutom').
+1771612101: New connection from ::1:50054 on port 1883.
+1771612101: Client matbutom [127.0.0.1:50052] disconnected: session taken over.
+1771612101: New client connected from ::1:50054 as matbutom (p5, c1, k60, u'matbutom').
+1771612102: New connection from 127.0.0.1:50055 on port 1883.
+1771612102: Client matbutom [::1:50054] disconnected: session taken over.
+1771612102: New client connected from 127.0.0.1:50055 as matbutom (p4, c1, k60, u'matbutom').
+1771612103: New connection from ::1:50056 on port 1883.
+1771612103: Client matbutom [127.0.0.1:50055] disconnected: session taken over.
+1771612103: New client connected from ::1:50056 as matbutom (p5, c1, k60, u'matbutom').
+1771612104: New connection from 127.0.0.1:50057 on port 1883.
+1771612104: Client matbutom [::1:50056] disconnected: session taken over.
+1771612104: New client connected from 127.0.0.1:50057 as matbutom (p4, c1, k60, u'matbutom').
+1771612105: New connection from ::1:50058 on port 1883.
+1771612105: Client matbutom [127.0.0.1:50057] disconnected: session taken over.
+1771612105: New client connected from ::1:50058 as matbutom (p5, c1, k60, u'matbutom').
+1771612106: New connection from 127.0.0.1:50059 on port 1883.
+1771612106: Client matbutom [::1:50058] disconnected: session taken over.
+1771612106: New client connected from 127.0.0.1:50059 as matbutom (p4, c1, k60, u'matbutom').
+1771612107: New connection from ::1:50060 on port 1883.
+1771612107: Client matbutom [127.0.0.1:50059] disconnected: session taken over.
+1771612107: New client connected from ::1:50060 as matbutom (p5, c1, k60, u'matbutom').
+1771612108: New connection from 127.0.0.1:50061 on port 1883.
+1771612108: Client matbutom [::1:50060] disconnected: session taken over.
+1771612108: New client connected from 127.0.0.1:50061 as matbutom (p4, c1, k60, u'matbutom').
+1771612119: Client matbutom [127.0.0.1:50061] disconnected.
+1771612121: New connection from 127.0.0.1:50062 on port 1883.
+1771612121: New client connected from 127.0.0.1:50062 as matbutom (p4, c1, k60, u'matbutom').
+1771612132: Client matbutom [127.0.0.1:50062] disconnected.
+1771612135: New connection from 127.0.0.1:50064 on port 1883.
+1771612135: New client connected from 127.0.0.1:50064 as matbutom (p4, c1, k60, u'matbutom').
+1771614034: Client matbutom [127.0.0.1:50064] disconnected.
+1771614138: mosquitto version 2.1.2 terminating
+1771614139: mosquitto version 2.1.2 starting
+1771614139: Config loaded from mosquitto.conf.
+1771614139: Bridge support available.
+1771614139: Persistence support available.
+1771614139: TLS support available.
+1771614139: TLS-PSK support available.
+1771614139: Websockets support available.
+1771614139: Plugin builtin-security has registered to receive 'basic-auth' events.
+1771614139: Opening ipv6 listen socket on port 1883.
+1771614139: Opening ipv4 listen socket on port 1883.
+1771614139: mosquitto version 2.1.2 running
+1771614245: New connection from 127.0.0.1:50837 on port 1883.
+1771614245: New client connected from 127.0.0.1:50837 as mqtt-explorer-d2441442 (p4, c1, k60, u'matbutom').
+1771614443: New connection from 127.0.0.1:51037 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51037] disconnected: not authorised.
+1771614443: New connection from 127.0.0.1:51038 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51038] disconnected: not authorised.
+1771614443: New connection from 127.0.0.1:51039 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51039] disconnected: not authorised.
+1771614443: New connection from 127.0.0.1:51040 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51040] disconnected: not authorised.
+1771614443: New connection from 127.0.0.1:51041 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51041] disconnected: not authorised.
+1771614443: New connection from 127.0.0.1:51042 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51042] disconnected: not authorised.
+1771614443: New connection from 127.0.0.1:51043 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51043] disconnected: not authorised.
+1771614443: New connection from 127.0.0.1:51044 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51044] disconnected: not authorised.
+1771614443: New connection from 127.0.0.1:51045 on port 1883.
+1771614443: Client inalambra [127.0.0.1:51045] disconnected: not authorised.
+1771614492: New connection from 127.0.0.1:51049 on port 1883.
+1771614492: New client connected from 127.0.0.1:51049 as matbutom (p3, c1, k60, u'matbutom').
+1771614521: Client matbutom [127.0.0.1:51049] disconnected: connection closed by client.
+1771614521: Client matbutom [127.0.0.1:51049] disconnected: connection closed by client.
+1771614523: Client mqtt-explorer-d2441442 [127.0.0.1:50837] disconnected.
+1771614558: New connection from 127.0.0.1:51063 on port 1883.
+1771614558: New client connected from 127.0.0.1:51063 as mqtt-explorer-d2441442 (p4, c1, k60, u'matbutom').
+1771614589: New connection from 127.0.0.1:51090 on port 1883.
+1771614589: New client connected from 127.0.0.1:51090 as matbutom (p3, c1, k60, u'matbutom').
