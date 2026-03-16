@@ -1,3 +1,5 @@
-# sesion-02
+# sesion-02 16.03
 
-lunes 16 marzo 2026
+Hacer grupo de 3
+Grupo: Paredes, Parada, Caurapán.
+;)
