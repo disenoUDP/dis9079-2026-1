@@ -51,9 +51,9 @@ para la gente trabajando en un computador Mac, recomendamos instalar Homebrew, u
 
 con Homebrew pueden instalar herramientas que usaremos en este curso como Mosquitto, un broker de MQTT, que se puede instalar con el comando
 
-`bash
+```bash
 brew install mosquitto
-`
+```
 
 ## Arduino Uno R4 Wifi
 
