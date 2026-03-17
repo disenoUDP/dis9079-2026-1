@@ -1,6 +1,7 @@
 # sesion-02
 
 lunes 16 marzo 2026
+
 Grupo: Sofía Cartes - Monserrat Paredes - Valentina Ruz
 
 Primera Solemne 04-06 (Conectar dos placas distintas)
