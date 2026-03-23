@@ -156,8 +156,30 @@ Ambas placas tienen una versión con comunicaciones inalámbricas que reciben el
 * Bela Platform <https://bela.io/>
 * Electro-Smith <https://electro-smith.com/>
 
-## Instalación de entorno de desarrollo para Raspberry Pi Pico 2 W
+## instalación de entorno de desarrollo para Raspberry Pi Pico 2 W
 
-Para la placa Arduino usaremos el software Arduino IDE que ya instalamos.
+para la placa Arduino usaremos el software Arduino IDE que ya instalamos.
 
-Para la placa Raspberry Pi usaremos una herramienta de desarrollo profesional llamada Visual Studio Code.
+para la placa Raspberry Pi usaremos una herramienta de desarrollo profesional llamada Visual Studio Code.
+
+dentro de Visual Studio Code, entramos a sección `Extensions`, y buscamos la extensión `Raspberry Pi Pico` de autores `Raspberry Pi`, y la instalamos.
+
+revisamos el documento `Getting Started` que está en esta misma carpeta. también se incluye la versión completa de la documentación.
+
+## solemne-01
+
+estos grupos de trabajo se mantendrán hasta el fin de la solemne-01, que es en 2 semanas más.
+
+el desafío es enviar un mensaje desde la placa Raspberry Pi Pico 2W, y recibirla en la placa Arduino Uno R4 WiFi, y mostrarla en el monitor serial o similar.
+
+este desafío es de código y orden, no de conexiones con cables.
+
+el mínimo que esperamos es que la placa Arduino envíe mensajes a una cierta frecuencia, y que estos mensajes prendan y apaguen la luz incorporada de la placa Raspberry Pi.
+
+queremos que cada grupo sea divergente, que envíen mensajes distintos, que funcionen a distintas frecuencias, o que incluso si quieren expandan la interacción, agregando un botón en la Raspberry Pi para enviar distintos mensajes, o agregando un LED extra o un motor o similar a la placa Arduino para que reaccione a los mensajes.
+
+esta solemne será difícil y se valorará el orden, el esfuerzo, el intento.
+
+para la solemne 02
+
+cada persona tendrá una nota, que tendrá una mitad grupal y la otra mitad individual.
