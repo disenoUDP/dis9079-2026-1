@@ -1,6 +1,6 @@
 // recibirArduino
 // placa se conecta a un servidor mosquitto
-// y envia mensaje al topic
+// y envia mensaje a un topic
 // para ser recibido por una placa raspberry pi
 // y prender su led
 // basado en ejemplo de la biblioteca
@@ -85,8 +85,7 @@ const long intervalo = 10000;
 // el mensaje anterior
 unsigned long momentoAnterior = 0;
 
-// variable para recibir mensajes
-int numeroRecibido = 0;
+int numeritoMensaje = numeroDeGrupo;
 
 void setup()
 {
@@ -152,17 +151,17 @@ void loop()
 
     Serial.print("enviando mensaje al topic:");
     Serial.println(topic);
-    Serial.print("presente ");
-    Serial.println(count);
+    Serial.print("numeritoMensaje ");
+    Serial.println(numeritoMensaje);
 
-    // send message, the Print interface can be used to set the message contents
+    // enviar mensaje
+    // la interfaz print puede ser usada para
+    // definir los contenidos del mensaje
     mqttClient.beginMessage(topic);
-    mqttClient.print("presente profe ");
-    mqttClient.print(count);
+    mqttClient.print("numeritoMensaje ");
+    mqttClient.print(numeritoMensaje);
     mqttClient.endMessage();
 
     Serial.println();
-
-    count++;
   }
 }
