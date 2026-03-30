@@ -19,8 +19,14 @@ es un sistema de escritorio gráfico compartido que le permite controlar remotam
 
 Ayuda a instalar las cosas, renderizar el escritorio y permite instalar cosasde manera mas rapida.
 sudo rf: borra todo el disco duro del computador
-topic: tiene que ser mismo pata enviar y recivir para que se pueda encontrar la ip
-clave: dis9079
+sudo topic: tiene que ser mismo pata enviar y recivir para que se pueda encontrar la ip
 ia: claude o chat gpt
+
+Ejemplo grupo 01: enviar
+Arduino01
+clave: dis9079
+
+
+
 
 
