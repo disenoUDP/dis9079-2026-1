@@ -39,4 +39,5 @@ En este link probamos distintos archivos:
 MQTT es un protocolo de mensajería ligero (publicación/suscripción) ideal para IoT que funciona sobre TCP, garantizando la entrega de datos, alta fiabilidad y orden de mensajes. En cambio, UDP es un protocolo de transporte sin conexión que prioriza la velocidad máxima, sin garantizar la entrega ni el orden, ideal para streaming en tiempo real.
 
 Te odiamos MQTT
+
 ![teodiamos](./imagenes/teodiamos.jpeg)
