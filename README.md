@@ -10,8 +10,8 @@ lunes, 2:30 a 5:20pm
 
 ## equipo docente
 
-* aarón Montoya <https://github.com/montoyamoraga>: profesore
-* mateo Arce <https://github.com/matbutom>: ayudante
+* aarón montoya <https://github.com/montoyamoraga>: profesore
+* mateo arce <https://github.com/matbutom>: ayudante
 
 ## unidades
 
@@ -36,7 +36,6 @@ lunes, 2:30 a 5:20pm
 | [14](./00-docentes/sesion-14/) | 06-15 lun   | TODO                                                  |
 | [15](./00-docentes/sesion-15/) | 06-22 lun   | examen                                                |
 
-<<<<<<< Updated upstream
 ## asistencia
 
 Desde 2026, para aprobar un curso en Diseño UDP, es necesario asistir a un mínimo del 80% de las sesiones.
@@ -52,7 +51,7 @@ para poder rendir el examen final, es necesario obtener una nota de presentació
 para la nota final del curso, se pondera 70% NP y 30% examen final.
 
 ## bibliografía
-=======
+
 ## Servidor MQTT
 
 Para correr el servidor Mosquitto local:
@@ -76,6 +75,5 @@ Conectarse con:
 * Password: `dis9079`
 
 ## Bibliografía
->>>>>>> Stashed changes
 
 * <https://itp.nyu.edu/physcomp/>
