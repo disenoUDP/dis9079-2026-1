@@ -26,8 +26,8 @@
 
 ## investigaciones individuales
 
-<./persona-01.md>
-<./persona-02.md>
-<./persona-03.md>
+[persona-01.md](./persona-01.md)
+[persona-02.md](./persona-02.md)
+[persona-03.md](./persona-03.md)
 
 ## bibliografía
