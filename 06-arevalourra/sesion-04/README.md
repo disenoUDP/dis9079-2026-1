@@ -47,7 +47,7 @@ En vez de mostrar error definitivo se implementa un mensaje tipo “en 2 segundo
 Se crea una lógica de reintento automático de conexión
 
 
-##Flujo de conexión del sistema
+## Flujo de conexión del sistema
 
 - Se intenta conectar al WiFi
   
@@ -95,7 +95,7 @@ Se puede subir el código una vez, desconectar, usarlo en otro computador y el d
 Un bug es cuando “algo no debería ser así, pero está pasando”.
 
 
-##Confusión entre conceptos:
+## Confusión entre conceptos:
 
 ID y Username (usuario)
 
