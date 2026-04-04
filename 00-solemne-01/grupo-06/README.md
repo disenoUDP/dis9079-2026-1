@@ -2,9 +2,9 @@
 
 ## integrantes
 
-* Renata De Los Ángeles Arévalo Urra
-* Isidora Andrea Pérez Maulén
-* Nicolás Elías Valdés Greve
+* Renata De Los Ángeles Arévalo Urra / https://github.com/arevalourra/dis9079-2026-1/tree/main/06-arevalourra
+* Isidora Andrea Pérez Maulén / https://github.com/arevalourra/dis9079-2026-1/tree/main/21-isipm08
+* Nicolás Elías Valdés Greve / https://github.com/arevalourra/dis9079-2026-1/tree/main/29-nicolasvaldesgreve
 
 ## descripción del proyecto
 
