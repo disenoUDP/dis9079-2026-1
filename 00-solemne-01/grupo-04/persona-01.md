@@ -3,6 +3,7 @@
 investigaciones individuales
 
 ## sobre adafruit i/o
+<img width="1080" height="810" alt="IMG_0057" src="https://github.com/user-attachments/assets/0c5daedb-0d63-4025-a788-e82a25d963d7" />
 
 ## sobre artista, diseñadora o producto que usa electrónica o computación inalámbricas
 
