@@ -175,7 +175,7 @@ Serial.println("Luz apagada. ");
 - después caché que se abría en arduino e hice lo que mencioné anteriormente, reemplacé los enunciados IO USERNAME y IO KEY por VALORES SECRETOS
 
 - probé el código y compiló, no me apareció el error de conectando a Adafruit IOFirmware version 0.3.0 is outdated. Latest version is 0.5.2
-21:24:06.104 -> Please upgrade the WiFiS3 firmware
+21:24:06.104 -> Please upgrade the WiFiS3 firmware, CORREGIR QUE SÍ ME APARECIÓ ESTE ERROR PERO LO SOLUCIONAMOS CON AARÓN LA MAÑANA DEL 6 DE ABRIL, adjuntar pantallazo de monitor serial
 
 - evidencia
 
