@@ -9,3 +9,6 @@ solemne 1 se comienza en clases
 aprendizajes
 
 - cada grupo hará los feed que quiera
+
+
+- estamos haciendo lo del config.h, para que se incluya dentro del .ino
