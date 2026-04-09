@@ -2,13 +2,21 @@
 
 ## Integrantes
 
-* Renata De Los Ángeles Arévalo Urra / https://github.com/arevalourra/dis9079-2026-1/tree/main/06-arevalourra
-* Isidora Andrea Pérez Maulén / https://github.com/arevalourra/dis9079-2026-1/tree/main/21-isipm08
-* Nicolás Elías Valdés Greve / https://github.com/arevalourra/dis9079-2026-1/tree/main/29-nicolasvaldesgreve
+* Renata De Los Ángeles Arévalo Urra / <https://github.com/arevalourra/dis9079-2026-1/tree/main/06-arevalourra>
+* Isidora Andrea Pérez Maulén / <https://github.com/arevalourra/dis9079-2026-1/tree/main/21-isipm08>
+* Nicolás Elías Valdés Greve / <https://github.com/arevalourra/dis9079-2026-1/tree/main/29-nicolasvaldesgreve>
 
 ## Descripción del proyecto
 
 ## Sistema Enviar
+
+Primero iniciamos probando el conectar el Arduino UNO R4 WiFi a un potenciómetro y que éste mande información a Adafruit, por lo que conectamos la placa Arduino al potenciómetro mediante cables Dupont, teniendo las siguientes conexiones:
+
++ GND - Pata izquierda del potenciómetro (conexión hecha con cable de color negro)
++ A0 - Pata del medio del potenciómetro (conexión hecha con cable de color morado)
++ 5V - Para derecha del potenciómetro (conexión hecha con cable de color roja)
+
+Luego de conectar el potenciómetro al Arduino, así se veía nuestra protoboard:
 
 ![Arduino con potenciómetro](./imagenes/armadosistemaenviar.jpeg)
 
