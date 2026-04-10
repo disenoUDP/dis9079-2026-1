@@ -64,6 +64,18 @@ El ejemplo “Publish” hace:
 Ya sabiendo esto, descargué la librería. 
  > fui a `File` luego a `Examples` --> abrí `Adafruit IO Arduino` --> abrí el primer ejemplo `adafrutio_00_publish`
 
+<img src="./imagenes/adafruit_install.png" alt="install" width="700">
+
+> instalé todas laslibrerías que me pedía (eran muchas)
+
+<img src="./imagenes/adafruit_examples.png" alt="example" width="700">
+
+> busqué que ejemplo me servía y en la página salía que el publish
+
+<img src="./imagenes/adafruit_publish.png" alt="publish" width="700">
+
+> le pregunté a chatgpt que era lo que tenía que cambiar para que me funcionara el ejemplo.
+
 Y cambié 
 
 ```cpp
@@ -88,15 +100,17 @@ por mi wifi
 
 ```cpp
 #define WIFI_SSID "Ruz Pizarro 5G"
-#define WIFI_PASS "agosto2019"
+#define WIFI_PASS "blabla"
 ```
 
 Luego probé el ejemplo para ver si en el monitor serial salía el mensaje de **"Connecting to Adafruit IO"** , pero solo me aparecía signos de interrogación
 
-`subir foto`
+<img src="./imagenes/adafruit_fail.png" alt="fail" width="700">
 
 - Podría haber sido por el baud, que en el código estaba a 115200 y en el monitor serial estaba a 9600
 - Lo cambié y después solo salían puntitos, no el mensaje de que ya estaba conectado
+
+<img src="./imagenes/adafruit_error.png" alt="error" width="700">
 
 ## Apuntes 
 
@@ -219,3 +233,11 @@ void loop()
   delay(3000);
 }
 ```
+
+Luego probamos el código en clases, donde si compiló y enviaba los datos correspondientes, además se veía en la data en Adafruit :) yei
+
+<img src="./imagenes/adafruit_compiling.png" alt="compiling" width="700">
+
+<img src="./imagenes/adafruit_enviando.png" alt="enviando" width="700">
+
+<img src="./imagenes/adafruit_data.png" alt="data" width="700">
