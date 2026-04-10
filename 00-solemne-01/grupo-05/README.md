@@ -11,6 +11,13 @@ Lunes 13 Abril 2026
 * [Vania Paredes](https://github.com/paredesvania): Código, Circuito, Redacción de texto, Registro
 
 ## Descripción del proyecto
+Sistema de transmisión de audio inalámbrico en tiempo real, donde un potenciómetro conectado a una placa Arduino UNO R4 WIFI, controla el volumen de un altavoz ubicado en otra placa Arduino UNO R4 WIFI, comunicados a través de internet mediante el protocolo MQTT de Adafruit IO.
+
+El proyecto consiste en dos Arduino UNO R4 WIFI conectados a internet. El Arduino emisor lee una señal analógica desde un potenciómetro y la convierte en un valor de volumen entre 0 y 100, que publica en un feed de la plataforma Adafruit IO usando el protocolo MQTT. El Arduino receptor se suscribe a ese mismo feed y, al recibir cada valor, ejecuta dos acciones simultáneas: reproduce un tono en un altavoz de 8Ω controlando la amplitud real de la señal mediante PWM y un transistor NPN 2N2222, y actualiza una barra de nivel visual en la matriz LED integrada del Arduino R4 WiFi, encendiendo filas de abajo hacia arriba proporcionales al volumen recibido.
+
+## Video en Funcionamiento
+
+<https://youtube.com/shorts/Q4U23jE60xg>
 
 ## Bill of materials
 
@@ -31,6 +38,8 @@ Lunes 13 Abril 2026
 ## Código usado con Adafruit IO
 
 Para su funcionamiento fue necesaria la creación de 2 códigos distintos: uno enfocado en utilizar un componente (potenciometro) para obtener información que es subida a una nube, y otro para poder recibir dicha información y permitir a la segunda parte mostrar una animación en el matriz de leds y emitir un sonido que varía según el volumen.
+
+## Diagrama de flujo
 
 ### código para enviar: potenciometro y datos
 
@@ -317,7 +326,34 @@ void manejarVolumen(AdafruitIO_Data *dato) {
 
 * Los archivos tipo "config.h" fueron modificados en las credenciales de la "cuenta de adafruit" y se utilizó el internet del lid para su funcionamiento.
 
-## investigaciones individuales
+### Monitor Serial de Arduino
+..................................................................................................
+Adafruit IO connected.
+Listo para enviar volumen!
+Lectura: 0 -> Volumen: 0%
+Enviando: 36
+Lectura: 446 -> Volumen: 43%
+Enviando: 43
+Lectura: 478 -> Volumen: 46%
+Enviando: 46
+Lectura: 512 -> Volumen: 50%
+Enviando: 50
+Lectura: 565 -> Volumen: 55%
+Enviando: 55
+Lectura: 569 -> Volumen: 55%
+Lectura: 624 -> Volumen: 60%
+Enviando: 60
+Lectura: 688 -> Volumen: 67%
+Enviando: 67
+Lectura: 746 -> Volumen: 72%
+Enviando: 72
+Lectura: 808 -> Volumen: 78%
+Enviando: 78
+Lectura: 865 -> Volumen: 84%
+Enviando: 84
+Lectura: 938 -> Volumen: 91%
+
+### investigaciones individuales
 
 rellenar en el mismo orden que los integrantes del grupo
 
@@ -325,7 +361,7 @@ rellenar en el mismo orden que los integrantes del grupo
 [persona-02.md](./persona-02.md)
 [persona-03.md](./persona-03.md)
 
-## bibliografía
+### bibliografía
 
 * <https://learn.adafruit.com/series/adafruit-io-basics>
 * <https://github.com/adafruit/Adafruit_IO_Arduino>

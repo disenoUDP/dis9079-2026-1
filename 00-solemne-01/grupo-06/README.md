@@ -10,7 +10,7 @@
 
 ## Descripción del proyecto
 
-La idea principal de nuestro proyecto es poder enviar información desde una placa Arduino R4 WiFi a otra de manera inalámbrica utilizando WiFi, por lo cual haremos que una placa envíe la orden de encender y apagar un LED que está conectado a la otra placa mientras usamos a Adafruit IO como intermediario.
+La idea principal de nuestro proyecto es poder enviar información desde una placa Arduino R4 WiFi a otra de manera inalámbrica utilizando WiFi, por lo cual haremos que una placa envíe la orden de encender y apagar un LED que está conectado a la otra placa mediante una protoboard mientras usamos a Adafruit IO como intermediario.
 
 En este caso, los componentes que utilizamos son:
 
@@ -108,11 +108,13 @@ Nos tiraba error ya que el "led" no estaba declarado, por lo que corregimos eso 
 
 Al correr nuevamente el código no salió ningún error pero solo salía que estaba conectando a Adafruit y aparecían muchos puntitos, por lo que nunca logró conectarse en realidad.
 
-Como no entendíamos cual era el problema, decidimos preguntar a la IA (ChatGPT) cuál podía ser el posible error, el cual nos dijo que no debíamos conectar el LED directamente a los 5V ya que esto no nos iba a permitir apagar el LED, por lo que le hicimos caso y cambiamos el cable Dupont al Pin 8 de la placa, y se veía así:
+Cuando logramos volver a conectarnos a Adafruit IO luego de reiniciar la placa, corrimos nuevamente el código y no reaccionó el LED de la protoboard sino el LED de la placa Arduino, lo cual fue sorprendente pero no era lo que buscábamos. 
+
+Como no entendíamos cual era el problema, decidimos preguntar a la IA (ChatGPT) cuál podía ser el posible error, el cual nos dijo que no debíamos conectar el LED directamente a los 5V ya que esto no nos iba a permitir apagar el LED porque le estabamos dando poder de manera constante, por lo que le hicimos caso y cambiamos el cable Dupont al Pin 8 de la placa, y se veía así:
 
 ![LED con cables bien puestos](./imagenes/led-bien-conectado.jpeg)
 
-Luego de conectar bien el LED con la placa, corrimos el código y no reaccionó el LED de la protoboard sino el LED de la placa Arduino, lo cual fue sorprendente pero no era lo que buscábamos. Cuando probamos otro código, la placa se conectó a Adafruit IO y empezó a recibir la información de encendido y apagado los cuales se representaban como "1" el cual era encendido, y con "0" el cual era apagado.
+Cuando probamos otro código, la placa se conectó a Adafruit IO y empezó a recibir la información de encendido y apagado los cuales se representaban como "1" el cual era encendido, y con "0" el cual era apagado.
 
 ![Arduino recibiendo información 0-1 de Adafruit IO](./imagenes/arduino-recibiendo-info.jpeg)
 

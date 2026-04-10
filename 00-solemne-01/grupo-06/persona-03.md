@@ -57,7 +57,7 @@ Los primeros prototipos de los guantes se crearon en base a las experimentacione
 ![Guantes MiMU](./imagenes/guantes-mimu.jpeg)
 (imagen rescatada de la página oficial de MiMU, no me pertenece)
 
-Para llegar al resultado que tenemos hoy, Mitchell modificó guantes de fibra óptica que en ese tiempo eran desarrollados para la industria de los video juegos, y los programó teniendo en cuenta los movimientos de Heap. En los guantes se encuentran unos chips que contienen acelerómetros y magnetómetros, los cuales son capaces de generar información precisa sobre la posición de las manos y la velocidad de éstas, incluyendo ocho sensores de flexión que pueden medir la curvatura de los dedos:
+Para llegar al resultado que tenemos hoy, Mitchell modificó guantes de fibra óptica que en ese tiempo eran desarrollados para la industria de los video juegos, y los programó teniendo en cuenta los movimientos de Heap. En los guantes se encuentran unos chips que contienen acelerómetros y magnetómetros los cuales son una unidad de medición inercial (IMU) y son capaces de generar información precisa sobre la posición de las manos y la velocidad de éstas, incluyendo ocho sensores de flexión que pueden medir la curvatura de los dedos:
 
 - Pulgar
 - Índice _proximal_
@@ -70,16 +70,14 @@ Para llegar al resultado que tenemos hoy, Mitchell modificó guantes de fibra ó
 
 En el pulgar y en el meñique tienen un solo sensor de flexión mientras que en los otros dedos tienen dos, en donde el que está más cerca a la punta se denomina _distal_ y el más cercano a la muñeca se llama _proximal_.
 
-Para usar los guantes crearon el software **Glover**, el cual se utiliza para componer y performar música utilizando el movimiento de los guantes MiMU.
-
-
+Para usar los guantes crearon el software **Glover**, el cual se utiliza para programar, componer y performar música utilizando el movimiento de los guantes MiMU. D
 
 ---
 
 ### Fuentes
 
-- <https://mimugloves.com/documentation/mimu-gloves-overview/>
-- <https://itsoundsalternative.com/2025/01/17/imogen-heap/>
-- <https://www.bbc.com/mundo/noticias/2011/07/110714_tecnologia_guantes_musicales_nc>
-- <https://mimugloves.com/about/>
-- <https://mimugloves.com/glover/>
+- MIMU — Music through Movement. (n.d.). <https://mimugloves.com/documentation/mimu-gloves-overview/>
+- Castañeda, S., & Castañeda, S. (28 junio, 2025). Imogen Heap - It sounds alternative. It Sounds Alternative - Nos gusta la música y nos gusta compartirla. <https://itsoundsalternative.com/2025/01/17/imogen-heap/>
+- Wakefield, J. (14 julio, 2011). Guantes electrónicos para hacer música. BBC News Mundo. <https://www.bbc.com/mundo/noticias/2011/07/110714_tecnologia_guantes_musicales_nc>
+- MIMU — Music through Movement. (n.d.). <https://mimugloves.com/about/>
+- MiMU — Glover. (n.d.). <https://mimugloves.com/glover/>
