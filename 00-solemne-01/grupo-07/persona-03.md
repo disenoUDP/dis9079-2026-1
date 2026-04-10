@@ -26,9 +26,10 @@ La programación de las prenda tenian ¨hilos blandos y textiles incrustados 10.
 No es primera vez que Fujimoto (MPLUSPLUS) colabora con Morinaga y con la empresa LED Tokyo, que alquila pantallas LED de gran escala, tambien realizaron coleccion 2025-26 A/W “ SCREEN ” y una colaboracion con Beyonce, donde ocupo uno de sus vestidos en su gira Cowboy Carter Tour, en donde Fujimoto tambien desarrollo textiles LED capaces de mostrar imagenes controladas a distancia.
 Si bien la tecnología LED portátil ya había sido abordada por algunas marcas de  moda experimental, MPLUSPLUS incorporó sus pantallas en diversos escenarios muy distintos, desde desfiles hasta festivales y conciertos (2022 Stray Kids, MAMA awards) generando toda una fantasia entre el dialogo del arte y la tecnologia.
 
-![Lookphoto_79](https://github.com/user-attachments/assets/5dea1300-0d4e-480d-8db7-1fa023086be5)
+![runway](./imagenes/Morinaga.jpg)
 
-<img width="1280" height="720" alt="image_1" src="https://github.com/user-attachments/assets/21979053-141c-4602-b4b0-f6b3ec7f28e3" />
+![runway](./imagenes/Fujimoto.png)
 
-![螢幕快照-2025-04-30-下午5 34 32](https://github.com/user-attachments/assets/65851c14-ef1f-49ce-9410-3c5c702fea41)
+![runway](Beyonce.webp)
 
+![runway](gifpasarela)
