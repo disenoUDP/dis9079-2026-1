@@ -32,17 +32,18 @@ El mismo Arduino lee esos datos desde el feed y actúa en consecuencia.
 
 ### código para enviar
 
+```cpp
 #include "AdafruitIO_WiFi.h"
 
-#define WIFI_SSID "BLA"
-#define WIFI_PASS "BLA"
+#define WIFI_SSID "bla"
+#define WIFI_PASS "bla"
 
-#define IO_USERNAME "BLA"
-#define IO_KEY "BLA"
+#define IO_USERNAME "bla"
+#define IO_KEY "bla"
 
 AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 
-AdafruitIO_Feed *feed = io.feed("prueba01");
+AdafruitIO_Feed *feed = io.feed("prueba02");
 
 void handleMessage(AdafruitIO_Data *data) {
   String mensaje = data->toString();
@@ -80,6 +81,7 @@ void loop() {
   io.run();
   delay(100);  
 }
+```
 
 ### código para recibir
 
