@@ -53,15 +53,31 @@ Sus inspiraciones al construir sus prendas están en la transformación social, 
 
 Seleccioné los tres trabajos que más me llamaron la atención:
 
-1.
+1. Incertitudes
+
+2013
+
 ![Incertitudes, 2013](./imagenes/ying-gao-soundactivated.gif)
 
 2. Possible tomorrows
-   
+
+2017
+
+Vestuario que interactua con tecnología de reconocimiento de huellas digitales de extraños.
+
+Materiales: Malla de nylon, super organza, hilo de nylon, hilo de PVDF, termoplásticos, dispositivos electronicos.
+
+Los movimientos del vestido están provocados por un scanner de huellas digitales puesto en un marco de madera en el cuello del usuario.
+
+El dispositivo manda esa informacion a un microprocesador que usa arduino y si no reconoce las huellas provoca a los motores de los paneles de termoplastico.
+
+Para que las huellas dejen de ser "extrañas" tienen que ser puestas en el scanner mas de una vez.
 
 ![Possible tomorrows](./imagenes/possible-tomorrows.gif)
 
+Cuando están inmóviles, los paneles de hilo forman curvas aplanadas que pretenden imitar los patrones hipotrocoides creados por el juego retro del espirógrafo.
 
+![Espirografo](./imagenes/spirograph.gif)
 
 3. Flowing water, Standing time
 
@@ -109,4 +125,6 @@ De alguna manera los vestuarios reaccionan a lo que ven.
 >Exhibition Catalog. (2016). [Documents]. In Coded_Couture. Pratt Institute Archives Department of Exhibitions Collection. Pratt Institute Libraries Digital Collections. https://jstor.org/stable/community.40382752
 
 >Gao, Y. (s. f.). ying gao - designer. Ying Gao © 2010. https://yinggao.ca/interactifs/flowing-water-standing-time/
+
+>Levy, N. (2017, 23 octubre). Ying Gao’s dresses become animated «in the presence of strangers». Dezeen. https://www.dezeen.com/2017/10/22/ying-gaos-dresses-become-animated-in-the-presence-of-strangers/
 

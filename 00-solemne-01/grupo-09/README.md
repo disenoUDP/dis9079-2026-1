@@ -2,7 +2,7 @@
 
 ## integrantes
 
-* Marlén Génesis Constanza Soto Soto
+* Marlén Soto Soto
 * Marcela Zúñiga
 
 ## descripción del proyecto
@@ -22,9 +22,11 @@ Adafruit IO los almacena y gestiona en la nube.
 El mismo Arduino lee esos datos desde el feed y actúa en consecuencia.
 
 ## materiales usados en solemne-01
-1 placa de Arduino uno R4 
-2 computadores 
-Cable USB para conectar la placa
+•1 placa de Arduino uno R4 
+
+•2 computadores 
+
+•Cable USB para conectar la placa
 
 ## código usado con Adafruit IO
 

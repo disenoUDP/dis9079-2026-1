@@ -7,17 +7,34 @@
 * Angel Sabogal
 
 ## descripción del proyecto
+
+Consiste en un circuito que permite controlar un LED RGB de forma remota. A través de un dashboard en la nube (Adafruit IO), el usuario selecciona un color que se transmite vía Wi-Fi a un Arduino, el cual procesa la información y activa los pines físicos para igualar el color digital en un LED a tiempo real.
+
+## proceso
+
 Empezamos el proyecto explorando la biblioteca de aprendizaje de Adafruit IO, encontramos un tutorial en [Adafruit IO](https://learn.adafruit.com/adafruit-io-basics-color) explicando la posibilidad de enviarle una señal desde Adafruit al Arduino, de forma que se puede lograr cambiar los colores RGB de manera remota, sin cables y hasta desde otro dispositivo electrónico.
 
-Dicho esto, unimos las conexiones del RGB al protoboard y del protoboard al Arduino: Lo primero sería conectar las 4 patas del LED RGB al protoboard, después poner 3 resistencia 220Ω, estas deben estar así:
+Dicho esto, unimos las conexiones del RGB al protoboard y del protoboard al Arduino:
+
+Lo primero sería conectar las 4 patas del LED RGB al protoboard, después poner 3 resistencia 220Ω, estas deben estar así:
+
 * **R** - La luz roja o luz red es la de izquierda inicial; esta tiene que ir acompañada de una resistencia de 220Ω conectada a R y a su vez conectada al pin 4 del Arduino.
 * **GND** - La segunda pata (asumiendo la izquierda R) es la de a tierra, debe ir conectada directo al Arduino en el pin 3V.
 * **G** - La luz verde o luz green es la siguiente después de la GND, esta tiene que ir con una resistencia de 220 Ω y a su vez conectada al pin 5 del Arduino.
 * **B** - La luz azul o luz blue es la siguiente después de la G, esta tiene que ir con una resistencia de 220 Ω y a su vez conectada al pin 2 del Arduino.
 
 Debe quedar así:
+
 ![LED conectado a arduino](./imagenes/circuitoled.jpg)
 
+conexiones:
+
+patas del LED
+
+- patita 1 (R) a pin 4
+- patita 2 (ánodo) a vcc
+- patita 3 (G) a pin 5
+- patita 4 (B) a pin 2
 
 Para llegar a la conexión del LED RGB primero tuvimos que tener una cuenta de Adafruit que en este caso nos proporcionó una mejora el profesor para tener la cuenta de pago y esta la hicimos cada uno para testear individualmente con nuestros correos UDP.
 
@@ -29,7 +46,7 @@ A continuación en la sección de "Dashboards" agregamos un bloque de color ingr
 
 ![Ejemplo de Bloque de color](./imagenes/bloquecolorgrupo.png)
 
-**Configuración de arduino**
+### Configuración de arduino
 
 En nuestro caso usaremos Arduino UNO R4 WIFI, por ende tiene una configuración correspondiente al hardware y, como dice el nombre, sí tiene "wifi", que también usaremos, y antes de continuar asegurarnos de tener instalada al menos la versión 2.4.0 de la biblioteca Adafruit IO Arduino.
 
@@ -39,7 +56,7 @@ Y como nos indicaba la instrucción, descargamos adafruitio_13_rgb en la bibliot
 
 Ahora pocedemos a hacer
 
-**La configuración de red arduino**
+### La configuración de red arduino
 
 Primero vamos a la App de Arduino IDE y presionamos config.h, ahí tenemos que poner nombre de usuario de Adafruit IO en la sección de IO_USERNAME y la clave de Adafruit IO en la sección IO_KEY.
 
@@ -255,7 +272,7 @@ AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 // rellenar
 ```
 
-## imágenes
+## LED a tiempo real
 
 ![led a tiempo real](./imagenes/ledenclase.gif)
 

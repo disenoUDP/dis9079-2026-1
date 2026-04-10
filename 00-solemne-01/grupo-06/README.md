@@ -10,17 +10,17 @@
 
 ## Descripción del proyecto
 
-El proyecto que realizaremos consiste en la comunicación entre dos placas (Arduino Uno R4 Wifi - Raspberry Pi Pico 2W) conectadas a distintos computadores mediante internet (llamado "si"), utilizando Adafruit IO como intermediario. La idea principal de nuestro proyecto es enviar información desde un dispositivo físico y representarla en otro en tiempo real. 
+La idea principal de nuestro proyecto es poder enviar información desde una placa Arduino R4 WiFi a otra de manera inalámbrica utilizando WiFi, por lo cual haremos que una placa envíe la orden de encender y apagar un LED que está conectado a la otra placa mientras usamos a Adafruit IO como intermediario.
 
 En este caso, los componentes que utilizamos son:
-+ Potenciómetro conectado a Arduino Uno R4 Wifi, el cual envía valores a la nube.
+
 + LED
 + Resistencia de 220 Ω
 + Cables Dupont para formar la conexión entre las placas y componentes
   
 ---
 
-## Sistema Enviar
+## Sistema Enviar - Primera Idea
 
 Primero iniciamos probando el conectar el Arduino UNO R4 WiFi a un potenciómetro y que éste mande información a Adafruit, por lo que conectamos la placa Arduino al potenciómetro mediante cables Dupont, teniendo las siguientes conexiones:
 
@@ -40,9 +40,13 @@ Luego, si presionábamos en el feed de ``brillo-led``, nos permitía ver un grá
 
 ![Gráfico de información que recibió Adafruit](./imagenes/pruebabrilloledadafruitio.png)
 
+## Sistema Enviar - Proyecto Final
+
+
+
 ---
 
-## Sistema Recibir
+## Sistema Recibir - Primera Idea
 
 Como nuestra idea era poder controlar el brillo del LED de una placa a otra, decidimos que en la Raspberry iría el LED ya que en ya habíamos logrado conectar el potenciómetro al Arduino. Como no sabíamos como hacer conexiones con ésta placa y no entendímos los textos que habían en ella, tuvimos que buscar imagenes de referencia para poder reconocer los Pins de la placa y para qué sirve cada una, por lo que encontramos ésta imagen:
 
@@ -59,6 +63,10 @@ Cuando íbamos a correr el código en Arduino IDE nos dimos cuenta que para pode
 Cuando por fin subimos el código, nos salió un error en donde se menciona un puerto serial y por lo que buscamos en internet esto suele pasar bastante con las placas Raspberry Pi, pero a pesar de eso seguimos intentando, y cuando nos dimos cuenta de que ya llevábamos horas en eso decidimos buscar ayuda en el Laboratorio de Interacción Digital (LID).
 
 ![Error de puerto en Raspberry Pi Pico 2 W](./imagenes/error-arduinoide.jpeg)
+
+## Sistema Enviar - Proyecto Final
+
+
 
 ---
 
@@ -96,6 +104,8 @@ Al correr nuevamente el código no salió ningún error pero solo salía que est
 
 ## Materiales usados en Solemne-01
 
+BOM del primer intento:
+
 | Componente | Cantidad | Valor Unidad | Link |
 | --- | --- | --- | --- |
 | Protoboard 400 puntos | 2 | $2.100 | <https://prodelab.cl/productos/didacticos/nivel-superior-y-ensenanza-media/robotica-y-programacion/accesorios-robotica-y-programacion/protoboard-breadboard-400-pines/?utm_source=Google%20Shopping&utm_campaign=Google%20Shopping&utm_medium=cpc&utm_term=adtribes&srsltid=AfmBOooQXrc0i240CS5O9AUC5AUSqcPz3Hrk2lJyRK-PgMDmejZeipjTcFg>
@@ -106,55 +116,234 @@ Al correr nuevamente el código no salió ningún error pero solo salía que est
 | Arduino UNO R4 WiFi | 1 | $38.990 | <https://arduino.cl/producto/arduino-uno-r4-wifi/?srsltid=AfmBOopJcCsivMRX00i4ZKVCJATlhSM2Bc6SCRhEdXzw6r1x08Ui9740> |
 | Raspberry Pi Pico 2 W | 1 | $14.990 | <https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers> |
 
+BOM Final
+
+| Componente | Cantidad | Valor Unidad | Link |
+| --- | --- | --- | --- |
+| Diodo LED | 1 | $70 | <https://afel.cl/products/diodo-led-5mm-ultrabrillante-rojo?srsltid=AfmBOoqRs9WauSkvkWECyOR_iyVpwsim5QBZGM6EE1L0-aXGRZKD_1eJ> |
+| Resistencia 220 | 1 | $413 | <https://altronics.cl/pack-10-resistencias-220ohm-025watt-1porciento> |
+| Cables Dupont (Pack 40 uni.) | 1 | $2.590 | <https://mcielectronics.cl/shop/product/cable-dupont-macho-macho-20cm-pack-40-unidades/?srsltid=AfmBOooI8-36HQsjC83sDGqLy-uZ_ht-tuw0nwyKZnloJfamdRdmCWYI> |
+| Arduino UNO R4 WiFi | 2 | $38.990 | <https://arduino.cl/producto/arduino-uno-r4-wifi/?srsltid=AfmBOopJcCsivMRX00i4ZKVCJATlhSM2Bc6SCRhEdXzw6r1x08Ui9740> |
+
 ## Código usado con Adafruit IO
 
-### Código para enviar
+Este código es el principal, y nos sirve para poder encender y apagar un LED que está conectado al Arduino que recibe información.
 
+### Código para enviar
 ```cpp
 #include <WiFiS3.h>
 #include "AdafruitIO_WiFi.h"
 
-// nombre wifi y contraseña
+// datos del wifi
 #define WIFI_SSID "si"
 #define WIFI_PASS "mailo6192"
 
-//credenciales Adafruit IO
-#define IO_USERNAME  "UserDeAdafruit"
-#define IO_KEY       "KeyDeAdafruit"
+// datos del adafruit
+#define AIO_USERNAME "nicolasvgreve"
+#define AIO_KEY "KeyDeAdafruit"
 
-//aquí va la variable con el nombre del feed
-AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
-AdafruitIO_Feed *potenciometro = io.feed("nicolasvaldesgreve-potenciometro");
-
-int potPin = A0;
+// nombre del feed y la key de éste
+AdafruitIO_WiFi io(AIO_USERNAME, AIO_KEY, WIFI_SSID, WIFI_PASS);
+AdafruitIO_Feed *ledFeed = io.feed("arevalourra-led");
 
 void setup() {
+  Serial.begin(115200);
+  delay(2000);
 
-  //la velocidad la dejamos de 9600 baud como el standard, prender monitor serial
-  Serial.begin(9600);
+  Serial.println("Conectando...");
+
   io.connect();
 
   while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
     delay(500);
   }
+
+  Serial.println("Conectado a Adafruit IO");
 }
 
 void loop() {
   io.run();
 
-  int valor = analogRead(potPin);
-  int valorMap = map(valor, 0, 1023, 0, 100);
+  Serial.println("1 (prendido)");
+  ledFeed->save(1);
+  delay(5000);
 
-  potenciometro->save(valorMap);
-
-  delay(1000);
+  Serial.println("0 (apagar))");
+  ledFeed->save(0);
+  delay(5000);
 }
 ```
 
 ### Código para recibir
 
 ```cpp
-// rellenar
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+
+// datos del wifi
+#define WIFI_SSID "si"
+#define WIFI_PASS "mailo6192"
+
+// datos del adafruit
+#define AIO_USERNAME "nicolasvgreve"
+#define AIO_KEY "KeyDeAdafruit"
+
+// este es el LED en la protoboard
+#define LED_PIN 8
+
+// se menciona el feed y el key de éste
+AdafruitIO_WiFi io(AIO_USERNAME, AIO_KEY, WIFI_SSID, WIFI_PASS);
+AdafruitIO_Feed *ledFeed = io.feed("arevalourra-led");
+
+
+void handleMessage(AdafruitIO_Data *data) {
+
+  int valor = data->toInt();
+
+  Serial.print("Recibido: ");
+  Serial.println(valor);
+
+  if(valor == 1) {
+    digitalWrite(LED_PIN, HIGH); // encender
+  } else {
+    digitalWrite(LED_PIN, LOW);  // apagar
+  }
+}
+
+void setup() {
+  Serial.begin(115200); // revisar si el monitor serial está en 115200 baud, y si no lo está cambiar para poder leer cuando se conecte a adafruit y los mensajes que llegan
+  delay(2000);
+
+  pinMode(LED_PIN, OUTPUT);
+
+  // parte el encendido
+  digitalWrite(LED_PIN, HIGH);
+
+  Serial.println("Conectando...");
+
+  io.connect();
+
+  ledFeed->onMessage(handleMessage);
+
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println("Conectado a Adafruit IO");
+
+  ledFeed->get();
+}
+
+void loop() {
+  io.run();
+}
+```
+
+---
+
+### Código para enviar
+
+Éste código lo conseguimos cuando estabamos intentando conseguir prender y apagar el LED de la protoboard, pero lo que logró fue prender y apagar el LED que está dentro del otro Arduino, por lo que decidimos dejarlo de igual manera ya que sirve y fue parte importante del proceso.
+
+```cpp
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+
+// datos del wifi y Adafruit
+#define WIFI_SSID       "si"
+#define WIFI_PASS       "mailo6192"
+
+#define AIO_USERNAME    "nicolasvgreve"
+#define AIO_KEY         "keydemicuenta"
+
+AdafruitIO_WiFi io(AIO_USERNAME, AIO_KEY, WIFI_SSID, WIFI_PASS);
+
+// mencionamos el feed con el key de éste
+AdafruitIO_Feed *ledFeed = io.feed("led-control");
+
+// aquí dejamos el baud en 115200 asi que hay que cambiarlo cuando prendamos el monitor serial jiji
+void setup() {
+  Serial.begin(115200);
+
+  io.connect();
+
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println("Conectado a Adafruit IO");
+}
+
+void loop() {
+  io.run();
+
+}
+
+```
+
+### Código para recibir
+
+```cpp
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+
+// datos de wifi y adafruit 
+#define WIFI_SSID       "si"
+#define WIFI_PASS       "mailo6192"
+
+#define AIO_USERNAME    "nicolasvgreve"
+#define AIO_KEY         "keydeladafruit"
+
+// LED
+#define LED_PIN 13  // LED integrado del UNO R4
+
+// conexión con adafruit io jiji
+AdafruitIO_WiFi io(AIO_USERNAME, AIO_KEY, WIFI_SSID, WIFI_PASS);
+
+// se menciona el feed junto con el key de éste
+AdafruitIO_Feed *ledFeed = io.feed("led-control");
+
+// lo que hace al recibir los datos
+void handleMessage(AdafruitIO_Data *data) {
+  Serial.print("Valor recibido: ");
+  Serial.println(data->toInt());
+
+  if(data->toInt() == 1) {
+    digitalWrite(LED_PIN, HIGH); // encender
+  } else {
+    digitalWrite(LED_PIN, LOW);  // apagar
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(LED_PIN, OUTPUT);
+
+  // led parte encendido
+  digitalWrite(LED_PIN, HIGH);
+
+  io.connect();
+
+  // llega mensaje de encendido (1)
+  ledFeed->onMessage(handleMessage);
+
+  while(io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println("Conectado a Adafruit IO");
+
+  ledFeed->get();
+}
+
+void loop() {
+  io.run();
+}
 ```
 
 ## Investigaciones Individuales
