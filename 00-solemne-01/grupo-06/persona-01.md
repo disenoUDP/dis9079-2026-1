@@ -51,25 +51,31 @@ En general me llamó la atención que las descargas fueran tan rápidas, pensé 
 
 *Créditos Imagen: https://mcielectronics.cl/shop/product/74358/?srsltid=AfmBOorPc8vYPX7ZT3WFb0O20SOzW3Kpq1OABx9OQNK9RxAZsK4xQ8bk*
 
-El producto que elegí investigar es la Raspberry Pi Pico 2 W, una placa de desarrollo pequeña que funciona como microcontrolador. Esta permite crear proyectos electrónicos interactivos conectando sensores, luces y otros componentes.
+La Raspberry Pi Pico 2 W es una placa basada en un microcontrolador, lo que significa que no funciona como un computador tradicional, sino que ejecuta instrucciones específicas de forma directa y eficiente. A diferencia de un PC, no tiene sistema operativo completo, sino que corre programas que uno mismo carga.
 
-A diferencia de un computador, esta placa está diseñada para ejecutar tareas específicas de forma eficiente, lo que la hace ideal para proyectos de electrónica y prototipado.
-
-En la imagen se pueden ver sus pines a los lados, que son los que permiten conectar componentes como LEDs o potenciómetros. También tiene un puerto USB para programarla y alimentarla.
-
+En su interior tiene un chip que procesa instrucciones, memoria para almacenar el código y pines que permiten interactuar con el mundo físico. Estos pines pueden configurarse como entrada o salida, lo que permite leer datos (como un potenciómetro) o controlar dispositivos (como un LED).
 
 ## Relación con electrónica y computación inalámbrica
 
-La Raspberry Pi Pico 2 W se relaciona directamente con la electrónica, ya que permite trabajar con componentes físicos como LEDs, botones y sensores.
+La inclusión de WiFi es lo que convierte a esta placa en un dispositivo IoT (Internet of Things). Esto significa que no solo interactúa localmente, sino que puede comunicarse con otros dispositivos a través de internet.
 
-Además, incorpora conexión WiFi, lo que la hace especialmente interesante en el contexto de computación inalámbrica. Gracias a esto, puede enviar y recibir datos a través de internet, por ejemplo utilizando plataformas como Adafruit IO.
+Por ejemplo:
 
+-Enviar datos a plataformas como Adafruit IO
+
+-Recibir instrucciones desde otro dispositivo
+
+-Conectarse con otro microcontrolador en otra ubicación
+
+Esto permite crear sistemas donde dos placas, incluso en distintos computadores (como en tu proyecto), pueden comunicarse en tiempo real.
 
 ## Por qué me parece interesante
 
-Elegí este producto porque me llamó la atención desde que la vi en clases, especialmente su diseño con el ícono de la frambuesa, que la hace fácil de reconocer y más amigable a mi parecer.
+Lo que más me llama la atención de esta placa es que, a pesar de ser pequeña y parecer simple, tiene muchas capacidades. Antes no entendía bien cómo algo tan chico podía conectarse a internet y comunicarse con otros dispositivos.
 
-También me parece interesante que, a pesar de ser una placa pequeña, tiene muchas capacidades, como conectarse a WiFi y ejecutar código en Python como dijo Aarón en clases. Esto la hace fácil de usar pero a la vez muy potente para crear proyectos interactivos.
+También me parece interesante que combine lo físico (cables, LED, sensores) con lo digital (código, plataformas online). Esto hace que el aprendizaje sea más tangible, porque uno ve inmediatamente el resultado de lo que programa.
+
+Finalmente, el hecho de que tenga WiFi integrado la hace mucho más potente, ya que no depende solo de conexiones físicas, sino que permite trabajar con sistemas más complejos y actuales, como el Internet de las Cosas.
 
 <img width="1620" height="1080" alt="image" src="https://github.com/user-attachments/assets/7d808ed7-975e-4f84-914b-6d753789ed4d" />
 
@@ -77,13 +83,6 @@ También me parece interesante que, a pesar de ser una placa pequeña, tiene muc
 
 Me gusta el logo de frambuesa, es muy cute <3
 
-## Relación con el proyecto
-
-En nuestro proyecto, la Raspberry Pi Pico 2 W cumple el rol de receptor, ya que recibe los datos enviados desde el Arduino a través de Adafruit IO. Luego, utiliza esta información para controlar el brillo de un LED.
-
-Esto me ayudó a entender cómo distintos dispositivos pueden comunicarse entre sí y cómo algo físico puede responder a datos que vienen desde la nube.
-
-## Fuentes de Información
 
 https://mcielectronics.cl/shop/product/74358/?srsltid=AfmBOorPc8vYPX7ZT3WFb0O20SOzW3Kpq1OABx9OQNK9RxAZsK4xQ8bk
 
