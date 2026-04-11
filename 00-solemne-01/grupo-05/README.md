@@ -10,14 +10,8 @@ Lunes 13 Abril 2026
 * [Camila Parada](https://github.com/Camila-Parada): Código, Bill of Materials, Redacción de texto
 * [Vania Paredes](https://github.com/paredesvania): Código, Circuito, Redacción de texto, Registro
 
+
 ## Descripción del proyecto
-Sistema de transmisión de audio inalámbrico en tiempo real, donde un potenciómetro conectado a una placa Arduino UNO R4 WIFI, controla el volumen de un altavoz ubicado en otra placa Arduino UNO R4 WIFI, comunicados a través de internet mediante el protocolo MQTT de Adafruit IO.
-
-El proyecto consiste en dos Arduino UNO R4 WIFI conectados a internet. El Arduino emisor lee una señal analógica desde un potenciómetro y la convierte en un valor de volumen entre 0 y 100, que publica en un feed de la plataforma Adafruit IO usando el protocolo MQTT. El Arduino receptor se suscribe a ese mismo feed y, al recibir cada valor, ejecuta dos acciones simultáneas: reproduce un tono en un altavoz de 8Ω controlando la amplitud real de la señal mediante PWM y un transistor NPN 2N2222, y actualiza una barra de nivel visual en la matriz LED integrada del Arduino R4 WiFi, encendiendo filas de abajo hacia arriba proporcionales al volumen recibido.
-
-## Video en Funcionamiento
-
-<https://youtube.com/shorts/Q4U23jE60xg>
 
 ## Bill of materials
 
@@ -31,104 +25,15 @@ El proyecto consiste en dos Arduino UNO R4 WIFI conectados a internet. El Arduin
 | Transistores NPN 2N2222 | Componente | Pack 10 | $1.228 | <https://altronics.cl/pack-10-transistor-2n2222> |
 | Resistencia 1k Ohm 1/2 watts | Componente | Pack 5 |  $500 | <https://triacs.cl/accesorios/1101-resistencia-1k-ohm-12w-5-unid-.html> |
 
-## Conexiones de hardware
-
-![conexiones](./imagenes/conexiones.png)
 
 ## Código usado con Adafruit IO
 
 Para su funcionamiento fue necesaria la creación de 2 códigos distintos: uno enfocado en utilizar un componente (potenciometro) para obtener información que es subida a una nube, y otro para poder recibir dicha información y permitir a la segunda parte mostrar una animación en el matriz de leds y emitir un sonido que varía según el volumen.
 
-## Diagrama de flujo
-
 ### código para enviar: potenciometro y datos
 
 ```cpp
-// ============================================================
-// EMISOR - Lee potenciómetro y envía valor de volumen a Adafruit IO
-// Arduino R4 WiFi
-// ============================================================
-
-#include "config.h"   // Credenciales WiFi y Adafruit IO
-
-// --- CONFIGURACIÓN DEL POTENCIÓMETRO ---
-// Conexión:
-//   Pin izquierdo  → GND
-//   Pin central    → A0  (señal analógica)
-//   Pin derecho    → 5V
-const int PIN_POTENCIOMETRO = A0;
-
-// --- FEED DE ADAFRUIT IO ---
-// Mismo nombre exacto que usa el receptor
-AdafruitIO_Feed *feedVolumen = io.feed("paredesvania-volumen");
-
-// --- VARIABLE GLOBAL ---
-// Guarda el último valor enviado para no repetir envíos innecesarios
-int ultimoVolumen = -1;
-
-// ============================================================
-void setup() {
-
-  // Iniciar comunicación serial a 115200 baud
-  Serial.begin(115200);
-
-  // Esperar a que el Monitor Serial esté listo
-  while (!Serial);
-
-  Serial.print("Conectando a Adafruit IO...");
-
-  // Conectar usando las credenciales del config.h
-  io.connect();
-
-  // Esperar hasta que la conexión sea exitosa
-  while (io.status() < AIO_CONNECTED) {
-    Serial.print(".");
-    delay(500);
-  }
-
-  // Confirmar conexión
-  Serial.println();
-  Serial.println(io.statusText());
-  Serial.println("Listo para enviar volumen!");
-}
-
-// ============================================================
-void loop() {
-
-  // Mantener conexión activa con Adafruit IO
-  io.run();
-
-  // --- LEER EL POTENCIÓMETRO ---
-  // analogRead devuelve 0–1023 según la posición del potenciómetro
-  int lecturaRaw = analogRead(PIN_POTENCIOMETRO);
-
-  // Convertir 0–1023 a 0–100 (porcentaje de volumen)
-  int volumen = map(lecturaRaw, 0, 1023, 0, 100);
-
-  // Mostrar en Monitor Serial para verificar
-  Serial.print("Lectura cruda: ");
-  Serial.print(lecturaRaw);
-  Serial.print(" -> Volumen: ");
-  Serial.print(volumen);
-  Serial.println("%");
-
-  // --- ENVIAR SOLO SI EL VALOR CAMBIÓ ---
-  // Evita saturar el feed de Adafruit IO con valores repetidos
-  if (volumen != ultimoVolumen) {
-
-    Serial.print("Enviando: ");
-    Serial.println(volumen);
-
-    // Publicar el valor en el feed
-    feedVolumen->save(volumen);
-
-    // Actualizar el último valor enviado
-    ultimoVolumen = volumen;
-  }
-
-  // Pausa de 200ms entre lecturas
-  delay(200);
-}
+// rellenar
 ```
 
 ### Código para recibir: parlantes y panel de leds
@@ -326,42 +231,38 @@ void manejarVolumen(AdafruitIO_Data *dato) {
 
 * Los archivos tipo "config.h" fueron modificados en las credenciales de la "cuenta de adafruit" y se utilizó el internet del lid para su funcionamiento.
 
-### Monitor Serial de Arduino
-..................................................................................................
-Adafruit IO connected.
-Listo para enviar volumen!
-Lectura: 0 -> Volumen: 0%
-Enviando: 36
-Lectura: 446 -> Volumen: 43%
-Enviando: 43
-Lectura: 478 -> Volumen: 46%
-Enviando: 46
-Lectura: 512 -> Volumen: 50%
-Enviando: 50
-Lectura: 565 -> Volumen: 55%
-Enviando: 55
-Lectura: 569 -> Volumen: 55%
-Lectura: 624 -> Volumen: 60%
-Enviando: 60
-Lectura: 688 -> Volumen: 67%
-Enviando: 67
-Lectura: 746 -> Volumen: 72%
-Enviando: 72
-Lectura: 808 -> Volumen: 78%
-Enviando: 78
-Lectura: 865 -> Volumen: 84%
-Enviando: 84
-Lectura: 938 -> Volumen: 91%
+## Mapa de flujo
 
-### investigaciones individuales
+```mermaid
+flowchart TB
+    n6["Esos datos son almacenados en Adafruit.IO"] --> n7["Los datos son recibidos en (Arduino recibir)"]
+    A("El (Arduino enviar)<br>se conecta a corriente") --> n5["Al abrir el monitor serial se muestra lo que sucede en la placa"]
+    n5 --> n1["Se enciende y procede a conectarse a internet"] & n3["Procede a conectarse a (Adafruit.IO)"]
+    n3 --> n2["El potenciometro captura información"]
+    n1 --> n2
+    n2 --> n9["La información es transformada a volumen"]
+    n9 --> n6
+    n8["El (Arduino recibir) se conecta a corriente"] --> n10["Se enciende, se conecta a internet y Adafruit.IO"]
+    n10 --> n7
+    n7 --> n11["Si valor es = 0"] & n12["Si el valor es > 0"]
+    n11 --> n13["No suena nada"] & n14["No se ilumina la matriz de leds"]
+    n12 --> n15["La matriz de leds se ilumina acorde al valor de volumen"] & n16["Se emite un sonido que se ajusta al valor del volumen
+    "]
 
-rellenar en el mismo orden que los integrantes del grupo
+    n8@{ shape: rect}
+```
 
-[persona-01.md](./persona-01.md)
-[persona-02.md](./persona-02.md)
-[persona-03.md](./persona-03.md)
+## Investigaciones individuales
 
-### bibliografía
+Aportes, información y exploraciones personales compartidas con el equipo.
+
+- [Felipe Caurapan.md](./persona-01.md)
+
+- [Camila Parada.md](./persona-02.md)
+
+- [Vania Paredes.md](./persona-03.md)
+
+## Bibliografía
 
 * <https://learn.adafruit.com/series/adafruit-io-basics>
 * <https://github.com/adafruit/Adafruit_IO_Arduino>
