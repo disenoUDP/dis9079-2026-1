@@ -26,7 +26,7 @@ Por eso le pedimos ayuda a Chat GPT para modificar el código, para que el led r
 
 Y finalmente resultó, el código funcionó y logramos prender y apagar el led desde el iPad, incluso a distancia. (ദ്ദി˙ᗜ˙)
 
-También en el mismo dashboard de ON y OFF encontramos otros blocks de adafruit que permite mandar mensajes que luego aparecen en el arduino ide.
+También en el mismo dashboard de ON y OFF encontramos otros blocks de adafruit que permite mandar mensajes que luego aparecen en el arduino ide 
 
 ## materiales usados en solemne-01
 

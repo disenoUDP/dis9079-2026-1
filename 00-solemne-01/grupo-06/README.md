@@ -108,7 +108,7 @@ Nos tiraba error ya que el "led" no estaba declarado, por lo que corregimos eso 
 
 Al correr nuevamente el código no salió ningún error pero solo salía que estaba conectando a Adafruit y aparecían muchos puntitos, por lo que nunca logró conectarse en realidad.
 
-Cuando logramos volver a conectarnos a Adafruit IO luego de reiniciar la placa, corrimos nuevamente el código y no reaccionó el LED de la protoboard sino el LED de la placa Arduino, lo cual fue sorprendente pero no era lo que buscábamos. 
+Cuando logramos volver a conectarnos a Adafruit IO luego de reiniciar la placa, corrimos nuevamente el código y no reaccionó el LED de la protoboard sino el LED de la placa Arduino, lo cual fue sorprendente y nos servía para la entrega pero no era lo que buscábamos, por lo que decidimos seguir intentando lograr nuestra idea principal. 
 
 Como no entendíamos cual era el problema, decidimos preguntar a la IA (ChatGPT) cuál podía ser el posible error, el cual nos dijo que no debíamos conectar el LED directamente a los 5V ya que esto no nos iba a permitir apagar el LED porque le estabamos dando poder de manera constante, por lo que le hicimos caso y cambiamos el cable Dupont al Pin 8 de la placa, y se veía así:
 
