@@ -1,30 +1,40 @@
-# grupo-07
+# Grupo-07
 
-## integrantes
+## Integrantes
 
 * Josefa Araya 
 * Débora Soto 
 * Cristóbal Vergara
 
-## descripción del proyecto
+## Descripción del proyecto
 
 El Arduino se conecta a una red WiFi y luego establece comunicación con Adafruit IO usando el protocolo MQTT en Arduino Ide.
 Desde cualquier otro computador o celular, entras al dashboard de Adafruit IO en el navegador y presionas un botón toggle. Ese click viaja por internet hasta los servidores de Adafruit, que se lo reenvían al Arduino. El Arduino recibe el mensaje y enciende o apaga el LED.
 
-Partimos utilzando el codigo de ejemplo que subio Aaron a Github para aprender como funcionaban las conecciones base auna nube pero de primeras no funcionaba, y tras un rato investigando dimos con que estabamos dando mal las credenciales que habia que cambiar del codigo, puntualmente la clave que estabamos poniendo la personal para ingresar al sitio pero resulta que era la AIO Key, que es una clave alphanumerica que te da el Adafruit IO para poder conectarte a la nube.
-Luego de solucionar eso el codigo estaba bien pero aun asi no se conectaba, solo aparecia una serie de puntos infinitos (...........) que no nos dimos cuenta hasta que en clases Aaron actualizó los Arduinos que tenian ese error y se soluciono, resulta que al final de los puntos habia un mensaje de "Please upgrade the WiFiS3 firmware!" pero no alcanzaba a verse.
-Una vez actualizado el Arduino pudimos conectar bien con Adafruit IO y probamos con un ejercicio que nos dio Aaron que consistia en conectarse a un feed en Adafruit IO el cual estaba conectado a una Dashboard con un contador.
+Partimos utilizando el código de ejemplo que subió Aaron a Github, para aprender como funcionaban las conexiones en base a una nube pero de primeras no funcionaba, y tras un rato investigando, dimos con que estabamos dando mal las credenciales que habia que cambiar del código, puntualmente la clave que estabamos poniendo,era la personal para ingresar al sitio, pero resulta que era la AIO Key, que es una clave alfanumérica que te da el Adafruit IO para poder conectarte a la nube.
+Luego de solucionar eso el código estaba bien, pero aún así no se conectaba, solo aparecía una serie de puntos infinitos (...........) que no nos dimos cuenta, hasta que en clases Aaron actualizó los Arduinos que tenian ese error y se solucionó, resulta que al final de los puntos habia un mensaje de "Please upgrade the WiFiS3 firmware!" pero no alcanzaba a verse.
+Una vez actualizado el Arduino pudimos conectar bien con Adafruit IO y probamos con un ejercicio que nos dió Aaron, que consistía en conectarse a un feed en Adafruit IO el cual estaba conectado a una Dashboard con un contador,ese ejercicio si funcionó.
+
+Durante la clase del lunes 06, quisimos intentar lograr prender un led conectado a una protoboard, pero ningún código nos funcionó.
+
+Luego de esos intentos fallidos de la clase pasada, seguíamos con las ganas de controlar el LED conectado al Arduino, mediante el dashboard de Adafruit IO, así que investigamos un poco en blogs, foros y github pero no logramos crear el código desde 0 así que acudimos a Claude AI con lo que queriamos hacer.
+
+le escribimos el siguiente prompt:
+
+>Necesito generar un codigo para arduino ide que me permita controlar de otro computador a traves de adafruit io el arduino conectado a otro computador, este arduino tambien tendria conectado una luz led que me gustaria prender y apagar desde los dashboards de adafruit io.
+
+Creamos un feed en Adafruit IO con el nombre de led-control y un Dashboard vinculado a este mismo feed, por el que por medio de un toggle podríamos prender y apagar la luz del LED. Con esto conseguimos el código, lo probamos y si funcionaba, pero le pedimos ayuda con como hacer las conexiones de la protoboard al Arduino, luego de lograr las conexiones probamos el código y sí se pudo conectar a Adafruit IO, de otro dispositivo con acceso al dashboard pudimos controlar la luz LED prendiendola y apagandola.
 
 
 
 
-## conexiones 
+## Conexiones 
 ![runway](./imagenes/conexiones.jpg)
 
 ![arduino conectado al led](./imagenes/arduino-conectado-a-led.jpeg)
 
 
-## materiales usados en solemne-01
+## Materiales usados en solemne-01
 - 1 Arduino UNO R4 WIFI 
 - 1 protoboard 400 puntos
 - 1 pin LED 
@@ -143,4 +153,4 @@ rellenar en el mismo orden que los integrantes del grupo
 [persona-02.md](./persona-02.md)
 [persona-03.md](./persona-03.md)
 
-## bibliografía
+## Bibliografía
