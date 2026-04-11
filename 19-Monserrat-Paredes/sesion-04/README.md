@@ -165,11 +165,11 @@ Considerado el «padre de la era digital» por fundamentar la teoría de la info
 
 Su trabajo revolucionario en la teoría de la información y la lógica digital sentó las bases para el progreso digital de la computación moderna y transformó radicalmente la manera en que entendemos y manipulamos la información.
 
-# 1. El inventor del "Bit"
+## 1. El inventor del "Bit"
 
 Antes de Shannon, la información era algo vago. Él fue quien popularizó el término BIT (Binary Digit) y demostró que cualquier tipo de información (voz, imagen, texto, o el contador de tu código de Arduino) podía ser representada mediante unos y ceros.
 
-# 2. La Teoría de la Información
+## 2. La Teoría de la Información
 
 Shannon definió un modelo universal de comunicación que es exactamente lo que estás replicando en tu tarea de Adafruit:
 
