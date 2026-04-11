@@ -24,17 +24,27 @@ El Arduino estaba conectado al computador y las instrucciones de ON y OFF se env
 
 El led encendía y el código se recibía, pero al principio no logramos controlarlo porque no respondía a la instrucción de ON y OFF.
 
-Por eso le pedimos ayuda a Chat GPT para modificar el código, para que el led respondiera bien a las instrucciones de ON y OFF desde el iPad.  En ese cambio reemplazamos la línea ledPin = 2 por int ledPin = LED_BUILTIN;, pasamos de usar un led externo a usar el led integrado del Arduino.
+![on y off](./imagenes/config.png)
+
+Por eso le pedimos ayuda a Chat GPT para modificar el código, para que el led respondiera bien a las instrucciones de ON y OFF desde el iPad. En ese cambio reemplazamos la línea ledPin = 2 por int ledPin = LED_BUILTIN;, pasamos de usar un led externo a usar el led integrado del Arduino.
 
 Y finalmente resultó, el código funcionó y logramos prender y apagar el led desde el iPad, incluso a distancia. (ദ്ദി˙ᗜ˙)
 
 https://github.com/user-attachments/assets/60f147d6-ef7a-4355-82a9-db9ce9517e1d
+
+Se veía reflejado en el  feed de Adafruit IO
+
+![feed](./imagenes/led.png)
 
 También en el mismo dashboard de ON y OFF encontramos otros blocks de adafruit que permite mandar mensajes que luego aparecen en el arduino ide y en el feed de Adafruit IO
 
 https://github.com/user-attachments/assets/134a4b66-3015-498e-9406-94555eb84eab
 
 Otro de los blocks que encontramos es un slide que al moverlo hacia la izquierda y derecha dan distintos números según la posición en donde lo dejemos y estos números luego se ven reflejados en el gráfico de líneas que hay en el feed de Adafruit IO y también aparecen en el arduino ide.
+
+![grafico](./imagenes/grafico-feed-slide.png)
+
+![dashboards](./imagenes/dashboard.png)
 
 De a poco estamos entendiendo mejor el funcionamiento del arduino y de Adafruit IO y las posibilidades de hacer cosas nuevas, estamos muy motivados y emocionados de realizar las ideas que tenemos en mente. 
 
