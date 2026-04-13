@@ -32,7 +32,7 @@ El proceso de funcionamiento es el siguiente:
 
 ### Recursos disponibles
 
-En la plataforma de Adafruit se pueden encontrar:
+En la plataforma de Adafruit se pueden encontrar: https://learn.adafruit.com/welcome-to-adafruit-io/arduino-and-adafruit-io?
 
 * Guías desde nivel básico hasta avanzado
 * Proyectos con Arduino, sensores y pantallas
@@ -59,11 +59,11 @@ La organización del código suele ser:
 
 Proceso de instalación
 
-<img width="1867" height="956" alt="cuenta adafruit" src="https://github.com/user-attachments/assets/2fbb8908-ea97-4bd2-b1af-2b6b0a6f92e3" />
+![Adafruit](imagenes/cuenta_adafruit.png)
 Ingresas tus datos y tus correo institucional
 
 Luego instalas en la biblioteca de arduino la versión mas nueva de adafruit que es la 4.3.4
-<img width="1918" height="961" alt="Descarga de programa biblioteca " src="https://github.com/user-attachments/assets/96816d6b-413c-47bf-9425-5adff24679e4" />
+![Adafruit](imagenes/instalacion_biblioteca_adafruit.png)
 
 ## sobre artista, diseñadora o producto que usa electrónica o computación inalámbricas
 
@@ -85,7 +85,7 @@ Arte digital: uso de tecnología, luz y programación para crear experiencias vi
 Obras conocidas
 Wave UFO → instalación interactiva que utiliza ondas cerebrales para generar visuales en tiempo real.
 <https://www.digiart21.org/art/wave-ufo>
-<img width="800" height="599" alt="image" src="https://github.com/user-attachments/assets/e42c71ad-1e07-4a82-8711-1db05fee0eaa" />
+![Adafruit](imagenes/obra_waveufo_marikomori.png)
 
 Play with Me → serie fotográfica que explora la identidad y la cultura de consumo.
 
