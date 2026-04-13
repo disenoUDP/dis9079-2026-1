@@ -16,13 +16,13 @@ Empezamos el proyecto explorando la biblioteca de aprendizaje de Adafruit IO, en
 
 Dicho esto, unimos las conexiones del RGB al protoboard y del protoboard al Arduino:
 
-Lo primero sería conectar las 4 patas del LED RGB al protoboard, después poner 3 resistencia 220Ω, estas deben estar así:
+Lo primero sería conectar las 4 patas del LED RGB al protoboard, después poner 3 resistencia de 220Ω.
 
 Debe quedar así:
 
 ![LED conectado a arduino](./imagenes/circuitoled.jpg)
 
-conexiones:
+### conexiones
 
 patas del LED, (R) (G) y (B) cada uno debe ir acompañado de una resistencia para no quemar el LED
 
@@ -31,9 +31,9 @@ patas del LED, (R) (G) y (B) cada uno debe ir acompañado de una resistencia par
 - patita 3 (G) a pin 5
 - patita 4 (B) a pin 2
 
-Para llegar a la conexión del LED RGB primero tuvimos que tener una cuenta de Adafruit que en este caso nos proporcionó una mejora el profesor para tener la cuenta de pago y esta la hicimos cada uno para testear individualmente con nuestros correos UDP.
+Para llegar a la conexión del LED RGB primero tuvimos que tener una cuenta de Adafruit que en este caso nos proporcionó una mejora el profesor para tener la cuenta de pago y la creamos cada uno para testear individualmente con nuestros correos UDP.
 
-Habiendo iniciado sesión vamos a configuraciones para darle al botón que nos da la clave AIO que necesitaremos más tarde.
+Habiendo iniciado sesión vamos a “Configuración” y obtenemos la clave AIO que necesitaremos más tarde.
 
 Procedimos a la creación del flujo del color creando una Feed llamada específicamente "color".
 
@@ -41,23 +41,23 @@ A continuación en la sección de "Dashboards" agregamos un bloque de color ingr
 
 ![Ejemplo de Bloque de color](./imagenes/bloquecolorgrupo.png)
 
-### Configuración de arduino
+### configuración de arduino
 
-En nuestro caso usaremos Arduino UNO R4 WIFI, por ende tiene una configuración correspondiente al hardware y, como dice el nombre, sí tiene "wifi", que también usaremos, y antes de continuar asegurarnos de tener instalada al menos la versión 2.4.0 de la biblioteca Adafruit IO Arduino.
+En nuestro caso usaremos Arduino UNO R4 WIFI, por ende tiene una configuración correspondiente al hardware y, como dice el nombre, sí tiene "WiFi", que también usaremos, y antes de continuar asegurarnos de tener instalada al menos la versión 2.4.0 de la biblioteca Adafruit IO Arduino.
 
 Y como nos indicaba la instrucción, descargamos adafruitio_13_rgb en la biblioteca Adafruit IO Arduino, que es el que tiene el código RGB para el LED.
 
 ![Código del RGB](./imagenes/adafruito13rgb.png)
 
-Ahora pocedemos a hacer
+Ahora procedemos a hacer
 
-### La configuración de red arduino
+### la configuración de red Arduino
 
 Primero vamos a la App de Arduino IDE y presionamos config.h, ahí tenemos que poner nombre de usuario de Adafruit IO en la sección de IO_USERNAME y la clave de Adafruit IO en la sección IO_KEY.
 
-Ya que usamos unas placas de WIFI compatibles, aparece para modificar las opciones WIFI_SSID y WIFI_PASS en config.h. "Existen más opciones de conexión, pero como solo usaremos WIFI, esta es la que necesitamos".
+Ya que usamos unas placas de WiFi compatibles, aparece para modificar las opciones WIFI_SSID y WIFI_PASS en config.h. "Existen más opciones de conexión, pero como solo usaremos WiFi, esta es la que necesitamos".
 
-Acá ejemplos de dónde debería ir lo que mencionamos:
+Aquí hay ejemplos de dónde debería ir lo que mencionamos:
 
 ![username ejemplo](./imagenes/usernameandkey.png)
 
@@ -74,7 +74,7 @@ Los valores aparecen tanto en el monitor serial como en la sección de Feeds mie
 - 1x Arduino UNO R4 WiFi
 - 1x LED RGB
 - 1x Protoboard
-- 3x Resistencias 220Ω
+- 3x Resistencias de 220Ω
 - 4x Cables dupont (m-m)
 
 ## código usado con Adafruit IO
