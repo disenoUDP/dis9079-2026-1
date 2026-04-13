@@ -105,13 +105,9 @@ Tipos de obras que hace.
 
 + Messa di Voce combina la voz humana (habla, canto y sonidos) con visualizaciones interactivas en tiempo real, donde un software transforma los matices vocales en gráficos expresivos. La obra explora temas como la comunicación, la sinestesia y el lenguaje, situándose entre la interpretación humana y la tecnología. A través de esta fusión, genera una experiencia audiovisual que reflexiona sobre el significado y los efectos del sonido y el lenguaje en un entorno inmersivo.
 
-+ La obra evidencia la invisibilidad de la infraestructura tecnológica, ya que la interacción se realiza únicamente mediante la voz, sin dispositivos visibles, lo que se vincula con la computación inalámbrica como un sistema integrado y transparente en el entorno.
++ La obra evidencia la invisibilidad de la infraestructura tecnológica, ya que la interacción se realiza únicamente mediante la voz, lo que se vincula con la computación inalámbrica como un sistema integrado y transparente en el entorno.
 
-+ Messa di Voce funciona a través de un flujo continuo de datos en tiempo real, donde la voz es capturada, procesada y transformada inmediatamente en visualizaciones, siguiendo la lógica de los sistemas conectados actuales.
-
-+ Además, propone una interacción continua, en la que la voz actúa como un flujo constante de información que modula el sistema, en contraste con interfaces basadas en acciones puntuales.
-
-+ Finalmente, establece una relación directa entre cuerpo, sistema y espacio, donde la voz no solo activa el sistema, sino que transforma el entorno en tiempo real, configurando un espacio reactivo propio de la computación ubicua.
++ Funciona a través de un flujo continuo de datos en tiempo real, donde la voz es capturada, procesada y transformada inmediatamente en visualizaciones, siguiendo la lógica de los sistemas conectados actuales además, propone una interacción continua, en la que la voz actúa como un flujo constante de información que modula el sistema, en contraste con interfaces basadas en acciones puntuales.
 
 ## Bibliografía
 
