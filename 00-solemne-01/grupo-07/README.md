@@ -10,7 +10,7 @@
 
 El Arduino se conecta a una red Wi-Fi y establece comunicación con Adafruit IO mediante el protocolo MQTT en el Arduino IDE. Desde cualquier otro computador o celular, se accede al *dashboard* de Adafruit IO en el navegador y se presiona un botón *toggle*. Ese click viaja por internet hasta los servidores de Adafruit, los cuales lo reenvían al Arduino. Finalmente, la placa recibe el mensaje y enciende o apaga el LED.
 
-![Diagrama](imágenes/diagrama-nube.png)
+![Diagrama](./imagenes/diagrama-nube.png)
 
 Comenzamos utilizando el código de ejemplo que Aarón subió a GitHub para aprender cómo funcionaban las conexiones basadas en la nube. Al principio no funcionaba y, tras un tiempo investigando, descubrimos que las credenciales eran incorrectas: estábamos usando la contraseña personal del sitio en lugar de la AIO Key (una clave alfanumérica que proporciona Adafruit IO para la conexión).
 
