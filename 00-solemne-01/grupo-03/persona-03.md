@@ -6,15 +6,13 @@ investigaciones individuales
 
 ## sobre adafruit i/o
 
-Buenas Profesor, el día de hoy falté a clase por temas personales y de salud, estoy leyendo la carpeta de solemne 01 y poniéndome al día con mis compañeros de grupo
-
-Por lo que veo usaremos Adafruit IO para realizar la solemne 01
-
 Adafruit es una plataforma en la nube para el internet de las cosas en donde se pueden enviar datos con Arduino, entre otros, donde permite guardarlos, visualizarlos y controlar cosas remotamente.
+
+Dentro de la plataforma, en las opciones que podemos utilizar entre hardware y software:
 
 Los feeds son el núcleo del sistema donde se almacenan y transmiten los datos entre el dispositivo y la nube. En este se pueden poner paneles visuales para mostrar datos y usar bloques como gráficos, botones, medidores.
 
-Es compatible con Arduino y Raspberry Pi, lo que es adecuado para lo que estamos usando ahora mismo en el curso.
+Es compatible con Arduino y Raspberry Pi, lo que es adecuado porque son las placas que estamos usando ahora mismo en el curso.
 
 Contiene botones remotos bidireccionales donde se pueden apagar, encender cosas y enviar comandos.
 
@@ -22,28 +20,30 @@ Guarda el historial de datos, pueden descargarse y también compartirse.
 
 **Siguiendo los pasos dados en la carpeta Solemne-01**
 
-- Arduino IDE ya estaba instalado previamente en mi computadora por las clases anteriores asi que pasé directamente con la instalación de Adafruit IO para Arduino.
+- Arduino IDE ya estaba instalado previamente en mi computadora por las clases anteriores, así que pasé directamente con la instalación de Adafruit IO para Arduino.
 
 ![instalación 1](./imagenes/instalacion1.png)
 
-- Y luego se terminaron de instalar todas las bibliotecas que necesitaba.
+- Posteriormente se terminaron de instalar todas las bibliotecas faltantes en el mismo Arduino IDE.
   
-- en lo que se descargaban las bibliotecas me creé la cuenta en Adafruit https://io.adafruit.com/
+- Luego me creé la cuenta en Adafruit https://io.adafruit.com/
  con mi correo UDP.
  
 ![instalación 2](./imagenes/instalacion2.png)
 
-y al terminar la instalación revisé las anotaciones de mis compañeros de grupo para ponerme al día con lo que no alcancé a ver hoy en clases y les preguntaré en persona para incorporar mejor los aprendizajes como por ejemplo: el código de arduino en las líneas donde debe ir el username, la active key, mi WiFi y la contraseña del código.
+y al terminar la instalación revisé las anotaciones de mis compañeros de grupo para ponerme al día con lo que no alcancé a ver hoy en clases, les pregunté en persona para incorporar mejor los aprendizajes como por ejemplo: el código de arduino en las líneas donde debe ir el username, la active key, mi WiFi y la contraseña del código.
 
 ---
 
-Como el arduino y la raspberry las tienen mis compañeros decidí preguntarles y echar un vistazo a los avances que hicieron en clase para cambiar el Led RGB por medio de la página de Adafruit, por ende también daré mi punto de vista y entendimiento del proyecto con la ayuda de la página donde se siguieron los pasos: [en esta página](https://learn.adafruit.com/adafruit-io-basics-color/adafruit-io-setup)
+Como el arduino y la raspberry las tienen mis compañeros decidí preguntarles y echar un vistazo a los avances que hicieron en clase para cambiar el Led RGB (nuestro proyecto de solemne) por medio de la página de Adafruit, también daré mi punto de vista y entendimiento del proyecto con la ayuda de la página donde se muestran los pasos: [en esta página](https://learn.adafruit.com/adafruit-io-basics-color/adafruit-io-setup)
 
 Lo primero que dice es que se debe iniciar sesión en Adafruit y guardar la llave de activación.
 
 a continuación se comienza con la **Creación del flujo de color**
 
-Empezamos creando la Feed llamándola color y para eso vi cómo crear feeds como verán en las siguientes imágenes.
+Empezamos creando la Feed llamándola color y para eso vi cómo crear feeds.
+
+Ejemplo en las siguientes imágenes:
 
 ![feed1](./imagenes/crearfeed1.png)
 
@@ -55,15 +55,16 @@ Luego procedemos a crear el bloque de color y es importante saber cómo es el fu
 
 ![bloque de color](./imagenes/bloquecolor.png)
 
-a continuación se nos muestra cómo proceder con el alambrado con las siguientes piezas:
+a continuación se nos muestra cómo empezar con las conexiones con las siguientes piezas:
 
 - 1x Feather compatible con Adafruit IO
 - 1 LED RGB difuso - ánodo común
 - 3 resistencias de 560 ohmios
 - 4 cables de puente
 
+"Esos son los del tutorial".
 
-Y los nuestros en realidad son:
+En realidad los nuestros son:
 
 - 1x Arduino UNO R4 WiFi
 - 1x LED RGB
@@ -73,7 +74,7 @@ Y los nuestros en realidad son:
 
 ![imágen led rgb](./imagenes/ledrgb.png)
 
-y se pasa al cableado del Arduino, como tengo la protoboard y jumpers pero no los resistores o el led RGB pondré la imagen de referencia del tutorial que es con otra placa diferente a la de arduino y la imagen en físico de mi compañera Antonella de cómo se ve conectado:
+y se pasa al cableado del Arduino, como tengo la protoboard y jumpers pero no los resistores o el led RGB, pondré la imagen de referencia del tutorial que es con otra placa diferente a la de arduino y la imagen en físico de mi compañera Antonella de cómo se ve conectado:
 
 ![Ejemplo de placa Feather ESP8266](./imagenes/placafeatheresp8266.png)
 
@@ -81,7 +82,7 @@ y se pasa al cableado del Arduino, como tengo la protoboard y jumpers pero no lo
 
 Es importante luego tener conexión a wifi con arduino además de asegurarse de tener instalada al menos la versión 2.4.0 de la biblioteca Adafruit IO Arduino.
 
-Como no me aparecerán las opciones al no tener el arduino sigo dejando las indicaciones del tutorial para conectar debidamente:
+Sigo dejando las indicaciones del tutorial para conectar debidamente:
 
 ![Ejemplo de tutorial](./imagenes/configarduino.png)
 
