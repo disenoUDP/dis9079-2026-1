@@ -34,9 +34,9 @@ Incluye bibliotecas para lenguajes como CircuitPython, Arduino, Python y otros, 
 
 - Dashboard: visualización de datos.
 
-- IO_KEY: clave privada de acceso.
+IO_KEY: clave privada de acceso.
 
-- IO_USERNAME: usuario.
+IO_USERNAME: usuario.
 
 ## Sirve para
 
@@ -93,7 +93,7 @@ Software utilizado:
 
 - Arduino automatiza la instalación, pero hay que aceptar manualmente.
 
-- La versión de librería puede afectar compatibilidad.
+- La versión de biblioteca puede afectar compatibilidad.
 
 ## Creación de cuenta en Adafruit IO
 
@@ -119,11 +119,11 @@ Después de crear la cuenta se ve así el inicio de sesión:
 
 ## Tener en cuenta por seguridad
 
-- NO subir claves a GitHub.
+NO subir claves a GitHub.
 
-- NO compartir públicamente.
+NO compartir públicamente.
 
-- Compartir solo por medios privados.
+Compartir solo por medios privados.
 
 ```cpp
 # define IO_USERNAME "usuario"
@@ -171,17 +171,17 @@ La idea es crear un puente invisible entre un aparato físico (Arduino r4 wifi) 
 
 Objetivo: al presionar el botón enviara una señal al código para que diera la señal de 0 o 1 y luego visualizar los datos en  Adafruit IO para ver gráficos en tiempo real.
 
-- 0= no presionar el botón.
+0= no presionar el botón.
 
-- 1=presionar el boton.
+1=presionar el boton.
 
 ## Elementos clave del código: usamos el wifi de la Vale
 
 Credenciales obligatorias:
 
-# define IO_USERNAME "vxlentiinaa"
+define IO_USERNAME "vxlentiinaa"
 
-# define IO_KEY "xxxx"
+define IO_KEY "xxxx"
 
 - Sin esto, Arduino no puede conectarse
 
