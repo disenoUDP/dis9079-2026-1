@@ -2,45 +2,41 @@
 
 lunes 30 marzo 2026
 
-hoy nos mostraran como conectar las placas a la red del router
-todos los router tienen una manera de ser, es capas de hacer varias redes, redes con claves y nombres distintos, concectarse dependiendo de la que necesite la persona, etc
+Hoy nos mostrarán como conectar las placas a la red del router
+todos los routers tienen una manera de ser, es capas de hacer varias redes, redes con claves y nombres distintos, conectarse dependiendo de la que necesite la persona, etc.
 
--la red del router se llama dis 7079
+La red del router se llama DIS7079.
 
--la computacion no tiene que ver en donde estoy 
+La computación no tiene que ver en donde estoy.
 
--SUDO es un comando peligroso super user do
+>SUDO es un comando peligroso (súper user do).
 
-### topic 
-cualquier persona que envia algo por mqtt necesita un topic
+### Topic 
+>Cualquier persona que envia algo por MQTT necesita un topic.
 
-mqtt user arduinoaaron 
+### Seial Print
+>Para verlo se va a la lupita de arriba, el segundo botón es el equivalente a prender y apagar Arduino.
 
-### seial print
-para verlo se va a la lupita de arriba, el segundo boton es el equivalente a prender y apagar arduino 
-
-### computer bug first, se le dice asi xq una vez en un computador gigante se metio una polilla y no dejo ver un 0
+### Computer bug first, se le dice así por qué una vez en un computador gigante se metió una polilla y no dejo ver un 0.
 
 ### id
-Es un número o código único que el sistema asigna automáticamente.
+>Es un número o código único que el sistema asigna automáticamente.
 
-### username
-Es el nombre público que tú eliges 
+### Username
+>Es el nombre público que tú eliges.
 
-son distintos
+>Son distintos (User e ID).
 
--v significa dime todo lo que sabes mosquitto
+>V significa dime todo lo que sabes Mosquitto.
 
+### Claude Shannon
+>Matemático que inventó la base de nuestra tecnología actual. Planteo la Teoría de la Información, donde describe como los elementos se pueden comunicar. Es uno de los padres de las conexiones inalámbricas.
 
-### claude shannon, la teoria de la informacion, describe como elementos se pueden comunicaer
+>Fuente información- mensaje- transmisor- señal baja mediante el aire, comunicaciones siempre son imperfectas.
 
-fuente ifnormacion- mensaje- transmisor- señal baja a traves del aire, comunicaciones siempre son imperfectas- se recibe     
+**Todos los protocolos se hacen cargo de esas cosas**
 
-**todos los protocolos se hacen cargo de esas cosas**
+>Hay maneras de confirurar el router para que cuando llegue algo a un puerto logre ingresar y no quede atrapado.
 
- hay maneras de confirurarel router para que cuando llegue algo a un puerto logre ingresar y no quede atrapado
-
-toca buscar formas mas faciles que mqtt 
-
-### protocolo udp
-no le importa que llegue solo lo envia, se usa mucho para transmitir video 
+### Protocolo UDP
+>No le importa que llegue solo lo envía, se usa mucho para transmitir video.
