@@ -9,4 +9,5 @@ En este primer bloque aplicamos el feedback recibido y comenzamos a realizar las
 ## segundo bloque de clases
 
 instalamos la libreria [Arduino_Capacitivetou](https://github.com/arduino-libraries/Arduino_CapacitiveTouch)  
+
 ![Arduino](imagenes/arduino_capacitivetou.png)
