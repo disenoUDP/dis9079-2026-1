@@ -4,45 +4,97 @@ investigaciones individuales Benjamin Alvarez
 
 ## sobre adafruit i/o
 
-Al inicio no tenia idea que era Adafruit.IO, pensaba que era otro Arduino ide, una aplicación que sirve para cargar codigos. Luego de investigar, descubri que es una plataforma en la nube diseñada para proyectos, que permiten conectar, visualizar y controlar sensores y dispositivos en tiempo real, sin necesidad de realizar una programación complejo. Lo que mas me llama la atencion de Adafruit IO es poder crear Dashboards y añadir interruptores para controlar el encendido y apagado de alguna luz.
+### Qué es Adafruit IO
 
-### como usar adafruit io
+Al inicio no tenía claro qué era Adafruit IO, pensaba que era otro Arduino IDE o una aplicación para cargar códigos. Sin embargo, después de investigar, entendí que es una plataforma en la nube diseñada para proyectos de IoT, que permite conectar, visualizar y controlar sensores y dispositivos en tiempo real sin necesidad de programación compleja.
 
-Primero tenemos que abrir nuestro arduino ide, en el Library Manager tenemos que buscar Adafruit IO Arduino
+Una de las cosas más interesantes es la posibilidad de crear dashboards, donde se pueden agregar botones o interruptores para controlar dispositivos, como encender y apagar una luz de forma remota.
 
-![adafruit instalacion](./imagenes/adafruit-io-arduino.png)
+## Instalación de Adafruit IO en Arduino
 
-Despues de apretar instalar nos saldra una ventana donde pregunta si queremos instalar todo lo que nos sale, si o si apretar aceptar. Despues de eso tenemos que dirigirnos a la pagina de Adafruit IO y crearnos nuestra cuenta.
+Para comenzar a usar Adafruit IO con Arduino, se deben seguir estos pasos
 
-![adafruit instalacion](./imagenes/install-all.png)
+1. Abrir el Arduino IDE
 
-### como crear usuario
+2. Ir a Library Manager
 
-![adafruit cuenta](./imagenes/iniciar-sesion.png)
+3. Buscar: `Adafruit IO Arduino`
 
-Tenemos que crear la cuenta con nuestro mail udp e iniciamos sesion
+![instalacion](./imagenes/adafruit-io-arduino.png)
 
-![adafruit cuenta](./imagenes/cuenta.png)
+4. Hacer clic en Instalar
 
-Una ves inicia, en la sección de IO nos saldra un icono amarillo en la esquina derecha donde sale una llave. Al apretarlo nos generara una contraseña que tenemos que poner luego en el codigo de ardunio para que se vincule con nuestra cuenta de Adafruit IO
+5. Cuando aparezca la ventana de dependencias, presionar Aceptar para instalar todo lo necesario
 
-![adafruit cuenta](./imagenes/iniciada.png)
+![instalacion](./imagenes/install-all.png)
 
-### aprendizaje y dificultades
+## Creación de cuenta en Adafruit IO
 
-Lo que personalmente aprendi en este trabajo fue el mejorar el uso de arduino y adafruit io, al ser cosas que nunca habia usado al final del trayecto logre entender un poco mejor el como funcionan, tambien aprendi a como prender y apagar una luz a la distancia, lo cual es bastante entretenido.
+1. Ir a la página oficial de Adafruit IO
 
-Y en las dificultades, va acompañado de lo primero, al usar cosas que nuca habia usado, fue muy complicado al incio entender el como funciona el arduino mas que nada, el crear codigos y hacerlos que funcionen. Fue un poco frustrante al inicio pero al pasar las clases fui entendiendo mejor el como funciona, el enviar a la nube desde un dispositivo y que lo reciba.
+2. Crear una cuenta utilizando el correo institucional (UDP)
+
+![cuenta](./imagenes/cuenta.png)
+
+3. Iniciar sesión
+
+#### Una vez dentro
+
+- Ir a la sección IO
+
+- Hacer clic en el ícono de la llave (key)
+
+![contraseña](./imagenes/iniciada.png)
+
+- Copiar la clave generada, ya que se utilizará en el código de Arduino para vincular el dispositivo con la cuenta
+
+## Aprendizaje y dificultades
+
+Durante este trabajo aprendí a utilizar mejor Arduino y Adafruit IO, herramientas que no había usado antes. Con el tiempo logré entender mejor cómo funcionan y cómo es posible controlar dispositivos a distancia, como encender y apagar una luz, lo cual resulta bastante interesante.  
+
+En cuanto a las dificultades, al inicio fue complejo entender el funcionamiento general, especialmente la creación de códigos y su correcta ejecución. Esto generó cierta frustración, pero con la práctica y el avance de las clases fui comprendiendo mejor el proceso, especialmente cómo enviar datos desde un dispositivo a la nube y recibirlos correctamente.
 
 ## sobre artista, diseñadora o producto que usa electrónica o computación inalámbricas
 
-Anouk Wipprecht es una diseñadora que trabaja en el FashionTech, un campo emergente que combina el diseño, robotica, ciencia y diseño de interaccion para convertir la moda en una experiencia que va mas alla de lo estético. Su objetivo es que las prendas no solo se vean bien, sino que tambien faciliten la relacion entre el cuerpo y entorno. Se le reconoce como una figura destacada en el desarrollo de la tecnologia contemporanea. En este caso investigue el Spider Dress 2.0, un vestido tecnologico equipado con sensores de proximidad y un chip de Intel, especifiamente el modulo Intel Edison integrado en una estructura impresa en 3D, que capta señales biologicas como la respiracion y detecta la velocidad y cercania de otras personas, cuando percibe una amenza, activa brazos mecanicos que se extienden como mecanismos de defensa para proteger el espacio personal del usuario.
+### Anouk Wipprecht y tecnología interactiva  
+
+Anouk Wipprecht es una diseñadora que trabaja en el ámbito del FashionTech, un campo emergente que combina diseño, robótica, ciencia y diseño de interacción para transformar la moda en una experiencia que va más allá de lo estético. Su trabajo se centra en crear prendas que no solo sean visualmente atractivas, sino que también respondan activamente al entorno y al comportamiento del usuario, integrando tecnología directamente en el cuerpo. Por esto, es reconocida como una figura clave en el desarrollo de la moda tecnológica contemporánea.
+
+Una característica importante de su trabajo es el uso de sistemas interactivos que incorporan sensores, microcontroladores e inteligencia artificial para generar respuestas en tiempo real. Sus diseños suelen explorar temas como el espacio personal, la emoción, la comunicación no verbal y la relación entre humanos y tecnología, proponiendo una moda que “reacciona” en lugar de ser pasiva.
+
+En este contexto, el Spider Dress 2.0 es uno de sus proyectos más representativos. Se trata de un vestido tecnológico equipado con sensores de proximidad y un chip de Intel, específicamente el módulo Intel Edison, integrado en una estructura impresa en 3D. Este sistema es capaz de captar señales biológicas, como la respiración, y analizar la cercanía y velocidad de las personas alrededor.
 
 ![vestido](./imagenes/spider-dress.jpg)
 
+Cuando el dispositivo detecta una posible amenaza o invasión del espacio personal, activa unos brazos mecánicos que se extienden de forma automática, funcionando como un mecanismo de defensa. De esta manera, el vestido no solo cumple una función estética, sino que actúa como una interfaz entre el cuerpo y el entorno, reaccionando en tiempo real y redefiniendo la relación entre moda, tecnología e interacción.
+
 <https://www.youtube.com/watch?v=uTTezk__Xvw>
 
-### bibliografia
+### Otros trabajos
+
+#### HeartBeatDress
+
+![heartbeatdress](./imagenes/heartbeatdress.jpg)
+
+Utiliza sensores integrados, tecnología robótica, sonido y luz para reaccionar al ritmo de los latidos del corazón de quien lo lleva puesto.
+
+<https://www.youtube.com/watch?v=LHHXLIYTkLQ>
+
+El HeartBeatDress también aparece en el último videoclip de la artista estadounidense Chrystabell.
+
+<https://www.youtube.com/watch?v=_tuE52TtHWY>
+
+#### Smoke dress
+
+El vestido funciona como una cortina de humo portátil. Mediante tecnologías integradas, la prenda detecta la proximidad de otra persona y crea un velo de humo alrededor del usuario para camuflarlo. 
+
+![smoke dress](./imagenes/smoke-dress.jpg)
+
+La tecnología funciona mediante un microcontrolador y un sistema de sensores personalizados. Este sistema calcula datos sobre el espacio personal del usuario y los envía al generador de humo situado entre los omóplatos
+
+<https://www.youtube.com/watch?v=G-0lTP90hVc>
+
+### Bibliografia
 
 <https://www.anoukwipprecht.nl/#intro-1>
 
@@ -51,3 +103,7 @@ Anouk Wipprecht es una diseñadora que trabaja en el FashionTech, un campo emerg
 <https://3druck.com/es/arte/vestido-arana-2-0-creado-por-la-disenadora-anouk-wipprecht-5428243/>
 
 <https://io.adafruit.com/#:~:text=%C2%BFQu%C3%A9%20es%20exactamente%20Adafruit%20IO,de%20las%20Cosas%20para%20todos!>
+
+<https://3druck.com/es/arte/anouk-wipprecht-heartbeatdress-55105131/>
+
+<https://www.digiart21.org/art/smoke-dress>
