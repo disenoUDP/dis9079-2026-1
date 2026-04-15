@@ -9,6 +9,7 @@ investigaciones individuales
 Adafruit IO es un servicio en la nube de Adafruit para desarrollar proyectos de Internet de las Cosas (IoT). Permite a los usuarios conectar, monitorizar y controlar dispositivos y sensores IoT en línea sin escribir una sola línea de código.
 
 También ofrece recursos y tutoriales para ayudar a los usuarios a iniciar sus proyectos de IoT.
+
 Proyectos de IoT: son sistemas que conectan hardware (sensores/actuadores) a internet para monitorear y controlar dispositivos remotamente.
 
 Incluye bibliotecas para lenguajes como CircuitPython, Arduino, Python y otros, lo que facilita la integración de dispositivos.
@@ -89,6 +90,7 @@ Software utilizado:
 
 - La versión de biblioteca puede afectar compatibilidad.
 
+
 ## Creación de cuenta en Adafruit IO
 
 - Ingresar a la pagina: <https://io.adafruit.com/welcome>
@@ -147,6 +149,7 @@ El sistema funciona con dos archivos:
 
 - 5.2 Archivo config.h
 
+
 ## Desarrollo Proyecto solemne 01: En clases
 
 Objetivo: Que los objetos "hablen" entre sí sin cables.
@@ -171,11 +174,16 @@ Objetivo: al presionar el botón enviara una señal al código para que diera la
 
 Credenciales obligatorias:
 
+```cpp
 define IO_USERNAME "vxlentiinaa"
+```
 
+```cpp
 define IO_KEY "xxxx"
+```
 
-- Sin esto, Arduino no puede conectarse
+Sin esto, Arduino no puede conectarse.
+
 
 ## Función importante
 
@@ -183,8 +191,10 @@ define IO_KEY "xxxx"
 io.run();
 ```
 
-- Mantiene la conexión activa
-- Permite recibir datos
+Mantiene la conexión activa.
+
+Permite recibir datos.
+
 
 ## Creación de feed
 
@@ -192,20 +202,25 @@ AdafruitIO_Feed *nombreFeed = io.feed("grupo01");
 
 Define el canal de comunicación
 
+
 ## Envío de datos
 
 nombreFeed->save(contador);
 
 Envía datos a la nube
 
+
 ## Problemas durante el proceso
 
-1.Caracteres extraños en monitor serial
+1.Caracteres extraños en monitor serial.
 
 - Aparecían signos de interrogación (???)
+  
 - Causa: baudios incorrectos
 
+
 <img width="621" height="530" alt="signos de interrogación arduino" src="https://github.com/user-attachments/assets/f9aefffe-a976-495b-8ea8-77d04a10206f" />
+
 
 ## Solución
 
@@ -215,7 +230,9 @@ Envía datos a la nube
 
 - Se corrigió a 115200
 
+
 <img width="1112" height="589" alt="Baudio auduino" src="https://github.com/user-attachments/assets/65ba7c18-ab59-43ae-88b0-3bdae3e7ecaf" />
+
 
 ## 2. El "Botón de Reset" accidental
 
@@ -224,15 +241,19 @@ Al conectar el pulsador al pin A0, se generó un puente eléctrico que replicó 
 
 El cableado o el contacto en la protoboard activó el sistema de Reset. Esto corta la corriente por un milisegundo y obliga al programa a empezar desde cero.
 
+
 ![conexiones](https://github.com/user-attachments/assets/6bfb2ee4-a20b-4b3c-a39b-f006728e982c)
+
 
 ![boton reset](https://github.com/user-attachments/assets/9651f897-9fdf-4552-9906-e6e76dd1af50)
 
 
- Datos visualizados en Adafruit IO
+
+Datos visualizados en Adafruit IO
 
 
 <img width="1470" height="956" alt="prueba 1 grupo01" src="https://github.com/user-attachments/assets/06febfc2-47be-4c84-9614-2be0a94c92ba" />
+
 
 ## Código final funcional (Ya validado en clases)
 
@@ -241,6 +262,7 @@ El cableado o el contacto en la protoboard activó el sistema de Reset. Esto cor
 - Contador incremental.
 
 - Conexión estable a Adafruit IO.
+
 
 ## Solución: Reasignación de Pines
 
@@ -257,11 +279,12 @@ Adafruit IO para ver gráficos en tiempo real con los datos enviados.
 
 <img width="1470" height="956" alt="prueba 2 grupo01" src="https://github.com/user-attachments/assets/7f8acb54-61d5-4375-9776-09911aa10fb1" />
 
+
 <img width="1470" height="956" alt="prueba 3 grupo01" src="https://github.com/user-attachments/assets/bfdf2bf6-948d-4b50-9b00-93c9e9332339" />
 
 
-## Reflexión del proceso
 
+## Reflexión del proceso
 
 Aprendizajes técnicos:
 
@@ -273,7 +296,8 @@ Aprendizajes técnicos:
 
 - Comunicación entre dispositivos remotos.
 
-*Aprendizajes prácticos:
+
+Aprendizajes prácticos:
 
 - Los errores más comunes son simples (baudios, claves).
 
@@ -293,6 +317,7 @@ io.run();
 ```
 
 Es para ver lo que manda el otro arduino en adafruit
+
 
 ```cpp
 io.feed();
