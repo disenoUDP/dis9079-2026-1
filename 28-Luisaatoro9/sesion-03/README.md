@@ -25,7 +25,7 @@ El profe nos puso una meta difícil: comunicación inalámbrica entre dispositiv
 
 1. El reto: El Arduino Uno R4 WiFi debe enviar un mensaje a la Raspberry Pi Pico 2 W.
 2. La reacción: Al recibirlo, la Raspberry debe prender o parpadear su LED integrado.
-3. Nuestra propuesta: Queremos ser "divergentes". No nos quedaremos con lo mínimo; vamos a intentar que reaccione con algo extra, como un motor o un botón, para que sea una interacción de verdad. ¡Se valora el orden y el intento!
+3. Nuestra propuesta: No nos quedaremos con lo mínimo, vamos a intentar que reaccione con algo extra, como un motor o un botón, para que sea una interacción de verdad. Se valora el orden y el intento!
 
 ### Otras plataformas y exploración
 
