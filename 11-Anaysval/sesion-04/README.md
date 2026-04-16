@@ -2,46 +2,88 @@
 
 lunes 30 marzo 2026
 
-La comunicación entre dispositivos se basa en ideas de Claude Shannon, quien desarrolló la teoría de la información. 
+En esta clase se vio cómo conectar dispositivos (Arduino, Raspberry Pi, computador) usando WiFi y protocolos.
+
+Los dispositivos se comunican a través de una red y un intermediario:
+
+Arduino → WiFi → Router → Broker → otros dispositivos
+
+### Claude Shannon
+
+La comunicación entre dispositivos se basa en ideas de Claude Shannon, quien desarrolló la teoría de la información.
 
 Él explicó cómo los datos se pueden transmitir, codificar y recibir entre distintos sistemas sin perder información.
 
-Esto es clave hoy en tecnología, porque permite que dispositivos como Arduino y Raspberry se comuniquen a través de redes (como WiFi) y protocolos como MQTT.  (chatgpt)
+Esto es clave hoy en tecnología, porque permite que dispositivos como Arduino y Raspberry se comuniquen a través de redes (como WiFi) y protocolos como MQTT.
 
  ![foto](./imagenes/teoria.png)
 
-Es mejor usar un router que compartir internet desde el celular, porque soporta más equipos conectados al mismo tiempo
+ ---
 
-Datos de la red WiFi:
+### WiFi
 
-- red: dis9079
+- Medio por donde viajan los datos en la red
+- Puede existir sin internet
+- Mejor usar router que compartir internet desde el celular
 
-- clave: 75288273
+Tipos:
 
-Existen dos tipos de red:
+- 2.4 GHz → mayor alcance, menor velocidad  
+- 5 GHz → mayor velocidad, menor alcance  
 
-- 2.4 GHz llega más lejos pero es más lenta
+### Raspberry Pi
 
-- 5 GHz es más rápida pero cubre menos distancia
+- Punto central del sistema
+- Tiene IP fija
+- Puede actuar como broker
+- Acceso remoto con SSH o TigerVNC
 
-La Raspberry Pi tiene una dirección fija, lo que facilita conectarse siempre al mismo lugar
+### MQTT
 
-En este caso actúa como el punto central donde llegan los datos 
+- Protocolo de mensajería
+- Modelo publish/subscribe
+- Usa broker (ej: Mosquitto)
+- Puerto 1883
 
-Se puede acceder de forma remota usando SSH
+### UDP
 
-TigerVNC permite ver y controlar la Raspberry desde otro dispositivo
+- Muy rápido
+- No asegura entrega ni orden
 
-El comando sudo permite ejecutar acciones con permisos más altos dentro del sistema
+### Herramientas
 
-MQTT es el sistema que se usa para enviar y recibir información entre dispositivos usando internet
+### HiveMQ
 
-Funciona a través del puerto 1883
+- Plataforma basada en MQTT
+- Permite conectar muchos dispositivos
+- Pensado para sistemas grandes
 
-Para conectarse se necesita un identificador y una contraseña
+### Rosetta
 
-Todos los dispositivos deben usar el mismo topic para poder intercambiar datos
+- Permite usar programas hechos para Intel en Mac con Apple Silicon
+- Traduce el código automáticamente
 
-En el Arduino hay que configurar el nombre del grupo y usar la misma clave entre todos
+### Acceso remoto
 
-El término “bug” se usa para errores y viene de un caso real con un insecto en un computador
+- SSH → control por terminal
+- TigerVNC → acceso gráfico
+
+### Comandos
+
+- `sudo` → administrador 
+- `rm -rf` → borra todo  
+
+### Arduino en red
+
+Puede:
+
+- Conectarse a WiFi
+- Enviar y recibir datos
+- Reaccionar en tiempo real
+
+Para funcionar correctamente:
+
+- Misma red WiFi
+- Mismo broker
+- Mismo topic
+- Mismas credenciales
