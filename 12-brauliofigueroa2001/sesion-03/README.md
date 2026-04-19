@@ -14,7 +14,7 @@ lunes 23 de marzo de 2026
 
 - <https://monome.org/> botones que hacen cositas con una raspberry pi dentro
 
-- <https://www.critterandguitari.com/> 
+- <https://www.critterandguitari.com/>
 
 - raspberry pi pico 2w con headers, 14.990 en mci electronics, aprenderemos a usar esta el día de hoy
 
@@ -81,5 +81,3 @@ vscode
 - al final de todo no nos pudimos conectar, este fue el error:
 
 ![error](./imagenes/arduinoerrormqtt.JPG)
-
-

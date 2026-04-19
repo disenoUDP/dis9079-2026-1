@@ -10,14 +10,11 @@ aprendizajes
 
 - cada grupo hará los feed que quiera
 
-
 - estamos haciendo lo del config.h, para que se incluya dentro del .ino
 
+- para la solemne al menos la idea es explicar los errores, explicar los procesos, cómo lo hicimos? podríamos quedarnos con lo de transmitir info
 
--  para la solemne al menos la idea es explicar los errores, explicar los procesos, cómo lo hicimos? podríamos quedarnos con lo de transmitir info
-
--  anotar todos los errores y aciertos, cada paso específico que hicimos, prendimos el botón no se cuántas veces? reiniciamos, desconectamos, cerramos arduino, desconectamos la placa
-
+- anotar todos los errores y aciertos, cada paso específico que hicimos, prendimos el botón no se cuántas veces? reiniciamos, desconectamos, cerramos arduino, desconectamos la placa
 
 **avance lid 8 de abril**
 

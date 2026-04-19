@@ -2,11 +2,9 @@
 
 lunes 13 abril 2026
 
-## primera parte!!
+## primera parte
 
-
-
-## segunda parte!!
+## segunda parte
 
 **cómo usar capacitancia**
 
@@ -35,7 +33,6 @@ usar lo capacitivo como sensor para tener control de 2 cosas
 martín benavides
 
 **ejemplo 2**
-
 
 establecer valores mínimos y máximos
 
