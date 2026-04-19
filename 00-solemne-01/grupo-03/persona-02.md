@@ -322,15 +322,13 @@ Me gusta mucho esta obra por como representa este sistema inorgánico pero a la 
 ### bibliografia
 
 * Rikić, M. (s. f.). About – Mónica Rikić. Recuperado el 9 de abril de 2026, de <https://monicarikic.com/about/>
-* Rikić, M. (s. f.). Projects – Mónica Rikić. Recuperado el 9 de abril de 2026, de https://monicarikic.com/projects/
+* Rikić, M. (s. f.). Projects – Mónica Rikić. Recuperado el 9 de abril de 2026, de <https://monicarikic.com/projects/>
 * Wikipedia. (s. f.). Mónica Rikić. Recuperado el 9 de abril de 2026, de <https://es.wikipedia.org/wiki/Mónica_Rikić>
 
 ### nominaciones o sitios donde participó
 
-* Ars Electronica. (s. f.). Mónica Rikić – Artist Profile. Recuperado el 9 de abril de 2026, de https://ars.electronica.art/
-* Sónar Festival. (s. f.). Mónica Rikić. Recuperado el 9 de abril de 2026, de https://sonar.es/
-* A MAZE. Festival. (s. f.). Nominees & Artists. Recuperado el 9 de abril de 2026, de https://amaze-berlin.de/
-* Japan Media Arts Festival. (s. f.). Archive. Recuperado el 9 de abril de 2026, de https://j-mediaarts.jp/en/
-* Laboral Centro de Arte. (s. f.). Artistas – Mónica Rikić. Recuperado el 9 de abril de 2026, de https://laboralcentrodearte.org/
-
-
+* Ars Electronica. (s. f.). Mónica Rikić – Artist Profile. Recuperado el 9 de abril de 2026, de <https://ars.electronica.art/>
+* Sónar Festival. (s. f.). Mónica Rikić. Recuperado el 9 de abril de 2026, de <https://sonar.es/>
+* A MAZE. Festival. (s. f.). Nominees & Artists. Recuperado el 9 de abril de 2026, de <https://amaze-berlin.de/>
+* Japan Media Arts Festival. (s. f.). Archive. Recuperado el 9 de abril de 2026, de <https://j-mediaarts.jp/en/>
+* Laboral Centro de Arte. (s. f.). Artistas – Mónica Rikić. Recuperado el 9 de abril de 2026, de <https://laboralcentrodearte.org/>
