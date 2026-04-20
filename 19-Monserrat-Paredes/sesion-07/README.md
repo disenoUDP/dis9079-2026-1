@@ -84,6 +84,8 @@ void loop()
 <img width="904" height="501" alt="SESION6" src="https://github.com/user-attachments/assets/a0e2fb09-c48b-40c0-9df9-2f3ee2902da0" />
 
 
+
+
 <img width="631" height="636" alt="TICKERCAD" src="https://github.com/user-attachments/assets/023f0809-6819-4d0e-b945-770ce3fe7345" />
 
 
