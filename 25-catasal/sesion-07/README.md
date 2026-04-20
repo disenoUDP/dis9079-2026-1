@@ -19,7 +19,7 @@ la patita 8 es positivo y la patita izquierda negativo
 mientas tanto la patita de almedio es el que regula 
 analogo A0 a C9 
 
-## conecciones
+# arduino
 
-![conecciones](imagenes/clase1.png)
+![arduino](imagenes/clase1.png)
 
