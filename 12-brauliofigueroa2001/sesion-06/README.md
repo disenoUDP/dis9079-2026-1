@@ -37,3 +37,5 @@ martín benavides
 establecer valores mínimos y máximos
 
 ver grabación ejemplo 2 para entenderlo mejor
+
+**pendiente traspasar los ejemplos del monitor serial aquí como modo de documentación, clase pasada 13/04**
