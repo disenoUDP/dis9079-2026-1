@@ -1,11 +1,11 @@
 # sesion-06
 
-# Capacitive sensing (sensar con capacitancia) 
+## Capacitive sensing (sensar con capacitancia)
 
 Capacitancia como manera de medir distancia.
 
 UNO R4 Capacitive touch
-Biblioteca necesaria: Capacitive_touch 
+Biblioteca necesaria: Capacitive_touch
 
 Arduino UNO R4 wifi pinout:
 
@@ -23,13 +23,13 @@ Library Functions:
 
 `void setThreshold(int threshold)` Determina los umbrales de detección para la sensibilidad del tacto.
 
-`int getThreshold()` Recupera el umbral de detección actual. 
+`int getThreshold()` Recupera el umbral de detección actual.
 
 Aarón nos enseña que significa cada línea del ejemplo de capacitive touch en Arduino IDE.
 
 Antes de correr el código conectar una sola pieza de cualquier material conductor al pin D0 de la placa.
 
-```
+```cpp
 //incluir la biblioteca de capacitive touch
 #include "Arduino_CapacitiveTouch.h"
 
@@ -76,13 +76,12 @@ void loop() {
 
 ```
 
-Aarón nos enseña como hacer un ejemplo calibrado de lo anterior, intenté seguirle la velocidad pero no pude escribirlo todo pero entendí :) 
+Aarón nos enseña como hacer un ejemplo calibrado de lo anterior, intenté seguirle la velocidad pero no pude escribirlo todo pero entendí :)
 (creo)
 
 Ejemplo Calibrado:
 
-```
-
+```cpp
 #include <Arduino_CapacitiveTouch.h>
 
 // referencia
@@ -208,8 +207,4 @@ void loop() {
 }
 ```
 
-
-
-
 lunes 13 abril 2026
-

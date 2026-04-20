@@ -8,11 +8,11 @@ ip 192.168.0.100
 
 *linea 52 Enviar*
 
-*linea 46 recibir* 
+*linea 46 recibir*
 
-dis9079 wifi --> 
+dis9079 wifi -->
 
-*sudo-> no usar* Se usa para hacer cosas dificiles 
+*sudo-> no usar* Se usa para hacer cosas dificiles
 
 *Con sudo, se hace si o si
 
@@ -20,9 +20,6 @@ El ejercicio de los grupos: se lograron conectar, pero no se logró recibir mena
 
 Claude Shannon
 
-https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf
+<https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf>
 
-https://en.wikipedia.org/wiki/User_Datagram_Protocol
-
-
-
+<https://en.wikipedia.org/wiki/User_Datagram_Protocol>

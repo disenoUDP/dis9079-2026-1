@@ -84,7 +84,7 @@ corrección del error
 
 - probaron otro método en que también nos conectamos a una ip pero no me dejó entrar, pude conectarme a la red dis9079 sin internet pero no me dejó entrar a la ip
 
--  pra la solemne 1 cada arduino haga cosas a distancia a una raspi y esa raspi a computador, eso ya es extremo, es suficiente, las cosas son difíciles
+- pra la solemne 1 cada arduino haga cosas a distancia a una raspi y esa raspi a computador, eso ya es extremo, es suficiente, las cosas son difíciles
 
   ```cpp
 #include <ArduinoMqttClient.h>
@@ -208,8 +208,3 @@ actualización 6 de abril en la mañana con aarón
 ![servidorAdafruit](./imagenes/servidorAdafruit2.JPG)
 
 - esto muestra en vivo los datos que están llegando desde arduino hacia el servidor en adafruit, lo logramos amigos
-
-
-
-
-

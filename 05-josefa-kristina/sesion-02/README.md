@@ -59,12 +59,8 @@ delay(1000): espera 1 segundo
 `pantalla.endDraw()`; Fin del dibujo
 }
 
-
-# Mosquitto (open source): 
+# Mosquitto (open source)
 
 MQTT broker
-
-
-
 
 lunes 16 marzo 2026

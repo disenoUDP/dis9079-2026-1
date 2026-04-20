@@ -1,5 +1,6 @@
 # persona-01
-# Antonella Lavalle
+
+Antonella Lavalle
 
 investigaciones individuales
 
@@ -23,8 +24,8 @@ Adafruit IO funciona como un intermediario entre el mundo físico y el mundo dig
 
 ## Dashboards (interfaces visuales)
 
-* Ver datos en gráficos (líneas, gauges, indicadores)
-* Crear botones o sliders para enviar comandos
++ Ver datos en gráficos (líneas, gauges, indicadores)
++ Crear botones o sliders para enviar comandos
 
 Es básicamente una interfaz gráfica conectada a los feeds
 
@@ -32,10 +33,10 @@ Es básicamente una interfaz gráfica conectada a los feeds
 
 Dentro de los dashboards
 
-* Gráficos
-* Interruptores
-* Indicadores
-* Mapas, texto, etc.
++ Gráficos
++ Interruptores
++ Indicadores
++ Mapas, texto, etc.
 
 Cada block está vinculado a un feed
 
@@ -72,7 +73,7 @@ Adafruit IO se puede conectar con:
 
 ## Ventajas
 
-+ Muy accesible 
++ Muy accesible
 + Visualización rápida sin programar interfaces complejas
 + Integración directa con hardware educativo
 
@@ -99,6 +100,7 @@ Tipos de obras que hace.
 + Software creativo: desarrolla herramientas para artistas y diseñadores.
 
 ## Messa di Voce
+
 2003 | Tmema (Golan Levin y Zachary Lieberman) con Jaap Blonk y Joan La Barbara
 
 <img width="665" height="356" alt="image" src="https://github.com/user-attachments/assets/ef4a5584-97c9-4634-a408-e85405b5580c" />

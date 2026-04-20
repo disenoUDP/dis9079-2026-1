@@ -17,22 +17,23 @@ Este cuenta con variadas versiones:
 - Raspberry Pi 500+
 
 - Raspberry Pi Compute Module 5
- 
+
 - Raspberry Pi Zero 2 W
 
-## Aparte tiene su propio chip microcontrolador 😲 :
+## Aparte tiene su propio chip microcontrolador 😲
 
 El RP2040 y la sucesora RP2050, que son el corazón de las placas Raspberry Pi Pico y Raspberry Pi Pico 2 respectivamente.
 
 ## Pico 2
+
 Micro -> Nano -> Pico.
 
 ¨Nosotros usaremos la Raspberry Pi Pico 2 w (viene soldada)
 
-## Más microcomputadores y microcontroladores relacionados:
+## Más microcomputadores y microcontroladores relacionados
 
 - Beagleboard (más caro, más nicho)
-- Bela Platform -> Nime 
+- Bela Platform -> Nime
 - Electro-Smith -> Daisy (para audio) -> Chompi club (cuuuute)
 
 *Ver primer capítulo de Monty Python* 📑 importante

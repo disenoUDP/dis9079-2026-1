@@ -8,7 +8,7 @@ capacitancia unidad material, en inglés se habla de capacitance o capasitor, la
 
 Por ejemplo: Entre medio de las manos hay aire, entonces estos números son una constante porque esto es aire, pero la distancia de mis manos es variable
 
-Cómo usar capacitancia como una manera de medir distancia? 
+Cómo usar capacitancia como una manera de medir distancia?
 
 UNO R4 capacitive-touch
 

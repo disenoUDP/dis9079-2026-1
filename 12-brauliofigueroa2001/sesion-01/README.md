@@ -2,7 +2,7 @@
 
 lunes 09 marzo 2026
 
-## primera clase!!!
+## primera clase
 
 interacciones inalámbricas
 

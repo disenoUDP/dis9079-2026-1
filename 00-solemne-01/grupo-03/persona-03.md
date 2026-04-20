@@ -94,7 +94,7 @@ Y para finalizar te presentan los códigos de Arduino, recordar que para este ca
 
 En este caso el ejemplo adafruitio_13_rgb utiliza los pines 4, 5 y 2 para los colores rojo, verde y azul por defecto. Estos pines se pueden modificar cambiando las definiciones RED_PIN , GREEN_PIN y BLUE_PIN . Deberá seleccionar pines de su placa que admitan salida PWM.
 
-```
+```text
 <font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">/************************ El ejemplo comienza aquí *******************************/ </font></font>
 <font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
 // Pines PWM predeterminados para ESP8266. </font></font><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
@@ -106,7 +106,7 @@ En este caso el ejemplo adafruitio_13_rgb utiliza los pines 4, 5 y 2 para los co
 
 El siguiente fragmento de código configura una instancia del flujo de color.
 
-```
+```text
 <font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">// Configurar el feed 'color' </font></font><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
 AdafruitIO_Feed *color = io.feed("color");</font></font>
 ```

@@ -12,9 +12,9 @@
 
 Al inicio del proyecto, como dupla no sabíamos muy bien qué hacer, estábamos bastante perdidos.
 
-En la última clase, trabajando al unísono con Aarón, fuimos entendiendo mejor el entorno de desarrollo y las posibilidades del Arduino UNO R4 WiFi junto a Adafruit IO.
+En la última clase, trabajando al unísono con Aarón, fuimos entendiendo mejor cómo funciona el Arduino UNO R4 WiFi y las posibilidades que ofrece junto a Adafruit IO.
 
-Dado que todavía no manejamos bien las herramientas, decidimos comenzar con algo simple que nos permitiera comprender lo básico de comunicación entre dispositivos antes de intentar algo más complejo.
+Como todavía no manejamos bien las herramientas, decidimos comenzar con algo simple que nos permitiera comprender lo básico de comunicación entre dispositivos antes de intentar algo más complejo.
 
 ## Investigación y elección del proyecto
 
@@ -24,17 +24,17 @@ En un inicio consideramos otras ideas, pero no las desarrollamos porque aún no 
 
 ### Circuito
 
-Se utilizó un Arduino UNO R4 WiFi conectado a una protoboard con la siguiente configuración:
+Utilizamos un Arduino UNO R4 WiFi conectado a una protoboard con la siguiente configuración:
 
-- GND al negativo de la protoboard
+* GND al negativo de la protoboard
 
-- 3.3V al positivo de la protoboard
+* 3.3V al positivo de la protoboard
 
-- Un LED externo conectado entre positivo y negativo
+* Un LED externo conectado entre positivo y negativo
 
 ![circuito](./imagenes/ilustracion.jpg)
 
-Posteriormente, el LED externo fue reemplazado por el LED integrado de la placa (LED_BUILTIN). Este cambio se realizó debido a que el LED externo no respondía a las instrucciones, por lo que se optó por utilizar el LED integrado.
+Posteriormente, el LED externo lo reemplazamos por el LED integrado de la placa (LED_BUILTIN). Este cambio lo realizamos debido a que el LED externo no respondía a las instrucciones, por lo que optamos por utilizar el LED integrado.
 
 ## Materiales usados en solemne-01
 
@@ -47,7 +47,7 @@ Posteriormente, el LED externo fue reemplazado por el LED integrado de la placa 
 | :------------------ | ------ | -------- | :---- |
 | Protoboard          | $1.500 | x1       | <https://afel.cl/products/mini-protoboard-400-puntos> |
 | Cable Dupont (pack 40 uni.) | $2.900 | x4       | <https://mcielectronics.cl/shop/product/cable-dupont> |
-| Led                 | $70    | x1       | <https://afel.cl/products/diodo-led-5mm-ultrabrillante-blanco> |
+| LED                 | $70    | x1       | <https://afel.cl/products/diodo-led-5mm-ultrabrillante-blanco> |
 
 ## Códigos y funcionamiento
 
@@ -118,10 +118,10 @@ Este código contiene los datos necesarios para conectarse a la red WiFi y a Ada
 
 // 🔐 Tus datos (CAMBIAR si es necesario)
 #define WIFI_SSID "monkiboy"
-#define WIFI_PASS "benja123"
+#define WIFI_PASS "clavewifi"
 
 #define IO_USERNAME "benjaminalvarez21"
-#define IO_KEY "bla bla"
+#define IO_KEY "claveadafruitio"
 
 
 // ESP32 / ESP8266 / UNO R4 WiFi (caso más común)
@@ -136,21 +136,21 @@ Durante el desarrollo surgió un problema, el sistema recibía los datos correct
 
 ![intento fallido](./imagenes/on-off-fallo.gif)
 
-Para resolverlo, se decidió reemplazar el LED externo por el LED integrado (LED_BUILTIN). Este cambio permitió que el sistema funcionara correctamente.
+Para resolverlo, decidimos reemplazar el LED externo por el LED integrado (LED_BUILTIN). Este cambio permitió que el sistema funcionara correctamente.
 
-#### Funcionamiento correcto utilizando el LED integrado del Arduino.
+#### Funcionamiento correcto utilizando el LED integrado del Arduino
 
 [![intento definitivo](https://img.youtube.com/vi/q9Ajooq1Ip0/0.jpg)](https://www.youtube.com/watch?v=q9Ajooq1Ip0)
 
-#### Comunicación con Adafruit IO
+## Comunicación con Adafruit IO
 
-El Arduino se conectó al computador, mientras que las instrucciones se enviaban desde un iPad a través de un dashboard en Adafruit IO.
+El Arduino lo conectamos al computador, mientras que las instrucciones las enviábamos desde un iPad a través de un dashboard en Adafruit IO.
 
-Se trabajó con dos comandos principales:
+Trabajamos con dos comandos principales:
 
-- ON, para encender el LED
+* ON, para encender el LED
 
-- OFF, para apagar el LED
+* OFF, para apagar el LED
 
 Los valores enviados desde el dashboard se registraban en un feed, el cual permitía visualizar el estado del sistema en tiempo real.
 
@@ -168,15 +168,11 @@ Además del funcionamiento principal del LED, hicimos experimentaciones con otra
 
 Primero, probamos el envío de mensajes desde el dashboard, los cuales se visualizan tanto en el monitor serial como en el feed de Adafruit IO.
 
-#### Prueba de envío de mensajes desde Adafruit IO al monitor serial
-
 [![mensajes](https://img.youtube.com/vi/bQc3ydI18RI/0.jpg)](https://www.youtube.com/watch?v=bQc3ydI18RI)
 
-También utilizamos un slider que permite enviar valores numéricos y observar su comportamiento en un gráfico dentro de Adafruit IO.
+También utilizamos un slider que permite enviar valores numéricos y observar su comportamiento en un gráfico dentro de Adafruit IO y en el monitor serial del Arduino IDE.
 
-#### Visualización de valores enviados desde el slider en el gráfico de Adafruit IO
-
-![grafico slider](./imagenes/grafico-feed-slide.png)
+[![mensajes](https://img.youtube.com/vi/D_FXi4-FY18/0.jpg)](https://www.youtube.com/watch?v=D_FXi4-FY18)
 
 #### Dashboard completo
 

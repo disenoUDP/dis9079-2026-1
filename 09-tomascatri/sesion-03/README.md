@@ -3,6 +3,7 @@
 lunes 23 marzo 2026
 
 ## Apuntes
+
 Usaremos MQTT para conectar dispositivos distintos
 
 Usaremos raspberry pi pico 2 w
@@ -19,7 +20,7 @@ En paralelo con arduino, pero los arduinos eran microcontroladores, lo que los v
 
 Raspberry antes compraba chips pero ahora los fabrica el
 
-Korg es un piano hecho con raspberry 
+Korg es un piano hecho con raspberry
 Monome fabrica instrumentos, botones hacen sonidos
 Critter and guitar
 
@@ -39,7 +40,7 @@ Usar extensiones para instalarlo
 
 Usa C/C++
 
-C es mas seguro pero el mundo usa C++ 
+C es mas seguro pero el mundo usa C++
 
 Ver Monty python
 
@@ -60,11 +61,10 @@ Importante hacerlo .cpp
 main=setup
 Ocurre en ese orden
 
-Return -1 hace repetir 
+Return -1 hace repetir
 
 Si lo logra prende el LED
 
 While=si es verdad, procede, se pueden agrgar mas cosas o condiciones
 
 Grupal=Usar mermaid para diagrama
-

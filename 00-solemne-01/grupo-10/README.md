@@ -135,7 +135,6 @@ void loop()
 }
 ```
 
-
 ## investigaciones individuales
 
 [agustinaaceituno](./persona-01.md)

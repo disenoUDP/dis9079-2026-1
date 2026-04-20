@@ -10,15 +10,16 @@ la fundación inglesa Raspberry Pi partió lanzando computadores de bajo costo e
 
 + critterandguitari
 
-## otros microcomputadores que se estan rindiendo:
+## otros microcomputadores que se estan rindiendo
 
 + beagleboard.org: mas nicho, medio feo,
 + bela platform:
 + electro-smith: daisy, microcontrolador para audio, ahora es la base de muchos sintetizadores programados con esto ahora
 
-## instalación para raspberry pi 
+## instalación para raspberry pi
 
-## visual studio code:
+## visual studio code
+
 + usaremos v.2.2.0
 + spi: para conectar el microcontrolador a cosas
 + pico w onboard

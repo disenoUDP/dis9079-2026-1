@@ -1,23 +1,28 @@
 # sesion-02
+
 ## Solemne 1 en equipos
+
 Integrantes: Magda - Jesu - Carla
 
 ## Introducción y primer acercamiento a Arduino Uno R4 Wifi
+
 Arduino se referirá a 3 cosas distintas:
+
 1. Placa de desarrollo
 2. Software Arduino IDE
 3. Dialecto de lenguaje C++
-   
--> Estructura básica de Código Arduino 
+
+-> Estructura básica de Código Arduino
    void setup() {
-   
+
    }
 
    void loop() {
 
    }
 
-   ## Ejemplos :)
+## Ejemplos :)
+
 ```cpp
 // ejemplo01
 // imprime la sigla del curso en la pantalla led
@@ -76,13 +81,10 @@ void loop() {
 }
 ```
 
-
 ## [Mosquitto](https://mosquitto.org/)
 
    mosquitto es un broker de MQTT, que se encarga de recibir y distribuir mensajes entre clientes MQTTT
 
- ## -  Haciendo pruebas con Arduinitossss 😲
+## -  Haciendo pruebas con Arduinitossss 😲
 
-   
 lunes 16 marzo 2026
-

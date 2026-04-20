@@ -43,37 +43,36 @@ A nivel conceptual, su trabajo aborda temas como la autoría, el control y la co
 
 ![artista](./imagenes/aa_Sougwen_Chung.png)
 
-## Bibliografía:
+## Bibliografía
 
 * Adafruit Industries. Welcome to Adafruit IO.
 
-https://learn.adafruit.com/welcome-to-adafruit-io
+<https://learn.adafruit.com/welcome-to-adafruit-io>
 
 * Adafruit Industries. Overview – Adafruit IO.
 
-https://learn.adafruit.com/welcome-to-adafruit-io/overview
+<https://learn.adafruit.com/welcome-to-adafruit-io/overview>
 
 * Arduino.cl. ¿Qué es Arduino?
 
-https://arduino.cl/que-es-arduino/?srsltid=AfmBOor0ej-rGLhlM8f_la78G_qm3S8-8UQ18gRQRC8L37uKfZ8_er8E
+<https://arduino.cl/que-es-arduino/?srsltid=AfmBOor0ej-rGLhlM8f_la78G_qm3S8-8UQ18gRQRC8L37uKfZ8_er8E>
 
 * Adafruit Industries. Adafruit IO Basics: Dashboards.
 
-https://learn.adafruit.com/adafruit-io-basics-dashboards
+<https://learn.adafruit.com/adafruit-io-basics-dashboards>
 
 * Arduino.cl. Arduino Uno R4 WiFi.
 
-https://arduino.cl/producto/arduino-uno-r4-wifi/?srsltid=AfmBOopoBEQvXbbSHon7xpm72ttyMdjYAgu8pn7mpKxAITS9lm2aqAUZ
+<https://arduino.cl/producto/arduino-uno-r4-wifi/?srsltid=AfmBOopoBEQvXbbSHon7xpm72ttyMdjYAgu8pn7mpKxAITS9lm2aqAUZ>
 
 * Arduino. Getting Started with Arduino Uno R4 WiFi.
 
-https://docs.arduino.cc/tutorials/uno-r4-wifi/r4-wifi-getting-started/
+<https://docs.arduino.cc/tutorials/uno-r4-wifi/r4-wifi-getting-started/>
 
 * Sougwen Chung. Sitio oficial.
 
-https://sougwen.com/
+<https://sougwen.com/>
 
 * The Art Newspaper. The human-machine creative entanglement: Sougwen Chung.
 
-https://www.theartnewspaper.com/2026/03/26/the-human-machine-creative-entanglement-artist-sougwen-chung-on-her-technology-based-practice
-
+<https://www.theartnewspaper.com/2026/03/26/the-human-machine-creative-entanglement-artist-sougwen-chung-on-her-technology-based-practice>

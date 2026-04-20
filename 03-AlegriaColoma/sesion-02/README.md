@@ -6,7 +6,7 @@ Grupo S1: Martina Alegría, Catalina Salinas y Antonella Lavalle.
 
 ## Instalación de Software
 
--Arduino IDE 2.3.8 
+-Arduino IDE 2.3.8
 
 ## Instalacion de Bibliotecas adicionales
 
@@ -16,17 +16,14 @@ Grupo S1: Martina Alegría, Catalina Salinas y Antonella Lavalle.
 
 -Library Manager -> ArduinoGraphics (v1.1.4 o más reciente)
 
-## Iconos 
+## Iconos
 
-{ = murcielago 
+{ = murcielago
 ( = paréntesis
 [ = corchete
 
-## Practicando los ejemplcos 
+## Practicando los ejemplcos
 
 Ejemplo 00 --> Fallo en la linea 10 (ArduinoLEDMatrix pantalla;)
 
-Ejemplo 01 --> #include debe ir en minusculas 
-
-
-
+Ejemplo 01 --> #include debe ir en minusculas

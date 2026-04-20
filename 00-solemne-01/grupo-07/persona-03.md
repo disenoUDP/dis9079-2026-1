@@ -52,19 +52,18 @@ Si bien la tecnología LED portátil ya había sido abordada por algunas marcas 
 
 **Multimedia**
 
--GIF 1: Extracto de pasarela "GHOST" https://www.youtube.com/watch?v=ELF8gXfzCU0
+-GIF 1: Extracto de pasarela "GHOST" <https://www.youtube.com/watch?v=ELF8gXfzCU0>
 
--GIF 2: Extracto de pasarela "SCREEN" https://www.youtube.com/watch?v=U8_Fa4Cdb_0&t=584s
+-GIF 2: Extracto de pasarela "SCREEN" <https://www.youtube.com/watch?v=U8_Fa4Cdb_0&t=584s>
 
--GIF 3: Extracto de concierto de Beyonce https://www.youtube.com/shorts/eaKBgUW2G68
-
+-GIF 3: Extracto de concierto de Beyonce <https://www.youtube.com/shorts/eaKBgUW2G68>
 
 **Bibliografia**
 
-<-https://mplpl.com/projects/2023-11-02-00>
+<-<https://mplpl.com/projects/2023-11-02-00>>
 
-<-https://www.lvmhprize.com/en/anrealage>
+<-<https://www.lvmhprize.com/en/anrealage>>
 
-<-https://sg.news.yahoo.com/beyonc-anrealage-led-dress-cowboy-220458574.html>
+<-<https://sg.news.yahoo.com/beyonc-anrealage-led-dress-cowboy-220458574.html>>
 
-<-https://www.irkmagazine.com/post/anrealage-fw26-a-retro-future-vision-of-identity/>
+<-<https://www.irkmagazine.com/post/anrealage-fw26-a-retro-future-vision-of-identity/>>

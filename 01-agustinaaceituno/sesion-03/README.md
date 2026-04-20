@@ -12,7 +12,6 @@ Haciendo que arduino sea el que envía, mientras que raspberry reciba
 
 ![proceso](./imagenes/visualstudio.png)
 
-
 ## referencias
 
 monome: máquinas de sonido para la exploración del tiempo y el espacio
@@ -31,7 +30,7 @@ personal computer: pc
 
 especificar bitacora solemne detallado materiales,agregar referencias, ver las distintas versiones del proceso
 
-mermaid.js - editor en vivo, programar driagramar el proceso, manera de ser 
+mermaid.js - editor en vivo, programar driagramar el proceso, manera de ser
 
 arduino envia, raspberry recibe
 
@@ -43,11 +42,12 @@ cambiar numero de grupo en ejemplos
 
 ordenar codigo, saber como hacer que la luz prenda para despues sea inalambrico
 
-## Bibliografía:
+## Bibliografía
+
 * Raspberry Pi. Raspberry Pi Pico 2 W con Headers.
   
-https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers
+<https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers>
 
 * Microsoft. Visual Studio Code.
 
-https://code.visualstudio.com/
+<https://code.visualstudio.com/>

@@ -32,7 +32,7 @@ El proceso de funcionamiento es el siguiente:
 
 ### Recursos disponibles
 
-En la plataforma de Adafruit se pueden encontrar: https://learn.adafruit.com/welcome-to-adafruit-io/arduino-and-adafruit-io?
+En la plataforma de Adafruit se pueden encontrar: <https://learn.adafruit.com/welcome-to-adafruit-io/arduino-and-adafruit-io>?
 
 * Guías desde nivel básico hasta avanzado
 * Proyectos con Arduino, sensores y pantallas
@@ -55,7 +55,6 @@ La organización del código suele ser:
 * **Archivo `config.h`:** Guarda las credenciales (usuario, clave y red WiFi), permitiendo mantener el código ordenado y seguro.
 
 ---
-
 
 Proceso de instalación
 
@@ -102,7 +101,7 @@ Lo que más destaca en el trabajo de Mariko Mori es cómo la tecnología deja de
 
 ---
 
-### Flujo de experiencia 
+### Flujo de experiencia
 
 A diferencia de sistemas técnicos tradicionales, en su obra el flujo no es solo **input → procesamiento → output**, sino que se transforma en una experiencia sensorial completa.
 
@@ -133,10 +132,11 @@ El trabajo de Mariko Mori demuestra que la tecnología puede ir más allá de su
 ---
 
 ## Bibliografia
-Adafruit Industries. (s.f.). Adafruit IO Arduino. Adafruit Learning System. https://learn.adafruit.com/adafruit-io/arduino
 
-Adafruit Industries. (s.f.). Adafruit IO Arduino library. GitHub. https://github.com/adafruit/Adafruit_IO_Arduino
+Adafruit Industries. (s.f.). Adafruit IO Arduino. Adafruit Learning System. <https://learn.adafruit.com/adafruit-io/arduino>
 
-Adafruit Industries. (s.f.). Adafruit IO basics: Feeds. Adafruit Learning System. https://learn.adafruit.com/adafruit-io-basics-feeds
+Adafruit Industries. (s.f.). Adafruit IO Arduino library. GitHub. <https://github.com/adafruit/Adafruit_IO_Arduino>
 
-Arduino. (s.f.). Arduino reference. https://www.arduino.cc/reference/en/
+Adafruit Industries. (s.f.). Adafruit IO basics: Feeds. Adafruit Learning System. <https://learn.adafruit.com/adafruit-io-basics-feeds>
+
+Arduino. (s.f.). Arduino reference. <https://www.arduino.cc/reference/en/>

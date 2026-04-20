@@ -22,11 +22,13 @@ Después instalé el Arduino IDE, que es el programa que permite escribir y carg
 - Abrir el administrador de bibliotecas
   
 Instalar bibliotecas:
+
 - Adafruit MQTT Library
 - ArduinoHTTPClient
 - Adafruit IO Arduino
   
 Luego se configura el código agregando:
+
 - Nombre y contraseña del WiFi
 - Usuario de Adafruit IO
 - AIO Key de Adafruit IO
@@ -53,7 +55,7 @@ Para que la conexión funcione, es necesario ingresar en el código los siguient
 
 - Usuario de Adafruit IO
 - AIO Key de Adafruit IO
-- Nombre de la red WiFi 
+- Nombre de la red WiFi
 - Contraseña de la red WiFi
   
 Sin esta información, el dispositivo no puede conectarse ni enviar datos.
@@ -152,7 +154,7 @@ Elegí a Ying Gao y su obra Incertitudes porque me gusta mucho lo que quiere rep
 
 Me gusta cómo tiene una crítica más profunda y cómo muestra que hoy todo es rápido e inestable, reflejándolo en la ropa, que siempre está cambiando y no se sabe cómo va a reaccionar, igual que en la vida, donde no todo se puede controlar.
 
-Recomiendo mucho ver sus otras obras :)  https://yinggao.ca/
+Recomiendo mucho ver sus otras obras :)  <https://yinggao.ca/>
 
 ### Referentes extra
 
@@ -161,6 +163,7 @@ También encontré artistas en Spotify que me parecieron interesantes:
 - Holly Herndon – <https://open.spotify.com/intl-es/artist/2c9yn5DJQd5es7YMY92ikZ>
   
 Usa una IA creada por ella y su equipo para hacer música, donde la voz y los datos se transmiten y procesan digitalmente.
+
 - Ryoji Ikeda – <https://open.spotify.com/intl-es/artist/5y835stYdAVOoNOq5EBMxz>
   
 Hace música con datos y señales digitales, mostrando cómo la información se transmite y se convierte en sonido.

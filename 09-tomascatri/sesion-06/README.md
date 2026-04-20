@@ -11,15 +11,17 @@ lunes 13 abril 2026
 * Como los dispositivos touch screen
 
 ### Arduino UNO R4 WiFi
+
 * Es posible hacer que con una mano dependiendo de la distancia de la mano con el sensor cambien valores del arduino.
 * Casi todas las patitas del arduino tienen diferentes funciones
 * Arduino tiene una pantallita y abajo esta power donde se le puede dar potencia o prender
 
 **Para hacerlo necesitamos:**
+
 * cualquierr cable
 * algo que afecte al campo electromagnetico
 
-**Ejemplo del codigo y como funciona en el arduino**
+Ejemplo del codigo y como funciona en el arduino
 
 * Añadir libreria de CapacitiveTouch arduino
 * **CapacitiveTouch(uint8_t pin)** Constructs a capacitive touch sensor for the given pin.
@@ -31,10 +33,8 @@ lunes 13 abril 2026
 * El ejemplo dice conectar el sensor al D0
 * Actualizar valores maximos y minimos
 
-
 ### stylophone
+
 * STYLOPHONE S1
 * Theremin usa antenas para producir sonidos,mas lejos la mano suena mas el volumen, si lo toca se apaga con la otra antena vertical se detecta la distancia y con eso oscila las notas, hay un chileno que usa esto llamado martin benavides
 ![Gato usando theremin](./imagenes/cat_plays_theremin.gif)
-
-

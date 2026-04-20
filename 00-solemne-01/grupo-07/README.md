@@ -15,6 +15,7 @@ El Arduino se conecta a una red Wi-Fi y establece comunicación con Adafruit IO 
 ![Diagrama conexiones](./imagenes/Capturadepantalla.png)
 
 ### Proceso conexiones inalámbricas
+
 ![Diagrama conexiones](./imagenes/diagrama-nube.png)
 
 Comenzamos utilizando el código de ejemplo que Aarón subió a GitHub para aprender cómo funcionaban las conexiones basadas en la nube. Al principio no funcionaba y, tras un tiempo investigando, descubrimos que las credenciales eran incorrectas: estábamos usando la contraseña personal del sitio en lugar de la AIO Key (una clave alfanumérica que proporciona Adafruit IO para la conexión).
@@ -170,7 +171,6 @@ rellenar en el mismo orden que los integrantes del grupo
 
 **Adafruit IO basics color** <https://learn.adafruit.com/adafruit-io-basics-color>
 
-**Arduino cheat sheet** https://docs.arduino.cc/tutorials/uno-r4-wifi/cheat-sheet/
+**Arduino cheat sheet** <https://docs.arduino.cc/tutorials/uno-r4-wifi/cheat-sheet/>
 
-**Tutorial Adafruit IO** https://mkelectronica.com/aprende-a-utilizar-la-plataforma-adafruit-io-para-tus-dispositivos-iot-parte-1/
-
+**Tutorial Adafruit IO** <https://mkelectronica.com/aprende-a-utilizar-la-plataforma-adafruit-io-para-tus-dispositivos-iot-parte-1/>

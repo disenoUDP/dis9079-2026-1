@@ -1,6 +1,28 @@
-# sesion-04
+# sesion-04 - lunes 30 marzo 2026
 
-lunes 30 marzo 2026
+En esta clase instalamos y configuramos el entorno para comunicación inalámbrica. El foco estuvo en lograr que el Arduino mandara y recibiera señales a través de un Broker MQTT (Mosquitto) instalado en la Raspberry Pi. También vimos la base teórica de todo esto con Claude Shannon y cómo la información se transforma en bits para viajar por el "ruido" del aire.
+
+1. **TigerVNC:** Lo instalamos (brew install tiger-vnc) para ver el escritorio de la Raspberry Pi por IP de forma remota.
+2. **Comandos sudo:** sudo es "Super User Do". Es peligroso si no sabes qué haces; por ejemplo, sudo rm -rf borra el disco completo. No tocar.
+3. Puerto: 1883 es el estándar MQTT.
+4. UDP (User Datagram Protocol): Lo vimos como alternativa rápida para streaming o juegos, porque manda paquetes sin verificar conexión (ideal para baja latencia).
+5. MQTT: Más estructurado, permite enviar texto, números y links. Una vez subido el código, el dispositivo es autónomo y no necesita el PC.
+
+### Bugs y errores de conexión
+
+* Detección de Bugs: Un bug es cuando algo falla o no debería pasar. En clase nos tiró errores de conexión constantes.
+* Solución: Metimos un delay(2000) en el setup para que, si falla, espere 2 segundos y reintente solo hasta conectar.
+* Dato técnico: Ojo con confundir ID y Username, no son lo mismo y eso nos trancó un rato.
+
+### Teoría de la Información (Claude Shannon)
+
+Shannon es el padre de la era digital. Él inventó el concepto de BIT (Binary Digit) y definió el modelo de comunicación que estamos usando:
+
+    Fuente: Arduino.
+    Transmisor: Chip WiFi.
+    Canal: Aire (ondas de radio).
+    Ruido: Interferencias (lo que ensucia la señal y hace que salgan signos de interrogación).
+    Receptor: Broker/Adafruit.
 
 **Claude Shannon invented the future** 
 
@@ -17,32 +39,20 @@ https://docs.arduino.cc/tutorials/uno-r4-wifi/wifi-examples/#wi-fi-udp-send-rece
 2. Web Server: Cómo crear una página web interna que puedas ver desde tu celular para prender luces, por ejemplo.
 3. Network Scan: Cómo hacer que el Arduino busque redes Wi-Fi cerca.
 
+### Bibliografía y referentes 
 
-1. Lo que estás usando (MQTT/TCP): Es como una llamada por teléfono. Te aseguras de que la otra persona te escucha y si algo se corta, lo repites hasta que llegue bien. Es seguro pero un poco más lento.
-2. UDP: Es como tirar volantes desde un avión. ✈️ Mandas la información súper rápido, pero no te importa si alguien no los agarra o si algunos se pierden en el camino.
+* Apple. (s.f.). *Acerca de Rosetta*. https://support.apple.com/es-cl/102527
 
-## Apuntes de la Sesión: Protocolos y Conectividad
-Durante esta sesión trabajamos en la conexión inalámbrica de la placa **Arduino UNO R4 WiFi** utilizando el protocolo MQTT. 
+* BBC News Mundo. (s.f.). *Claude Shannon: el padre de la teoría de la información*. https://www.bbc.com/mundo/articles/cn0yxddw9dwo
 
-### 1. Conceptos Clave 
+* Cloudflare. (s.f.). *¿Qué es UDP (User Datagram Protocol)?*. https://www.cloudflare.com/es-es/learning/ddos/glossary/user-datagram-protocol-udp/
 
-1. MQTT (Message Queuing Telemetry Transport) > Es el protocolo que estamos usando en el taller. Funciona bajo un modelo de publicación/suscripción. Es ideal para IoT porque es ligero y eficiente para enviar datos entre sensores y actuadores. > 
-UDP (User Datagram Protocol)> Es un protocolo de comunicación rápido pero "no confiable" (no asegura que todos los datos lleguen). Se diferencia del que usamos nosotros en que no establece una conexión fija antes de enviar datos. Dato: No confundir con las siglas de nuestra universidad.
+* HiveMQ. (s.f.). *HiveMQ*. https://www.hivemq.com/
 
-2. Diferencia entre ID y Username en MQTT mqttId:Es el identificador único de mi placa en la red. Si dos placas tienen el mismo ID, hay conflicto. * Username: Es la credencial de seguridad (en nuestro caso `dis9079`) que nos permite acceder al servidor (broker). 
+* MQTT.org. (s.f.). *MQTT: The Standard for IoT Messaging*. https://mqtt.org/
 
-3. Código de Recepción y Envío Logré cargar el código `recibirArduino.ino` con éxito. La placa se conecta al broker `192.168.0.100` y envía un mensaje alternando un "numerito" entre 0 y 1 cada 5 segundos.
+* Mosquitto. (s.f.). *Mosquitto*. https://mosquitto.org/
 
-💡WiFi Chat Server
-
-Convierte tu Arduino en un pequeño "servidor de mensajes". Imagina que es como crear tu propia sala de chat de WhatsApp, pero que solo funciona dentro de la red Wi-Fi donde está conectada la placa.
-
-    ¿Cómo funciona? Alguien se conecta a la dirección IP de tu Arduino (usando algo llamado Telnet) y puede escribir mensajes que aparecen en tu Monitor Serial.
-    ¿Qué hace el código? Recibe lo que un usuario escribe y se lo "rebota" (echo) para que los demás también lo vean.
-
-Diferencia con lo hice:
-
-    El código anterior (MQTT): Usa un intermediario (el "broker") para enviar y recibir datos. Es el estándar para conectar miles de dispositivos de forma ordenada.
-    Este código (Chat Server): Es una conexión directa. Tú eres el dueño del servidor. Es un ejemplo clásico para aprender cómo funciona la arquitectura de internet (Cliente-Servidor).
+* TigerVNC. (s.f.). *TigerVNC*. https://tigervnc.org/
 
 Explicando la solemne 1

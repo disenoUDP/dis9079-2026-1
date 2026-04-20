@@ -12,7 +12,7 @@ Conectar el arduino (placa) al computador, abrir la app, y buscar el Filmware Up
 
 crear el archivo con el codigo de discord
 
--Crear el config.h -> Cambiar lineas 3 y 4, 8 y 9 
+-Crear el config.h -> Cambiar lineas 3 y 4, 8 y 9
 
 ## codigo para enviar
 
@@ -22,6 +22,6 @@ Cambiar la Baud en arduino 115200
 
 -Probar los codigos para enviar
 
-No funcionó en los primero 5 intentos, cambiando claves y hostpot, luego nos fijamos en que el nombre del hostpot le fallaba la mayuscula, volvimos a intentar y tampoco funcionó. 
+No funcionó en los primero 5 intentos, cambiando claves y hostpot, luego nos fijamos en que el nombre del hostpot le fallaba la mayuscula, volvimos a intentar y tampoco funcionó.
 
 finalmente despues de probar con el profe, colocamos un hostpot bien escrito y si funcionó :D

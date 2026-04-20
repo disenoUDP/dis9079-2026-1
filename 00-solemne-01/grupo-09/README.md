@@ -17,7 +17,7 @@ Por esta razón, se optó por trabajar con el envío y recepción de texto. A tr
 
 ## Materiales
 
-| Material              | Cantidad | Descripción                          | Valor aproximado |
+| Material             | Cantidad | Descripción                          | Valor aproximado |
 |----------------------|----------|--------------------------------------|------------------|
 | Arduino UNO R4 WiFi  | 1        | Placa principal con conectividad WiFi| $30.000 CLP      |
 | Cable USB tipo A     | 1        | Conexión entre Arduino y computador  | $3.000 CLP       |
@@ -60,7 +60,7 @@ Intentamos replicar el proceso enviando otros mensajes como “OFF”, pero esto
 
 <https://github.com/user-attachments/assets/cc8b1825-d7d3-46d0-aa7d-2ac7c3fd2a4d>
 
-Finalmente, observamos que en varias ocasiones la conexión fallaba debido a problemas de internet. En esos casos, era necesario desconectar y volver a conectar el Arduino, además de esperar a que el sistema lograra reconectarse. Esto nos permitió concluir que la conexión a la red es un factor crítico para el correcto funcionamiento de este tipo de proyectos. 
+Finalmente, observamos que en varias ocasiones la conexión fallaba debido a problemas de internet. En esos casos, era necesario desconectar y volver a conectar el Arduino, además de esperar a que el sistema lograra reconectarse. Esto nos permitió concluir que la conexión a la red es un factor crítico para el correcto funcionamiento de este tipo de proyectos.
 
 ### código para recibir
 

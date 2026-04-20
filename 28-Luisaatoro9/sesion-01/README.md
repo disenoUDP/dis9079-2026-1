@@ -34,14 +34,18 @@ El profe mencionó nombres y herramientas que son base para lo que viene:
 
 <div align="left">
 
-### Bibliografía:
+### Referencias
 
-* **AcademiaLab.** [Casey Reas: Biografía y obra](https://academia-lab.com/enciclopedia/casey-reas/)
-* **Amazon Web Services (AWS).** [¿Qué es Flutter? - Explicación técnica](https://aws.amazon.com/what-is/flutter/)
-* **El Universal.** [Entrevista a Rafael Lozano-Hemmer](https://confabulario.eluniversal.com.mx/ahora-son-las-obras-las-que-miran-al-publico-rafael-lozano-hemmer/)
-* **Future Music España.** [El protocolo OSC y su ventaja frente al MIDI](https://www.futuremusic-es.com/protocolo-open-sound-control-osc-enriquece-produccion-musical/)
-* **MIT Press.** [El legado de Muriel Cooper](https://mitpress.mit.edu/celebrating-muriel-coopers-legacy-on-world-design-day/)
-* **MQTT.org.** [Especificaciones del protocolo MQTT](https://mqtt.org/)
-* **UNIR México.** [La semiótica en el diseño](https://mexico.unir.net/noticias/ingenieria/que-es-semiotica-diseno-grafico/)
+* AcademiaLab. (s.f.). *Casey Reas: Biografía y obra*. https://academia-lab.com/enciclopedia/casey-reas/
 
-</div>
+* Amazon Web Services (AWS). (s.f.). *¿Qué es Flutter? - Explicación técnica*. https://aws.amazon.com/what-is/flutter/
+
+* El Universal. (s.f.). *Ahora son las obras las que miran al público: Rafael Lozano-Hemmer*. https://confabulario.eluniversal.com.mx/ahora-son-las-obras-las-que-miran-al-publico-rafael-lozano-hemmer/
+
+* Future Music España. (s.f.). *El protocolo Open Sound Control (OSC) enriquece la producción musical*. https://www.futuremusic-es.com/protocolo-open-sound-control-osc-enriquece-produccion-musical/
+
+* MIT Press. (s.f.). *Celebrating Muriel Cooper’s legacy on World Design Day*. https://mitpress.mit.edu/celebrating-muriel-coopers-legacy-on-world-design-day/
+
+* MQTT.org. (s.f.). *MQTT: The Standard for IoT Messaging*. https://mqtt.org/
+
+* UNIR México. (s.f.). *¿Qué es la semiótica en el diseño gráfico?*. https://mexico.unir.net/noticias/ingenieria/que-es-semiotica-diseno-grafico/

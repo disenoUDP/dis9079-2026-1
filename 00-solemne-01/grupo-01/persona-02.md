@@ -81,7 +81,6 @@ Software utilizado:
 
 <img width="445" height="386" alt="Libreria arduino" src="https://github.com/user-attachments/assets/d41cf0e5-0742-459a-81c9-512495ffe6f0" />
 
-
 ## Aprendizajes
 
 - Las bibliotecas no funcionan solas: necesitan dependencias.
@@ -89,7 +88,6 @@ Software utilizado:
 - Arduino automatiza la instalación, pero hay que aceptar manualmente.
 
 - La versión de biblioteca puede afectar compatibilidad.
-
 
 ## Creación de cuenta en Adafruit IO
 
@@ -103,15 +101,11 @@ Software utilizado:
 
 Así se ve cuando creas la cuenta y configuraciones:
 
-
 <img width="1244" height="785" alt="inicio sesion" src="https://github.com/user-attachments/assets/22641bc6-16a8-4bef-be95-4d321ec27b9f" />
-
 
 Después de crear la cuenta se ve así el inicio de sesión:
 
-
 <img width="1374" height="736" alt="inicio io" src="https://github.com/user-attachments/assets/176ee3ef-e288-40c9-aaba-d337fe1b199c" />
-
 
 ## Tener en cuenta por seguridad
 
@@ -149,7 +143,6 @@ El sistema funciona con dos archivos:
 
 - 5.2 Archivo config.h
 
-
 ## Desarrollo Proyecto solemne 01: En clases
 
 Objetivo: Que los objetos "hablen" entre sí sin cables.
@@ -184,7 +177,6 @@ define IO_KEY "xxxx"
 
 Sin esto, Arduino no puede conectarse.
 
-
 ## Función importante
 
 ```cpp
@@ -195,20 +187,17 @@ Mantiene la conexión activa.
 
 Permite recibir datos.
 
-
 ## Creación de feed
 
 AdafruitIO_Feed *nombreFeed = io.feed("grupo01");
 
 Define el canal de comunicación
 
-
 ## Envío de datos
 
 nombreFeed->save(contador);
 
 Envía datos a la nube
-
 
 ## Problemas durante el proceso
 
@@ -218,9 +207,7 @@ Envía datos a la nube
   
 - Causa: baudios incorrectos
 
-
 <img width="621" height="530" alt="signos de interrogación arduino" src="https://github.com/user-attachments/assets/f9aefffe-a976-495b-8ea8-77d04a10206f" />
-
 
 ## Solución
 
@@ -230,30 +217,21 @@ Envía datos a la nube
 
 - Se corrigió a 115200
 
-
 <img width="1112" height="589" alt="Baudio auduino" src="https://github.com/user-attachments/assets/65ba7c18-ab59-43ae-88b0-3bdae3e7ecaf" />
-
 
 ## 2. El "Botón de Reset" accidental
 
 Al conectar el pulsador al pin A0, se generó un puente eléctrico que replicó la función del botón de reinicio maestro de la placa. Esto permitió que, al presionar el botón en la protoboard, el Arduino se reiniciara por completo, tal como si hubieras presionado el botón rojo integrado en la placa.
 
-
 El cableado o el contacto en la protoboard activó el sistema de Reset. Esto corta la corriente por un milisegundo y obliga al programa a empezar desde cero.
-
 
 ![conexiones](https://github.com/user-attachments/assets/6bfb2ee4-a20b-4b3c-a39b-f006728e982c)
 
-
 ![boton reset](https://github.com/user-attachments/assets/9651f897-9fdf-4552-9906-e6e76dd1af50)
-
-
 
 Datos visualizados en Adafruit IO
 
-
 <img width="1470" height="956" alt="prueba 1 grupo01" src="https://github.com/user-attachments/assets/06febfc2-47be-4c84-9614-2be0a94c92ba" />
-
 
 ## Código final funcional (Ya validado en clases)
 
@@ -263,26 +241,19 @@ Datos visualizados en Adafruit IO
 
 - Conexión estable a Adafruit IO.
 
-
 ## Solución: Reasignación de Pines
 
 Se movió la conexión del pulsador del pin A0 al Pin 1.
-
 
 El conflicto eléctrico desapareció, permitiendo que el botón cumpliera su función real: enviar una señal digital que el Arduino procesa y transmite exitosamente a la nube en Adafruit IO.
 
 <https://github.com/user-attachments/assets/7d37e7d6-8936-4bfe-80cf-9d870718c144>
 
-
 Adafruit IO para ver gráficos en tiempo real con los datos enviados.
-
 
 <img width="1470" height="956" alt="prueba 2 grupo01" src="https://github.com/user-attachments/assets/7f8acb54-61d5-4375-9776-09911aa10fb1" />
 
-
 <img width="1470" height="956" alt="prueba 3 grupo01" src="https://github.com/user-attachments/assets/bfdf2bf6-948d-4b50-9b00-93c9e9332339" />
-
-
 
 ## Reflexión del proceso
 
@@ -295,7 +266,6 @@ Aprendizajes técnicos:
 - Uso de plataformas IoT.
 
 - Comunicación entre dispositivos remotos.
-
 
 Aprendizajes prácticos:
 
@@ -311,13 +281,11 @@ Aprendizajes prácticos:
 
 Siempre hay que colocar esa línea, para que el arduino no olvide el adafruit IO
 
-
 ```cpp
 io.run();
 ```
 
 Es para ver lo que manda el otro arduino en adafruit
-
 
 ```cpp
 io.feed();
@@ -442,25 +410,19 @@ Sus obras son robots biotecnológicos que viven en entornos de ríos contaminado
 
 - Inalámbrico/IoT: El robot se desplaza de forma autónoma buscando agua contaminada para "alimentarse". Transmite datos sobre la calidad del agua y su propia ubicación, creando un mapa vivo de la degradación ambiental. Es, literalmente, un "sensor vivo" que habita la ciudad.
 
-
 Fotos del proyecto:
 
 ![plantas nomadas1](https://github.com/user-attachments/assets/4a845657-1d32-436e-b5f1-31cf06fae21d)
 
 ![plantas nomadas2](https://github.com/user-attachments/assets/12098d65-fc21-40b3-816b-1f9296989a3f)
 
-
 Dibujo de la contaminación (problematica)
-
 
 <img width="1470" height="956" alt="plantas nomadas4" src="https://github.com/user-attachments/assets/c39dbe2f-59db-46e8-9725-92ee6973f528" />
 
-
 Planta Nómada Fitocrista errantis:
 
-
 <img width="901" height="1030" alt="plantas nomadas3" src="https://github.com/user-attachments/assets/8b325e61-9955-4f7e-b968-e2413661cb5a" />
-
 
 Uso de Tecnología: Robótica autónoma y sensores de agua.
 
@@ -475,4 +437,3 @@ Proyecto: <https://gilbertoesparza.net/portfolio/plantas-nomadas/>
 Video descriptivo: <https://www.youtube.com/watch?v=US9q2ayKANk&t=2s>
 
 Redes sociales: <https://www.instagram.com/gilbertoesparzaglez/>
-

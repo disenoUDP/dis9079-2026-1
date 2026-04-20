@@ -47,8 +47,8 @@ El diseño de la interacción: El valor de este proyecto no está en el dibujo f
 
 ### Bibliografía
 
-• Sougwen Chung. (s.f.). Drawing Operations Unit Generation (DOUG). Recuperado de: https://sougwen.com  
+• Sougwen Chung. (s.f.). Drawing Operations Unit Generation (DOUG). Recuperado de: <https://sougwen.com>  
 
-• Ars Electronica. (s.f.). Sougwen Chung: Drawing Operations. Recuperado de: https://ars.electronica.art  
+• Ars Electronica. (s.f.). Sougwen Chung: Drawing Operations. Recuperado de: <https://ars.electronica.art>  
 
-• MIT Media Lab. (s.f.). Human-Machine Interaction and Creative Systems. Recuperado de: https://www.media.mit.edu  
+• MIT Media Lab. (s.f.). Human-Machine Interaction and Creative Systems. Recuperado de: <https://www.media.mit.edu>  
