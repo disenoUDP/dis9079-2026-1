@@ -118,4 +118,19 @@ void loop()
 
 <img src="./imagenes/arduino_servo.png" alt="servo" width="600">
 
-<img src="./imagenes/servo.gif" alt="servo" width="300">
+<img src="./imagenes/servo.gif" alt="servo" width="200">
+
+## Adafruit
+
+- Ahora mandaremos una señal desde Adafruit para ver en la data los cambios del potenciómetro, desde la nube
+- Cambiar desde "credenciales", desde la línea 7 hasta la 13
+
+**Utilizamos un código en donde se mueve ek servo mediante el potenciómetro; Adafruit lee estos valores y los representa en una data.**
+
+- *no podemos subir el código pipipi:(* pero aquí está el link donde se ve la data.
+
+<https://io.adafruit.com/udpmontoyamoraga/feeds/potenciometro-grupo08>
+
+<img src="./imagenes/arduino_servo.png" alt="servo" width="600">
+
+
