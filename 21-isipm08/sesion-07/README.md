@@ -6,17 +6,23 @@ lunes 20 abril 2026
 + Componente eléctronico pasivo, actúa como resistencia variable manualmente
 + 3 terminales: modifica resistencia eléctrica de un circuito
 + Permite controlar intensidad, corriente y voltaje
-  
+
+ ![titulo](./imagenes/potenciometro.webp)
+ 
 ## LDR
 + Componente eléctronico cuya resistencia varía de forma inversamente proporcional a la luz
 + Más luz menor resistencia - mayor oscuridad mayor resistencia
 
+![titulo](./imagenes/ldr.jpg)
+
 ## Servo
 + Tres terminales 
-  - Alimentación (naranjo) 
-  - Tierra (café)
-  - Donde se dirige (amarilla)
+  - Alimentación (rojo) 
+  - Tierra (negro /café)
+  - Donde se dirige, le llega la instrucción, comunicación (amarilla)
 + Usa retoalimentación (potenciómetro + circuito eléctrico) para girar a ángulos específicos o mantener su posición
+
+![titulo](./imagenes/servo.jpg)
 
 ## Protoboard (breadboard) 
 + Placa de pruebas
@@ -29,9 +35,19 @@ lunes 20 abril 2026
 + f g h i j: mismo metal de forma horizontal
 + GND: TIERRA
 
+![titulo](./imagenes/protoboard.jpg)
+
 ## Cad
 computer aided design
 
+## Tinkercad
++ Realizamos el circuito simulado en tinkercad, de esta forma es más fácil graficarlo para luego probarlo.
+
+![titulo](./imagenes/tinkercad1.png)
+
+![titulo](./imagenes/tinkercad2.png)
+
+![titulo](./imagenes/adafruit.png)
 ## Código mover la manito :)
 ```cpp
 
@@ -199,4 +215,3 @@ void loop()
   lectura = analogRead(A0);
   Serial.println(lectura);
 }
-
