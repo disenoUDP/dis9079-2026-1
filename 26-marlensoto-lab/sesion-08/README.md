@@ -39,3 +39,7 @@ adafruit_ticks
 para que funcione el codigo
 #### Recordatorio.grabar el codigo 
 ## potenciometro en la rasperry pi pico 
+![raspberry](imagenes/potenciometro.jpg)
+![raspberry](imagenes/potenciometro_coneccion.jpg)
+## Para la solemne 2 
+agregaremos un boton para que se envien los datos de manera mas rapida 
