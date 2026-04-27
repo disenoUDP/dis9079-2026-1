@@ -55,6 +55,41 @@ descargamos 10.2.0, el archivo uf2
 
 **insertar pantallazo de la terminal al poner OPEN en putty**
 
+
+## BREAK Y PARTE 2
+
+ahora enviaremos el potenciómetro a adafruit
+
+- potenciómetro -> raspi -> adafruit io
+
+¿cómo conectamos el potenciómetro a la raspi en la proto?
+
+**insertar foto de conexión de potenciómetro**
+
+- ADC, capaz de convertir algo en análogo a digital, es como la patita A0 de arduino, por eso conectamos a ese lugar
+
+**poner paso a paso de lo que hicimos cuando salimos adelante en la clase**
+
+- nos conectamos a la red de aarón, algo importante que faltaba y que siempre hay que hacer es grabar el código, no debe aparecer un círculo arriba en el archivo, cuando aparece un círculo significa que no está grabado
+
+**análisis del código de python**
+
+- pool tiene que ver con el wifi, línea 13 le da las reglas al mqtt, aquí aparece el wifi y las llaves
+
+- mqtt.connect() esta línea hace la magia de conectarse
+
+- los comentarios en python son con # antes de lo que queremos comentar
+
+- raspberry pi tiene otro rango para los valores de arduino en el potenciómetro, la línea 27 transforma la medida del potenciómetro en arduino a la medida de raspi, lo adapta por así decirlo:   value= pot value * 1023//65535, es una conversión, no una división
+
+- repasar estas cosas, cranear una presentación bonita para la solemne 2
+
+- code.py es el principal, aquí es donde corre el código
+
+
+
+
+
  
 
 
