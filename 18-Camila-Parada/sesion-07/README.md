@@ -12,4 +12,9 @@ Ante ello quise ir indagando por mi cuenta para poder conectar mediante internet
 
 ## Avances, descubrimientos, etc
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e91aae0c-f332-4875-9a15-1d15d6de46bd" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/13ea2295-78a7-4b81-8348-f5dc5c47a6b2" />
+
+
 ***
