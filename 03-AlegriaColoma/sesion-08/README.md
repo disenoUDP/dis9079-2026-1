@@ -35,10 +35,16 @@ En el archivo code.py colocar el código
 
 + control + S = grabar (si aparece el círculo blanco es por que no está grabado) 
 
-abir putty y verificar el error, el error es que no esxiste la minilibrarymqtt
++ abir putty y verificar el error, el error es que no esxiste la minilibrarymqtt
 
-instalar la biblioteca de cirtuit python (la 10x) 
++ instalar la biblioteca de cirtuit python (la 10x) 
 
-descomprimir el archivo - abrir y buscar las carpetas y archivos a instalar en la carpeta lib dentro del discoduro 
++ descomprimir el archivo - abrir y buscar las carpetas y archivos a instalar en la carpeta lib dentro del discoduro 
 
-adafruit_minimqtt-> biblioteca que debemos instalar
++ adafruit_minimqtt-adafruit_conection_manager.mpy- adafruit_ticks.mpy
+
+## Conexión de la placa 
+
+Cuando escribe  3V3 significa 3.3 (la V) 
+
+La conexción es en el 23 (tierra) 31 y 36 v_cc
