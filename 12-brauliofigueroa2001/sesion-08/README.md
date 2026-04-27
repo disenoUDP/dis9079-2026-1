@@ -16,3 +16,9 @@ hay muchos microcontroladores/placas que utilizan Circuitpython
 
 utilizaremos circuitpython 10.2.0
 
+en raspberry no hay terminal??
+
+me perdí con la instalación y los comandos en la nueva terminal
+
+
+
