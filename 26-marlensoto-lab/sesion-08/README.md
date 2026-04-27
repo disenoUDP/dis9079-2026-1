@@ -14,6 +14,7 @@ Python es un lenguaje de programación fácil de escribir y entender. Se caracte
 ## ¿Qué es CircuitPython?
 Usaremos **CircuitPython**, una adaptación de Python diseñada para microcontroladores, que facilita la programación de dispositivos electrónicos.
 
+![python](imagenes/circuit_python.png)
 ## Instalación de CircuitPython
 - Instalaremos la versión **CircuitPython 10.2.0**.
 - Antes de instalar, es necesario **borrar la información previa** de la Raspberry Pi.
@@ -23,9 +24,9 @@ Usaremos **CircuitPython**, una adaptación de Python diseñada para microcontro
 - Abrimos la aplicación y comenzamos a explorar.
 - Presionamos **Ctrl + D** para reiniciar el dispositivo y asegurar su correcto funcionamiento.
 
-## Descarga de bibliotecas desde GitHub
+## Descarga de bibliotecas 
 1. Ir al repositorio oficial de Adafruit:
-   - Buscar: `Adafruit CircuitPython Bundle 10.x`
+- Buscar: `Adafruit CircuitPython Bundle 10.x`
 2. Descargar el archivo `.zip` correspondiente.
 3. Descomprimir el archivo.
 
@@ -35,4 +36,6 @@ Usaremos **CircuitPython**, una adaptación de Python diseñada para microcontro
 3. adafruit_minimqtt
 adafruit_connection_manager
 adafruit_ticks
-para que funcione el codigo 
+para que funcione el codigo
+#### Recordatorio.grabar el codigo 
+## potenciometro en la rasperry pi pico 
