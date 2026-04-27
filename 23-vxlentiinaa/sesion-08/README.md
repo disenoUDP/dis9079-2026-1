@@ -23,3 +23,4 @@ lunes 27 abril 2026
 - volate_cc > V_CC
 - 3.3 V
 - 5.0 V
+- ADC0 > es como la patita 0 del arduino / pasa de algo análogo a algo digital
