@@ -88,7 +88,9 @@ ahora enviaremos el potenciómetro a adafruit
 
 ¿cómo conectamos el potenciómetro a la raspi en la proto?
 
-**insertar foto de conexión de potenciómetro**
+![potenciometro](./imagenes/potenciometroRaspi.jpg)
+
+- descubrimos que los GND en la placa de raspi son cuadrados, todos los demás pines son círculos, detallitos
 
 - ADC, capaz de convertir algo en análogo a digital, es como la patita A0 de arduino, por eso conectamos a ese lugar
 
