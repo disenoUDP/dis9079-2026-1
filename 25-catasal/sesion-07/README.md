@@ -20,6 +20,9 @@ Negro o café → tierra (−)
 Amarillo o naranja → señal (control desde Arduino)
 Se utiliza mucho en proyectos donde se requiere movimiento controlado, como brazos robóticos o mecanismos interactivos.
 
+<img width="1295" height="645" alt="tinkercad" src="https://github.com/user-attachments/assets/59b48e4b-886c-44b5-a101-dd22a009f9bf" />
+
+
 Uso de Tinkercad
 
 En la plataforma Tinkercad se pueden crear circuitos de forma virtual mediante simulaciones interactivas.
@@ -54,3 +57,8 @@ Giras el potenciómetro
 Arduino lee el valor analógico
 Ese valor se transforma en un ángulo
 El servo motor se mueve según ese ángulo
+
+
+
+https://github.com/user-attachments/assets/24d9d3b6-e760-4cb6-9d02-7268d68859c2
+
