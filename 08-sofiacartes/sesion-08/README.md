@@ -2,5 +2,9 @@
 
 lunes 27 abril 2026
 
-nos vemos a la vuelta del receso
+Actuadores, motor servo, buzzer
+
+circuit python <https://circuitpython.org/>
+
+<https://circuitpython.org/board/raspberry_pi_pico2_w/>
 
