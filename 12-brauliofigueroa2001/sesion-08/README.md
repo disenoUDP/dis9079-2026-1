@@ -69,9 +69,15 @@ descargamos 10.2.0, el archivo uf2
 
 - debemos descargar esto y extraerlo
 
-- tenemos que meter 1 carpeta y 2 archivos dentro de nuestro archivo LIB en circuitpy, son los siguientes
+- tenemos que meter 1 carpeta y 2 archivos dentro de nuestro archivo LIB en circuitpy, son los siguientes:
 
-**insertar pantallazo de la terminal al poner OPEN en putty**
+![librerias2](./imagenes/librerias.JPG)
+
+imagen sacada del discord, enviada por carla-nunez, no alcancé a registrar esto cuando tenía la raspberry en la sala y no me la traje de vuelta
+
+![putty4](./imagenes/putty4.JPG)
+
+- aparece esto en la terminal con putty al apretar ctrl d, no entendí mucho esto pero creo que estaba bien según lo que me dijo mateo
 
 
 ## BREAK Y PARTE 2
@@ -86,7 +92,7 @@ ahora enviaremos el potenciómetro a adafruit
 
 - ADC, capaz de convertir algo en análogo a digital, es como la patita A0 de arduino, por eso conectamos a ese lugar
 
-**poner paso a paso de lo que hicimos cuando salimos adelante en la clase**
+**salí a la pizarra a probar el pote y si conectaba a los feeds de adafruit, no funcionó pero aprendimos cosas**
 
 - nos conectamos a la red de aarón, algo importante que faltaba y que siempre hay que hacer es grabar el código, no debe aparecer un círculo arriba en el archivo, cuando aparece un círculo significa que no está grabado
 
