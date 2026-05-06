@@ -61,5 +61,3 @@ En Adafruit IO puedes visualizar los datos en gráficos o dashboards.
 
 Esto permite crear proyectos de monitoreo en tiempo real, como sensores de luz, temperatura o control de dispositivos.
   <img width="1347" height="780" alt="placa pico2" src="https://github.com/user-attachments/assets/3dbe075c-8f73-4ca3-815a-1e05f7d64b18" />
-
-los comentarios en python es con el # 
