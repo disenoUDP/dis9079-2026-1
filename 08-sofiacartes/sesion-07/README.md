@@ -252,3 +252,16 @@ Una patita a 5V y la otra desde ground a una resistencia de 10K, y desde la otra
 
 ## Registro
 
+<img src="./imagenes/imagen1.jgp" alt="install" width="300">
+
+<img src="./imagenes/imagen2.jgp" alt="install" width="300">
+
+<img src="./imagenes/imagen3.jgp" alt="install" width="300">
+
+<img src="./imagenes/imagen4.jgp" alt="install" width="300">
+
+<img src="./imagenes/imagen5.jgp" alt="install" width="300">
+
+<img src="./imagenes/imagen6.jgp" alt="install" width="300">
+
+<img src="./imagenes/ejemploLecturaPoteYservo.jgp" alt="install" width="300">
