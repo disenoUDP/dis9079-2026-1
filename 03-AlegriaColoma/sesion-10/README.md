@@ -2,4 +2,4 @@
 
 lunes 18 mayo 2026
 
-solemne 2
+Preparación de la solemne 2
