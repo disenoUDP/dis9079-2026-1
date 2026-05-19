@@ -5,7 +5,7 @@ Cristobal Vergara Silva / cristobalvergarasilva
 ## Sensor
 Avances 
 
-Estoy investigando del Sensor de pulso cardiaco (fotopletismografia), que es un sensor de codigo abierto, muy versatil en tanto a las placas a las que se puede conectar. El sensor más básico consta de dos componentes principales: un emisor de luz y un fotodiodo (receptor de luz).
+Estoy investigando del Sensor de pulso cardiaco (fotopletismografía), que es un sensor de codigo abierto, muy versatil en tanto a las placas a las que se puede conectar. El sensor más básico consta de dos componentes principales: un emisor de luz y un fotodiodo (receptor de luz).
 
 Funciona emitiendo luz LED sobre la piel y midiendo cuánta luz rebota hacia un fotodetector. Esto funciona porque cada vez que el corazón late, llega más sangre a los vasos sanguineos y eso cambia la cantidad de luz reflejada, generando una variación eléctrica. Contando esas variaciones se obtienen las pulsaciones por minuto (BPM), como es el caso del sensor de Pulse.sensor.com. El sensor mas utilizado es el MAX30102 que mide también oxígeno en sangre, fabricado por Maxim Integrated. Este ademas de tener dos leds y un fotodetector, tiene un sensor de temperatura interno y como consume poca corriente es facil hacer proyectos portatiles con el.
 
