@@ -31,7 +31,7 @@ En éste microcontrolador solo va conectado el Micro Servo Motor SG90 9g, el cua
 
 ---
 
-Una vez tengamos todos los componentes conectados a sus respectivos microcontroladores, podremos empezar a comunicarnos entre ellos utilizando los códigos que se mencionan más abajo. La manera en la que funciona ésto es que, cuando mantenemos presionado el push button que está ubicado en la Raspberry, se empezarán a enviar los datos numéricos que podemos modificar moviendo el potenciómetro, el cual dependiendo del valor que se envíe el Motor Servo se moverá. Mientras todo ésto sucede, el LED nos indicará cuándo estamos manteniendo presionado el push button, ya que cuando lo presionamos se encenderá la luz, y cuando no estemos ejerciendo ninguna presión, se mantendrá apagado.
+Una vez tengamos todos los componentes conectados a sus respectivos microcontroladores, podremos empezar a comunicarnos entre ellos utilizando los códigos que se mencionan más abajo, los cuales fueron creados con asistencia de las inteligencias artificiales _Claude_ y _Chat GPT_. La manera en la que funciona ésto es que, cuando mantenemos presionado el push button que está ubicado en la Raspberry, se empezarán a enviar los datos numéricos que podemos modificar moviendo el potenciómetro, el cual dependiendo del valor que se envíe el Motor Servo se moverá. Mientras todo ésto sucede, el LED nos indicará cuándo estamos manteniendo presionado el push button, ya que cuando lo presionamos se encenderá la luz, y cuando no estemos ejerciendo ninguna presión, se mantendrá apagado.
 
 Todos los datos del potenciómetro se pueden visualizar en tiempo real en este link:
 
@@ -52,7 +52,11 @@ Todos los datos del potenciómetro se pueden visualizar en tiempo real en este l
 
 ## Sensor usado
 
+Para éste proyecto se utilizó un potenciómetro y un push button como sensor, en los cuales el push button cumple la función de decidir cuándo enviar información, la cual la genera el potenciómetro y éste va cambiando cada vez que uno lo mueve --- REDACTAR MEJOR AYUDA LOL
+
 ## Actuador usado
+
+Nuestros actuadores en éste proyecto son el Micro Servo Motor SG90 9g y una luz LED, en donde el LED cumple la función de detectar cuando estamos presionando el push button, es decir, cuándo estamos permitiendo que se envíe información. En cambio con el motor servo, éste se encarga de recibir la información que le envía el potenciómetro y reacciona en base a éste. -- NO SÉ QUE MÁS PONER ASI QUE TAMBIÉN REDACTAR MEJOR PLS AYUDA
 
 ## Código usado para enviar
 
@@ -244,3 +248,5 @@ void MQTT_connect() {
 ## Bibliografía
 
 + <https://www.youtube.com/watch?v=d_odoKbEjgg&t=120s>, en donde nos enseñan cómo conectar un push button a una raspberry.
++ <https://www.instructables.com/Control-LED-From-Internet-Using-Raspberry-Pi-Pico-/>, en donde nos enseñan cómo conectar un LED a una raspberry.
++ 
