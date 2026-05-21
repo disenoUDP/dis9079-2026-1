@@ -7,7 +7,9 @@
 - Marlén Soto / github: [marlensoto-lab](https://github.com/marlensoto-lab)
 - Marcela Zúñiga / github: [marcezm](https://github.com/marcezm)
 
-## Descripción textual del proyecto - Avance en clases
+El proceso de documentación está dividido en el inicio debido a que en el comienzo de la clase estuvimos trabajando como 2 dúos separados y nos juntamos casi al final de la clase en un grupo de 4. Es por ello que no quisimos perder el material y la documentación que se había logrado en un principio, por lo que primero se mostrarán los avances por separado y posteriormente el trabajo grupal de 4.
+
+## Avance en clases dúo Braulio Figueroa y Luisa toro
 
 **Paso a paso en clase**
 
