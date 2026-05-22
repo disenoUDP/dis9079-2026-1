@@ -61,13 +61,17 @@ Además, observamos que la visualización del proyecto en Visual Studio Code apa
 ## Código usado para recibir 
 
 ### Proceso
-Al inicio realizamos una prueba utilizando un código desarrollado previamente por Luisa Toro, el cual ya había sido comprobado y funcionaba correctamente. Sin embargo, quisimos intentar realizar el proceso por nuestra cuenta, lo que provocó que durante el desarrollo surgieran distintos errores, principalmente relacionados con el cableado.
+## Desarrollo y resolución de errores
 
-Uno de los primeros problemas fue que tuvimos que cambiar la conexión del cable desde 5V a 3.3V, ya que la conexión inicial solo permitía comprobar si la luz LED funcionaba, pero no era la adecuada para el comportamiento esperado del sistema.
+Al inicio de la sesión, realizamos una prueba utilizando un código desarrollado previamente por nuestra compañera, el cual ya había sido verificado y funcionaba correctamente. Posteriormente, decidimos desarrollar el proceso por nuestra cuenta, lo que derivó en una serie de errores, principalmente relacionados con el cableado.
 
-Posteriormente, observamos que la luz LED no lograba apagarse correctamente. Para intentar resolver este problema realizamos dos códigos nuevos, modificando distintas partes de la programación y realizando varias pruebas. Finalmente, decidimos volver a utilizar el mismo código inicial, ya que descubrimos que el problema no estaba en nuestra programación, sino en la configuración de la Raspberry Pi Pico 2W.
+El primer inconveniente fue la conexión de alimentación: el cable estaba conectado a 5V, cuando lo correcto era utilizar 13V, ya que la conexión inicial solo permitía verificar el funcionamiento del LED, pero no era la adecuada para el comportamiento esperado del sistema.
 
-La Raspberry había sido modificada previamente y únicamente mantenía activa la señal correspondiente al encendido del LED, representada por el valor “1”, mientras que la señal de apagado, correspondiente al valor “0”, ya no se encontraba funcionando correctamente. Luego de identificar este problema pudimos comprender el origen del error y continuar avanzando con el proyecto. 
+Una vez corregido ese punto, nos encontramos con un segundo problema: el LED no lograba apagarse correctamente. Para resolverlo, desarrollamos dos códigos adicionales, modificando distintas secciones de la programación y realizando múltiples pruebas. Sin embargo, ninguna de las modificaciones solucionó el inconveniente.
+
+Finalmente, determinamos que el problema no estaba en el código, sino en la configuración interna de la Raspberry Pi Pico 2W. El dispositivo había sido modificado previamente y solo mantenía activa la señal de encendido del LED (valor `1`), mientras que la señal de apagado (valor `0`) no funcionaba correctamente. Al identificar este origen, volvimos al código inicial y pudimos continuar con el desarrollo del proyecto.
+
+Como resultado, se logró establecer exitosamente la conexión entre la Raspberry Pi Pico 2W y el LED, completando el objetivo de la práctica.
 
 ## Imágenes del proyecto
 
