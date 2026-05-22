@@ -505,8 +505,6 @@ void loop() {
 
 ```
 
-
-
 ### Bibliografía
 
 Arduino.cl. (s.f.). Micro Servo Motor SG90 9g. Arduino.cl. <https://arduino.cl/producto/micro-servo-motor-sg90-9g>
