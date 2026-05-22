@@ -25,11 +25,11 @@ CircuitPython es un lenguaje de programación diseñado para simplificar la expe
 
 <img src="./imagenes/circuitPython.jpg" alt="install" width="300">
 
-imágen de: [Raspberry Pi Pico 2W](https://circuitpython.org/board/raspberry_pi_pico2_w/)
+imágen de: <https://circuitpython.org/board/raspberry_pi_pico2_w/>
 
 <img src="./imagenes/pinoutRaspberrypi.jpg" alt="install" width="300">
 
-imágen de: [Pin Out](https://cursos.mcielectronics.cl/2025/08/12/introduccion-a-raspberry-pi-pico-2-y-pico-2-w/)
+imágen de: <https://cursos.mcielectronics.cl/2025/08/12/introduccion-a-raspberry-pi-pico-2-y-pico-2-w/>
 
 ### Pasos a seguir
 
