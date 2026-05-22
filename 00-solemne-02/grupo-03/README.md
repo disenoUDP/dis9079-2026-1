@@ -275,6 +275,36 @@ void loop() {
   io.run();
 }
 ```
+
+**<ins>Configuración del botón</ins>** 
+
+```
+boton = digitalio.DigitalInOut(board.GP0)
+boton.direction = digitalio.Direction.INPUT
+boton.pull = digitalio.Pull.UP
+```
+
+**boton.direction** = INPUT significa que ese pin va a leer información, no enviar. 
+**boton.pull** = Pull.UP activa una resistencia interna pull-up.
+
+Eso significa algo importante:
+
+**Botón sin presionar** = True
+**Botón presionado** = False  
+ 
+**<ins>Estado anterior y contador</ins>** 
+ 
+```
+estado_anterior = True
+contador_boton = 0
+```
+estado_anterior guarda cómo estaba el botón antes.
+Esto sirve para detectar el momento exacto en que se presiona, no para estar leyendo todo el rato que está apretado.
+contador_boton sirve para saber qué mensaje toca enviar. 
+
+Loop principal 
+
+while True:
 ## Config.h
 ```cpp
 /** Adafruit IO Config **/

@@ -2,9 +2,8 @@
 
 ## Integrantes
 
-- nombre completo / github
-- nombre completo / github
-- nombre completo / github
+* [Camila Parada](https://github.com/Camila-Parada)
+* [Vania Paredes](https://github.com/paredesvania)
 
 ## Descripción textual del proyecto
 

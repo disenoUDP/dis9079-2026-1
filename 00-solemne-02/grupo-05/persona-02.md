@@ -91,12 +91,75 @@ if (flanco == 4) {                      //Si el contador llega a 4, que es el va
 }
 ```
 
-### **Referente**
-
-## Actuador
-
 ## Fuentes Sensor
 - https://uelectronics.com/producto/sensor-microfono-ky-038/
 - https://blog.uelectronics.com/tarjetas-desarrollo/uso-de-los-sensores-de-sonido-ky-038-ky-037-para-controlar-el-encendido-de-un-foco/
 
+# **Referente**
+MISAA
+GOLAN LEVIN
+
+## Fuentes Artista
+
+# Actuador
+## Servo Motor SG90
++ Micro Servo de alta calidad y tamaño compacto, ideal para proyectos de robótica, aeromodelismo y automatización.
++ Controla su eje con alta precisión entre 0°-180°
++ A diferencia de los motores de corriente continua comunes,  este no realizo giros libres e infinitos. Si no que utiliza un potenciómetro interno y un circuito de retroalimentación, los cuales le permite saber en dónde está ubicado. El ángulo depende de pulsos eléctricos enviados por un microcontrolador.
++ Tiene un cable que contiene 3 pines, los cuales se conectan directamente a microcontroladores:
+  - Café/negro: GND (tierra).
+  - Rojo: Alimentación.
+  - Naranjo/amarillo: Señal de control PWM.
++ Se controla fácilmente variando el ancho del pulso (PWM).
++ Compatible con varias placas, tales como: Arduino, Raspberry Pi.
++ El funcionamiento del servomotor se manifiesta plenamente al interactuar con el controlador, permitendo la programación mediante software, lo que garantiza una precisión excepcional. 
+
+![titulo](./imagenes/servo.png)
+
+*Créditos Imagen:* https://mcielectronics.cl/shop/product/micro-servo-motor-sg90-9g-25775/?srsltid=AfmBOopOwBcw43GT__U8gPDvup1nePRPPHFrLhf2eHR1N_dAoJGTcbEG
+
+![titulo](./imagenes/servo2.jpg)
+
+*Créditos Imagen:* https://www.mechatronicstore.cl/servomotor-sg90-servo/?srsltid=AfmBOoqoxx4S3O6xZGYtZVSZaHq5K_hhOXyZZgfUYYdLD6VOY-JIUflF
+
+## Fuentes Actuador 
++ https://www.mechatronicstore.cl/servomotor-sg90-servo/?srsltid=AfmBOoqioJJqba9pXQ_UDFDqN1D07AGT_tbGoK7cSRmNqJRbo8fIdAun
++ https://afel.cl/products/micro-servomotor-sg90?srsltid=AfmBOoqzmevTYPvffbajPIuIVEk9C6xvu0bHG8dbm975DSZgRr9QYnIr
++ https://mcielectronics.cl/shop/product/micro-servo-motor-sg90-9g-25775/?srsltid=AfmBOoqcoCWKpuXIRG_AUTkl31uXB7YM6FYL8z7GYUkFM8_9IuzjbVdw
++ https://arduino.cl/producto/micro-servo-motor-sg90-9g/?srsltid=AfmBOorsky-vurRn_iqydIRZvPij49k3cGvWbmNPa4pu2Gqq0HFKgWP6
++ https://www.baumueller.com/en/insights/basics/servomotor-how-it-works-properties-areas-of-use#how-a-servo-motor-works
++ https://docs.arduino.cc/learn/electronics/servo-motors/
+  
+# **Referente**
+## Leonel Moura
++ Artista Portugués nacido en 1948 - Lisboa.
++ Artista conceptual, cuyo trabajo pasó de la fotografía a el arte robótico y de inteligencia artificial. Creando arte generativo utilizando robots, en donde sus obras se sitúan en el campo de la pintura, pero cuestionando el propio papel del artista en su obra.
++ Imagina *arte simbiótico*, el hombre y la máquina trabajan como un conjunto para abandonar el dominio del campo del arte por percepciones humanas arbitrarias.
++ Plantea su idea como el arte no tripuladoque depende de la capacidad de crear "organismos" mecánicos que sean capaces de producir su propio arte. Construyendo así dispositivos con algún tipo de conciencia ambiental y que ejecuten algoritmos basados en reglas simples. Presentando obras desde la aleatoriedad y en donde presenciar la construcción de una pintura por robots autónomos representa para el espectador humano una experiencia de conciencia global. 
+
+![titulo](./imagenes/leonel.avif)
+
+*Créditos Imagen:* https://www.dn.pt/cultura/leonel-moura-os-museus-portugueses-n%C3%A3o-querem-a-minha-arte-felizmente-existe-o-mundo
+
+## RAP [Robotic Action Painter]
++ Creado en 2006.
++  Es un robot autónomo capaz de producir pinturas y dibujos por sí mismo, tomando decisiones durante el proceso creativo. Contiene nuevas habilidades que Moura no había implementado en sus obras anteriores tales como: determinar la longitud y forma de cada trazo, la capacidad de decidir, de forma no lineal, el momento de parar y la habilidad de firmar.
++  Su funcionamiento es a través bolígrafos de seis colores, en el cual los sensores RGB están dispuestos en una cuadrícula de 3×3, la cual permite detectar patrones locales y no solo colores.
++  Dentro de su sistema ces posible visualizar el uso de un Servo Motor (no se encuentra detallado en ninguna documentación), per es muy probable que haga uso de este, deduciendo el tipo de movimientos que realiza el robot, permitiendo controlar dentro de este la posición, velocidad, dirección y su precisión en los movimientos. Cumpliendo así un rol fundamental, no solamente como función mecánica, si no que también un rol conceptual dentro de la obra. En donde sin este sistema de movimiento controlado el robot no sería capaz de poder representar y plasmar su comportamiento creativo.
+
+![titulo](./imagenes/rap.png)
+
+*Créditos Imagen:* https://creacionhibrida.net/leonel-moura-pionero-del-arte-basado-en-la-creatividad-de-las-maquinas/
+
+![titulo](./imagenes/obrarap.png)
+
+*Créditos Imagen:* https://creacionhibrida.net/leonel-moura-pionero-del-arte-basado-en-la-creatividad-de-las-maquinas/
+
+![titulo](./imagenes/obrarap2.png)
+
+*Créditos Imagen:* https://creacionhibrida.net/leonel-moura-pionero-del-arte-basado-en-la-creatividad-de-las-maquinas/
+
+## Fuentes Artista
+- https://creacionhibrida.net/leonel-moura-pionero-del-arte-basado-en-la-creatividad-de-las-maquinas/
+- https://www.leonelmoura.com/rap-2/
 ## Bibliografía
