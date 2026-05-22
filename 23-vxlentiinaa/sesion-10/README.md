@@ -97,6 +97,8 @@ Cuando el servo alcance un ángulo previamente definido dentro del código, el A
 
 Un potenciómetro es un dispositivo electrónico. Se puede usar como resistencia o resistor variable mecánica (con cursor y de al menos tres terminales). El usuario al manipularlo, obtiene entre el terminal central (cursor) y uno de los extremos una fracción de la diferencia de potencial total, se comporta como un divisor de tensión o divisor de voltaje.
 
+<img src="./imagenes/circuitPython.png" alt="tinkercad" width="400">
+
 `Tipos de resistencia de variación mecánica para su uso como potenciómetros:`
 
 Impresas, realizadas con una pista de carbón o de cermet sobre un soporte duro como papel baquelizado (cartón prespan), fibra de vidrio, baquelita, etcétera. La pista tiene sendos contactos en sus extremos y un cursor conectado a un patín que se desliza por la pista resistiva.
