@@ -4,7 +4,7 @@ Renata De Los Ángeles Arévalo Urra / github
 
 ## Sensor
 
-#Sensor MQ-135: Sensor de calidad del aire
+# Sensor MQ-135: Sensor de calidad del aire
 
 El sensor MQ-135 es un dispositivo electrónico utilizado para detectar diferentes gases presentes en el ambiente y estimar la calidad del aire. Puede identificar sustancias como dióxido de carbono (CO₂), humo, amoníaco, alcohol y otros compuestos contaminantes. Actualmente este tipo de sensores tiene aplicaciones en hogares inteligentes, industrias, sistemas de monitoreo ambiental y proyectos IoT.
 
