@@ -366,7 +366,7 @@ while True:
 
 **Código que recibe, en Arduino IDE**
 
-Luego, en el código que recibe.
+Luego, en el código que recibe. El arduino lee estos valores y procede a mover el servomotor, cuando llegue a un ángulo límite, se prende una luz amarilla.
 
 ```cpp
 // Grupo 08
@@ -504,6 +504,32 @@ void loop() {
 }
 
 ```
+
+### Imágenes
+
+1. La función de leer los valores en Arduino, no funcionó
+
+<img src="./imagenes/noLeevalores.png" alt="valores" width="600">
+
+2. No conectaba o no reconocía la Raspberry PI
+
+<img src="./imagenes/nofunciono.png" alt="valores" width="600">
+
+3. Después de muchos intentos (que se me olvidó tomar captura) finalmente funcionó el MQTT
+
+<img src="./imagenes/funcionaMQTT.png" alt="valores" width="600">
+
+4. Luego de que ya mandara los datos, se ve reflejado en Adafruit IO
+
+<img src="./imagenes/raspberryPublicando.png" alt="valores" width="600">
+
+<img src="./imagenes/raspberry2Funcionando.png" alt="valores" width="600">
+
+5. Finalmente, funcionó super!!!
+
+<img src="./imagenes/finalFuncionando.png" alt="valores" width="600">
+
+<img src="./imagenes/anguloPublicando.png" alt="valores" width="600">
 
 ### Bibliografía
 
