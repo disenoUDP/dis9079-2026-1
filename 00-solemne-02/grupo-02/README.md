@@ -51,7 +51,23 @@ El actuador utilizado en el proyecto fue una luz LED, empleada para representar 
 Su función principal dentro del sistema es encenderse o apagarse dependiendo del estado del botón conectado a la Raspberry Pi Pico 2W, permitiendo demostrar la comunicación inalámbrica y el control remoto de actuadores en tiempo real mediante tecnologías IoT.
 ## Código usado para enviar
 
-## Código usado para recibir
+### Proceso
+Durante las primeras pruebas realizamos la ejecución del código inicial, pero el sistema no funcionó correctamente, ya que la luz LED no lograba encenderse. Debido a esto, fue necesario revisar y modificar el código para identificar el problema.
+
+Con ayuda de nuestro compañero, nos dimos cuenta de que nuestra Raspberry Pi Pico 2W no contaba con algunas librerías necesarias para el correcto funcionamiento del programa, por lo que procedimos a instalarlas y configurar nuevamente el entorno de trabajo.
+
+Además, observamos que la visualización del proyecto en Visual Studio Code aparecía con el ícono de Adobe Illustrator, lo que inicialmente nos generó confusión respecto al tipo de archivo y su configuración dentro del programa. Luego de revisar esto, continuamos realizando ajustes hasta lograr avanzar correctamente con el desarrollo del proyecto.
+
+## Código usado para recibir 
+
+### Proceso
+Al inicio realizamos una prueba utilizando un código desarrollado previamente por Luisa Toro, el cual ya había sido comprobado y funcionaba correctamente. Sin embargo, quisimos intentar realizar el proceso por nuestra cuenta, lo que provocó que durante el desarrollo surgieran distintos errores, principalmente relacionados con el cableado.
+
+Uno de los primeros problemas fue que tuvimos que cambiar la conexión del cable desde 5V a 3.3V, ya que la conexión inicial solo permitía comprobar si la luz LED funcionaba, pero no era la adecuada para el comportamiento esperado del sistema.
+
+Posteriormente, observamos que la luz LED no lograba apagarse correctamente. Para intentar resolver este problema realizamos dos códigos nuevos, modificando distintas partes de la programación y realizando varias pruebas. Finalmente, decidimos volver a utilizar el mismo código inicial, ya que descubrimos que el problema no estaba en nuestra programación, sino en la configuración de la Raspberry Pi Pico 2W.
+
+La Raspberry había sido modificada previamente y únicamente mantenía activa la señal correspondiente al encendido del LED, representada por el valor “1”, mientras que la señal de apagado, correspondiente al valor “0”, ya no se encontraba funcionando correctamente. Luego de identificar este problema pudimos comprender el origen del error y continuar avanzando con el proyecto. 
 
 ## Imágenes del proyecto
 
