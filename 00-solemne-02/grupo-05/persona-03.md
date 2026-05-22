@@ -78,7 +78,7 @@ Esta obra fue inspirada en el pensamiento de Martin Heidegger (1889 - 1976) sobr
 
 ![PCD8544 por delante](./imagenes/PCD8544-frente.jpg)
 
-El chip PCD8544 es un controlador que se considera un actuador visual, ya que el actuador es el que transforma una señal en información visual. Éste chip utiliza una interfaz de bus serie similar a SPI (Interfaz Periférica Serie) lo cual le permite comunicarse con microcontroladores y está diseñado para poder operar una pantalla gráfica de 84 x 84 píxeles.
+El chip PCD8544 es un controlador desarrollado por Philips que se considera un actuador visual, ya que el actuador es el que transforma una señal en información visual. Éste chip utiliza una interfaz de bus serie similar a SPI (Interfaz Periférica Serie) lo cual le permite comunicarse con microcontroladores y está diseñado para poder operar una pantalla gráfica de 84 x 48 píxeles.
 
 ![PCD8544 por detrás](./imagenes/PCD8544.jpg)
 
@@ -86,19 +86,27 @@ El chip PCD8544 es un controlador que se considera un actuador visual, ya que el
 
 El controlador incluye 504 bytes de RAM de datos de pantalla gráfica (GDDRAM) el cual almacena el patrón de bits que se mostrará en la pantalla. Ésta parte de la memoria se divide en seis bancos enumerados del 0 al 5, en donde cada banco tiene 84 segmentos enumerados del 0 al 83, y cada segmento puede guardar 8 bits de datos enumerados del 0 al 7, lo cual si se calcula da como un total de 4032, es decir, 504 bytes.
 
+La mayor razón por la cual se prefiere usar el PCD8544 es debido a que éste es un controlador de bajo consumo, diseñado para poder manejar pantallas monocromáticas de 48 filas y 84 columnas.
+
 ### Fuentes Actuador
 
 + <https://lastminuteengineers.com/nokia-5110-lcd-arduino-tutorial/>
 + <https://cdn.sparkfun.com/assets/b/1/b/e/f/Nokia5110.pdf>
 + <https://espeasy.readthedocs.io/en/latest/Plugin/P141.html>
++ <https://ardubasic.wordpress.com/2017/07/01/pantalla-lcd-nokia-5110/>
 
 ###  Nokia 5110
 
-El Nokia 5110 a a fines de los años 90', más específicamente en 
+![Variedad de colores en Nokia 5110. No logré identificar la fuente principal de la imagen, pero la descargué de un post de @pisapapeles en la plataforma X ](./imagenes/nokia-colores.jpg)
+
+El teléfono Nokia 5110 fue lanzado a fines de los 90', más específicamente en el año 1998 y fue 
+
+sus dimensiones son de 132 mm x 47.5 mm x 31 mm, pesa 170 gr y su pantlla es de 5 líneas
 
 ### Fuentes Proyecto
 
 + <https://www.xataka.com/moviles/nokia-5110-telefonos-con-historia-iii>
++ <https://www.youtube.com/watch?v=Ji-_3To9p68>
 
 ---
 

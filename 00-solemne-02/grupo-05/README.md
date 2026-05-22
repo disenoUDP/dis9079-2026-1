@@ -8,11 +8,11 @@
 
 ## Descripción textual del proyecto
 
-Como proyecto para la segunda solemne del curso se nos indicó el, al igual que la vez pasada, lograr una comunicación inalámbrica utilizando códigos en dos microcontroladores los cuales serán una placa Arduino R4 WiFI y una Raspberry Pi Pico 2 W. En nuestro caso, se utilizará la Raspberry Pi Pico 2 W para poder enviar información hacia el Arduino UNO R4 WiFi, lo cual se hará de la siguiente manera:
+Como proyecto para la segunda solemne del curso se nos indicó el, al igual que la vez pasada, lograr una comunicación inalámbrica utilizando códigos en dos microcontroladores los cuales serán una placa Arduino R4 WiFi y una Raspberry Pi Pico 2 W. En nuestro caso, se utilizará la Raspberry Pi Pico 2 W para poder enviar información hacia el Arduino UNO R4 WiFi, lo cual se hará de la siguiente manera:
 
 #### Raspberry Pi Pico 2 W
 
-En éste microcontrolador estarán conectados los siguientes componentes:
+En este microcontrolador estarán conectados los siguientes componentes:
 
 1. Potenciómetro B20K
 2. Push button 4 pins
@@ -27,11 +27,11 @@ El LED está conectado mediante una resistencia de 220 Ω al pin 2 ``GP1``, el c
 
 #### Arduino UNO R4 WiFi
 
-En éste microcontrolador solo va conectado el Micro Servo Motor SG90 9g, el cual se conecta de la siguiente manera: El cable de color rojo va al pin ``5V`` el cual está ubicado en la sección ``POWER`` del Arduino, el cable de color café va en el pin ``GND`` que está ubicado en la sección ``POWER`` o ``DIGITAL`` y el cable de color amarillo va conectado en el pin ``9~`` ubicado en la sección ``DIGITAL`` de la placa.
+En este microcontrolador solo va conectado el Micro Servo Motor SG90 9g, el cual se conecta de la siguiente manera: El cable de color rojo va al pin ``5V`` el cual está ubicado en la sección ``POWER`` del Arduino, el cable de color café va en el pin ``GND`` que está ubicado en la sección ``POWER`` o ``DIGITAL`` y el cable de color amarillo va conectado en el pin ``9~`` ubicado en la sección ``DIGITAL`` de la placa.
 
 ---
 
-Una vez tengamos todos los componentes conectados a sus respectivos microcontroladores, podremos empezar a comunicarnos entre ellos utilizando los códigos que se mencionan más abajo, los cuales fueron creados con asistencia de las inteligencias artificiales _Claude_ y _Chat GPT_. La manera en la que funciona ésto es que, cuando mantenemos presionado el push button que está ubicado en la Raspberry, se empezarán a enviar los datos numéricos que podemos modificar moviendo el potenciómetro, el cual dependiendo del valor que se envíe el Motor Servo se moverá. Mientras todo ésto sucede, el LED nos indicará cuándo estamos manteniendo presionado el push button, ya que cuando lo presionamos se encenderá la luz, y cuando no estemos ejerciendo ninguna presión, se mantendrá apagado.
+Una vez tengamos todos los componentes conectados a sus respectivos microcontroladores, podremos empezar a comunicarnos entre ellos utilizando los códigos que se mencionan más abajo, los cuales fueron creados con ayuda de las inteligencias artificiales _Claude_ y _Chat GPT_. La manera en la que funciona esto es que, cuando mantenemos presionado el push button que está ubicado en la Raspberry, se empezarán a enviar los datos numéricos que podemos modificar moviendo el potenciómetro, el cual dependiendo del valor que se envíe el Motor Servo se moverá. Mientras todo ésto sucede, el LED nos indicará cuándo estamos manteniendo presionado el push button, ya que cuando lo presionamos se encenderá la luz, y cuando no estemos ejerciendo ninguna presión, se mantendrá apagado.
 
 Todos los datos del potenciómetro se pueden visualizar en tiempo real en este link:
 
@@ -50,13 +50,155 @@ Todos los datos del potenciómetro se pueden visualizar en tiempo real en este l
 | Botón Pulsador 4 pines | $570 | 1 | <https://www.victronics.cl/interruptores/boton-pcb-4-pines-spst-negro-redondo/> |
 | Diodo LED | $70 | 1 | <https://afel.cl/products/diodo-led-5mm-ultrabrillante-azul?pr_prod_strat=jac&pr_rec_id=1cd69e264&pr_rec_pid=8382019502232&pr_ref_pid=8382019600536&pr_seq=uniform> |
 
+---
+
+## Problemas, errores y aprendizajes
+
+En nuestro caso el primer intento que tuvimos no se pudo comprobar si el código de recibir realmente funcionaba ya que no estaba con mis compañeras y el único computador que hay en mi casa es el mío, por lo que solo pude probar el código para enviar información. Para iniciar el proceso utilicé el ejemplo que usamos en clase para probar enviar información con solo un potenciómetro al Adafruit IO para comprobar que estuviese bien conectado el potenciómetro a la Raspberry Pi Pico 2 W.
+
+Cuando ya se logró verificar que si se enviaba la información al Adafruit, decidí buscar una manera de filtrar la información que enviamos al Adafruit para que no hayan problemas con la plataforma al momento de presentar, razón por la que empecé a buscar tutoriales de cómo conectar un push button a una Raspberry y encontré 
+el siguiente video: <https://www.youtube.com/watch?v=d_odoKbEjgg&t=120s> en donde nos enseña cómo poner un botón ya sea para utilizarlo como "push up" o "push down" lo cual era lo que estabamos buscando ya que en nuestro caso necesitabamos utilizar el push button como "push down", es decir, que solo funcione cuando lo mantenemos presionado y que cuando no se esté ejerciendo ningún tipo de fuerza no envíe nada de información. Como anteriormente ya habíamos comprobado que funcionaba el potenciómetro, decidimos agregar la variante del botón al código de manera manual pero fallamos, razón por la que decidimos pedirle ayuda a la inteligencia artifial _Claude_, teniendo así mi primer chat con una inteligencia artificial del cual aprendí lo siguiente:
+
+![Mi primer chat con Claude](./imagenes/mi-primer-claude.png)
+
+Como se puede observar en la imagen, mi primer error fue el no saber cómo enviarle el código en el mismo mensaje donde le doy la información que necesito, razón por la cual la IA me tuvo que pedir en un mensaje aparte que le envíe el código lo cual fue toda una experiencia. Como segundo error es algo que en ese momento aún no me daba cuanta y es que le menciono que el botón va en el pin ``3V3`` y ``GP0``, cosa que más tarde Aarón me corrigió y me di cuenta de que no debería ir en ``3V3`` sino en ``GND``.
+
+Luego de que la IA generara el código, se probó y funcionó a medias ya que al momento de correr el código si no presionábamos el botón, en efecto, no se enviaba la información, pero cuando se presionaba el botón una vez empezaba a mandar información y no paraba a pesar de que ya no se le estaba ejerciendo ninguna fuerza a éste, por lo que nos dimos cuenta de que no estaba funcionando como push button sino que como un toggle. Como no se podía controlar el cúando dejar de mandar información, se tenía que parar de correr el código desde PuTTY presionando las teclas ``Ctrl + C``, cosa que le comentamos a Aarón en la clase que tuvimos el 18 de mayo y nos dijo que solucionemos el que funcione como push button con el sistema push down, y el resto del proceso de veía después y que nos apoyemos en la ayuda de Mateo para poder lograr todo ésto. Cuando llegó mateo, leyó el código y nos dimos cuenta de muchos errores dentro del código original, por lo que lo corregimos, lo corrimos y nos dimos cuenta de que no se estaba mandando nada de información cosa que pasó reiteradas veces y decidimos probar con otra Raspberry para revisar si era nuestro microcontrolador el problema, por lo que le pedimos prestada la Raspberry al grupo 09 compuesto por Josefa Araya, Débora Soto y Cristobal Vergara, los cuales muy amablemente nos prestaron su microcontrolador en donde probamos nuestro código y si funcionaba, cosa que le comenté a Mateo y me recomendó reiniciar la Raspberry y volver a hacer el proceso de transformarla e inyectarle bibliotecas, por lo que tuvimos que seguir los siguientes pasos:
+
+1. Desconectar la Raspberry del computador
+2. Mantener presionado el botón que se encuentra en la placa de la Raspberry por unos segundos
+3. Mientras se mantiene presionado el botón, conectarlo al computador
+4. Soltar el botón
+
+Una vez ya completados esos pasos, ya tendremos la Raspbery reiniciada. Notaremos que se nos abre una ventana que es la carpeta del microcontrolador, en donde tendremos que insertar el archivo llamado ``adafruit-circuitpython-raspberry_pi_pico2_w-es-10.2.1.uf2`` que se puede descarcar en el siguiente link: <https://circuitpython.org/board/raspberry_pi_pico2_w/>. Luego de meter el archivo en la carpeta, notaremos que se cerrará la ventana del microcontrolador, volverá a aparecer con otro nombre y notaremos que dentro de ella hay una carpeta nombrada ``lib``, en donde tendremos que agregar las siguientes bibliotecas:
+
+![Bibliotecas en raspi](./imagenes/bibliotecas.png)
+
+Para poder descargar estas bibliotecas, nos tenemos que dirigir a el siguiente link: <https://circuitpython.org/libraries>, en donde tendremos que bajar hasta las sección llamada "Bundles", en donde tendremos que descargar el bundle para la versión "10.X".
+
+![Opciones de bundles](./imagenes/bundles.png)
+
+Luego de hacer todo este proceso le avisamos a Mateo y nos recomendó probar un código que envió por el server de discord para comprobar si un botón está realmente funcionando o no, el cual es el siguiente:
+
+```cpp
+import time
+import board
+import digitalio
+import wifi
+import socketpool
+import adafruit_minimqtt.adafruit_minimqtt as MQTT
+
+print("Iniciando programa...")
+
+# -------------------------
+# WiFi
+# -------------------------
+SSID = "wifi"
+PASSWORD = "contraseñawifi"
+
+print("Conectando WiFi...")
+
+try:
+    wifi.radio.connect(SSID, PASSWORD)
+    print("WiFi conectado")
+    print("IP:", wifi.radio.ipv4_address)
+
+except Exception as e:
+    print("Error WiFi:")
+    print(e)
+
+    while True:
+        pass
+
+
+# -------------------------
+# Adafruit IO
+# -------------------------
+AIO_USERNAME = "udpmontoyamoraga"
+AIO_KEY = "keydeaarón"
+
+FEED_BOTON = AIO_USERNAME + "/feeds/potenciometro-05"
+
+print("Creando conexión MQTT...")
+
+pool = socketpool.SocketPool(wifi.radio)
+
+mqtt = MQTT.MQTT(
+    broker="io.adafruit.com",
+    username=AIO_USERNAME,
+    password=AIO_KEY,
+    socket_pool=pool,
+)
+
+print("Conectando a Adafruit IO...")
+
+try:
+    mqtt.connect()
+    print("Conectado a Adafruit IO")
+
+except Exception as e:
+    print("Error MQTT:")
+    print(e)
+
+    while True:
+        pass
+
+
+# -------------------------
+# Botón GP0
+# -------------------------
+boton = digitalio.DigitalInOut(board.GP0)
+boton.direction = digitalio.Direction.INPUT
+boton.pull = digitalio.Pull.UP
+
+estado_anterior = True
+
+print("Sistema listo")
+
+# -------------------------
+# Loop principal
+# -------------------------
+while True:
+
+    try:
+        mqtt.loop()
+
+        estado_actual = boton.value
+
+        # Detecta transición:
+        # sin presionar -> presionado
+        if estado_anterior and not estado_actual:
+
+            print("Botón presionado")
+            print("Enviando impulso...")
+
+            mqtt.publish(FEED_BOTON, "1")
+
+            print("Impulso enviado")
+
+            # anti-rebote
+            time.sleep(0.25)
+
+        estado_anterior = estado_actual
+
+    except Exception as e:
+        print("Error:")
+        print(e)
+
+    time.sleep(0.02)
+```
+
+Luego de hacer correr el código nos dimos cuenta de que no estaba respondiendo el botón, por lo que decidimos cambiarlo por otro y éste tampoco funcionó hasta que llegó Aarón e hizo bien la conexión, cambiando el pin que estaba conectado a ``3V3`` a ``GND`` en donde finalmente empezó a reaccionar como queríamos.
+
+---
+
 ## Sensor usado
 
-Para éste proyecto se utilizó un potenciómetro y un push button como sensor, en los cuales el push button cumple la función de decidir cuándo enviar información, la cual la genera el potenciómetro y éste va cambiando cada vez que uno lo mueve --- REDACTAR MEJOR AYUDA LOL
+Para este proyecto se utilizó un potenciómetro y un push button como sensor, en los cuales el push button cumple la función de decidir cuándo enviar información, la cual la genera el potenciómetro y éste va cambiando cada vez que uno lo mueve --- REDACTAR MEJOR AYUDA LOL
 
 ## Actuador usado
 
-Nuestros actuadores en éste proyecto son el Micro Servo Motor SG90 9g y una luz LED, en donde el LED cumple la función de detectar cuando estamos presionando el push button, es decir, cuándo estamos permitiendo que se envíe información. En cambio con el motor servo, éste se encarga de recibir la información que le envía el potenciómetro y reacciona en base a éste. -- NO SÉ QUE MÁS PONER ASI QUE TAMBIÉN REDACTAR MEJOR PLS AYUDA
+Nuestros actuadores en este proyecto son el Micro Servo Motor SG90 9g y una luz LED, en donde el LED cumple la función de detectar cuando estamos presionando el push button, es decir, cuándo estamos permitiendo que se envíe información. En cambio con el motor servo, este se encarga de recibir la información que le envía el potenciómetro y reacciona en base a este. -- NO SÉ QUE MÁS PONER ASI QUE TAMBIÉN REDACTAR MEJOR PLS AYUDA
 
 ## Código usado para enviar
 
