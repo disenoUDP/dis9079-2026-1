@@ -84,6 +84,18 @@ Lo que más me llamó la atención al investigar esto es que, aunque la escala e
 
 Al final, es el mismo principio de "botón activa evento en la nube", y me sirve mucho para ver que lo que estamos aprendiendo se usa (o se usó) en productos que simplifican la vida de la gente.
 
+### Referente Extra: Flic, El botón que puede salvar vidas
+
+Flic es una empresa sueca que fabrica botones IoT inalámbricos usados en hospitales y clínicas. Los pacientes los tienen al lado de su cama y con un solo clic llaman a la enfermera de turno. El personal médico los usa como botones de pánico en situaciones de emergencia. No hay pantalla, no hay app que abrir, solo un botón físico que al presionarse manda una alerta instantánea al celular del equipo médico.
+
+La lógica es exactamente la misma que usamos en clase: sensor de contacto detecta una presión → genera un evento → ese evento viaja por WiFi o Bluetooth a la nube → la nube genera una respuesta. En el Dash Button la respuesta era un pedido de detergente. Acá la respuesta puede ser una enfermera corriendo a una habitación.
+
+Lo que hace interesante este referente es el contexto, demuestra que el mismo principio básico de un pulsador como sensor no tiene límite de aplicación. Desde encender un LED en clase hasta sistemas críticos de salud, la arquitectura es la misma: un humano presiona → una señal viaja → algo responde del otro lado.
+
+<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/0d17e394-7814-41bb-a447-56157b229782" />
+<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/c0e7b304-9a14-4b96-8b39-d6db6fbc23ce" />
+<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/5bc0cc85-75a7-443e-8a4e-956c22b4832c" />
+
 # El Actuador: LED
 
 ### 1. ¿Qué aprendí sobre este actuador?
@@ -182,3 +194,5 @@ Lo que me parece interesante de este referente es que cada LED en esa instalaci�
 - [The Bay Lights — reinstalación y financiamiento](https://www.thebaylights.org/)
 - [Leo Villareal — The Bay Lights](http://villareal.net/the-bay-lights-2013-the-bay-bridge-sf-ca)
 - [Protocolo MQTT explicado](https://io.adafruit.com/api/docs/mqtt.html)
+- [Flic Smart Button — Emergency Medical Alarm](https://flic.io/es/healthcare/emergency-medical-alarm)
+- [Flic Smart Button — Official Website](https://flic.io/)
