@@ -21,7 +21,7 @@ En Arduino esto se trabaja con los pines digitales, que leen dos estados:
 **HIGH**: cuando llega una señal entre 2.6V y 5V.  
 **LOW**: cuando llega una señal entre 0V y 2.5V.
 
- Se usan esos estados como una orden para el Arduino, si el botón está presionado puede pasar una cosa y si no está presionado, puede pasar otra.
+Se usan esos estados como una orden para el Arduino, si el botón está presionado puede pasar una cosa y si no está presionado, puede pasar otra.
 
 También hay que tener cuidado con el voltaje. **Los pines de entrada no deberían recibir más de 5V, porque se puede dañar la placa**. Si se quiere usar una señal más alta, hay que bajarla antes con un **divisor de tensión**.
 
@@ -174,14 +174,130 @@ Así, el botón no solo activa una acción, sino que permite generar una secuenc
 
 Como referente estoy tomando el Karri Messenger 1, también llamado Karri Classic, un dispositivo de comunicación creado por Pete Clifford, fundador de Karri. La idea del proyecto nace desde una preocupación cotidiana: cómo permitir que un niño pueda comunicarse con sus padres o cuidadores sin tener que entregarle un celular completo a una edad temprana.
 
+ <img src="./imagenes/karri01.png" alt="img 01karri" width="50%"> 
+
 Me interesa este referente porque utiliza un sensor muy simple, **el botón**, para responder a una problemática actual: la comunicación en niños. Hoy gran parte de la comunicación cotidiana ocurre a través del celular, pero entregar un celular a niños pequeños también significa abrirles acceso a redes sociales, internet, aplicaciones, notificaciones y otros espacios que pueden ser difíciles de controlar. Karri propone una solución intermedia: permite que el niño pueda comunicarse y moverse con mayor independencia, pero sin entrar completamente en la lógica del smartphone. En este caso, el botón funciona como la entrada principal del sistema, a través de una acción física simple, como presionar, el niño puede grabar o enviar un mensaje de voz. Esto me parece importante porque demuestra que no siempre se necesita una interfaz compleja para resolver una necesidad. Una interacción básica puede ser suficiente si está bien pensada y responde claramente al contexto de uso.
 
 La lógica del botón en Karri no es solo activar algo, sino transformar una pulsación en una acción comunicativa. Al apretar el botón, el niño puede decir que llegó bien, pedir ayuda, responder un mensaje o mantenerse en contacto con su familia. Es una tecnología simple, pero con una función emocional y práctica muy clara: dar independencia sin dejar de lado el cuidado.
 
 La salida del sistema es una respuesta comunicacional: el niño utiliza el dispositivo como un medio para comunicarse y aprender a mantenerse en contacto, mientras que los adultos pueden acompañar su recorrido desde la aplicación. Esto muestra cómo un botón puede funcionar como puente entre una acción mínima y una respuesta mucho más compleja.
 
+## Actuador 
 
+Esta vez utilizamos como actuador una pantalla OLED, que funciona como una salida visual dentro del sistema. A diferencia de un sensor, que recibe información del entorno, la pantalla permite mostrar una respuesta: texto, símbolos, números, mensajes o pequeñas animaciones.
 
+En nuestro caso, la pantalla OLED nos sirve para que el sistema pueda “responder” de una forma visible. Por ejemplo, si un botón envía una señal o si llega un dato desde Adafruit IO, la pantalla puede mostrar un mensaje específico. Esto permite transformar una acción física o digital en una respuesta visual que una persona puede leer e interpretar.
+
+Aunque técnicamente una pantalla no genera movimiento como un servo motor, sí funciona como un actuador en el sentido de que entrega una salida del sistema: **recibe una instrucción desde la placa y la convierte en información visible**.  
+ 
+**<ins>Funcionamiento<ins>**
+
+La pantalla OLED que utilizamos funciona como una salida visual del sistema. En este caso, permite mostrar mensajes, números, símbolos o pequeñas respuestas gráficas según lo que le indique la placa.
+
+La pantalla usada tiene conexión I2C, por eso solo necesita cuatro pines:
+
+**GND**: tierra.    
+**VCC**: alimentación de la pantalla.  
+**SCL**: línea de reloj, que coordina la comunicación.  
+**SDA**: línea de datos, por donde viaja la información.  
+
+En la imagen se puede ver el orden de los pines: GND, VCC, SCL y SDA. Esto es importante porque si uno de estos cables queda mal conectado, la pantalla puede encender pero no mostrar nada, o simplemente no responder.
+
+La pantalla funciona con una matriz de píxeles. se puede trabajar como una matriz de 128 columnas y 64 filas, donde cada píxel puede encenderse o apagarse. A partir de esa combinación de puntos se forman letras, números, íconos o pequeñas animaciones. Aunque técnicamente se podría controlar píxel por píxel, en la práctica usamos librerías de Arduino, como Adafruit SSD1306 y Adafruit GFX, que permiten escribir texto, cambiar el tamaño, limpiar la pantalla y actualizar lo que aparece. Así, la pantalla puede mostrar mensajes como “Hola mundo”, estados de conexión o respuestas recibidas desde otro dispositivo. 
+
+ejemplo codigo: 
+
+```
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+// Creamos la pantalla OLED indicando su tamaño: 128 columnas x 64 filas
+Adafruit_SSD1306 display(128, 64, &Wire, -1);
+
+void setup() {
+  // Iniciamos comunicación con el computador
+  Serial.begin(9600);
+
+  // Iniciamos la pantalla OLED
+  // 0x3C es la dirección más común de estas pantallas
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+
+  // Limpiamos la pantalla antes de escribir
+  display.clearDisplay();
+
+  // Elegimos el tamaño del texto
+  display.setTextSize(1);
+
+  // Elegimos el color del texto
+  // En estas pantallas normalmente es blanco o encendido
+  display.setTextColor(SSD1306_WHITE);
+
+  // Elegimos desde dónde empieza el texto
+  // Primer número = posición horizontal
+  // Segundo número = posición vertical
+  display.setCursor(10, 20);
+
+  // Escribimos el mensaje
+  display.println("Hola mundo");
+
+  // Mostramos en la pantalla lo que escribimos
+  display.display();
+}
+
+void loop() {
+  // No ponemos nada acá porque solo queremos mostrar un mensaje fijo
+}
+
+```
+ 
+define dónde va a aparecer el texto.
+```
+display.setCursor(10, 20);
+```
+escribe el mensaje.
+```
+display.println("Hola mundo");
+``` 
+recién con este lo muestra en la pantalla
+``` 
+display.display();
+```
+ 
+**<ins>Problemas que pueden aparecer<ins>**
+  
+Uno de los problemas más comunes al trabajar con pantallas OLED es que no aparezca nada en pantalla, esto puede pasar por varias razones: cables mal conectados, alimentación incorrecta, dirección I2C equivocada o falta de alguna librería. También puede pasar que la pantalla prenda, pero no muestre el contenido esperado. En ese caso, el problema puede estar en el código, por ejemplo, si no se limpia la pantalla antes de escribir un nuevo mensaje o si no se actualiza con display.display(). 
+  
+Otro problema común es el tamaño del texto. Si el texto está muy grande, puede salirse de la pantalla o cortarse. Por eso es importante ajustar el tamaño según el tipo de mensaje que se quiere mostrar. Para mensajes largos conviene usar texto pequeño o dividir la información en varias líneas. También hay que revisar bien los cables, porque las pantallas OLED suelen depender de conexiones bastante específicas. Si SDA y SCL están invertidos, o si algún cable no hace buen contacto, la pantalla simplemente no responde. 
+
+**<ins>Visualización de datos<ins>** 
+
+La pantalla OLED permite visualizar datos de una forma directa, porque transforma la información que recibe la placa en texto, números o pequeños gráficos. Por ejemplo, puede mostrar mensajes simples como:
+
+“Conectado”  
+“Mensaje recibido”  
+“Botón 01”  
+“Esperando señal”  
+“Hola mundo”  
+
+También se puede usar para mostrar valores de sensores, como un contador de pulsaciones, el estado de un botón o la información que llega desde otro dispositivo. En vez de revisar todo desde el monitor serial del computador, la pantalla permite que el objeto muestre por sí mismo lo que está pasando.  
+
+### Referente: <ins>Wang & Söderström<ins> 
+
+Como referente para la pantalla OLED tomo el trabajo de Wang & Söderström, un estudio multidisciplinario fundado por Anny Wang y Tim Söderström. Su trabajo mezcla diseño, arte digital, escultura, animación e instalación, explorando cómo lo digital puede relacionarse con lo físico de una forma más sensible y menos fría.
+
+> “The digital world becomes animal, soft, and peculiarly sensual.”
+
+Me interesa su exposición Royal Chambers—Home as Host, Host as Home, realizada en Copenhague. En este proyecto investigan la relación entre lo digital, lo natural y lo doméstico, pensando el concepto de “hogar” no solo como un espacio humano, sino como un ecosistema donde también existen vidas no humanas, datos, tecnologías, virus, parásitos, estructuras invisibles y formas de conexión. Dentro de la exposición aparecen obras como Wh331 0f 1!f3, que muestra la vulnerabilidad de nuestra presencia digital a través de virus computacionales, y Nest of You, una instalación interactiva que compara el poder de las grandes empresas tecnológicas con el de las hormigas reina, pensando cómo nuestros hábitos y rutinas alimentan sistemas mucho más grandes que nosotros. 
+
+En sus obras la tecnología no aparece solo como una herramienta técnica, sino como una presencia viva dentro del espacio. Las pantallas, imágenes y dispositivos digitales no solo muestran información: construyen una atmósfera, generan una sensación y ayudan a pensar cómo lo digital también habita con nosotros. Esto me sirve para pensar la pantalla OLED como una pequeña presencia dentro del objeto. En nuestro proyecto, la OLED puede mostrar mensajes, estados de conexión o información recibida desde Adafruit IO, pero también puede darle una especie de voz al sistema. Puede hacer visible algo que normalmente estaría escondido en el código o en la comunicación entre dispositivos.
+
+Por otro lado, Wang & Söderström hacen que lo digital se sienta más orgánico, más blando y más cercano. Sus obras muestran que la tecnología también puede hablar de cuidado, hogar, vínculo y dependencia. En ese sentido, una pantalla pequeña como la OLED puede funcionar como un espacio mínimo de comunicación: un lugar donde el objeto responde, avisa, espera o muestra que algo está ocurriendo.
 
 ## Bibliografía
 https://cursos.mcielectronics.cl/2024/10/22/explicando-el-modo-arduino-input_pullup-pinmode/ 
+https://www.automatizacionparatodos.com/push-button-con-arduino/ 
+https://karri.io/products/karri-classic?variant=55926510420341 
+https://programarfacil.com/blog/arduino-blog/ssd1306-pantalla-oled-con-arduino/ 
+https://www.ignant.com/2023/01/30/wang-soderstrom-on-broadening-the-aesthetics-and-meanings-of-the-digital/ 
+
