@@ -97,17 +97,28 @@ Cuando el servo alcance un ángulo previamente definido dentro del código, el A
 
 Un potenciómetro es un dispositivo electrónico. Se puede usar como resistencia o resistor variable mecánica (con cursor y de al menos tres terminales). El usuario al manipularlo, obtiene entre el terminal central (cursor) y uno de los extremos una fracción de la diferencia de potencial total, se comporta como un divisor de tensión o divisor de voltaje.
 
-<img src="./imagenes/circuitPython.png" alt="tinkercad" width="400">
+<img src="./imagenes/pote.png" alt="tinkercad" width="300">
 
 `Tipos de resistencia de variación mecánica para su uso como potenciómetros:`
 
-Impresas, realizadas con una pista de carbón o de cermet sobre un soporte duro como papel baquelizado (cartón prespan), fibra de vidrio, baquelita, etcétera. La pista tiene sendos contactos en sus extremos y un cursor conectado a un patín que se desliza por la pista resistiva.
-Bobinadas, consistentes en un arrollamiento toroidal de un hilo resistivo (por ejemplo, constantán) con un cursor que mueve un patín sobre el mismo.
-Potencia: al igual que las resistencias, los potenciómetros soportarán distintas potencias, por lo general a partir de 1 W. Al reverso especifica la potencia en W. Los potenciómetros de mucha potencia reciben el nombre de reóstatos, que ya se utilizan muy poco.
+- `Impresas:` realizadas con una pista de carbón o de cermet sobre un soporte duro como papel baquelizado (cartón prespan), fibra de vidrio, baquelita, etcétera. La pista tiene sendos contactos en sus extremos y un cursor conectado a un patín que se desliza por la pista resistiva.
+- `Bobinadas:` consistentes en un arrollamiento toroidal de un hilo resistivo (por ejemplo, constantán) con un cursor que mueve un patín sobre el mismo.
+- `Potencia:` al igual que las resistencias, los potenciómetros soportarán distintas potencias, por lo general a partir de 1 W. Al reverso específica la potencia en W. Los potenciómetros de mucha potencia reciben el nombre de reóstatos, que ya se utilizan muy poco.
 
+`Existen distintos tipos de potenciómetro, como:`
 
-- El potenciómetro es un sensor analógico de resistencia variable que permite modificar manualmente el voltaje dentro de un circuito electrónico. Al girar su eje, cambia la resistencia eléctrica y el microcontrolador puede interpretar distintos valores numéricos.
-- En proyectos interactivos, los potenciómetros son ampliamente utilizados para controlar intensidad, posición, velocidad o sensibilidad de sistemas físicos y digitales.
+1. Potenciómetros de mando
+2. Potenciómetros de ajuste
+3. Variación lineal
+4. Variación logarítmica
+5. Variación senoidal
+6. Variación antilogarítmica
+7. Variacion de balance
+8. etc...
+
+`En conclusión (como yo lo entendí):`
+
+El potenciómetro es un sensor analógico de resistencia variable que permite modificar manualmente el voltaje dentro de un circuito electrónico. Al girar su eje, cambia la resistencia eléctrica y el microcontrolador puede interpretar distintos valores numéricos. En proyectos interactivos, los potenciómetros son ampliamente utilizados para controlar intensidad, posición, velocidad o sensibilidad de sistemas físicos y digitales.
 
 `Funcionamiento dentro del proyecto`
 
@@ -115,48 +126,38 @@ Potencia: al igual que las resistencias, los potenciómetros soportarán distint
 2. El sensor entrega valores variables dependiendo de la posición física del giro. La Raspberry pi convierte estos datos analógicos en datos digitales y posteriormente los envía mediante wifi al feed “moluscos” en Adafruit IO.
 3. Estos datos son utilizados para controlar el movimiento del servomotor y el comportamiento visual del robot LUMI.
 
-Filtrado de información
+`Filtrado de información`
 
-Uno de los principales problemas de los sensores analógicos es la inestabilidad de lectura causada por pequeñas variaciones eléctricas o físicas.
+- Uno de los principales problemas de los sensores analógicos es la inestabilidad de lectura causada por pequeñas variaciones eléctricas o físicas.
+- Para evitar movimientos bruscos del servo, realizamos:
+  - Mapeo de valores analógicos.
+  - Reducción del rango de lectura.
+  - Envío de datos cada cierto tiempo.
+- El filtrado permite obtener una experiencia más estable y controlada en la interacción física.
 
-Para evitar movimientos bruscos del servo, se realizó:
+En conclusión, los valores se envían con un delay para que el servo no esté inestable, por lo que el brazo del servo se mueve paulatinamente y no "fluido".
 
-Mapeo de valores analógicos.
-Reducción del rango de lectura.
-Envío de datos cada cierto tiempo.
-Suavizado básico mediante promedios simples.
+`Visualización de datos`
 
-El filtrado permite obtener una experiencia más estable y controlada en la interacción física.
+- Los datos del potenciómetro fueron visualizados utilizando Adafruit IO, una plataforma IoT que permite monitorear información en tiempo real mediante dashboards y feeds.
+- La visualización permitió observar cómo cambiaban los valores enviados por el sensor dependiendo del ángulo que determine el usuario
 
-Visualización de datos
+`Artista / proyecto / empresa relacionada`
 
-Los datos del potenciómetro fueron visualizados utilizando Adafruit IO, una plataforma IoT que permite monitorear información en tiempo real mediante dashboards y feeds.
+### [Teenage Engineering](https://teenage.engineering)
 
-La visualización permitió observar cómo cambiaban los valores enviados por el sensor dependiendo de la interacción física del usuario.
+Son sintetizadores y controladores interactivos.
 
-Problemas comunes
-Ruido en la señal
+Muchos proyectos de Teenage Engineering utilizan potenciómetros como parte central de la interacción física entre usuario y dispositivo.
 
-Los potenciómetros pueden generar fluctuaciones pequeñas en los datos debido al desgaste físico o ruido eléctrico.
+- En sintetizadores como el *OP–1 field*, los potenciómetros permiten controlar variables como:
+  - volumen
+  - frecuencia
+  - velocidad
+  - efectos de sonido
+  - navegación de interfaces
 
-Saltos de lectura
-
-En algunos casos aparecen cambios bruscos entre valores consecutivos.
-
-Desgaste mecánico
-
-Con el uso continuo, el contacto interno del potenciómetro puede deteriorarse.
-
-Lecturas inestables
-
-Las malas conexiones o cables largos pueden alterar los valores enviados al microcontrolador.
-
-Artista / proyecto / empresa relacionada
-Adafruit Industries
-
-Adafruit Industries es una empresa enfocada en hardware open source, electrónica creativa e Internet of Things.
-
-Sus proyectos educativos exploran constantemente el uso de sensores analógicos para visualización de datos interactivos, sistemas físicos y experiencias digitales. La plataforma Adafruit IO es ampliamente utilizada en proyectos de arte interactivo, educación y prototipado electrónico.
+<img src="./imagenes/teenage.png" alt="teenage" width="300">
 
 individual - INVESTIGACIÓN ACTUADOR
 Investigación del actuador: Servomotor SG90
