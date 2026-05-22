@@ -158,6 +158,10 @@ Después de varios intentos de intentar conectarse al wifi, finalmente la placa 
 
 ## Código recibir, Experimentación en clases, Arduino UNO R4 Wifi
 
+**colocar aquí código, gif queda al final de toda esta parte de proceso**
+
+![gif](./imagenes/RaspberryArduinogif.gif)
+
 ## Avance en clases Marlén Soto y Marcela Zúñiga
 
 ## Descripción del proyecto
