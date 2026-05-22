@@ -78,7 +78,7 @@ El problema era que VS Code estaba corriendo el archivo en el computador, no en 
 
 ### El código el loop infinito
 
-El código usa `while True:`, que es básicamente el mismo loop de siempre pero con onda Python. Se dejó configurado con un `time.sleep(5)` para que mande la info a Adafruit cada 5 segundos. Así se mantiene la paz con el servidor y no te bloquean por intensas.
+El código usa `while True:`, que es básicamente el mismo loop de siempre pero con onda Python. Se dejó configurado con un `time.sleep(5)` para que mande la info a Adafruit cada 5 segundos. Así se mantiene la paz con el servidor y no te bloquean por intensa.
 ```python
 import time
 import board

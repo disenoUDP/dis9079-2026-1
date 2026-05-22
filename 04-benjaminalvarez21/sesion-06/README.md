@@ -4,7 +4,7 @@ lunes 13 abril 2026
 
 Al comienzo de la clase se realizó la retroalimentación de la solemne 1, donde se indicaron los aspectos que debían corregirse y mejorarse para aumentar la nota del proyecto. Luego se dio un tiempo de trabajo en clases para avanzar en esas modificaciones.
 
-Despues de eso, se trabajó con sensores capacitivos utilizando un Arduino UNO R4 WiFi y la librería `Arduino_CapacitiveTouch`.
+Después de eso, se trabajó con sensores capacitivos utilizando un Arduino UNO R4 WiFi y la librería `Arduino_CapacitiveTouch`.
 
 ## Sensores capacitivos
 
@@ -12,10 +12,10 @@ Un sensor capacitivo detecta cambios eléctricos cuando una persona acerca la ma
 
 Este tipo de sensores puede utilizarse para:
 
-- Detectar contacto humano
-- Medir cercanía o proximidad
-- Crear interfaces táctiles
-- Reemplazar botones mecánicos tradicionales
+Detectar contacto humano
+Medir cercanía o proximidad
+Crear interfaces táctiles
+Reemplazar botones mecánicos tradicionales
 
 Incluso acercar la mano a un cable puede modificar los valores obtenidos por el sensor.
 
@@ -27,14 +27,14 @@ El Arduino UNO R4 WiFi incluye soporte para detección táctil capacitiva median
 
 El sistema realiza lecturas eléctricas constantemente:
 
-- Sin contacto → valores más bajos
-- Con contacto o cercanía → valores más altos
+Sin contacto → valores más bajos
+Con contacto o cercanía → valores más altos
 
 Arduino interpreta estas variaciones para determinar si existe contacto o proximidad con el sensor capacitivo.
 
-## Resultados en clase y codigos utilizados
+## Resultados en clase y códigos utilizados
 
-### Codigos
+### Códigos
 
 ```cpp
 #include <Arduino_CapacitiveTouch.h>

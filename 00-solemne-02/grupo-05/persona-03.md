@@ -99,15 +99,23 @@ La mayor razón por la cual se prefiere usar el PCD8544 es debido a que éste es
 
 ![Variedad de colores en Nokia 5110. No logré identificar la fuente principal de la imagen, pero la descargué de un post de @pisapapeles en la plataforma X ](./imagenes/nokia-colores.jpg)
 
-El teléfono Nokia 5110 fue lanzado a fines de los 90', más específicamente en el año 1998 y fue 
+El teléfono Nokia 5110 fue lanzado a fines de los 90', más específicamente en el año 1998 y fue el primer teléfono que tenía un sistema de personalización llamado Xpress-on las cuales tienen 4 colores básicos y 7 colores metálicos, lo que te permitía personalizarlo a tu gusto cambiando la carcasa de éstos, siendo también uno de los primeros modelos en incluir el famoso juego de la serpiente!! sus dimensiones son de 132 mm x 47.5 mm x 31 mm, pesa 170 gr y su pantalla es de 5 líneas.
 
-sus dimensiones son de 132 mm x 47.5 mm x 31 mm, pesa 170 gr y su pantlla es de 5 líneas
+![Carcasa Xpress-on, imagen rescatada de venta en eBay](./imagenes/xpress-on.png)
+
+Este teléfono utiliza la pantalla PCD8544 LCD monocromática, la cual como menciono en la investigación del actuador ésta fue desarrollada por Philips.
+
+La capacidad de batería de éste teléfono es de 900 mAh, la cual toma 4 horas en completar su carga completa y dura hasta 270 horas seguidas en estado de espera mientras que activado de manera constante solo dura 300 minutos. Su batería está hecha de hidruro metálico de níquel.
+
+Logré encontrar el siguiente esquemático en ésta página: <http://www.elektronika.lt/schemos/78/54/mobliuju-telefonu-jungimas-prie-kompiuterio/>, el cual sive para poder cambiar el software del teléfono por nuestra propia cuenta (aplica para Nokia 5110, 61xx, 7110 y 6210):
+
+![Esquemático para Nokia 5110](./imagenes/esquematico.png)
 
 ### Fuentes Proyecto
 
 + <https://www.xataka.com/moviles/nokia-5110-telefonos-con-historia-iii>
 + <https://www.youtube.com/watch?v=Ji-_3To9p68>
-
----
-
-## Bibliografía
++ <https://popmagazine.cl/celulares-retro-el-nokia-5110/>
++ <https://www.ebay.com/itm/253976313509>
++ <https://www.pantallazo.es/caracteristicas/nokia-5110#item4>
++ <https://www.productoendetalle.es/pm/nokia-5110>

@@ -1,6 +1,6 @@
 # sesion-07
 
-lunes 20 abril 2026 ME FALTA SUBIR IMAGENESSSSSS
+lunes 20 abril 2026
 
 # Idea general
 
@@ -12,11 +12,11 @@ La clase se movió entre tres niveles: armar circuitos, leer datos con Arduino y
 
 Para comenzar con la Solemne 02 recibimos:
 
-protoboard
-cables
-servomotor
-potenciómetro
-LDR
+protoboard  
+cables  
+servomotor  
+potenciómetro  
+LDR  
 
 ## Protoboard como sistema
 
@@ -31,7 +31,7 @@ negativo / tierra: verde, café o negro
 
 Arduino también tiene una señal de GND, que corresponde a la tierra. Esa tierra debe conectarse a la línea negativa de la protoboard para que todos los componentes compartan una misma referencia eléctrica.
 
-La arquitectura interna de la protoboard es clave: no todos los agujeros son independientes. Por ejemplo, los puntos de 1A a 1E están conectados entre sí. Es como una utopía donde todos esos puntos son “iguales”, porque eléctricamente comparten la misma conexión. 
+La arquitectura interna de la protoboard es clave: no todos los agujeros son independientes. Por ejemplo, los puntos de 1A a 1E están conectados entre sí. 
 
 ## Potenciómetro y lectura análoga
 

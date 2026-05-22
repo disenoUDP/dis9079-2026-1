@@ -25,10 +25,12 @@ Entonces, para la solemne 02, la conexión inalámbrica puede pensarse no solo c
 Los sensores capacitivos reaccionan ante materiales conductores y no conductores cuando se acercan o tocan una superficie activa. Lo que detectan no es una presión mecánica, sino un cambio en la capacitancia.
 
 La detección capacitiva se usa mucho en dispositivos táctiles porque permite reconocer la presencia o ausencia de un cuerpo, como un dedo humano, sin necesidad de un switch físico tradicional.
+ 
+<img src="./imagenes/capacitivosensor.jpg" width="50%">  
 
 ## Componentes y concepto base
 
-En los apuntes apareció también una base más electrónica para entender esto:
+una base más electrónica para entender esto:
 
 **resistencia
 condensador / capacitor

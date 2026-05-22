@@ -47,8 +47,9 @@ Todos los datos del potenciómetro se pueden visualizar en tiempo real en este l
 | Potenciómetro B20K | $495 | 1 | <https://altronics.cl/potenciometro-lineal-20k-b20k> |
 | Cables Dupont (Pack 40 unidades) | $2.590 | 1 | <https://mcielectronics.cl/shop/product/cable-dupont-macho-macho-20cm-pack-40-unidades/> |
 | Micro Servo Motor SG90 9g | $3.290 | 1 | <https://arduino.cl/producto/micro-servo-motor-sg90-9g/?srsltid=AfmBOoqZlsZtwx6MP23bWquVf5u5zZnS9a5CEJFEFpIcFrlUZCnyhxc5> |
-| Botón Pulsador 4 pines | $570 | 1 | <https://www.victronics.cl/interruptores/boton-pcb-4-pines-spst-negro-redondo/> |
+| Botón Pulsador 4 pines | $290 | 1 | <https://www.mechatronicstore.cl/boton-pulsador-switch-cuadrado-de-4-pines/?srsltid=AfmBOorQc-HPtgc1jR5UZV55YYAmrYJEa9owIDDo8S3CvOdJ3fsjV8JZ> |
 | Diodo LED | $70 | 1 | <https://afel.cl/products/diodo-led-5mm-ultrabrillante-azul?pr_prod_strat=jac&pr_rec_id=1cd69e264&pr_rec_pid=8382019502232&pr_ref_pid=8382019600536&pr_seq=uniform> |
+| Resistencia 220 | $413 | 1 | <https://altronics.cl/pack-10-resistencias-220ohm-025watt-1porciento> |
 
 ---
 
@@ -194,7 +195,35 @@ Luego de hacer correr el código nos dimos cuenta de que no estaba respondiendo 
 
 ## Sensor usado
 
-Para este proyecto se utilizó un potenciómetro y un push button como sensor, en los cuales el push button cumple la función de decidir cuándo enviar información, la cual la genera el potenciómetro y éste va cambiando cada vez que uno lo mueve --- REDACTAR MEJOR AYUDA LOL
+Para este proyecto se utilizó un potenciómetro y un push button como sensor. El push button cumple la función de decidir cuándo enviar información que genera el potenciómetro la cual va cambiando cada vez que uno lo mueve.
+
+#### Push button
+
+Al inicio, el push button que estábamos utilizando era el siguiente:
+
+![Push button grande](./imagenes/primer-pushbutton.png)
+
+Este botón se utilizó desde la primera prueba del código hasta el día en el cual tuvimos clases presenciales, en donde nos dejó de responder y Mateo nos recomendó cambiar el botón debido a que los de este tipo suelen soltarse solos de la protoboard, lo cual nos podía arruinar las cosas sin siquiera darnos cuenta. Como se nos recomendó hacer un cambio, empezamos a probar con el siguiente botón:
+
+![Push button pequeño](./imagenes/segundo-pushbutton.png)
+
+Cuando hicimos el cambio a éste push button, fue cuando ya habíamos logrado correr el código en donde el botón cumplia su función de filtrar la información con el sistema "push down", por lo cual lo utilizamos durante todo lo que restaba de clase, pero cuando volvimos a probarlo un día después nos dimos cuenta de que ya no respondía el botón. Como no nos funcionaba el botón, decidimos probar con el código que nos dio Mateo para ver si había algún problema con la conexión, pero cuando lo probamos nos dimos cuenta de que en realidad el problema era el botón, razón por la cual decidimos volver a cambiar el botón por el siguiente, que es el actual de nuestro proyecto:
+
+![Botón actual](./imagenes/pushbutton-actual.png)
+
+Todos los push buttons que utilizamos en éste proyecto son botones de 4 pines, los cuales como menciona su nombre funcionan como botones pulsadores, es decir, que estos solo responden mientras uno los mantiene presionados (así como funcionan los timbres de las casas).
+
+#### Potenciómetro
+
+El potenciómetro B20K que se utilizó en este proyecto no se cambió en ningún momento ya que no causó ningún problema. Como lo menciona en su nombre, éste potenciómetro tiene una resistencia de 20.000 ohmios, lo cual se va ajustando a medida que interactuamos con él y va controlando el paso del voltaje o de la corriente.
+
+![Potenciómetro B20K](./imagenes/potenciometro.jpg)
+
+Este potenciómetro tiene 3 pines, los cuales cumplen la siguiente función:
+
+- Pin 1 -> Terminal de entrada (Vcc), es en donde se alimenta del voltaje.
+- Pin 2 -> Terminal de salida, es en donde se entrega la señal según la posición del eje.
+- Pin 3 -> Terminal a tierra (GND), es en donde se conecta a tierra.
 
 ## Actuador usado
 
@@ -391,4 +420,4 @@ void MQTT_connect() {
 
 + <https://www.youtube.com/watch?v=d_odoKbEjgg&t=120s>, en donde nos enseñan cómo conectar un push button a una raspberry.
 + <https://www.instructables.com/Control-LED-From-Internet-Using-Raspberry-Pi-Pico-/>, en donde nos enseñan cómo conectar un LED a una raspberry.
-+ 
++ <https://www.sameskydevices.com/blog/push-button-switches-101>, en donde se nos habla de los botones pulsadores y de los interruptores.
