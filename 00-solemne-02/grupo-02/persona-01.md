@@ -2,6 +2,15 @@
 
 - Marlén Soto / github: [marlensoto-lab](https://github.com/marlensoto-lab)
 
+## ¿Qué es un Sensor?
+Un sensor es todo dispositivo que **detecta un estímulo y genera una señal eléctrica** como respuesta.
+
+El botón pulsador cumple exactamente eso:
+
+- **Estímulo:** presión mecánica del dedo
+- **Respuesta:** señal eléctrica (circuito abierto o cerrado)
+
+Por eso se clasifica como un **sensor mecánico discreto de contacto**, ya que detecta si existe o no una fuerza aplicada sobre él y lo traduce en una señal que un sistema puede leer y procesar.
 ## Sensor Utilizado: Botón Pulsador
 
 ![Botón Pulsador](imagenes/boton_pulsador.jpg)
