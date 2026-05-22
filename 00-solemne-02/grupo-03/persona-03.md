@@ -61,8 +61,7 @@ a pesar de ser pequeña y limitación de dos colores la OLED permite bastante:
 | parpadeo constante | `.show()` llamado demasiado seguido | actualizar solo cuando el dato cambia |
 | no enciende | voltaje incorrecto | verificar que sea 3.3V y no 5V |
 
-## **Relojes y visualizaciones poéticas en OLED — Joey Castillo**
-
+> ## **Relojes y visualizaciones poéticas en OLED — Joey Castillo**
 Joey Castillo es diseñadora de hardware que ha explorado las pantallas OLED como objeto de diseño en sí mismo. su proyecto *Sensor Watch* usa una pantalla diminuta para mostrar no solo la hora, sino datos del entorno de forma minimalista. lo bacán de su trabajo es que trata la restricción técnica (pocos píxeles, solo blanco y negro) como una decisión estética y no como una limitación.
 ## Bibliografía
 + Stojanović, M. (2010). *Konkretizator — Interactive audiovisual installation*. <https://markostojanovic.me/works-2/>
