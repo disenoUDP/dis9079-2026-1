@@ -2,10 +2,11 @@
 
 ## Integrantes
 
-- nombre completo / github
-- nombre completo / github
-- nombre completo / github
-
+- Benjamín Álvarez - [benjaminalvarez21](https://github.com/benjaminalvarez21)
+- Anays Cornejo - [Anaysval](https://github.com/Anaysval)
+- Agustina Aceituno - 
+- Antonia Fuentealba - 
+  
 ## Descripción textual del proyecto
 
 ## Materiales usados
