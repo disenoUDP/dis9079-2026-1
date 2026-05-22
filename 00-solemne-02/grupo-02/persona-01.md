@@ -102,7 +102,7 @@ Utilizar una resistencia demasiado baja puede provocar sobrecorriente, dañando 
 ---
 
 ## 4. Referente: The Bay Lights — Leo Villareal
-![Referente](imagenes/referente_2jfif)
+![Referente](imagenes/Referente_2.jpg)
 
 “The Bay Lights” es una instalación artística creada por Leo Villareal que utilizó miles de LEDs distribuidos en el puente Bay Bridge de San Francisco para generar patrones lumínicos dinámicos mediante programación.
 
@@ -114,3 +114,14 @@ La diferencia está únicamente en la escala, ya que mientras nuestro proyecto c
 ---
 
 ## Bibliografía
+
+- Arduino Documentation. *Digital Inputs and Pull-up Resistors*. Disponible en: https://docs.arduino.cc/
+
+- Adafruit IO Documentation. *MQTT, Feeds and IoT Communication*. Disponible en: https://io.adafruit.com/
+
+- MQTT.org. *MQTT Protocol Overview*. Disponible en: https://mqtt.org/
+
+- Wikipedia. *Amazon Dash*. Disponible en: https://en.wikipedia.org/wiki/Amazon_Dash
+
+- Leo Villareal. *The Bay Lights*. Disponible en: https://www.leovillareal.com/project/the-bay-lights/
+
