@@ -81,7 +81,8 @@ Indirectamente, la visualización final de cada presión es el texto que aparece
 
 Uno de los referentes que revisé fue sPIral, un proyecto realizado por compañeras de la carrera. Lo conocí porque mi amigas Vale y Sofi, integrante del grupo, me lo mostró mientras estábamos revisando distintos proyectos relacionados con pantallas y visualización de información. Lo que más me llamó la atención fue cómo utilizan una pantalla OLED para presentar poemas de una forma interactiva y visualmente atractiva, alejándose de la idea de mostrar únicamente texto o datos. Me pareció un buen ejemplo de cómo la programación y la electrónica pueden aportar valor a una propuesta de diseño, transformando una pantalla en una experiencia de interacción. Además, me hizo pensar en las posibilidades creativas que tienen este tipo de actuadores cuando se utilizan más allá de su función técnica básica.
 
-<img src="./imagenes/pote.png" alt="tinkercad" width="300">
+<img src="./imagenes/spiral1.png" alt="tinkercad" width="800">
+<img src="./imagenes/spiral2.png" alt="tinkercad" width="800">
 
 ---
 
