@@ -511,6 +511,18 @@ AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 
 ## Imágenes del proyecto
 
+<img src="./imagenes/fotorasp01.png" alt="hacerbien" width="40%"> <img src="./imagenes/foto raps02.png" alt="hacerbien" width="40%">  
+
+<img src="./imagenes/fotoadafruit.jpg" alt="hacerbien" width="40%"> <img src="./imagenes/fotooled01.png" alt="hacerbien" width="40%"> <img src="./imagenes/fotooled02.jpg" alt="hacerbien" width="40%">   <img src="./imagenes/fotooled03.jpg" alt="hacerbien" width="40%">   
+
 ## Animaciones del proyecto
 
-## Bibliografía
+<img src="./imagenes/pantalla02.gif" alt="hacerbien" width="30%">  
+<img src="./imagenes/pantallamensaje.gif" alt="hacerbien" width="30%">  
+
+
+## Bibliografía 
+<img src="./imagenes/patti.jpg" alt="hacerbien" width="30%">  
+<img src="./imagenes/metodouniverlsal.jpg" alt="hacerbien" width="30%">    
+
+https://www.instructables.com/Arduino-Button-with-no-resistor/
