@@ -28,6 +28,9 @@ El sistema está pensado como una secuencia de cuatro mensajes. Cada vez que se 
 Durante las pruebas nos dimos cuenta de que la forma de presionar el botón también influía en el funcionamiento. No bastaba con tocarlo muy rápido, porque a veces costaba que se enviara correctamente el siguiente mensaje. En nuestro caso, funcionaba mejor mantenerlo presionado hasta que el mensaje se enviara y luego soltarlo, para que el sistema pudiera reconocer bien una pulsación antes de pasar a la siguiente. Esto nos ayudó a entender que la interacción con el sensor no era solo técnica, sino también corporal. El botón necesitaba un gesto claro: presionar, esperar y soltar. Así, cada pulsación se volvía una pequeña acción de comunicación, donde el contacto físico activaba el envío de una parte del mensaje. 
 
 ## Actuador usado 
+``` 
+Display OLED de 128 x 64 Pixeles Controlable por I2C
+```
 
 Para el actuador utilizamos una pantalla OLED conectada a nuestro Arduino, permitiendo que se proyectaran visualmente los cuatro mensajes enviados desde la Raspberry. En este caso, la pantalla funcionaba como la salida del sistema: recibía la información desde Adafruit IO y la transformaba en texto visible.
 
