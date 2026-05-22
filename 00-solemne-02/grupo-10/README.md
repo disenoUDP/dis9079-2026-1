@@ -58,7 +58,7 @@ Nos organizamos inicialmente en duplas para asegurar que cada parte funcionara d
 
 ---
 
-### Sensor usado - Boton
+### Sensor usado - Botón pulsador de 4 pines
 
 El objetivo es tener un código de enviar desde un Raspberry Pi Pico 2W y un código de recibir en un Arduino Uno R4 Wifi, utilizaremos un botón como primer acercamiento para poder crear una especie de "puerta" que nos dé la opción de activar y desactivar el envío de lecturas de datos hacia Adafruit IO, de esta manera, el servidor de IO no colapsa y evitamos problemas.
 
@@ -210,6 +210,10 @@ Después de varios intentos de intentar conectarse al wifi, finalmente la placa 
 **Imagen 04**, *datos enviados a  Adafruit IO con fecha y hora*
 
 - Un error que ocurrió después de enviar constantemente datos es que el led se quedó encendido y no volvió a apagarse.
+
+## Actuador usado - Led
+
+Paso 1: Validar el hardware primero: Montamos el LED con su resistencia de 220Ω en la protoboard. Primero hicimos una prueba de alimentación directa a 5V para confirmar que el LED encendía, y después una prueba de control con un código de parpadeo en el pin 13. Ver que el LED respondía bien fue la señal para avanzar a la parte inalámbrica con confianza.
 
 ## Código recibir, Experimentación en clases, Arduino UNO R4 Wifi
 
