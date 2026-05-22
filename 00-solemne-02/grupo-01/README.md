@@ -53,6 +53,29 @@ Es el monitor del proyecto, utilizada para mostrar la información recibida del 
 
 ## Imágenes del proyecto
 
+![proceso](./imagenes/proceso.jpeg)
+
 ## Animaciones del proyecto
 
+![Proceso 1](./imagenes/ejemplo1.gif)
+
+![Proceso 2](./imagenes/ejemplo2.gif)
+
+![Proceso 3](./imagenes/ejemplo3.gif)
+
+![Proceso 4](./imagenes/ejemplo4.gif)
+
+![Proceso 5](./imagenes/ejemplo5.gif)
+
+## Proceso y errores
+
+En el proceso es importante tener cuidado en los pequeños detalles ya que si no se les da la importancia necesaria puede no funcionar el proyecto, como en nuestro caso que tuvimos un fallo al conectar mal los jumpers con los pines de la Raspberry Pi Pico 2 W y eso daba un error desconocido en la pantalla del código que, con la ayuda de la IA y fijándonos mejor dónde debía conectarse cada cable, pudimos solucionar esto en la parte de la protoboard que tiene las conexiones del sensor.
+
 ## Bibliografía
+
+- Adafruit Learning System. (s.f.). Monochrome OLED breakouts. Adafruit Industries.
+- Arduino Documentation. (s.f.). Analog input. Arduino.
+- Interacciones inalámbricas. (2026). Código y ejemplos prácticos utilizados en clases. Material proporcionado por los profesores.
+- PuTTY Official Website. (s.f.). PuTTY. PuTTY.org.
+- Raspberry Pi Documentation. (s.f.). Pico series. Raspberry Pi Ltd.
+- Raspberry Pi Projects. (s.f.). Physical computing. Raspberry Pi Foundation.
