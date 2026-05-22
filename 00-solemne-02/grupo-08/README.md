@@ -53,4 +53,8 @@ El servo recibe los datos provenientes del feed “moluscos” y ajusta su posic
 
 ## Animaciones del proyecto
 
+<img src="./imagenes/imagenFinal1.gif" alt="final" width="300">
+<img src="./imagenes/imagenFinal2.gif" alt="final" width="300">
+<img src="./imagenes/imagenFinal3.gif" alt="final" width="300">
+
 ## Bibliografía
