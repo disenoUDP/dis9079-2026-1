@@ -6,7 +6,7 @@ Isidora Andrea Pérez Maulén /  [isipm08](<https://github.com/nicolasvaldesgrev
 ## Sensor de sonido tipo KY-038 / LM393
 
 ### **¿Qué es?**
-+ El sensor de sonido KY-038 es un dispositivo electrónico diseñado para **detectar ondas sonoras** o **variaciones acústicas** del entorno y convertirlas en señales elécticas, en donde el sonido es capaz de "viajar por el aire" en forma de vibraciones, donde el sensor capta estas vibraciones mediante un micrófono de condensador.
++ El sensor de sonido KY-038 es un dispositivo electrónico diseñado para **detectar ondas sonoras** o **variaciones acústicas** del entorno y convertirlas en señales eléctricas, en donde el sonido es capaz de "viajar por el aire" en forma de vibraciones, donde el sensor capta estas vibraciones mediante un micrófono de condensador.
 + Estas señales pueden ser interpretadas por un circuito, un microcontrolador o una computadora.
 + Utilizado en proyectos de robótica, domótica, instalaciones interactivas, instrumentos musicales electrónicos, sistemas de seguridad y arte multimedia.
 + Es compatible con varias placas, por ejemplo: Arduino UNO, Arduino Nano, Arduino Mega, ESP32, ESP8266 y Raspberry Pi, lo que facilita su integración en múltiples plataformas.
@@ -36,7 +36,7 @@ Isidora Andrea Pérez Maulén /  [isipm08](<https://github.com/nicolasvaldesgrev
 *Créditos Imagen:* https://destecmex.com/producto/modulo-sensor-de-sonido-ky-038/
 
 ### **Aplicaciones más comunes**
-- Estos son algunos de los ejemplos en los cuales se puede aplicar un sensor de sonido
+- Estos son algunos de los ejemplos en los cuales se puede aplicar un sensor de sonido:
   + Detectar aplausos.
   + Activar luces o motores.
   + Medir contaminación acústica.
@@ -96,15 +96,29 @@ if (flanco == 4) {                      //Si el contador llega a 4, que es el va
 - https://blog.uelectronics.com/tarjetas-desarrollo/uso-de-los-sensores-de-sonido-ky-038-ky-037-para-controlar-el-encendido-de-un-foco/
 
 # **Referente**
-MISAA
-GOLAN LEVIN
+## Golan Levin
+> Buscando artistas u obras con este sensor de sonido no pude encontrar nada):, ya que era muy específico. De igual forma hice búsqueda de un artista que me sugirió el profe a través de Discord, que me pareció interesante.
+
++ Artista, ingeniero e investigador, interesado en las nuevas intersecciones entre el código máquina, la cultura visual y la creación crítica.
++ Aplica giros creativos a las tecnologías digitales, resaltando nuestra relación que tenemos con las máquinas, despertando nuestro potencial como agentes creativos.
++ Aborda temáticas como:  robótica gestual interactiva; el potencial táctico de la fabricación digital personal; nuevas estéticas de la interacción no verbal; y la visualización de la información como modo de indagación crítica.
++ Nombrado dentro de los 50 diseñadores que dan forma al futuro.
++ Levin escribe: «Me interesa el medio de respuesta y las condiciones que permiten a las personas experimentar una retroalimentación creativa con sistemas reactivos. Me atrae el potencial crítico y revelador de la visualización, ya sea aplicada a un solo participante o al mundo de datos que habitamos. Me dedico al uso de la computación generativa para descifrar principios, tanto nuevos como atemporales, de la forma expresiva. Y me fascina cómo la abstracción puede conectarnos con una realidad más allá del lenguaje, y las maneras en que nuestros gestos y huellas, así abstraídos, pueden revelar las improntas únicas de nuestro espíritu».
++ Es capaz de hacer visibles nuestros medios de interacción con el otro, explorando la intersección de la comunicación no verbal y la interactividad.
+
+![titulo](./imagenes/golan.jpg)
+
+*Créditos Imagen:* https://art.cmu.edu/news/faculty-news/professor-golan-levin-presents-at-instint-new-orleans/
 
 ## Fuentes Artista
+https://art.cmu.edu/people/golan-levin/
+https://art.cmu.edu/news/faculty-news/professor-golan-levin-presents-at-instint-new-orleans/
+https://www.medialab-matadero.es/personal/golan-levin
 
 # Actuador
 ## Servo Motor SG90
 + Micro Servo de alta calidad y tamaño compacto, ideal para proyectos de robótica, aeromodelismo y automatización.
-+ Controla su eje con alta precisión entre 0°-180°
++ Controla su eje con alta precisión entre 0°-180°.
 + A diferencia de los motores de corriente continua comunes,  este no realizo giros libres e infinitos. Si no que utiliza un potenciómetro interno y un circuito de retroalimentación, los cuales le permite saber en dónde está ubicado. El ángulo depende de pulsos eléctricos enviados por un microcontrolador.
 + Tiene un cable que contiene 3 pines, los cuales se conectan directamente a microcontroladores:
   - Café/negro: GND (tierra).
@@ -135,7 +149,7 @@ GOLAN LEVIN
 + Artista Portugués nacido en 1948 - Lisboa.
 + Artista conceptual, cuyo trabajo pasó de la fotografía a el arte robótico y de inteligencia artificial. Creando arte generativo utilizando robots, en donde sus obras se sitúan en el campo de la pintura, pero cuestionando el propio papel del artista en su obra.
 + Imagina *arte simbiótico*, el hombre y la máquina trabajan como un conjunto para abandonar el dominio del campo del arte por percepciones humanas arbitrarias.
-+ Plantea su idea como el arte no tripuladoque depende de la capacidad de crear "organismos" mecánicos que sean capaces de producir su propio arte. Construyendo así dispositivos con algún tipo de conciencia ambiental y que ejecuten algoritmos basados en reglas simples. Presentando obras desde la aleatoriedad y en donde presenciar la construcción de una pintura por robots autónomos representa para el espectador humano una experiencia de conciencia global. 
++ Plantea su idea como el arte no tripulado que depende de la capacidad de crear "organismos" mecánicos que sean capaces de producir su propio arte. Construyendo así dispositivos con algún tipo de conciencia ambiental y que ejecuten algoritmos basados en reglas simples. Presentando obras desde la aleatoriedad y en donde presenciar la construcción de una pintura por robots autónomos representa para el espectador humano una experiencia de conciencia global. 
 
 ![titulo](./imagenes/leonel.avif)
 
@@ -145,7 +159,7 @@ GOLAN LEVIN
 + Creado en 2006.
 +  Es un robot autónomo capaz de producir pinturas y dibujos por sí mismo, tomando decisiones durante el proceso creativo. Contiene nuevas habilidades que Moura no había implementado en sus obras anteriores tales como: determinar la longitud y forma de cada trazo, la capacidad de decidir, de forma no lineal, el momento de parar y la habilidad de firmar.
 +  Su funcionamiento es a través bolígrafos de seis colores, en el cual los sensores RGB están dispuestos en una cuadrícula de 3×3, la cual permite detectar patrones locales y no solo colores.
-+  Dentro de su sistema ces posible visualizar el uso de un Servo Motor (no se encuentra detallado en ninguna documentación), per es muy probable que haga uso de este, deduciendo el tipo de movimientos que realiza el robot, permitiendo controlar dentro de este la posición, velocidad, dirección y su precisión en los movimientos. Cumpliendo así un rol fundamental, no solamente como función mecánica, si no que también un rol conceptual dentro de la obra. En donde sin este sistema de movimiento controlado el robot no sería capaz de poder representar y plasmar su comportamiento creativo.
++  Dentro de su sistema es posible visualizar el uso de un Servo Motor (no se encuentra detallado en ninguna documentación), pero es muy probable que haga uso de este, deduciendo el tipo de movimientos que realiza el robot, permitiendo controlar dentro de este la posición, velocidad, dirección y su precisión en los movimientos. Cumpliendo así un rol fundamental, no solamente como función mecánica, si no que también un rol conceptual dentro de la obra. En donde sin este sistema de movimiento controlado el robot no sería capaz de poder representar y plasmar su comportamiento creativo.
 
 ![titulo](./imagenes/rap.png)
 
@@ -162,4 +176,3 @@ GOLAN LEVIN
 ## Fuentes Artista
 - https://creacionhibrida.net/leonel-moura-pionero-del-arte-basado-en-la-creatividad-de-las-maquinas/
 - https://www.leonelmoura.com/rap-2/
-## Bibliografía
