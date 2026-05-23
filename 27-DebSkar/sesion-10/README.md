@@ -1,5 +1,5 @@
 # sesion-10
 
-lunes 18 mayo 2026
+## lunes 18 mayo 2026
 
-solemne 2
+### solemne 2

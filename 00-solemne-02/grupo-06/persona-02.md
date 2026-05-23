@@ -438,8 +438,16 @@ while True:
                 pass
             conectar_mqtt()
 ```
-
   
 ## Actuador
+Para el actuador, yo no conocía el solenoide, así que lo tuve que investigar, el que tenemos es este:
+
+<https://hubot.cl/producto/mini-solenoide%C2%82-dc-5v/>
+![solenoide](./imagenes/solenoide.png)
+
+Cami me explico como funcionaba y me vi unos videitos de youtube, muy interesante!
 
 ## Bibliografía
+* <https://hubot.cl/producto/mini-solenoide%C2%82-dc-5v/>
+* <https://youtu.be/fI1Mr4SIES4?si=58ErEgpNSsdA2vBf>
+* <https://www.youtube.com/shorts/H9k8D5eJ9uc>

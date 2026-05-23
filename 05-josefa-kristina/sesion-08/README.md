@@ -33,7 +33,7 @@ poner potenciometro en la raspi
 |------------|------------|------------|
 | PIN IZQUIERDO POTENCIÓMETRO | PIN MEDIO POTENCIÓMETRO | PIN DERECHO POTENCIÓMETRO |
 |     CABLE VERDE   |CABLE ROJO | CABLE AMARILLO  |
-| PIN 23- GROUND  resistor 1%   | PIN 36- 3V3 (OUT) | PIN 31- GP26 ADCO 12C1 SDA |
+| PIN 23- GROUND     | PIN 36- 3V3 (OUT) | PIN 31- GP26 ADCO 12C1 SDA |
 
 Siempre grabar para que funcione el código en Visual studio y tiene que decir code.pi
 

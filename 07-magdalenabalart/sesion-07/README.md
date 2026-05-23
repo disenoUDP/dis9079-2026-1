@@ -113,7 +113,9 @@ miServo.write(angulo);
 ```
 La función map() toma el valor del potenciómetro, que va entre 0 y 1023, y lo transforma en un ángulo entre 0 y 180.
 
-Acá ocurre algo central: un número se convierte en movimiento. 
+Acá ocurre algo central: un número se convierte en movimiento.  
+
+<img src="./imagenes/servo.gif" alt="Pantalla OLED" width="30%">  
  
 ## De lectura a comportamiento
 

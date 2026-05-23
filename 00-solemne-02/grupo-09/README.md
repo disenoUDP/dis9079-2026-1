@@ -14,11 +14,31 @@ Toda esta interacción se realiza mediante un feed de  Adafruit IO.
 
 El primer paso fue eliminar el firmware de la Raspberry, este se tiene que remplazar por el code.py de CircuitPython10.2.0, luego practicamos con un código que nos dio Aarón para conectarla a Adafruit Io, es el mismo código que después usamos como base para comenzar a modificar el nuestro.
 
+Le dimos a Claude AI el prompt:
+“Estamos haciendo un proyecto en el cual tenemos que conectar una Raspberry controlada por un potenciómetro, a través de una nube en Adafruit IO, a un Arduino UNO R4 con un motor servo, ¿cómo podríamos hacer que el potenciómetro conectado a la Raspberry, controle el servo conectado al arduino a través de Adafruit?”
+
 Cuando tratamos de modificar el código en Visual Studio Code, no nos funcionaba el código, después de un rato nos dimos cuenta de que lo estábamos corriendo en el computador y no en la Raspberry. Solucionado eso guardamos el código en su carpeta interna y lo comenzamos a correr utilizando Putty.
 
 En Putty tuvimos el siguiente problema: “Error de módulo (no module named...”.
 Estuvimos un buen rato estancados en eso hasta que le preguntamos a Claude y nos dio lo siguiente para escribir en Putty:
 
+Aarón nos sugirió que hiciéramos algo más tangible para controlar la sobrecarga de datos y que habláramos con el grupo 05 (Renata Arévalo, Isidora Pérez y Nicolás Valdés) quienes estaban usando un botón push para controlar el envío de datos. Nicolás nos explicó cómo lo querían hacer funcionar, creando un RPullDown, asegurando que la entrada lea un estado bajo constante hasta que al presionar el botón la lleve a un voltaje alto, esto para no tener que usar una resistencia en las conexiones físicas. También nos explicó como hacer la conexión del botón a la Raspi.
+
+Por recomendación de Aarón buscamos documentos que tuvieran un código parecido al que necesitábamos. Encontramos:
+<https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/cproject/ar_button.html>.
+En un inicio tratamos de hacer la conexión con un resistor de 220 a recomendación de Aarón, luego vimos la posibilidad de hacerlo con un Rpullup o un Rpulldown como aparecía en el documento y como lo hicieron en el grupo 05, decidimos esto último para que la protoboard no estuviera tan saturada de conexiones.
+
+Luego de implementar en nuestro código los fragmentos del sitio, lo corrimos y ahora solo se enviaban datos cuando movemos el potenciómetro (antes se enviaban siempre cada 0.2 segundos).
+
+Seguimos trabajando en el envío de datos y  comenzamos a probar con distintos fragmentos del primer código que nos funcionó, y le pedimos a nuestros compañeros del grupo 05,si nos podían ayudar, así que nos mostraron cómo era la parte de su código que hacía funcionar el botón. Entonces comenzamos a modificarlo y fuimos sumando las partes que nos servían a nuestro código.
+Finalmente dió resultado y Putty reconoció el botón, pero nos daba el siguiente error:
+Error:
+ “(‘Unable to receive 1 bytes within 10 seconds. ‘, None) - reconectando …”
+
+Así que le preguntamos a Claude que significaba ese error y nos dijo que el error se encontraba en  mqtt.loop() porque el broker corta la conexión por inactividad, también teníamos otro problema que era:
+
+MMQTTException: (‘Connection Refused - Unauthorized’, 5)
+Resulta que el problema era que el nombre de adafruit “Kaiikou” estaba escrito en minúscula y lo cambiamos y ahí funcionó, el botón funcionaba para detener el envío de información cuando era enviada.
 
 
 import sys

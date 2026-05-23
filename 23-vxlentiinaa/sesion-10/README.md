@@ -6,6 +6,8 @@ solemne 2
 
 ---
 
+## Apuntes
+
 - Sensores: Dispositivo diseñado para detectar cambios en el entorno
 - Actuadores: Dispositivo que recibe una orden o señal
 
