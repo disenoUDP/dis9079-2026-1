@@ -390,8 +390,6 @@ void loop() {
 
 ## Imágenes del proyecto
 
-<img src="./imagenes/Efeedservo2.jpeg " alt="install" width="500">
-
 <img src="./imagenes/monitorserial.jpeg " alt="install" width="500">
 
 
