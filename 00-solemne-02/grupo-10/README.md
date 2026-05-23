@@ -1,6 +1,6 @@
 # solemne-02
 
-## Integrantes
+### Integrantes
 
 - Braulio Figueroa / github: [brauliofigueroa2001](https://github.com/brauliofigueroa2001)
 - Luisa Toro / github: [Luisaatoro9](https://github.com/Luisaatoro9)
@@ -10,7 +10,7 @@
 ---
 
 
-## 1. Introducción y Organización
+### 1. Introducción y Organización
 
 Esta sesión fue el punto de encuentro de todo lo aprendido en el semestre. El objetivo: lograr que una Raspberry Pi Pico 2 W (emisor) controle un LED en un Arduino UNO R4 WiFi (receptor) a través de la nube.
 
@@ -22,11 +22,11 @@ Nos organizamos inicialmente en duplas para asegurar que cada parte funcionara d
 
 ---
 
-## Avance en clases dúo Braulio Figueroa y Luisa Toro
+### Avance en clases dúo Braulio Figueroa y Luisa Toro
 
 ---
 
-## Sensor usado - Botón pulsador de 4 pines
+### Sensor usado - Botón pulsador de 4 pines
 
 El objetivo es tener un código de enviar desde un Raspberry Pi Pico 2W y un código de recibir en un Arduino Uno R4 Wifi, utilizaremos un botón como primer acercamiento para poder crear una especie de "puerta" que nos dé la opción de activar y desactivar el envío de lecturas de datos hacia Adafruit IO, de esta manera, el servidor de IO no colapsa y evitamos problemas.
 
@@ -49,7 +49,7 @@ Se usó un botón físico para decidir cuándo mandar información a Adafruit IO
 
 **Imagen 02** *En esta imagen se evidencia la conexión del botón con el Raspberry Pi Pico 2w*
 
- ## Código usado para enviar, experimentación en clases - Raspberry Pi Pico 2w
+ ### Código usado para enviar, experimentación en clases - Raspberry Pi Pico 2w
 
 ```cpp
 import time
@@ -645,6 +645,12 @@ En el caso del Arduino, nos enfocamos en la gestión de dependencias y el flujo 
 - *Monitor Serial y Debugging:* Les enseñamos a fijarse en el Baud Rate (fijado en 115200) y a interpretar los mensajes de error en el Monitor Serial para saber si el problema es de conexión al router o de autenticación con Adafruit IO.
   
 - *Manejo de Tópicos:* Detallamos cómo el nombre del "Feed" en el código debe ser exactamente igual al configurado en la plataforma para que la suscripción de datos funcione.
+
+<img width="330" height="260" alt="image" src="https://github.com/user-attachments/assets/96d11e60-5f93-4fa7-bf4f-931d1bc82c55" />
+<img width="330" height="260" alt="image" src="https://github.com/user-attachments/assets/162ae878-e5c6-4391-afe9-899cb3bba1ee" />
+<img width="330" height="260" alt="image" src="https://github.com/user-attachments/assets/9705532f-223a-4205-b864-7d31bcac80bc" />
+
+**Imagen 20, 21 y 22** *En las imágenes se puede demostrar el orden de las carpetas y la correcta configuración del entorno de desarrollo. Se observa cómo la gestión de dependencias y el flujo del programa son clave para que el Arduino UNO R4 WiFi se comunique sin errores con la plataforma Adafruit IO.*
 
 ---
 

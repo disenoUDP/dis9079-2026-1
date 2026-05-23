@@ -51,6 +51,14 @@ El rebote también ocurre en el software, mientras que los programadores de prog
 
 ## Actuador
 
+**Speaker**
+
+Para mi investigación sobre un actuador, quise buscar información sobre algo distinto a lo que estábamos trabajando como grupo, ya que, desde hace un tiempo que quiero poder hacer algo con sonido y quizá el exámen podría ser la oportunidad de realizarlo
+
+![speaker](./imagenes/speaker.JPG)
+
+
+
 ## Bibliografía
 
 [unitelectronics](https://uelectronics.com/producto/push-button-4-pines-microswitch/)

@@ -48,8 +48,8 @@ El trabajo se hizo tanto en físico como en simulación con Tinkercad, lo que ay
 
 En este ejercicio usamos Tinkercad para probar un código y verificar el funcionamiento de un potenciómetro.
 
-foto ekema
-foto tinker
+![foto](./imagenes/esquematico-pote.png)
+![foto](./imagenes/ola.png)
 
 ```cpp
 
@@ -78,8 +78,8 @@ void loop()
 
 En este ejercicio también trabajamos en Tinkercad, pero añadimos un servomotor para probar su funcionamiento junto al código.
 
-foto eskea
-foto tinker
+![foto](./imagenes/esquematico-servo.png)
+![foto](./imagenes/motor.png)
 
 ```cpp
 
@@ -174,8 +174,11 @@ void meCohibi() {
 
 En este ejercicio pasamos al trabajo físico, enviando datos desde el circuito a Adafruit IO del profesor para visualizar la información en línea.
 
-adafruit
-gif gif 
+![foto](./imagenes/1ada.png)
+
+![foto](./imagenes/2ada.png)
+
+![foto](./imagenes/gif.gif)
 
 
 ```cpp
@@ -262,5 +265,4 @@ void loop() {
 
 También agregamos un LDR para medir cambios de luz y enviar esa información al sistema.
 
-gif gif 
-
+![foto](./imagenes/2gif.gif)
