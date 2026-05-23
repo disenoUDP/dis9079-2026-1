@@ -8,12 +8,11 @@
 - Antonia Fuentealba - [AntFuentealba](https://github.com/AntFuentealba)
   
 ## Descripción textual del proyecto
-
 Como encargo para la segunda solemne del curso, se nos pidió nuevamente desarrollar un sistema de comunicación inalámbrica. Para esto, trabajamos con dos microcontroladores distintos, programados mediante código: un Arduino Uno R4 WiFi y una Raspberry Pi Pico 2 W.
 
-El proyecto consiste en un sistema de detección de movimiento que envía información de forma remota. Para esto, se utilizó un sensor PIR que se activa mediante un botón. Una vez encendido, el sensor detecta movimiento y transmite esta información a través de la Raspberry Pi Pico 2 W hacia la plataforma Adafruit IO. 
+El proyecto consiste en un sistema de detección de movimiento que envía información de forma remota. Para ello, se utilizó un sensor PIR que se activa mediante un botón. Una vez encendido, el sensor detecta el movimiento y transmite esta información a través de la Raspberry Pi Pico 2 W hacia la plataforma Adafruit IO.
 
-Luego, estos datos son recibidos por el Arduino Uno R4 WiFi, que interpreta la señal y genera una respuesta visual en una pantalla OLED, la cual también se activa mediante un botón. En esta pantalla se muestran animaciones en pixel art de un alien, compuestas por seis frames que, al reproducirse de forma secuencial, simulan movimiento (tipo GIF). La animación representa una especie de contacto alienígena, donde el personaje se desplaza caminando.
+Luego, estos datos son recibidos por el Arduino Uno R4 WiFi, que interpreta la señal y genera una respuesta visual en una pantalla OLED, la cual también se activa mediante un botón. En esta pantalla se muestran animaciones en pixel art de un alienígena, compuestas por seis frames (fotogramas) que, al reproducirse de forma secuencial, simulan movimiento (tipo GIF). La animación representa una especie de contacto alienígena, donde el personaje se desplaza caminando.
 
 La lógica del sistema permite que, al detectar movimiento en el sensor, se active toda la cadena de comunicación hasta transformar ese evento en una representación visual. De esta forma, se traduce una acción física en una respuesta digital interactiva.
 
@@ -57,13 +56,13 @@ Finalmente cambiamos al otro sensor, y ahí el sistema comenzó a responder, aun
 
 Investigando sobre su funcionamiento, descubrimos que el sensor cuenta con dos reguladores. Uno controla la sensibilidad: mientras más alto está ajustado, más sensible es el sensor; y mientras más bajo, menos sensible se vuelve. El segundo regulador controla el tiempo que la señal permanece activada: si está alto, la salida se mantiene en estado HIGH por más tiempo, y si está bajo, vuelve más rápido al estado LOW.
 
-Y las principales dificultades que tuvimos al realizar la animación fueron que, al principio, los frames no corrían correctamente en la pantalla. Después de investigar y ver varios videos, logramos que la pantalla mostrara un frame estático, aunque todavía sin movimiento.
+Y las principales dificultades que tuvimos al realizar la animación fueron que, al principio, los frames no corrían correctamente en la pantalla. Después de investigar y ver varios videos, logramos que la pantalla mostrará un frame estático, aunque todavía sin movimiento.
 
 El siguiente desafío fue agregar los demás frames, ya que teníamos que convertir cada imagen individualmente usando Image2CPP, y en varias ocasiones el código nos arrojaba errores.
 
 Finalmente, conseguimos que el GIF funcionara correctamente y se reprodujera completo en la pantalla.
 
-### Pruebas de animacion
+### Pruebas de animación
 ![pruebas](imagenes/pruebas1.gif)
 ![pruebas](imagenes/pruebas.gif)
 ![pruebas](imagenes/pruebas3.jpeg)

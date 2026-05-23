@@ -171,4 +171,24 @@ Desventajas:
 - depende totalmente de energía eléctrica
 -desgaste mecánico interno con el tiempo
 
+### Obra
+
+### Wavefunction / Subsculpture 9 – Rafael Lozano-Hemmer (UMMA)  
+
+Rafael Lozano-Hemmer es un artista contemporáneo mexicano-canadiense nacido en 1967 en Ciudad de México. Su trabajo se enfoca en la creación de instalaciones interactivas que combinan arte, tecnología y participación del público. Sus obras utilizan sistemas computacionales, sensores y mecanismos automatizados para generar experiencias donde el espectador es parte activa de la obra 
+
+Su enfoque artístico se basa en la idea de la “arquitectura relacional”, donde el espacio expositivo deja de ser estático y responde a la presencia de las personas. Esto permite que el comportamiento del público influya directamente en el funcionamiento de la instalación, transformando la obra en un sistema dinámico en tiempo real.
+
+Wavefunction / Subsculpture 9 es una instalación cinética creada por Rafael Lozano-Hemmer que combina escultura, tecnología y participación del público. La obra está formada por sillas organizadas en una estructura de rejilla que responde al movimiento de los visitantes dentro del espacio expositivo.
+
+“La instalación consta de cuarenta y dos sillas de plástico moldeadas (diseñadas por los Eames en 1948) dispuestas en una rejilla y sujetas a pistones electromecánicos. Cuando los visitantes se acercan a las sillas, un sistema de vigilancia detecta su presencia y las sillas más cercanas se levantan suavemente del suelo. Las sillas adyacentes siguen la silla y un movimiento de ola se extiende por la matriz. El software que controla los pistones se basa en la dinámica de fluidos, por lo que a medida que más visitantes se acercan a la cuadrícula, las sillas —cuyos icónicos contornos curvos también se generaron matemáticamente— imitan la compleja interacción de múltiples ondas en el agua” (University of Michigan Museum of Art, 2017).
+
+“La idea de una ‘función’ como campo de experimentación artística es una motivación para esta pieza. Otras referencias incluyen: las matemáticas de los sistemas dinámicos, capaces de generar comportamientos complejos no lineales, la materialización de la vigilancia y la turbulencia, y la reinterpretación antimodular del trabajo de diseñadores modernos como Charles y Ray Eames. Cuando alguien se acerca a la obra, un sistema de vigilancia informatizado detecta su presencia y las sillas más cercanas comienzan automáticamente a elevarse del suelo, creando la cresta de una ola que luego se extiende por toda la sala. Un sistema de pistones electromecánicos eleva cada silla cuarenta centímetros del suelo. Los pistones son controlados por un ordenador que ejecuta las matemáticas de la dinámica de fluidos, haciendo que las ondas interfieran entre sí, creando turbulencias o calmándose, igual que el agua real.” (Lozano-Hemmer, 2007).
+
+Aún me impresiona cómo algo digital puede transformarse a ese nivel en un efecto físico y visual real dentro del espacio. Es interesante ver cómo la obra mezcla arte y tecnología de  quizás una manera más simple, pero muy visual, logrando que la presencia de las personas genere movimientos reales en las sillas y cambie completamente la experiencia del lugar.
+
 ## Bibliografía
+
+- Lozano-Hemmer, R. (2007). Wavefunction (Subsculpture 9). <https://lozano-hemmer.com/wavefunction.php>
+- MechDaily. (2025). Linear actuators: types, processes and applications. <https://www.mechdaily.com/what-is-linear-actuators/>
+- University of Michigan Museum of Art. (2017). Rafael Lozano-Hemmer: Wavefunction, Subsculpture 9. <https://umma.umich.edu/exhibitions/rafael-lozano-hemmer-wavefunction-subsculpture-9/>

@@ -49,7 +49,7 @@ De forma más detallada el proyecto consta de enviar señales inalámbricamente.
 
 ## Input: Raspberry pi pico 2w con Sensor
 
-La primera pieza a crear es el circuito con el emisor. Para ello he de usar la placa previamente mencionada con un botón conectado. A continuación se desarrolla el código en VS Code para poder realizar las lecturas de un botón y un potenciómetro para enviarlas a Adafruit IO. Cabe mencionar que la información mostrada en la terminal aparece en un OLED conectado al circuito.
+La primera pieza a crear es el circuito con el emisor. Para ello he de usar la placa previamente mencionada con un botón conectado. A continuación se desarrolla el código de Python en VS Code para poder realizar las lecturas de un botón y un potenciómetro, información que será enviada a Adafruit IO. Cabe mencionar que la información mostrada en la terminal aparece en un OLED conectado al circuito.
 
 ### Código para enviar
 
@@ -82,11 +82,11 @@ import adafruit_displayio_ssd1306
 # ------------------------------------------------------------
 # CONFIGURACIÓN
 # ------------------------------------------------------------
-WIFI_SSID     = "WiFi_Mesh-075408"
-WIFI_PASSWORD = "y3Fk6ush"
+WIFI_SSID     = "iPhone-cs"
+WIFI_PASSWORD = "lasagna342"
 
 AIO_USERNAME  = "Camila_Parada"
-AIO_KEY       = ""
+AIO_KEY       = "Clave-io"
 
 FEED          = f"{AIO_USERNAME}/feeds/papa-prueba"
 
@@ -289,13 +289,13 @@ Para la recepción de la información y activación del solenoide fue necesaria 
 #include <Adafruit_MQTT_Client.h>
 
 // ---- CONFIGURACIÓN ----------------------------------------
-const char* WIFI_SSID     = "WiFi_Mesh-075408";
-const char* WIFI_PASSWORD = "y3Fk6ush";
+const char* WIFI_SSID     = "iPhone-cs";
+const char* WIFI_PASSWORD = "lasagna342";
 
 const char* AIO_SERVER    = "io.adafruit.com";
 const int   AIO_PORT      = 1883;
 const char* AIO_USERNAME  = "Camila_Parada";
-const char* AIO_KEY       = "";
+const char* AIO_KEY       = "Clave-io";
 
 const char* AIO_FEED      = "Camila_Parada/feeds/papa-prueba";
 
@@ -425,22 +425,49 @@ void conectarMQTT() {
 ## Mapa de flujo
 
 ```mermaid
+---
+config:
+  layout: fixed
+---
 flowchart TB
-    n6["Esos datos son almacenados en Adafruit.IO"] --> n7["Los datos son recibidos en (Arduino recibir)"]
-    A("El (Arduino enviar)<br>se conecta a corriente") --> n5["Al abrir el monitor serial se muestra lo que sucede en la placa"]
-    n5 --> n1["Se enciende y procede a conectarse a internet"] & n3["Procede a conectarse a (Adafruit.IO)"]
-    n3 --> n2["El potenciómetro captura información"]
-    n1 --> n2
-    n2 --> n9["La información es transformada a volumen"]
-    n9 --> n6
-    n8["El (Arduino recibir) se conecta a corriente"] --> n10["Se enciende, se conecta a internet y Adafruit.IO"]
-    n10 --> n7
-    n7 --> n11["Si valor es = 0"] & n12["Si el valor es > 0"]
-    n11 --> n13["No suena nada"] & n14["No se ilumina la matriz de leds"]
-    n12 --> n15["La matriz de leds se ilumina acorde al valor de volumen"] & n16["Se emite un sonido que se ajusta al valor del volumen
-    "]
+    A["Se da energía a todo el circuito"] --> n19["Se conectan a internet ambas placas"]
+    n19 --> n5["El proyecto queda a la espera de un usuario"]
+    n5 --> n17["Raspberry pi pico 2w<br>(Emisor)"]
+    n17 --> n20["Botón"] & n22["Pantalla"]
+    n20 --- n23["Presionar"]
+    n23 --> n24["Si"] & n25["No"]
+    n25 -.-> n5
+    n25 --> n36["Potenciometro apagado"]
+    n24 --> n21["Potenciometro activo"]
+    n22 --> n26["Muestra el estado del potenciómetro"]
+    n21 --> n29["girar perilla"]
+    n29 --> n30["Si"] & n31["No"]
+    n31 --> n32["No pasa nada"]
+    n30 --> n33["Registra y envía datos"]
+    n33 --> n26 & n34["Adafruit IO"]
+    n34 --> n35["Recibe la información"]
+    n38["Relé"] --> n39["Envía corriente"]
+    n37["Arduino UNO R4 Wifi <br>(Receptor)"] --> n38
+    n35 --> n40["Si"] & n41["No"]
+    n40 --> n37
+    n41 --> n32
+    n39 --> n42["Si"] & n41
+    n42 --> n43["Activa solenoide"]
 
-    n8@{ shape: rect}
+    A@{ shape: rect}
+    n19@{ shape: rect}
+    n5@{ shape: rect}
+    n17@{ shape: rounded}
+    n20@{ shape: rounded}
+    n22@{ shape: rounded}
+    n23@{ shape: diam}
+    n21@{ shape: rect}
+    n29@{ shape: diam}
+    n33@{ shape: diam}
+    n35@{ shape: diam}
+    n38@{ shape: rect}
+    n39@{ shape: diam}
+    style n23 stroke-width:2px,stroke-dasharray: 0,font-size:14px
 ```
 
 ## Modelado de carcasa e impresión 3D

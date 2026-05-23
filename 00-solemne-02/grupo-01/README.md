@@ -424,11 +424,18 @@ void MQTT_connect() {
 
 En el proceso es importante tener cuidado en los pequeños detalles ya que si no se les da la importancia necesaria puede no funcionar el proyecto, como en nuestro caso que tuvimos un fallo al conectar mal los jumpers con los pines de la Raspberry Pi Pico 2 W y eso daba un error desconocido en la pantalla del código que, con la ayuda de la IA y fijándonos mejor dónde debía conectarse cada cable, pudimos solucionar esto en la parte de la protoboard que tiene las conexiones del sensor.
 
+Para el proceso del código se usó VS Code, para simulaciones de cómo se vería el gato rotando. En el camino descubrimos que existen 2 formas de poner una imagen en la pantalla usando el rasberry, la primera sería ponerlo en la placa directamente como archivo .bmp el cual es un formato de bits o de 0 y 1, también hay un formato llamado Bytearray, el cual es una secuencia modificables de bytes, se usan valores de 0 y 255 o en otras palabras, ceros y unos, se uso esta pagina para convertir la imagen: **[image2cpp](https://javl.github.io/image2cpp/)**, tras investigar y probar cual era la mejor opción, usamos el segundo ya que si queríamos que rotará de manera mas fluida necesitamos que estuviera dentro del codigo, asi cada vez que rotaba no tenía que llamar al archivo dentro de la raíz del raspberry, para realizar la rotación, para esto le pedimos a la ia que nos ayudará para que hiciera los cálculos y el código, Para hacerlo se le pidió que tomara de punto base el ángulo 0 y que en este el gato este acostado hacia la izquierda, para derecha lo contrario, 180 y acostado a la derecha, está hecho de manera que en 90, el gatito se encuentre parado también se aplico que su punto de rotación estuviera en el centro.  Debido a que el gato se veía con bajos FPS (frames por segundo o "va pegado"), se usó un lienzo de 54x54 en donde se realizaría todo este movimiento. A su vez, creó un caché local para que no busque tan repetitivamente por la RAM, la RAM en un almacenamiento aparte que se usa en tiempo real. En nuestro caso, lo usamos para guardar la imagen ahí y llamarla cada que se haga el cálculo de rotación.
+
+
+Para el Arduino también se usó IA para el código, pero tomando de referencia el trabajo hecho por el profesor con el servo, se usó para el recibimiento de la información del feed. En este caso no tuvimos problemas graves, solo nos faltó descargar la librería Adafruit MQTT Library.
+
 ## Bibliografía
 
-- Adafruit Learning System. (s.f.). Monochrome OLED breakouts. Adafruit Industries.
-- Arduino Documentation. (s.f.). Analog input. Arduino.
-- Interacciones inalámbricas. (2026). Código y ejemplos prácticos utilizados en clases. Material proporcionado por los profesores.
-- PuTTY Official Website. (s.f.). PuTTY. PuTTY.org.
-- Raspberry Pi Documentation. (s.f.). Pico series. Raspberry Pi Ltd.
-- Raspberry Pi Projects. (s.f.). Physical computing. Raspberry Pi Foundation.
+- **[Adafruit Learning System: Monochrome OLED breakouts](https://learn.adafruit.com/monochrome-oled-breakouts/overview)** (s.f.). Adafruit Industries.
+- **[Adafruit MQTT Library for Arduino](https://docs.arduino.cc/libraries/adafruit-mqtt-library/)** (2026). Arduino Reference Documentation.  
+- **[Arduino Documentation: Analog input](https://www.arduino.cc/en/Tutorial/AnalogInput)** (s.f.). Arduino.
+- **[Javl (Github Community): image2cpp](https://javl.github.io/image2cpp/)** (s.f.). An open-source tool to change images into byte arrays for monochrome OLED displays. GitHub.
+- **[Microsoft: Visual Studio Code (VS Code)](https://code.visualstudio.com/)** (2026). Code editing. Redefined. Microsoft Corporation.  
+- **[PuTTY Official Website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)** (s.f.). SSH and telnet client. Simon Tatham.
+- **[Raspberry Pi Documentation: Pico series](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html)** (s.f.). Raspberry Pi Ltd.
+- **[Raspberry Pi Projects: Physical computing](https://projects.raspberrypi.org/)** (s.f.). Raspberry Pi Foundation.
