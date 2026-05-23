@@ -100,6 +100,24 @@ Tipos de resistencia de variación mecánica para su uso como potenciómetros:
 
 Como sensor de posición rotacional o lineal, su funcionamiento se basa en el principio de un divisor de voltaje, actuando como un transductor que transforma de manera directa un movimiento mecánico en una señal eléctrica analógica. Al alimentar los extremos de su pista con un voltaje fijo, el pin central entrega una tensión de salida que varía de forma continua y proporcional a la ubicación física del eje.
 
+#### [Moog Matriarch](https://www.moogmusic.com/synthesizers/matriarch/)
+
+<img src="./imagenes/sofia_imagenes/moog.jpg" alt="final" width="300">
+
+El Moog Matriarch es un sintetizador analógico semimodular creado por Moog Music. Está pensado para crear sonidos experimentales. Combina un teclado tradicional con un sistema modular lleno de conexiones “patch points” para modificar el sonido manualmente.
+
+el sonido moviendo controles físicos en tiempo real.
+
+Dónde encontrar sus potenciómetros:
+
+- frecuencia del oscilador
+- filtro cutoff
+- resonancia
+- volumen
+- velocidad del LFO
+- tiempo del delay
+- mezcla de señales
+
 ### Investigación del actuador: Servomotor SG90
 
 <img src="./imagenes/sofia_imagenes/servo.jpg" alt="final" width="300">
@@ -128,7 +146,7 @@ Como actuador de precisión, su funcionamiento se basa en el principio de lazo c
 
 #### [Reloj de siete segmentos](https://hackaday.com/2020/04/22/servo-powered-7-segments-choreograph-this-chronograph/)
 
-<img src="./imagenes/sofia_imagenes/reloj7segmentos.jgp" alt="final" width="300">
+<img src="./imagenes/sofia_imagenes/reloj7segmentos.jpg" alt="final" width="300">
 
 Trata sobre un reloj mecánico digital construido con servomotores y piezas impresas en 3D. El sistema utiliza 28 servos para mover físicamente los segmentos de cuatro números tipo “7 segmentos”, creando una visualización del tiempo dinámica y coreográfica.
 El proyecto fue desarrollado por el creador conocido como “thediylife”, y el artículo fue escrito por Kristina Panos para Hackaday. El reloj funciona con un Arduino conectado a dos controladores de servos de 16 canales y un módulo RTC DS1302, encargado de mantener la hora exacta. El código divide los números en arreglos que determinan qué segmentos deben activarse o desactivarse.
@@ -388,3 +406,5 @@ void loop() {
 - Circuitpython.org.(s.f).Raspberry_pi_pico2_w. Circuitpython.org <https://circuitpython.org/board/raspberry_pi_pico2_w/>
 - Afel.cl.(s.f).micro servomotor sg90. Afel.cl.<https://afel.cl/products/micro-servomotor-sg90?_pos=1&_psq=servomotor&_ss=e&_v=1.0>
 - Afel.cl.(s.f).potenciometro 500k-ohm. Afel.cl. <https://afel.cl/products/potenciometro-500k-ohm?_pos=4&_psq=pote&_ss=e&_v=1.0>
+- Hackaday.com.(2020). Servo powered 7 segments choreograph. Hackaday.com. <https://hackaday.com/2020/04/22/servo-powered-7-segments-choreograph-this-chronograph/>
+- Moogmusic.com (s.f.). Synthesizers matriarch. Moogmusic.com. <https://www.moogmusic.com/synthesizers/matriarch/>
