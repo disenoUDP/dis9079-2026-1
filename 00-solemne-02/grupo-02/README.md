@@ -423,7 +423,7 @@ Finalmente, determinamos que el problema no estaba en el código, sino en la con
 Como parte adicional de la práctica, quisimos comprobar si el sistema funcionaba a larga distancia. Para ello, fue necesario conectarnos a una red distinta, ya que al alejarnos del punto de acceso original la señal se debilitaba al punto de desconectarse. Al cambiar de red logramos mantener una conexión estable y verificar que el sistema respondía correctamente incluso a mayor distancia.
 
 ![Arduino](imagenes/arduino_conectado.jpg)
-<img width="1825" height="865" alt="arduino_conectado" src="https://github.com/user-attachments/assets/7c703236-4e96-40bb-b194-9d0e745d945c" />
+
 
 ![Arduino](imagenes/prueba1.jpg)
 ## Imágenes del proyecto
