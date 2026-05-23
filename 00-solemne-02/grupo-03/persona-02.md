@@ -143,10 +143,17 @@ Eso me hizo reflexionar sobre el rol de la pantalla en nuestro proyecto. En una 
 ## Bibliografía
 
 Adafruit Industries. (s.f.). Adafruit CircuitPython MiniMQTT library. GitHub. https://github.com/adafruit/Adafruit_CircuitPython_MiniMQTT
+
 Adafruit Industries. (s.f.). Adafruit IO Arduino library. GitHub. https://github.com/adafruit/Adafruit_IO_Arduino
+
 Adafruit Industries. (s.f.). Adafruit SSD1306 library. GitHub. https://github.com/adafruit/Adafruit_SSD1306
+
 Adafruit Industries. (s.f.). Adafruit GFX library. GitHub. https://github.com/adafruit/Adafruit-GFX-Library
+
 Arduino. (s.f.). Arduino UNO R4 WiFi documentation. https://docs.arduino.cc/hardware/uno-r4-wifi/
+
 Raspberry Pi Ltd. (s.f.). Raspberry Pi Pico 2W datasheet. https://datasheets.raspberrypi.com/picow/pico-2-w-datasheet.pdf
+
 Teenage Engineering. (s.f.). Products. https://teenage.engineering
+
 Williams, E. (2015, 9 de diciembre). Debouncing buttons and switches, part I. Hackaday. https://hackaday.com/2015/12/09/embed-with-elliot-debounce-your-noisy-buttons-part-i/
