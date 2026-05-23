@@ -45,9 +45,9 @@ Pero llegar a eso nos tomó un buen rato la verdad, porque primero había que en
 
 ### Lo que más ayudó: parar y darnos un mini break muy necesario
 
-En algún momento durante la clase simplemente dejamos de insistir. Nos alejamos un momento, hablamos de otra cosa, nos reimos un rato y volvimos a seguir intendo. Casi siempre después de eso algo que antes no veíamos, aparece.
+En algún momento durante la clase simplemente dejamos de insistir. Nos alejamos un momento, hablamos de otra cosa, nos reimos un rato y volvimos a seguir intendo. Casi siempre después de eso, algo que antes no veíamos, aparece.
 
-El método universal de Aarón también fue parte de esto: analizar el problema por partes, probar una cosa a la vez, no asumir que el error está donde uno cree. (gracias Aarón)
+El método universal de Aarón también fue parte de esto: analizar el problema por partes, probar una cosa a la vez, no asumir que el error está donde uno cree (gracias Aarón).
 
 <img src="./imagenes/metodo.aaron.jpg" alt="tinkercad" width="400">
 
