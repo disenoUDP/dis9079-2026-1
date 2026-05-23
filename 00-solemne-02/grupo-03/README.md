@@ -522,12 +522,12 @@ AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 
 
 ## Bibliografía 
-<img src="./imagenes/patti.jpg" alt="hacerbien" width="30%"> Smith, Patti. Éramos unos niños. Lumen, 2010
+<img src="./imagenes/patti.jpg" alt="hacerbien" width="30%"> Smith, P. (2010). *Éramos unos niños*. Lumen.
  
-<img src="./imagenes/metodouniverlsal.jpg" alt="hacerbien" width="30%"> Montoya, Aarón. Método Universal, 2026
+<img src="./imagenes/metodouniverlsal.jpg" alt="hacerbien" width="30%"> Montoya, A. (2026). *Método universal*.
 
-Instructables. (s. f.). Arduino button with no resistor. https://www.instructables.com/Arduino-Button-with-no-resistor/  
+Instructables. (s. f.). *Arduino button with no resistor*. https://www.instructables.com/Arduino-Button-with-no-resistor/
 
-Arduino. (s. f.). Digital input pull-up. Arduino Documentation. https://docs.arduino.cc/tutorials/generic/digital-input-pullup/  
+Arduino. (s. f.). *Digital input pull-up*. Arduino Documentation. https://docs.arduino.cc/tutorials/generic/digital-input-pullup/
 
-Rubell, B. (2019, 23 de julio). MQTT in CircuitPython. Adafruit Learning System. https://learn.adafruit.com/mqtt-in-circuitpython/  
+Rubell, B. (2019, 23 de julio). *MQTT in CircuitPython*. Adafruit Learning System. https://learn.adafruit.com/mqtt-in-circuitpython/

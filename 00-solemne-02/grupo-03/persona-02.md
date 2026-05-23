@@ -51,7 +51,7 @@ Indirectamente, la visualización final de cada presión es el texto que aparece
 
 ### Proyecto referencia — "sPIral" (Valentina Ruz, Sofía Cartes, Antonia Fuentealba, Sofía Pérez, Estudiantes UDP)
 
-Uno de los referentes que revisé fue sPIral, un proyecto realizado por compañeras de la carrera. Lo conocí porque mi amigas Vale y Sofi, integrante del grupo, me lo mostró mientras estábamos revisando distintos proyectos relacionados con pantallas y visualización de información. Lo que más me llamó la atención fue cómo utilizan una pantalla OLED para presentar poemas de una forma interactiva y visualmente atractiva, alejándose de la idea de mostrar únicamente texto o datos. Me pareció un buen ejemplo de cómo la programación y la electrónica pueden aportar valor a una propuesta de diseño, transformando una pantalla en una experiencia de interacción. Además, me hizo pensar en las posibilidades creativas que tienen este tipo de actuadores cuando se utilizan más allá de su función técnica básica.
+Uno de los referentes que revisé fue sPIral, un proyecto realizado por compañeras de la carrera. Lo conocí porque mi amigas Valentina y Sofía, integrantes del grupo, me lo mostraron mientras estábamos revisando distintos proyectos relacionados con pantallas y visualización de información. Lo que más me llamó la atención fue cómo utilizan una pantalla OLED para presentar poemas de una forma interactiva y visualmente atractiva, alejándose de la idea de mostrar únicamente texto o datos. Me pareció un buen ejemplo de cómo la programación y la electrónica pueden aportar valor a una propuesta de diseño, transformando una pantalla en una experiencia de interacción. Además, me hizo pensar en las posibilidades creativas que tienen este tipo de actuadores cuando se utilizan más allá de su función técnica básica.
 
 <img src="./imagenes/spiral1.png" alt="tinkercad" width="800">
 <img src="./imagenes/spiral2.png" alt="tinkercad" width="800">
@@ -74,24 +74,6 @@ Las pantallas OLED tienen una ventaja frente a las LCD tradicionales: **cada pí
 | Voltaje de operación | 3.3V – 5V |
 | Consumo típico | 20mA |
 | Tamaño diagonal | 0.96 pulgadas |
-
-### Comunicación I2C
-
-I2C (Inter-Integrated Circuit) es un protocolo de comunicación en serie que permite conectar múltiples dispositivos usando solo **dos cables de datos**: SDA (datos) y SCL (reloj), además de VCC y GND. Cada dispositivo tiene una dirección única (en nuestro caso `0x3C`), lo que permite al microcontrolador distinguirlo si hay más de un periférico en el mismo bus.
-
-```
-Arduino R4 WiFi      Pantalla OLED SSD1306
-─────────────        ─────────────────────
-5V        ────────►  VCC
-GND       ────────►  GND
-SDA (A4)  ────────►  SDA
-SCL (A5)  ────────►  SCL
-```
-
-```cpp
-Wire.begin();
-display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
-```
 
 ### Uso en el proyecto
 
@@ -146,7 +128,7 @@ Esto abre la posibilidad de mostrar gráficos de barras con datos en tiempo real
 
 ### Empresa de referencia — Teenage Engineering (Suecia)
 
-Teenage Engineering es una empresa sueca de diseño de instrumentos musicales electrónicos. Sus productos más conocidos, como el **OP-1 Field** y la serie **Pocket Operator**, usan pantallas OLED como parte central de su interfaz. Lo que me interesó al investigarlos es que no usan la pantalla solo como display de estado: la convierten en parte de la **experiencia expresiva del instrumento**. Las formas de onda, los parámetros de síntesis y las animaciones se muestran en tiempo real, y el usuario aprende a leer la pantalla como parte de tocar el instrumento.
+Teenage Engineering es una empresa sueca de diseño de instrumentos musicales electrónicos. Sus productos más conocidos, como el **OP-1 Field** y la serie **Pocket Operator**, usan pantallas OLED como parte central de su interfaz. Lo que me interesó al investigarlos es que no usan la pantalla solo como display de estado, sino que la convierten en parte de la **experiencia expresiva del instrumento**. Las formas de onda, los parámetros de síntesis y las animaciones se muestran en tiempo real, y el usuario aprende a leer la pantalla como parte de tocar el instrumento.
 
 Eso me hizo reflexionar sobre el rol de la pantalla en nuestro proyecto. En una escala mucho más pequeña, la OLED hace lo mismo: convierte algo invisible (un mensaje viajando por WiFi desde otra habitación) en algo concreto y legible. Sin el actuador, el sistema existe pero no se percibe.
 
@@ -160,12 +142,18 @@ Eso me hizo reflexionar sobre el rol de la pantalla en nuestro proyecto. En una 
 
 ## Bibliografía
 
-- Adafruit Industries. *Adafruit CircuitPython MiniMQTT Library*. https://github.com/adafruit/Adafruit_CircuitPython_MiniMQTT
-- Adafruit Industries. *Adafruit IO Arduino Library*. https://github.com/adafruit/Adafruit_IO_Arduino
-- Adafruit Industries. *Adafruit SSD1306 Library*. https://github.com/adafruit/Adafruit_SSD1306
-- Adafruit Industries. *Adafruit GFX Library*. https://github.com/adafruit/Adafruit-GFX-Library
-- Raspberry Pi Ltd. *Raspberry Pi Pico 2W Datasheet*. https://datasheets.raspberrypi.com/picow/pico-2-w-datasheet.pdf
-- Arduino. *Arduino UNO R4 WiFi Documentation*. https://docs.arduino.cc/hardware/uno-r4-wifi/
-- Elliot Williams. *Debouncing Buttons and Switches*. Hackaday. https://hackaday.com/2015/12/09/embed-with-elliot-debounce-your-noisy-buttons-part-i/
-- Daily tous les jours. *21 Swings*. https://www.dailytouslesjours.com/project/21-balancoires
-- Teenage Engineering. *Products*. https://teenage.engineering
+Adafruit Industries. (s.f.). Adafruit CircuitPython MiniMQTT library. GitHub. https://github.com/adafruit/Adafruit_CircuitPython_MiniMQTT
+
+Adafruit Industries. (s.f.). Adafruit IO Arduino library. GitHub. https://github.com/adafruit/Adafruit_IO_Arduino
+
+Adafruit Industries. (s.f.). Adafruit SSD1306 library. GitHub. https://github.com/adafruit/Adafruit_SSD1306
+
+Adafruit Industries. (s.f.). Adafruit GFX library. GitHub. https://github.com/adafruit/Adafruit-GFX-Library
+
+Arduino. (s.f.). Arduino UNO R4 WiFi documentation. https://docs.arduino.cc/hardware/uno-r4-wifi/
+
+Raspberry Pi Ltd. (s.f.). Raspberry Pi Pico 2W datasheet. https://datasheets.raspberrypi.com/picow/pico-2-w-datasheet.pdf
+
+Teenage Engineering. (s.f.). Products. https://teenage.engineering
+
+Williams, E. (2015, 9 de diciembre). Debouncing buttons and switches, part I. Hackaday. https://hackaday.com/2015/12/09/embed-with-elliot-debounce-your-noisy-buttons-part-i/
