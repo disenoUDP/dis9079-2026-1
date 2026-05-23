@@ -133,7 +133,7 @@ Como actuador de precisión, su funcionamiento se basa en el principio de lazo c
 Trata sobre un reloj mecánico digital construido con servomotores y piezas impresas en 3D. El sistema utiliza 28 servos para mover físicamente los segmentos de cuatro números tipo “7 segmentos”, creando una visualización del tiempo dinámica y coreográfica.
 El proyecto fue desarrollado por el creador conocido como “thediylife”, y el artículo fue escrito por Kristina Panos para Hackaday. El reloj funciona con un Arduino conectado a dos controladores de servos de 16 canales y un módulo RTC DS1302, encargado de mantener la hora exacta. El código divide los números en arreglos que determinan qué segmentos deben activarse o desactivarse.
 
-#### AND-Y
+#### [AND-Y](https://github.com/sofiacartes/AND-Y)
 
 <img src="./imagenes/sofia_imagenes/AND-Y.jpg" alt="final" width="300">
 
