@@ -86,7 +86,7 @@ NO OLVIDAR!
 
 ### Investigación del sensor: Potenciómetro B500K
 
-<img src="./imagenes/pote.jpg" alt="final" width="300">
+<img src="./imagenes/sofia_imagenes/pote.jpg" alt="final" width="300">
 
 Imágen de: <https://afel.cl/products/potenciometro-500k-ohm?_pos=4&_psq=pote&_ss=e&_v=1.0>
 
@@ -102,7 +102,7 @@ Como sensor de posición rotacional o lineal, su funcionamiento se basa en el pr
 
 ### Investigación del actuador: Servomotor SG90
 
-<img src="./imagenes/servo.jpg" alt="final" width="300">
+<img src="./imagenes/sofia_imagenes/servo.jpg" alt="final" width="300">
 
 Imágen de: <https://afel.cl/products/micro-servomotor-sg90?_pos=1&_psq=servomotor&_ss=e&_v=1.0>
 
@@ -128,7 +128,7 @@ Como actuador de precisión, su funcionamiento se basa en el principio de lazo c
 
 #### [Reloj de siete segmentos](https://hackaday.com/2020/04/22/servo-powered-7-segments-choreograph-this-chronograph/)
 
-<img src="./imagenes/sofia_imagenes/reloj7segmentos" alt="final" width="300">
+<img src="./imagenes/sofia_imagenes/reloj7segmentos.jgp" alt="final" width="300">
 
 Trata sobre un reloj mecánico digital construido con servomotores y piezas impresas en 3D. El sistema utiliza 28 servos para mover físicamente los segmentos de cuatro números tipo “7 segmentos”, creando una visualización del tiempo dinámica y coreográfica.
 El proyecto fue desarrollado por el creador conocido como “thediylife”, y el artículo fue escrito por Kristina Panos para Hackaday. El reloj funciona con un Arduino conectado a dos controladores de servos de 16 canales y un módulo RTC DS1302, encargado de mantener la hora exacta. El código divide los números en arreglos que determinan qué segmentos deben activarse o desactivarse.
