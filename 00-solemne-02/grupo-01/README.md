@@ -18,20 +18,6 @@ Para poder controlar el envío de información y no saturar la nube, cuenta con 
 
 A la Raspberry le sumamos una pantalla OLED de 128x64 px para poder ver los datos que vamos enviando en tiempo real, en la pantalla se muestran los cambios que se realizan con el potenciometro, tambien se añadio la medición que va de 0 a 180 en base a los ángulos, se añadió de referencia a un gato espacial que se mueve con el potenciómetro.
 
-Durante el desarrollo del proyecto alimentamos el circuito utilizando los mismos computadores al conectar los microcontroladores mediante USB. Uno de los puntos importantes fue el uso de WiFi compartido desde un celular, ya que gracias a eso pudimos mantener conectadas ambas placas a la nube.
-
-Era importante no alejarse demasiado del circuito para evitar perder señal y que la información pudiera seguir enviándose correctamente.
-
-Uno de los detalles que encontramos fue que el servomotor no realizaba una vuelta completa y, para apreciar mejor el recorrido, era necesario girar la perilla del potenciómetro desde un extremo hasta el otro completamente.
-
-Pensamos que la velocidad en la que se movía dependía del potenciómetro y cambiamos el de 1k por uno de 10k. El cambio no generó una gran diferencia en el movimiento del servomotor, pero sí ayudó a mantener una conexión más firme y cómoda, ya que el nuevo potenciómetro se ajustaba mejor a la protoboard (no bailaba el potenciómetro).
-
-La comunicación entre los microcontroladores funcionó en tiempo real después de pulsar el botón, aunque existía un pequeño retraso mecánico en la reacción del servomotor. Además, para que la información se enviara correctamente y se generara el movimiento, era necesario mantener el botón presionado durante el envío de datos.
-
-La pantalla OLED muestra en tiempo real la información de hacia dónde se mueve el servomotor, además de indicar la posición a la que acaba de girar. También tiene una imagen que acompaña visualmente la dirección del movimiento realizado, mostrando lo que ocurre al hacer el giro de perilla.
-
-En caso de que el internet se desconecte o la nube deje de responder, el sistema deja de registrar datos, por lo que no se producen movimientos en el servomotor ni actualizaciones en la pantalla OLED.
-
 ## Materiales usados
 
 - Protoboard
@@ -47,19 +33,44 @@ En caso de que el internet se desconecte o la nube deje de responder, el sistema
 
 ## Sensor usado
 
-Potenciómetro (10K): Resistencia variable que cambia su valor interno cuando giramos la perilla.
-
-Lo utilizamos para captar la posición en la que queremos mover el servomotor, envía los  datos mediante la Raspberry hacia Adafruit IO.
+- Potenciómetro (10K): Resistencia variable que cambia su valor interno cuando giramos la perilla.
+  - Lo utilizamos para captar la posición en la que queremos mover el servomotor, envía los  datos mediante la Raspberry hacia Adafruit IO.
 
 ## Actuador usado
 
-Servomotor: Motor pequeño que puede moverse y quedarse fijo en un ángulo entre 0° y 180°.
+- Servomotor: Motor pequeño que puede moverse y quedarse fijo en un ángulo entre 0° y 180°.
+  - Utilizado en el Arduino Uno para realizar un movimiento en un ángulo exacto dependiendo del valor recibido desde Adafruit IO.
 
-Utilizado en el Arduino Uno para realizar un movimiento en un ángulo exacto dependiendo del valor recibido desde Adafruit IO.
+- Pantalla OLED 128x64 px: Pantalla pequeña que sirve para mostrar textos, números o gráficos simples programados desde el microcontrolador. 
+  - Es el monitor del proyecto, utilizada para mostrar la información recibida del potenciómetro y el ángulo en el que moveremos el servo que se enviará a través de Adafruit IO, permitiendo saber en tiempo real los datos que vamos enviando a la nube. 
 
-Pantalla OLED 128x64 px: Pantalla pequeña que sirve para mostrar textos, números o gráficos simples programados desde el microcontrolador. 
+## Proceso y errores
 
-Es el monitor del proyecto, utilizada para mostrar la información recibida del potenciómetro y el ángulo en el que moveremos el servo que se enviará a través de Adafruit IO, permitiendo saber en tiempo real los datos que vamos enviando a la nube. 
+En el proceso es importante tener cuidado en los pequeños detalles ya que si no se les da la importancia necesaria puede no funcionar el proyecto, como en nuestro caso que tuvimos un fallo al conectar mal los jumpers con los pines de la Raspberry Pi Pico 2 W y eso daba un error desconocido en la pantalla del código que, con la ayuda de la IA y fijándonos mejor dónde debía conectarse cada cable, pudimos solucionar esto en la parte de la protoboard que tiene las conexiones del sensor.
+
+Durante el desarrollo del proyecto alimentamos el circuito utilizando los mismos computadores al conectar los microcontroladores mediante USB. Uno de los puntos importantes fue el uso de WiFi compartido desde un celular, ya que gracias a eso pudimos mantener conectadas ambas placas a la nube.
+
+Era importante no alejarse demasiado del circuito para evitar perder señal y que la información pudiera seguir enviándose correctamente.
+
+![proceso](./imagenes/proceso.jpeg)
+
+Uno de los detalles que encontramos fue que el servomotor no realizaba una vuelta completa y, para apreciar mejor el recorrido, era necesario girar la perilla del potenciómetro desde un extremo hasta el otro completamente.
+
+Pensamos que la velocidad en la que se movía dependía del potenciómetro y cambiamos el de 10k por uno de 100k. El cambio no generó una gran diferencia en el movimiento del servomotor, pero sí ayudó a mantener una conexión más firme y cómoda, ya que el nuevo potenciómetro se ajustaba mejor a la protoboard (no bailaba el potenciómetro).
+
+La comunicación entre los microcontroladores funcionó en tiempo real después de pulsar el botón, aunque existía un pequeño retraso mecánico en la reacción del servomotor. Además, para que la información se enviara correctamente y se generara el movimiento, era necesario mantener el botón presionado durante el envío de datos.
+
+La pantalla OLED muestra en tiempo real la información de hacia dónde se mueve el servomotor, además de indicar la posición a la que acaba de girar. También tiene una imagen que acompaña visualmente la dirección del movimiento realizado, mostrando lo que ocurre al hacer el giro de perilla.
+
+En caso de que el internet se desconecte o la nube deje de responder, el sistema deja de registrar datos, por lo que no se producen movimientos en el servomotor ni actualizaciones en la pantalla OLED.
+
+Para el proceso del código se usó VS Code, para simulaciones de cómo se vería el gato rotando. En el camino descubrimos que existen 2 formas de poner una imagen en la pantalla usando el rasberry, la primera sería ponerlo en la placa directamente como archivo .bmp el cual es un formato de bits o de 0 y 1, también hay un formato llamado Bytearray, el cual es una secuencia modificables de bytes, se usan valores de 0 y 255 o en otras palabras, ceros y unos, se uso esta pagina para convertir la imagen <https://javl.github.io/image2cpp/>
+
+Tras investigar y probar cual era la mejor opción, usamos el segundo ya que si queríamos que rotará de manera mas fluida necesitamos que estuviera dentro del codigo, asi cada vez que rotaba no tenía que llamar al archivo dentro de la raíz del raspberry, para realizar la rotación, para esto le pedimos a la ia que nos ayudará para que hiciera los cálculos y el código, para hacerlo se le pidió que tomara de punto base el ángulo 0 y que en este el gato este acostado hacia la izquierda, para derecha lo contrario, 180 y acostado a la derecha, está hecho de manera que en 90, el gatito se encuentre parado también se aplico que su punto de rotación estuviera en el centro.  
+
+Debido a que el gato se veía con bajos FPS (frames por segundo o "va pegado"), se usó un lienzo de 54x54 en donde se realizaría todo este movimiento. A su vez, creó un caché local para que no busque tan repetitivamente por la RAM, la RAM en un almacenamiento aparte que se usa en tiempo real. En nuestro caso, lo usamos para guardar la imagen ahí y llamarla cada que se haga el cálculo de rotación.
+
+Para el Arduino también se usó IA para el código, pero tomando de referencia el trabajo hecho por el profesor con el servo, se usó para el recibimiento de la información del feed. En este caso no tuvimos problemas graves, solo nos faltó descargar la biblioteca Adafruit MQTT Library.
 
 ## Código usado para enviar
 
@@ -246,10 +257,10 @@ while True:
 // Importar bibliotecas
 // -------------------------
 
-#include <WiFiS3.h>               // Librería nativa para el módulo WiFi del Arduino UNO R4
-#include "Adafruit_MQTT.h"        // Librería base de Adafruit para el protocolo MQTT
+#include <WiFiS3.h>               // Biblioteca nativa para el módulo WiFi del Arduino UNO R4
+#include "Adafruit_MQTT.h"        // Biblioteca base de Adafruit para el protocolo MQTT
 #include "Adafruit_MQTT_Client.h" // Cliente que gestiona la conexión de datos con el servidor
-#include <Servo.h>                // Librería para el control del servo motor SG90
+#include <Servo.h>                // Biblioteca para el control del servo motor SG90
 
 
 // -------------------------
@@ -399,11 +410,17 @@ void MQTT_connect() {
 
 ## Imágenes del proyecto
 
-![proceso](./imagenes/proceso.jpeg)
+![proyecto conectado](imagenes/proyecto2.png)
 
 ![proceso 0](./imagenes/adafruit-grafica.png)
 
 ## Animaciones del proyecto
+
+![Proceso 6](./imagenes/funcionamiento-pantalla.gif)
+
+![Proceso 7](./imagenes/funcionando-todo.gif)
+
+### gif's proceso
 
 ![Proceso 1](./imagenes/ejemplo1.gif)
 
@@ -415,27 +432,14 @@ void MQTT_connect() {
 
 ![Proceso 5](./imagenes/ejemplo5.gif)
 
-![Proceso 6](./imagenes/funcionamiento-pantalla.gif)
-
-![Proceso 7](./imagenes/funcionando-todo.gif)
-
-
-## Proceso y errores
-
-En el proceso es importante tener cuidado en los pequeños detalles ya que si no se les da la importancia necesaria puede no funcionar el proyecto, como en nuestro caso que tuvimos un fallo al conectar mal los jumpers con los pines de la Raspberry Pi Pico 2 W y eso daba un error desconocido en la pantalla del código que, con la ayuda de la IA y fijándonos mejor dónde debía conectarse cada cable, pudimos solucionar esto en la parte de la protoboard que tiene las conexiones del sensor.
-
-Para el proceso del código se usó VS Code, para simulaciones de cómo se vería el gato rotando. En el camino descubrimos que existen 2 formas de poner una imagen en la pantalla usando el rasberry, la primera sería ponerlo en la placa directamente como archivo .bmp el cual es un formato de bits o de 0 y 1, también hay un formato llamado Bytearray, el cual es una secuencia modificables de bytes, se usan valores de 0 y 255 o en otras palabras, ceros y unos, se uso esta pagina para convertir la imagen: **[image2cpp](https://javl.github.io/image2cpp/)**, tras investigar y probar cual era la mejor opción, usamos el segundo ya que si queríamos que rotará de manera mas fluida necesitamos que estuviera dentro del codigo, asi cada vez que rotaba no tenía que llamar al archivo dentro de la raíz del raspberry, para realizar la rotación, para esto le pedimos a la ia que nos ayudará para que hiciera los cálculos y el código, Para hacerlo se le pidió que tomara de punto base el ángulo 0 y que en este el gato este acostado hacia la izquierda, para derecha lo contrario, 180 y acostado a la derecha, está hecho de manera que en 90, el gatito se encuentre parado también se aplico que su punto de rotación estuviera en el centro.  Debido a que el gato se veía con bajos FPS (frames por segundo o "va pegado"), se usó un lienzo de 54x54 en donde se realizaría todo este movimiento. A su vez, creó un caché local para que no busque tan repetitivamente por la RAM, la RAM en un almacenamiento aparte que se usa en tiempo real. En nuestro caso, lo usamos para guardar la imagen ahí y llamarla cada que se haga el cálculo de rotación.
-
-
-Para el Arduino también se usó IA para el código, pero tomando de referencia el trabajo hecho por el profesor con el servo, se usó para el recibimiento de la información del feed. En este caso no tuvimos problemas graves, solo nos faltó descargar la librería Adafruit MQTT Library.
 
 ## Bibliografía
 
-- **[Adafruit Learning System: Monochrome OLED breakouts](https://learn.adafruit.com/monochrome-oled-breakouts/overview)** (s.f.). Adafruit Industries.
-- **[Adafruit MQTT Library for Arduino](https://docs.arduino.cc/libraries/adafruit-mqtt-library/)** (2026). Arduino Reference Documentation.  
-- **[Arduino Documentation: Analog input](https://www.arduino.cc/en/Tutorial/AnalogInput)** (s.f.). Arduino.
-- **[Javl (Github Community): image2cpp](https://javl.github.io/image2cpp/)** (s.f.). An open-source tool to change images into byte arrays for monochrome OLED displays. GitHub.
-- **[Microsoft: Visual Studio Code (VS Code)](https://code.visualstudio.com/)** (2026). Code editing. Redefined. Microsoft Corporation.  
-- **[PuTTY Official Website](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)** (s.f.). SSH and telnet client. Simon Tatham.
-- **[Raspberry Pi Documentation: Pico series](https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html)** (s.f.). Raspberry Pi Ltd.
-- **[Raspberry Pi Projects: Physical computing](https://projects.raspberrypi.org/)** (s.f.). Raspberry Pi Foundation.
+- Adafruit Learning System: Monochrome OLED breakouts. (s.f.). Adafruit Industries. <https://learn.adafruit.com/monochrome-oled-breakouts/overview)>
+- Adafruit MQTT Library for Arduino. (2026). Arduino Reference Documentation. <https://docs.arduino.cc/libraries/adafruit-mqtt-library/>
+- Arduino Documentation: Analog input. (s.f.). Arduino. <https://www.arduino.cc/en/Tutorial/AnalogInput>
+- Javl (Github Community): image2cpp.  (s.f.). An open-source tool to change images into byte arrays for monochrome OLED displays. GitHub. <https://javl.github.io/image2cpp/>
+- Microsoft: Visual Studio Code (VS Code. (2026). Code editing. Redefined. Microsoft Corporation. <https://code.visualstudio.com/>
+- PuTTY Official Website. (s.f.). SSH and telnet client. Simon Tatham. <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
+- Raspberry Pi Documentation: Pico series. (s.f.). Raspberry Pi Ltd. <https://www.raspberrypi.com/documentation/microcontrollers/raspberry-pi-pico.html>
+- Raspberry Pi Projects: Physical computing. (s.f.). Raspberry Pi Foundation. <https://projects.raspberrypi.org/>
