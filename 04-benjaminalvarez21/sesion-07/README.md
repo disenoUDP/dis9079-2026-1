@@ -32,7 +32,9 @@ void loop()
 }
 ```
 
-poner fotos
+![potenciometro](./imagenes/potenciometro.png)
+
+![potenciometro](./imagenes/esquematico-pote.png)
 
 ## Segundo ejercicio
 
@@ -127,7 +129,9 @@ void meCohibi() {
 }
 ```
 
-poner fotos
+![servo](./imagenes/con-servo.png)
+
+![servo](./imagenes/esquematico-servo.png)
 
 ## Tercer ejercicio
 
@@ -217,4 +221,8 @@ void loop() {
 
 ```
 
-poner fotos
+![adafruit](./imagenes/adafruit.png)
+
+![adafruit](./imagenes/adafruit-2.png)
+
+
