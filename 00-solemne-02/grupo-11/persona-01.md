@@ -69,6 +69,8 @@ Internamente tiene tres cosas: un motor DC pequeño, una caja reductora de engra
 
 La comunicación con el microcontrolador se hace mediante PWM (modulación por ancho de pulso). Se envía una señal que se repite cada 20 ms, y la duración del pulso dentro de ese ciclo le dice al servo a qué ángulo moverse: un pulso de 1 ms corresponde a 0 grados, uno de 1.5 ms a 90 grados, y uno de 2 ms a 180 grados. El servo tiene un rango de movimiento de 180 grados en total y tres cables: alimentación (rojo), tierra (marrón o negro) y señal (naranja o amarillo).
 
+<img width="1200" height="1372" alt="servo-motor-sg90-9g" src="https://github.com/user-attachments/assets/f1832de6-6cce-44f2-a1c2-6bde802063fa" />
+
 ## Control de la señal
 
 El equivalente al filtrado en un sensor es el control de la señal de salida en un actuador. Si se le manda al servo posiciones que saltan bruscamente de 0 a 180 grados, el movimiento es violento, los engranajes se fuerzan y la estructura mecánica vibra. Para evitar eso hay distintas técnicas.
