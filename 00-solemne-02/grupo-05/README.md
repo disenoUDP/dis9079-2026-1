@@ -1,4 +1,4 @@
-# solemne-02
+# Solemne 2 - Interacciones Inalámbricas
 
 ## Integrantes
 

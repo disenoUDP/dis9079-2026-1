@@ -203,6 +203,113 @@ Durante la revisión del proyecto llamó la atención cómo un sistema relativam
 
 ## Actuador
 
+# Motor Paso a Paso NEMA 17
+
+El motor paso a paso NEMA 17 es un actuador electromecánico utilizado para transformar energía eléctrica en movimiento mecánico preciso y controlado. A diferencia de otros motores tradicionales, este motor no gira continuamente, sino que avanza mediante pequeños movimientos llamados pasos. Debido a su precisión y facilidad de control, es ampliamente utilizado en impresoras 3D, máquinas CNC, robots y equipos de automatización.
+
+Durante la investigación resultó interesante descubrir que el término "NEMA 17" no corresponde al modelo exacto del motor ni a su potencia, sino que define un estándar relacionado con el tamaño físico y dimensiones de montaje del dispositivo.
+
+
+## Funcionamiento
+
+El motor NEMA 17 funciona mediante bobinas internas que generan campos magnéticos controlados electrónicamente. Estos campos hacen que el rotor gire pequeños ángulos de forma secuencial, produciendo movimientos precisos.
+
+Una característica común de muchos motores NEMA 17 es trabajar con:
+
+- Ángulo de paso: 1,8° por paso.
+
+- Aproximadamente 200 pasos para completar una vuelta completa.
+
+- Movimiento controlado mediante drivers como A4988 o DRV8825.
+
+Lo que lo diferencia de otros motores es que puede posicionarse con bastante exactitud sin requerir sensores adicionales en aplicaciones simples.
+
+
+## Información y control que entrega
+
+Como actuador, el motor paso a paso no mide información, sino que responde a señales de control enviadas por un sistema.
+
+Puede realizar acciones como:
+
+- desplazarse una distancia determinada
+  
+- girar un ángulo específico
+  
+- mantener una posición
+  
+- controlar velocidad y dirección de movimiento
+
+Por ejemplo:
+
+50 pasos → pequeño desplazamiento.
+
+100 pasos → desplazamiento mayor.
+
+200 pasos → una vuelta completa.
+
+Al revisar su funcionamiento, se vuelve evidente por qué este tipo de motores se utiliza en equipos donde pequeños errores podrían afectar considerablemente el resultado final.
+
+Imagen sugerida: secuencia visual de movimiento paso a paso.
+
+## Control y precisión
+
+La precisión es una de las características principales del NEMA 17. En sistemas automatizados cada paso enviado corresponde a un movimiento específico del eje.
+
+Por ejemplo:
+
+1 paso = 1,8°
+
+100 pasos = 180°
+
+200 pasos = 360°
+
+Sin embargo, los sistemas modernos también utilizan microstepping, una técnica que divide cada paso en movimientos más pequeños para obtener desplazamientos más suaves y precisos.
+
+Mientras avanzaba en la investigación, llamó la atención observar que movimientos aparentemente continuos en impresoras 3D o máquinas láser en realidad corresponden a miles de pequeños pasos ejecutados rápidamente.
+
+
+## Problemas comunes
+
+A pesar de su precisión, el motor NEMA 17 puede presentar algunas limitaciones:
+
+pérdida de pasos cuando trabaja con demasiada carga;
+calentamiento por uso prolongado;
+vibraciones;
+necesidad de drivers adecuados para un funcionamiento correcto.
+
+En algunos casos también pueden presentarse errores de conexión entre fases del motor, provocando movimientos incorrectos o ruidos inusuales.
+
+
+## Aplicaciones reales
+
+El NEMA 17 se utiliza frecuentemente en:
+
+- impresoras 3D
+  
+- máquinas CNC
+  
+- robots
+  
+- cortadoras y grabadoras láser
+  
+- sistemas automatizados industriales
+
+Su popularidad se debe al equilibrio entre tamaño, precisión y fuerza disponible para aplicaciones de movimiento controlado.
+
+
+# Empresa y aplicación real: Creality
+
+La empresa Creality Falcon Series desarrolla equipos de impresión 3D y sistemas láser de precisión. Un ejemplo es la Creality Falcon 10W, una máquina de grabado y corte láser que utiliza motores paso a paso tipo NEMA 17 para controlar el desplazamiento preciso de los ejes X e Y. Los motores permiten mover el cabezal láser siguiendo trayectorias definidas mediante software y ejecutar movimientos pequeños y repetitivos con alta precisión.
+
+En este tipo de equipos el funcionamiento ocurre de la siguiente manera:
+
+Software → controlador → motor NEMA 17 → desplazamiento del cabezal → corte o grabado.
+
+Considerando que la máquina Falcon 10W trabaja con detalles pequeños, una variación mínima podría afectar el resultado final. Revisando su funcionamiento resulta fácil relacionar la precisión del motor con la calidad del grabado obtenido; movimientos muy pequeños terminan generando resultados visibles sobre el material trabajado.
+
+
+
+
 ## Bibliografía
 
 Sensor
