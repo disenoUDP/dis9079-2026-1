@@ -13,6 +13,7 @@ Lo que queremos realizar en la solemne 2 es que desde la Raspberry pi envíe dat
 y que este encienda una luz o emita algún sonido.
 
 ### Pseudocódigo
+
 |Raspberry Pi Pico 2 W|Adafruit IO|Arduino UNO R4 wifi|
 |--|--|--|
 |Botón|MQTT|LED|
@@ -87,6 +88,10 @@ NO OLVIDAR!
 
 ### Investigación del sensor: Potenciómetro B500K
 
+<img src="./imagenes/pote.jpg" alt="final" width="300">
+
+Imágen de: <https://afel.cl/products/potenciometro-500k-ohm?_pos=4&_psq=pote&_ss=e&_v=1.0>
+
 Es un componente electrónico pasivo compuesto por una resistencia de valor fijo y un contacto móvil. Al mover la perilla, modificamos la longitud de la pista resistiva por la que pasa la corriente, lo que nos permite variar mecánicamente la cantidad de resistencia en un circuito.
 
 Tipos de resistencia de variación mecánica para su uso como potenciómetros:
@@ -99,6 +104,10 @@ Como sensor de posición rotacional o lineal, su funcionamiento se basa en el pr
 
 ### Investigación del actuador: Servomotor SG90
 
+<img src="./imagenes/servojpg" alt="final" width="300">
+
+Imágen de: <https://afel.cl/products/micro-servomotor-sg90?_pos=1&_psq=servomotor&_ss=e&_v=1.0>
+
 Es un actuador de precisión que, a diferencia de un motor común, no gira continuamente, sino que se mueve hasta una posición angular exacta y la mantiene. Su estructura interna incluye un motor de corriente continua, engranajes para aumentar la fuerza, un potenciómetro que detecta la posición del eje y un circuito integrado.
 
 Tipos de Servomotores:
@@ -106,7 +115,7 @@ Tipos de Servomotores:
 Los servomotores se clasifican principalmente según su capacidad de movimiento y los materiales de sus componentes internos. Dependiendo del tipo de proyecto, se elige el modelo que mejor se adapte a las necesidades de giro o a la fuerza requerida por el sistema.
 
 |Límite de GiroMaterial|InternoAplicación|
-|Estándar 0° a 180°|Plástico / Nylon|
+|Estándar 0° a 180°|Plástico/Nylon|
 |Rotación Continua 360°| Metálico (Aluminio/Latón)|
 
 Según el rango de giro:
