@@ -14,6 +14,9 @@ Para usarlo hay que conectar cuatro pines: alimentación, tierra, uno para dispa
 
 La fórmula que se usa en el código es simplemente dividir la duración del Echo entre 58 para obtener centímetros, o entre 148 para pulgadas. Es uno de los sensores más fáciles de implementar, lo que lo hace muy popular en proyectos de electrónica y robótica.
 
+<img width="800" height="800" alt="Sensor_ultrasonico_HCSR04_1" src="https://github.com/user-attachments/assets/f2a45cb4-4a5c-45fe-bc4e-e37888a4edc8" />
+
+
 ## Filtrado de información
 
 El problema con el HC-SR04 es que las lecturas crudas son bastante ruidosas. Aunque el objeto esté completamente quieto, la distancia que reporta el sensor varía un poco en cada medición. Para trabajar con datos confiables hay que aplicar algún tipo de filtro.
