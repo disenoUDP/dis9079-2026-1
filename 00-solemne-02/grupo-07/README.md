@@ -61,6 +61,12 @@ El siguiente desafío fue agregar los demás frames, ya que teníamos que conver
 
 Finalmente, conseguimos que el GIF funcionara correctamente y se reprodujera completo en la pantalla.
 
+### Pruebas de animacion
+![pruebas](imagenes/pruebas1.gif)
+![pruebas](imagenes/pruebas.gif)
+![pruebas](imagenes/pruebas3.jpeg)
+![pruebas](imagenes/pruebas2.jpeg)
+
 
 
 ## Código usado para enviar
