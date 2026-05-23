@@ -314,3 +314,24 @@ Considerando que la máquina Falcon 10W trabaja con detalles pequeños, una vari
 
 Sensor
 
+https://mcielectronics.cl/shop/product/sensor-de-proximidad-de-ultrasonido-hc-sr04-23582/?srsltid=AfmBOoqOLdQohrQBbyipzqtZ8fdCRzFTtvVl8x7Hn7FVb8qCV7qad_CO
+
+https://naylampmechatronics.com/blog/10_tutorial-de-arduino-y-sensor-ultrasonico-hc-sr04.html
+
+https://afel.cl/products/sensor-de-ultrasonico-hc-sr04?srsltid=AfmBOoryH84kdBMHBDGqFiYeLN5P3T1b_77KE3zAXm_LYLLJRdhT8stj
+
+https://hubot.cl/producto/sensor-ultrasonico-hc-sr04/?srsltid=AfmBOorE02xh5t1a_OLvr8VWa_5R9F0ogE1nKZHSwtjwA21P4iFW16Xc
+
+
+Actuador
+
+https://afel.cl/products/motor-paso-a-paso-nema-17-modelo-17hs4401-1-7a?srsltid=AfmBOorUy_k1dwzM-a-NZgEK0IVZGOeSoVBd01gkDkDDHiYx4pm0FvDT
+
+https://mcielectronics.cl/shop/product/motor-paso-a-paso-nema-17-200-pasos-11329/?srsltid=AfmBOoobbxo71Jvdz8Yx6xT5UCR43Jcn2NdQWlQBnGRh0c4iddqXlq7d
+
+https://altronics.cl/motor-stepper-nema17-jk42hs40-1304f
+
+https://www.holrymotor.com/es/what-is-nema-17-stepper-motor.html
+
+
+
