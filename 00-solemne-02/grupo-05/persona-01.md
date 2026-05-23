@@ -1,6 +1,6 @@
 # investigaciones individuales
 
-Renata De Los Ángeles Arévalo Urra / github
+Renata De Los Ángeles Arévalo Urra /  [arevalourra](<https://github.com/nicolasvaldesgreve/dis9079-2026-1/tree/main/06-arevalourra>)
 
 ## Sensor
 
