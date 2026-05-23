@@ -42,7 +42,7 @@ except Exception as e:
 AIO_USERNAME = "bla"
 AIO_KEY = "bla"
 
-FEED_BOTON = AIO_USERNAME + "/feeds/boton-prueba-grupo10"
+FEED_BOTON = AIO_USERNAME + "/feeds/boton-prueba-07"
 
 print("Creando conexión MQTT...")
 
