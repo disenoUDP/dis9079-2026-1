@@ -2,9 +2,9 @@
 
 ## Integrantes
 
-- Josefa Araya / josefa-kristina
-- Débora Soto / DebSkar
-- Cristóbal Vergara / cristobalvergarasilva
+- Josefa Araya / [josefa-kristina](<https://github.com/josefa-kristina>)
+- Débora Soto / [DebSkar](<https://github.com/DebSkar>)
+- Cristóbal Vergara / [cristobalvergarasilva](<https://github.com/cristobalvergarasilva>)
 
 ## Descripción textual del proyecto
 Para la segunda solemne, el encargo consistió en usar microcontroladores, para realizar una comunicación inalámbrica a través de Adafruit IO, usando sensores y actuadores.
@@ -109,7 +109,6 @@ Los botones push son componentes que sirven para controlar el flujo de corriente
 <img src="./imagenes/botonpush.jpg " alt="install" width="500">
 
 
-- 
 
 ## Actuador usado
 Micro Servo Motor SG90 9g 
