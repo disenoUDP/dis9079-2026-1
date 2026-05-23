@@ -913,7 +913,9 @@ void loop() {
 - Arduino.cl. (sf). Micro Servomotor SG90 9g. Arduino.cl. https://arduino.cl/producto/micro-servo-motor-sg90-9g
 
 - Arduino.cl. (sf). Ejemplo análogo con potenciómetro. Arduino.cl. https://arduino.cl/ejemplo-analogo-con-potenciometro/?srsltid=AfmBOopNZdWYQtTXaZWpSAN4Bjrw3WSeNnmfDP10xmWbFMU7vnoCf1vW
-  
+
+- Arduino.cl. (s.f.). Arduino UNO R4 WiFi. [https://arduino.cl/producto/arduino-uno-r4-wifi/](https://arduino.cl/producto/arduino-uno-r4-wifi/)
+
 - Adafruit.com.(sf).Adafruit.com. https://learn.adafruit.com/welcome-to-adafruit-io?view=all
 
 - Circuitpython.org.(sf).Raspberry_pi_pico2_w. Circuitpython.org https://circuitpython.org/board/raspberry_pi_pico2_w/
