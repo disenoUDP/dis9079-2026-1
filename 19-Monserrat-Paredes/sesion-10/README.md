@@ -44,9 +44,13 @@ y que este encienda una luz o emita algún sonido.
 NO OLVIDAR!
 
 TU_NOMBRE_WIFI / TU_CLAVE_WIFI
+
 TU_USUARIO_ADAFRUIT / TU_AIO_KEY
+
 En el .ino, también reemplaza TU_USUARIO_ADAFRUIT en la línea del feed
+
 Crear el feed llamado estado en tu cuenta de Adafruit IO antes de ejecutar
+
 
 Después decidimos cambiarlo 
 
