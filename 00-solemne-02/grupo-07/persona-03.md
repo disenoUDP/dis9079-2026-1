@@ -68,4 +68,31 @@ La interacción ocurre en tiempo real ya que el espectador modifica el comportam
 ![proyecto](imagenes/referentesurface.png)
 ![proyecto](imagenes/referentesurface1.png)
 
+### Pantalla OLED 
+#### Funcionamiento básico
+* El microcontrolador envía información a la pantalla.
+* La pantalla interpreta los datos.
+* Los píxeles OLED se iluminan para formar texto, imágenes o animaciones.
+* La información se actualiza constantemente en tiempo real.
+* Mostrar datos de sensores.
+* Visualizar animaciones pixel art.
+* Mostrar temperatura, luz o movimiento.
+* Interfaces interactivas.
+#### Problemas comunes
+* Pantalla en negro por mala conexión I2C.
+* Bajo rendimiento con animaciones muy pesadas.
+* Parpadeos o retrasos en actualización.
+* Problemas de alimentación o voltaje.
+* Resolución limitada para imágenes complejas.
+#### Aprendizajes sobre el uso de la pantalla
+* Relación entre datos y visualización - La pantalla permite transformar información digital en elementos visuales comprensibles para el usuario.
+* Optimización gráfica - Se aprende a trabajar con resolución limitada y gráficos simplificados como pixel art, se recomienda tener en consideración el tamaño de la pantalla
+* Interactividad - La pantalla puede reaccionar en tiempo real a sensores, botones o datos recibidos desde internet.
+* Manejo de animaciones - Permite comprender cómo funcionan los frames, actualización de píxeles y secuencias visuales.
+* Integración con sensores y actuadores - La OLED puede mostrar información proveniente de sensores PIR.
+#### Sobre el proyecto 
+Se utilizó una pantalla OLED como actuador junto a un push button para controlar la visualización de información. El funcionamiento del sistema consistía en que, al presionar el botón se activaba el envío de datos hacia la pantalla OLED, la cual mostraba la información recibida desde el sistema Adafruit desde el sensor PIR. El push button decidía como un controlador ya que al apretarlo se visualiza los datos en la pantalla y si no se presionaba esta pantalla no recibe información.
+
+
+
 
