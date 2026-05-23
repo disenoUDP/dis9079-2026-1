@@ -63,8 +63,13 @@ a pesar de ser pequeña y limitación de dos colores la OLED permite bastante:
 | parpadeo constante | `.show()` llamado demasiado seguido | actualizar solo cuando el dato cambia |
 | no enciende | voltaje incorrecto | verificar que sea 3.3V y no 5V |
 
-> ## **Relojes y visualizaciones poéticas en OLED — Joey Castillo**
-Joey Castillo es diseñadora de hardware que ha explorado las pantallas OLED como objeto de diseño en sí mismo. su proyecto *Sensor Watch* usa una pantalla diminuta para mostrar no solo la hora, sino datos del entorno de forma minimalista. lo bacán de su trabajo es que trata la restricción técnica (pocos píxeles, solo blanco y negro) como una decisión estética y no como una limitación.
+> ## **Texto en pantalla como poesía — Yucef Merhi**
+> Yucef Merhi es un artista, poeta y programador venezolano radicado en Nueva York, conocido por crear obras que usan circuitos electrónicos, computadores y pantallas para presentar sus palabras escritas. Lo que hace especial su trabajo es que no usa la tecnología como soporte neutro, sino como parte del lenguaje mismo. Su obra más emblemática, *The Poetic Clock*, muestra tres líneas de poesía en pantalla: la primera cambia cada hora, la segunda cada minuto y la tercera cada segundo, generando 86.400 poemas distintos en un solo día. Lo bacán de su trabajo es que trata la restricción técnica (una pantalla, texto simple, sin imágenes) como una decisión estética y no como una limitación.
+
+ + Atari Poetry
+En su serie *Atari Poetry*, Merhi reprogramó consolas Atari 2600 usando código binario y lenguaje ensamblador para explorar las conexiones entre tecnología y lenguaje. El resultado son poemas que emergen desde las entrañas de una máquina de videojuegos, expandiendo los límites del lenguaje y del contexto tradicional de la poesía. Su trabajo demuestra que cualquier pantalla, por pequeña o simple que sea, puede convertirse en un lugar donde ocurre algo significativo.
+
 ## Bibliografía
 + Stojanović, M. (2010). Konkretizator — Interactive audiovisual installation. <https://markostojanovic.me/works-2/>
-+ Castillo, J. (s.f.). Sensor Watch project. <https://www.sensorwatch.net>
++ Merhi, Y. (s.f.). The Poetic Clock 2.0. The Bonnier Gallery. <https://www.thebonniergallery.com/artworks/268-yucef-merhi-the-poetic-clock-2.0-2000/>
++ ArtBurst Miami. (2021). The Bonnier Gallery presents digital art in 'Yucef Merhi: Open'. <https://www.artburstmiami.com/visual_arts/the-bonnier-gallery-presents-digital-art-in-yucef-merhi-open>

@@ -9,14 +9,15 @@
 ## Descripción textual del proyecto
 
 ## Materiales usados
-+ Raspberry pi pico 2w
-+ Arduino R4 Wifi
-+ Protoboard
-+ Cables dupont
-+ Botón - pulsador
-+ Pantalla OLED
-+ Cable USB-C
-+ Cable Micro USB
+| Material              | Descripción / Función                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------|
+| Raspberry Pi Pico 2W  | Microcontrolador principal con conectividad Wi-Fi y Bluetooth; ejecuta la lógica del sistema |
+| Arduino UNO R4 WiFi   | Placa de desarrollo con conectividad Wi-Fi integrada; permite comunicación inalámbrica y procesamiento adicional |
+| Protoboard            | Tablero de prototipado sin soldadura; permite conectar componentes de forma temporal y ordenada |
+| Cables Dupont         | Cables de conexión macho-macho, macho-hembra o hembra-hembra; utilizados para interconectar componentes en la protoboard |
+| Botón / Pulsador      | Componente de entrada digital; permite al usuario enviar señales al microcontrolador mediante presión |
+| Pantalla LCD OLED 1.3 | Display de salida visual; muestra información del sistema como datos, estados o mensajes |
+
 ## Sensor usado  
 ```
 pulsador táctil
@@ -47,21 +48,6 @@ display.display();
 la pantalla se actualiza y muestra el contenido nuevo. Gracias a eso, la OLED dejó de quedarse pegada con el mensaje de error y empezó a mostrar correctamente los mensajes recibidos desde Adafruit IO.
 
 Esto nos permitió entender que la pantalla no se actualiza sola: necesita que el código primero borre lo anterior, escriba el nuevo mensaje y finalmente lo proyecte. 
-
-| Material              | Descripción / Función                                                                 |
-|-----------------------|---------------------------------------------------------------------------------------|
-| Raspberry Pi Pico 2W  | Microcontrolador principal con conectividad Wi-Fi y Bluetooth; ejecuta la lógica del sistema |
-| Arduino UNO R4 WiFi   | Placa de desarrollo con conectividad Wi-Fi integrada; permite comunicación inalámbrica y procesamiento adicional |
-| Protoboard            | Tablero de prototipado sin soldadura; permite conectar componentes de forma temporal y ordenada |
-| Cables Dupont         | Cables de conexión macho-macho, macho-hembra o hembra-hembra; utilizados para interconectar componentes en la protoboard |
-| Botón / Pulsador      | Componente de entrada digital; permite al usuario enviar señales al microcontrolador mediante presión |
-| Pantalla LCD OLED 1.3 | Display de salida visual; muestra información del sistema como datos, estados o mensajes |
-
-## Sensor usado
-Para el sensor decidimos utilizar un botón - pulsador de cuatro pines de 7mm conectado a nuestra Raspberry Pi Pico 2 W, permitiendonos enviar el mensaje a la nube con tan solo presionarlo, se presiona cuatro veces para proyectar los cuatro mensajes. (agregar info)
-
-## Actuador usado
-Para el actuador utilizamos una panatalla OLED, conectada a nuestro Arduino UNO R4 WiFi permitiendo así que se proyecten los cuatro mensajes. (agregar más info)
 
 ## Código usado para enviar
 
@@ -536,13 +522,12 @@ AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 
 
 ## Bibliografía 
-<img src="./imagenes/patti.jpg" alt="hacerbien" width="30%">  
-<img src="./imagenes/metodouniverlsal.jpg" alt="hacerbien" width="30%">    
+<img src="./imagenes/patti.jpg" alt="hacerbien" width="30%"> Smith, Patti. Éramos unos niños. Lumen, 2010
+ 
+<img src="./imagenes/metodouniverlsal.jpg" alt="hacerbien" width="30%"> Montoya, Aarón. Método Universal, 2026
 
-https://www.instructables.com/Arduino-Button-with-no-resistor/
-## Bibliografía
-Smith, Patti. Éramos unos niños. Lumen, 2010
+Instructables. (s. f.). Arduino button with no resistor. https://www.instructables.com/Arduino-Button-with-no-resistor/  
 
-https://docs.arduino.cc/tutorials/generic/digital-input-pullup/
+Arduino. (s. f.). Digital input pull-up. Arduino Documentation. https://docs.arduino.cc/tutorials/generic/digital-input-pullup/  
 
-https://learn.adafruit.com/mqtt-in-circuitpython/overview?utm_source=chatgpt.com
+Rubell, B. (2019, 23 de julio). MQTT in CircuitPython. Adafruit Learning System. https://learn.adafruit.com/mqtt-in-circuitpython/  

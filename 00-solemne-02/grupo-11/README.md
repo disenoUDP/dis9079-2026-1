@@ -65,6 +65,7 @@ durante la clase se probo con enviar datos al adafruit
   
 ## Código usado para enviar
 
+```cpp
 import time
 import board
 import digitalio
@@ -78,7 +79,7 @@ print("Iniciando programa...")
 # WiFi
 # -------------------------
 SSID = "cata"
-PASSWORD = "blabla"
+PASSWORD = "cata21312131"
 
 print("Conectando WiFi...")
 
@@ -170,10 +171,11 @@ while True:
         print(e)
 
     time.sleep(0.02)
+```
 
 ## Código usado para recibir
 
-´´´cpp
+```cpp
 
 /******
    PROYECTO: CONTROL LED DESDE ADAFRUIT IO
@@ -282,7 +284,7 @@ void cambiarEstadoLED(AdafruitIO_Data *data) {
     Serial.println("LED APAGADO");
   }
 }
-  
+```
 ## Imágenes del proyecto
 <img width="900" height="1600" alt="WhatsApp Image 2026-05-21 at 19 02 01" src="https://github.com/user-attachments/assets/fc3011c3-77e6-49eb-8ea7-3f1cd5e51e51" />
 

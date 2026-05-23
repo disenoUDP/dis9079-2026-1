@@ -14,9 +14,23 @@ Para esto usamos una Raspberry Pi Pico 2 W como la placa emisora y un Arduino Un
 La Raspberry lee los valores de un potenciómetro conectado mediante una protoboard y sube esa información a la nube utilizando Adafruit IO. 
 Por otro lado el Arduino lee el feed de datos creado en la nube y según el valor que reciba, mueve un servomotor en distintos ángulos. 
 
-Para poder controlar el envío de información y no saturar la nube, cuenta con un botón pulsador conectado a la Raspberry permitiendo que solo se envíen los datos pulsando brevemente el botón, Arduino lo recibe y mueve el servomotor al último dato envíado.
+Para poder controlar el envío de información y no saturar la nube, cuenta con un botón pulsador conectado a la Raspberry permitiendo que solo se envíen los datos pulsando brevemente el botón, Arduino lo recibe y mueve el servomotor al último dato enviado.
 
 A la Raspberry le sumamos una pantalla OLED de 128x64 px para poder ver los datos que vamos enviando en tiempo real, en la pantalla se muestran los cambios que se realizan con el potenciometro, tambien se añadio la medición que va de 0 a 180 en base a los ángulos, se añadió de referencia a un gato espacial que se mueve con el potenciómetro.
+
+Durante el desarrollo del proyecto alimentamos el circuito utilizando los mismos computadores al conectar los microcontroladores mediante USB. Uno de los puntos importantes fue el uso de WiFi compartido desde un celular, ya que gracias a eso pudimos mantener conectadas ambas placas a la nube.
+
+Era importante no alejarse demasiado del circuito para evitar perder señal y que la información pudiera seguir enviándose correctamente.
+
+Uno de los detalles que encontramos fue que el servomotor no realizaba una vuelta completa y, para apreciar mejor el recorrido, era necesario girar la perilla del potenciómetro desde un extremo hasta el otro completamente.
+
+Pensamos que la velocidad en la que se movía dependía del potenciómetro y cambiamos el de 1k por uno de 10k. El cambio no generó una gran diferencia en el movimiento del servomotor, pero sí ayudó a mantener una conexión más firme y cómoda, ya que el nuevo potenciómetro se ajustaba mejor a la protoboard (no bailaba el potenciómetro).
+
+La comunicación entre los microcontroladores funcionó en tiempo real después de pulsar el botón, aunque existía un pequeño retraso mecánico en la reacción del servomotor. Además, para que la información se enviara correctamente y se generara el movimiento, era necesario mantener el botón presionado durante el envío de datos.
+
+La pantalla OLED muestra en tiempo real la información de hacia dónde se mueve el servomotor, además de indicar la posición a la que acaba de girar. También tiene una imagen que acompaña visualmente la dirección del movimiento realizado, mostrando lo que ocurre al hacer el giro de perilla.
+
+En caso de que el internet se desconecte o la nube deje de responder, el sistema deja de registrar datos, por lo que no se producen movimientos en el servomotor ni actualizaciones en la pantalla OLED.
 
 ## Materiales usados
 

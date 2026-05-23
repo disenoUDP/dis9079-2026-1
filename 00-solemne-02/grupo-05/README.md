@@ -227,7 +227,8 @@ Este potenciómetro tiene 3 pines, los cuales cumplen la siguiente función:
 
 ## Actuador usado
 
-Nuestros actuadores en este proyecto son el Micro Servo Motor SG90 9g y una luz LED, en donde el LED cumple la función de detectar cuando estamos presionando el push button, es decir, cuándo estamos permitiendo que se envíe información. En cambio con el motor servo, este se encarga de recibir la información que le envía el potenciómetro y reacciona en base a este. -- NO SÉ QUE MÁS PONER ASI QUE TAMBIÉN REDACTAR MEJOR PLS AYUDA
+Los actuadores utilizados en este proyecto son el **Micro Servo Motor SG90 9g** y un **LED**. El LED cumple la función de indicar visualmente cuándo el botón se encuentra presionado, señalando que el sistema está habilitado para enviar información. Por otro lado, el Micro Servo Motor SG90 recibe los datos enviados desde el potenciómetro y responde mediante un movimiento angular, modificando su posición según los valores recibidos. De esta forma, ambos actuadores permiten representar visual y físicamente el funcionamiento del sistema.
+
 
 ## Código usado para enviar
 

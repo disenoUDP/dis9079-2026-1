@@ -9,38 +9,6 @@
 
 ---
 
-## Lista de Materiales — Proyecto Interacción Inalámbrica
-
-**Hardware**
-
-| Componente | Cantidad | Función en el proyecto |
-|---|---|---|
-| Raspberry Pi Pico 2W | 1 | Emisor — envía el dato a Adafruit IO al presionar el botón |
-| Arduino Uno R4 WiFi | 1 | Receptor — recibe el dato desde Adafruit IO y enciende el LED |
-| Pulsador (botón) | 1 | Sensor — activa o desactiva el envío de datos como "puerta" |
-| LED | 1 | Actuador — confirma visualmente que el dato llegó con éxito |
-| Resistencia 220Ω | 1 | Protege el LED limitando la corriente |
-| Protoboard | 2 | Una para cada placa — permite armar el circuito sin soldar |
-| Cables jumper | varios | Conexiones entre componentes en la protoboard |
-
-**Conectividad**
-
-| Elemento | Detalle |
-|---|---|
-| Red WiFi 2.4GHz | Hotspot generado desde celular — permite alejar las placas entre sí sin perder conexión |
-| Celulares | 2 — cada uno genera su propia red para que cada placa se conecte de forma independiente |
-| Adafruit IO | Plataforma en la nube que actúa como intermediario (broker MQTT) entre la Raspberry y el Arduino |
-
-**Software**
-
-| Herramienta | Uso |
-|---|---|
-| CircuitPython | Lenguaje usado para programar la Raspberry Pi Pico 2W |
-| Arduino IDE | Entorno usado para programar el Arduino Uno R4 WiFi |
-| Adafruit IO | Dashboard y broker MQTT para visualizar y transmitir los datos |
-| PuTTY | Monitor serie para ver en tiempo real lo que hace la Raspberry |
-
----
 
 ## 1. Introducción y Organización
 
@@ -54,7 +22,7 @@ Nos organizamos inicialmente en duplas para asegurar que cada parte funcionara d
 
 ---
 
-## Avance en clases dúo Braulio Figueroa y Luisa toro
+## Avance en clases dúo Braulio Figueroa y Luisa Toro
 
 ---
 
@@ -79,7 +47,7 @@ Se usó un botón físico para decidir cuándo mandar información a Adafruit IO
 
 ![raspi](./imagenes/raspi1.png)
 
-*En esta imagen se evidencia la conexión del botón con el Raspberry Pi Pico 2w*
+**Imagen 02** *En esta imagen se evidencia la conexión del botón con el Raspberry Pi Pico 2w*
 
  ## Código usado para enviar, experimentación en clases - Raspberry Pi Pico 2w
 
@@ -211,11 +179,11 @@ Paso 1: Validar el hardware primero: Montamos el LED con su resistencia de 220Ω
 
 ![led](./imagenes/led1.JPG)
 
-*Esta imagen muestra la conexión del positivo del LED al pin 5V del Arduino para corroborar el correcto encendido del LED.*
+**Imagen 05** *muestra la conexión del positivo del LED al pin 5V del Arduino para corroborar el correcto encendido del LED.*
 
 ![led2](./imagenes/leds2.JPG)
 
-*Estas imágenes muestran el proceso de conexión del LED al pin de la placa.*
+**Imagen 06,07,08** *muestran el proceso de conexión del LED al pin de la placa.*
 
 ## Código utilizado para la prueba de encendido y apagado en el pin 13 reflejándolo en un led
 
@@ -242,7 +210,9 @@ void loop() {
   delay(500);
 }
 ```
+![led3](./imagenes/videoled1recorte.gif)
 
+**Imagen 09** *muestra la prueba realizada en el pin 13, enviando un código de encendido y apagado para corroborar tanto el correcto funcionamiento de la conexión del LED como la recepción del código enviado desde Arduino al pin 13.*
 ## Código recibir, Experimentación en clases, Arduino UNO R4 Wifi
 
 **colocar aquí código, gif queda al final de toda esta parte de proceso**
@@ -271,55 +241,8 @@ Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro pro
 **Paso 1: Validar el hardware primero:**
 Montamos el LED con su resistencia de **220Ω** en la protoboard. Primero hicimos una prueba de alimentación directa a 5V para confirmar que el LED encendía, y después una prueba de control con un código de parpadeo en el **pin 13**. Ver que el LED respondía bien fue la señal para avanzar a la parte inalámbrica con confianza.
 
-<p align="center">
-  <img width="515" height="600" alt="image" src="https://github.com/user-attachments/assets/3cc83dbb-cc79-4aae-9ffd-962d6fffddac" />
-</p>
+## Código recibir, Experimentación en clases, Arduino UNO R4 Wifi
 
-<p align="center">
-  <em>
-    Esta imagen muestra la conexión del positivo del LED al pin 5V del Arduino para corroborar el correcto encendido del LED.
-  </em>
-</p>
-
-<p align="center">
-  <img width="315" height="315" alt="image" src="https://github.com/user-attachments/assets/ed620dc2-e814-4bce-b9a1-3d4bfbaab040" />
-  <img width="315" height="315" alt="image" src="https://github.com/user-attachments/assets/8e4876e2-d6e3-4979-992b-0810f95a0df1" />
-  <img width="315" height="315" alt="image" src="https://github.com/user-attachments/assets/5771b7a4-2d57-4942-b04b-82de08ae5800" />
-</p>
-
-<p align="center">
-  <em>
-    Estas imágenes muestran el proceso de conexión del LED al pin de la placa.
-  </em>
-</p>
-
-### Código utilizado para la prueba de encendido y apagado en el pin 13 reflejándolo en un led
-```cpp
-void setup() {
-
-  Serial.begin(115200);
-
-  pinMode(13, OUTPUT);
-}
-
-void loop() {
-
-  digitalWrite(13, HIGH);
-
-  Serial.println("LED ENCENDIDO");
-
-  delay(500);
-
-  digitalWrite(13, LOW);
-
-  Serial.println("LED APAGADO");
-
-  delay(500);
-}
-```
-<div align="center"> <video src="https://github.com/user-attachments/assets/24d8ffe0-9134-476e-ae22-cc474dfec71e" width="315" autoplay loop muted playsinline></video> <p><em>Este GIF muestra la prueba realizada en el pin 13, enviando un código de encendido y apagado para corroborar tanto el correcto funcionamiento de la conexión del LED como la recepción del código enviado desde Arduino al pin 13.</em></p> </div> 
-
-## Código usado para recibir - Arduino Uno R4 WiFi
 ```cpp
 #include "AdafruitIO_WiFi.h"
 
@@ -382,32 +305,86 @@ void handleMessage(AdafruitIO_Data *data) {
 }
 ```
 
+![gif](./imagenes/RaspberryArduinogif.gif)
 
-## Materiales usados
+**Imagen 10** *muestra el funcionamiento de este código al recibir info y prender el led*
 
-| Cantidad | Componente / Recurso | Función en esta Etapa |
-| --- | --- | --- |
-| 1 | Arduino UNO R4 WiFi | Placa para recibir mensajes. |
-| 1 | Raspberry Pi Pico 2w | Placa para enviar mensajes
-| 1 | Cable USB-C | Conexión física para cargar el código desde el PC en Arduino. |
-| 1 | Cable USB-A Micro USB | Conexión física para cargar el código desde PC a Raspberry Pi Pico 2. |
-| 1 | Arduino IDE (Software) | Instalado en el PC para programar la placa Arduino. |
-| 1 | Visual Studio Code (Software) | Instalado en el PC para programar en Python hacia Raspberry. |
-| 1 | Cuenta Adafruit IO | Registro en la plataforma para recibir los primeros datos. |
-| 1 | Hotspot Móvil / WiFi | Red de 2.4 GHz necesaria para la salida a internet. |
-| 1 | LED 5 MM | Encenderse y apagarse en base al pulso del botón. | 
-| 2 | Protoboard pequeña | sirve para conectar placas, LED, resistencia y botón. |
-| 1 | Resistencia 220K | Limitar la corriente que entra al LED. |
-| 1 | Push Button 4 pines | Envía mensaje a través de una pulsación. |
-| 4 | Cables Dupont | Encargados de establecer las conexiones de Hardware. |
+## Avance en clases Marlén Soto y Marcela Zúñiga
+
+**Descripción textual del proyecto Trabajo en clases**
+
+Inicialmente, nuestro proyecto consistía en desarrollar un sistema IoT distribuido utilizando una Raspberry Pi, un Arduino UNO R4 WiFi, un sensor ultrasónico HC-SR04 y un micro servo motor SG90, conectados mediante la plataforma Adafruit IO utilizando el protocolo MQTT.
+
+La Raspberry Pi tendría la función de controlar el sensor ultrasónico HC-SR04, medir la distancia de un objeto y enviar periódicamente los datos obtenidos hacia Adafruit IO a través de internet. Posteriormente, el Arduino UNO R4 WiFi consultaría la información almacenada en la plataforma y, según la distancia recibida, controlaría el movimiento del servo motor SG90.
+
+El objetivo principal del proyecto era demostrar la comunicación inalámbrica entre distintos dispositivos mediante tecnologías IoT, integrando la adquisición de datos físicos, la transmisión en la nube y el control remoto de actuadores en tiempo real. Además, para evitar saturar el servicio gratuito de Adafruit IO, el sistema incorporaría intervalos de tiempo entre cada envío de datos.
+
+## Proceso realizado en clases 
+
+Durante el desarrollo del proyecto comenzamos realizando el cableado de la Raspberry Pi junto con el sensor de distancia. Debido a que no teníamos experiencia previa trabajando con este tipo de sensores ni con la Raspberry Pi, fue necesario investigar profundamente el funcionamiento del hardware y sus conexiones, proceso que nos tomó aproximadamente una hora.
+
+Posteriormente, trabajamos en la programación del sensor y del botón, pero surgieron diversas dificultades relacionadas con librerías necesarias para el funcionamiento del sistema y múltiples errores en el código. Intentamos resolver estos problemas durante otra hora adicional, investigando posibles soluciones y realizando distintas pruebas, pero no logramos que el sistema funcionara correctamente dentro del tiempo disponible.
+
+## Materiales usados en clases
+
+| Material | Cantidad | Precio aproximado (CLP) |
+|---|---:|---:|
+| Raspberry Pi | 1 | $151.790 |
+| Arduino UNO R4 WiFi | 1 | $34.990 |
+| HC-SR04 Ultrasonic Sensor | 1 | $3.290 |
+| SG90 Micro Servo Motor | 1 | $1.830 |
+| Protoboard | 1 | $2.590 |
+| Cables Dupont | 1 pack | $1.990 |
+| Cable USB | 1 | $3.000 |
+| Fuente de alimentación USB | 1 | $8.000 |
+
+**Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro proyecto inicial, tuvimos que incorporarnos al Grupo 10, integrado por Braulio Figueroa y Luisa Toro, con el fin de continuar el trabajo práctico de la clase.**
+
+## Descripción del proyecto grupal final
 
 
+## Lista de Materiales — Proyecto Interacción Inalámbrica
+
+**Hardware**
+
+| Componente | Cantidad | Función en el proyecto |
+|---|---|---|
+| Raspberry Pi Pico 2W | 1 | Emisor — envía el dato a Adafruit IO al presionar el botón |
+| Arduino Uno R4 WiFi | 1 | Receptor — recibe el dato desde Adafruit IO y enciende el LED |
+| Botón pulsador 4 pines | 1 | Sensor — activa o desactiva el envío de datos como "puerta" |
+| LED 5 MM | 1 | Actuador — confirma visualmente que el dato llegó con éxito |
+| Resistencia 220Ω | 1 | Protege el LED limitando la corriente |
+| Protoboard | 2 | Una para cada placa — permite armar el circuito sin soldar |
+| Cables jumper | 4 | Conexiones entre componentes en la protoboard |
+|Cable USB-C | 1 | Conexión física para cargar el código desde el PC en Arduino. |
+| Cable USB-A Micro USB | 1 | Conexión física para cargar el código desde PC a Raspberry Pi Pico 2. |
+
+**Conectividad**
+
+| Elemento | Detalle |
+|---|---|
+| Red WiFi 2.4GHz | Hotspot generado desde celular — permite alejar las placas entre sí sin perder conexión |
+| Celulares | 2 — cada uno genera su propia red para que cada placa se conecte de forma independiente |
+| Adafruit IO | Plataforma en la nube que actúa como intermediario (broker MQTT) entre la Raspberry y el Arduino |
+
+**Software**
+
+| Herramienta | Uso |
+|---|---|
+| CircuitPython | Lenguaje usado para programar la Raspberry Pi Pico 2W |
+| Arduino IDE | Entorno usado para programar el Arduino Uno R4 WiFi |
+| Adafruit IO | Dashboard y broker MQTT para visualizar y transmitir los datos |
+| PuTTY | Monitor serie para ver en tiempo real lo que hace la Raspberry |
+
+## Actuador usado - Led
+
+El actuador utilizado en el proyecto fue una luz LED, empleada para representar visualmente la recepción de datos enviados desde la Raspberry Pi Pico 2W hacia el Arduino UNO R4 WiFi mediante Adafruit IO.
+
+Su función principal dentro del sistema es encenderse o apagarse dependiendo del estado del botón conectado a la Raspberry Pi Pico 2W, permitiendo demostrar la comunicación inalámbrica y el control remoto de actuadores en tiempo real mediante tecnologías IoT.
 
 ## Sensor usado
 
-## Actuador usado
-
-- Leds/Servomotor
+El sensor utilizado en esta etapa del proyecto fue un botón pulsador de 4 pines, empleado como entrada digital para el envío de datos hacia Adafruit IO, estos datos están traducidos en ceros (botón suelto) y unos (botón presionado)
 
 ## Código usado para enviar Raspberry Pi Pico 2w
 
@@ -547,11 +524,15 @@ while True:
 
 ![codigoultimaparte](./imagenes/codigoRaspi3.JPG)
 
+**Imagen 11** *muestra la última parte del código de enviar*
+
 ## Errores en Raspberry Pi Pico 2w
 
 Hubo diversos errores durante el proceso, al enfrentarse nuevamente a Raspberry Pi Pico 2w y abrir vscode, enviar el código, aparecía lo siguiente:
 
 ![error1](./imagenes/errorparabitacora1.JPG)
+
+**Imagen 12** *primer error*
 
 Esto sucedía porque estábamos presionando el ícono de flecha en vscode para correr el código, aparecían estos avisos y el código no funcionaba correctamente, la placa no se conectaba a Wifi. 
 
@@ -561,6 +542,8 @@ Otro error al momento de iniciar vscode era el modo restringido
 
 ![error2](./imagenes/errorPython.JPG)
 
+**Imagen 13** *segundo error*
+
 Esto aparecía cada vez que abríamos vscode en un computador, debemos apretar trust para poder seguir adelante. Lo que hacía este error era que de alguna manera restringe a Python y este no puede operar con normalidad, es como si lo "reprimiera". No encontramos la forma de evitar que se abriera esta ventana cada vez que abríamos vscode por lo que siempre teníamos que apretar "trust" para continuar.
 
 Uno de los errores más importantes fue el hecho de que el LED se quedaba encendido tras presionar el botón reiteradas veces. Esto ocurría porque el código en un inicio (lunes) al enviar datos a adafruit, sólo enviaba el valor 1, esto hacía que el LED detectara sólo la opción de encenderse, entonces después de cierto rato presionando el botón repetidamente se bugeaba y dejaba de funcionar correctamente.
@@ -569,62 +552,110 @@ Este error se solucionó al agregar esta parte extra al código, la cuál hace q
 
 ![errorsolucion3](./imagenes/codigoBoton2.JPG)
 
+**Imagen 14** *parte extra código*
+
 ![errorsolucion4](./imagenes/0y1Raspi.JPG)
+
+**Imagen 15** *mensajes enviados con Raspi*
 
 De esta manera ahora en los feeds aparecía que se enviaban 0 y 1 respectivamente, lo cuál hace que el led se encienda y se apague sin bugearse, independiente de la cantidad de veces que presionemos el botón.
 
-
-
-
-
-
-
-
-
 ## Código usado para recibir Arduino UNO R4 Wifi
 
-## Imágenes del proyecto
+```cpp
+#include "AdafruitIO_WiFi.h"
 
-<img width="1440" height="800" alt="image" src="https://github.com/user-attachments/assets/a267f224-6e41-458b-abe8-11420833df01" />
+#define IO_USERNAME "TU_USUARIO"
+#define IO_KEY "TU_KEY"
 
-Para documentar cómo logramos la comunicación entre dispositivos de distinta arquitectura, desarrollamos este diagrama que detalla el camino que recorre la información desde la intención del usuario hasta la respuesta física:
+#define WIFI_SSID "TU_WIFI"
+#define WIFI_PASS "TU_PASSWORD"
 
-1. Nodo Emisor (Raspberry Pi Pico 2 W - CircuitPython) El proceso inicia en la Raspberry Pi, donde el pin GP0 está configurado con una resistencia Pull-UP interna, manteniendo un estado de reposo en True. Al presionar el botón, el código detecta la transición hacia False (bajada a tierra).
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 
-- *Filtro Crítico:* Antes de enviar cualquier dato, el sistema ejecuta un time.sleep(0.25). Este es nuestro anti-rebote por software, esencial para ignorar el ruido mecánico de las chapitas del botón y asegurar que solo se publique un mensaje limpio por cada presión real.
-- *Acción:* Una vez validado, el código ejecuta mqtt.publish, lanzando un "1" hacia la nube.
+const int ledPin = 13;
 
-1. El Puente de Datos (Adafruit IO) El feed compartido, llamado boton-prueba-grupo10, actúa como el punto de encuentro o "puente". Es fundamental entender que la Raspberry y el Arduino no están conectados entre sí, ambos están conectados a este Broker MQTT. El feed recibe el impulso y lo mantiene disponible para cualquier dispositivo que esté escuchando.
+AdafruitIO_Feed *botonFeed = io.feed("boton-prueba-grupo10");
 
-2. Nodo Receptor (Arduino UNO R4 WiFi - C++) El Arduino se mantiene en un estado de escucha activa mediante la función io.run(). Está suscrito específicamente a ese feed compartido.
+void setup() {
 
-- *Interpretación:* Cuando Adafruit IO notifica que llegó un dato, el Arduino activa la función handleMessage.
-- *Validación y Actuación:* El sistema convierte el dato recibido en un entero y pregunta: ¿Es un 1?. Si la respuesta es positiva, se gatilla el comando digitalWrite(13, HIGH).
+  pinMode(ledPin, OUTPUT);
+
+  Serial.begin(115200);
+
+  Serial.print("Conectando a Adafruit IO...");
+
+  io.connect();
+
+  botonFeed->onMessage(handleMessage);
+
+  while(io.status() < AIO_CONNECTED) {
+
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println();
+  Serial.println("¡Arduino Conectado!");
+}
+
+void loop() {
+
+  io.run();
+}
+
+void handleMessage(AdafruitIO_Data *data) {
+
+  int comando = data->toInt();
+
+  if (comando == 1) {
+
+    digitalWrite(ledPin, HIGH);
+
+    Serial.println("LED ON");
+  }
+
+  else {
+
+    digitalWrite(ledPin, LOW);
+
+    Serial.println("LED OFF");
+  }
+}
+```
+**Explicación código**
+
+- Nodo Receptor (Arduino UNO R4 WiFi - C++) El Arduino se mantiene en un estado de escucha activa mediante la función io.run(). Está suscrito específicamente a ese feed compartido.
+
+- Interpretación: Cuando Adafruit IO notifica que llegó un dato, el Arduino activa la función handleMessage.
+
+- Validación y Actuación: El sistema convierte el dato recibido en un entero y pregunta: ¿Es un 1?. Si la respuesta es positiva, se gatilla el comando digitalWrite(13, HIGH).
+
+Para documentar cómo logramos la comunicación entre dispositivos de distinta arquitectura, desarrollamos este diagrama que detalla el camino que recorre la información desde la intención del usuario hasta la respuesta física
+
+![diagrama](./imagenes/diagrama.JPG)
+
+El Puente de Datos (Adafruit IO) El feed compartido, llamado boton-prueba-grupo10, actúa como el punto de encuentro o "puente". Es fundamental entender que la Raspberry y el Arduino no están conectados entre sí, ambos están conectados a este Broker MQTT. El feed recibe el impulso y lo mantiene disponible para cualquier dispositivo que esté escuchando
 
 Conclusión del diagrama: Esta estructura demuestra nuestra capacidad para integrar dos lenguajes de programación distintos (Python y C++) en una sola solución funcional, logrando una interacción con latencia mínima y alta estabilidad gracias al manejo correcto de los eventos y la sincronización de la red.
 
 ---
 
-### Colaboración y Pruebas de Campo: Llevando el Proyecto al Límite
+### Colaboración y Pruebas de Campo: Rehacer el proyecto y nuevos errores
 
 Tras la integración de nuestras dos compañeras al grupo, decidimos realizar una jornada de trabajo intensivo en la Facultad de Derecho para asegurar que todo el equipo dominara el sistema. La sesión se dividió en dos etapas: Traspaso de Conocimiento y Pruebas de Alcance Real.
 
 ### 1. Mentoría y Armado de Hardware
 
-Para nivelar los conocimientos técnicos, iniciamos con un taller práctico liderado por los integrantes Braulio y Luisa:
+Para ayudarles a entender lo que hicimos, iniciamos con un taller práctico para replicar y trabajar a la par, esto fue liderado por Braulio y Luisa:
 
 - *Circuito Receptáculo:* Luisa entregó LEDs y resistencias a las nuevas integrantes, explicándoles paso a paso cómo identificar la polaridad del componente y por qué es vital la resistencia de 220Ω para proteger el Arduino.
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/7d7d0fd9-de85-407a-8b4c-27254682a7b0" />
 
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/0f535e20-4df7-4f12-9076-ad1b21625587" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/324b9751-9669-4ad2-be80-f6f05fbbd75f" />
+ ![arduino](./imagenes/leds3.JPG)
 
-<div align="center"> <video src="https://github.com/user-attachments/assets/1835f022-0868-4183-b9ba-8e42ec270b21" width="315" autoplay loop muted playsinline></video> </div>
+- *Circuito Emisor:* Braulio lideró la explicación de la Raspberry Pi Pico 2 W, mostrando cómo conectar el botón de 4 pines,recordando la importancia de la configuración Pull-UP interna para evitar el ruido eléctrico y revisando nuevamente si la placa Raspberry Pi Pico 2w tenía todas las bibliotecas necesarias
 
-- *Circuito Emisor:* Braulio lideró la explicación de la Raspberry Pi Pico 2 W, mostrando cómo conectar el botón de 4 pines y recordando la importancia de la configuración Pull-UP interna para evitar el ruido eléctrico.
-
-<p align="center">
-<img width="550" height="420" alt="image" src="https://github.com/user-attachments/assets/d5bd1241-2c3d-4a62-9dd8-3319063ed601" /></p>
+![raspi](./imagenes/raspi2.JPG)
 
 ---
 
@@ -635,6 +666,10 @@ Para asegurar que el equipo pudiera replicar el sistema de forma autónoma, le e
 Explicamos que la arquitectura de archivos en MicroPython es distinta a la de un PC. Los puntos clave fueron:
 
 - *Estructura de Carpetas:* Instruímos al equipo en la creación de una carpeta /lib en la raíz de la placa. Es fundamental que las bibliotecas de comunicación (como umqtt.simple) se alojen allí para que el intérprete las encuentre.
+
+- En este punto surgió un error debido a que la otra Raspberry Pi Pico 2w no tenía todas las bibliotecas y archivos necesarios para funcionar bien
+
+ 
   
 - *Automatización con main.py:* Les enseñamos que para que la Raspberry funcione de forma independiente (sin estar conectada al PC), el archivo debe guardarse obligatoriamente con el nombre main.py. Si se guarda con otro nombre, el programa no se ejecutará al recibir energía.
 
