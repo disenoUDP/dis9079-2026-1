@@ -303,9 +303,12 @@ En sus obras la tecnología no aparece solo como una herramienta técnica, sino 
 Por otro lado, Wang & Söderström hacen que lo digital se sienta más orgánico, más blando y más cercano. Sus obras muestran que la tecnología también puede hablar de cuidado, hogar, vínculo y dependencia. En ese sentido, una pantalla pequeña como la OLED puede funcionar como un espacio mínimo de comunicación: un lugar donde el objeto responde, avisa, espera o muestra que algo está ocurriendo.
 
 ## Bibliografía
-https://cursos.mcielectronics.cl/2024/10/22/explicando-el-modo-arduino-input_pullup-pinmode/ 
-https://www.automatizacionparatodos.com/push-button-con-arduino/ 
-https://karri.io/products/karri-classic?variant=55926510420341 
-https://programarfacil.com/blog/arduino-blog/ssd1306-pantalla-oled-con-arduino/   
-https://www.ignant.com/2023/01/30/wang-soderstrom-on-broadening-the-aesthetics-and-meanings-of-the-digital/ 
+MCI Educación. (2024, 22 de octubre). Explicando el modo Arduino INPUT_PULLUP (pinMode). https://cursos.mcielectronics.cl/2024/10/22/explicando-el-modo-arduino-input_pullup-pinmode/  
 
+AbrahamG. (2019, 10 de septiembre). Utilizar Push Button con Arduino. Automatización para Todos. https://www.automatizacionparatodos.com/push-button-con-arduino/  
+
+Karri. (s. f.). KARRI Classic. Recuperado el 22 de mayo de 2026, de https://karri.io/products/karri-classic?variant=55926510420341  
+
+Programar Fácil. (s. f.). SSD1306 pantalla OLED con Arduino y ESP8266 I2C. https://programarfacil.com/blog/arduino-blog/ssd1306-pantalla-oled-con-arduino/  
+
+IGNANT. (2023, 30 de enero). Wang & Söderström on broadening the aesthetics and meanings of the digital. https://www.ignant.com/2023/01/30/wang-soderstrom-on-broadening-the-aesthetics-and-meanings-of-the-digital/  

@@ -2,8 +2,6 @@
 **Marlén Soto**  
 Github:marlensoto-lab   
 
----
-
 # El Sensor: Pulsador (Botón)
 
 ![Botón Pulsador](imagenes/boton_pulsador.jpg)
@@ -36,8 +34,6 @@ Sin el filtrado correcto, la plataforma muestra múltiples picos de información
 
 ## 3. Problemas comunes
 
-![Protoboard y botón](https://upload.wikimedia.org/wikipedia/commons/8/8f/Breadboard.jpg)
-
 ### Saturación del servidor
 Si el sistema envía constantemente el estado del botón en cada ciclo del programa, Adafruit IO puede saturarse con datos repetidos. Por esta razón, lo correcto es enviar información solo cuando el estado cambia.
 
@@ -63,15 +59,6 @@ Este referente se relaciona directamente con nuestro proyecto, ya que ambos util
 - Un sistema en la nube procesa la información y ejecuta una respuesta.
 
 Además, estos dispositivos también necesitaban controlar problemas similares a los nuestros, como el rebote del botón y la saturación de datos enviados al servidor.
-
----
-
-### Flic Smart Button
-
-Flic es un botón inalámbrico utilizado en hospitales, hogares y sistemas de emergencia. Su funcionamiento consiste en enviar una alerta instantánea mediante WiFi o Bluetooth al momento de ser presionado.
-
-Este referente demuestra cómo un sensor tan simple como un botón puede utilizarse en aplicaciones críticas y de gran importancia, utilizando la misma arquitectura básica que trabajamos en clases:
-presión → envío de señal → respuesta del sistema.
 
 ---
 
@@ -115,8 +102,7 @@ Utilizar una resistencia demasiado baja puede provocar sobrecorriente, dañando 
 ---
 
 ## 4. Referente: The Bay Lights — Leo Villareal
-
-![The Bay Lights](https://upload.wikimedia.org/wikipedia/commons/5/5e/The_Bay_Lights.jpg)
+![Referente](imagenes/Referente_2.jpg)
 
 “The Bay Lights” es una instalación artística creada por Leo Villareal que utilizó miles de LEDs distribuidos en el puente Bay Bridge de San Francisco para generar patrones lumínicos dinámicos mediante programación.
 
@@ -127,44 +113,15 @@ La diferencia está únicamente en la escala, ya que mientras nuestro proyecto c
 
 ---
 
-# Referencias
-
-- SparkFun Electronics — Pull-up y Pull-down resistors  
-- SparkFun Electronics — Guía completa sobre LEDs  
-- MQTT Protocol Explained  
-- Amazon Dash Buttons — Wikipedia  
-- Flic Smart Button — Official Website  
-- Leo Villareal — The Bay Lights  
-- Arduino Documentation  
-- Adafruit IO Documentation  
-
-
-
-![LED](imagenes/Luz_led.jfif)
-
-
 ## Bibliografía
 
-- Arduino. (2025). *Arduino Official Website*. Recuperado de: https://www.arduino.cc/
+- Arduino Documentation. *Digital Inputs and Pull-up Resistors*. Disponible en: https://docs.arduino.cc/
 
-- Adafruit Industries. (2025). *Adafruit IO Documentation*. Recuperado de: https://io.adafruit.com/
+- Adafruit IO Documentation. *MQTT, Feeds and IoT Communication*. Disponible en: https://io.adafruit.com/
 
-- Raspberry Pi Foundation. (2025). *Raspberry Pi Pico W Documentation*. Recuperado de: https://www.raspberrypi.com/documentation/
+- MQTT.org. *MQTT Protocol Overview*. Disponible en: https://mqtt.org/
 
-- ESPRESSIF Systems. (2025). *ESP32 Series Datasheet*. Recuperado de: https://www.espressif.com/
+- Wikipedia. *Amazon Dash*. Disponible en: https://en.wikipedia.org/wiki/Amazon_Dash
 
-- Philips. (2025). *Smart Lighting Systems*. Recuperado de: https://www.philips.com/
+- Leo Villareal. *The Bay Lights*. Disponible en: https://www.leovillareal.com/project/the-bay-lights/
 
-- Amazon. (2025). *Amazon Dash Button Technology*. Recuperado de: https://www.amazon.com/
-
-- HC-SR04 Ultrasonic Sensor Datasheet. (2025). Recuperado de: https://datasheetspdf.com/
-
-- Servo Motor SG90 Datasheet. (2025). Recuperado de: https://components101.com/
-
-- Wikipedia. (2025). *Push-button*. Recuperado de: https://en.wikipedia.org/wiki/Push-button
-
-- Wikipedia. (2025). *Light-emitting diode*. Recuperado de: https://en.wikipedia.org/wiki/Light-emitting_diode
-
-- Firebase. (2025). *Firebase Realtime Database*. Recuperado de: https://firebase.google.com/
-
-- Google Developers. (2025). *Google Maps Platform*. Recuperado de: https://mapsplatform.google.com/

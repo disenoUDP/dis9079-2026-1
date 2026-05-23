@@ -20,6 +20,15 @@ Se debe instalar CircuitPython en la Raspberry Pi Pico
 * arrastrar el archivo descargado a la carpeta de la placa
 * se reinicia la placa
 
+## Bibliografía:
+CircuitPython. Official Website.
+  
+ https://circuitpython.org/
+
+Adafruit Industries. Welcome to CircuitPython – Overview.
+  
+ https://learn.adafruit.com/welcome-to-circuitpython/overview
+ 
 
 nos vemos a la vuelta del receso
 

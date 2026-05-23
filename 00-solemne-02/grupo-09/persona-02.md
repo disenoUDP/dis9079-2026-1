@@ -1,6 +1,6 @@
 # investigaciones individuales
 
-nombre completo / github
+Débora Soto/ DebSkar
 
 ## Sensor
 

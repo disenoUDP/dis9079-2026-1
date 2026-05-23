@@ -13,7 +13,7 @@ Como encargo para la segunda solemne del curso, se nos pidió nuevamente desarro
 
 El proyecto consiste en un sistema de detección de movimiento que envía información de forma remota. Para esto, se utilizó un sensor PIR que se activa mediante un botón. Una vez encendido, el sensor detecta movimiento y transmite esta información a través de la Raspberry Pi Pico 2 W hacia la plataforma Adafruit IO. 
 
-Luego, estos datos son recibidos por el Arduino Uno R4 WiFi, el cual interpreta la señal y genera una respuesta visual en una pantalla OLED, que también se activa mediante un botón. En esta pantalla se muestran animaciones en pixel art, compuestas por tres frames por personaje, que, al reproducirse de manera secuencial, simulan movimiento, funcionando de forma similar a un GIF. Las animaciones muestran a una persona y un alien caminando, mientras que el fantasma se desplaza flotando. 
+Luego, estos datos son recibidos por el Arduino Uno R4 WiFi, que interpreta la señal y genera una respuesta visual en una pantalla OLED, la cual también se activa mediante un botón. En esta pantalla se muestran animaciones en pixel art de un alien, compuestas por seis frames que, al reproducirse de forma secuencial, simulan movimiento (tipo GIF). La animación representa una especie de contacto alienígena, donde el personaje se desplaza caminando.
 
 La lógica del sistema permite que, al detectar movimiento en el sensor, se active toda la cadena de comunicación hasta transformar ese evento en una representación visual. De esta forma, se traduce una acción física en una respuesta digital interactiva.
 
@@ -46,6 +46,22 @@ El sensor PIR funciona detectando variaciones de temperatura en su entorno, gene
 Se utilizó como actuador una pantalla OLED junto con un push button. El funcionamiento consiste en que el botón permite activar el envío de información hacia la pantalla. Al presionar el botón, la pantalla OLED recibe y muestra los datos que previamente fueron captados por el sistema Adafruit. De esta manera, el botón actúa como un controlador de visualización, permitiendo decidir cuándo mostrar la información en la pantalla. Mientras el botón no está activado, la pantalla puede permanecer apagada o sin actualizar datos.
 
 La pantalla OLED funciona mediante comunicación digital (generalmente protocolo I2C), lo que permite transmitir datos desde el microcontrolador hacia la pantalla usando pocos pines. Este tipo de pantalla se caracteriza por su bajo consumo energético, buen contraste y capacidad de mostrar texto o gráficos de forma clara. Por otro lado, el push button es un interruptor momentáneo que cierra el circuito solo mientras se presiona, enviando una señal digital al sistema.
+
+### Aprendizajes y errores
+
+Con el sensor PIR tuvimos varios problemas. Trabajamos con dos modelos distintos: uno que venía con cables integrados y otro sin ellos. Por lo que investigamos, el que tenía cables estaba modificado. El sensor con cables integrados nunca logró funcionar correctamente, incluso después de probar distintos códigos y configuraciones.
+
+Finalmente cambiamos al otro sensor, y ahí el sistema comenzó a responder, aunque no de la manera que esperábamos. Lo más difícil fue calibrar la sensibilidad, ya que el sensor detectaba movimiento con cambios mínimos en el entorno.
+
+Investigando sobre su funcionamiento, descubrimos que el sensor cuenta con dos reguladores. Uno controla la sensibilidad: mientras más alto está ajustado, más sensible es el sensor; y mientras más bajo, menos sensible se vuelve. El segundo regulador controla el tiempo que la señal permanece activada: si está alto, la salida se mantiene en estado HIGH por más tiempo, y si está bajo, vuelve más rápido al estado LOW.
+
+Y las principales dificultades que tuvimos al realizar la animación fueron que, al principio, los frames no corrían correctamente en la pantalla. Después de investigar y ver varios videos, logramos que la pantalla mostrara un frame estático, aunque todavía sin movimiento.
+
+El siguiente desafío fue agregar los demás frames, ya que teníamos que convertir cada imagen individualmente usando Image2CPP, y en varias ocasiones el código nos arrojaba errores.
+
+Finalmente, conseguimos que el GIF funcionara correctamente y se reprodujera completo en la pantalla.
+
+
 
 ## Código usado para enviar
 
@@ -638,23 +654,28 @@ void loop() {
 
 
 ## Animaciones del proyecto
+![solemne](imagenes/solemne.gif)
+
 ### Frames
-
-![frame1](imagenes/frame1.jpeg)
-
-
-![frame2](imagenes/frame2.jpeg)
-
-
-![frame3](imagenes/frame3.jpeg)
-
-
-![frame4](imagenes/frame4.jpeg)
-
-
+![frames](imagenes/frames.png)
 
 ### Loop:
 ![alien_loop](imagenes/alien_loop.gif)
 
-
 ## Bibliografía
+- <https://www.youtube.com/watch?v=HxjvP9m-hRo>
+- <https://www.330ohms.com/blog/explora-3/que-es-un-sensor-pir-y-como-funciona-8>
+- Javl. Image2cpp.
+ https://javl.github.io/image2cpp/
+- Adafruit Industries. Monochrome OLED Breakouts: Arduino Library and Examples.
+ https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples
+- Huy Khoong. gif2cpp.
+ https://github.com/huykhoong/gif2cpp
+- Random Nerd Tutorials. ESP32/Arduino OLED Display Guide.
+https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/ 
+- SparkFun Electronics. PIR Motion Sensor Hookup Guide.
+https://learn.sparkfun.com/tutorials/pir-motion-sensor-hookup-guide/all
+- Adafruit. (s.f.). Adafruit IO documentation. Adafruit Learning System. 
+https://io.adafruit.com/
+- Soldered Electronics. (s.f.). SSD1306 OLED display overview. Soldered Documentation. 
+https://docs.soldered.com/ssd1306/overview/

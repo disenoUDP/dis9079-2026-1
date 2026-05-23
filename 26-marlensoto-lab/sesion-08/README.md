@@ -3,7 +3,7 @@
 lunes 27 abril 2026
 # Trabajo en clases: Python en Raspberry Pi
 
-En esta actividad trabajaremos con **Python** en una **Raspberry Pi**, utilizando recursos descargados.
+En esta clase trabajaremos con **Python** en una **Raspberry Pi**, utilizando recursos descargados.
 
 ## ¿Qué es Python?
 Python es un lenguaje de programación fácil de escribir y entender. Se caracteriza por:

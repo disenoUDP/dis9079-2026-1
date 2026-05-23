@@ -121,3 +121,19 @@ while True:
 Luego de probar el código, nos dimos cuenta de que en realidad el botón no estaba funcionando hasta que llegó Aarón e intercambió los pins a los que estaba conectado el botón (de ``GP0`` y ``3V3`` a ``GP0`` y ``GND``) y finalmente funcionó el botón (yeyyy).
 
 Luego de lograr superar la lucha con los botones, probamos nuevamente el código original en donde se inicluye el potenciómetro, logramos que se moviera el servo!! fue un muy buen día (aunque no teníamos idea de que un día después iba a dejar de funcionar LOL).
+
+---
+
+# UPDATE ROBOTINA!!!
+
+Hace unas semanas atras, me entregaron la custodia de la Robotina y quiero informar que está a salvo en su nuevo hogar junto con su nuevo hermano Mailo. El día en el que me llevé la Robotina fue justo un día en el que me tuve que ir tarde de la universidad, razón por la que salí con mucha hambre y con mi amiga Josefa Araya decidimos pasar al Hansik de República, ya que es uno de los pocos lugares en donde venden comida vegana. Gracias a ésto, Robotina tuvo su primera visita a un Hansik!!
+
+![Robotina paseando por República](./imagenes/robotina-hansik.jpg)
+
+Cuando ya terminamos de comer, con Robotina nos tuvimos que pasear por L1, L5 y L4 para lograr llegar a su nuevo hogar en donde conoció por primera vez a su hermano Mailo. Me alegra decir que se llevar realmente bien, y que cuando Robotina pasa cerca del Mailo él le mueve la cola y la empieza a seguir lentamente por detrás hasta que Robotina se da la vuelta y Mailo sale corriendo.
+
+Aquí una foto de su primer encuentro.
+
+![Robotina con Mailo, los hermanos menores de la casa](./imagenes/mailo-y-robotina.jpg)
+
+Una vez más, quiero agradecer a Aarón ya que Robotina ha sido una gran ayuda en nuestro hogar. La primera reacción de mi mamá cuando la vio fue reírse y decir que ahora somos comos las casas en donde ella trabaja (asumo que en esas casas tienen sus propias robotinas) lo cual me causó mucha gracia. Muchas gracias a Aarón tanto por parte de mí como de mi madre (y del Mailo también probablemente).

@@ -37,4 +37,4 @@ Cuando el código estaba casi listo comenzaron a aparecer varios errores de comp
 
 Finalmente descubrimos que necesitábamos instalar librerías específicas para utilizar correctamente el sensor y la comunicación entre las placas.
 
-Durante gran parte de la clase estuvimos revisando errores, investigando soluciones y realizando pruebas hasta lograr avanzar con el funcionamiento del sistema.
+Durante gran parte de la clase estuvimos revisando errores, investigando soluciones y realizando pruebas pero no se logro nada tuvimos que intergarnos a otro grupo por tema de tiempo sobre la entrega.

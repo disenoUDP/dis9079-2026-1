@@ -45,6 +45,19 @@ El actuador principal del proyecto es un servomotor SG90. Este tipo de motor per
 
 El servo recibe los datos provenientes del feed “moluscos” y ajusta su posición según los valores entregados por el potenciómetro. Cuando alcanza un ángulo determinado, el sistema activa un LED amarillo como indicador visual del estado alcanzado.
 
+## Pseudocódigo
+
+Entonces, nuestro pseudocódigo sería:
+
+|Raspberry Pi Pico 2 W|Adafruit IO|Arduino UNO R4 wifi|
+|---|---|---|
+|Potenciómetro|MQTT|Led + servomotor|
+|ángulo|Feed: estado|enciende led y mueve servo|
+
+1. Giras el potenciómetro en la Raspberry > va cambiando el ángulo
+2. La Raspberry publica el ángulo en el feed de Adafruit IO
+3. El Arduino recibe el mensaje y mueve el servomotor, cuando llegue a cierto ángulo se prende el LED.
+
 ## Código usado para enviar
 
 **En Raspberry PI Pico 2 W**
@@ -292,10 +305,25 @@ void loop() {
 
 ## Imágenes del proyecto
 
+<img src="./imagenes/valentina_imagenes/lumi1.jpg" alt="final" width="300">
+
+<img src="./imagenes/valentina_imagenes/lumi2.jpg" alt="final" width="300">
+
+<img src="./imagenes/valentina_imagenes/lumi3.jpg" alt="final" width="300">
+
+<img src="./imagenes/valentina_imagenes/lumi4.jpg" alt="final" width="300">
+
 ## Animaciones del proyecto
 
 <img src="./imagenes/imagenFinal1.gif" alt="final" width="300">
+
 <img src="./imagenes/imagenFinal2.gif" alt="final" width="300">
+
 <img src="./imagenes/imagenFinal3.gif" alt="final" width="300">
 
 ## Bibliografía
+
+- Arduino.cl. (s.f.). Micro Servo Motor SG90 9g. Arduino.cl. <https://arduino.cl/producto/micro-servo-motor-sg90-9g>
+- Arduino.cl. (s.f.). Ejemplo análogo con potenciómetro. Arduino.cl. <https://arduino.cl/ejemplo-analogo-con-potenciometro/?srsltid=AfmBOopNZdWYQtTXaZWpSAN4Bjrw3WSeNnmfDP10xmWbFMU7vnoCf1vW>
+- Adafruit.com.(s.f.).Adafruit.com. <https://learn.adafruit.com/welcome-to-adafruit-io?view=all>
+- Circuitpython.org.(s.f).Raspberry_pi_pico2_w. Circuitpython.org <https://circuitpython.org/board/raspberry_pi_pico2_w/>
