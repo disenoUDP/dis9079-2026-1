@@ -435,7 +435,7 @@ void MQTT_connect() {
 
 ## Bibliografía
 
-- Adafruit Learning System: Monochrome OLED breakouts. (s.f.). Adafruit Industries. <https://learn.adafruit.com/monochrome-oled-breakouts/overview)>
+- Adafruit Learning System: Monochrome OLED breakouts. (s.f.). Adafruit Industries. <https://learn.adafruit.com/monochrome-oled-breakouts>
 - Adafruit MQTT Library for Arduino. (2026). Arduino Reference Documentation. <https://docs.arduino.cc/libraries/adafruit-mqtt-library/>
 - Arduino Documentation: Analog input. (s.f.). Arduino. <https://www.arduino.cc/en/Tutorial/AnalogInput>
 - Javl (Github Community): image2cpp.  (s.f.). An open-source tool to change images into byte arrays for monochrome OLED displays. GitHub. <https://javl.github.io/image2cpp/>

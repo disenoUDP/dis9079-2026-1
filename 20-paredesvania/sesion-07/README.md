@@ -1,31 +1,57 @@
-# sesion-07 20.04
+# sesion-07
 
-Grupo 06: Las papa - Parada y Paredes
+lunes 20 abril 2026
 
-## Recibimos 
+solemne 2
 
-Una proto, un LDR, un servomotor y un potenciómetro.
+---
 
-Servo: 3 patitas
-   - roja: voltaje
-   - negra: gnd
-   - amarilla: Donde le llega la instrucción
+`Grupo 06: Las papa — Parada y Paredes`
 
-> Cómo promediar un dato?
+Hoy recibimos unboxing de regalos: una protoboard, un servomotor, un potenciómetro y un LDR. La idea era aprender a leer sensores analógicos y después mandar esa información a Adafruit IO.
 
-Aprendimos a usar una breadBoard o protoboard si estas en Chile.
+---
 
-Probamos estos códigos en clase:
+## Materiales nuevos
+
+### Servomotor
+
+Tiene tres patitas y cada una cumple una función específica:
+
+- Roja -> voltaje (5V)
+- Negra -> GND
+- Amarilla -> señal (por aquí le llega la instrucción de a qué ángulo moverse)
+
+El servo solo necesita saber el ángulo. A diferencia de un motor normal que recibe velocidad, al servo le dices "ve a 90 grados" y va.
+
+### Protoboard
+
+Tiene muchos orificios organizados con letras, números, y líneas de positivo y negativo en los costados. Importante: el hemisferio derecho e izquierdo no se intercomunican entre sí. Lo que conectas en una columna, se repite en toda esa columna, pero no cruza al otro lado.
+
+`En la Raspberry Pi se trabaja con 3.3V, no 5V como en Arduino.`
+
+### Potenciómetro
+
+Tiene 3 patitas. Siempre se usa la patita del centro y uno de los extremos, el centro es la salida analógica que lee el Arduino.
+
+### LDR
+
+Es un sensor cuya resistencia cambia según la cantidad de luz que recibe. Más luz -> menos resistencia. Menos luz -> más resistencia. El problema es que sus lecturas pueden fluctuar bastante con pequeñas variaciones del ambiente, lo que puede generar datos inestables si no se filtra antes de usarlos.
+
+---
+
+## En clase
+
+### Código 1: leer el potenciómetro
+
+Lo primero fue simplemente leer el valor del potenciómetro y mostrarlo en el monitor serial. El rango que entrega es de 0 a 1023.
 
 ```cpp
-// ejemplo lectura potenciometro
-
 // queremos que nuestro Arduino
 // sea capaz de leer un potenciometro
 // conectado a la entrada A0.
 
 int lectura = 0;
-
 
 void setup()
 {
@@ -39,159 +65,107 @@ void loop()
   Serial.println(lectura);
 }
 ```
+
+### Código 2: potenciómetro + servo
+
+El problema acá era que el potenciómetro entrega valores entre 0 y 1023, pero el servo solo entiende ángulos de 0° a 180°. Para convertir un rango al otro se usa la función `map()`:
+
 ```cpp
-// ejemplo lectura potenciometro
+angulo = map(lectura, 0, 1023, 0, 180);
+```
 
-// queremos que nuestro Arduino
-// sea capaz de leer un potenciometro
-// conectado a la entrada A0.
+Código completo:
 
-
+```cpp
 #include <Servo.h>
-
 
 Servo miServo;
 
 int lectura = 0;
 int angulo = 0;
 
-
 void setup()
 {
   pinMode(9, OUTPUT);
   Serial.begin(9600);
-  // en que patita esta conectado el servo
-  // conectemos a patita 9 digital
   miServo.attach(9);
-  
 }
 
 void loop()
 {
-  // leer
   lectura = analogRead(A0);
-  
-  // imprimir en consola
   Serial.println(lectura);
-  
-  
-  // toma el valor de lectura
-  // que va originalmente entre 0 y 1023
-  // y mapealo al rango 0 a 180
+
   angulo = map(lectura, 0, 1023, 0, 180);
-    
-  // pidele por favor al servo
-  // que vaya a ese angulo
   miServo.write(angulo);
-  
-  // servo descansa un poquito
-  // 15 milisegundos
-  // la vida es dura
+
   delay(15);
-    
 }
 ```
 
+Al mover el potenciómetro, el servo se movía a la par. El `delay(15)` es necesario para darle tiempo al motor a reaccionar, sin eso el movimiento no se ve fluido.
 
-https://github.com/user-attachments/assets/5592dad7-f481-424f-ae66-5e68e6dad057
+![servo moviéndose](./imagenes/pote.gif)
 
+### Código 3
 
-Describir en palabras, quiatr ambiguedades y convertirlas a código
-
-Otro que probamos:
+Mateo nos pasó una versión más elaborada donde en vez de mapear directo, el servo tiene dos comportamientos según si el valor del potenciómetro supera 700 o no: si supera 700, el servo sube lentamente hasta 90°, si no, vuelve hacia atrás.
 
 ```cpp
-// ejemplo lectura potenciometro
-
-// queremos que nuestro Arduino
-// sea capaz de leer un potenciometro
-// conectado a la entrada A0.
-
-
 #include <Servo.h>
-
 
 Servo miServo;
 
 int lectura = 0;
 int anguloActual = 0;
 int anguloDeseado = 0;
-
 bool saludar = false;
-
 
 void setup()
 {
   pinMode(9, OUTPUT);
   Serial.begin(9600);
-  // en que patita esta conectado el servo
-  // conectemos a patita 9 digital
   miServo.attach(9);
-  
 }
 
 void loop()
 {
-  // leer
   lectura = analogRead(A0);
-  
-  // imprimir en consola
   Serial.println(lectura);
-  
-  
-  // toma el valor de lectura
-  // que va originalmente entre 0 y 1023
-  // y mapealo al rango 0 a 180
-  // anguloActual = map(lectura, 0, 1023, 0, 180);
-  
-  
+
   if (lectura > 700) {
     saludar = true;
-  }
-  else {
+  } else {
     saludar = false;
   }
-  
-  
-  if (saludar) {
-    // lo que pasa cuando hay que saludar
-    moverLaManitoTimidamente();
-  }
-  else {
-    // lo que pasa cuando NO :(
-    meCohibi();
-  } 
-    
-}
 
+  if (saludar) {
+    moverLaManitoTimidamente();
+  } else {
+    meCohibi();
+  }
+}
 
 void moverLaManitoTimidamente() {
-  
-  if (anguloActual < 90 )
-  {
+  if (anguloActual < 90) {
     miServo.write(anguloActual);
     anguloActual++;
-     // servo descansa un poquito
-     // 15 milisegundos
-     // la vida es dura
     delay(15);
   }
-  
-
 }
-
 
 void meCohibi() {
   anguloActual--;
   miServo.write(anguloActual);
   delay(15);
 }
-
-https://github.com/user-attachments/assets/a6b14a19-ce3a-43f0-82fa-37a7140e4892
-
-
 ```
-Mateo pasó este código para envuar informacion mediante el potenciometro al feed de aaron:
+
+---
+
+## Adafruit IO
+
+Una vez que el servo funcionaba localmente, el siguiente paso fue mandar los datos del potenciómetro a Adafruit IO para verlos en el feed. Mateo nos pasó el código base y le cambiamos las credenciales:
 
 ```cpp
 #include <Servo.h>
@@ -199,7 +173,6 @@ Mateo pasó este código para envuar informacion mediante el potenciometro al fe
 #include "Adafruit_MQTT.h"
 #include "Adafruit_MQTT_Client.h"
 
-// ── Credenciales ───────────────────────────────────────────
 #define WIFI_SSID    "iPhone de Vania"
 #define WIFI_PASS    "dilt1234"
 #define AIO_SERVER   "io.adafruit.com"
@@ -243,7 +216,6 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
-  Serial.print(" IP: ");
   Serial.println(WiFi.localIP());
 }
 
@@ -259,7 +231,6 @@ void loop() {
   if (lectura != lecturaAnterior && (ahora - ultimoPublish >= INTERVALO_PUBLISH)) {
     Serial.print("Publicando lectura: ");
     Serial.println(lectura);
-
     if (feedPot.publish((int32_t)lectura)) {
       Serial.println("  ✓ OK");
       lecturaAnterior = lectura;
@@ -268,16 +239,46 @@ void loop() {
       Serial.println("  ✗ Fallo");
     }
   }
-
   delay(15);
 }
 ```
 
-![feed](./imagenes/pote.png)
+El `INTERVALO_PUBLISH` lo pusimos en 5000 (5 segundos) en vez de 500, para no saturar el feed de Aaron. El plan gratuito de Adafruit solo permite 30 datos por minuto, así que hay que tener cuidado con eso.
 
-Después conectamos un LDR remplazando el potencionmetro.
+![feed en adafruit](./imagenes/pote.png)
 
-![feed](./imagenes/ldr2.png)
-![feed](./imagenes/ldr1.png)
-![feed](./imagenes/ldr.HEIC)
+---
 
+## LDR reemplazando el potenciómetro
+
+Al final de la clase probamos reemplazar el potenciómetro por el LDR. La
+conexión cambia porque el LDR no tiene la misma estructura de 3 pines:
+
+- Una patita del LDR -> 5V
+- La otra patita del LDR -> pin A0 **y** a una resistencia de 10kΩ
+- El otro extremo de la resistencia -> GND
+
+Sin la resistencia de 10kΩ el pin A0 queda flotando cuando hay mucha luz y los valores no tienen sentido.
+
+![ldr conexión](./imagenes/ldr.jpeg)
+![ldr conexión](./imagenes/ldr2.png)
+
+![ldr en protoboard](./imagenes/ldr1.png)
+
+---
+
+## Apunte sobre Tinkercad
+
+Aaron también nos mostró **Tinkercad**, que es un simulador de circuitos online donde puedes probar conexiones y código sin necesidad de tener los componentes físicos. 
+
+<https://www.tinkercad.com/>
+
+---
+
+## Referencias
+
+- Arduino – Referencia Servo: <https://www.arduino.cc/en/Reference/Servo>
+- Arduino – Servo motors: <https://docs.arduino.cc/learn/electronics/servo-motors/>
+- Adafruit – Cómo conectar un LDR: <https://learn.adafruit.com/photocells/using-a-photocell>
+- Adafruit IO – MQTT: <https://io.adafruit.com/api/docs/mqtt.html>
+- Tinkercad: <https://www.tinkercad.com/>

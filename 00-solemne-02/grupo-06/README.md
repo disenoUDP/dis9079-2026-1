@@ -8,21 +8,27 @@ Lunes 18 Mayo 2026
 
 ## Integrantes
 
-* [Camila Parada](https://github.com/Camila-Parada): 
-* [Vania Paredes](https://github.com/paredesvania): 
+* [Camila Parada](https://github.com/Camila-Parada): Código, circuito, investigación e ideas
+* [Vania Paredes](https://github.com/paredesvania): Código, modelado e impresión 3D, registro
 
 ## Descripción del proyecto
 
- "Soniloide" es un dispositivo que produce sonido a distancia.
+_**"Soniloide"**_ es un dispositivo que produce sonido a distancia.
 Inspirados en los instrumentos musicales de la empresa [“Maywa Denki”](https://www.maywadenki.com/) es que surge este nuevo artefacto. 
-
-[![Ver video](https://img.youtube.com/vi/fI1Mr4SIES4/hqdefault.jpg)](https://www.youtube.com/watch?v=fI1Mr4SIES4&t=1s)
 
 ▼ _Video de “Chan: cómo armar el Kit” (チャン　工作キットのつくり方)_
 
-Mediante mecanismos, botones, un solenoide, placas programáticas con wifi y otros componentes es que se emiten ruidos mediante el envío y recepción de datos a través de [Adafruit IO](https://io.adafruit.com/welcome).
+[![Ver video](https://img.youtube.com/vi/fI1Mr4SIES4/hqdefault.jpg)](https://www.youtube.com/watch?v=fI1Mr4SIES4&t=1s)
 
-De forma más detallada el proyecto consta de enviar señales inalámbricamente. Para ello, tras conectar la RaspBerry Pi Pico 2W, el usuario puede observar la información en tiempo real del estado de la placa. Tras ello debe presionar un botón que permite el funcionamiento de un potenciómetro, el cual al girarlo envía un porcentaje (dato) a un Arduino R4 Wifi conectado a un solenoide. Dicha comunicación permite que el motor (solenoide) impulse los bracitos de “Soniloide” de forma rítmica, lo que produce un sonido por los platillos que este tiene anclado en sus extremos.
+El proyecto consiste en un sistema de comunicación inalámbrica capaz de controlar una acción física a distancia. A través de la plataforma [Adafruit IO](https://io.adafruit.com/welcome), una Raspberry Pi Pico 2W envía datos en tiempo real a un Arduino R4 WiFi, el cual activa un solenoide que da vida al artefacto.
+
+El flujo de funcionamiento es el siguiente: el usuario conecta la Raspberry Pi Pico 2W y puede monitorear en tiempo real el estado de la placa. Al presionar un botón, se habilita un potenciómetro que, al girarse, envía un valor porcentual a través de Adafruit IO hacia el Arduino R4 WiFi. Este último, al recibir la señal, acciona el solenoide, el cual mueve rítmicamente los brazos de "Soniloide". Cada oscilación hace que los platillos ubicados en los extremos de esos brazos golpeen entre sí, generando sonido.
+
+En síntesis, "Soniloide" traduce el giro de un potenciómetro en movimiento mecánico y, finalmente, en música.
+
+## Primer acercamiento en clases
+
+![Video prueba](./imagenes/solenoide.gif)
 
 ## Video en Funcionamiento
 
@@ -49,7 +55,9 @@ De forma más detallada el proyecto consta de enviar señales inalámbricamente.
 
 ## Input: Raspberry pi pico 2w con Sensor
 
-La primera pieza a crear es el circuito con el emisor. Para ello he de usar la placa previamente mencionada con un botón conectado. A continuación se desarrolla el código de Python en VS Code para poder realizar las lecturas de un botón y un potenciómetro, información que será enviada a Adafruit IO. Cabe mencionar que la información mostrada en la terminal aparece en un OLED conectado al circuito.
+El circuito emisor se construye en torno a la Raspberry Pi Pico 2W, a la que se conectan un botón y un potenciómetro como elementos de entrada. El botón actúa como habilitador: al presionarlo, permite que el giro del potenciómetro sea leído y procesado. El valor resultante, expresado como un porcentaje, se transmite de forma inalámbrica hacia Adafruit IO.
+
+El código se desarrolla en VS Code y gestiona la lectura simultánea de ambos componentes, así como el envío del dato a la plataforma. Adicionalmente, la información que normalmente se imprimiría en la terminal se redirige a una pantalla OLED conectada al circuito, lo que permite monitorear el estado del dispositivo en tiempo real.
 
 ### Código para enviar
 
@@ -264,7 +272,11 @@ while True:
 
 ## Output: Arduino UNO R4 Wifi con Solenoide
 
-Para la recepción de la información y activación del solenoide fue necesaria la construcción de un circuito que impique conectar el arduino a dicho motor. Este último a su vez se encuentra cableado a un relé de 1 canal cuya alimentación se debe una fuente de poder de 5V y 2A (corriente eléctrica). Para su funcionamiento requiere si o si de tener energía tanto para la placa como para el relé. Ya con todo conectado, es necesaria la recepción de los datos desde Adafruit IO para el movimiento del solenoide.
+El circuito receptor se construye en torno al Arduino UNO R4 WiFi, encargado de recibir los datos desde Adafruit IO y traducirlos en una acción física. Para controlar el solenoide, un motor que requiere mayor corriente de la que la placa puede entregar directamente, se incorpora un relé de 1 canal como elemento intermediario.
+
+El sistema requiere una doble alimentación: la placa opera con su fuente habitual, mientras que el relé y el solenoide se alimentan desde una fuente de poder externa de 5V y 2A. Esta separación es indispensable para el correcto funcionamiento del conjunto, ya que sin energía suficiente en ambos circuitos el solenoide no puede accionarse.
+
+Una vez que todo el circuito está conectado y energizado, el Arduino se mantiene a la escucha de los valores publicados en Adafruit IO. Al recibir un dato, activa o desactiva el relé según corresponda, lo que produce el movimiento del solenoide.
 
 ### Código para recibir
 
@@ -472,7 +484,7 @@ flowchart TB
 
 ## Modelado de carcasa e impresión 3D
 
-Para esta parte Felix nos ayudó con el modelado de la carcasa, dado problemas previos con las tolerancias y el mecanismo. El modelado fue impreso en PLA transparente en la impresora Bambu  x1c.
+Para esta parte Felix nos ayudó con el modelado de la carcasa, dado problemas previos con las tolerancias y el mecanismo. El modelado fue impreso en PLA transparente en la impresora Bambu x1c. Para otros detalles de construcción, ocupamos gomas para el pelo y un palo de coyac.
 
 ![modelado](./imagenes/solinoide1.png)
 ![modelado](./imagenes/solinoide.png) 
@@ -482,6 +494,24 @@ Para esta parte Felix nos ayudó con el modelado de la carcasa, dado problemas p
 
 ## Animaciones del proyecto
 ![mecanismo](./imagenes/mecanismo.gif)
+
+## Simulaciones
+
+En este apartado se incluyen unas simulaciones virtuales de cada parte del circuito. Puesto que no existen simuladores online que permitan la comunicación entre una placa y adafruit io, además de los componentes usados, es que se emulan algunos de los comportamientos que tiene cada módulo de forma independiente.
+
+:warning: Cabe aclarar que ambas simulaciones demuestran ideas aproximadas del proyecto en si, teniendo modificaciones en sus códigos y circuitos. Los resultados mostrados en el monitor serial son similares a los del proyecto final.
+
+### a) [Circuito enviar](https://wokwi.com/projects/464855266213787649)
+
+Dados las limitaciones anteriormente mencionadas, es que se escoge a wokwi como el simulador base a utilizar dado que posee todos los elementos necesarios. En este, el circuito permite activar un potenciómetro y generar lecturas que son mostradas tanto en el monitor serial como en la pantalla OLED. 
+
+![modelado](./imagenes/simulacion-wokwi.jpeg) 
+
+### b) [Circuito recibir](https://www.tinkercad.com/things/elThxO0w4nK-circuito-receptor-aproximacion)
+
+Pese a que wokwi no posee el solenoide (ni otro motor similar), es que cambié de simulador a Tinkercad. Este tampoco cuenta con la pieza, pero si tiene un reemplazo: el motor cc. Otra parte inexistente es un [relé de un canal](https://afel.cl/products/rele-de-01-canal), pero este módulo se replica a través de un circuito hecho sobre una protoboard. El código muestra el comportamiento de la otra parte del circuito, el cual envía datos en forma de porcentaje que se traducen en señales que aceleran por un tiempo al motor cc. Tras un rato cambia de estado a apagado y viceversa.
+
+![modelado](./imagenes/simulacion-tinkercad.jpeg) 
 
 ## Investigaciones individuales
 

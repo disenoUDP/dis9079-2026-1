@@ -1,26 +1,30 @@
 # solemne-02
 
 ## Integrantes
-
-- Josefa Araya / [josefa-kristina](<https://github.com/josefa-kristina>)
-- Débora Soto / [DebSkar](<https://github.com/DebSkar>)
-- Cristóbal Vergara / [cristobalvergarasilva](<https://github.com/cristobalvergarasilva>)
-
+ 
+- Josefa Araya / [josefa-kristina](https://github.com/josefa-kristina)
+- Débora Soto / [DebSkar](https://github.com/DebSkar)
+- Cristóbal Vergara / [cristobalvergarasilva](https://github.com/cristobalvergarasilva)
+  
 ## Descripción textual del proyecto
-Para la segunda solemne, el encargo consistió en usar microcontroladores, para realizar una comunicación inalámbrica a través de Adafruit IO, usando sensores y actuadores.
-
-Para la realización de nuestro proyecto, usamos un potenciómetro conectado a una Raspberry Pi Pico 2W, que envía valores a un motor Servo, el que va conectado a un Arduino r4 wifi. El motor Servo recibe los valores y los transforma en ángulos de (agregar ángulos) además utilizamos un botón pulsador de 4 pines que permite dejar de enviar datos para no sobrecargar la nube.
-Toda esta interacción se realiza mediante un feed de  Adafruit IO.
-
-El primer paso fue eliminar el firmware de la Raspberry, este se tiene que remplazar por el code.py de CircuitPython10.2.0, luego practicamos con un código que nos dio Aarón para conectarla a Adafruit Io, es el mismo código que después usamos como base para comenzar a modificar el nuestro.
-
-Le dimos a Claude AI el prompt:
-“Estamos haciendo un proyecto en el cual tenemos que conectar una Raspberry controlada por un potenciómetro, a través de una nube en Adafruit IO, a un Arduino UNO R4 con un motor servo, ¿cómo podríamos hacer que el potenciómetro conectado a la Raspberry, controle el servo conectado al arduino a través de Adafruit?”
-
-Cuando tratamos de modificar el código en Visual Studio Code, no nos funcionaba el código, después de un rato nos dimos cuenta de que lo estábamos corriendo en el computador y no en la Raspberry. Solucionado eso guardamos el código en su carpeta interna y lo comenzamos a correr utilizando Putty.
-
-En Putty tuvimos el siguiente problema: “Error de módulo (no module named...”.
-Estuvimos un buen rato estancados en eso hasta que le preguntamos a Claude y nos dio lo siguiente para escribir en Putty:
+ 
+Para la segunda solemne, el encargo consistió en usar microcontroladores para realizar una comunicación inalámbrica a través de Adafruit IO, usando sensores y actuadores.
+ 
+Para la realización de nuestro proyecto, usamos un potenciómetro conectado a una Raspberry Pi Pico 2W, que envía valores a un motor servo, el cual va conectado a un Arduino R4 WiFi. El motor servo recibe los valores y los transforma en ángulos; además, utilizamos un botón pulsador de 4 pines que permite dejar de enviar datos para no sobrecargar la nube.
+ 
+Toda esta interacción se realiza mediante un feed de Adafruit IO.
+ 
+El primer paso fue eliminar el firmware de la Raspberry; este se tiene que reemplazar por el archivo `code.py` de CircuitPython 10.2.0. Luego practicamos con un código que nos dio Aarón para conectarla a Adafruit IO, el mismo que después usamos como base para comenzar a modificar el nuestro.
+ 
+Le dimos a Claude AI el siguiente prompt:
+ 
+> *"Estamos haciendo un proyecto en el cual tenemos que conectar una Raspberry controlada por un potenciómetro, a través de una nube en Adafruit IO, a un Arduino UNO R4 con un motor servo. ¿Cómo podríamos hacer que el potenciómetro conectado a la Raspberry controle el servo conectado al Arduino a través de Adafruit?"*
+ 
+Cuando tratamos de modificar el código en Visual Studio Code, no nos funcionaba. Después de un rato nos dimos cuenta de que lo estábamos ejecutando en el computador y no en la Raspberry. Solucionado eso, guardamos el código en su carpeta interna y lo comenzamos a correr y vimos si funcionaba usando PuTTY para visualizar el puerto serial.
+ 
+En PuTTY tuvimos el siguiente problema: *"Error de módulo (no module named...)"*.
+ 
+Estuvimos un buen rato estancados en eso hasta que le preguntamos a Claude y nos dio lo siguiente para escribir en PuTTY:
 
 import sys
 print(sys.version)
@@ -37,54 +41,59 @@ print("adafruit_io OK")
 <img src="./imagenes/terminalputty.jpeg " alt="install" width="500">
 
 
-Ahí se soluciona el problema y comenzó a correr exitosamente.
-
-En la clase siguiente, le comentamos a Aarón lo que habíamos hecho y  nos dijo que cambiaríamos la temática de nuestro proyecto, puesto que queríamos hacer una guillotina que le cortara la cabeza a Kast y nos comentó que él no merecía nuestra atención.
-
-Se nos sugirió hacer algo más interesante con el movimiento del motor servo, el cual teníamos con un movimiento estándar entre los 0 y 180 grados, este movimiento lo cambiamos con un código para que se moviera entre los 45 y 135 grados.
-
-Con este código solo se publicaba en Adafruit cuando el ángulo cambiaba más de 2° para no superar el límite de los 30 mensajes por minuto, aún con esto logramos sobrecargar nuestro feed por lo que modificamos el código para que enviara los datos cada 5 segundos.
+Así se solucionó el problema y comenzó a correr exitosamente.
+En la clase siguiente, le comentamos a Aarón lo que habíamos hecho y nos dijo que cambiaríamos la temática de nuestro proyecto, puesto que queríamos hacer una 
+guillotina que le cortara la cabeza a Kast, y nos comentó que él no merecía nuestra atención. Se nos sugirió hacer algo más interesante con el movimiento del
+motor servo, el cual teníamos con un movimiento estándar entre los 0° y 180°. Este movimiento lo cambiamos con un código para que se moviera entre los 45° y 135°.
+Con este código solo se publicaba en Adafruit cuando el ángulo cambiaba más de 2° para no superar el límite de los 30 mensajes por minuto. Aun con esto logramos 
+sobrecargar nuestro feed, por lo que modificamos el código para que enviara los datos cada 5 segundos.
 
 Línea modificada:
 
-´´if abs(angle - last_angle) = 2 and (now - last_send_time) = 5´
+`if abs(angle - last_angle) = 2 and (now - last_send_time) = 5`
 
-Aarón nos sugirió que hiciéramos algo más tangible para controlar la sobrecarga de datos y que habláramos con el grupo 05 quienes estaban usando un botón push para controlar el envío de datos. Nicolás nos explicó cómo lo querían hacer funcionar, creando un RPullDown, asegurando que la entrada lea un estado bajo constante hasta que al presionar el botón la lleve a un voltaje alto, esto para no tener que usar una resistencia en las conexiones físicas. También nos explicó como hacer la conexión del botón a la Raspi.
+Aarón nos sugirió que hiciéramos algo más tangible para controlar la sobrecarga de datos y que habláramos con el grupo 05, quienes estaban usando un botón push 
+para controlar el envío de datos. Nicolás nos explicó cómo lo querían hacer funcionar, creando un RPullDown, asegurando que la entrada lea un estado bajo 
+constante hasta que, al presionar el botón, la lleve a un voltaje alto; esto para no tener que usar una resistencia en las conexiones físicas. También nos explicó 
+cómo hacer la conexión del botón a la Raspi.
 
-Por recomendación de Aarón buscamos documentos que tuvieran un código parecido al que necesitábamos. Encontramos:
-<https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/cproject/ar_button.html>.
-En un inicio tratamos de hacer la conexión con un resistor de 220 ohms a recomendación de Aarón:
+Por recomendación de Aarón buscamos documentos que tuvieran un código parecido al que necesitábamos. 
 
-<img src="./imagenes/intentoresistor.jpej" alt="install" width="500">
+Encontramos:
+<https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/cproject/ar_button.html>
 
-Luego vimos la posibilidad de hacerlo con un Rpullup o un Rpulldown como aparecía en el documento y como lo hicieron en el grupo 05, decidimos esto último para que la protoboard no estuviera tan saturada de conexiones.
+En un inicio tratamos de hacer la conexión con un resistor de 220 ohms, a recomendación de Aarón:
+<img src="./imagenes/intentoresistor.jpeg" alt="install" width="500">
+
+Luego vimos la posibilidad de hacerlo con un RPullUp o un RPullDown, como aparecía en el documento y como lo hicieron en el grupo 05; decidimos esto último para que la protoboard no estuviera tan saturada de conexiones.
 
 <img src="./imagenes/intentoboton.jpeg" alt="install" width="500">
 
-Luego de implementar en nuestro código los fragmentos del sitio, lo corrimos y ahora solo se enviaban datos cuando movemos el potenciómetro (antes se enviaban siempre cada 0.2 segundos).
+Luego de implementar en nuestro código los fragmentos del sitio, lo corrimos y ahora solo se enviaban datos cuando movíamos el potenciómetro (antes se enviaban siempre cada 0,2 segundos).
 
-Seguimos trabajando en el envío de datos y  comenzamos a probar con distintos fragmentos del primer código que nos funcionó, y le pedimos a nuestros compañeros del grupo 05,si nos podían ayudar, así que nos mostraron cómo era la parte de su código que hacía funcionar el botón. Entonces comenzamos a modificarlo y fuimos sumando las partes que nos servían a nuestro código.
-Finalmente dió resultado y Putty reconoció el botón, pero nos daba el siguiente error:
-Error:
- “(‘Unable to receive 1 bytes within 10 seconds. ‘, None) - reconectando …”
+Seguimos trabajando en el envío de datos y comenzamos a probar con distintos fragmentos del primer código que nos funcionó. Le pedimos a nuestros compañeros del grupo 05 si nos podían ayudar, así que nos mostraron cómo era la parte de su código que hacía funcionar el botón. Entonces comenzamos a modificarlo y fuimos sumando las partes que nos servían a nuestro código.
 
-<img src="./imagenes/error.jpeg " alt="install" width="500">
+Finalmente dio resultado y PuTTY reconoció el botón, pero nos daba el siguiente error:
 
-Así que le preguntamos a Claude que significaba ese error y nos dijo que el error se encontraba en  mqtt.loop() porque el broker corta la conexión por inactividad, también teníamos otro problema que era:
+> *"('Unable to receive 1 bytes within 10 seconds. ', None) - reconectando…"*
 
-MMQTTException: (‘Connection Refused - Unauthorized’, 5)
+<img src="./imagenes/error.jpeg" alt="install" width="500">
 
-<img src="./imagenes/errorindentacion.jpeg " alt="install" width="500">
+Así que le preguntamos a Claude qué significaba ese error y nos dijo que el problema se encontraba en `mqtt.loop()`, porque el broker corta la conexión por inactividad. También teníamos otro problema:
 
-Resulta que el problema era que el nombre de adafruit “Kaiikou” estaba escrito en minúscula y lo cambiamos y ahí funcionó, el botón funcionaba para detener el envío de información cuando era enviada.
+> *MMQTTException: ('Connection Refused - Unauthorized', 5)*
 
-<img src="./imagenes/prueba.gif " alt="install" width="500">
+<img src="./imagenes/errorindentacion.jpeg" alt="install" width="500">
 
-<img src="./imagenes/feedservo.jpeg " alt="install" width="500">
+Resultó que el problema era que el nombre de usuario de Adafruit, "Kaiikou", estaba escrito en minúscula. Lo corregimos y ahí funcionó: el botón detenía el envío de información cuando era presionado.
 
+<img src="./imagenes/prueba.gif" alt="install" width="500">
 
+<img src="./imagenes/feedservo.jpeg" alt="install" width="500">
 
-
+Luego de poder integrar el botón y que funcionara en el código, decidimos darle una intención al movimiento del motor servo. Primero intentamos con un movimiento
+más rápido definiendo 3 ejes: derecha, centro e izquierda, controlando el `MOVING_TIME` y poniéndolo en 300 ms. El resultado no nos satisfizo, por lo que 
+ralentizamos el movimiento subiendo los milisegundos a 1000, y este resultado nos dejó satisfechos.
 
 ## Materiales usados
 | Componente | Cantidad | Valor Unidad | Link |
@@ -97,29 +106,25 @@ Resulta que el problema era que el nombre de adafruit “Kaiikou” estaba escri
 | Boton pulsador switch de 4 pines push button 6x6x4.3mm | 1 | $290 | <https://www.mechatronicstore.cl/push-button-4-pines/> |
 
 ## Sensor usado
-Potenciometro 20K Ohm 
 
--Resistencia que puede variar su valor de forma manual, está compuesta de tres puntos de conexión de las cuales dos son fijos y están conectados a un elemento resistivo, y el otro está conectado a una pieza que se mueve lado a lado. Puntualmente la que utilizamos nosotros va desde 0 Ohm a 20K Ohm
+**Potenciómetro 20K Ohm**
+Resistencia que puede variar su valor de forma manual. Está compuesta de tres puntos de conexión, de los cuales dos son fijos y están conectados a un elemento
+resistivo, y el otro está conectado a una pieza que se desliza de lado a lado. Puntualmente, el que utilizamos va desde 0 ohm hasta 20K ohm.
 
-<img src="./imagenes/potenciometro.png " alt="install" width="500">
+<img src="./imagenes/potenciometro.png" alt="install" width="500">
 
-Botón pulsador
-Los botones push son componentes que sirven para controlar el flujo de corriente al ser accionado. 
-
-<img src="./imagenes/botonpush.jpg " alt="install" width="500">
-
-
+**Botón pulsador**
+Los botones push son componentes que sirven para controlar el flujo de corriente al ser accionados.
+<img src="./imagenes/botonpush.jpg" alt="install" width="500">
 
 ## Actuador usado
-Micro Servo Motor SG90 9g 
 
-Es un actuador controlable que recibe señales especificando los angulos en los que tiene que girar, puntualmente el nuestro va de 0° a 180°.
-
-
+**Micro Servo Motor SG90 9g**
+Es un actuador controlable que recibe señales especificando los ángulos en los que tiene que girar. Puntualmente, el nuestro va de 0° a 180°.
 
 ## Código usado para enviar
 
-```
+```cpp
 import time
 import board
 import analogio
@@ -246,7 +251,7 @@ while True:
 
 ## Código usado para recibir
 
-```
+```cpp
 #include <WiFiS3.h>
 #include <Servo.h>
 #include "Adafruit_MQTT.h"
@@ -435,9 +440,7 @@ Recibiendo
 
 <https://docs.sunfounder.com/projects/pico-2w-kit/en/latest/cproject/ar_button.html>
 
-
 <https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers>
-
 
 <https://www.codigoiot.com/base-de-conocimiento/botones/>
 

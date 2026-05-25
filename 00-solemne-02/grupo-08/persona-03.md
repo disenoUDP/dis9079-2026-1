@@ -59,6 +59,8 @@ Un potenciómetro es un dispositivo electrónico. Se puede usar como resistencia
 
 <img src="./imagenes/valentina_imagenes/pote.png" alt="tinkercad" width="300">
 
+Imagen de: https://afel.cl/products/potenciometro-500k-ohm?_pos=4&_psq=pote&_ss=e&_v=1.0
+
 `Tipos de resistencia de variación mecánica para su uso como potenciómetros:`
 
 - `Impresas:` realizadas con una pista de carbón o de cermet sobre un soporte duro como papel baquelizado (cartón prespan), fibra de vidrio, baquelita, etcétera. La pista tiene sendos contactos en sus extremos y un cursor conectado a un patín que se desliza por la pista resistiva.

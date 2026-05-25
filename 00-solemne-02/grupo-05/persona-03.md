@@ -6,7 +6,7 @@ Nicolás Elías Valdés Greve / [nicolasvaldesgreve](<https://github.com/nicolas
 
 ![Imagen de cómo se ve un LDR, imagen rescatada de tecnosalva.com](./imagenes/ldr.png)
 
-El sensor LDR (Light Dependent Resistor) o también llamado fotorresistencia, como lo dice su nombre, es un resistor el cual dependiendo de la intensidad de la luz va a ir cambiando su valor de resistencia, todo ésto es gracias a que está fabricado con un material semiconductor de sulfuro de cadmio (CdS), el cual le permite reaccionar a la luz visible ya que cuando caen los fotones sobre el LDR los electrones de la banda de valencia del material semiconductor son trasladados a la banda de conducción. Los cambios en el valor de su resistencia varían de la siguiente manera:
+El sensor LDR (Light Dependent Resistor) o también llamado fotorresistencia, como lo dice su nombre, es un resistor el cual dependiendo de la intensidad de la luz va a ir cambiando su valor de resistencia, todo esto es gracias a que está fabricado con un material semiconductor de sulfuro de cadmio (CdS), el cual le permite reaccionar a la luz visible ya que cuando caen los fotones sobre el LDR los electrones de la banda de valencia del material semiconductor son trasladados a la banda de conducción. Los cambios en el valor de su resistencia varían de la siguiente manera:
 
 + Mientras más iluminación haya, la resistencia disminuye.
 + Mientras menos iluminación haya, la resistencia aumenta.
@@ -15,9 +15,9 @@ Dentro de un esquemático el símbolo del LDR es el mismo que el de una resisten
 
 ![Simbología de LDR en esquemáticos, imagen rescatada de tecnosalva.com](./imagenes/simbolo-ldr.png)
 
-Como ya mencioné anteriormente, el funcionamiento de los LDR se basa en el efecto fotoeléctrico, por lo que las células también pueden reaccionar a una amplia gama de frecuencias incluyendo infrarrojo, luz visible y luz ultravioleta. Algo importante sobre la variación del valor de resistencia es que ésta tiene cierto retardo siendo éste diferente si se pasa de oscuro a iluminado o de iluminado a oscuro, lo cual limita a no usar los LDR en ocasiones en donde la señal luminosa varía con rapidez ya que ésto puede causar problemas.
+Como ya mencioné anteriormente, el funcionamiento de los LDR se basa en el efecto fotoeléctrico, por lo que las células también pueden reaccionar a una amplia gama de frecuencias incluyendo infrarrojo, luz visible y luz ultravioleta. Algo importante sobre la variación del valor de resistencia es que ésta tiene cierto retardo siendo éste diferente si se pasa de oscuro a iluminado o de iluminado a oscuro, lo cual limita a no usar los LDR en ocasiones en donde la señal luminosa varía con rapidez ya que esto puede causar problemas.
 
-En el caso de nosotros, ya se nos introdujo el LDR en el curso pero hemos trabajado más con éste en el taller de diseño de máquinas electrónicas, en donde se puede apreciar el efecto visual que tiene éste sensor en un LED.
+En el caso de nosotros, ya se nos introdujo el LDR en el curso, pero hemos trabajado más con éste en el taller de diseño de máquinas electrónicas, en donde se puede apreciar el efecto visual que tiene este sensor en un LED.
 
 ![LDR con LED y capacitor de 10uf](./imagenes/fotorresistor.gif)
 
@@ -78,13 +78,13 @@ Esta obra fue inspirada en el pensamiento de Martin Heidegger (1889 - 1976) sobr
 
 ![PCD8544 por delante](./imagenes/PCD8544-frente.jpg)
 
-El chip PCD8544 es un controlador desarrollado por Philips que se considera un actuador visual, ya que el actuador es el que transforma una señal en información visual. Éste chip utiliza una interfaz de bus serie similar a SPI (Interfaz Periférica Serie) lo cual le permite comunicarse con microcontroladores y está diseñado para poder operar una pantalla gráfica de 84 x 48 píxeles.
+El chip PCD8544 es un controlador desarrollado por Philips que se considera un actuador visual, ya que el actuador es el que transforma una señal en información visual. Este chip utiliza una interfaz de bus serie similar a SPI (Interfaz Periférica Serie) lo cual le permite comunicarse con microcontroladores y está diseñado para poder operar una pantalla gráfica de 84 x 48 píxeles.
 
 ![PCD8544 por detrás](./imagenes/PCD8544.jpg)
 
-Éste chip funciona dentro del rango de 2,7V a 3,3V, y sus niveles de comunicación son de 3V por lo que si lo quieres conectar a un microcontrolador como Arduino (wow justo con lo que estamos trabajando) que funciona con 5V, se necesita un tipo de adaptación ya que se puede dañar fácilmente la pantalla, pero no hay problema al utilizarlo con una Raspberry que funciona con 3V3 (wow también trabajamos con ésta, que loco).
+Este chip funciona dentro del rango de 2,7V a 3,3V, y sus niveles de comunicación son de 3V por lo que si lo quieres conectar a un microcontrolador como Arduino (wow justo con lo que estamos trabajando) que funciona con 5V, se necesita un tipo de adaptación ya que se puede dañar fácilmente la pantalla, pero no hay problema al utilizarlo con una Raspberry que funciona con 3V3 (wow también trabajamos con ésta, que loco).
 
-El controlador incluye 504 bytes de RAM de datos de pantalla gráfica (GDDRAM) el cual almacena el patrón de bits que se mostrará en la pantalla. Ésta parte de la memoria se divide en seis bancos enumerados del 0 al 5, en donde cada banco tiene 84 segmentos enumerados del 0 al 83, y cada segmento puede guardar 8 bits de datos enumerados del 0 al 7, lo cual si se calcula da como un total de 4032, es decir, 504 bytes.
+El controlador incluye 504 bytes de RAM de datos de pantalla gráfica (GDDRAM) el cual almacena el patrón de bits que se mostrará en la pantalla. Esta parte de la memoria se divide en seis bancos enumerados del 0 al 5, en donde cada banco tiene 84 segmentos enumerados del 0 al 83, y cada segmento puede guardar 8 bits de datos enumerados del 0 al 7, lo cual si se calcula da como un total de 4032, es decir, 504 bytes.
 
 La mayor razón por la cual se prefiere usar el PCD8544 es debido a que éste es un controlador de bajo consumo, diseñado para poder manejar pantallas monocromáticas de 48 filas y 84 columnas.
 
@@ -105,9 +105,9 @@ El teléfono Nokia 5110 fue lanzado a fines de los 90', más específicamente en
 
 Este teléfono utiliza la pantalla PCD8544 LCD monocromática, la cual como menciono en la investigación del actuador ésta fue desarrollada por Philips.
 
-La capacidad de batería de éste teléfono es de 900 mAh, la cual toma 4 horas en completar su carga completa y dura hasta 270 horas seguidas en estado de espera mientras que activado de manera constante solo dura 300 minutos. Su batería está hecha de hidruro metálico de níquel.
+La capacidad de batería de este teléfono es de 900 mAh, la cual toma 4 horas en completar su carga completa y dura hasta 270 horas seguidas en estado de espera mientras que activado de manera constante solo dura 300 minutos. Su batería está hecha de hidruro metálico de níquel.
 
-Logré encontrar el siguiente esquemático en ésta página: <http://www.elektronika.lt/schemos/78/54/mobliuju-telefonu-jungimas-prie-kompiuterio/>, el cual sive para poder cambiar el software del teléfono por nuestra propia cuenta (aplica para Nokia 5110, 61xx, 7110 y 6210):
+Logré encontrar el siguiente esquemático en esta página: <http://www.elektronika.lt/schemos/78/54/mobliuju-telefonu-jungimas-prie-kompiuterio/>, el cual sirve para poder cambiar el software del teléfono por nuestra propia cuenta (aplica para Nokia 5110, 61xx, 7110 y 6210):
 
 ![Esquemático para Nokia 5110](./imagenes/esquematico.png)
 

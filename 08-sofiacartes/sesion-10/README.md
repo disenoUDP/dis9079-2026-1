@@ -90,7 +90,7 @@ NO OLVIDAR!
 
 <img src="./imagenes/pote.jpg" alt="final" width="300">
 
-Imágen de: <https://afel.cl/products/potenciometro-500k-ohm?_pos=4&_psq=pote&_ss=e&_v=1.0>
+Imagen de: <https://afel.cl/products/potenciometro-500k-ohm?_pos=4&_psq=pote&_ss=e&_v=1.0>
 
 Es un componente electrónico pasivo compuesto por una resistencia de valor fijo y un contacto móvil. Al mover la perilla, modificamos la longitud de la pista resistiva por la que pasa la corriente, lo que nos permite variar mecánicamente la cantidad de resistencia en un circuito.
 
@@ -106,7 +106,7 @@ Como sensor de posición rotacional o lineal, su funcionamiento se basa en el pr
 
 <img src="./imagenes/servo.jpg" alt="final" width="300">
 
-Imágen de: <https://afel.cl/products/micro-servomotor-sg90?_pos=1&_psq=servomotor&_ss=e&_v=1.0>
+Imagen de: <https://afel.cl/products/micro-servomotor-sg90?_pos=1&_psq=servomotor&_ss=e&_v=1.0>
 
 Es un actuador de precisión que, a diferencia de un motor común, no gira continuamente, sino que se mueve hasta una posición angular exacta y la mantiene. Su estructura interna incluye un motor de corriente continua, engranajes para aumentar la fuerza, un potenciómetro que detecta la posición del eje y un circuito integrado.
 

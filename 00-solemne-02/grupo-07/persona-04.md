@@ -10,6 +10,44 @@ El sensor PIR (Passive Infrared Sensor) es un sensor electrónico diseñado para
 
 En el proyecto desarrollado, el sensor PIR funciona como el elemento de entrada del sistema. Cuando detecta movimiento, la Raspberry Pi Pico 2 W envía la información hacia Adafruit IO, iniciando la comunicación inalámbrica con el Arduino Uno R4 WiFi.
 
+### Conexiones del sensor PIR
+
+El sensor PIR HC-SR501 posee tres pines principales que permiten su funcionamiento junto a la Raspberry Pi Pico 2 W:
+
+#### VCC
+Corresponde a la alimentación del módulo.
+
+- Se conecta al pin de 5V o 3.3V de la Raspberry Pi Pico 2 W.
+- Permite energizar el sensor para que pueda detectar movimiento.
+
+#### GND
+Es la conexión a tierra del circuito.
+
+- Se conecta al pin GND de la Raspberry Pi Pico 2 W.
+- Completa el circuito eléctrico y estabiliza la alimentación.
+
+#### OUT
+Es la salida digital del sensor.
+
+- Se conecta a un pin GPIO de entrada de la Raspberry Pi Pico 2 W.
+- Envía un valor:
+   - HIGH (1) cuando detecta movimiento.
+   - LOW (0) cuando no detecta movimiento.
+
+#### Conexión del botón
+El botón utilizado para habilitar el funcionamiento del sensor también posee conexiones simples:
+
+- Un terminal del botón se conecta a un pin GPIO de la Raspberry Pi Pico 2 W.
+- El otro terminal se conecta a GND.
+- Mediante programación se utiliza una resistencia pull-up interna para detectar cuándo el botón es presionado.
+
+Cuando el usuario presiona el botón:
+
+1. La Raspberry habilita la lectura del sensor PIR.
+2. El sensor comienza a detectar movimiento.
+3. Si detecta presencia, se envía información a Adafruit IO.
+4. El Arduino Uno R4 WiFi recibe los datos.
+5. La pantalla OLED reproduce la animación pixel art.
 
 ### Funcionamiento 
 
@@ -152,6 +190,30 @@ Durante el desarrollo del proyecto se aprendió que:
 OLED significa “Organic Light Emitting Diode”. Es una pantalla formada por diodos orgánicos emisores de luz que pueden iluminarse individualmente sin necesidad de retroiluminación.
 
 En el proyecto, la pantalla OLED actúa como el actuador principal del sistema, ya que responde visualmente a la información recibida desde Adafruit IO.
+
+### Conexión de la pantalla OLED
+
+La pantalla OLED utilizada funciona mediante comunicación I2C, por lo que requiere cuatro conexiones principales:
+
+#### VCC
+- Alimentación de la pantalla.
+- Conectado a 3.3V o 5V.
+#### GND
+- Tierra del circuito.
+#### SDA
+- Línea de datos I2C.
+- Envía la información gráfica hacia la pantalla.
+#### SCL
+- Línea de reloj I2C.
+- Sincroniza la comunicación entre el Arduino y la pantalla OLED.
+
+En el Arduino Uno R4 WiFi:
+
+- SDA se conecta al pin SDA.
+- SCL se conecta al pin SCL.
+
+Gracias a esta conexión, el Arduino puede enviar los frames de la animación y mostrar el GIF del alien caminando en la pantalla.
+
 
 ### Funciones
 

@@ -34,7 +34,9 @@ Además, queríamos sumar un potenciómetro que enviara valores a Adafruit e int
 
 **Conexión de botón a Raspberry Pi Pico 2w**
 
-En un comienzo buscamos ejemplos de conexión de un botón a Raspberry Pi Pico 2w pero en las fotos mostraban la conexión mediante una resistencia, le preguntamos a Aarón si esto era necesario pero nos dijo que no porque estos botones vienen con una resistencia interna.
+En un comienzo buscamos ejemplos de conexión de un botón a Raspberry Pi Pico 2W, pero en las fotos mostraban la conexión mediante una resistencia externa. Le preguntamos a Aarón si esto era necesario y nos explicó que no.
+El motivo es que cuando un botón no está presionado, el pin del microcontrolador queda en un estado inestable llamado "flotante", donde no sabe si debe leer un 1 o un 0, lo que provoca lecturas erráticas o aleatorias. Normalmente esto se soluciona agregando una resistencia externa llamada pull-up, que mantiene el pin en un valor fijo (HIGH = 1) mientras el botón no se presiona, y cuando se presiona cae a LOW = 0.
+Sin embargo, la Raspberry Pi Pico 2W ya tiene esta resistencia pull-up integrada dentro del chip, y se puede activar directamente por software con digitalio.Pull.UP en el código, sin necesidad de agregar ningún componente físico extra al circuito.
 
 Luego de esta duda, lo que hicimos fue conectar un botón de 4 pines al módulo de Raspberry Pi Pico 2w, para ello seguimos como guía el pinout de la placa visto anteriormente en clases.
 
@@ -294,8 +296,54 @@ Durante el desarrollo del proyecto comenzamos realizando el cableado de la Raspb
 
 Posteriormente, trabajamos en la programación del sensor y del botón, pero surgieron diversas dificultades relacionadas con librerías necesarias para el funcionamiento del sistema y múltiples errores en el código. Intentamos resolver estos problemas durante otra hora adicional, investigando posibles soluciones y realizando distintas pruebas, pero no logramos que el sistema funcionara correctamente dentro del tiempo disponible.
 
-Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro proyecto inicial, tuvimos que incorporarnos al Grupo 10, integrado por Braulio Figueroay Luisa Toro, con el fin de continuar el trabajo práctico de la clase.
+Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro proyecto inicial, tuvimos que incorporarnos al Grupo 10, integrado por Braulio Figueroa y Luisa Toro, con el fin de continuar el trabajo práctico de la clase.
 
+## Materiales usados en clases 
+| Material | Cantidad | Precio aproximado (CLP) |
+|---|---:|---:|
+| Raspberry Pi Pico 2W | 1 | $15.990 |
+| Arduino UNO R4 WiFi | 1 | $34.990 |
+| HC-SR04 Ultrasonic Sensor | 1 | $3.290 |
+| SG90 Micro Servo Motor | 1 | $1.830 |
+| Protoboard | 1 | $2.590 |
+| Cables Dupont | 1 pack | $1.990 |
+| Cable USB | 1 | $3.000 |
+| Fuente de alimentación USB | 1 | $8.000 |
+
+# Problemas encontrados en el proyecto inicial
+
+Durante el desarrollo inicial de nuestro proyecto, uno de los principales problemas se presentó en la Raspberry Pi Pico 2W, ya que el código utilizado para controlar el sensor ultrasónico HC-SR04 arrojaba múltiples errores relacionados con bibliotecas faltantes.
+
+Visual Studio Code mostraba mensajes de error indicando que módulos como:
+
+```python
+import wifi
+import socketpool
+import board
+import adafruit_hcsr04
+import adafruit_minimqtt.adafruit_minimqtt as MQTT
+import digitalio
+```
+![Errores de bibliotecas en VS Code](imagenes/error_bibliotecas.png)
+
+Estos errores aparecían debido a que CircuitPython requiere bibliotecas específicas instaladas manualmente dentro de la carpeta `lib` de la unidad `CIRCUITPY`.
+
+## Bibliotecas faltantes
+
+| Biblioteca |
+|---|
+| adafruit_minimqtt |
+| adafruit_requests.mpy |
+| adafruit_connection_manager.mpy |
+| adafruit_bus_device |
+| adafruit_ticks.mpy |
+| adafruit_hcsr04.mpy |
+
+## Bibliotecas instaladas
+
+![Bibliotecas instaladas](imagenes/bibliotecas_instaladas.png)
+
+Luego de investigar el funcionamiento de CircuitPython y agregar las bibliotecas necesarias, logramos avanzar parcialmente en el proyecto.
 ## Descripción del proyecto grupal final
 
 El proyecto consiste en un sistema de comunicación inalámbrica basado en la lógica de enviar y recibir en la plataforma de Adafruit IO. Para enviar datos utiliza una Raspberry Pi Pico 2w y para recibir datos utiliza un Arduino UNO R4 Wifi. El modo de enviar datos es a través de sensor el cuál es un botón pulsador de 4 pines. Cuando el botón es oprimido y sus datos son recibidos, un LED actuador se encenderá y apagará según si el botón esté presionado o suelto.

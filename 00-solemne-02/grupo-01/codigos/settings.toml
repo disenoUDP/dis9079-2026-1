@@ -1,0 +1,5 @@
+CIRCUITPY_WIFI_SSID = "wenakiara"
+CIRCUITPY_WIFI_PASSWORD = "tomas123"
+
+ADAFRUIT_AIO_USERNAME = "tomascatri"
+ADAFRUIT_AIO_KEY = "blep"
