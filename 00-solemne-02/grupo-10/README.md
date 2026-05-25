@@ -34,7 +34,9 @@ Además, queríamos sumar un potenciómetro que enviara valores a Adafruit e int
 
 **Conexión de botón a Raspberry Pi Pico 2w**
 
-En un comienzo buscamos ejemplos de conexión de un botón a Raspberry Pi Pico 2w pero en las fotos mostraban la conexión mediante una resistencia, le preguntamos a Aarón si esto era necesario pero nos dijo que no porque estos botones vienen con una resistencia interna.
+En un comienzo buscamos ejemplos de conexión de un botón a Raspberry Pi Pico 2W, pero en las fotos mostraban la conexión mediante una resistencia externa. Le preguntamos a Aarón si esto era necesario y nos explicó que no.
+El motivo es que cuando un botón no está presionado, el pin del microcontrolador queda en un estado inestable llamado "flotante", donde no sabe si debe leer un 1 o un 0, lo que provoca lecturas erráticas o aleatorias. Normalmente esto se soluciona agregando una resistencia externa llamada pull-up, que mantiene el pin en un valor fijo (HIGH = 1) mientras el botón no se presiona, y cuando se presiona cae a LOW = 0.
+Sin embargo, la Raspberry Pi Pico 2W ya tiene esta resistencia pull-up integrada dentro del chip, y se puede activar directamente por software con digitalio.Pull.UP en el código, sin necesidad de agregar ningún componente físico extra al circuito.
 
 Luego de esta duda, lo que hicimos fue conectar un botón de 4 pines al módulo de Raspberry Pi Pico 2w, para ello seguimos como guía el pinout de la placa visto anteriormente en clases.
 
@@ -294,7 +296,7 @@ Durante el desarrollo del proyecto comenzamos realizando el cableado de la Raspb
 
 Posteriormente, trabajamos en la programación del sensor y del botón, pero surgieron diversas dificultades relacionadas con librerías necesarias para el funcionamiento del sistema y múltiples errores en el código. Intentamos resolver estos problemas durante otra hora adicional, investigando posibles soluciones y realizando distintas pruebas, pero no logramos que el sistema funcionara correctamente dentro del tiempo disponible.
 
-Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro proyecto inicial, tuvimos que incorporarnos al Grupo 10, integrado por Braulio Figueroay Luisa Toro, con el fin de continuar el trabajo práctico de la clase.
+Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro proyecto inicial, tuvimos que incorporarnos al Grupo 10, integrado por Braulio Figueroa y Luisa Toro, con el fin de continuar el trabajo práctico de la clase.
 
 ## Materiales usados en clases 
 | Material | Cantidad | Precio aproximado (CLP) |
@@ -324,7 +326,7 @@ import digitalio
 ```
 ![Errores de bibliotecas en VS Code](imagenes/error_bibliotecas.png)
 
-Estos errores aparecían debido a que CircuitPython requiere librerías específicas instaladas manualmente dentro de la carpeta `lib` de la unidad `CIRCUITPY`.
+Estos errores aparecían debido a que CircuitPython requiere bibliotecas específicas instaladas manualmente dentro de la carpeta `lib` de la unidad `CIRCUITPY`.
 
 ## Bibliotecas faltantes
 
@@ -337,9 +339,9 @@ Estos errores aparecían debido a que CircuitPython requiere librerías específ
 | adafruit_ticks.mpy |
 | adafruit_hcsr04.mpy |
 
-## Librerías instaladas
+## Bibliotecas instaladas
 
-![Librerías instaladas](imagenes/librerias_instaladas.png)
+![Bibliotecas instaladas](imagenes/bibliotecas_instaladas.png)
 
 Luego de investigar el funcionamiento de CircuitPython y agregar las bibliotecas necesarias, logramos avanzar parcialmente en el proyecto.
 ## Descripción del proyecto grupal final

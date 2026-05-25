@@ -9,14 +9,22 @@ Parece el componente más simple del mundo, un botón pero cuando empecé a inve
 
 En electrónica digital, un pulsador es un **sensor de contacto**: detecta si alguien lo presionó o no, y manda esa info como un `1` o un `0`. El problema real no es el botón en sí, sino lo que pasa con el pin cuando el botón *no está presionado*. Si lo conectas sin una resistencia de referencia, el pin queda en un **estado flotante**, básicamente el microcontrolador no sabe si está recibiendo un 0 o un 1 porque el ruido eléctrico del ambiente lo interfiere y genera activaciones falsas al azar.
 
-<img width="499" height="350" alt="image" src="https://github.com/user-attachments/assets/d8f0b37c-8489-442f-a4b6-833e03b3bc25" /> 
-<img width="499" height="350" alt="image" src="https://github.com/user-attachments/assets/85869c97-6bf5-476a-bffb-8213455ea5f2" />
+<div align="center">
+  <img width="499" height="350" alt="image" src="https://github.com/user-attachments/assets/d8f0b37c-8489-442f-a4b6-833e03b3bc25" />
+  <img width="499" height="350" alt="image" src="https://github.com/user-attachments/assets/85869c97-6bf5-476a-bffb-8213455ea5f2" />
+  <br>
+  <em>Fuente: <a href="https://docs.arduino.cc/built-in-examples/digital/Debounce/">Debounce on a Pushbutton - Arduino Documentation</a></em>
+</div>
 
+    
 La solución es usar resistencias **Pull-up o Pull-down** (que pueden ser internas del mismo Arduino o Raspberry, o externas en el circuito). Lo que hacen es "forzar" un estado lógico estable cuando el botón no se está usando, le dicen al pin "si no hay nada, eres un 0" (o un 1, dependiendo de la configuración). Eso elimina el ruido y el sistema se comporta como debería.
 
-<img width="499" height="350" alt="image" src="https://github.com/user-attachments/assets/46823a8b-e0cb-4f4a-8843-ce8c0452bd15" />
-<img width="499" height="350" alt="image" src="https://github.com/user-attachments/assets/f1fd9b50-6ba3-42b0-a2e2-f985ebde1b99" />
-
+<div align="center">
+  <img width="499" height="350" alt="image" src="https://github.com/user-attachments/assets/46823a8b-e0cb-4f4a-8843-ce8c0452bd15" />
+  <img width="499" height="350" alt="image" src="https://github.com/user-attachments/assets/f1fd9b50-6ba3-42b0-a2e2-f985ebde1b99" />
+  <br>
+  <em>Fuente: <a href="https://learn.sparkfun.com/tutorials/pull-up-resistors/all">Pull-up Resistors - SparkFun Learn</a></em>
+</div>
 En nuestro proyecto usamos el botón como sensor porque necesitábamos que el *usuario* decidiera cuándo mandar la señal, no un temporizador automático.
 
 
@@ -26,14 +34,17 @@ En nuestro proyecto usamos el botón como sensor porque necesitábamos que el *u
 
 El gran problema de los sensores mecánicos como los botones es el **rebote** (o *debouncing* en inglés). Cuando presionas el botón, las chapitas metálicas internas chocan, vibran y generan varios pulsos de "encendido" en milisegundos antes de estabilizarse. Para el microcontrolador eso se parece a que presionaste el botón 10 veces seguidas cuando en realidad solo lo apretaste una vez.
 
-<img width="1000" height="450" alt="image" src="https://github.com/user-attachments/assets/95d11ca8-9189-47f0-aef1-ca8a89139bb6" />
+<div align="center">
+  <img width="1000" height="450" alt="image" src="https://github.com/user-attachments/assets/95d11ca8-9189-47f0-aef1-ca8a89139bb6" />
+  <br>
+  <em>Fuente: Elaboración propia</em>
+</div>
 
 ### ¿Por qué el botón genera varios pulsos si solo lo apreté una vez?
 
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/f9d3c70d-b676-4218-9fce-84c0a7432750" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/461b97da-f4aa-475b-8d9e-9405b5c2b080" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/f7b777d4-fb45-4885-8b8d-e74332f711ec" />
-
+| <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/f9d3c70d-b676-4218-9fce-84c0a7432750" /> | <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/461b97da-f4aa-475b-8d9e-9405b5c2b080" /> | <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/f7b777d4-fb45-4885-8b8d-e74332f711ec" /> |
+|:---:|:---:|:---:|
+|<em>Fuente: [Picotech — Switch Bounce](https://www.picotech.com/library/articles/blog/what-is-switch-bounce-how-to-implement-debounce)<em>|<em>Fuente:   [Wilderness Labs — Pull-up & Pull-down](https://developer.wildernesslabs.co/Hardware/Tutorials/Electronics/Part4/PullUp_PullDown_Resistors/)<em> |<em>Fuente:   [Electronzap — Switches](https://electronzap.com/how-to-learn-basic-electronics/switches-electronic-switch-components/)<em> |
 
 Cuando aprietas un botón, adentro hay dos pequeñas chapitas de metal que se juntan para cerrar el circuito. En tu cabeza eso pasa suave y limpio, se tocan y listo. Pero en la realidad física, esas chapitas rebotan igual que cuando dejas caer una pelota al piso: no se quedan quietas de inmediato, sino que chocan, se separan, vuelven a chocar, se separan, y recién después de unos milisegundos se estabilizan y quedan juntas de verdad.
 
@@ -47,7 +58,11 @@ El delay en el código existe justo para eso: cuando detecta el primer 1, espera
 
 **Cómo se visualiza:** En Adafruit IO los datos del botón aparecen como valores binarios: `0` (no presionado) o `1` (presionado). Sin el filtrado, el gráfico en la plataforma se llena de picos aleatorios que parecen muchas presiones cuando era solo una. Con el debouncing bien hecho, cada presión es un pico limpio y claro.
 
-<img width="1000" height="450" alt="image" src="https://github.com/user-attachments/assets/1870820b-b2b9-443c-973a-e2d1a8eb08b1" />
+<div align="center">
+ <img width="1000" height="450" alt="image" src="https://github.com/user-attachments/assets/1870820b-b2b9-443c-973a-e2d1a8eb08b1" />
+  <br>
+  <em>Fuente: Elaboración propia</em>
+</div>
 
 ---
 
@@ -59,7 +74,11 @@ El delay en el código existe justo para eso: cuando detecta el primer 1, espera
 
 **Estado flotante sin resistencia:** Ya lo expliqué arriba, pero vale repetirlo porque es el error más frecuente, conectar el botón sin Pull-up o Pull-down y después no entender por qué el sistema hace cosas solo.
 
+<div align="center">
 <img width="1000" height="450" alt="image" src="https://github.com/user-attachments/assets/54d2b361-1a42-4a99-8a84-c2ade269f79e" />
+  <br>
+  <em>Fuente: Elaboración propia</em>
+</div>
 
 ---
 
@@ -78,9 +97,13 @@ Lo que más me llamó la atención al investigar esto es que, aunque la escala e
 * *Saturación de datos:* Amazon no podía tener millones de botones mandando info cada segundo porque colapsarían. Por eso, al igual que nosotros con la Raspberry, el botón solo "despierta" y envía info cuando hay un evento real (la presión).
 * *El Debouncing:* Imagínate si un niño se pone a jugar con el botón y lo aprieta 20 veces. Amazon tuvo que programar un filtro (un delay lógico) para no enviarte 10 bidones de detergente o 10 bolsas de kilo a la casa por error. Es el mismo concepto del "ojo cerrado" que usamos en nuestro código para que el Arduino no se maree con los rebotes de las chapitas metálicas.
 
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/9aaa784f-2b53-43c4-8ca0-9762efd376d5" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/11568db3-2787-4b4d-8a7c-73c83b3b6fad" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/e28aa9ba-868e-4903-9b9d-7722a21b1aca" />
+<div align="center">
+
+<img width="485" height="350" alt="image" src="https://github.com/user-attachments/assets/9aaa784f-2b53-43c4-8ca0-9762efd376d5" />
+<img width="485" height="350" alt="image" src="https://github.com/user-attachments/assets/11568db3-2787-4b4d-8a7c-73c83b3b6fad" />
+
+<em>Fuente: [Amazon Dash Button — IoT Thought](https://iothought.com/amazon-dash-button/)</em>
+</div>
 
 Al final, es el mismo principio de "botón activa evento en la nube", y me sirve mucho para ver que lo que estamos aprendiendo se usa (o se usó) en productos que simplifican la vida de la gente.
 
@@ -92,9 +115,15 @@ La lógica es exactamente la misma que usamos en clase: sensor de contacto detec
 
 Lo que hace interesante este referente es el contexto, demuestra que el mismo principio básico de un pulsador como sensor no tiene límite de aplicación. Desde encender un LED en clase hasta sistemas críticos de salud, la arquitectura es la misma: un humano presiona → una señal viaja → algo responde del otro lado.
 
+<div align="center">
+
 <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/0d17e394-7814-41bb-a447-56157b229782" />
 <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/c0e7b304-9a14-4b96-8b39-d6db6fbc23ce" />
 <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/5bc0cc85-75a7-443e-8a4e-956c22b4832c" />
+
+<em>Fuente: [Flic 2 Product Page | Flic Smart Button](https://flic.io/flic2)</em>
+
+</div>
 
 # El Actuador: LED
 
@@ -102,9 +131,10 @@ Lo que hace interesante este referente es el contexto, demuestra que el mismo pr
 
 Un actuador es cualquier componente que convierte una señal eléctrica en algo físico. En el caso del **LED** (*Light Emitting Diode*, Diodo Emisor de Luz), esa salida física es luz.
 
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/be73b25d-6e9f-4f66-b5ba-e05542302c11" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/9db5fab5-6674-41cf-9c30-c9dfe99019d6" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/9aedcc7d-f33c-4069-9b16-a9f932943df4" />
+| <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/be73b25d-6e9f-4f66-b5ba-e05542302c11" /> | <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/9db5fab5-6674-41cf-9c30-c9dfe99019d6" /> | <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/9aedcc7d-f33c-4069-9b16-a9f932943df4" /> |
+|:---:|:---:|:---:|
+|<em>Fuente: [Led Schematic Diagram](https://stewart-switch.com/led-schematic-diagram)</em> |<em>Fuente: [LED Blink — Makeability Lab](https://makeabilitylab.github.io/physcomp/arduino/led-blink.html)</em> |<em>Fuente:  [Super Bright Yellow LED — Electromaker](https://www.electromaker.io/shop/product/super-bright-yellow-5mm-led-25-pack)</em>|
+
 
 Lo que más me costó entender al principio es que el LED no funciona como una ampolleta común. Es un **semiconductor**, y eso significa que la corriente no puede ser cualquier valor, si no se limita, el LED se destruye instantáneamente porque no tiene resistencia interna que lo proteja. Por eso siempre va con una resistencia en serie (en nuestro caso de **220Ω**) que controla cuánta corriente le llega.
 
@@ -118,10 +148,9 @@ Investigando sobre componentes, me llamó la atención que existen LEDs con resi
 
 Mi conclusión: Esta información refuerza por qué es tan importante calcular bien la resistencia para nuestro proyecto. Aunque existen soluciones "todo en uno", entender la relación entre voltaje y corriente (Ley de Ohm) nos permite elegir el componente correcto y, sobre todo, saber cuándo estamos acercándonos a un límite peligroso para nuestra placa o el LED.
 
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/65aba760-3867-4d86-a908-473850764dd6" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/e57be755-e25a-4367-ae04-c7e969f0d7df" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/f709a3c2-8928-44e6-8005-65aabbbfde57" />
-
+| <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/65aba760-3867-4d86-a908-473850764dd6" /> | <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/e57be755-e25a-4367-ae04-c7e969f0d7df" /> | <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/f709a3c2-8928-44e6-8005-65aabbbfde57" /> |
+|:---:|:---:|:---:|
+|<em>Fuente: [Working Principle of LED — Electrical4U](https://www.electrical4u.com/working-principle-of-light-emitting-diode/)</em>|<em>Fuente: [Light-Emitting Diodes — SparkFun](https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/all)</em> |<em>Fuente: [Light-Emitting Diodes — SparkFun](https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/all)</em> |
 
 El pin del Arduino se configura como `OUTPUT` para que actúe como fuente de voltaje hacia el LED. Cuando el código manda un `HIGH`, el pin entrega 5V y el LED enciende. Cuando manda `LOW`, corta la corriente y se apaga.
 
@@ -133,7 +162,12 @@ En el caso del LED el "filtrado" no ocurre en el sensor sino en la **recepción 
 
 **Protocolo MQTT:** El sistema funciona por suscripción. El Arduino se "suscribe" a un canal específico en Adafruit IO y solo reacciona cuando llega el mensaje exacto que se programó. Si llega cualquier otra cosa, simplemente lo ignora. Eso es el filtrado del actuador, no reaccionar al ruido, solo a la instrucción correcta.
 
+<div align="center">
 <img width="1000" height="450" alt="image" src="https://github.com/user-attachments/assets/6f48f77c-76b0-4aed-9a59-d1589517acfb" />
+  <br>
+  <em>Fuente: Elaboración propia</em>
+</div>
+
 
 **Visualización:** El LED en sí mismo es la visualización más directa posible. Si el LED enciende, el dato viajó con éxito desde la Raspberry, pasó por Adafruit IO, llegó al Arduino y fue interpretado correctamente. Si no enciende, algo falló en algún punto de esa cadena, y eso lo convierte en una herramienta de diagnóstico muy útil además de ser el actuador del proyecto.
 
@@ -143,40 +177,65 @@ En el caso del LED el "filtrado" no ocurre en el sensor sino en la **recepción 
 
 **Polaridad inversa:** El LED tiene una pata larga (**ánodo**, positivo) y una pata corta (**cátodo**, negativo). Si se conecta al revés, no pasa corriente y el LED no enciende pero tampoco se daña. El error es silencioso y puede hacer pensar que el problema está en el código cuando en realidad es solo el LED al revés. Se identifica al tacto: pata larga es el positivo.
 
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/d0b9a4b1-2fb8-41c8-a208-cbaa8a456851" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/99062674-495e-49fa-a3a6-3bf0564d098b" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/1ae34049-e305-4c49-955a-69f29d38fa64" />
+| <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/d0b9a4b1-2fb8-41c8-a208-cbaa8a456851" /> | <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/99062674-495e-49fa-a3a6-3bf0564d098b" /> | <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/1ae34049-e305-4c49-955a-69f29d38fa64" /> |
+|:---:|:---:|:---:|
+|<em>Fuente:  [Identify LED Leg Polarity — Yaman Electronics](https://www.yamanelectronics.com/identify-led-leg-polarity/)</em>|<em>Fuente:  [LED conectado a Arduino — Steam Academy](https://www.steamacademy.com.co/post/led-conectado-a-arduino)</em>|<em>Fuente: [Positive vs Negative Polarity in LED — CN360](https://cn360led.com/es/blogs/news/understanding-positive-vs-negative-polarity-in-automotive-led-lights)</em>|
 
 **Baud rate incorrecto:** Si el puerto serie del Arduino no está sincronizado con el monitor (ambos deben estar en `115200`), el Arduino recibe caracteres nada que ver en vez de los mensajes reales de Adafruit IO. El LED nunca enciende aunque el código esté perfectamente escrito. Fue uno de los primeros detalles que se verificó en el proyecto exactamente para evitar ese problema.
 
-<img width="500" height="528" alt="image" src="https://github.com/user-attachments/assets/e4568330-f2fe-4dae-8bef-2bc08603fa62" />
-<img width="500" height="528" alt="image" src="https://github.com/user-attachments/assets/83238616-1ba9-489f-9906-6e9343fca1f9" />
-
+<div align="center">
+<img width="650" height="350" alt="10" src="https://github.com/user-attachments/assets/fb8b5d88-46a6-4499-bffb-aa5ab592856a" />
+  <br>
+  <em>Fuente: Elaboración propia</em>
+</div>
 
 **Resistencia muy baja:** Usar una resistencia demasiado baja (o no usar ninguna) no solo quema el LED, puede calentar el pin del microcontrolador y dañarlo con el tiempo. Con **220Ω** la corriente queda en un rango seguro tanto para el LED como para la placa.
 
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/f14151e3-27ea-41d1-9a1a-8693c708ccb9" />
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/56ae88e9-b9f3-4a6c-93f2-0afb9c1daf18" />
+| <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/f14151e3-27ea-41d1-9a1a-8693c708ccb9" /> | <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/56ae88e9-b9f3-4a6c-93f2-0afb9c1daf18" /> |
+|:---:|:---:|
+|<em>Fuente: [Nerd Rosa — Cómo calcular la resistencia para un LED](https://www.nerd-rosa.com.br/post/como-calcular-o-resistor-correto-para-um-led)</em> |<em>Fuente: [Science Buddies — Exploding LEDs](https://www.sciencebuddies.org/science-fair-projects/project-ideas/Elec_p103/electricity-electronics/exploding-LEDs) </em>|
 
 ---
 
 ### 4. Referente: Leo Villareal — The Bay Lights
 
+<div align="center">
+  
 <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/48321eea-c55b-4469-8cb6-00d473a2223e" />
 <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/a2cd9eac-e623-4dd7-a03f-72dad2a178c6" />
 <img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/cc7a45a8-01a7-4247-87a2-fb9c89f4c850" />
+
+<div align="center">
+
+</div>
+
+<em>Fuente: [If It's Hip It's Here — SF Bay Bridge Lights](https://www.ifitshipitshere.com/sf-bay-bridge-lights-360/)</em>
+</div>
 
 Leo Villareal es un artista estadounidense conocido por instalaciones de luz a gran escala. Su obra más famosa, The Bay Lights, cubrió el puente Bay Bridge de San Francisco con 25,000 LEDs blancos distribuidos a lo largo de 2.9 km de cables verticales. El resultado es una instalación lumínica dinámica que cambia constantemente sin repetir nunca el mismo patrón.
 Lo técnicamente interesante es que Villareal desarrolló software propio para generar los patrones, los algoritmos se inspiraban en cosas reales como las olas de la bahía, el viento y el flujo del tráfico en el puente. Es arte generativo: el código produce resultados únicos cada vez, así que la instalación nunca muestra lo mismo dos veces.
 Estuvo encendida desde el 5 de marzo de 2013 hasta el 5 de marzo de 2023, exactamente 10 años. En 2024 comenzó su reinstalación con el doble de LEDs (50,000), financiada con 11 millones de dólares en donaciones privadas.
 
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/088d2ad5-905e-4a53-86ae-f615999fde3b" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/2cd96a80-e882-4e65-a8ac-da8c18afd0bb" />
-<img width="330" height="350" alt="image" src="https://github.com/user-attachments/assets/f60b1dbd-11ff-40cc-b961-2007c13a3ff7" />
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/24512e60-8c80-4344-b189-ba7c98f18a02" />
+<div align="center">
+
+<img width="330" height="350" alt="20" src="https://github.com/user-attachments/assets/cf0e328c-b348-4c7a-95cd-dacd9cf217c8" />
+<img width="330" height="350" alt="12" src="https://github.com/user-attachments/assets/73824b73-49e9-4ea0-9248-d8f217952595" />
+<img width="330" height="350" alt="19" src="https://github.com/user-attachments/assets/862d0fac-4f21-45a6-869f-b0cd40ed4cc7" />
+
+<em>Fuente: [Leo Villareal — Exhibitions](http://villareal.net/exhibitions-1)</em>
+
+</div>
+
+<div align="center">
+
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/b962d7dc-2172-4371-bca1-e4946120fbec" />
 
+*Fuente: [Leo Villareal — López de la Serna CAC](https://www.lopezdelasernacac.com/artists/leo-villareal)*
+
+</div>
+
 Lo que me parece interesante de este referente es que cada LED en esa instalación es exactamente lo mismo que el nuestro: un actuador que responde a una señal eléctrica. La diferencia es que Villareal tiene miles de ellos coordinados por un sistema central que les manda instrucciones en tiempo real, igual que Adafruit IO le manda instrucciones al nuestro. La lógica es dato en red → respuesta lumínica, a cualquier escala. Lo que hicimos en clase con un LED y un botón es, en esencia, la misma arquitectura que esa instalación de varios millones de dólares.
+
 
 ---
 
