@@ -8,7 +8,7 @@
 
 ### Aprendizajes y contexto del proyecto
 
-Estamos usando un **botón conectado a la Raspberry Pi Pico 2W** como sensor de entrada. Llegamos a esta decisión después de investigar y compartir ideas entre nosotras. Cami me contó que hace tiempo tenía un proyecto personal inspirado en la empresa japonesa **Maywa Denki**, conocida por crear instrumentos musicales medios excéntricos y mecánicos, entre los que destaca el Otomatone, ya que Cami me comentó que le llamaban especialmente la atención estos mini instrumentos diseñados para armar uno mismo (kits), que incluyen un mini circuito, un solenoide y piezas con planos para construirlos.
+Estamos usando un **botón conectado a la Raspberry Pi Pico 2W** como sensor de entrada. Llegamos a esta decisión después de investigar y compartir ideas entre nosotras. Cami me contó que hace tiempo tenía un proyecto personal inspirado en la empresa japonesa **Maywa Denki**, conocida por crear instrumentos musicales medio excéntricos y mecánicos, entre los que destaca el Otamatone, ya que Cami me comentó que le llamaban especialmente la atención estos mini instrumentos diseñados para armar uno mismo (kits), que incluyen un mini circuito, un solenoide y piezas con planos para construirlos.
 
 Me encantó su idea y seguí investigando. Decidimos recrear el ([**"Chan"**](https://youtu.be/fI1Mr4SIES4?si=58ErEgpNSsdA2vBf)), porque era el diseño que más se adaptaba al solenoide que teníamos: el nuestro es pequeño y genera poca fuerza, menos que el solenoide que ocupan estos artefactos, que es grande y con mayor impulso, el Chan justamente requería menos fuerza por cómo está construido, comparado con los otros que vimos, algunos de estos fueron:
 
@@ -52,14 +52,14 @@ if presionado != estado_anterior and (ahora - ultimo_cambio) > DEBOUNCE_MS:
 ```
 ### Conexión del botón a la Raspberry Pi Pico 2W
 
-La conexión fue super simple: el botón tiene dos pines. Uno va conectado al **GP14**
+La conexión fue súper simple: el botón tiene dos pines. Uno va conectado al **GP14**
 de la Pico 2W, y el otro va directo a **GND**. 
 
 Quedó algo así:
 
 ![boton](./imagenes/boton.jpeg)
 
-Ocupé este mapa de pines que ocupamos unas clases atrás para saber cual pin es cual en la Raspberry:
+Ocupé este mapa de pines que ocupamos unas clases atrás para saber cuál pin es cuál en la Raspberry:
 
 ![pines](./imagenes/raspberry.png)
 
@@ -338,6 +338,7 @@ Conectando a Adafruit IO...
 A PRESIONADO — enviando '1'
 ✓ Publicado: 1
 ```
+
 **Atao:** El botón A (el que habilitaba el envío mientras estuviera presionado) no
 funcionaba bien. El botón B en cambio sí enviaba el pulso al solenoide de todas formas.
 Mateo nos dijo que saquemos el botón A derechamente, porque como nuestro proyecto solo
@@ -481,9 +482,9 @@ en Adafruit IO, el Arduino del otro lado lo recibe y activa el solenoide por un 
 produciendo el golpe del Soniloide.
 
 ### Observación
-Cuando presionamos el botón, se demora bastante en actuar el solenoide, le comentamos a Mateo o Aarón, (no recuerdo) y nos dijo que era normal, estaban pasando muchas cosas entre que presionabamos el botón y se movía el solenoide, así que calma.
+Cuando presionamos el botón, se demora bastante en actuar el solenoide, le comentamos a Mateo o Aarón, (no recuerdo) y nos dijo que era normal, estaban pasando muchas cosas entre que presionábamos el botón y se movía el solenoide, así que calma.
 
-Gif de lo que logramos en clase:
+GIF de lo que logramos en clase:
 
 ![solenoide](./imagenes/solenoide.gif)
 
@@ -493,9 +494,9 @@ Gif de lo que logramos en clase:
 
 **Maywa Denki** es una empresa artística japonesa fundada por Nobumichi Tosa en 1993, crean productos artísticos que funcionan como instrumentos musicales, mecánicos y absurdos.
 
-Algunos de sus productos más conocidos son el **Otomatone** (instrumento que se toca apretando su cuerpo) y el **Naki** (un micrófono que simula llorar). Sus kits de armado, como el **Chan**, están pensados para que cualquier persona pueda construirlos en casa con componentes simples, incluyendo solenoides.
+Algunos de sus productos más conocidos son el **Otamatone** (instrumento que se toca apretando su cuerpo) y el **Naki** (un micrófono que simula llorar). Sus kits de armado, como el **Chan**, están pensados para que cualquier persona pueda construirlos en casa con componentes simples, incluyendo solenoides.
 
-El semestre anterior Aarón me presto la colección de tipo catálogo de productos que tenía de esta empresa, que se llamaba "Nonsense Machines", desde ahí siempre me pareció súper interesante su trabajo, por lo mismo, me encanto la idea de Cami cuando me la propuso. Mi máquina favorita era la "Tomatan" una máquina que te daba de comer tomates mientras corres.
+El semestre anterior Aarón me prestó la colección de tipo catálogo de productos que tenía de esta empresa, que se llamaba "Nonsense Machines", desde ahí siempre me pareció súper interesante su trabajo, por lo mismo, me encantó la idea de Cami cuando me la propuso. Mi máquina favorita era la "Tomatan" una máquina que te daba de comer tomates mientras corres.
 
 - Sitio oficial: <https://www.maywadenki.com/>
 
@@ -528,7 +529,7 @@ El solenoide requiere más corriente de la que el Arduino puede entregar directa
 - **El solenoide no puede estar activado de forma continua**: genera calor al mantener la corriente. Por eso enviamos pulsos cortos en lugar de mantenerlo encendido. (ya nos ha pasado lo de sentir olor a plástico quemado)
 - **El ruido eléctrico al apagarse**: cuando un solenoide se apaga, genera un pico de voltaje inverso (*back-EMF*). En proyectos más elaborados se usa un diodo de protección, pero para nuestra escala no fue un problema grave.
 
-### Referencia artística: Trimpin y Conloninpurple
+### Referencia artística: Trimpin y Conlon in Purple
 
 Buscando ejemplos de solenoides en proyectos creativos fue que llegué a **Trimpin** (Gerhard Trimpin, 1951), un escultor cinético y artista sonoro alemán que lleva décadas construyendo máquinas musicales.
 
