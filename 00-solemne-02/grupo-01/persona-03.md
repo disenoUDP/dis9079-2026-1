@@ -12,6 +12,8 @@ El sensor está conectado en la misma protoboard en la que está la pantalla OLE
 
 Este está conectado mediante un cable USB a tipo micro USB a una computadora portátil diferente a la que está conectado el actuador.
 
+![proceso](./imagenes/ej1.jpeg)
+
 ## Actuador
 
 Los servomotores son dispositivos rotativos diseñados para ofrecer un control extremadamente preciso de la posición, la velocidad y el torque. A diferencia de los motores convencionales que giran continuamente, los servos se mueven a posiciones específicas y se corrigen en tiempo real ante cualquier alteración.
@@ -19,6 +21,8 @@ Los servomotores son dispositivos rotativos diseñados para ofrecer un control e
 Entonces el servomotor utilizado en este caso es nuestro actuador, el cual se irá moviendo a medida que vayamos ajustando los grados desde nuestro sensor que serían 180° como máximo que se pueda mover (al menos en las pruebas que estuvimos haciendo con el código en clases).
 
 Este va conectado a los pines del Arduino en otra protoboard diferente a la del sensor, el Arduino está conectado mediante cable USB a tipo C directamente a la computadora portátil.
+
+![proceso](./imagenes/ej2.jpeg)
 
 ## Bibliografía
 
