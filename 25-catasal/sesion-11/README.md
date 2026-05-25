@@ -16,3 +16,4 @@ arreglar la información grupal/ listo
 buscar nuevos proyectos en la parte individual
 
 ## wokwi
+## tinkercad
