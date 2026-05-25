@@ -127,7 +127,8 @@ Es un actuador controlable que recibe señales especificando los ángulos en los
 
 ## Código usado para enviar
 
-```cpp
+```python
+
 import time
 import board
 import analogio
@@ -254,7 +255,8 @@ while True:
 
 ## Código usado para recibir
 
-```cpp
+```ino
+
 #include <WiFiS3.h>
 #include <Servo.h>
 #include "Adafruit_MQTT.h"
