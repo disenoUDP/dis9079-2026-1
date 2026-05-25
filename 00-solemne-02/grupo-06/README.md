@@ -8,8 +8,8 @@ Lunes 18 Mayo 2026
 
 ## Integrantes
 
-* [Camila Parada](https://github.com/Camila-Parada): 
-* [Vania Paredes](https://github.com/paredesvania): 
+* [Camila Parada](https://github.com/Camila-Parada): Código, circuito, investigación e ideas
+* [Vania Paredes](https://github.com/paredesvania): Código, modelado e impresión 3D, registro
 
 ## Descripción del proyecto
 
@@ -494,6 +494,24 @@ Para esta parte Felix nos ayudó con el modelado de la carcasa, dado problemas p
 
 ## Animaciones del proyecto
 ![mecanismo](./imagenes/mecanismo.gif)
+
+## Simulaciones
+
+En este apartado se incluyen unas simulaciones virtuales de cada parte del circuito. Puesto que no existen simuladores online que permitan la comunicación entre una placa y adafruit io, además de los componentes usados, es que se emulan algunos de los comportamientos que tiene cada módulo de forma independiente.
+
+:warning: Cabe aclarar que ambas simulaciones demuestran ideas aproximadas del proyecto en si, teniendo modificaciones en sus códigos y circuitos. Los resultados mostrados en el monitor serial son similares a los del proyecto final.
+
+### a) [Circuito enviar](https://wokwi.com/projects/464855266213787649)
+
+Dados las limitaciones anteriormente mencionadas, es que se escoge a wokwi como el simulador base a utilizar dado que posee todos los elementos necesarios. En este, el circuito permite activar un potenciómetro y generar lecturas que son mostradas tanto en el monitor serial como en la pantalla OLED. 
+
+![modelado](./imagenes/simulacion-wokwi.jpeg) 
+
+### b) [Circuito recibir](https://www.tinkercad.com/things/elThxO0w4nK-circuito-receptor-aproximacion)
+
+Pese a que wokwi no posee el solenoide (ni otro motor similar), es que cambié de simulador a Tinkercad. Este tampoco cuenta con la pieza, pero si tiene un reemplazo: el motor cc. Otra parte inexistente es un [relé de un canal](https://afel.cl/products/rele-de-01-canal), pero este módulo se replica a través de un circuito hecho sobre una protoboard. El código muestra el comportamiento de la otra parte del circuito, el cual envía datos en forma de porcentaje que se traducen en señales que aceleran por un tiempo al motor cc. Tras un rato cambia de estado a apagado y viceversa.
+
+![modelado](./imagenes/simulacion-tinkercad.jpeg) 
 
 ## Investigaciones individuales
 
