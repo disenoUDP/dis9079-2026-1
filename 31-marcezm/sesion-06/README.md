@@ -2,8 +2,6 @@
 
 lunes 13 abril 2026
 
-# Bitácora de Clase
-
 ## Primer bloque
 
 Durante el tiempo de clase trabajamos en conjunto para corregir y mejorar nuestra solemne, revisando tanto nuestro propio trabajo como el de nuestros compañeros. Esto nos permitió tomar referencias sobre la estructura, redacción y organización adecuada del contenido.
