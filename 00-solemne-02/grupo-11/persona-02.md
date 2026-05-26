@@ -97,7 +97,7 @@ La lista de materiales es completamente accesible y económica: un Arduino Uno, 
 Pocos proyectos de Arduino usan servomotores de una manera tan interesante como esta pieza de arte electrónico, que incluso con solo 36 servos produce efectos visuales notables. El blog oficial de Arduino lo destacó como referencia en su categoría, validando su valor como obra que cruza la frontera entre la electrónica maker y el arte cinético interactivo. Además, Domke tiene otros proyectos similares, incluyendo un reloj de palabras controlado por 114 servomotores, lo que muestra una línea de trabajo artístico consistente centrada en el SG90 como herramienta expresiva.
 
 <img width="900" height="675" alt="image" src="https://github.com/user-attachments/assets/22691394-8db0-4514-af59-d9b8cab687e6" />
-
+*Servo Motor Artwork* Doug Domke, 2019.
 ## Bibliografía
 
 Arduino Team. 2019. *Three dozen servos create animated artwork* <https://blog.arduino.cc/2019/09/06/three-dozen-servos-create-animated-artwork/>
