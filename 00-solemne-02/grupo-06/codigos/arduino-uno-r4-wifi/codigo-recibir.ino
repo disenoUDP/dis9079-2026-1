@@ -18,15 +18,15 @@
 #include <Adafruit_MQTT_Client.h>
 
 // ---- CONFIGURACIÓN ----------------------------------------
-const char* WIFI_SSID     = "iPhone-cs";
-const char* WIFI_PASSWORD = "lasagna342";
+const char* WIFI_SSID     = "nombre-wifi";
+const char* WIFI_PASSWORD = "clave-wifi";
 
 const char* AIO_SERVER    = "io.adafruit.com";
 const int   AIO_PORT      = 1883;
-const char* AIO_USERNAME  = "Camila_Parada";
-const char* AIO_KEY       = "Clave-io";
+const char* AIO_USERNAME  = "nombre-io";
+const char* AIO_KEY       = "clave-io";
 
-const char* AIO_FEED      = "Camila_Parada/feeds/papa-prueba";
+const char* AIO_FEED      = "nombre-io/feeds/nombre-feed";
 
 const int   RELE_PIN      = 7;
 const int   PULSO_MS      = 60;   // duración energizado de cada golpe

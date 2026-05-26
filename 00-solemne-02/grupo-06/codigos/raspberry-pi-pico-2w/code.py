@@ -26,13 +26,13 @@ import adafruit_displayio_ssd1306
 # ------------------------------------------------------------
 # CONFIGURACIÓN
 # ------------------------------------------------------------
-WIFI_SSID     = "iPhone-cs"
-WIFI_PASSWORD = "lasagna342"
+WIFI_SSID     = "nombre-wifi"
+WIFI_PASSWORD = "clave-wifi"
 
-AIO_USERNAME  = "Camila_Parada"
-AIO_KEY       = "Clave-io"
+AIO_USERNAME  = "nombre-io"
+AIO_KEY       = "clave-io"
 
-FEED          = f"{AIO_USERNAME}/feeds/papa-prueba"
+FEED          = f"{AIO_USERNAME}/feeds/nombre-feed"
 
 PIN_BOTON     = board.GP14
 PIN_POT       = board.GP26
