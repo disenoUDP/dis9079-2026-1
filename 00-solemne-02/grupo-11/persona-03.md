@@ -198,25 +198,25 @@ Para evitar estos problemas se realizan mantenimientos periódicos, calibracione
 
 ## Proyecto o empresa que utiliza hidráulicos
 
-La empresa Boston Dynamics es una de las compañías más avanzadas en el desarrollo de robots inteligentes y utiliza actuadores de alta precisión en todos sus proyectos.
+# Impresoras 3D
 
-Uno de sus robots más conocidos es Atlas, un robot humanoide diseñado para caminar, correr, saltar y mantener el equilibrio de forma similar a una persona. Atlas utiliza actuadores hidráulicos y eléctricos que permiten mover cada articulación con gran precisión.
+Un proyecto muy funcional y conocido que utiliza actuadores son las impresoras 3D. Estas máquinas permiten fabricar objetos físicos capa por capa mediante movimientos automatizados extremadamente precisos.
 
-Otro proyecto importante es Spot, un robot cuadrúpedo capaz de desplazarse por terrenos difíciles y realizar inspecciones industriales o de seguridad. Spot puede subir escaleras, evitar obstáculos y transportar objetos gracias al trabajo coordinado entre sensores y actuadores.
+Las impresoras 3D utilizan distintos tipos de actuadores, principalmente motores paso a paso y servomotores, los cuales controlan el movimiento del cabezal de impresión y la plataforma donde se crea el objeto.
 
-Los actuadores son fundamentales en estos robots porque transforman las señales digitales en movimientos físicos complejos. Gracias a esto, los robots pueden reaccionar en tiempo real al entorno y adaptarse a distintas situaciones.
+Cuando el usuario envía un diseño digital desde el computador, el sistema procesa la información y los actuadores comienzan a mover las piezas de la impresora siguiendo instrucciones exactas. Gracias a estos movimientos controlados, la máquina puede construir figuras, herramientas, prótesis médicas, maquetas y piezas industriales.
 
-Boston Dynamics ha demostrado cómo los actuadores pueden aplicarse en áreas como construcción, minería, rescate, seguridad y automatización industrial. Sus proyectos representan uno de los mayores avances tecnológicos en robótica moderna e interacción inteligente entre máquinas y humanos.
+Los actuadores permiten mover el cabezal en diferentes direcciones (ejes X, Y y Z), controlar la velocidad y mantener precisión milimétrica durante todo el proceso de impresión. Sin estos actuadores, la impresora no podría fabricar objetos correctamente.
 
-<img width="958" height="633" alt="hidraulico" src="https://github.com/user-attachments/assets/5284fee9-27cd-44e0-aff9-06c5517555ae" />
+Actualmente las impresoras 3D se utilizan en diseño industrial, medicina, arquitectura, ingeniería y educación. En medicina, por ejemplo, se utilizan para fabricar prótesis personalizadas y modelos anatómicos. En arquitectura se crean maquetas detalladas y en ingeniería se producen prototipos funcionales rápidamente.
+
+Este proyecto demuestra cómo los actuadores permiten transformar información digital en movimientos físicos reales y precisos, convirtiéndose en una herramienta fundamental en la automatización moderna.   
 
 # Bibliografía
 
 ibm.com⁠
 arduino.cc⁠
 learn.microsoft.com⁠
-tesla.com⁠
 ibm.com⁠
 docs.arduino.cc⁠
 bostondynamics.com⁠
-ni.com⁠
