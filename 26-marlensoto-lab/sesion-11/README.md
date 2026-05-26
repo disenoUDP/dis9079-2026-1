@@ -20,18 +20,23 @@ Los pasos para guardar y subir los códigos dependen del tipo de programación u
 ### Arduino
 
 Los archivos deben guardarse en formato C++ (`.ino`). Además, es importante verificar que al abrir el archivo se visualice correctamente dentro del entorno de Arduino IDE. Si el código no se visualiza adecuadamente, es necesario volver a guardarlo correctamente.
-
+![formato](imagenes/formato_arduino.jpeg)
+![formato](imagenes/formato_arduino_visualizacion.jpeg)
 ### Raspberry Pi
 
 Los códigos se trabajan generalmente en Python (`.py`). En este caso, el archivo debe mantener la misma estructura y visualización que aparece en Visual Studio Code o en el editor utilizado, verificando que no existan errores de formato al subirlo.
+![formato](imagenes/formato_raspberry.jpeg) 
+![formato](imagenes/code_formato.jpeg)
 
 ## Demostración y Corrección del Proyecto
 
 Durante la presentación del proyecto debíamos demostrar el funcionamiento completo del sistema. La idea era que los cuatro integrantes participáramos en la demostración, pero desde mi computador no estaba funcionando correctamente, ya que los datos no estaban llegando al Arduino.
 
 Después de la presentación logramos identificar el problema. El error ocurría porque en mi computador los archivos de Visual Studio Code se visualizaban como archivos de Illustrator, lo que provocaba que el programa no ejecutara correctamente la comunicación entre dispositivos y, por lo tanto, el Arduino no recibía los datos enviados.
+![code](imagenes/visualizacion_ai.png) 
 
 Una vez encontrado el problema, tuve que corregir la configuración y la visualización de los archivos para que el sistema funcionara correctamente.
+![code](imagenes/visualizacion_code.png) 
 
 La demostración realizada consistía en que desde la Raspberry Pi se utilizaba un botón pulsador que enviaba una señal hacia el Arduino conectado en otro computador. Al recibir la señal, se encendía una luz LED, demostrando la comunicación entre ambos dispositivos.
 
