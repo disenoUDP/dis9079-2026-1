@@ -34,6 +34,14 @@ Los datos pueden variar de 2 formas:
 ### Referente
 El sistema o tecnología LIDAR (Detección y medición de luz) se usa mucho para escanear objetos para volverlos 3D, es un sistema que calcula cuánto tarda la luz en llegar y regresar a un objeto y con ello hace para mapear lo que tenga delante.
 
+Una de las aplicaciones que usa esta tecnología es la aplicación llamada Scaniverse, la cual permite escaneo de objetos para convertirlos en 3D. Lo asombroso de esta app es que permite ver escaneos de las personas por todo el mundo, además de permitir saber la ubicación exacta en donde se tomó.
+
+![Scaniverse](./imagenes/scaniverse.png)
+
+La aplicación permite una opción de escaneo diferente si es que no se cuenta con sistema LIDAR, se le llama fotogrametría. Esta técnica, en esencia, funciona superponiendo fotografías bidimensionales tomadas desde diferentes ángulos, formando así la imagen tridimensional.
+
+![Fotogrametria](./imagenes/fotogrametria.jpg)
+
 ---
 
 ## Actuador
@@ -71,16 +79,12 @@ Un estudio creativo de San Francisco, California, diseñó una instalación inte
 
 ## Bibliografía
 
-Choi, H., Kim, J. W., & Kim, Y. J. (2014). Transparent LCD display development and its application to smart showcases. *Journal of the Society for Information Display*, 22(4), 201-208.
-
-HTC VIVE Blog. (2023). *What is VR Passthrough? Mixed Reality’s Secret Sauce*. http://blog.vive.com/us/what-is-vr-passthrough-mixed-realitys-secret-sauce/
-
-IONOS Digital Guide. (2023). *¿Qué es el modelo de color RGB y cómo funciona en medios digitales?* https://www.ionos.com/es-us/digitalguide/paginas-web/diseno-web/colores-rgb/
-
-MOM Design. (s.f.). *Interactive Architecture and Digital Windows Portfolio*. https://www.mom.design/
-
-NASA / IPAC. (s.f.). *Infrared dog* [Termograma]. Cool Cosmos Image Galleries. Wikipedia.
-
-Novatronic. (s.f.). *Led IR Infrarrojos Receptor Transmisor* [Fotografía]. Novatronic Ecuador.
-
-Proyecto IDIS (Investigación en Diseño de Imagen y Sonido). (s.f.). *Transparent LCD*. Facultad de Arquitectura, Diseño y Urbanismo, Universidad de Buenos Aires. https://proyectoidis.org/transparent-lcd/
+* Choi, H., Kim, J. W., & Kim, Y. J. (2014). Transparent LCD display development and its application to smart showcases. *Journal of the Society for Information Display*, 22(4), 201-208.
+* HTC VIVE Blog. (2023). *What is VR Passthrough? Mixed Reality’s Secret Sauce*. http://blog.vive.com/us/what-is-vr-passthrough-mixed-realitys-secret-sauce/
+* IONOS Digital Guide. (2023). *¿Qué es el modelo de color RGB y cómo funciona en medios digitales?* https://www.ionos.com/es-us/digitalguide/paginas-web/diseno-web/colores-rgb/
+* MOM Design. (s.f.). *Interactive Architecture and Digital Windows Portfolio*. https://www.mom.design/
+* NASA / IPAC. (s.f.). *Infrared dog* [Termograma]. Cool Cosmos Image Galleries. Wikipedia.
+* Novatronic. (s.f.). *Led IR Infrarrojos Receptor Transmisor* [Fotografía]. Novatronic Ecuador.
+* Ofiteat. (s.f.). *Fotogrametría con drones: ¿Qué es y para qué sirve?* https://www.ofiteat.com/fotogrametria-con-drones-que-es/
+* Proyecto IDIS (Investigación en Diseño de Imagen y Sonido). (s.f.). *Transparent LCD*. Facultad de Arquitectura, Diseño y Urbanismo, Universidad de Buenos Aires. https://proyectoidis.org/transparent-lcd/
+* Scaniverse. (s.f.). *3D Scanning and Gaussian Splatting Ecosystem*. Niantic, Inc. https://dev.scaniverse.com/
