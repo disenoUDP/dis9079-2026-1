@@ -1,4 +1,4 @@
-# investigaciones individuales
+1# investigaciones individuales
 
 catalina salinas / catasal
 
@@ -29,6 +29,8 @@ Además del sensor PIR, existen muchos otros tipos de sensores utilizados en int
 Cada uno de estos sensores cumple funciones específicas y puede conectarse a sistemas inteligentes para automatizar tareas o recopilar información en tiempo real.
 
 <img width="636" height="639" alt="sensor2" src="https://github.com/user-attachments/assets/6d3cdb1e-e676-4a27-85dd-9a3f0360b49b" />
+
+GitHub. (2026). GitHub. https://github-production-user-asset-6210df.s3.amazonaws.com/267052235/596396919-6d3cdb1e-e676-4a27-85dd-9a3f0360b49b.png
 
 ## Filtrado de información
 
@@ -121,6 +123,8 @@ Además, algunos sistemas usan sensores climáticos que predicen cambios de temp
 
 Este proyecto es muy importante porque demuestra cómo los sensores pueden utilizarse de forma real y eficiente para resolver problemas ambientales y productivos. Actualmente empresas agrícolas y universidades utilizan estos sistemas en distintos países para optimizar recursos y aumentar la producción de alimentos.
 
+
+Plantae. (s.f.). Sensores inalámbricos de humedad para agricultura. Recuperado de https://plantae.garden/sensores-inalambricos-plantae-ahorro-agua-inteligente/
 # Actuador
 
 ## ¿Qué es un actuador?
@@ -211,6 +215,8 @@ Los actuadores permiten mover el cabezal en diferentes direcciones (ejes X, Y y 
 Actualmente las impresoras 3D se utilizan en diseño industrial, medicina, arquitectura, ingeniería y educación. En medicina, por ejemplo, se utilizan para fabricar prótesis personalizadas y modelos anatómicos. En arquitectura se crean maquetas detalladas y en ingeniería se producen prototipos funcionales rápidamente.
 
 Este proyecto demuestra cómo los actuadores permiten transformar información digital en movimientos físicos reales y precisos, convirtiéndose en una herramienta fundamental en la automatización moderna.   
+
+Ultimaker. (s.f.). Motores y actuadores en impresoras 3D. https://ultimaker.com/learn/what-is-3d-printing/
 
 # Bibliografía
 
