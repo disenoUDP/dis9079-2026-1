@@ -59,11 +59,25 @@ No necesitás resistencia externa porque el código usa Pin.PULL_UP, que activa 
 durante la clase se probo con enviar datos al adafruit
 <img width="1882" height="861" alt="io adafruit" src="https://github.com/user-attachments/assets/a86efa48-aaeb-46b4-947a-0579609b8873" />
 
+### Proceso durante clase corrección solemne 2 
+
+Corregimos el código, era necesario que en el Código para la Raspi colocar que el mensaje era "ON" para encender el LED interno de la placa Arduino UNO R4, pero aún no podemos apagarlo luego de encenderlo ni prender ni apagar el LED externo.
+
+Posteriormente logramos arreglar el código incluyendo un apartado para que al soltar el botón el LED interno se apague, el LED se enciende al mantener presionado el botón, botón que manteniendo presionado envia un mensaje de "ON" y al soltarlo envia un "OFF" y se apaga el LED.
+
+Lo que estamos intentando ahora es conectar bien el LED externo para que pueda ser el que encienda
+
+<img width="1200" height="1600" alt="WhatsApp Image 2026-05-25 at 15 31 44" src="https://github.com/user-attachments/assets/607c14ae-8d8f-4a99-8ab7-68b6f9890448" />
+
+Finalmente realizamos bien la conexión con los cables, resistencia y el LED, permitiendo que enciendan ambos LED (interno y externo) 
+
+<img width="1600" height="1476" alt="image" src="https://github.com/user-attachments/assets/42d365d1-3a67-4329-973e-a7891c66445c" />
+
+<img width="1600" height="1498" alt="image" src="https://github.com/user-attachments/assets/7920e1b3-c975-4a4b-8f06-15422dbcdc9a" />
+
 ## Resultado bueno funcional 
 
-
 https://github.com/user-attachments/assets/c9e92d02-9f83-4edf-9f51-975c2e9b597a
-
 
 
 https://github.com/user-attachments/assets/f96f3a10-2545-4a07-9acf-d99c48e91bf3
@@ -76,236 +90,27 @@ https://github.com/user-attachments/assets/f96f3a10-2545-4a07-9acf-d99c48e91bf3
   
 ## Código usado para enviar
 
-```cpp
-import time
-import board
-import digitalio
-import wifi
-import socketpool
-import adafruit_minimqtt.adafruit_minimqtt as MQTT
-
-print("Iniciando programa...")
-
-# -------------------------
-# WiFi
-# -------------------------
-SSID = "cata"
-PASSWORD = "cata21312131"
-
-print("Conectando WiFi...")
-
-try:
-    wifi.radio.connect(SSID, PASSWORD)
-    print("WiFi conectado")
-    print("IP:", wifi.radio.ipv4_address)
-
-except Exception as e:
-    print("Error WiFi:")
-    print(e)
-
-    while True:
-        pass
-
-
-# -------------------------
-# Adafruit IO
-# -------------------------
-AIO_USERNAME = "AlegriaColoma"
-AIO_KEY = "blabla"
-
-FEED_BOTON = AIO_USERNAME + "/feeds/prueba"
-
-print("Creando conexión MQTT...")
-
-pool = socketpool.SocketPool(wifi.radio)
-
-mqtt = MQTT.MQTT(
-    broker="io.adafruit.com",
-    username=AIO_USERNAME,
-    password=AIO_KEY,
-    socket_pool=pool,
-)
-
-print("Conectando a Adafruit IO...")
-
-try:
-    mqtt.connect()
-    print("Conectado a Adafruit IO")
-
-except Exception as e:
-    print("Error MQTT:")
-    print(e)
-
-    while True:
-        pass
-
-
-# -------------------------
-# Botón GP0
-# -------------------------
-boton = digitalio.DigitalInOut(board.GP0)
-boton.direction = digitalio.Direction.INPUT
-boton.pull = digitalio.Pull.UP
-
-estado_anterior = True
-
-print("Sistema listo")
-
-# -------------------------
-# Loop principal
-# -------------------------
-while True:
-
-    try:
-        mqtt.loop()
-
-        estado_actual = boton.value
-
-        # Detecta transición:
-        # sin presionar -> presionado
-        if estado_anterior and not estado_actual:
-
-            print("Botón presionado")
-            print("Enviando impulso...")
-
-            mqtt.publish(FEED_BOTON, "1")
-
-            print("Impulso enviado")
-
-            # anti-rebote
-            time.sleep(0.25)
-
-        estado_anterior = estado_actual
-
-    except Exception as e:
-        print("Error:")
-        print(e)
-
-    time.sleep(0.02)
-```
+Respecto al código utilizado para enviar, tuvimos que realizarle cambios para añadirle que al soltar el botón se enviara un mensaje de "OFF" y que respecto a ese mensaje pudieramos apagar el LED, tanto interno como externo. 
 
 ## Código usado para recibir
 
-```cpp
+El código utilizado estaba correcto, aunque durante un momento intentamos que los mensajes fueran "1" y "0"
 
-/******
-   PROYECTO: CONTROL LED DESDE ADAFRUIT IO
-******/
-
-#include "AdafruitIO_WiFi.h"
-
-// ==========================================
-// CREDENCIALES WIFI Y ADAFRUIT IO
-// ==========================================
-
-#define IO_USERNAME  "AlegriaColoma"
-#define IO_KEY       "blabla"
-
-#define WIFI_SSID    "cata"
-#define WIFI_PASS    "blabla"
-
-// ==========================================
-// CONEXIÓN ADAFRUIT IO
-// ==========================================
-
-AdafruitIO_WiFi io(
-  IO_USERNAME,
-  IO_KEY,
-  WIFI_SSID,
-  WIFI_PASS
-);
-
-// ==========================================
-// CONFIGURACIÓN
-// ==========================================
-
-// Pin LED
-const int ledPin = 13;
-
-// Feed
-AdafruitIO_Feed *controlLED = io.feed("prueba");
-
-// ==========================================
-// SETUP
-// ==========================================
-
-void setup() {
-
-  // Iniciar LED
-  pinMode(ledPin, OUTPUT);
-
-  // Monitor serial
-  Serial.begin(115200);
-
-  while(!Serial);
-
-  Serial.println("Conectando a Adafruit IO...");
-
-  // Conexión
-  io.connect();
-
-  // Evento al recibir mensaje
-  controlLED->onMessage(cambiarEstadoLED);
-
-  // Esperar conexión
-  while(io.status() < AIO_CONNECTED) {
-
-    Serial.print(".");
-    delay(500);
-  }
-
-  Serial.println();
-  Serial.println("¡Conectado correctamente!");
-}
-
-// ==========================================
-// LOOP PRINCIPAL
-// ==========================================
-
-void loop() {
-
-  // Mantener conexión
-  io.run();
-}
-
-// ==========================================
-// FUNCIÓN PARA PRENDER/APAGAR LED
-// ==========================================
-
-void cambiarEstadoLED(AdafruitIO_Data *data) {
-
-  String estado = data->toString();
-
-  Serial.print("Dato recibido: ");
-  Serial.println(estado);
-
-  // PRENDER LED
-  if(estado == "ON") {
-
-    digitalWrite(ledPin, HIGH);
-
-    Serial.println("LED ENCENDIDO");
-  }
-
-  // APAGAR LED
-  else if(estado == "OFF") {
-
-    digitalWrite(ledPin, LOW);
-
-    Serial.println("LED APAGADO");
-  }
-}
-```
 ## Imágenes del proyecto
 <img width="900" height="1600" alt="WhatsApp Image 2026-05-21 at 19 02 01" src="https://github.com/user-attachments/assets/fc3011c3-77e6-49eb-8ea7-3f1cd5e51e51" />
 
 <img width="807" height="642" alt="luz led" src="https://github.com/user-attachments/assets/79fb90f6-19b8-4cad-97b7-6ded2a79117a" />
 
 ## Animaciones del proyecto
+
 al principo probamos sin colocar un cable puente en la entrada 13
 https://github.com/user-attachments/assets/a0d115bc-8573-45b9-bbcb-b2d1fac5d7e9 
 
 https://github.com/user-attachments/assets/ff885a3a-38ae-4f76-9ec6-ffaf2f524898
+
+## Registro del proyecto 
+
+https://youtube.com/shorts/Kj6q2cJO3Xo?si=JP_w2Klc17pr-onz
 
 ## Bibliografía
 chat gpt
