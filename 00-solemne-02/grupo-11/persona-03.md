@@ -8,13 +8,13 @@ catalina salinas / catasal
 
 Un sensor es un dispositivo electrónico capaz de detectar cambios o estímulos en el entorno y convertirlos en señales eléctricas que pueden ser interpretadas por un sistema digital. Los sensores permiten recopilar información del ambiente y son una de las bases principales de la interacción inalámbrica y de los sistemas inteligentes actuales. Gracias a ellos, las máquinas y dispositivos pueden “percibir” lo que ocurre a su alrededor y responder automáticamente.
 
-Los sensores pueden detectar diferentes tipos de información, como temperatura, movimiento, luz, sonido, humedad, presión, distancia o gases. Actualmente están presentes en celulares, computadores, automóviles, relojes inteligentes, sistemas de seguridad, robots y dispositivos de automatización doméstica. También son fundamentales en el desarrollo del Internet de las Cosas (IoT), donde distintos objetos pueden conectarse y comunicarse entre sí mediante redes inalámbricas.
+Los sensores pueden detectar diferentes tipos de información, como temperatura, movimiento, luz, sonido, humedad, presión, distancia o gases. Actualmente están presentes en celulares, computadores, automóviles, relojes inteligentes, sistemas de seguridad, robots y dispositivos de automatización doméstica. También son fundamentales en el desarrollo del Internet de las Cosas (IoT), donde distintos objetos pueden conectarse y comunicarse entre sí mediante redes inalámbricas.(Arduino, 2021).
 
 ## Uso de un sensor
 
 Uno de los sensores más utilizados en sistemas de interacción inalámbrica es el sensor PIR (Passive Infrared Sensor). Este sensor detecta movimiento mediante la radiación infrarroja que emiten los cuerpos calientes, especialmente las personas.
 
-El funcionamiento del sensor PIR consiste en identificar cambios en la temperatura infrarroja del ambiente. Cuando una persona pasa frente al sensor, este detecta la variación y envía una señal eléctrica a un microcontrolador o sistema inalámbrico. Posteriormente, el sistema puede ejecutar una acción automática, como encender una luz, activar una alarma o enviar una notificación a un teléfono móvil.
+El funcionamiento del sensor PIR consiste en identificar cambios en la temperatura infrarroja del ambiente. Cuando una persona pasa frente al sensor, este detecta la variación y envía una señal eléctrica a un microcontrolador o sistema inalámbrico (GitHub, 2026). Posteriormente, el sistema puede ejecutar una acción automática, como encender una luz, activar una alarma o enviar una notificación a un teléfono móvil.
 
 Este tipo de sensor es ampliamente utilizado en sistemas de seguridad, iluminación inteligente, automatización del hogar y edificios inteligentes debido a su bajo consumo energético y su facilidad de implementación. En la actualidad, muchas casas utilizan sensores PIR para ahorrar energía mediante luces automáticas que solo se activan cuando detectan presencia humana.
 
@@ -26,7 +26,7 @@ Además del sensor PIR, existen muchos otros tipos de sensores utilizados en int
 * Sensores de luz: detectan intensidad lumínica.
 * Sensores biométricos: reconocen huellas, rostros o características humanas.
 
-Cada uno de estos sensores cumple funciones específicas y puede conectarse a sistemas inteligentes para automatizar tareas o recopilar información en tiempo real.
+Cada uno de estos sensores cumple funciones específicas y puede conectarse a sistemas inteligentes para automatizar tareas o recopilar información en tiempo real (Arduino, 2024).
 
 <img width="636" height="639" alt="sensor2" src="https://github.com/user-attachments/assets/6d3cdb1e-e676-4a27-85dd-9a3f0360b49b" />
 
@@ -47,7 +47,7 @@ En sistemas más avanzados se utilizan algoritmos matemáticos y técnicas digit
 * Filtro pasa bajos.
 * Filtro digital adaptativo.
 
-Estos métodos permiten reducir errores y mejorar el rendimiento de sistemas automatizados, vehículos autónomos y dispositivos inteligentes. El filtrado es especialmente importante en sistemas inalámbricos porque ayuda a mantener una comunicación más estable y confiable.
+Estos métodos permiten reducir errores y mejorar el rendimiento de sistemas automatizados, vehículos autónomos y dispositivos inteligentes (Microsoft, 2025). El filtrado es especialmente importante en sistemas inalámbricos porque ayuda a mantener una comunicación más estable y confiable.
 
 ## Visualización de datos
 
@@ -55,7 +55,7 @@ La visualización de datos consiste en representar gráficamente la información
 
 La visualización permite comprender rápidamente el comportamiento de un sistema y detectar cambios o anomalías. Por ejemplo, un sensor de temperatura puede mostrar cómo aumenta o disminuye el calor durante el día mediante un gráfico de líneas.
 
-En ciudades inteligentes y sistemas industriales, miles de sensores recopilan información constantemente. Estos datos se organizan y visualizan en centros de monitoreo para ayudar a tomar decisiones rápidas y eficientes.
+En ciudades inteligentes y sistemas industriales, miles de sensores recopilan información constantemente. Estos datos se organizan y visualizan en centros de monitoreo para ayudar a tomar decisiones rápidas y eficientes (Microsoft, 2025).
 
 En la actualidad, muchas aplicaciones móviles muestran información proveniente de sensores en tiempo real, como:
 
@@ -113,11 +113,11 @@ Para solucionar estos problemas se utilizan filtros de información, mantenimien
 
 # Agricultura Inteligente (Smart Farming)
 
-Uno de los proyectos más utilizados actualmente y que realmente funciona en la vida cotidiana es la agricultura inteligente o Smart Farming. Este sistema utiliza sensores conectados inalámbricamente para monitorear cultivos y mejorar la producción agrícola.
+Uno de los proyectos más utilizados actualmente y que realmente funciona en la vida cotidiana es la agricultura inteligente o Smart Farming. Este sistema utiliza sensores conectados inalámbricamente para monitorear cultivos y mejorar la producción agrícola (Agricultura IA, 2023).
 
 En este tipo de proyectos se utilizan sensores de humedad, temperatura, luz y calidad del suelo. Los sensores recopilan información constantemente sobre las condiciones del terreno y la envían a plataformas digitales o aplicaciones móviles. Gracias a esto, los agricultores pueden saber exactamente cuándo regar, fertilizar o proteger los cultivos.
 
-Por ejemplo, los sensores de humedad detectan cuánta agua tiene la tierra. Si el suelo está demasiado seco, el sistema puede enviar una alerta o activar automáticamente un sistema de riego. Esto permite ahorrar agua, mejorar el crecimiento de las plantas y reducir pérdidas agrícolas.
+Por ejemplo, los sensores de humedad detectan cuánta agua tiene la tierra. Si el suelo está demasiado seco, el sistema puede enviar una alerta o activar automáticamente un sistema de riego (Plantae, s.f.). Esto permite ahorrar agua, mejorar el crecimiento de las plantas y reducir pérdidas agrícolas.
 
 Además, algunos sistemas usan sensores climáticos que predicen cambios de temperatura o lluvias, ayudando a tomar decisiones más precisas. La información recopilada también puede visualizarse mediante gráficos y estadísticas en tiempo real.
 
