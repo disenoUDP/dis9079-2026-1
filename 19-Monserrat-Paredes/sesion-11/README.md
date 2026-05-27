@@ -4,12 +4,13 @@ Corregir y probar las solemnes en clases frente a todos
 
 <img width="960" height="1280" alt="LUMI" src="https://github.com/user-attachments/assets/eff5c61b-0811-4d51-bfd8-914a38e551e4" />
 
-##Comentarios:
+
+## Comentarios:
 
 Imagenes no tienen créditos específicos, siempre incluirlos, aunque sean de factura propia.
 
 
-##Correcciones:
+## Correcciones:
 
 Ya están actualizados en la sesión-10 y en la solemne-02 persona-01
 
