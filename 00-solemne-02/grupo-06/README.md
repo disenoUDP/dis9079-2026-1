@@ -16,9 +16,10 @@ Lunes 18 Mayo 2026
 _**"Soniloide"**_ es un dispositivo que produce sonido a distancia.
 Inspirados en los instrumentos musicales de la empresa [“Maywa Denki”](https://www.maywadenki.com/) es que surge este nuevo artefacto. 
 
-▼ _Video de “Chan: cómo armar el Kit” (チャン　工作キットのつくり方)_
 
 [![Ver video](https://img.youtube.com/vi/fI1Mr4SIES4/hqdefault.jpg)](https://www.youtube.com/watch?v=fI1Mr4SIES4&t=1s)
+▼ _Video de “Chan: cómo armar el Kit” (チャン　工作キットのつくり方)_
+
 
 El proyecto consiste en un sistema de comunicación inalámbrica capaz de controlar una acción física a distancia. A través de la plataforma [Adafruit IO](https://io.adafruit.com/welcome), una Raspberry Pi Pico 2W envía datos en tiempo real a un Arduino R4 WiFi, el cual activa un solenoide que da vida al artefacto.
 
