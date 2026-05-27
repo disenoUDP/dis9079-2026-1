@@ -60,6 +60,8 @@ Y las principales dificultades que tuvimos al realizar la animación fueron que,
 
 El siguiente desafío fue agregar los demás frames, ya que teníamos que convertir cada imagen individualmente usando Image2CPP, y en varias ocasiones el código nos arrojaba errores.
 
+Además, en un inicio la idea era trabajar con 3 personajes distintos, cada uno con sus propias animaciones y frames. Sin embargo, esto hacía mucho más complejo el proceso y aumentaba la cantidad de errores al momento de ordenar y mostrar las animaciones correctamente. 
+
 Finalmente, conseguimos que el GIF funcionara correctamente y se reprodujera completo en la pantalla.
 
 ### Pruebas de animación
@@ -68,7 +70,13 @@ Finalmente, conseguimos que el GIF funcionara correctamente y se reprodujera com
 ![pruebas](imagenes/pruebas3.jpeg)
 ![pruebas](imagenes/pruebas2.jpeg)
 
+### Resultado final
 
+A pesar de los errores y contratiempos que tuvimos durante el desarrollo, finalmente logramos obtener una animación funcional para el proyecto.
+
+Después de varias pruebas, decidimos simplificar la idea inicial y trabajar solo con un personaje, agregándole más frames para mejorar la fluidez del movimiento y lograr un resultado más estable en la pantalla.
+
+El resultado final fue una animación de un alien, esta se proyecta en la pantalla OLED que es accionada por un botón y que está conectada a su vez al Arduino UNO R4 Wifi que recibe la señal de Adafruit IO. Esa señal se manda gracias a un sensor PIR accionado por un botón, que al detectar el movimiento, la Raspberry Pi Pico 2 W manda la señal a la nube de Adafruit IO.
 
 ## Código usado para enviar
 
@@ -835,8 +843,6 @@ void loop() {
 ## Imágenes del proyecto
 ![movimiento](imagenes/movimiento.jpeg)
 ![proyecto](imagenes/materiales.jpeg)
-
-
 
 ## Animaciones del proyecto
 ![solemne](imagenes/solemne.gif)
