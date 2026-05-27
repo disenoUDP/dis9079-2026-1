@@ -29,8 +29,13 @@ Los sensores detectan variaciones de luz en el entorno. Cuando alguien tapa el s
 La interacción funciona cuando el espectador modifica la luz cercana al sensor, por ejemplo generando una sombra con la mano o cambiando la iluminación del entorno. El sensor de luz detecta esa variación lumínica y envía la información al microcontrolador, que procesa los datos y activa una respuesta visual mediante LEDs que cambian de color. Luego, la información se transmite a otros módulos de la instalación mediante WiFi, haciendo que toda la obra responda colectivamente a la acción del público.
 El proyecto demuestra cómo un dato de luz simple puede transformarse en interacción visual, comunicación entre dispositivos, participación del público y una experiencia colectiva.
 
-![referente](imagenes/referentemarco.jpg)
+![referente](imagenes/referentemarco.jpg)  
+
+Brianza, M. (2018). Distributed light installation – Minimal social network. https://www.marcobrianza.it/wemakecolors-ii/
+
 ![referente](imagenes/referentemarco1.jpg)
+
+Brianza, M. (2018). Distributed light installation – Minimal social network. https://www.marcobrianza.it/wemakecolors-ii/
 
 ## Sensor PIR -  utilizado solemne
 Su función es detectar movimiento a partir de las variaciones presentes en el entorno, especialmente el calor emitido por el cuerpo humano. El sensor identifica estos cambios térmicos mediante elementos piroeléctricos y los convierte en señales eléctricas que luego pueden ser procesadas e interpretadas por un microcontrolador.
@@ -53,6 +58,7 @@ Se trabajó con un sensor PIR conectado junto a un push button. El sistema funci
 
 ![proyecto](imagenes/materiales.jpeg)
 
+Foto sacada del proyecto final.
 
 ### Referente artístico: SURFACE X — Picaroon
 Está compuesta por 35 paraguas suspendidos que reaccionan cuando una persona se acerca. El proyecto utiliza:
@@ -66,7 +72,12 @@ El sistema funciona detectando la presencia y movimiento de las personas  median
 La interacción ocurre en tiempo real ya que el espectador modifica el comportamiento de la instalación simplemente desplazándose dentro del espacio. El uso del sensor PIR permite detectar presencia sin necesidad de contacto físico, transformando el movimiento corporal en datos digitales capaces de activar respuestas visuales.
 
 ![proyecto](imagenes/referentesurface.png)
+
+Picaroon. (2018). SURFACE X. https://www.hackster.io/Picaroon/surface-x-811e8c 
+
 ![proyecto](imagenes/referentesurface1.png)
+
+Picaroon. (2018). PIR Signal Inverter. https://www.hackster.io/Picaroon/surface-x-811e8c 
 
 ## Pantalla OLED 
 #### Funcionamiento básico
@@ -96,7 +107,7 @@ Se utilizó una pantalla OLED como actuador junto a un push button para controla
 Una dificultad en este momento fue realizar que las animaciones se lograran interpretar en la pantalla ya que al principio teníamos códigos muy largos y la pantalla no los reconoció, gracias a image2CPP vimos bien el tamaño de la pantalla donde descubrimos que el problema de que porque no funcionaba el código anterior era porque era demasiado grande la imagen de los frames, partimos investigando con fuentes que veian pantallas OLED y como se creaban imágenes en Image2CPP.
 
 ![pruebas](imagenes/pruebas2.jpeg)
-
+Pruebas de animación en proceso de solemne.
 
 ### Referente artístico: Circoled - Moritz König
 Se trata de una pantalla de mensajes desplazables con 8 pequeñas pantallas OLED, dispuestas alrededor de una placa de circuito impreso y controladas por un ESP32.
@@ -116,6 +127,8 @@ Lo interesante del proyecto es que transforma varias pantallas pequeñas en una 
 Circoled no utiliza las pantallas OLED únicamente como monitores, sino como parte central de una pieza interactiva. Las ocho pantallas organizadas en forma circular crean un cilindro luminoso que transforma la visualización de datos en una experiencia espacial. De esta manera, la pantalla deja de ser solo un soporte técnico y se convierte en un objeto visual performático y narrativo.
 
 ![referente](imagenes/referentecicoled.png)
+ https://www.pcbway.com/project/shareproject/Circoled___Eight_tiny_OLED_displays_arranged_in_a_circle.html
+
 
 ## Bibliografía
 * Arduino. Official Website.
