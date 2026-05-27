@@ -6,7 +6,7 @@ Anays Cornejo - [Anaysval](https://github.com/Anaysval)
 
 ### Sensor PIR 
 
-![foto](./imagenes/1ola.jpg) 
+![foto](./imagenes/1ola.jpg)Foto por: https://bigamart.com/product/aoicrie-5pcs-hc-sr501-pir-infrared-sensor-ir-human-body-motion-module-for-arduino-for-raspberry-pi-green/
 
 ### ¿Qué es un sensor PIR?
 
@@ -70,7 +70,8 @@ Los más frecuentes son:
 
 ### Made to Measure 
 
-![foto](./imagenes/1obra.jpg)
+![foto](./imagenes/1obra.jpg)Made to Measure
+Foto por: https://process.studio/works/made-to-measure/
 
 La instalación Made to Measure del estudio Process Studio es una obra de arte interactivo donde el espacio responde a la presencia del público mediante sensores de movimiento instalados en el techo. Según la documentación oficial del proyecto, la obra utiliza 15 sensores PIR para detectar la presencia y el desplazamiento de los visitantes dentro de la sala.
 
@@ -91,7 +92,7 @@ No encontré más información sobre la instalación Made to Measure del estudio
 
 ### Pistón electromecánico
 
-![foto](./imagenes/2ola.jpg) 
+![foto](./imagenes/2ola.jpg)Foto por: https://tvc.mx/products/10650#69786&gid=1&pid=3
 
 ### ¿Qué es un pistón electromecánico?
 
@@ -181,9 +182,11 @@ Desventajas:
 
 ### Wavefunction / Subsculpture 9 – Rafael Lozano-Hemmer (UMMA)  
 
-![foto](./imagenes/giff.gif) 
+![foto](./imagenes/giff.gif)Wavefunction
+Video/gif por: https://lozano-hemmer.com/wavefunction.php
 
-![foto](./imagenes/2obra.jpg) 
+![foto](./imagenes/2obra.jpg)Wavefunction
+Foto por: https://lozano-hemmer.com/wavefunction.php
 
 Rafael Lozano-Hemmer es un artista contemporáneo mexicano-canadiense nacido en 1967 en Ciudad de México. Su trabajo se enfoca en la creación de instalaciones interactivas que combinan arte, tecnología y participación del público. Sus obras utilizan sistemas computacionales, sensores y mecanismos automatizados para generar experiencias donde el espectador es parte activa de la obra 
 
