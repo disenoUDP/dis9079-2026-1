@@ -12,9 +12,13 @@ Para poder estudiar el objeto es que utilicé la información presente en la tie
 
 [![Ver video](https://img.youtube.com/vi/fI1Mr4SIES4/hqdefault.jpg)](https://www.youtube.com/watch?v=fI1Mr4SIES4&t=1s)
 
+▼ _Video de “Chan: cómo armar el Kit” (チャン　工作キットのつくり方)_
+
 Es ahí donde se puede apreciar los elementos de construcción: una plancha de madera con corte láser, broches de tipo mariposa, cola fría, elásticos, tornillos, platillos metálicos, un motor solenoide, y un circuito eléctrico.
 
 ![proceso](./imagenes/chan-venta.jpeg)
+
+▼ _Captura de pantalla: Tienda online de Maywa denki en la que se vende "Chan"_
 
 Para poder replicarlo es que el proyecto giró en 2 ejes: la parte eléctrica y la carcasa conjunto con los mecanismos que permiten el movimiento.
 El primer paso fue indagar sobre los componentes específicos y el circuito que dan la vida. Este es el punto de conexión directa con el encargo de esta solemne, puesto que se busca trabajar con sensores y actuadores que mediante wifi funcionen a distancia.
@@ -29,15 +33,25 @@ Más adelante, tras el avance hecho por parte de Vania la clase previa a la mues
 
 ![proceso](./imagenes/rasp-pi-pico-2w-pinout.jpeg)
 
+▼ _Imagen Pinout de Raspberry Pi Pico 2 W. Recuperada de [Adafruit](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html)_
+
 ![proceso](./imagenes/circuito-enviar-2.jpeg)
+
+▼ _Fotografía personal de la primera versión del circuito_
 
 Tras realizar las conexiones del circuito (usando como guía el pinout de la página de adafruit) le pedí ayuda a Claude con el código para poder traspasar la información del botón y el potenciómetro a la pantalla.
 
 ![proceso](./imagenes/chat-claude-1.jpeg)
 
+▼ _Captura de pantalla: Chat con Claude contandole sobre el proyecto_
+
 ![proceso](./imagenes/chat-claude-2.jpeg)
 
+▼ _Captura de pantalla: Chat con Claude pidiendole ayuda para agregar una pantalla al proyecto_
+
 ![proceso](./imagenes/circuito-enviar-2-oled.jpeg)
+
+▼ _Fotografía personal de la segunda versión del circuito_
 
 ## Actuador
 
@@ -52,6 +66,7 @@ Pese intentar conseguir las piezas que me sugirió la ia, es que opté por utili
 
 [![Video prueba](https://img.youtube.com/vi/BdF6cEYrifI/hqdefault.jpg)](https://youtube.com/shorts/BdF6cEYrifI)
 
+▼ _Video personal que muestra el funcionamiento del circuito con solenoide_
 
 Pese a la ambición del proyecto, siento que pudimos llegar a buen puerto gracias a la ayuda de felix con el modelado.
 
@@ -61,6 +76,7 @@ Aproveché este proyecto para aprender a modelar de forma un poco más profesion
 
 ![proceso](./imagenes/modelado-chan.png)
 
+▼ _Captura de pantalla: Modelado de Chan en "Fusion 360" hecho a partir del mini solenoide_
 
 ## Bibliografía
 
