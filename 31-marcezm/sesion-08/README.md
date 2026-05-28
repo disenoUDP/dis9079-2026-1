@@ -114,6 +114,6 @@ Durante esta actividad:
 
 ### Conexión del circuito
 
-![raspberry](imagenes/potenciometro_coneccion.jpg)
+![raspberry](imagenes/potenciometro_conexion.jpg)
 
 Este ejercicio permitió comprender mejor la interacción entre hardware y software utilizando sensores analógicos y programación en Python.
