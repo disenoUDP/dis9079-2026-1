@@ -405,17 +405,25 @@ void loop() {
 
 ## Imágenes del proyecto
 
+Conexiones.
 
 <img src="./imagenes/fotoproyecto.jpeg" alt="install" width="500">
 
 
+Foto artística.
+
 <img src="./imagenes/raspirosa.jpeg" alt="install" width="500">
 
+
+Inseption.
 
 <img src="./imagenes/pasillo.jpeg" alt="install" width="500">
 
 
+Datos vistos en PuTTY.
+
 <img src="./imagenes/monitorserial.jpeg " alt="install" width="500">
+
 
 
 
