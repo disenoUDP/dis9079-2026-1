@@ -72,7 +72,7 @@ Un motor de corriente continua común, un conjunto de engranajes reductores, par
 El microcontrolador envía una señal eléctrica digital tipo PWM (Pulse Width Modulation). Dependiendo del ancho o duración de los pulsos eléctricos que recibe, el circuito interno del servomotor calcula el ángulo exacto al que debe girar, por ejemplo: entre 0° y 180°. El motor gira y el potenciómetro interno avisa al circuito cuando ha llegado a la posición deseada para detenerse ahí.
 
 
-## Artista 
+## Artista 01
 
 Daniel Rozin 
 Nació en Jerusalén en 1961.Daniel Rozin es un artista, desarrollador y educador israelí-estadounidense radicado en Nueva York. Es considerado una de las figuras más influyentes del arte cinético interactivo. 
@@ -88,6 +88,19 @@ Al recibir la señal, los motores actúan de inmediato rotando cada pieza de mad
 
 ### Video de la instalación:
 https://youtu.be/kV8v2GKC8WA?si=m1vpbGqpopvJbepU
+
+## Artista 02
+
+David Bowen es un reconocido artista visual, escultor y educador que investiga las relaciones estéticas y funcionales entre los sistemas naturales y los mecánicos. Obtuvo su Maestría en Bellas Artes (MFA) en la Universidad de Minnesota y actualmente se desempeña como profesor asociado de Escultura y Computación Física en la Universidad de Minnesota, Duluth.
+A lo largo de su trayectoria, Bowen ha expuesto en centros artísticos y tecnológicos de gran prestigio internacional, como el ZKM Center for Art and Media , el NTT InterCommunication Center, el Centro de Cultura Contemporánea de Barcelona (CCCB) y la Fundación Telefónica. Ha sido galardonado con distinciones de alto nivel en el campo del arte electrónico, incluyendo la beca McKnight Visual Artist Fellowship y premios en el Japan Media Arts Festival, Ars Electronica y la competición internacional de vida artificial VIDA.
+
+Su propuesta artística consiste en extraer flujos de datos cambiantes, como el movimiento de las olas marinas, la fuerza del viento, el andar de insectos o el crecimiento de plantas y convertirlos en instrucciones mecánicas de movimiento mediante hardware y software de código libre.
+
+## Obra: underwater 
+
+La obra consiste en una gran malla geométrica suspendida en el espacio que flota y se deforma suavemente frente al espectador. Para generar este movimiento, Bowen instaló una cámara con sensores infrarrojos de profundidad (un sistema similar a Microsoft Kinect) en una sección del Lago Superior. La cámara capturó en tiempo real los sutiles cambios tridimensionales, la frecuencia y la intensidad de las olas, digitalizando e importando esta información física como una nube de puntos tridimensionales.
+
+La instalación cobra vida gracias a 729 servomotores individuales distribuidos de manera equidistante a lo largo de todo el entramado de aluminio. El sistema informático de control recibe las coordenadas espaciales de la superficie del agua y las traduce instantáneamente en señales eléctricas de modulación por ancho de pulsos (PWM) independientes para cada motor. Al activarse de forma coordinada, los servomotores rotan sus ejes milimétricamente para subir o bajar los brazos articulados de la estructura. Al observar la obra, el espectador puede notar cómo el "ronroneo" o zumbido colectivo de los 729 servomotores elimina la rigidez de la rejilla cuadriculada, transformándola en una onda líquida y fluida que imita fielmente la coreografía autónoma del lago.
 
 ## Bibliografía
 * https://www.nxp.com/products/MPR121?hl=es-CL
