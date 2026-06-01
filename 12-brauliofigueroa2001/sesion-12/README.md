@@ -40,6 +40,10 @@ ustedes pueden con código, preguntar cuál es la primera palabra de un párrafo
 
 **INVESTIGAR SOBRE APIS**
 
+- the cat api
+
+- patrimonio bot, claudio ruiz apretaba un botón cuando se acordaba y esto hacía que publicara en instagram un objeto random en base a una descripción?? algo así, no lo entendí mucho
+
 
 
 
