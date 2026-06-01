@@ -37,16 +37,41 @@ Las API permiten compartir solo la información necesaria, manteniendo ocultos o
 
 La API es el puente que establece la conexión entre ellos.
 
+`Ejemplo:` El procesamiento de pagos a terceros. Cuando alguien compra por internet, a veces te piden "pague con Paypal" u otro tipo de sistema. Bueno, esta función depende de las API para realizar el pago o la conexión.
 
-Examen
+Si bien la transferencia de datos es según el servicio web utilizado, las solicitudes y respuestas se realizan a través de una API. No hay visibilidad en la interfaz de usuario, lo que significa que las API intercambian datos dentro del ordenador o la aplicación, y aparecen ante el usuario como una conexión sin fisuras.
 
-estudios inalambricos poteicos
+---
 
-grupos 3 o 4 personas
-excpeciones puntuales si es que tienen notas sobre 67
+`Examen`
 
-indiv:
-investigacion sobre apis
-bitacoras y oroceso x2
+- Estudios inalámbricos poéticos
+- grupos de 3 o 4 personas
+- Excepciones puntuales si es que tienen notas sobre 6.7
+- Individuales:
+  - investigación sobre apis
+  - bitácoras y proceso x2
 
+### Trabajo en clases
 
+`Párrafo 1:` Dos edificios que actúan al unísono, sin saberlo. Un sensor en el LID, otro  en la biblioteca, cada uno contando y midiendo presencia, traduciendo lo humano a pulsos digitales. Entre ellos, no está vacío: viaja un protocolo, una API recibe el conteo, lo procesa, lo devuelve transformado; y un actuador responde: una pantalla que se ilumina, un LED que cambia de color, una señal que dice aquí hay vida. El sistema nervioso oculto de los lugares donde pensamos, construido sobre microcontroladores, WiFi y la pregunta técnicamente precisa pero profundamente humana: ¿cuántos habitan tus pasillos ahora mismo?
+
+`Preguntas hechas por compañeros y Aarón:`
+
+1. está a medio camino entre no tener implementación técnica concreta, hablando de sensor y actuador, pero solamente mencionar presencia, pero no describir el contexto de uso, los mensajes que quieran transmitir, las velocidades que quieran usar, o la poética detrás, recomiendo nombrar el proyecto
+2. ¿cómo se comunica visualmente el conteo al usuario final? ¿qué significan los distintos colores del led?
+3. ¿qué sensor van a ocupar para detectar a un ser vivo?
+
+`Corrección:`
+
+***Grupo 6:***
+
+**Nombre proyecto:** Espacios Entrelazados / Dualidad de espacios
+
+Dos edificios que actúan al unísono, sin saberlo. ¿Cuántos habitan los lugares de trabajo? ¿Cuál es el flujo durante el día?
+
+Nuestro proyecto parte desde la pregunta `¿Cuántos habitan los lugares de trabajo?`, nos interesa capturar el conteo de personas que entran y salen al ocupar los lugares de trabajo en la Universidad (los dos edificios). 
+
+SpaceSync nace de esa pregunta. Dos facultades, dos espacios de trabajo — el LID y la biblioteca — que coexisten sin saber realmente cuánta vida circula en cada una. Nuestro proyecto propone tender un puente invisible entre ambas: sensores que cuentan personas, microcontroladores que traducen presencia humana en datos, y una API que transporta esa información de un edificio al otro en tiempo real.
+Lo que buscamos no es solo un número en una pantalla. Es hacer visible el ritmo con que los espacios se llenan y se vacían, los momentos en que el LID desborda y la biblioteca respira, o viceversa. Esa fluctuación constante — que todos vivimos pero nadie registra — se convierte aquí en una visualización que pulsa al ritmo de la ocupación real.
+Creemos que entender cómo habitamos los espacios compartidos es el primer paso para habitarlos mejor. SpaceSync no mide metros cuadrados: mide presencia, movimiento, comunidad.
