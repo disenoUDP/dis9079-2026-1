@@ -38,6 +38,8 @@ everest pipkin, proyecto de los aviones
 
 ustedes pueden con código, preguntar cuál es la primera palabra de un párrafo de wikipedia, o cuáles son las primeras 3. Aarón hizo con código algo que permitía ver cuáles eran los "is" eran y podías revisar cualquier día si algo había dejado de ser
 
+**INVESTIGAR SOBRE APIS**
+
 
 
 
