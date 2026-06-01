@@ -16,6 +16,8 @@ Es una forma de ordenar una composición, ej: let colores = [verde, "rojo", "azu
 
 - que uno de los dos lados, ya sea el de sensor o actuador, use un arreglo
 
+- que venga el registro de un edificio a otro, porque es difícil demostrarlo en vivo
+
 
 
 
