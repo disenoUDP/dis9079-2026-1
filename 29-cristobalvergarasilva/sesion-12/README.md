@@ -4,11 +4,16 @@ lunes 01 junio 2026
 
 Hablamos de la solemne 2 y revise los comentarios, he aprendido mucho en este curso.
 El profe nos mostro fragmentos de un libro que esta escribiendo del contenido del curso.
+
 Nos mostró el trabajo de Yeseul Song https://yeseul.com/Invis_sculptures
+
 Proyectos no tan importantes le dicen estúdio 
 https://everest-pipkin.com/
+
 Api: conexion entre computadores, biblioteca ordenada esperando que le preguntes algo, obras inalambricas, hay un api por everest que te puede mostrar si arriba tuyo hay un avion 
+
 https://openweathermap.org/api
+
 patrimoniobot
 
 Examen
