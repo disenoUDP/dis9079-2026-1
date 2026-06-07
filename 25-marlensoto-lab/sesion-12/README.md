@@ -2,7 +2,7 @@
 
 lunes 01 junio 2026
 
-# Apuntes – Proyecto Examen
+# En el primer bloque de la clase 
 
 ## Requisitos del Examen
 
