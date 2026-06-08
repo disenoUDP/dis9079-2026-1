@@ -41,7 +41,7 @@ void loop() {
   delay(30);
 }
 ```
-—
+---
 
 En touchdesigner primero hice una figura base simple que tuviera parámetros que pudiera deformar con el sonido, en este caso ocupé noise.
 
@@ -447,7 +447,7 @@ También hablé con el profesor Guillermo Montecinos para saber su opinión ya q
 
 Así que me puse a investigar sobre estos lenguajes.
 
-—
+—--
 
 ### Websocket
 
