@@ -51,6 +51,8 @@ Si bien la transferencia de datos es según el servicio web utilizado, las solic
 - Individuales:
   - investigación sobre apis
   - bitácoras y proceso x2
+    
+¿qué es un servicio web?
 
 ### Trabajo en clases
 
