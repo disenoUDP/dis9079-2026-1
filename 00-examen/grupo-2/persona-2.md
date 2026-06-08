@@ -8,7 +8,7 @@
 
 Primero probé un micrófono ( KY-037 )conectado a un arduino, para primero ver cómo funcionaban los datos de este en touchdesigner.
 
-Así conecté el mic KY-037 al Arduino: 
+Así conecté el mic KY-037 al Arduino:
 
 * VCC      ->   5V
 * GND      ->   GND
@@ -41,6 +41,7 @@ void loop() {
   delay(30);
 }
 ```
+
 ---
 
 En touchdesigner primero hice una figura base simple que tuviera parámetros que pudiera deformar con el sonido, en este caso ocupé noise.
@@ -438,7 +439,8 @@ def onUnsubscribe(dat, *args):
 
 ![foto](./imagenes/voice14.png)
 
-### Video en funcionamiento:
+### Video en funcionamiento
+
 [![Ver video en YouTube](https://img.youtube.com/vi/eZcYLyGfErY/hqdefault.jpg)](https://youtube.com/shorts/eZcYLyGfErY)
 
 ---
@@ -459,7 +461,7 @@ Según esta página WebSocket provee la API para la creación y administración 
 
 <https://www.ibm.com/docs/es/was/9.0.5?topic=applications-websocket>
 
-WebSocket es un protocolo estándar que permite que un navegador web o una aplicación cliente y una aplicación de servidor web utilice una conexión dúplex para comunicarse. 
+WebSocket es un protocolo estándar que permite que un navegador web o una aplicación cliente y una aplicación de servidor web utilice una conexión dúplex para comunicarse.
 
 No he encontrado mucha info sobre como usarlo con touchdesigner;(
 
@@ -487,4 +489,3 @@ Osc en touchdesigner: <https://derivative.ca/UserGuide/OSC>
 ---
 
 Finalmente por ahora y por temas de tiempo estoy prefiriendo quedarme con la forma de enviar que hemos estaado usando todo el semestre (Adafruit y circuitpython)
-

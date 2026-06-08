@@ -9,27 +9,89 @@ El pseudocódigo es una descripción estructurada del algoritmo escrita en lengu
 sin depender de la sintaxis de un lenguaje de programación específico.
 Su objetivo es planificar la lógica antes de escribir código real.
 
-#### Pseudocódigo del sistema
-// CAPTURA
-lectura_raw ← ADS1115.leer_canal(0)      // micro-voltaje de la planta
-lectura_mv  ← convertir_a_milivoltios(lectura_raw)
+#### Seudocódigo del Proyecto
+Emisor (Arduino UNO R4 WiFi)
+INICIO
 
-// PROCESAMIENTO
-variacion ← ABS(lectura_mv - valor_anterior)
-SI variacion > umbral_actividad:
-  nivel_actividad ← "ALTO"
-SI NO:
-  nivel_actividad ← "BAJO"
+    INICIO 
+    
+    Inicializar ADS1115
 
-// EMPAQUETADO
-paquete ← { "timestamp": hora_actual(), "valor": lectura_mv, "actividad": nivel_actividad }
+    Conectar a la red WiFi
 
-// TRANSMISIÓN UDP/HTTP
-ENVIAR paquete a ip_raspberry:puerto por WiFi
+    MIENTRAS el sistema esté activo
 
-valor_anterior ← lectura_mv
-ESPERAR intervalo_muestreo
+    Leer señal eléctrica de la planta
 
+    Convertir lectura analógica a valor digital
+
+    Enviar dato mediante WiFi
+
+    Esperar un breve intervalo
+  
+
+Receptor (Computador o Raspberry Pi Pico 2 W)
+INICIO
+
+    Conectarse a la red WiFi
+
+    Inicializar sistema de visualización
+
+    MIENTRAS el sistema esté activo
+
+    Recibir dato enviado por Arduino
+
+    Analizar intensidad del valor recibido
+
+    SI valor alto ENTONCES
+
+        Aumentar movimiento visual
+        Aumentar cantidad de elementos gráficos
+        Aumentar intensidad sonora
+
+    SI valor medio ENTONCES
+
+        Mantener comportamiento normal
+
+    SI valor bajo ENTONCES
+
+        Disminuir movimiento visual
+        Disminuir cantidad de elementos gráficos
+        Disminuir intensidad sonora
+
+    Actualizar visualización
+
+Flujo General
+
+    Planta
+      ↓
+    Electrodos
+      ↓
+    ADS1115
+      ↓
+    Arduino UNO R4 WiFi
+      ↓
+    Transmisión WiFi
+      ↓
+    Computador / Raspberry Pi Pico 2 W
+      ↓
+    Procesamiento de datos
+      ↓
+    Visualización y sonido
+
+Lógica del Proyecto
+
+Capturar señales eléctricas de la planta
+
+Convertir señales en datos digitales
+
+Transmitir datos de forma inalámbrica
+
+Recibir y procesar la información
+
+Transformar los datos en imágenes, luces o sonidos
+
+Mostrar en tiempo real la actividad detectada por la planta
 ---
 
 ### Códigos de prueba (verificación por etapas)

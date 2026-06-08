@@ -2,13 +2,26 @@
 
 lunes 01 junio 2026
 
-Yeseul Song La escultura hay que ir a verlaspero y si no se ven?
-slow dimming study
 
-api
+En esta sesión se abordó el uso de APIs como herramientas que permiten la comunicación entre distintos sistemas digitales. Una API, o Application Programming Interface, funciona como una especie de puente o intermediario que permite que una aplicación, dispositivo o plataforma pueda solicitar información, enviar datos o activar acciones en otro sistema sin necesidad de conocer todo su funcionamiento interno.
 
-Propuesta 01 inicial
+La API permite que dos elementos tecnológicos “conversen” entre sí mediante reglas y formatos específicos
+
+A partir de esto, las APIs pueden entenderse no solo como recursos técnicos, sino también como herramientas expresivas. Permiten diseñar sistemas donde la información circula entre cuerpos, objetos y plataformas, generando experiencias sensibles.
+
+Referente 
+
+Yeseul Song La escultura hay que ir a verlas pero y si no se ven? 
+ 
+Yeseul Song trabaja justo desde esa pregunta: ¿qué pasa cuando una obra no se entrega completamente a la vista? En sus Invisible Sculptures, la escultura no se mira de manera tradicional, sino que se percibe mediante otros sentidos: sonido, calor, flujo de aire u olor. Es decir, la obra existe, pero no necesariamente aparece como imagen.
+
+la escultura hay que ir a verla, pero ¿qué pasa si no se ve? Esa pregunta desplaza el foco desde el objeto visible hacia la relación entre cuerpo, atención y presencia. La obra ya no depende solo de estar frente a algo, sino de sostener una interacción. No basta con mirar rápido; hay que permanecer, sentir, esperar o incluso dudar de si algo está ocurriendo.
+
+Propuesta 01 exámen inicial
+
 Grupo 01: El proyecto consiste en una lámpara-altar que reacciona ante la cercanía de una persona, transformando su presencia física en una señal luminosa y afectiva. A medida que alguien se acerca  la luz comienza a encenderse progresivamente, como si el objeto despertara o reconociera esa presencia. Cuando la luz alcanza su máxima intensidad se envía una señal a un segundo dispositivo, comunicando que alguien estuvo ahí, recordó o se hizo presente. La propuesta convierte la luz en un espacio de memoria y compañía, donde acercarse al objeto no solo activa un sistema, sino que construye una forma poética de decir estoy aquí, te recuerdo o sigo vinculado a ti.
+
+La luz no funciona como señal instantánea, sino como prueba de presencia.
 
 Correcciones
 

@@ -1,11 +1,11 @@
 # Grupo-4 - Examen Interacciones Inalámbricas
 
-## Integrantes 
+## Integrantes
+
 - Renata Arévalo Urra / [arevalourra](<https://github.com/isipm08/dis9079-2026-1/tree/main/06-arevalourra>)
 - Isidora Pérez Maulén / [isipm08](<https://github.com/isipm08/dis9079-2026-1/tree/main/21-isipm08>)
 
-
-## Materiales usados 
+## Materiales usados
 
 | Componente | Valor Unidad | Cantidad | Link |
 | --- | --- | --- | --- |
