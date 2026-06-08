@@ -4,15 +4,17 @@ Cristobal Vergara Silva / cristobalvergarasilva
 
 ## Sensor
 
-### Sensores de pulso cardiaco ESG y PPG ###
+### Sensores de pulso cardiaco ECG y PPG ###
 
-#### PPG, Fotopletismografía ####
+#### PPG, (Fotopletismografía) ####
 
-Funciona emitiendo luz LED sobre la piel y midiendo cuánta luz rebota hacia un fotodetector. Esto funciona porque cada vez que el corazón late, llega más sangre a los vasos sanguíneos y eso cambia la cantidad de luz reflejada, generando una variación eléctrica. Contando esas variaciones se obtienen las pulsaciones por minuto (BPM), como es el caso del sensor de Pulse.sensor.com. El sensor más utilizado es el MAX30102 que mide también oxígeno en sangre, fabricado por Maxim Integrated. Este además de tener dos leds y un fotodetector, tiene un sensor de temperatura interno y como consume poca corriente es fácil hacer proyectos portátiles con él.
+El PPG o fotopletismografía funciona emitiendo luz LED sobre la piel y midiendo cuánta luz rebota hacia un fotodetector. Esto ocurre porque cada vez que el corazón late, llega más sangre a los vasos sanguíneos, lo que cambia la cantidad de luz reflejada y genera una variación eléctrica. Contando esas variaciones se obtienen las pulsaciones por minuto (BPM), como es el caso del sensor de PulseSensor.com. 
 
-Algunos de los puntos débiles que tiene este sensor suceden por ejemplo si el usuario que se le está midiendo el pulso se mueve o si se aprieta demasiado el sensor, también si se está midiendo en el dedo puede tener problemas si tiene un esmalte de uñas muy grueso o si la temperatura corporal está muy alterada, también la luz ambiental tiene que estar preferiblemente controlada para que funcione mejor y sean más precisos los datos
+El sensor más utilizado de este tipo es el MAX30102, fabricado por Maxim Integrated, que además mide el nivel de oxígeno en sangre. Este cuenta con dos LEDs y un fotodetector, incorpora un sensor de temperatura interno y consume poca corriente, lo que facilita el desarrollo de proyectos portátiles.
 
-Al ser tan versátil a veces se integra a los dispositivos inteligentes, como relojes y monitores de actividad deportiva, posibilitando el monitoreo de la frecuencia cardíaca durante los entrenamientos.
+Entre sus puntos débiles se encuentran su sensibilidad ante estímulos externos como el movimiento brusco y las variaciones de temperatura corporal. Si la medición se realiza en el dedo, puede verse afectada por el uso de esmalte de uñas muy grueso o por presionar demasiado el sensor. Asimismo, se recomienda controlar la luz ambiental para obtener datos más precisos.
+
+A pesar de estas limitaciones, su versatilidad lo ha convertido en una tecnología ampliamente adoptada en dispositivos inteligentes como relojes y monitores de actividad deportiva, permitiendo el monitoreo continuo de la frecuencia cardíaca durante los entrenamientos.
 
 **PulseSensor.png**
 
@@ -22,11 +24,13 @@ Al ser tan versátil a veces se integra a los dispositivos inteligentes, como re
 
 <img src="./imagenes/Max30102.png" alt="install" width="500">
 
-El ESG es un tipo de lectura que captura las ondas generadas por la contracción del músculo cardíaco durante el ciclo cardíaco, funciona detectando las células marcapasos naturales del corazón, que se localizan principalmente en los nódulos SA y AV, siendo el nódulo SA el que regula la frecuencia y el ritmo cardíaco. Ese recorrido eléctrico es el que detectan los sensores ESG a través de la colocación de electrodos que en ubicaciones estratégicas del cuerpo con un gel adhesivo electrocardiográfico, además se tienen que quitar los accesorios de metal y de preferencia que no haya vello en la piel donde se está midiendo. El procesamiento implica amplificación y filtrado para separar la información relevante del ruido eléctrico del entorno.
+### ECG (Electrocardiograma) ###
 
-Un sensor conocido de este tipo es el AD8232, que está diseñado para extraer, amplificar y filtrar pequeñas señales en presencia de condiciones ruidosas, consta de un sensor, tres electrodos conectados por cable y un LED indicador que emite pulsos luminosos al ritmo del bombeo del corazón, además se puede controlar con un Arduino o una Lilypad
+El ECG es un tipo de lectura que captura las ondas generadas por la contracción del músculo cardíaco durante el ciclo cardíaco. Funciona detectando las células marcapasos naturales del corazón, que se localizan principalmente en los nódulos SA y AV, siendo el nódulo SA el que regula la frecuencia y el ritmo cardíaco. Ese recorrido eléctrico es el que detecta el sensor, a través de la colocación de electrodos en ubicaciones estratégicas del cuerpo mediante un gel adhesivo electrocardiográfico.
 
-Uno de los pocos contras del ESG es que deben detectar la actividad bioeléctrica a través solo ciertas áreas del cuerpo como las yemas de los dedos, el pecho y las axilas, pero es una forma de medir el ritmo cardiaco muy poco invasiva y no se requiere ni un cuidado especial después de aplicarlo.
+Un sensor conocido de este tipo es el AD8232, que está diseñado para extraer, amplificar y filtrar pequeñas señales en presencia de condiciones ruidosas. Este consta de un sensor, tres electrodos conectados por cable y un LED indicador que emite pulsos luminosos al ritmo del bombeo del corazón. Además, puede controlarse con una placa Arduino o una LilyPad para proyectos textiles.
+
+El ECG es una forma de medir el ritmo cardíaco muy poco invasiva y no requiere ningún cuidado especial después de su aplicación. Aun así, uno de sus pocos inconvenientes es que debe detectar la actividad bioeléctrica únicamente a través de ciertas áreas del cuerpo, como las yemas de los dedos, el pecho y las axilas. Asimismo, es necesario retirar los accesorios metálicos y el vello de la piel en la zona de medición. El procesamiento implica amplificación y filtrado para separar la información relevante del ruido eléctrico del entorno.
 
 **AD8232**
 
@@ -34,11 +38,11 @@ Uno de los pocos contras del ESG es que deben detectar la actividad bioeléctric
 
 ### Obra de artista ###
 
-Me llamó la atención Pulse Room del artista digital Mexicano, Rafael Lozano-Hemmer, la obra es una intervención artística que está compuesta por dos partes, por un lado tenemos una consola que detecta la frecuencia cardiaca, y por el otro lado tenemos una serie de ampolletas led, que en algunas ocasiones llegaron a ser 300, y estas dos partes dialogan de la siguiente manera: cuando se toca la consola, el sensor incorporado, específicamente un ESG Vernier Hand-Grip Heart Rate Monitor, registra el ritmo cardiaco y las luces comienzan a prenderse y apagarse imitando las pulsaciones, desplazándose de tal forma que el ritmo del último usuario se imprime en la primera ampolleta y va empujando los ritmos de los visitantes anteriores a las hileras más lejanas de ampolletas.
+Me llamó la atención *Pulse Room* del artista digital mexicano Rafael Lozano-Hemmer. La obra es una intervención artística compuesta por dos partes: por un lado, una consola que detecta la frecuencia cardíaca, y por el otro, una serie de ampolletas LED que en algunas ocasiones llegaron a ser 300. Estas dos partes dialogan de la siguiente manera: al tocar la consola, el sensor incorporado —específicamente un ECG Vernier Hand-Grip Heart Rate Monitor— registra el ritmo cardíaco y las luces comienzan a encenderse y apagarse imitando las pulsaciones. Esto ocurre de tal forma que el ritmo del último usuario queda impreso en la primera ampolleta, empujando los ritmos de los visitantes anteriores hacia las hileras más lejanas.
 
 ¿Cómo funciona el sensor?
 
-Este sensor de Vernier mide la frecuencia cardíaca registrando señales eléctricas que se transmiten a través de la superficie de la piel cada vez que el corazón se contrae y detecta cada señal eléctrica del corazón mediante los electrodos de los agarres. La información de la frecuencia cardíaca se transmite de forma inalámbrica a los dispositivos compatibles mediante Bluetooth
+Este sensor de Vernier mide la frecuencia cardíaca registrando las señales eléctricas que se transmiten a través de la superficie de la piel cada vez que el corazón se contrae, detectándolas mediante los electrodos de los agarres. La información obtenida se transmite de forma inalámbrica a los dispositivos compatibles mediante Bluetooth.
 
 **Vernier Hand-Grip Heart Rate Monitor**
 
@@ -56,25 +60,27 @@ Este sensor de Vernier mide la frecuencia cardíaca registrando señales eléctr
 
 ## Actuador
 
-### Steppers motors o motor paso a paso ###
+### Stepper motor o motor paso a paso ###
 
-Un motor paso a paso es un actuador eléctrico que permite el posicionamiento preciso con facilidad, son ideales para respuestas rápidas y por su diseño, mantienen su posición al detenerse de forma muy precisa, su característica principal es que su eje gira a través de una serie de pasos, tal como dice su nombre, cada "paso" está en una posición distinta del motor, por ende en distintos grados.
-Estos motores constan de dos piezas muy importantes, un rotor que es el corazón del actuador, la pieza central que gira, que es un imán permanente con dos piezas, la copa norte y sur, y cada una tiene una serie de dientes no alineados en su exterior, al rededor tenemos el estator que no gira y que tiene una serie de bobinas de alambre que rodean al rotor, y al alimentar de energía las distintas bobinas, se genera un campo magnético que hace que gire dependiendo cuál recibe energía, puesto que estas atraerán y repelerán el campo magnético de las copas norte y sur del rotor o en otras palabras, la bobina que se energice va a hacer que el rotor se alinee con el campo magnético que produce.
+Un motor paso a paso es un actuador eléctrico que permite el posicionamiento preciso con facilidad. Son ideales para respuestas rápidas y, por su diseño, mantienen su posición al detenerse de forma muy precisa. Su característica principal es que su eje gira a través de una serie de pasos, tal como dice su nombre; cada "paso" corresponde a una posición distinta del motor, es decir, a un ángulo determinado.
+Estos motores constan de dos piezas muy importantes. La pieza principal es un rotor, que es un imán permanente compuesto por dos partes: la copa norte y la copa sur, cada una con una serie de dientes no alineados en su exterior. A su alrededor se encuentra el estátor, que no gira y que cuenta con una serie de bobinas de alambre que rodean al rotor. Al alimentar de energía las distintas bobinas se genera un campo magnético que hace girar el rotor dependiendo de cuál recibe energía, puesto que estas atraen y repelen el campo magnético de las copas norte y sur; en otras palabras, la bobina que se energice hará que el rotor se alinee con el campo magnético que produce.
 
 ### Proceso de funcionamiento ###
 <img src="./imagenes/Rotorestator.png" alt="install" width="500">
 
 ### Obra de artista ###
 
-La obra que escogí son los espejos mecánicos de Daniel Rozin, la primera de sus obras fue Wooden Mirror (1999), que fue por la que me interese en su trabajo, esta consiste en una serie de espejos con 835 piezas de madera de pino con cientos de motores por detrás, además tiene una cámara que procesa lo que ve en píxeles.
-Las primeras versiones de sus obras fueron hechas con servo motors, pero según una entrevista a el del canal WIRED (2018), no le servían para mantener una obra las 24 horas del día, porque dejaban de funcionar, y ahí fue cuando comenzó a utilizar los Steppers motors completamente metálicos que ayudaban a que no se rompieran de tanto usarlos. También en sus últimas obras remplazo las cámaras que transformaban la imagen a píxel por sensores de movimiento, y con el tiempo fue experimentando con distintos materiales que no tienen reflejo como basura, abanicos, trolls de dos colores, pompones y pingüinos.
-Reflejan lo que ven gracias que el software calcula qué tan oscuro o claro debe ser cada "píxel", y le ordena al motor de ese objeto que rote exactamente al ángulo necesario para lograr ese brillo, funcionando como unos y ceros. Lo que hace el motor es rotar para controlar cuánta luz llega al ojo del espectador, como en Wooden Mirror, o en otros los motores rotan el objeto para mostrar una cara oscura o una cara clara, lo que genera el contraste de la imagen, como en Trolls Mirror.
+La obra que escogí son los espejos mecánicos de Daniel Rozin. La primera de sus obras fue *Wooden Mirror* (1999), por la que me interesé en su trabajo. Esta consiste en una instalación compuesta por 835 piezas de madera de pino con cientos de motores por detrás, y además cuenta con una cámara que procesa en píxeles lo que ve.
+
+Las primeras versiones de sus obras fueron hechas con servomotores, pero según una entrevista del canal WIRED (2018), estos no le servían para mantener una obra funcionando las 24 horas del día porque dejaban de funcionar. Fue entonces cuando comenzó a utilizar motores paso a paso completamente metálicos, los que ayudan a que no se rompan con el uso prolongado. También en sus últimas obras reemplazó las cámaras que transformaban la imagen en píxeles por sensores de movimiento, y con el tiempo fue experimentando con distintos materiales sin reflejo, como basura, abanicos, trolls de dos colores, pompones y pingüinos.
+
+Estos espejos reflejan lo que ven gracias a que el software calcula qué tan oscuro o claro debe ser cada "píxel" y le ordena al motor correspondiente que rote exactamente al ángulo necesario para lograr ese brillo, funcionando como unos y ceros. Lo que hace el motor es rotar para controlar cuánta luz llega al ojo del espectador, como en Wooden Mirror, o en otras obras los motores rotan el objeto para mostrar una cara oscura o una cara clara, generando el contraste de la imagen, como en *Trolls Mirror*.
 
 ### Penguins Mirror ### 
 
 <img src="./imagenes/Espejopinguinos.gif" alt="install" width="500">
 
-### Espejos mecanicos ###
+### Espejos mecánicos ###
 
 <img src="./imagenes/Mirrors.gif" alt="install" width="500">
 

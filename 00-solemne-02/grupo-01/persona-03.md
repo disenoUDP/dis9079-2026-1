@@ -8,17 +8,37 @@ Para la Pantalla OLED 128x84 px se debe implementar la app PuTTY que es la que h
 
 ## Sensor
 
-El sensor está conectado en la misma protoboard en la que está la pantalla OLED con la Raspberry Pi Pico 2 W, en este caso es el potenciómetro de 10k el cual se activa girando la perilla y posteriormente pulsando el botón que es el que corrobora los cambios realizados desde su última posición.
+El sistema de entrada está compuesto por un potenciómetro de 100k y un botón pulsador, ambos montados en la misma placa de pruebas (protoboard) junto a una Raspberry Pi Pico 2 W y una pantalla OLED.
 
-Este está conectado mediante un cable USB a tipo micro USB a una computadora portátil diferente a la que está conectado el actuador.
+**Funcionamiento:** El potenciómetro actúa como el sensor analógico principal, al girar su perilla, genera una variación de voltaje que el microcontrolador interpreta como un ángulo deseado.
+
+El botón opera como un mecanismo de confirmación, el sistema solo registra y envía la posición actual del potenciómetro cuando este es presionado.
+
+**Conectividad y Comunicación:** La Raspberry Pi Pico 2 W procesa estas señales y está conectada mediante un cable de USB a Micro-USB a una primera computadora portátil (estación de control).
+
+Esta computadora opera de manera independiente a la que controla el actuador.
+
+![proceso](./imagenes/ej1.jpeg)
+
+![proceso](./imagenes/ej3.jpeg)
 
 ## Actuador
 
-Los servomotores son dispositivos rotativos diseñados para ofrecer un control extremadamente preciso de la posición, la velocidad y el torque. A diferencia de los motores convencionales que giran continuamente, los servos se mueven a posiciones específicas y se corrigen en tiempo real ante cualquier alteración.
+El actuador seleccionado para el movimiento físico es un servomotor, un dispositivo electromecánico rotativo diseñado para ofrecer un control extremadamente preciso de la posición angular.
 
-Entonces el servomotor utilizado en este caso es nuestro actuador, el cual se irá moviendo a medida que vayamos ajustando los grados desde nuestro sensor que serían 180° como máximo que se pueda mover (al menos en las pruebas que estuvimos haciendo con el código en clases).
+A diferencia de los motores de corriente continua convencionales que giran de forma continua, el servomotor se desplaza hacia un ángulo específico y mantiene esa posición.
 
-Este va conectado a los pines del Arduino en otra protoboard diferente a la del sensor, el Arduino está conectado mediante cable USB a tipo C directamente a la computadora portátil.
+**Funcionamiento:** El servomotor opera en un rango máximo de 180°.
+
+Este dispositivo ajusta su posición replicando en tiempo real los grados que fueron seleccionados y puestos anteriormente desde la estación de ejcución del sensor
+
+**Conectividad y Comunicación:** El actuador está montado de manera independiente y se conecta directamente a los pines de un microcontrolador Arduino. 
+
+También, el Arduino recibe las instrucciones de movimiento a través de un cable de USB a USB-C conectado a una segunda computadora portátil (estación de ejecución).
+
+![proceso](./imagenes/ej2.jpeg)
+
+![proceso](./imagenes/ej4.jpeg)
 
 ## Bibliografía
 

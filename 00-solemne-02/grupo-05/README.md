@@ -1,4 +1,4 @@
-# solemne-02
+# Solemne 2 - Interacciones Inalámbricas
 
 ## Integrantes
 
@@ -31,7 +31,7 @@ En este microcontrolador solo va conectado el Micro Servo Motor SG90 9g, el cual
 
 ---
 
-Una vez tengamos todos los componentes conectados a sus respectivos microcontroladores, podremos empezar a comunicarnos entre ellos utilizando los códigos que se mencionan más abajo, los cuales fueron creados con ayuda de las inteligencias artificiales _Claude_ y _Chat GPT_. La manera en la que funciona esto es que, cuando mantenemos presionado el push button que está ubicado en la Raspberry, se empezarán a enviar los datos numéricos que podemos modificar moviendo el potenciómetro, el cual dependiendo del valor que se envíe el Motor Servo se moverá. Mientras todo ésto sucede, el LED nos indicará cuándo estamos manteniendo presionado el push button, ya que cuando lo presionamos se encenderá la luz, y cuando no estemos ejerciendo ninguna presión, se mantendrá apagado.
+Una vez tengamos todos los componentes conectados a sus respectivos microcontroladores, podremos empezar a comunicarnos entre ellos utilizando los códigos que se mencionan más abajo, los cuales fueron creados con ayuda de las inteligencias artificiales _Claude_ y _Chat GPT_. La manera en la que funciona esto es que, cuando mantenemos presionado el push button que está ubicado en la Raspberry, se empezarán a enviar los datos numéricos que podemos modificar moviendo el potenciómetro, el cual dependiendo del valor que se envíe el Motor Servo se moverá. Mientras todo esto sucede, el LED nos indicará cuándo estamos manteniendo presionado el push button, ya que cuando lo presionamos se encenderá la luz, y cuando no estemos ejerciendo ninguna presión, se mantendrá apagado.
 
 Todos los datos del potenciómetro se pueden visualizar en tiempo real en este link:
 
@@ -57,25 +57,25 @@ Todos los datos del potenciómetro se pueden visualizar en tiempo real en este l
 
 En nuestro caso el primer intento que tuvimos no se pudo comprobar si el código de recibir realmente funcionaba ya que no estaba con mis compañeras y el único computador que hay en mi casa es el mío, por lo que solo pude probar el código para enviar información. Para iniciar el proceso utilicé el ejemplo que usamos en clase para probar enviar información con solo un potenciómetro al Adafruit IO para comprobar que estuviese bien conectado el potenciómetro a la Raspberry Pi Pico 2 W.
 
-Cuando ya se logró verificar que si se enviaba la información al Adafruit, decidí buscar una manera de filtrar la información que enviamos al Adafruit para que no hayan problemas con la plataforma al momento de presentar, razón por la que empecé a buscar tutoriales de cómo conectar un push button a una Raspberry y encontré 
-el siguiente video: <https://www.youtube.com/watch?v=d_odoKbEjgg&t=120s> en donde nos enseña cómo poner un botón ya sea para utilizarlo como "push up" o "push down" lo cual era lo que estabamos buscando ya que en nuestro caso necesitabamos utilizar el push button como "push down", es decir, que solo funcione cuando lo mantenemos presionado y que cuando no se esté ejerciendo ningún tipo de fuerza no envíe nada de información. Como anteriormente ya habíamos comprobado que funcionaba el potenciómetro, decidimos agregar la variante del botón al código de manera manual pero fallamos, razón por la que decidimos pedirle ayuda a la inteligencia artifial _Claude_, teniendo así mi primer chat con una inteligencia artificial del cual aprendí lo siguiente:
+Cuando ya se logró verificar que, si se enviaba la información al Adafruit, decidí buscar una manera de filtrar la información que enviamos al Adafruit para que no hayan problemas con la plataforma al momento de presentar, razón por la que empecé a buscar tutoriales de cómo conectar un push button a una Raspberry y encontré 
+el siguiente video: <https://www.youtube.com/watch?v=d_odoKbEjgg&t=120s> en donde nos enseña cómo poner un botón ya sea para utilizarlo como "push up" o "push down" lo cual era lo que estábamos buscando ya que en nuestro caso necesitábamos utilizar el push button como "push down", es decir, que solo funcione cuando lo mantenemos presionado y que cuando no se esté ejerciendo ningún tipo de fuerza no envíe nada de información. Como anteriormente ya habíamos comprobado que funcionaba el potenciómetro, decidimos agregar la variante del botón al código de manera manual, pero fallamos, razón por la que decidimos pedirle ayuda a la inteligencia artificial _Claude_, teniendo así mi primer chat con una inteligencia artificial del cual aprendí lo siguiente:
 
 ![Mi primer chat con Claude](./imagenes/mi-primer-claude.png)
 
 Como se puede observar en la imagen, mi primer error fue el no saber cómo enviarle el código en el mismo mensaje donde le doy la información que necesito, razón por la cual la IA me tuvo que pedir en un mensaje aparte que le envíe el código lo cual fue toda una experiencia. Como segundo error es algo que en ese momento aún no me daba cuanta y es que le menciono que el botón va en el pin ``3V3`` y ``GP0``, cosa que más tarde Aarón me corrigió y me di cuenta de que no debería ir en ``3V3`` sino en ``GND``.
 
-Luego de que la IA generara el código, se probó y funcionó a medias ya que al momento de correr el código si no presionábamos el botón, en efecto, no se enviaba la información, pero cuando se presionaba el botón una vez empezaba a mandar información y no paraba a pesar de que ya no se le estaba ejerciendo ninguna fuerza a éste, por lo que nos dimos cuenta de que no estaba funcionando como push button sino que como un toggle. Como no se podía controlar el cúando dejar de mandar información, se tenía que parar de correr el código desde PuTTY presionando las teclas ``Ctrl + C``, cosa que le comentamos a Aarón en la clase que tuvimos el 18 de mayo y nos dijo que solucionemos el que funcione como push button con el sistema push down, y el resto del proceso de veía después y que nos apoyemos en la ayuda de Mateo para poder lograr todo ésto. Cuando llegó mateo, leyó el código y nos dimos cuenta de muchos errores dentro del código original, por lo que lo corregimos, lo corrimos y nos dimos cuenta de que no se estaba mandando nada de información cosa que pasó reiteradas veces y decidimos probar con otra Raspberry para revisar si era nuestro microcontrolador el problema, por lo que le pedimos prestada la Raspberry al grupo 09 compuesto por Josefa Araya, Débora Soto y Cristobal Vergara, los cuales muy amablemente nos prestaron su microcontrolador en donde probamos nuestro código y si funcionaba, cosa que le comenté a Mateo y me recomendó reiniciar la Raspberry y volver a hacer el proceso de transformarla e inyectarle bibliotecas, por lo que tuvimos que seguir los siguientes pasos:
+Luego de que la IA generase el código, se probó y funcionó a medias ya que al momento de correr el código si no presionábamos el botón, en efecto, no se enviaba la información, pero cuando se presionaba el botón una vez empezaba a mandar información y no paraba a pesar de que ya no se le estaba ejerciendo ninguna fuerza a éste, por lo que nos dimos cuenta de que no estaba funcionando como push button sino que como un toggle. Como no se podía controlar el cuándo dejar de mandar información, se tenía que parar de correr el código desde PuTTY presionando las teclas ``Ctrl + C``, cosa que le comentamos a Aarón en la clase que tuvimos el 18 de mayo y nos dijo que solucionemos el que funcione como push button con el sistema push down, y el resto del proceso de veía después y que nos apoyemos en la ayuda de Mateo para poder lograr todo esto. Cuando llegó mateo, leyó el código y nos dimos cuenta de muchos errores dentro del código original, por lo que lo corregimos, lo corrimos y nos dimos cuenta de que no se estaba mandando nada de información cosa que pasó reiteradas veces y decidimos probar con otra Raspberry para revisar si era nuestro microcontrolador el problema, por lo que le pedimos prestada la Raspberry al grupo 09 compuesto por Josefa Araya, Débora Soto y Cristobal Vergara, los cuales muy amablemente nos prestaron su microcontrolador en donde probamos nuestro código y si funcionaba, cosa que le comenté a Mateo y me recomendó reiniciar la Raspberry y volver a hacer el proceso de transformarla e inyectarle bibliotecas, por lo que tuvimos que seguir los siguientes pasos:
 
 1. Desconectar la Raspberry del computador
 2. Mantener presionado el botón que se encuentra en la placa de la Raspberry por unos segundos
 3. Mientras se mantiene presionado el botón, conectarlo al computador
 4. Soltar el botón
 
-Una vez ya completados esos pasos, ya tendremos la Raspbery reiniciada. Notaremos que se nos abre una ventana que es la carpeta del microcontrolador, en donde tendremos que insertar el archivo llamado ``adafruit-circuitpython-raspberry_pi_pico2_w-es-10.2.1.uf2`` que se puede descarcar en el siguiente link: <https://circuitpython.org/board/raspberry_pi_pico2_w/>. Luego de meter el archivo en la carpeta, notaremos que se cerrará la ventana del microcontrolador, volverá a aparecer con otro nombre y notaremos que dentro de ella hay una carpeta nombrada ``lib``, en donde tendremos que agregar las siguientes bibliotecas:
+Una vez ya completados esos pasos, ya tendremos la Raspbery reiniciada. Notaremos que se nos abre una ventana que es la carpeta del microcontrolador, en donde tendremos que insertar el archivo llamado ``adafruit-circuitpython-raspberry_pi_pico2_w-es-10.2.1.uf2`` que se puede descargar en el siguiente link: <https://circuitpython.org/board/raspberry_pi_pico2_w/>. Luego de meter el archivo en la carpeta, notaremos que se cerrará la ventana del microcontrolador, volverá a aparecer con otro nombre y notaremos que dentro de ella hay una carpeta nombrada ``lib``, en donde tendremos que agregar las siguientes bibliotecas:
 
 ![Bibliotecas en raspi](./imagenes/bibliotecas.png)
 
-Para poder descargar estas bibliotecas, nos tenemos que dirigir a el siguiente link: <https://circuitpython.org/libraries>, en donde tendremos que bajar hasta las sección llamada "Bundles", en donde tendremos que descargar el bundle para la versión "10.X".
+Para poder descargar estas bibliotecas, nos tenemos que dirigir a el siguiente link: <https://circuitpython.org/libraries>, en donde tendremos que bajar hasta la sección llamada "Bundles", en donde tendremos que descargar el bundle para la versión "10.X".
 
 ![Opciones de bundles](./imagenes/bundles.png)
 
@@ -207,15 +207,15 @@ Este botón se utilizó desde la primera prueba del código hasta el día en el 
 
 ![Push button pequeño](./imagenes/segundo-pushbutton.png)
 
-Cuando hicimos el cambio a éste push button, fue cuando ya habíamos logrado correr el código en donde el botón cumplia su función de filtrar la información con el sistema "push down", por lo cual lo utilizamos durante todo lo que restaba de clase, pero cuando volvimos a probarlo un día después nos dimos cuenta de que ya no respondía el botón. Como no nos funcionaba el botón, decidimos probar con el código que nos dio Mateo para ver si había algún problema con la conexión, pero cuando lo probamos nos dimos cuenta de que en realidad el problema era el botón, razón por la cual decidimos volver a cambiar el botón por el siguiente, que es el actual de nuestro proyecto:
+Cuando hicimos el cambio a éste push button, fue cuando ya habíamos logrado correr el código en donde el botón cumplía su función de filtrar la información con el sistema "push down", por lo cual lo utilizamos durante todo lo que restaba de clase, pero cuando volvimos a probarlo un día después nos dimos cuenta de que ya no respondía el botón. Como no nos funcionaba el botón, decidimos probar con el código que nos dio Mateo para ver si había algún problema con la conexión, pero cuando lo probamos nos dimos cuenta de que en realidad el problema era el botón, razón por la cual decidimos volver a cambiar el botón por el siguiente, que es el actual de nuestro proyecto:
 
 ![Botón actual](./imagenes/pushbutton-actual.png)
 
-Todos los push buttons que utilizamos en éste proyecto son botones de 4 pines, los cuales como menciona su nombre funcionan como botones pulsadores, es decir, que estos solo responden mientras uno los mantiene presionados (así como funcionan los timbres de las casas).
+Todos los push buttons que utilizamos en este proyecto son botones de 4 pines, los cuales como menciona su nombre funcionan como botones pulsadores, es decir, que estos solo responden mientras uno los mantiene presionados (así como funcionan los timbres de las casas).
 
 #### Potenciómetro
 
-El potenciómetro B20K que se utilizó en este proyecto no se cambió en ningún momento ya que no causó ningún problema. Como lo menciona en su nombre, éste potenciómetro tiene una resistencia de 20.000 ohmios, lo cual se va ajustando a medida que interactuamos con él y va controlando el paso del voltaje o de la corriente.
+El potenciómetro B20K que se utilizó en este proyecto no se cambió en ningún momento ya que no causó ningún problema. Como lo menciona en su nombre, este potenciómetro tiene una resistencia de 20.000 ohmios, lo cual se va ajustando a medida que interactuamos con él y va controlando el paso del voltaje o de la corriente.
 
 ![Potenciómetro B20K](./imagenes/potenciometro.jpg)
 
@@ -227,7 +227,7 @@ Este potenciómetro tiene 3 pines, los cuales cumplen la siguiente función:
 
 ## Actuador usado
 
-Nuestros actuadores en este proyecto son el Micro Servo Motor SG90 9g y una luz LED, en donde el LED cumple la función de detectar cuando estamos presionando el push button, es decir, cuándo estamos permitiendo que se envíe información. En cambio con el motor servo, este se encarga de recibir la información que le envía el potenciómetro y reacciona en base a este. -- NO SÉ QUE MÁS PONER ASI QUE TAMBIÉN REDACTAR MEJOR PLS AYUDA
+Los actuadores utilizados en este proyecto son el **Micro Servo Motor SG90 9g** y un **LED**. El LED cumple la función de indicar visualmente cuándo el botón se encuentra presionado, señalando que el sistema está habilitado para enviar información. Por otro lado, el Micro Servo Motor SG90 recibe los datos enviados desde el potenciómetro y responde mediante un movimiento angular, modificando su posición según los valores recibidos. De esta forma, ambos actuadores permiten representar visual y físicamente el funcionamiento del sistema.
 
 ## Código usado para enviar
 
@@ -240,9 +240,9 @@ import wifi
 import socketpool
 import adafruit_minimqtt.adafruit_minimqtt as MQTT
 
-# WiFi
+# conexión a wifi
 SSID = "si"
-PASSWORD = "mailo6192."
+PASSWORD = "mailo-6192"
 
 print("Conectando WiFi...")
 wifi.radio.connect(
@@ -251,7 +251,7 @@ wifi.radio.connect(
 )
 print("WiFi conectado")
 
-# MQTT
+# conexión mqtt
 pool = socketpool.SocketPool(wifi.radio)
 mqtt = MQTT.MQTT(
     broker="io.adafruit.com",
@@ -262,40 +262,35 @@ mqtt = MQTT.MQTT(
 mqtt.connect()
 print("MQTT conectado")
 
-# Potenciómetro A0
+# potenciómetro
 pot = analogio.AnalogIn(board.A0)
 
-# Botón GP0
+# se configura pin gp0 como entrada digital del botón
 button = digitalio.DigitalInOut(board.GP0)
 button.direction = digitalio.Direction.INPUT
-button.pull = digitalio.Pull.UP
+button.pull = digitalio.Pull.UP # resistencia interna pull-up
 
-# LED GP1
+# pin gp1 como salida digital para controlar el led
 led = digitalio.DigitalInOut(board.GP1)
 led.direction = digitalio.Direction.OUTPUT
 
-ultimo_valor = -1
+ultimo_valor = -1 # empieza en -1 para asegurar que siempre suceda el primer envío
 
 while True:
-    # Con PULL_UP:
-    # False = presionado
-    # True = suelto
     if not button.value:
-        # Encender LED al presionar
-        led.value = True
+        led.value = True # se enciende el LED cuando el botón se presiona
 
-        valor = pot.value * 1023 // 65535
-        # Evita enviar repetidos innecesarios
-        if abs(valor - ultimo_valor) > 5:
+        valor = pot.value * 1023 // 65535 # de valor crudo a escala de 0 a 1023
+        if abs(valor - ultimo_valor) > 5: # manda datos cuando el valor cambia por 5 unidades y así no se satura el adafruit
             print("Enviando:", valor)
             mqtt.publish(
                 "udpmontoyamoraga/feeds/potenciometro-05",
                 str(valor)
             )
             ultimo_valor = valor
-        time.sleep(0.2)
+        time.sleep(0.2) # descanso pequeño para que no lea taaaan rápido
     else:
-        # Apagar LED al soltar
+        # se apaga el led al soltar el botón
         led.value = False
         time.sleep(0.01)
 ```
@@ -308,17 +303,15 @@ while True:
 #include "Adafruit_MQTT.h"
 #include "Adafruit_MQTT_Client.h"
 
-// WiFi
+// conexión a wifi
 #define WLAN_SSID "si"
-#define WLAN_PASS "mailo6192."
+#define WLAN_PASS "mailo-6192"
 
-// Adafruit IO
+// conexión al adafruit io
 #define AIO_SERVER     "io.adafruit.com"
 #define AIO_SERVERPORT 1883
 #define AIO_USERNAME   "udpmontoyamoraga"
 #define AIO_KEY        "keydeaarón"
-
-// Pin LED
 #define LED_PIN 13
 
 WiFiClient client;
@@ -330,7 +323,7 @@ Adafruit_MQTT_Client mqtt(
   AIO_KEY
 );
 
-// Suscribirse al feed
+// se suscribe al feed que es de donde recibe la información
 Adafruit_MQTT_Subscribe potenciometro =
 Adafruit_MQTT_Subscribe(
   &mqtt,
@@ -341,21 +334,20 @@ Servo miServo;
 void MQTT_connect();
 
 void setup() {
-  Serial.begin(115200);
-  miServo.attach(9);
+  Serial.begin(115200); // ver si monitor serial está a 115200, de no ser así, cambiarlo
+  miServo.attach(9); // servo en pin ~9
 
-  // LED como salida
   pinMode(LED_PIN, OUTPUT);
   digitalWrite(LED_PIN, LOW);
 
-  Serial.println("Conectando WiFi");
+  Serial.println("Conectando WiFi"); // aquí se inicia la conexión al wifi
   WiFi.begin(WLAN_SSID, WLAN_PASS);
   while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
+    Serial.print("."); // puntitos hasta que lo logre
     delay(500);
   }
   Serial.println();
-  Serial.println("WiFi conectado");
+  Serial.println("WiFi conectado"); // yey!!
 
   mqtt.subscribe(&potenciometro);
 }
@@ -372,12 +364,12 @@ void loop() {
       Serial.print("Recibido: ");
       Serial.println(valorPot);
 
-      // Encender LED al recibir mensaje
       digitalWrite(LED_PIN, HIGH);
-      delay(200);
+      delay(200); 
       digitalWrite(LED_PIN, LOW);
 
-      // Convertir 0-1023 a 0-180°
+// aquí convierte la escala del potenciómetro de
+// 0 - 1023 a ángulos del servo (de 0 - 180°)
       int angulo = map(valorPot, 0, 1023, 0, 180);
       angulo = constrain(angulo, 0, 180);
 
@@ -390,34 +382,54 @@ void loop() {
 
 void MQTT_connect() {
   int8_t ret;
-  if (mqtt.connected()) {
+  if (mqtt.connected()) { 
     return;
   }
   Serial.print("Conectando MQTT...");
-  while ((ret = mqtt.connect()) != 0) {
-    Serial.println(mqtt.connectErrorString(ret));
-    mqtt.disconnect();
-    delay(5000);
+  while ((ret = mqtt.connect()) != 0) { // se intenta reconectar en caso de que suceda algo
+    Serial.println(mqtt.connectErrorString(ret)); // si no logra hacerlo, imprime error y
+    mqtt.disconnect(); // se desconecta
+    delay(5000);  // pero vuelve a intentarlo luego de un reposo de 5 seg
   }
-  Serial.println(" conectado");
+  Serial.println(" conectado"); // logrado!! yey
 }
 ```
 
-## Imágenes del proyecto
+## Imagenes del proyecto
+
+### PRIMERAS CONEXIONES 
 
 **ENVIAR**
-![titulo](./imagenes/enviar.jpeg)
+![enviar](./imagenes/enviar.jpeg)
 
 **RECIBIR**
-![titulo](./imagenes/recibir.jpeg)
+![recibir](./imagenes/recibir.jpeg)
 
 **CONJUNTO**
-![titulo](./imagenes/conjunto.jpeg)
+![conjunto](./imagenes/conjunto.jpeg)
+
+### CONEXIONES FINALES
+
+![enviar2](./imagenes/conexion-enviar.jpeg)
+
+![recibir2](./imagenes/conexion-recibir.jpeg)
+
+![recibir3](./imagenes/conexion-recibir2.jpeg)
 
 ## Animaciones del proyecto
+
+![Potenciómetro](./imagenes/potenciometro_funcionando.gif)
+
+![nico help](./imagenes/nico_llamando_a_mateo.gif)
+
+![luz botón](./imagenes/luz-se-enciende.gif)
+
+![vidrio](./imagenes/vidrio.gif)
+
+---
 
 ## Bibliografía
 
 + <https://www.youtube.com/watch?v=d_odoKbEjgg&t=120s>, en donde nos enseñan cómo conectar un push button a una raspberry.
 + <https://www.instructables.com/Control-LED-From-Internet-Using-Raspberry-Pi-Pico-/>, en donde nos enseñan cómo conectar un LED a una raspberry.
-+ <https://www.sameskydevices.com/blog/push-button-switches-101>, en donde se nos habla de los botones pulsadores y de los interruptores.
++ <https://www.sameskydevices.com/blog/push-button-switches-101>, en donde se nos habla de los botones pulsadores y de los interruptores. 

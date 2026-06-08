@@ -29,7 +29,7 @@ para salir es control+C, si no funciona control+D
 abrir el archivo descargado desde aquí (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), configurar para poder ver lo que está haciendo la raspberry pi (ojo con el puerto) 
 
 
-## prueba de Código 
+## Prueba de Código 
 
 En el archivo code.py colocar el código 
 
@@ -47,4 +47,6 @@ En el archivo code.py colocar el código
 
 Cuando escribe  3V3 significa 3.3 (la V) 
 
-La conexción es en el 23 (tierra) 31 y 36 v_cc
+La conexción es en el 23 (tierra en la palca esta como un cuadrado) 31 y 36 v_cc
+
+<img width="1347" height="780" alt="image" src="https://github.com/user-attachments/assets/e268a6f1-fda6-4e90-a8e4-d73455c26957" />

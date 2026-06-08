@@ -1,0 +1,107 @@
+/******************
+   PROYECTO: CONTROL LED DESDE ADAFRUIT IO
+******************/
+
+#include "AdafruitIO_WiFi.h"
+
+// ==========================================
+// CREDENCIALES WIFI Y ADAFRUIT IO
+// ==========================================
+
+#define IO_USERNAME  "AlegriaColoma"
+#define IO_KEY       "blabla"
+
+#define WIFI_SSID    "cata"
+#define WIFI_PASS    "blabla"
+
+// ==========================================
+// CONEXIÓN ADAFRUIT IO
+// ==========================================
+
+AdafruitIO_WiFi io(
+  IO_USERNAME,
+  IO_KEY,
+  WIFI_SSID,
+  WIFI_PASS
+);
+
+// ==========================================
+// CONFIGURACIÓN
+// ==========================================
+
+// Pin LED
+const int ledPin = 13;
+
+// Feed
+AdafruitIO_Feed *controlLED = io.feed("prueba");
+
+// ==========================================
+// SETUP
+// ==========================================
+
+void setup() {
+
+  // Iniciar LED
+  pinMode(ledPin, OUTPUT);
+
+  // Monitor serial
+  Serial.begin(115200);
+
+  while(!Serial);
+
+  Serial.println("Conectando a Adafruit IO...");
+
+  // Conexión
+  io.connect();
+
+  // Evento al recibir mensaje
+  controlLED->onMessage(cambiarEstadoLED);
+
+  // Esperar conexión
+  while(io.status() < AIO_CONNECTED) {
+
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println("¡Conectado correctamente!");
+}
+
+// ==========================================
+// LOOP PRINCIPAL
+// ==========================================
+
+void loop() {
+
+  // Mantener conexión
+  io.run();
+}
+
+// ==========================================
+// FUNCIÓN PARA PRENDER/APAGAR LED
+// ==========================================
+
+void cambiarEstadoLED(AdafruitIO_Data *data) {
+
+  String estado = data->toString();
+
+  Serial.print("Dato recibido: ");
+  Serial.println(estado);
+
+  // PRENDER LED
+  if(estado == "ON") {
+
+    digitalWrite(ledPin, HIGH);
+
+    Serial.println("LED ENCENDIDO");
+  }
+
+  // APAGAR LED
+  else if(estado == "OFF") {
+
+    digitalWrite(ledPin, LOW);
+
+    Serial.println("LED APAGADO");
+  }
+}

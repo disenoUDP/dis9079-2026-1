@@ -28,7 +28,7 @@ Primero se establece la conexión a internet, luego se configura el protocolo MQ
 
 Esto se relaciona directamente con lo trabajado anteriormente en clase, donde se envían datos desde un sensor hacia una plataforma para su visualización.
 
-![imagenes](./imagenes/rpb.jpg)
+<img src="./imagenes/rpb.jpg" alt="tinkercad" width="300">
 
 nos vemos a la vuelta del receso
 

@@ -8,24 +8,34 @@ Lunes 18 Mayo 2026
 
 ## Integrantes
 
-* [Camila Parada](https://github.com/Camila-Parada): 
-* [Vania Paredes](https://github.com/paredesvania): 
+* [Camila Parada](https://github.com/Camila-Parada): Código, circuito, investigación e ideas
+* [Vania Paredes](https://github.com/paredesvania): Código, modelado e impresión 3D, registro
 
 ## Descripción del proyecto
 
- "Soniloide" es un dispositivo que produce sonido a distancia.
+_**"Soniloide"**_ es un dispositivo que produce sonido a distancia.
 Inspirados en los instrumentos musicales de la empresa [“Maywa Denki”](https://www.maywadenki.com/) es que surge este nuevo artefacto. 
-[![Video chan](https://img.youtube.com/vi/fI1Mr4SIES4/maxresdefault.jpg)](https://youtu.be/fI1Mr4SIES4?si=4tkdgTu-GWVezCG9)
-▼ Video de “Chan: cómo armar el Kit” (チャン　工作キットのつくり方)
 
-Mediante mecanismos, botones, un solenoide, placas programáticas con wifi y otros componentes es que se emiten ruidos mediante el envío y recepción de datos a través de [Adafruit IO](https://io.adafruit.com/welcome).
 
-De forma más detallada el proyecto consta de enviar señales inalámbricamente. Para ello, tras conectar la RaspBerry Pi Pico 2W, el usuario puede observar la información en tiempo real del estado de la placa. Tras ello debe presionar un botón que permite el funcionamiento de un potenciómetro, el cual al girarlo envía un porcentaje (dato) a un Arduino R4 Wifi conectado a un solenoide. Dicha comunicación permite que el motor (solenoide) impulse los bracitos de “Soniloide” de forma rítmica, lo que produce un sonido por los platillos que este tiene anclado en sus extremos.
+[![Ver video](https://img.youtube.com/vi/fI1Mr4SIES4/hqdefault.jpg)](https://www.youtube.com/watch?v=fI1Mr4SIES4&t=1s)
+▼ _Video de “Chan: cómo armar el Kit” (チャン　工作キットのつくり方)_
+
+
+El proyecto consiste en un sistema de comunicación inalámbrica capaz de controlar una acción física a distancia. A través de la plataforma [Adafruit IO](https://io.adafruit.com/welcome), una Raspberry Pi Pico 2W envía datos en tiempo real a un Arduino R4 WiFi, el cual activa un solenoide que da vida al artefacto.
+
+El flujo de funcionamiento es el siguiente: el usuario conecta la Raspberry Pi Pico 2W y puede monitorear en tiempo real el estado de la placa. Al presionar un botón, se habilita un potenciómetro que, al girarse, envía un valor porcentual a través de Adafruit IO hacia el Arduino R4 WiFi. Este último, al recibir la señal, acciona el solenoide, el cual mueve rítmicamente los brazos de "Soniloide". Cada oscilación hace que los platillos ubicados en los extremos de esos brazos golpeen entre sí, generando sonido.
+
+En síntesis, "Soniloide" traduce el giro de un potenciómetro en movimiento mecánico y, finalmente, en música.
+
+## Primer acercamiento en clases
+
+![Video prueba](./imagenes/solenoide.gif)
 
 ## Video en Funcionamiento
 
-[![Video prueba](https://img.youtube.com/vi/Q4U23jE60xg/maxresdefault.jpg)](https://youtube.com/shorts/Q4U23jE60xg?si=ce4Ev4bNzpgEaBKN)
-▼ Video Completo aún no hecho
+[![Video prueba](https://img.youtube.com/vi/oNwlt8zLPlE/hqdefault.jpg)](https://youtu.be/oNwlt8zLPlE?si=q5KmNvolMyJ7Z7kM)
+
+▼ _Video funcionamiento piezas del proyecto (falta incluir carcasa)_
 
 
 ## Bill of materials
@@ -34,7 +44,7 @@ De forma más detallada el proyecto consta de enviar señales inalámbricamente.
 | ------------------- | ----- | -------- | ------- | ----------------  |
 | Arduino UNO R4 WiFi | Placa de desarrollo | 1   | $38.990 | <https://mcielectronics.cl/shop/product/43402/> |
 | Raspberry Pi Pico 2 W | Placa de desarrollo | 1   | $14.990 | <https://mcielectronics.cl/shop/product/74358//> |
-| Mini Protoboard 400 Puntos | Placa prototipado | 2  | $1.500 | <https://afel.cl/products/mini-protoboard-400-puntos> |
+| Mini Protoboard 400 Puntos | Placa prototipado | 1  | $1.500 | <https://afel.cl/products/mini-protoboard-400-puntos> |
 | Kit 200 Botones Pulsadores | Componente | 1 | $4.500 | <https://afel.cl/products/kit-200-botones-pulsadores-distintos-tamanos/> |
 | Cable Dupont Macho Macho 10cm | Cable | Pack 40 | $2.590 | <https://mcielectronics.cl/shop/product/cable-dupont-macho-macho-20cm-pack-40-unidades/> |
 | Mini Solenoide DC 5V | Componente | 1 | $ 3.980 | <https://hubot.cl/producto/mini-solenoide%C2%82-dc-5v/> |
@@ -44,18 +54,11 @@ De forma más detallada el proyecto consta de enviar señales inalámbricamente.
 | Potenciometro B100K | Componente | 1 | $495 | <https://altronics.cl/potenciometro-lineal-100k-b100k> |
 | Pantalla LCD OLED 0,96 | Componente | 1 | $4.500 | <https://afel.cl/products/pantalla-lcd-oled-azul-y-amarillo-0-96> |
 
-### Modelado 3D en Fusion360, PLA transparente.
-Felix nos ayudó con el modelado, teníamos problemas con las tolerancias y el mecanismo.
-
-
-![modelado](./imagenes/solinoide1.png)
-![modelado](./imagenes/piezas.png)
-![modelado](./imagenes/solinoide.png) 
-
-
 ## Input: Raspberry pi pico 2w con Sensor
 
-La primera pieza a crear es el circuito con el emisor. Para ello he de usar la placa previamente mencionada con un botón conectado. A continuación se desarrolla el código en VS Code para poder realizar las lecturas de un botón y un potenciómetro para enviarlas a Adafruit IO. Cabe mencionar que la información mostrada en la terminal aparece en un OLED conectado al circuito.
+El circuito emisor se construye en torno a la Raspberry Pi Pico 2W, a la que se conectan un botón y un potenciómetro como elementos de entrada. El botón actúa como habilitador: al presionarlo, permite que el giro del potenciómetro sea leído y procesado. El valor resultante, expresado como un porcentaje, se transmite de forma inalámbrica hacia Adafruit IO.
+
+El código se desarrolla en VS Code y gestiona la lectura simultánea de ambos componentes, así como el envío del dato a la plataforma. Adicionalmente, la información que normalmente se imprimiría en la terminal se redirige a una pantalla OLED conectada al circuito, lo que permite monitorear el estado del dispositivo en tiempo real.
 
 ### Código para enviar
 
@@ -88,11 +91,11 @@ import adafruit_displayio_ssd1306
 # ------------------------------------------------------------
 # CONFIGURACIÓN
 # ------------------------------------------------------------
-WIFI_SSID     = "WiFi_Mesh-075408"
-WIFI_PASSWORD = "y3Fk6ush"
+WIFI_SSID     = "iPhone-cs"
+WIFI_PASSWORD = "lasagna342"
 
 AIO_USERNAME  = "Camila_Parada"
-AIO_KEY       = ""
+AIO_KEY       = "Clave-io"
 
 FEED          = f"{AIO_USERNAME}/feeds/papa-prueba"
 
@@ -270,7 +273,11 @@ while True:
 
 ## Output: Arduino UNO R4 Wifi con Solenoide
 
-Para la recepción de la información y activación del solenoide fue necesario
+El circuito receptor se construye en torno al Arduino UNO R4 WiFi, encargado de recibir los datos desde Adafruit IO y traducirlos en una acción física. Para controlar el solenoide, un motor que requiere mayor corriente de la que la placa puede entregar directamente, se incorpora un relé de 1 canal como elemento intermediario.
+
+El sistema requiere una doble alimentación: la placa opera con su fuente habitual, mientras que el relé y el solenoide se alimentan desde una fuente de poder externa de 5V y 2A. Esta separación es indispensable para el correcto funcionamiento del conjunto, ya que sin energía suficiente en ambos circuitos el solenoide no puede accionarse.
+
+Una vez que todo el circuito está conectado y energizado, el Arduino se mantiene a la escucha de los valores publicados en Adafruit IO. Al recibir un dato, activa o desactiva el relé según corresponda, lo que produce el movimiento del solenoide.
 
 ### Código para recibir
 
@@ -295,13 +302,13 @@ Para la recepción de la información y activación del solenoide fue necesario
 #include <Adafruit_MQTT_Client.h>
 
 // ---- CONFIGURACIÓN ----------------------------------------
-const char* WIFI_SSID     = "WiFi_Mesh-075408";
-const char* WIFI_PASSWORD = "y3Fk6ush";
+const char* WIFI_SSID     = "iPhone-cs";
+const char* WIFI_PASSWORD = "lasagna342";
 
 const char* AIO_SERVER    = "io.adafruit.com";
 const int   AIO_PORT      = 1883;
 const char* AIO_USERNAME  = "Camila_Parada";
-const char* AIO_KEY       = "";
+const char* AIO_KEY       = "Clave-io";
 
 const char* AIO_FEED      = "Camila_Parada/feeds/papa-prueba";
 
@@ -431,32 +438,81 @@ void conectarMQTT() {
 ## Mapa de flujo
 
 ```mermaid
+---
+config:
+  layout: fixed
+---
 flowchart TB
-    n6["Esos datos son almacenados en Adafruit.IO"] --> n7["Los datos son recibidos en (Arduino recibir)"]
-    A("El (Arduino enviar)<br>se conecta a corriente") --> n5["Al abrir el monitor serial se muestra lo que sucede en la placa"]
-    n5 --> n1["Se enciende y procede a conectarse a internet"] & n3["Procede a conectarse a (Adafruit.IO)"]
-    n3 --> n2["El potenciómetro captura información"]
-    n1 --> n2
-    n2 --> n9["La información es transformada a volumen"]
-    n9 --> n6
-    n8["El (Arduino recibir) se conecta a corriente"] --> n10["Se enciende, se conecta a internet y Adafruit.IO"]
-    n10 --> n7
-    n7 --> n11["Si valor es = 0"] & n12["Si el valor es > 0"]
-    n11 --> n13["No suena nada"] & n14["No se ilumina la matriz de leds"]
-    n12 --> n15["La matriz de leds se ilumina acorde al valor de volumen"] & n16["Se emite un sonido que se ajusta al valor del volumen
-    "]
+    A["Se da energía a todo el circuito"] --> n19["Se conectan a internet ambas placas"]
+    n19 --> n5["El proyecto queda a la espera de un usuario"]
+    n5 --> n17["Raspberry pi pico 2w<br>(Emisor)"]
+    n17 --> n20["Botón"] & n22["Pantalla"]
+    n20 --- n23["Presionar"]
+    n23 --> n24["Si"] & n25["No"]
+    n25 -.-> n5
+    n25 --> n36["Potenciometro apagado"]
+    n24 --> n21["Potenciometro activo"]
+    n22 --> n26["Muestra el estado del potenciómetro"]
+    n21 --> n29["girar perilla"]
+    n29 --> n30["Si"] & n31["No"]
+    n31 --> n32["No pasa nada"]
+    n30 --> n33["Registra y envía datos"]
+    n33 --> n26 & n34["Adafruit IO"]
+    n34 --> n35["Recibe la información"]
+    n38["Relé"] --> n39["Envía corriente"]
+    n37["Arduino UNO R4 Wifi <br>(Receptor)"] --> n38
+    n35 --> n40["Si"] & n41["No"]
+    n40 --> n37
+    n41 --> n32
+    n39 --> n42["Si"] & n41
+    n42 --> n43["Activa solenoide"]
 
-    n8@{ shape: rect}
+    A@{ shape: rect}
+    n19@{ shape: rect}
+    n5@{ shape: rect}
+    n17@{ shape: rounded}
+    n20@{ shape: rounded}
+    n22@{ shape: rounded}
+    n23@{ shape: diam}
+    n21@{ shape: rect}
+    n29@{ shape: diam}
+    n33@{ shape: diam}
+    n35@{ shape: diam}
+    n38@{ shape: rect}
+    n39@{ shape: diam}
+    style n23 stroke-width:2px,stroke-dasharray: 0,font-size:14px
 ```
-### Monitor Serial de Arduino
-..................................................................................................
 
-## Imágenes del proyecto
+## Modelado de carcasa e impresión 3D
+
+Para esta parte Felix nos ayudó con el modelado de la carcasa, dado problemas previos con las tolerancias y el mecanismo. El modelado fue impreso en PLA transparente en la impresora Bambu x1c. Para otros detalles de construcción, ocupamos gomas para el pelo y un palo de coyac.
+
+![modelado](./imagenes/solinoide1.png)
+![modelado](./imagenes/solinoide.png) 
+![modelado](./imagenes/piezas.png)
 ![modelado](./imagenes/carita.jpeg)  
 ![modelado](./imagenes/espalda.jpeg)  
 
 ## Animaciones del proyecto
 ![mecanismo](./imagenes/mecanismo.gif)
+
+## Simulaciones
+
+En este apartado se incluyen unas simulaciones virtuales de cada parte del circuito. Puesto que no existen simuladores online que permitan la comunicación entre una placa y adafruit io, además de los componentes usados, es que se emulan algunos de los comportamientos que tiene cada módulo de forma independiente.
+
+:warning: Cabe aclarar que ambas simulaciones demuestran ideas aproximadas del proyecto en si, teniendo modificaciones en sus códigos y circuitos. Los resultados mostrados en el monitor serial son similares a los del proyecto final.
+
+### a) [Circuito enviar](https://wokwi.com/projects/464855266213787649)
+
+Dados las limitaciones anteriormente mencionadas, es que se escoge a wokwi como el simulador base a utilizar dado que posee todos los elementos necesarios. En este, el circuito permite activar un potenciómetro y generar lecturas que son mostradas tanto en el monitor serial como en la pantalla OLED. 
+
+![modelado](./imagenes/simulacion-wokwi.jpeg) 
+
+### b) [Circuito recibir](https://www.tinkercad.com/things/elThxO0w4nK-circuito-receptor-aproximacion)
+
+Pese a que wokwi no posee el solenoide (ni otro motor similar), es que cambié de simulador a Tinkercad. Este tampoco cuenta con la pieza, pero si tiene un reemplazo: el motor cc. Otra parte inexistente es un [relé de un canal](https://afel.cl/products/rele-de-01-canal), pero este módulo se replica a través de un circuito hecho sobre una protoboard. El código muestra el comportamiento de la otra parte del circuito, el cual envía datos en forma de porcentaje que se traducen en señales que aceleran por un tiempo al motor cc. Tras un rato cambia de estado a apagado y viceversa.
+
+![modelado](./imagenes/simulacion-tinkercad.jpeg) 
 
 ## Investigaciones individuales
 
@@ -470,12 +526,11 @@ Aportes, información y exploraciones personales compartidas con el equipo.
 
 * <https://learn.adafruit.com/series/adafruit-io-basics>
 * <https://github.com/adafruit/Adafruit_IO_Arduino>
-*
-*<https://github.com/adafruit/Adafruit_IO_Arduino/blob/master/examples/adafruitio_01_subscribe/adafruitio_01_subscribe.ino>
+* <https://github.com/adafruit/Adafruit_IO_Arduino/blob/master/examples/adafruitio_01_subscribe/adafruitio_01_subscribe.ino>
 * <https://docs.arduino.cc/tutorials/uno-r4-wifi/wifi-examples/#wi-fi-udp-send-receive-string>
 * <https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf>
-* <https://www.youtube.com/watch?v=nwVRMU9grSI&t=501s >
-* <https://youtu.be/fI1Mr4SIES4?si=58ErEgpNSsdA2vBf >
-* <https://www.youtube.com/watch?v=RfrDtAEQ95c&t=6s >
-* <https://www.youtube.com/watch?v=O7uXMCD8bZM >
-* <http://www.zonhen.com/solenoid/ZHO-0420-en.html >
+* <https://www.youtube.com/watch?v=nwVRMU9grSI&t=501s>
+* <https://youtu.be/fI1Mr4SIES4?si=58ErEgpNSsdA2vBf>
+* <https://www.youtube.com/watch?v=RfrDtAEQ95c&t=6s>
+* <https://www.youtube.com/watch?v=O7uXMCD8bZM>
+* <http://www.zonhen.com/solenoid/ZHO-0420-en.html>

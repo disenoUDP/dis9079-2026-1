@@ -10,6 +10,44 @@ El sensor PIR (Passive Infrared Sensor) es un sensor electrónico diseñado para
 
 En el proyecto desarrollado, el sensor PIR funciona como el elemento de entrada del sistema. Cuando detecta movimiento, la Raspberry Pi Pico 2 W envía la información hacia Adafruit IO, iniciando la comunicación inalámbrica con el Arduino Uno R4 WiFi.
 
+### Conexiones del sensor PIR
+
+El sensor PIR HC-SR501 posee tres pines principales que permiten su funcionamiento junto a la Raspberry Pi Pico 2 W:
+
+#### VCC
+Corresponde a la alimentación del módulo.
+
+- Se conecta al pin de 5V o 3.3V de la Raspberry Pi Pico 2 W.
+- Permite energizar el sensor para que pueda detectar movimiento.
+
+#### GND
+Es la conexión a tierra del circuito.
+
+- Se conecta al pin GND de la Raspberry Pi Pico 2 W.
+- Completa el circuito eléctrico y estabiliza la alimentación.
+
+#### OUT
+Es la salida digital del sensor.
+
+- Se conecta a un pin GPIO de entrada de la Raspberry Pi Pico 2 W.
+- Envía un valor:
+   - HIGH (1) cuando detecta movimiento.
+   - LOW (0) cuando no detecta movimiento.
+
+#### Conexión del botón
+El botón utilizado para habilitar el funcionamiento del sensor también posee conexiones simples:
+
+- Un terminal del botón se conecta a un pin GPIO de la Raspberry Pi Pico 2 W.
+- El otro terminal se conecta a GND.
+- Mediante programación se utiliza una resistencia pull-up interna para detectar cuándo el botón es presionado.
+
+Cuando el usuario presiona el botón:
+
+1. La Raspberry habilita la lectura del sensor PIR.
+2. El sensor comienza a detectar movimiento.
+3. Si detecta presencia, se envía información a Adafruit IO.
+4. El Arduino Uno R4 WiFi recibe los datos.
+5. La pantalla OLED reproduce la animación pixel art.
 
 ### Funcionamiento 
 
@@ -144,6 +182,14 @@ Durante el desarrollo del proyecto se aprendió que:
 - La comunicación inalámbrica requiere optimizar frecuencia de envío.
 - La visualización gráfica mejora mucho la experiencia del usuario.
 
+### Empresa que utiliza sensores PIR
+
+Una empresa reconocida que utiliza sensores PIR es Philips mediante su sistema de iluminación inteligente Philips Hue Motion Sensor.
+
+Este dispositivo detecta movimiento dentro de una habitación y activa automáticamente luces inteligentes. También permite automatizar rutinas de ahorro energético y seguridad doméstica.
+
+Otro ejemplo es Ring, que incorpora sensores PIR en cámaras y timbres inteligentes para detectar personas y activar grabaciones de seguridad.
+
 ---
 
 ## Actuador
@@ -152,6 +198,30 @@ Durante el desarrollo del proyecto se aprendió que:
 OLED significa “Organic Light Emitting Diode”. Es una pantalla formada por diodos orgánicos emisores de luz que pueden iluminarse individualmente sin necesidad de retroiluminación.
 
 En el proyecto, la pantalla OLED actúa como el actuador principal del sistema, ya que responde visualmente a la información recibida desde Adafruit IO.
+
+### Conexión de la pantalla OLED
+
+La pantalla OLED utilizada funciona mediante comunicación I2C, por lo que requiere cuatro conexiones principales:
+
+#### VCC
+- Alimentación de la pantalla.
+- Conectado a 3.3V o 5V.
+#### GND
+- Tierra del circuito.
+#### SDA
+- Línea de datos I2C.
+- Envía la información gráfica hacia la pantalla.
+#### SCL
+- Línea de reloj I2C.
+- Sincroniza la comunicación entre el Arduino y la pantalla OLED.
+
+En el Arduino Uno R4 WiFi:
+
+- SDA se conecta al pin SDA.
+- SCL se conecta al pin SCL.
+
+Gracias a esta conexión, el Arduino puede enviar los frames de la animación y mostrar el GIF del alien caminando en la pantalla.
+
 
 ### Funciones
 
@@ -248,6 +318,23 @@ Durante el proyecto se aprendió que:
 - El control de frecuencia de actualización es importante.
 - La integración entre IoT y visualización gráfica mejora la experiencia del usuario.
 - Un actuador puede transformar datos simples en respuestas visuales atractivas e intuitivas.
+
+### Proyectos que utilizan pantallas OLED 
+
+Consolas retro portátiles
+
+Existen múltiples proyectos de consolas mini retro que usan pantallas OLED SSD1306 de 128x64 píxeles para ejecutar juegos simples estilo arcade o pixel art.
+
+Estas pantallas son ideales porque:
+- tienen buena visibilidad,
+- consumen poca energía,
+- permiten gráficos monocromáticos rápidos.
+
+Ejemplos:
+- mini Game Boy DIY,
+- juegos tipo Snake,
+- Tetris,
+- Flappy Bird en Arduino.
 
 ## Bibliografía
 

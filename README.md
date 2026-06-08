@@ -29,10 +29,10 @@ lunes, 2:30 a 5:20pm
 | [08](./00-docentes/sesion-08/) | 04-27 lun   | actuadores, motor servo, buzzer                       |
 | receso                         | 05-01/09    | semana de receso                                      |
 | [09](./00-docentes/sesion-09/) | 05-11 lun   | trabajo en solemne 2                                  |
-| [10](./00-docentes/sesion-10/) | 05-18 lun   | solemne 2                                             |
-| [11](./00-docentes/sesion-11/) | 05-25 lun   | escritura de manuales y diagramas                     |
-| [12](./00-docentes/sesion-12/) | 06-01 lun   | comunicación bidireccional                            |
-| [13](./00-docentes/sesion-13/) | 06-08 lun   | trabajo en examen                                     |
+| [10](./00-docentes/sesion-10/) | 05-18 lun   | entrega de trabajo escrito solemne 2                  |
+| [11](./00-docentes/sesion-11/) | 05-25 lun   | retroalimentación, demos para documentación solemne 2 |
+| [12](./00-docentes/sesion-12/) | 06-01 lun   | conformación de grupos y temáticas para examen        |
+| [13](./00-docentes/sesion-13/) | 06-08 lun   | pseudocódigo, diagramas de flujo                      |
 | [14](./00-docentes/sesion-14/) | 06-15 lun   | trabajo en examen                                     |
 | [15](./00-docentes/sesion-15/) | 06-22 lun   | examen                                                |
 

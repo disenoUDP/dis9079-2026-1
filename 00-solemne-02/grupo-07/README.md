@@ -11,9 +11,9 @@
 
 Como encargo para la segunda solemne del curso, se nos pidió nuevamente desarrollar un sistema de comunicación inalámbrica. Para esto, trabajamos con dos microcontroladores distintos, programados mediante código: un Arduino Uno R4 WiFi y una Raspberry Pi Pico 2 W.
 
-El proyecto consiste en un sistema de detección de movimiento que envía información de forma remota. Para esto, se utilizó un sensor PIR que se activa mediante un botón. Una vez encendido, el sensor detecta movimiento y transmite esta información a través de la Raspberry Pi Pico 2 W hacia la plataforma Adafruit IO. 
+El proyecto consiste en un sistema de detección de movimiento que envía información de forma remota. Para ello, se utilizó un sensor PIR que se activa mediante un botón. Una vez encendido, el sensor detecta el movimiento y transmite esta información a través de la Raspberry Pi Pico 2 W hacia la plataforma Adafruit IO.
 
-Luego, estos datos son recibidos por el Arduino Uno R4 WiFi, el cual interpreta la señal y genera una respuesta visual en una pantalla OLED, que también se activa mediante un botón. En esta pantalla se muestran animaciones en pixel art, compuestas por tres frames por personaje, que, al reproducirse de manera secuencial, simulan movimiento, funcionando de forma similar a un GIF. Las animaciones muestran a una persona y un alien caminando, mientras que el fantasma se desplaza flotando. 
+Luego, estos datos son recibidos por el Arduino Uno R4 WiFi, que interpreta la señal y genera una respuesta visual en una pantalla OLED, la cual también se activa mediante un botón. En esta pantalla se muestran animaciones en pixel art de un alienígena, compuestas por seis frames (fotogramas) que, al reproducirse de forma secuencial, simulan movimiento (tipo GIF). La animación representa una especie de contacto alienígena, donde el personaje se desplaza caminando.
 
 La lógica del sistema permite que, al detectar movimiento en el sensor, se active toda la cadena de comunicación hasta transformar ese evento en una representación visual. De esta forma, se traduce una acción física en una respuesta digital interactiva.
 
@@ -33,8 +33,6 @@ El objetivo principal es evidenciar la integración entre sensores, actuadores y
 | Cable USB A a USB-C | 1 | $10.990 | <https://www.falabella.com/falabella-cl/product/17549587/>|
 | Cable USB A a Micro USB | 1 | $4.990 | <https://mcielectronics.cl/shop/product/cable-usb-a-micro-usb-negro/?srsltid=AfmBOor5DUGYyFpc1Hoo8KOhWzD-8jsF487IqqcuJiWnDG3BJi_rRwnQ> |
 
-
-
 ## Sensor usado
 
 Se utilizó un sensor PIR junto con un push button. El funcionamiento del sistema fue el siguiente: al presionar el botón, se activaba el sensor PIR, el cual detectaba movimiento mediante cambios en la radiación infrarroja (calor corporal). Cuando detecta movimiento, el sensor envía una señal al sistema Adafruit. Para detener el envío de datos, se presiona nuevamente el botón, desactivando el sensor.
@@ -47,9 +45,233 @@ Se utilizó como actuador una pantalla OLED junto con un push button. El funcion
 
 La pantalla OLED funciona mediante comunicación digital (generalmente protocolo I2C), lo que permite transmitir datos desde el microcontrolador hacia la pantalla usando pocos pines. Este tipo de pantalla se caracteriza por su bajo consumo energético, buen contraste y capacidad de mostrar texto o gráficos de forma clara. Por otro lado, el push button es un interruptor momentáneo que cierra el circuito solo mientras se presiona, enviando una señal digital al sistema.
 
+## Aprendizajes y errores
+
+Con el sensor PIR tuvimos varios problemas. Trabajamos con dos modelos distintos: uno que venía con cables integrados y otro sin ellos. Por lo que investigamos, el que tenía cables estaba modificado. El sensor con cables integrados nunca logró funcionar correctamente, incluso después de probar distintos códigos y configuraciones.
+
+![sensores](imagenes/sensores.png)
+
+Finalmente cambiamos al otro sensor, y ahí el sistema comenzó a responder, aunque no de la manera que esperábamos. Lo más difícil fue calibrar la sensibilidad, ya que el sensor detectaba movimiento con cambios mínimos en el entorno.
+
+Investigando sobre su funcionamiento, descubrimos que el sensor cuenta con dos reguladores. Uno controla la sensibilidad: mientras más alto está ajustado, más sensible es el sensor; y mientras más bajo, menos sensible se vuelve. El segundo regulador controla el tiempo que la señal permanece activada: si está alto, la salida se mantiene en estado HIGH por más tiempo, y si está bajo, vuelve más rápido al estado LOW.
+
+Y las principales dificultades que tuvimos al realizar la animación fueron que, al principio, los frames no corrían correctamente en la pantalla. Después de investigar y ver varios videos, logramos que la pantalla mostrará un frame estático, aunque todavía sin movimiento.
+
+El siguiente desafío fue agregar los demás frames, ya que teníamos que convertir cada imagen individualmente usando Image2CPP, y en varias ocasiones el código nos arrojaba errores.
+
+Además, en un inicio la idea era trabajar con 3 personajes distintos, cada uno con sus propias animaciones y frames. Sin embargo, esto hacía mucho más complejo el proceso y aumentaba la cantidad de errores al momento de ordenar y mostrar las animaciones correctamente. 
+
+Finalmente, conseguimos que el GIF funcionara correctamente y se reprodujera completo en la pantalla.
+
+### Pruebas de animación
+
+![pruebas](imagenes/pruebas1.gif)
+
+![pruebas](imagenes/pruebas.gif)
+
+![pruebas](imagenes/pruebas3.jpeg)
+
+![pruebas](imagenes/pruebas2.jpeg)
+
+### Resultado final
+## Resultado final
+A pesar de los errores y contratiempos que tuvimos durante el desarrollo, finalmente logramos obtener una animación funcional para el proyecto.
+Después de varias pruebas, decidimos simplificar la idea inicial y trabajar solo con un personaje, agregándole más frames para mejorar la fluidez del movimiento y lograr un resultado más estable en la pantalla.
+El resultado final fue una animación de un alien, esta se proyecta en la pantalla OLED que es accionada por un botón y que está conectada a su vez al Arduino UNO R4 Wifi que recibe la señal de Adafruit IO. Esa señal se manda gracias a un sensor PIR accionado por un botón, que al detectar el movimiento, la Raspberry Pi Pico 2 W manda la señal a la nube de Adafruit IO.
+
+![resultado](imagenes/solemne3.gif)
+
+Resultado de la animación al momento de que el sensor PIR siente movimiento.
+
+![resultado](imagenes/solemne3.jpeg)
+
+Resultado de la animación.
+A pesar de los errores y contratiempos que tuvimos durante el desarrollo, finalmente logramos obtener una animación funcional para el proyecto.
+
+Después de varias pruebas, decidimos simplificar la idea inicial y trabajar solo con un personaje, agregándole más frames para mejorar la fluidez del movimiento y lograr un resultado más estable en la pantalla.
+
+El resultado final fue una animación de un alien, esta se proyecta en la pantalla OLED que es accionada por un botón y que está conectada a su vez al Arduino UNO R4 Wifi que recibe la señal de Adafruit IO. Esa señal se manda gracias a un sensor PIR accionado por un botón, que al detectar el movimiento, la Raspberry Pi Pico 2 W manda la señal a la nube de Adafruit IO.
+
 ## Código usado para enviar
 
+```python
+import time
+import board
+import digitalio
+import wifi
+import socketpool
+import adafruit_minimqtt.adafruit_minimqtt as MQTT
+
+
+
+
+# ---------------- WIFI ----------------
+SSID = "bla"
+PASSWORD = "bla"
+
+
+
+
+# ---------------- ADAFRUIT IO ----------------
+AIO_USER = "bla"
+AIO_KEY = "bla"
+FEED = "detector-movimiento"
+
+
+
+
+# ---------------- PIR ----------------
+pir = digitalio.DigitalInOut(board.GP2)
+pir.direction = digitalio.Direction.INPUT
+
+
+
+
+# ---------------- BOTÓN (HOLD) ----------------
+button = digitalio.DigitalInOut(board.GP0)
+button.direction = digitalio.Direction.INPUT
+button.pull = digitalio.Pull.UP
+
+
+
+
+# ---------------- WIFI ----------------
+print("Conectando WiFi...")
+wifi.radio.connect(SSID, PASSWORD)
+print("WiFi OK")
+
+
+
+
+pool = socketpool.SocketPool(wifi.radio)
+
+
+
+
+mqtt = MQTT.MQTT(
+  broker="io.adafruit.com",
+  username=AIO_USER,
+  password=AIO_KEY,
+  socket_pool=pool
+)
+
+
+
+
+mqtt.connect()
+print("MQTT OK")
+
+
+
+
+# ---------------- CALIBRACIÓN ----------------
+print("Calibrando PIR...")
+time.sleep(30)
+print("Listo")
+
+
+
+
+# ---------------- VARIABLES ----------------
+pir_state = False
+motion_start_time = 0
+last_motion_time = 0
+
+
+
+
+MIN_TRIGGER_TIME = 0.8
+COOLDOWN = 2
+
+
+
+
+motion_count = 0
+
+
+
+
+# ---------------- LOOP ----------------
+while True:
+
+
+
+
+  system_active = not button.value  # botón mantenido
+
+
+
+
+  if system_active:
+
+
+
+
+      current = pir.value
+
+
+
+
+      if current and not pir_state:
+          motion_start_time = time.monotonic()
+
+
+
+
+      if current and pir_state:
+          duration = time.monotonic() - motion_start_time
+
+
+
+
+          if duration >= MIN_TRIGGER_TIME:
+              if time.monotonic() - last_motion_time > COOLDOWN:
+
+
+
+
+                  motion_count += 1
+
+
+
+
+                  print("MOVIMIENTO DETECTADO #", motion_count)
+
+
+
+
+                  try:
+                      mqtt.publish(
+                          f"{AIO_USER}/feeds/{FEED}",
+                          f"motion:{motion_count}"
+                      )
+                  except Exception as e:
+                      print("Error MQTT:", e)
+
+
+
+
+                  last_motion_time = time.monotonic()
+
+
+
+
+      pir_state = current
+
+
+
+
+  else:
+      pir_state = False
+
+
+
+
+  time.sleep(0.01)
+```
+
 ## Código usado para recibir
+
 ```cpp
 #include <WiFiS3.h>
 #include "AdafruitIO_WiFi.h"
@@ -633,26 +855,55 @@ void loop() {
 }
 
 ```
+
 ## Imágenes del proyecto
 
+![movimiento](imagenes/movimiento.jpeg)
+
+![proyecto](imagenes/materiales.jpeg)
+
 ## Animaciones del proyecto
+
+![solemne](imagenes/solemne.gif)
+
 ### Frames
 
-![frame1](imagenes/frame1.jpeg)
-
-
-![frame2](imagenes/frame2.jpeg)
-
-
-![frame3](imagenes/frame3.jpeg)
-
-
-![frame4](imagenes/frame4.jpeg)
-
-
+![frames](imagenes/frames.png)
 
 ### Loop:
+
 ![alien_loop](imagenes/alien_loop.gif)
 
-
 ## Bibliografía
+
+- <https://www.youtube.com/watch?v=HxjvP9m-hRo>
+
+- <https://www.330ohms.com/blog/explora-3/que-es-un-sensor-pir-y-como-funciona-8>
+
+- Javl. Image2cpp.
+
+<https://javl.github.io/image2cpp/>
+
+- Adafruit Industries. Monochrome OLED Breakouts: Arduino Library and Examples.
+
+<https://learn.adafruit.com/monochrome-oled-breakouts/arduino-library-and-examples>
+
+- Huy Khoong. gif2cpp.
+
+<https://github.com/huykhoong/gif2cpp>
+
+- Random Nerd Tutorials. ESP32/Arduino OLED Display Guide.
+
+<https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/>
+
+- SparkFun Electronics. PIR Motion Sensor Hookup Guide.
+
+<https://learn.sparkfun.com/tutorials/pir-motion-sensor-hookup-guide/all>
+
+- Adafruit. (s.f.). Adafruit IO documentation. Adafruit Learning System. 
+
+<https://io.adafruit.com/>
+
+- Soldered Electronics. (s.f.). SSD1306 OLED display overview. Soldered Documentation. 
+
+<https://docs.soldered.com/ssd1306/overview/>

@@ -20,7 +20,7 @@ Durante el desarrollo del proyecto comenzamos realizando el cableado de la Raspb
 
 Posteriormente, trabajamos en la programación del sensor y del botón, pero surgieron diversas dificultades relacionadas con librerías necesarias para el funcionamiento del sistema y múltiples errores en el código. Intentamos resolver estos problemas durante otra hora adicional, investigando posibles soluciones y realizando distintas pruebas, pero no logramos que el sistema funcionara correctamente dentro del tiempo disponible.
 
-Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro proyecto inicial, tuvimos que incorporarnos al Grupo 10, integrado por Braulio Figuerio y Luisa Toro, con el fin de continuar el trabajo práctico de la clase.
+Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro proyecto inicial, tuvimos que incorporarnos al Grupo 10, integrado por Braulio Figueroa y Luisa Toro, con el fin de continuar el trabajo práctico de la clase.
 
 ## Materiales usados en clases 
 | Material | Cantidad | Precio aproximado (CLP) |
@@ -34,7 +34,44 @@ Finalmente, debido a la falta de tiempo para continuar avanzando con nuestro pro
 | Cable USB | 1 | $3.000 |
 | Fuente de alimentación USB | 1 | $8.000 |
 
-## Descripción textual del proyecto
+# Problemas encontrados en el proyecto inicial
+
+Durante el desarrollo inicial de nuestro proyecto, uno de los principales problemas se presentó en la Raspberry Pi Pico 2W, ya que el código utilizado para controlar el sensor ultrasónico HC-SR04 arrojaba múltiples errores relacionados con bibliotecas faltantes.
+
+Visual Studio Code mostraba mensajes de error indicando que módulos como:
+
+```python
+import wifi
+import socketpool
+import board
+import adafruit_hcsr04
+import adafruit_minimqtt.adafruit_minimqtt as MQTT
+import digitalio
+```
+![Errores de bibliotecas en VS Code](imagenes/error_bibliotecas.png)
+
+Estos errores aparecían debido a que CircuitPython requiere librerías específicas instaladas manualmente dentro de la carpeta `lib` de la unidad `CIRCUITPY`.
+
+## Bibliotecas faltantes
+
+| Biblioteca |
+|---|
+| adafruit_minimqtt |
+| adafruit_requests.mpy |
+| adafruit_connection_manager.mpy |
+| adafruit_bus_device |
+| adafruit_ticks.mpy |
+| adafruit_hcsr04.mpy |
+
+## Bibliotecas instaladas
+
+![Librerías instaladas](imagenes/librerias_instaladas.png)
+
+Luego de investigar el funcionamiento de CircuitPython y agregar las bibliotecas necesarias, logramos avanzar parcialmente en el proyecto.
+
+## Descripción del proyecto grupal final
+
+El proyecto consiste en un sistema de comunicación inalámbrica basado en la lógica de enviar y recibir en la plataforma de Adafruit IO. Para enviar datos utiliza una Raspberry Pi Pico 2w y para recibir datos utiliza un Arduino UNO R4 Wifi. El modo de enviar datos es a través de sensor el cuál es un botón pulsador de 4 pines. Cuando el botón es oprimido y sus datos son recibidos, un LED actuador se encenderá y apagará según si el botón esté presionado o suelto.
 
 ## Sensor usado
 ### Botón pulsador de 4 pines
@@ -378,22 +415,50 @@ void handleMessage(AdafruitIO_Data *data) {
 ### Proceso
 Al inicio de la sesión, realizamos una prueba utilizando un código desarrollado previamente por nuestra compañera, el cual ya había sido verificado y funcionaba correctamente. Posteriormente, decidimos desarrollar el proceso por nuestra cuenta, lo que derivó en una serie de errores, principalmente relacionados con el cableado.
 
-El primer inconveniente fue la conexión de alimentación: el cable estaba conectado a 5V, cuando lo correcto era utilizar 13V, ya que la conexión inicial solo permitía verificar el funcionamiento del LED, pero no era la adecuada para el comportamiento esperado del sistema.
+El primer inconveniente fue la conexión de alimentación: el cable estaba conectado al pin 5, cuando lo correcto era utilizar el pin 13, ya que la conexión inicial solo permitía verificar el funcionamiento del LED, pero no era la adecuada para el comportamiento esperado del sistema.
 
 Una vez corregido ese punto, nos encontramos con un segundo problema: el LED no lograba apagarse correctamente. Para resolverlo, desarrollamos dos códigos adicionales, modificando distintas secciones de la programación y realizando múltiples pruebas. Sin embargo, ninguna de las modificaciones solucionó el inconveniente.
-![error](imagenes/Luz_prendida.jpg)
+
+![error](imagenes/luz_prendida.jpg)
 
 Finalmente, determinamos que el problema no estaba en el código, sino en la configuración interna de la Raspberry Pi Pico 2W. El dispositivo había sido modificado previamente y solo mantenía activa la señal de encendido del LED (valor `1`), mientras que la señal de apagado (valor `0`) no funcionaba correctamente. Al identificar este origen, volvimos al código inicial y pudimos continuar con el desarrollo del proyecto.
 
 Como parte adicional de la práctica, quisimos comprobar si el sistema funcionaba a larga distancia. Para ello, fue necesario conectarnos a una red distinta, ya que al alejarnos del punto de acceso original la señal se debilitaba al punto de desconectarse. Al cambiar de red logramos mantener una conexión estable y verificar que el sistema respondía correctamente incluso a mayor distancia.
 
 ![Arduino](imagenes/arduino_conectado.jpg)
-<img width="1825" height="865" alt="arduino_conectado" src="https://github.com/user-attachments/assets/7c703236-4e96-40bb-b194-9d0e745d945c" />
+
 
 ![Arduino](imagenes/prueba1.jpg)
 ## Imágenes del proyecto
 Pruebas realizas de larga distancia
 ![prueba1](imagenes/prueba_larga_distancia.jpeg)
 ## Animaciones del proyecto
+<div align="center"> <video src="https://github.com/user-attachments/assets/f28bb838-175e-4d0b-ac70-f5c7eef1f5f3" width="315" autoplay loop muted playsinline></video> </div>
+  
+- *El desafío de la red móvil:* Al intentar alejarnos más, la conexión se perdió. Identificamos que el problema era la fuente del WiFi: cuando el emisor de la señal (Hotspot móvil) se alejaba demasiado de una de las placas, esta quedaba fuera de la red.
+  
+- *Solución:* Tuvimos que independizar la red y asegurar que ambos nodos tuvieran cobertura constante, entendiendo que el IoT depende críticamente de la infraestructura de red.
+  
+- *Prueba de 15 Metros:* Con una red estable, logramos una respuesta instantánea a 15 metros de distancia lineal.
 
+<div align="center"> <video src="https://github.com/user-attachments/assets/8f455e6f-69a0-4889-9f7d-e224874dedad" width="315" autoplay loop muted playsinline></video> </div>
+
+- *Prueba de Altura (Piso 3 vs Piso 1):* La prueba definitiva fue vertical. Ubicamos el Arduino (receptor) en el tercer piso y la Raspberry (emisor) en el primer piso. Al presionar el botón desde abajo, el LED en el tercer piso encendió sin retraso perceptible.
+
+<div align="center"> <video src="https://github.com/user-attachments/assets/65c58277-9847-4ca5-b7d3-566cec492208" width="315" autoplay loop muted playsinline></video> </div
 ## Bibliografía
+
+1. Arduino. *Arduino UNO R4 WiFi Documentation*.  
+https://docs.arduino.cc/hardware/uno-r4-wifi/
+
+2. Raspberry Pi Foundation. *Raspberry Pi Pico Documentation*.  
+https://www.raspberrypi.com/documentation/microcontrollers/
+
+3. Adafruit IO. *Official Documentation*.  
+https://io.adafruit.com/
+
+4. CircuitPython. *Official Documentation*.  
+https://circuitpython.org/
+
+5. Microsoft. *Visual Studio Code Documentation*.  
+https://code.visualstudio.com/docs

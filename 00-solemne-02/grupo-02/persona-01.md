@@ -2,11 +2,11 @@
 **Marlén Soto**  
 Github:marlensoto-lab   
 
----
-
 # El Sensor: Pulsador (Botón)
 
 ![Botón Pulsador](imagenes/boton_pulsador.jpg)
+     
+   Empresa Imagen referencial de Amazon Dash Button. Recuperado de https://www.amazon.com/. Fuente: Amazon Official Website.
 
 ## 1. ¿Qué aprendí sobre este sensor?
 
@@ -36,8 +36,6 @@ Sin el filtrado correcto, la plataforma muestra múltiples picos de información
 
 ## 3. Problemas comunes
 
-![Protoboard y botón](https://upload.wikimedia.org/wikipedia/commons/8/8f/Breadboard.jpg)
-
 ### Saturación del servidor
 Si el sistema envía constantemente el estado del botón en cada ciclo del programa, Adafruit IO puede saturarse con datos repetidos. Por esta razón, lo correcto es enviar información solo cuando el estado cambia.
 
@@ -55,6 +53,8 @@ Cuando no se utilizan resistencias Pull-up o Pull-down, el pin queda inestable y
 
 ![Empresa](imagenes/Amazon.png) 
 
+  *Imagen referencial de Amazon Dash Button*. Recuperado de https://www.amazon.com/. Fuente: Amazon Official Website
+
 Los Amazon Dash Buttons fueron botones inteligentes conectados por WiFi que permitían pedir productos automáticamente desde el hogar con una sola pulsación.
 
 Este referente se relaciona directamente con nuestro proyecto, ya que ambos utilizan la misma lógica:
@@ -66,18 +66,11 @@ Además, estos dispositivos también necesitaban controlar problemas similares a
 
 ---
 
-### Flic Smart Button
-
-Flic es un botón inalámbrico utilizado en hospitales, hogares y sistemas de emergencia. Su funcionamiento consiste en enviar una alerta instantánea mediante WiFi o Bluetooth al momento de ser presionado.
-
-Este referente demuestra cómo un sensor tan simple como un botón puede utilizarse en aplicaciones críticas y de gran importancia, utilizando la misma arquitectura básica que trabajamos en clases:
-presión → envío de señal → respuesta del sistema.
-
----
-
 # El Actuador: LED
 
 ![LED](imagenes/Luz_led.jfif)
+
+  *Imagen referencial educativa de LED*. Fuente: SparkFun LEDs Tutorial
 
 ## 1. ¿Qué aprendí sobre este actuador?
 
@@ -106,17 +99,14 @@ La visualización del sistema es inmediata: si el LED enciende, significa que la
 ### Polaridad invertida
 El LED posee un ánodo (positivo) y un cátodo (negativo). Si se conecta al revés, no enciende aunque tampoco se daña.
 
-### Baud rate incorrecto
-Si el monitor serial y el código utilizan velocidades diferentes de comunicación, el Arduino no interpreta correctamente los mensajes recibidos.
-
 ### Resistencia inadecuada
 Utilizar una resistencia demasiado baja puede provocar sobrecorriente, dañando el LED o incluso los pines de la placa.
 
 ---
 
 ## 4. Referente: The Bay Lights — Leo Villareal
-
-![The Bay Lights](https://upload.wikimedia.org/wikipedia/commons/5/5e/The_Bay_Lights.jpg)
+![Referente](imagenes/Referente_2.jpg)
+Imagen referencial de la instalación artística “The Bay Lights”. Fuente: The Bay Lights Official Site
 
 “The Bay Lights” es una instalación artística creada por Leo Villareal que utilizó miles de LEDs distribuidos en el puente Bay Bridge de San Francisco para generar patrones lumínicos dinámicos mediante programación.
 
@@ -127,44 +117,47 @@ La diferencia está únicamente en la escala, ya que mientras nuestro proyecto c
 
 ---
 
-# Referencias
+# Conclusión
 
-- SparkFun Electronics — Pull-up y Pull-down resistors  
-- SparkFun Electronics — Guía completa sobre LEDs  
-- MQTT Protocol Explained  
-- Amazon Dash Buttons — Wikipedia  
-- Flic Smart Button — Official Website  
-- Leo Villareal — The Bay Lights  
-- Arduino Documentation  
-- Adafruit IO Documentation  
+A través del desarrollo de este proyecto logramos comprender de manera práctica cómo interactúan un sensor, un actuador y una plataforma IoT dentro de un mismo sistema electrónico. Aunque el pulsador y el LED parecen componentes simples, durante la investigación y las pruebas descubrimos que existen múltiples factores técnicos que afectan directamente su funcionamiento, como el estado flotante, el rebote mecánico, la polaridad y el manejo correcto de señales digitales.
 
+Uno de los aprendizajes más importantes fue entender que muchos errores no necesariamente provienen de la programación, sino también de las conexiones físicas y de la configuración del hardware. Durante las pruebas tuvimos problemas relacionados con el cableado, la configuración de la Raspberry Pi Pico 2W y la transmisión de señales, lo que nos obligó a realizar distintos diagnósticos antes de encontrar la causa real de los fallos.
 
+Además, aprendimos la importancia del filtrado de datos y de la optimización de la comunicación con Adafruit IO, evitando enviar información innecesaria que pudiera saturar el servidor. También pudimos comprobar cómo el protocolo MQTT permite establecer una comunicación eficiente entre dispositivos conectados a internet.
 
-![LED](imagenes/Luz_led.jfif)
+Otro aspecto relevante fue comprobar que el sistema podía funcionar incluso a larga distancia utilizando distintas redes WiFi, demostrando el potencial de este tipo de tecnologías para aplicaciones reales de automatización y monitoreo remoto.
 
+Finalmente, este proyecto permitió fortalecer habilidades tanto técnicas como de trabajo en equipo, ya que fue necesario investigar, probar soluciones, corregir errores y adaptar el sistema constantemente hasta lograr un funcionamiento estable. Gracias a esta experiencia comprendimos de mejor manera el funcionamiento básico de los sistemas IoT y cómo pequeños componentes electrónicos pueden formar parte de soluciones tecnológicas mucho más complejas.
+
+---
+
+# Aprendizajes Generales
+
+- Comunicación mediante protocolo MQTT.
+- Envío y recepción de datos utilizando Adafruit IO.
+- Control digital de actuadores mediante Arduino.
+- Diagnóstico y resolución de errores de hardware y software.
+- Trabajo práctico con Raspberry Pi Pico 2W y Arduino UNO R4 WiFi.
+
+---
 
 ## Bibliografía
 
-- Arduino. (2025). *Arduino Official Website*. Recuperado de: https://www.arduino.cc/
+- Arduino Documentation. *Digital Inputs and Pull-up Resistors*. Disponible en: https://docs.arduino.cc/
 
-- Adafruit Industries. (2025). *Adafruit IO Documentation*. Recuperado de: https://io.adafruit.com/
+- Adafruit IO Documentation. *MQTT, Feeds and IoT Communication*. Disponible en: https://io.adafruit.com/
 
-- Raspberry Pi Foundation. (2025). *Raspberry Pi Pico W Documentation*. Recuperado de: https://www.raspberrypi.com/documentation/
+- MQTT.org. *MQTT Protocol Overview*. Disponible en: https://mqtt.org/
 
-- ESPRESSIF Systems. (2025). *ESP32 Series Datasheet*. Recuperado de: https://www.espressif.com/
+- Wikipedia. *Amazon Dash*. Disponible en: https://en.wikipedia.org/wiki/Amazon_Dash
 
-- Philips. (2025). *Smart Lighting Systems*. Recuperado de: https://www.philips.com/
+- Leo Villareal. *The Bay Lights*. Disponible en: https://www.leovillareal.com/project/the-bay-lights/
+  
+- Arduino Documentation. (s.f.). *Imagen de botón pulsador utilizada como referencia educativa*. Recuperado de https://docs.arduino.cc/built-in-examples/digital/Button/
 
-- Amazon. (2025). *Amazon Dash Button Technology*. Recuperado de: https://www.amazon.com/
+- Amazon. (s.f.). *Imagen referencial de Amazon Dash Button*. Recuperado de https://www.amazon.com/
 
-- HC-SR04 Ultrasonic Sensor Datasheet. (2025). Recuperado de: https://datasheetspdf.com/
+- SparkFun Electronics. (s.f.). *Imagen referencial de LED electrónico*. Recuperado de https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/all
 
-- Servo Motor SG90 Datasheet. (2025). Recuperado de: https://components101.com/
+- The Bay Lights. (s.f.). *Fotografía de la instalación artística The Bay Lights*. Recuperado de https://www.thebaylights.org/
 
-- Wikipedia. (2025). *Push-button*. Recuperado de: https://en.wikipedia.org/wiki/Push-button
-
-- Wikipedia. (2025). *Light-emitting diode*. Recuperado de: https://en.wikipedia.org/wiki/Light-emitting_diode
-
-- Firebase. (2025). *Firebase Realtime Database*. Recuperado de: https://firebase.google.com/
-
-- Google Developers. (2025). *Google Maps Platform*. Recuperado de: https://mapsplatform.google.com/

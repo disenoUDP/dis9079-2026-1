@@ -22,12 +22,16 @@ Para ver la información de la medición de distancias en Adafruit IO se puede u
 
 ![ejemplo gráfico](imagenes/graficoadafruit.jpg)
 
+*Fuente: [Adafruit IO](https://cdn-learn.adafruit.com/assets/assets/000/125/101/medium640thumb/adafruit_io_ezgif.com-video-to-gif_%282%29.jpg?1697052853)*
+
 ### Empresa que utiliza el sensor
 
 El uso industrial de este sensor son los sistemas para estacionamientos desarrollados por empresas tecnológicas como ParkHelp. Ellos instalan su producto en el techo que cuenta con un sensor ultrasónico hacia el suelo de cada sitio de estacionamiento.
 El sensor emite pulsos de sonido constantemente por lo que si el eco tarda mucho en volver, deduce que el sonido rebotó en el piso y enciende una luz LED verde para indicar que el estacionamiento está disponible, pero si el eco vuelve más rápido significa que rebotó en el techo de un auto que ingresó por lo que actualiza su estado y cambia la luz a rojo para indicar ocupado.
 
 ![uso en estacionamientos](imagenes/parkhelp.png)
+
+*Fuente: [ParkHelp](https://www.parkhelp.com/wp-content/uploads/2022/11/parkhelp-ultrasonic-2-sensor-1.png)*
 
 ## Actuador
 
@@ -53,11 +57,15 @@ Al configurarlo, le podemos indicar que el valor mínimo es 0 y el máximo es 18
 
 ![ejemplo gráfico 2](imagenes/graficoadafruit2.jpg)
 
+*Fuente: [Adafruit IO](https://cdn-learn.adafruit.com/assets/assets/000/125/101/medium640thumb/adafruit_io_ezgif.com-video-to-gif_%282%29.jpg?1697052853)*
+
 ### Proyecto que utiliza el actuador
 
 Existe un proyecto de la comunidad tecnológica que me llamó la atención: el EEZYbotARM, es un brazo robot impreso en 3D de código abiertlo, el proyecto usa varios servomotores puestos en las uniones de las piezas para que hagan de articulaciones, funcionando como si fueran los hombros, los codos y la pinza del robot. El microcontrolador le manda las señales a cada motor para que cambien sus ángulos de forma coordinada. 
 
 ![EEZYbotARM](imagenes/robot.png)
+
+*Fuente: [Instructables](https://content.instructables.com/FVE/UKIO/IFCDFFTJ/FVEUKIOIFCDFFTJ.jpg?auto=webp&frame=1)*
 
 ## Bibliografía
 

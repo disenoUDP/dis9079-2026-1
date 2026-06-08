@@ -1,4 +1,4 @@
-# investigaciones individuales
+1# investigaciones individuales
 
 catalina salinas / catasal
 
@@ -8,13 +8,13 @@ catalina salinas / catasal
 
 Un sensor es un dispositivo electrónico capaz de detectar cambios o estímulos en el entorno y convertirlos en señales eléctricas que pueden ser interpretadas por un sistema digital. Los sensores permiten recopilar información del ambiente y son una de las bases principales de la interacción inalámbrica y de los sistemas inteligentes actuales. Gracias a ellos, las máquinas y dispositivos pueden “percibir” lo que ocurre a su alrededor y responder automáticamente.
 
-Los sensores pueden detectar diferentes tipos de información, como temperatura, movimiento, luz, sonido, humedad, presión, distancia o gases. Actualmente están presentes en celulares, computadores, automóviles, relojes inteligentes, sistemas de seguridad, robots y dispositivos de automatización doméstica. También son fundamentales en el desarrollo del Internet de las Cosas (IoT), donde distintos objetos pueden conectarse y comunicarse entre sí mediante redes inalámbricas.
+Los sensores pueden detectar diferentes tipos de información, como temperatura, movimiento, luz, sonido, humedad, presión, distancia o gases. Actualmente están presentes en celulares, computadores, automóviles, relojes inteligentes, sistemas de seguridad, robots y dispositivos de automatización doméstica. También son fundamentales en el desarrollo del Internet de las Cosas (IoT), donde distintos objetos pueden conectarse y comunicarse entre sí mediante redes inalámbricas.(Arduino, 2021).
 
 ## Uso de un sensor
 
 Uno de los sensores más utilizados en sistemas de interacción inalámbrica es el sensor PIR (Passive Infrared Sensor). Este sensor detecta movimiento mediante la radiación infrarroja que emiten los cuerpos calientes, especialmente las personas.
 
-El funcionamiento del sensor PIR consiste en identificar cambios en la temperatura infrarroja del ambiente. Cuando una persona pasa frente al sensor, este detecta la variación y envía una señal eléctrica a un microcontrolador o sistema inalámbrico. Posteriormente, el sistema puede ejecutar una acción automática, como encender una luz, activar una alarma o enviar una notificación a un teléfono móvil.
+El funcionamiento del sensor PIR consiste en identificar cambios en la temperatura infrarroja del ambiente. Cuando una persona pasa frente al sensor, este detecta la variación y envía una señal eléctrica a un microcontrolador o sistema inalámbrico (GitHub, 2026). Posteriormente, el sistema puede ejecutar una acción automática, como encender una luz, activar una alarma o enviar una notificación a un teléfono móvil.
 
 Este tipo de sensor es ampliamente utilizado en sistemas de seguridad, iluminación inteligente, automatización del hogar y edificios inteligentes debido a su bajo consumo energético y su facilidad de implementación. En la actualidad, muchas casas utilizan sensores PIR para ahorrar energía mediante luces automáticas que solo se activan cuando detectan presencia humana.
 
@@ -26,9 +26,11 @@ Además del sensor PIR, existen muchos otros tipos de sensores utilizados en int
 * Sensores de luz: detectan intensidad lumínica.
 * Sensores biométricos: reconocen huellas, rostros o características humanas.
 
-Cada uno de estos sensores cumple funciones específicas y puede conectarse a sistemas inteligentes para automatizar tareas o recopilar información en tiempo real.
+Cada uno de estos sensores cumple funciones específicas y puede conectarse a sistemas inteligentes para automatizar tareas o recopilar información en tiempo real (Arduino, 2024).
 
 <img width="636" height="639" alt="sensor2" src="https://github.com/user-attachments/assets/6d3cdb1e-e676-4a27-85dd-9a3f0360b49b" />
+
+GitHub. (2026). GitHub. https://github-production-user-asset-6210df.s3.amazonaws.com/267052235/596396919-6d3cdb1e-e676-4a27-85dd-9a3f0360b49b.png
 
 ## Filtrado de información
 
@@ -45,7 +47,7 @@ En sistemas más avanzados se utilizan algoritmos matemáticos y técnicas digit
 * Filtro pasa bajos.
 * Filtro digital adaptativo.
 
-Estos métodos permiten reducir errores y mejorar el rendimiento de sistemas automatizados, vehículos autónomos y dispositivos inteligentes. El filtrado es especialmente importante en sistemas inalámbricos porque ayuda a mantener una comunicación más estable y confiable.
+Estos métodos permiten reducir errores y mejorar el rendimiento de sistemas automatizados, vehículos autónomos y dispositivos inteligentes (Microsoft, 2025). El filtrado es especialmente importante en sistemas inalámbricos porque ayuda a mantener una comunicación más estable y confiable.
 
 ## Visualización de datos
 
@@ -53,7 +55,7 @@ La visualización de datos consiste en representar gráficamente la información
 
 La visualización permite comprender rápidamente el comportamiento de un sistema y detectar cambios o anomalías. Por ejemplo, un sensor de temperatura puede mostrar cómo aumenta o disminuye el calor durante el día mediante un gráfico de líneas.
 
-En ciudades inteligentes y sistemas industriales, miles de sensores recopilan información constantemente. Estos datos se organizan y visualizan en centros de monitoreo para ayudar a tomar decisiones rápidas y eficientes.
+En ciudades inteligentes y sistemas industriales, miles de sensores recopilan información constantemente. Estos datos se organizan y visualizan en centros de monitoreo para ayudar a tomar decisiones rápidas y eficientes (Microsoft, 2025).
 
 En la actualidad, muchas aplicaciones móviles muestran información proveniente de sensores en tiempo real, como:
 
@@ -109,20 +111,21 @@ Para solucionar estos problemas se utilizan filtros de información, mantenimien
 
 ## Proyecto o empresa que utiliza sensores
 
-Una de las empresas más conocidas por el uso avanzado de sensores es Tesla. Sus vehículos eléctricos incorporan múltiples sensores que permiten desarrollar sistemas de conducción autónoma e inteligencia artificial aplicada al transporte.
+# Agricultura Inteligente (Smart Farming)
 
-Los automóviles Tesla utilizan cámaras, radares, sensores ultrasónicos y sistemas computacionales que recopilan información constantemente sobre el entorno del vehículo. Estos sensores permiten detectar peatones, medir distancias, reconocer señales de tránsito, identificar obstáculos y mantener el automóvil dentro de la carretera.
+Uno de los proyectos más utilizados actualmente y que realmente funciona en la vida cotidiana es la agricultura inteligente o Smart Farming. Este sistema utiliza sensores conectados inalámbricamente para monitorear cultivos y mejorar la producción agrícola (Agricultura IA, 2023).
 
-El sistema Autopilot de Tesla combina todos estos sensores con algoritmos de inteligencia artificial para ayudar al conductor o incluso controlar parcialmente el vehículo de manera automática. El automóvil analiza millones de datos por segundo para tomar decisiones en tiempo real.
+En este tipo de proyectos se utilizan sensores de humedad, temperatura, luz y calidad del suelo. Los sensores recopilan información constantemente sobre las condiciones del terreno y la envían a plataformas digitales o aplicaciones móviles. Gracias a esto, los agricultores pueden saber exactamente cuándo regar, fertilizar o proteger los cultivos.
 
-Además, Tesla recopila información de sus vehículos para mejorar continuamente sus sistemas mediante aprendizaje automático. Gracias a esto, la empresa ha logrado desarrollar una de las tecnologías de conducción autónoma más avanzadas del mundo.
+Por ejemplo, los sensores de humedad detectan cuánta agua tiene la tierra. Si el suelo está demasiado seco, el sistema puede enviar una alerta o activar automáticamente un sistema de riego (Plantae, s.f.). Esto permite ahorrar agua, mejorar el crecimiento de las plantas y reducir pérdidas agrícolas.
 
-El uso de sensores en Tesla demuestra cómo la interacción inalámbrica y la automatización pueden transformar el transporte moderno, mejorando la seguridad, la eficiencia energética y la experiencia de conducción.
+Además, algunos sistemas usan sensores climáticos que predicen cambios de temperatura o lluvias, ayudando a tomar decisiones más precisas. La información recopilada también puede visualizarse mediante gráficos y estadísticas en tiempo real.
 
-<img width="996" height="621" alt="sensor" src="https://github.com/user-attachments/assets/5305f32e-0696-41f0-88be-acd439dda282" />
+Este proyecto es muy importante porque demuestra cómo los sensores pueden utilizarse de forma real y eficiente para resolver problemas ambientales y productivos. Actualmente empresas agrícolas y universidades utilizan estos sistemas en distintos países para optimizar recursos y aumentar la producción de alimentos.
 
-<img width="1127" height="634" alt="sensor1" src="https://github.com/user-attachments/assets/69014025-c005-475d-a9d0-c87708015fe6" />
+<img width="757" height="322" alt="WhatsApp Image 2026-05-27 at 06 10 28" src="https://github.com/user-attachments/assets/179295d3-899f-4723-b4fc-52da1ccf04f7" />
 
+Plantae. (s.f.). Sensores inalámbricos de humedad para agricultura. Recuperado de https://plantae.garden/sensores-inalambricos-plantae-ahorro-agua-inteligente/
 # Actuador
 
 ## ¿Qué es un actuador?
@@ -200,25 +203,30 @@ Para evitar estos problemas se realizan mantenimientos periódicos, calibracione
 
 ## Proyecto o empresa que utiliza hidráulicos
 
-La empresa Boston Dynamics es una de las compañías más avanzadas en el desarrollo de robots inteligentes y utiliza actuadores de alta precisión en todos sus proyectos.
+# Impresoras 3D
 
-Uno de sus robots más conocidos es Atlas, un robot humanoide diseñado para caminar, correr, saltar y mantener el equilibrio de forma similar a una persona. Atlas utiliza actuadores hidráulicos y eléctricos que permiten mover cada articulación con gran precisión.
+Un proyecto muy funcional y conocido que utiliza actuadores son las impresoras 3D. Estas máquinas permiten fabricar objetos físicos capa por capa mediante movimientos automatizados extremadamente precisos.
 
-Otro proyecto importante es Spot, un robot cuadrúpedo capaz de desplazarse por terrenos difíciles y realizar inspecciones industriales o de seguridad. Spot puede subir escaleras, evitar obstáculos y transportar objetos gracias al trabajo coordinado entre sensores y actuadores.
+Las impresoras 3D utilizan distintos tipos de actuadores, principalmente motores paso a paso y servomotores, los cuales controlan el movimiento del cabezal de impresión y la plataforma donde se crea el objeto.
 
-Los actuadores son fundamentales en estos robots porque transforman las señales digitales en movimientos físicos complejos. Gracias a esto, los robots pueden reaccionar en tiempo real al entorno y adaptarse a distintas situaciones.
+Cuando el usuario envía un diseño digital desde el computador, el sistema procesa la información y los actuadores comienzan a mover las piezas de la impresora siguiendo instrucciones exactas. Gracias a estos movimientos controlados, la máquina puede construir figuras, herramientas, prótesis médicas, maquetas y piezas industriales.
 
-Boston Dynamics ha demostrado cómo los actuadores pueden aplicarse en áreas como construcción, minería, rescate, seguridad y automatización industrial. Sus proyectos representan uno de los mayores avances tecnológicos en robótica moderna e interacción inteligente entre máquinas y humanos.
+Los actuadores permiten mover el cabezal en diferentes direcciones (ejes X, Y y Z), controlar la velocidad y mantener precisión milimétrica durante todo el proceso de impresión. Sin estos actuadores, la impresora no podría fabricar objetos correctamente.
 
-<img width="958" height="633" alt="hidraulico" src="https://github.com/user-attachments/assets/5284fee9-27cd-44e0-aff9-06c5517555ae" />
+Actualmente las impresoras 3D se utilizan en diseño industrial, medicina, arquitectura, ingeniería y educación. En medicina, por ejemplo, se utilizan para fabricar prótesis personalizadas y modelos anatómicos. En arquitectura se crean maquetas detalladas y en ingeniería se producen prototipos funcionales rápidamente.
+
+Este proyecto demuestra cómo los actuadores permiten transformar información digital en movimientos físicos reales y precisos, convirtiéndose en una herramienta fundamental en la automatización moderna. 
+
+<img width="655" height="621" alt="WhatsApp Image 2026-05-27 at 06 10 28 (1)" src="https://github.com/user-attachments/assets/7a07b05d-50dc-47da-bdf8-4313052a0ec7" />
+
+Ultimaker. (s.f.). Motores y actuadores en impresoras 3D. https://ultimaker.com/learn/what-is-3d-printing/
 
 # Bibliografía
 
-ibm.com⁠
-arduino.cc⁠
-learn.microsoft.com⁠
-tesla.com⁠
-ibm.com⁠
-docs.arduino.cc⁠
-bostondynamics.com⁠
-ni.com⁠
+* arduino.cc⁠
+* learn.microsoft.com⁠
+* docs.arduino.cc⁠
+* bostondynamics.com⁠
+* agriculturaia.com⁠
+* plantae.garden⁠
+* tripo3d.ai⁠
