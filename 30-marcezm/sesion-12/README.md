@@ -2,56 +2,70 @@
 
 lunes 01 junio 2026
 
-## Apuntes de clase
+## Lo que trabajamos en clase
 
-En solemne: la idea es que sea desde la sede republica a salvador San fuentes la señal enviada y recibida, mantenerlo documentado y ya en vivo no sera esa la dificultad
+En esta clase comenzamos a pensar la idea para el proyecto de examen. Partimos conversando sobre cosas que suceden en la naturaleza y que normalmente pasan desapercibidas, como el movimiento de las hojas por el viento o los cambios que ocurren en las plantas durante el día sin que las personas los noten.
 
-API conexion entre computadores o entre programas de computadores
+A partir de eso surgieron varias preguntas, por ejemplo: ¿cómo se mueve una hoja durante el día?, ¿las plantas reaccionan a lo que ocurre a su alrededor?, ¿es posible mostrar esos procesos de una forma visible para las personas?
 
-Vista de algunas APIS
+## Ideas que aparecieron
 
-## Parrafos de proyecto pensado en (Se puede re plantear)
+Una de las primeras ideas fue trabajar con el movimiento de las hojas y transformar esos movimientos en dibujos o patrones visuales.
 
-Primer parrafo de acercamiento a proyecto:
+Después comenzamos a investigar sobre las señales eléctricas presentes en las plantas y surgió la idea de "darles voz", es decir, traducir sus impulsos o cambios internos a algún lenguaje que las personas pudieran percibir.
 
-Nuestra idea de proyecto consiste en utilizar una API con datos de la actividad sismológica global en tiempo real para transformarla en una experiencia visual, logrando mostrar físicamente los últimos temblores del mundo brevemente después de ocurrir.
+Pensamos en distintas posibilidades:
 
-Queremos que al presionar un botón para activar el envío de datos el dispositivo reaccione vibrando con una fuerza proporcional al sismo real, mientras una pantalla muestra el lugar exacto y los grados del evento.
+- Traducir los datos a sonidos.
+- Crear imágenes generativas.
+- Utilizar patrones de luces.
+- Combinar elementos visuales y sonoros.
 
-Preguntas que nos hizo el grupo que leyó nuestro proyecto:
+## Desarrollo de la propuesta
 
-- Saben que motor vibrador ocuparán? he ocupado antes ese actuador y es algo dificil de controlar
-- Los datos de los sismos, son en tiempo real, o sea es cuando esta pasando un sismo en ese momento?
-- si no esta ocurriendo un sismo no se mueve? o guarda los datos de los sismos
+La idea fue tomando forma hasta llegar a la propuesta actual: utilizar una planta viva como sensor del entorno.
 
-Aportes extra que nos enviaron:
+En vez de usar cámaras o micrófonos, queremos captar pequeñas variaciones eléctricas de la planta para observar cómo responde a distintos estímulos presentes en la facultad, como movimiento de personas, vibraciones o actividad general del espacio.
 
-creo que seria bueno escoger unos pocos sismos, unos 3-5 que hayan ocurrido ya, y luego ocupar arrray para escoger uno de estos de manera random quizás, apretand el botón, y que este se refleje.
+La intención es mostrar que la planta también forma parte de ese entorno y que constantemente está reaccionando a lo que ocurre a su alrededor.
 
-## Preguntas a parrafos de proyecto de otro grupo
+## Funcionamiento pensado hasta ahora
 
-Parrafos:
+La planta se conectaría a electrodos para obtener señales eléctricas.
 
-Grupo 8: Nuestro proyecto se trata de un sistema de semáforo automatizado que simula el comportamiento de un semáforo real, gestionando de manera continua y ordenada tres señales luminosas de colores rojo, amarillo y verde
+Estas señales serían leídas mediante un módulo ADS1115 y enviadas a un Arduino UNO R4 WiFi.
 
-El sistema cuenta con un modo de emergencia que interrumpe el funcionamiento normal y emite una señal de alerta visual, la luz roja empieza a parpadear para indicar situaciones que requieren atención inmediata
+Luego los datos viajarían por WiFi hacia otro dispositivo, como una Raspberry Pi Pico 2 W o un computador.
 
-Además, tiene un control de encendido y apagado que permite desactivar por completo todas las señales luminosas cuando el semáforo no necesita estar en operación, y volver a activarlas al presionar el botón nuevamente
+Finalmente, esos datos se transformarían en visualizaciones o sonidos que cambiarían según la actividad detectada.
 
-Preguntas:
+```text
+Planta
+ ↓
+ADS1115
+ ↓
+Arduino UNO R4 WiFi
+ ↓
+WiFi
+ ↓
+Raspberry Pi Pico / PC
+ ↓
+Visualización o sonido
+```
 
-1. ¿Cuál sería el objetivo del semáforo y de dónde salen los datos?
+## Dudas y decisiones
 
-2. ¿Cómo será el actuador que mostrará las luces en este proyecto?
+Durante la conversación surgió la duda de si trabajar únicamente con sonido o con elementos visuales.
 
-3.¿Determinaron los tiempos de duración de cada luz del semáforo? ¿Cómo lo hicieron?
+La opción de los sonidos es interesante porque refuerza la idea de que la planta tiene una "voz", pero también puede ser más difícil de implementar y de interpretar.
 
-## Parrafo final
+Por eso también consideramos utilizar visualizaciones generativas o luces que cambien según los datos recibidos.
 
-Nuestra idea de proyecto consiste en utilizar una API con datos de actividad sismológica global para transformarla en una experiencia visual, logrando mostrar físicamente los últimos temblores registrados en el mundo brevemente después de ocurrir.
+Todavía estamos evaluando cuál de estas opciones funcionaría mejor para el examen.
 
-Queremos que, al presionar un botón para activar el envío de datos, el dispositivo obtenga el último sismo registrado dentro de un rango de tiempo por definir y reaccione vibrando con una fuerza proporcional a la magnitud real del evento.
+## Próximos pasos
 
-Para esto, estamos considerando utilizar motores vibradores similares a los de un joystick, ya que hemos trabajado con ellos anteriormente. Al mismo tiempo, una pantalla mostrará el lugar exacto y la magnitud del sismo.
-
-En caso de que no se hayan registrado sismos dentro del rango de tiempo definido, la pantalla indicará que no ocurrió ningún evento reciente y el dispositivo no emitirá vibraciones.
+- Investigar mejor cómo obtener señales eléctricas de una planta.
+- Definir si la visualización será sonora, visual o una combinación de ambas.
+- Revisar qué componentes necesitamos para realizar las primeras pruebas.
+- Comenzar a planificar el flujo completo del sistema.
