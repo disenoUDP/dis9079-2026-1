@@ -15,16 +15,17 @@ La evaluación del examen será hecha en 6 criterios, cada uno vale 1 punto, 3 g
 3 criterios individuales:
 
 - investigación textual sobre APIs
-- bitácoras junio
+- bitácoras junio: evaluación de 4 sesiones (25 mayo, 01 junio, 08 de junio, 15 junio)
 - bitácoras junio (la misma nota que punto anterior)
 
 requisitos mínimos del examen:
 
 - usar al menos un microcontrolador
-- usar al menos un sensor y/o actuador, en múltiplos
+- usar al menos un sensor y/o actuador, en múltiplos, por ejemplo, tres potenciómetros, cuatro leds.
 - administrar la info de los múltiples sensores y/o actuadores con arreglos y bucles (arrays y for).
-- códigos ordenados y comentados
-- declarar toda ia usada con lujo de detalles, incluyendo prompts y todo lo que hayan hecho
+- códigos ordenados en subcarpeta codigos por cada grupo, con nombres de archivos sin espacios ni mayúsculas ni eñe, con las palabras separadas por guion.
+- códigos comentados con estilos coherentes y ordenados, con fuentes.
+- declarar toda ia usada con detalles, incluyendo prompts y y respuestas, todo lo que hayan hecho y lo que no haya funcionado.
 
 ## sesiones
 
