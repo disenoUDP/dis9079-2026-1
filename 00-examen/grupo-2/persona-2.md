@@ -8,9 +8,9 @@ Primero probé un micrófono ( KY-037 )conectado a un arduino, para primero ver 
 
 Así conecté el mic KY-037 al Arduino: 
 
-VCC      ->   5V
-GND      ->   GND
-AO       ->   A0       (esta es la señal analógica del sonido)
+* VCC      ->   5V
+* GND      ->   GND
+* AO       ->   A0       (esta es la señal analógica del sonido)
 
 Acá encontré la info para la conexión y detalles del microfono: <https://arduinomodules.info/ky-037-high-sensitivity-sound-detection-module/>
 
