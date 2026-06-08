@@ -6,8 +6,8 @@ Lunes xx de junio 2026
 
 ## Integrantes
 
-* [Camila Parada](https://github.com/Camila-Parada): 
-* [Vania Paredes](https://github.com/paredesvania): 
+* [Camila Parada](https://github.com/Camila-Parada):
+* [Vania Paredes](https://github.com/paredesvania):
 
 ## Descripción del proyecto
 

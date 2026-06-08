@@ -1,6 +1,4 @@
 # Grupo-4 - Examen Interacciones Inalámbricas
 
-Renata Arévalo Urra
-
-Isidora Pérez Maulén
-
+* arevalourra / Renata Arévalo Urra
+* isipm08 / Isidora Pérez Maulén
