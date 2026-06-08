@@ -34,6 +34,8 @@ Nuestro proyecto parte desde la pregunta `¿Cuántos habitan los lugares de trab
 
 **Medio de visualización:** Adafruit IO (medio de visualización para lectura de datos)
 
+`Idea de mateo:` Hacer un totém mini que esté la pantalla Oled o el Anillo de leds, en la oficina de Aarón, para que vea cuánta gente está en el LID
+
 ### Pseudocódigo
 
 ```bash
