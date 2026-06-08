@@ -2,8 +2,15 @@
 
 lunes 01 junio 2026
 
-para examen: que uno de los dos lados use un arreglo
+### Exámen !! 
 
+Requisitos:
+
++ Que uno de los dos lados del código use un arreglo
++ Utilizar Apis (opcional pero sería bacán)
+
+
+Como grupo vamos a usar una Api de climas 
 api weather
 
 wikipedia -> page information -> información básica de la página
