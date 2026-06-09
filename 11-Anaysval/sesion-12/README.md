@@ -4,7 +4,7 @@ lunes 01 junio 2026
 
 Una API es un sistema de normas y herramientas que permite la conexión entre distintos programas, facilitando que intercambien datos e información entre ellos.
 
-En nuestro caso, hemos trabajado con la API de Adafruit IO, aunque existen muchas otras que entregan información en tiempo real sobre distintos aspectos del mundo. 
+En nuestro caso, hemos trabajado con la API de Adafruit IO, aunque existen muchas otras que entregan información en tiempo real sobre distintos aspectos.
 
 ---
 
