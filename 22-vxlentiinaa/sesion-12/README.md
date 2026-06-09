@@ -74,7 +74,7 @@ imagen sacada de: <https://outvio.com/es/blog/que-es-una-api/>
 
 `Corrección:`
 
-- al final lo corregimos en la siguiente clase!!
+(al final lo corregimos en la siguiente clase!!)
 
 ***Grupo 6:***
 
