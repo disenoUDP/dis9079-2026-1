@@ -193,6 +193,25 @@ Además, sirve posteriormente para integrar el proyecto dentro del portafolio pe
 
 # Grupo Examen -> Grupo 4 + Isidora Pérez
 
+## Interacción entre grupos vía Discord
+
+Descripción inicial de nuestro proyecto:
+
+Grupo 04: Queremos lograr una exploración sobre la capacidad de las tecnologías inalámbricas para transportar señales humanas más allá del cuerpo que las origina. El proyecto captura el ritmo cardíaco de una persona y lo transforma en una presencia remota, permitiendo que sus pulsaciones sean observadas en otro lugar en tiempo real. A través de esta conexión invisible, los latidos dejan de ser una experiencia íntima para convertirse en un lenguaje compartido entre dispositivos, espacios y personas. La propuesta reflexiona sobre cómo la información biológica puede viajar, ser representada y generar nuevas formas de percepción y vínculo mediante redes inalámbricas.
+
+Aarón nos sugiere computación inalámbrica en vez de tecnologías inalámbricas
+
+Aarón nos pregunta lo siguiente: van a procesar esos datos de pulso? van a enviar el pulso directamente? o un resumen en latidos por minuto?
+
+Resp: Resumen en latidos por minuto
+Jesús Miranda nos pregunta: ¿qué pasa en este caso en el dispositivo receptor? ya que en el párrafo dice que los latidos "son observados" pero no queda claro si es una pantalla LED, sonido, ¿cómo se ve esa presencia remota?
+
+Resp: Estamos considerando el uso de la pantalla led del arduino o anexar una pantalla LCD para la visualización de los datos, que en este caso son las pulsaciones por minuto
+
+Estas interaccones nos sirvieron para recibir feedback de otras perspectivas, con mirada desde afuera del proyecto.
+
+----
+
 ### Enfoque Conceptual del proyecto
 
 El cuerpo mantiene un diálogo constante con el mundo que lo rodea. Cada emoción, esfuerzo, sorpresa o momento de calma deja una huella física que muchas veces pasa desapercibida. Entre estas señales, el ritmo cardíaco constituye una manifestación silenciosa pero permanente de nuestra relación con el entorno, reflejando cambios internos que ocurren incluso antes de que seamos plenamente conscientes de ellos.
@@ -204,3 +223,5 @@ Este proyecto explora la posibilidad de hacer visible aquello que normalmente pe
 El proyecto consiste en el desarrollo de un sistema distribuido capaz de medir, transmitir y visualizar la frecuencia cardíaca de una persona en tiempo real. Para ello, se utiliza un sensor biométrico conectado a un microcontrolador que procesa la señal obtenida y calcula los latidos por minuto (BPM). Esta información es enviada mediante comunicación inalámbrica hacia un segundo dispositivo, encargado de recibir los datos y transformarlos en una representación visual accesible para el usuario.
 
 A través de esta implementación se ponen en práctica conceptos relacionados con sensores, procesamiento de señales, transmisión de datos, comunicación entre dispositivos y visualización de información. El resultado es una plataforma que conecta una variable fisiológica del cuerpo humano con un sistema digital capaz de hacer visible un fenómeno que normalmente permanece invisible, permitiendo observar en tiempo real las variaciones del ritmo cardíaco y su comportamiento frente a distintos estímulos.
+
+Seguimos avanzando y latiendo...
