@@ -26,9 +26,9 @@ Los criterios de evaluación del examen se dividen en dos ámbitos:
 
 * Demo en video: Presentar una demostración grabada del funcionamiento entre los puntos de República 180 y SS221.
 
-* Funcionamiento en vivo: Demostración en tiempo real operando de extremo a extremo de la sala.
+* Funcionamiento en vivo: Demostración en tiempo real funcionando de extremo a extremo de la sala.
 
-* Documentación: Código ordenado y documentos textuales estructurados de forma clara.
+* Documentación: Código ordenado y documentación estructurada de forma clara.
 
 * Uso obligatorio de arrays.
 
@@ -59,20 +59,20 @@ Por último, tuvimos que compartir la descripción breve de nuestro proyecto por
 
 > josefa-araya [06/01/2026 4:48 PM]: Grupo 3: bruma compacta: Queremos expresar y materializar el clima a través de un humidificador alimentado de los datos de humedad en el ambiente (datos de un API), provocando una escena inmersiva entre el agua y el usuario. 
 
-montoyamora... [06/01/2026 4:50 PM]: ¿Cuál de todos los múltiples datos del clima? Ah, después dice humedad, entonces partir con humedad, filo con lo otro. (editado)
+> montoyamora... [06/01/2026 4:50 PM]: ¿Cuál de todos los múltiples datos del clima? Ah, después dice humedad, entonces partir con humedad, filo con lo otro. (editado)
 
-josefa-araya [06/01/2026 4:50 PM]: La humedad.
+> josefa-araya [06/01/2026 4:50 PM]: La humedad.
 
-montoyamora... [06/01/2026 4:51 PM]: @josefa-araya por favor revisar el proyecto final del curso dis8645 del semestre pasado de @braulio-figueroa.
+> montoyamora... [06/01/2026 4:51 PM]: @josefa-araya por favor revisar el proyecto final del curso dis8645 del semestre pasado de @braulio-figueroa.
 josefa-araya [06/01/2026 4:51 PM]: ¡Gracias!
 
-benjamin-alvarez [06/01/2026 4:53 PM]: Cuando dicen en el ambiente, ¿sería el ambiente donde están físicamente? ¿O un lugar random que la API les haya dado? ¿A qué se refieren con materializar el clima? (editado)
+> benjamin-alvarez [06/01/2026 4:53 PM]: Cuando dicen en el ambiente, ¿sería el ambiente donde están físicamente? ¿O un lugar random que la API les haya dado? ¿A qué se refieren con materializar el clima? (editado)
 
-josefa-araya [06/01/2026 4:55 PM]: De un lugar aleatorio pero de Chile.
+> josefa-araya [06/01/2026 4:55 PM]: De un lugar aleatorio pero de Chile.
 
-montoyamora... [06/01/2026 4:55 PM]: ¿Ese lugar aleatorio es siempre el mismo? ¿O cambia cada vez que alguien interactúa con el proyecto?
+> montoyamora... [06/01/2026 4:55 PM]: ¿Ese lugar aleatorio es siempre el mismo? ¿O cambia cada vez que alguien interactúa con el proyecto?
 
-josefa-araya [06/01/2026 4:56 PM]: Cambiaría cada vez.
+> josefa-araya [06/01/2026 4:56 PM]: Cambiaría cada vez.
 
-josefa-araya [06/01/2026 5:02 PM]: Con materializar el clima nos referíamos a que sería una demostración más literal y concentrada de la humedad al hacer que el humidificador expulse una bruma de agua. >
+> josefa-araya [06/01/2026 5:02 PM]: Con materializar el clima nos referíamos a que sería una demostración más literal y concentrada de la humedad al hacer que el humidificador expulse una bruma de agua. 
 
