@@ -181,3 +181,17 @@ flowchart LR
 |Sensor Infrarrojo Evasor de Obstáculos|1|$2.000|<https://afel.cl/products/sensor-infrarrojo-evasor-de-obstaculos?_pos=1&_sid=96b6bad10&_ss=r>|
 |Protoboard|1|$1.500|<https://afel.cl/products/mini-protoboard-400-puntos>|
 |cables|4|$1.000|<https://afel.cl/products/pack-20-cables-de-conexion-macho-macho>|
+
+### Dibujos (hicimos renders con IA Manus)
+
+<img src="./imagenes/IMG_1507.jpeg" alt="totem" width="300">
+
+<img src="./imagenes/totem1.png" alt="totem" width="400"> <img src="./imagenes/totem2.png" alt="totem" width="400"> <img src="./imagenes/totem3.png" alt="totem" width="400">
+
+Más o menos representa la idea del mini totém que queremos realizar
+
+### Código
+
+Con respecto al código, no alcanzamos a realizarlo hoy:(
+
+pero Monserrat fue a afel a comprar las cosas que nos faltaban (la pantalla y el sensor infrarrojo)

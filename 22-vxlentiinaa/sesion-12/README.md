@@ -9,7 +9,7 @@ lunes 01 junio 2026
 - `Arrays:` Significa "arreglo"; los arreglos nos permiten almacenar datos del mismo tipo.
   - voy a convertir una variable en un arreglo, por ende en esa variable estarán todos los datos en donde se pueden hacer arreglos.
 - En este proyecto para examen, hablemos de que queremos hacer, que queremos transmitir
-- Hoy trabajemos en el lenguaje, presentar el proyecyo como si fuera portafolio
+- Hoy trabajemos en el lenguaje, presentar el proyecto como si fuera portafolio
 
 ### [Yeseul Song](https://yeseul.com/)
 
@@ -27,11 +27,15 @@ lunes 01 junio 2026
 
 **¿Qué es una API?**
 
+`API:` *Application Programming Interface*
+
 Una API, o interfaz de programación de aplicaciones, es un conjunto de reglas o protocolos que permite a las aplicaciones informáticas comunicarse entre sí para intercambiar datos, características y funcionalidades.
 
 Las API simplifican y aceleran el desarrollo de aplicaciones y software permitiendo a los desarrolladores integrar datos, servicios y capacidades de otras aplicaciones, en vez de hacerlas desde cero.
 
 Las API permiten compartir solo la información necesaria, manteniendo ocultos otros detalles internos del sistema, lo que ayuda a la seguridad del sistema. Los servidores o dispositivos no tienen que exponer completamente los datos: las API permiten compartir pequeños paquetes de datos, relevantes para la solicitud específica.
+
+A diferencia de una interfaz de usuario (UX), que conecta a una persona con un computador, una *API* conecta a dos softwares o partes de un software. 
 
 **¿Cómo funciona una API?**
 
@@ -40,6 +44,10 @@ La API es el puente que establece la conexión entre ellos.
 `Ejemplo:` El procesamiento de pagos a terceros. Cuando alguien compra por internet, a veces te piden "pague con Paypal" u otro tipo de sistema. Bueno, esta función depende de las API para realizar el pago o la conexión.
 
 Si bien la transferencia de datos es según el servicio web utilizado, las solicitudes y respuestas se realizan a través de una API. No hay visibilidad en la interfaz de usuario, lo que significa que las API intercambian datos dentro del ordenador o la aplicación, y aparecen ante el usuario como una conexión sin fisuras.
+
+<img src="./imagenes/API.png" alt="api" width="400">
+
+imagen sacada de: <https://outvio.com/es/blog/que-es-una-api/>
 
 ---
 
@@ -65,6 +73,8 @@ Si bien la transferencia de datos es según el servicio web utilizado, las solic
 3. ¿qué sensor van a ocupar para detectar a un ser vivo?
 
 `Corrección:`
+
+(al final lo corregimos en la siguiente clase!!)
 
 ***Grupo 6:***
 

@@ -21,3 +21,113 @@ Además, el proyecto incorpora una pregunta central: ¿qué pasa si el altar no 
 1. Separar la descripción textual en varias secciones. Por ejemplo primero solamente conceptual, luego otra técnica que explique cómo los conceptos se implementan.
 2. Complementar con diagramas de flujo o dibujos
 3. Escribir el pseudocódigo
+
+## Lista de compras y materiales
+ 
+| Elemento | Función dentro de la interacción | Precio |
+|---|---|---|
+| Arduino | Controla el funcionamiento del Tótem 01 y procesa la información del sensor. | |
+| Raspberry Pi Pico | Permite la conexión inalámbrica y el envío/recepción de datos entre tótems. | |
+| Sensor ultrasónico | Detecta la distancia entre la persona y el Tótem 01. | |
+| LED | Se enciende progresivamente según la cercanía de la persona. | |
+| Protoboard mini | Permite conectar y organizar los componentes electrónicos. | |
+| Cables Dupont mix | Conectan los sensores, LED, servo, pantalla y placas. | |
+| Cable USB-C | Permite alimentar o conectar el Arduino y la Raspberry Pi Pico. | |
+| Servo | Imita físicamente la distancia detectada por el sensor. | |
+| Pantalla OLED | Muestra los mensajes recibidos desde el Tótem 01. | |
+
+# Pseudocódigo
+
+### Tótem 01
+```
+INICIO
+
+Definir sensor ultrasónico
+Definir LED
+Definir conexión inalámbrica con Tótem 02
+
+Definir distancia_lejana = mayor a 100 cm
+Definir distancia_media = entre 70 cm y 100 cm
+Definir distancia_cercana = entre 40 cm y 70 cm
+Definir distancia_muy_cercana = menor a 40 cm
+
+Definir intensidad_LED = 0%
+
+MIENTRAS el sistema esté encendido:
+
+Medir distancia de la persona con el sensor ultrasónico
+
+SI la distancia es mayor a 100 cm:
+    La persona está lejos
+    LED apagado o con intensidad mínima
+    intensidad_LED = 0%
+    Enviar al Tótem 02: "sin presencia cercana"
+
+SI la distancia está entre 70 cm y 100 cm:
+    La persona comienza a acercarse
+    LED se enciende suavemente
+    intensidad_LED = 25%
+    Enviar al Tótem 02: "presencia lejana"
+
+SI la distancia está entre 40 cm y 70 cm:
+    La persona está cerca del altar
+    LED aumenta su intensidad
+    intensidad_LED = 60%
+    Enviar al Tótem 02: "presencia cercana"
+
+SI la distancia es menor a 40 cm:
+    La persona está muy cerca del altar
+    LED alcanza su máxima intensidad
+    intensidad_LED = 100%
+    Enviar al Tótem 02: "presencia reconocida / alguien está aquí"
+
+Actualizar intensidad del LED según el valor definido
+
+Esperar un momento breve antes de volver a medir
+
+FIN
+```
+
+### Tótem 02 
+
+```
+INICIO
+
+Definir pantalla LED
+Definir servomotor
+Definir conexión inalámbrica con Tótem 01
+
+Definir posición_servo = 0 grados
+
+MIENTRAS el sistema esté encendido:
+
+Esperar información enviada desde el Tótem 01
+
+Recibir dato de distancia o condición de cercanía
+
+SI el mensaje recibido es "sin presencia cercana":
+    Mostrar en pantalla: "Sin presencia"
+    Mover servo a 0 grados
+    posición_servo = 0 grados
+
+SI el mensaje recibido es "presencia lejana":
+    Mostrar en pantalla: "Alguien se aproxima"
+    Mover servo a 45 grados
+    posición_servo = 45 grados
+
+SI el mensaje recibido es "presencia cercana":
+    Mostrar en pantalla: "Presencia cerca"
+    Mover servo a 90 grados
+    posición_servo = 90 grados
+
+SI el mensaje recibido es "presencia reconocida":
+    Mostrar en pantalla: "Estoy aquí"
+    Mover servo a 180 grados
+    posición_servo = 180 grados
+
+Esperar un momento breve antes de volver a recibir información
+
+FIN
+```
+
+
