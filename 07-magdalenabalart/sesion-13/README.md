@@ -53,7 +53,7 @@ Además, el proyecto incorpora una pregunta central: ¿qué pasa si el altar no 
 
 ## Pseudocódigo
 
-# Totem 01: Arduino
+# Tótem 01: Arduino
 ```
 INICIO
 
@@ -102,7 +102,7 @@ Esperar un momento breve antes de volver a medir
 
 FIN 
 ```
-# Totem 02
+# Tótem 02
 ```
 INICIO
 
@@ -142,4 +142,6 @@ Esperar un momento breve antes de volver a recibir información
 
 FIN 
 ```
+## Diagrama tótem 01
 
+<img src="imagenes/diagrama_totem01.jpg" style="width: 50%;" alt="Mi imagen">
