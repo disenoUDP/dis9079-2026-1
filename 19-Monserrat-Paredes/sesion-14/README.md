@@ -9,16 +9,16 @@ Alcance corto -> generalmente entre 2 y 30 cm.
 La gente entra y sale por la misma puerta.
 
 
-## Solución: 
+# Solución: 
 
-# Opción 1: Aprovecgar el sentido de la puerta 
+## Opción 1: Aprovecgar el sentido de la puerta 
 
 Colocación en ángulo: En lugar de poner el sensor apuntando recto (90° respecto a la pared), colócalo en un ángulo diagonal de 45° mirando hacia afuera (hacia el pasillo). Alguien que entra activará el sensor de frente, pero alguien que sale pasará por detrás del cono de detección del infrarrojo, reduciendo drásticamente las marcas de salida.
 
 Tip que podría ayudar: Dirección del sensor, usa el potenciómetro pequeño (el tornillo que trae el propio sensor IR) para regular la distancia de detección. No dejes que mida todo el ancho de la puerta; ajústalo para que solo detecte objetos que pasen a un máximo de 15 o 20 cm del sensor. Así, el cambio de dirección física a 45° será sumamente eficiente separando las entradas de las salidas.
 
 
-# Opción 2: Configurar la Raspberry Pi Pico 2W (mejor solución segun gemini)
+## Opción 2: Configurar la Raspberry Pi Pico 2W (mejor solución segun gemini)
 
 Para que cada pasada cuente como un único "movimiento", se puede hacer que la base de datos o el Arduino UNO R4 divida el total de detecciones por 2.
 
@@ -69,7 +69,7 @@ while True:
     time.sleep(0.05)
 ```
 
-# Opción 3: Cambiar de conteo numérico -> Métrica de intensidad o pulso
+## Opción 3: Cambiar de conteo numérico -> Métrica de intensidad o pulso
 
 Torniquete -> termómetro que mide la vitalidad del LID (en tiempo real, flujo constante)
 
