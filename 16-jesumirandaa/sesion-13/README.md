@@ -109,5 +109,8 @@ MIENTRAS el sistema esté encendido:
 
 FIN
 ```
+---
+
+Diagrama representativo de distancia hecho por la magda!!
 
 <img src="imagenes/diagrama.distancia.jpg" style="width: 50%;" alt="Mi imagen">
