@@ -4,7 +4,7 @@ lunes 08 junio 2026
 
 ## Trabajo en clases (avance examen)
 
-Examen: 22 de junio
+Examen: 22 de junio / Grupo 6
 
 Edificio A: Salvador Sanfuentes (Medición de datos).
 
@@ -170,13 +170,29 @@ Que cosas vamos a necesitar / dibujos de planificación
 - Sensor Infrarrojo Evasor de Obstáculos: Es ideal si quieres esconder la tecnología. Al ser tan pequeño, se puede poner en la entrada del LID y dejar asomados solo los dos pequeños LED, Para luego registrar el tránsito del LID.
 
 
-### Cómo funciona sensor:
+<img width="503" height="456" alt="sensorInfrarrojo" src="https://github.com/user-attachments/assets/904b095a-bfed-4318-a24d-322ac1484f6c" />
+
+
+Imagen sacada de: https: //afel.cl/products/sensor-infrarrojo-evasor-de-obstaculos?variant=45125238227096
+
+ 
+Cómo funciona sensor:
 
 https://www.luisllamas.es/detectar-obstaculos-con-sensor-infrarrojo-y-arduino/
 
 https://agelectronica.lat/pdfs/textos/O/OKY3127.PDF
 
+
 - Anillo LED RGB WS2812 de 16 leds (más economico) -> Matriz LED RGB 8×8 con WS2812B – 64 píxeles direccionables (menos economico).
+
+Nos quedaremos con el Anillo LED RGB WS2812 de 16 leds
+
+
+<img width="581" height="457" alt="anilloLed" src="https://github.com/user-attachments/assets/a4c00820-2e9f-4c05-82d6-3724f5b96c13" />
+
+
+Imagen sacada de: https: //afel.cl/products/anillo-led-rgb-neopixel-16-leds-ws2812?variant=45125253857432 
+
 
 Se ocupara para visualizar que tan rapido se va llenando el LID (Registra y visualiza los datos).
 
