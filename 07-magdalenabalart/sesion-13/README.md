@@ -12,6 +12,8 @@ A partir de esta conversación, definimos que el **Tótem 01** funcionará como 
 
 También definimos su composición, madera, impresión 3d y acrílico 
 
+>agradecimientos a la limda carlita por el boceto: 
+
 <img src="imagenes/bocetototem01.jpg" style="width: 50%;" alt="Mi imagen">
 
 ### Tótem 02
@@ -146,4 +148,51 @@ FIN
 ```
 ## Diagrama tótem 01
 
-<img src="imagenes/diagrama_totem01.jpg" style="width: 50%;" alt="Mi imagen">
+<img src="imagenes/diagrama_totem01.jpg" style="width: 50%;" alt="Mi imagen"> 
+
+## Avance código tótem 01 
+
+Durante esta etapa se avanzó en el desarrollo del código base para el Tótem 01, correspondiente al dispositivo encargado de detectar la presencia de una persona mediante un **sensor ultrasónico HC-SR04** y traducir esa proximidad en una respuesta lumínica a través de un **LED**.
+
+Primero se trabajó únicamente con el sensor ultrasónico, definiendo sus pines de conexión: **TRIG en el pin 2 y ECHO en el pin 3**. 
+
+>https://naylampmechatronics.com/blog/10_tutorial-de-arduino-y-sensor-ultrasonico-hc-sr04.html 
+
+
+
+
+
+A partir de esto, se programó la lectura de distancia en centímetros y se establecieron distintas condiciones según la proximidad de la persona frente al tótem. Durante esta etapa, compañeros del *LID* nos ayudaron a revisar el funcionamiento del sensor y nos recomendaron no utilizar **delay()** como método principal para controlar los tiempos, ya que podía volver más lento o poco fluido el comportamiento del sistema. En su lugar, nos sugirieron trabajar con **millis()**, porque permite medir el paso del tiempo sin detener completamente el Arduino. 
+
+Inicialmente se probaron cuatro rangos de distancia, pero luego se simplificó el sistema a tres estados principales para hacerlo más claro y funcional:
+
+**Entre 150 cm y 230 cm: hay alguien lejano.**
+**Entre 50 cm y 150 cm: alguien se acerca.**
+**Menor o igual a 50 cm: hay alguien cerca.** 
+
+Posteriormente se incorporó el **LED** como salida visual del sistema, conectado al pin 6, permitiendo que la luz respondiera a las condiciones detectadas por el sensor. En una primera prueba se intentó regular la intensidad lumínica por porcentaje, pero la diferencia visual entre los valores no era suficientemente clara. Por esto, se decidió cambiar la lógica de la luz hacia un comportamiento de parpadeo, ya que permitía representar de manera más evidente los distintos niveles de cercanía.  
+
+>https://docs.arduino.cc/built-in-examples/basics/Fade/
+
+De esta forma, el comportamiento lumínico quedó definido así:
+
+**Cuando no hay presencia, el LED permanece apagado.**   
+**Cuando hay alguien lejano, el LED parpadea lentamente.**   
+**Cuando alguien se acerca, el LED parpadea a una velocidad media.**   
+**Cuando hay alguien cerca, el LED se mantiene encendido de forma fija y brillante.**    
+
+Además, se agregó una condición adicional relacionada con la **ausencia**. Si el sistema no detecta presencia durante **2 minutos**, el **LED** comienza a encenderse progresivamente y de manera lenta. Esta condición busca representar la idea de una presencia ausente o latente, vinculada al concepto del proyecto, donde *el tótem no solo responde a la cercanía física, sino también al paso del tiempo sin interacción*. 
+
+
+## Correciones 
+Como observación para la siguiente etapa, Aarón recomendó considerar la incorporación de botones físicos que permitan activar rápidamente las distintas condiciones durante el examen. Esto serviría como una herramienta de demostración, permitiendo mostrar los estados del sistema sin depender completamente de las distancias reales frente al sensor.
+
+También queda pendiente mejorar la lógica de envío de datos hacia Adafruit IO. Actualmente, el código trabaja con los valores del sensor en su estado natural, es decir, con lecturas numéricas constantes de distancia. Sin embargo, para no enviar demasiada información a Adafruit, la idea es simplificar y decodificar esos datos. En vez de mandar todas las mediciones del sensor, se podría enviar solo un valor o código por condición, por ejemplo:
+
+**0 = sin presencia**   
+**1 = alguien lejano**   
+**2 = alguien se acerca**  
+**3 = alguien cerca**   
+**4 = ausencia prolongada**   
+
+De esta manera, Adafruit recibiría menos información, pero más significativa. Esto permitiría que el Tótem 02 interprete los estados de forma más limpia y eficiente, sin saturar la conexión con datos innecesarios.
