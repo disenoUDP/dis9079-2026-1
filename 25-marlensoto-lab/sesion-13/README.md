@@ -81,17 +81,18 @@ Flujo General
 
 Lógica del Proyecto
 
-Capturar señales eléctricas de la planta
+    Capturar señales eléctricas de la planta
 
-Convertir señales en datos digitales
+    Convertir señales en datos digitales
 
-Transmitir datos de forma inalámbrica
+    Transmitir datos de forma inalámbrica
 
-Recibir y procesar la información
+    Recibir y procesar la información
 
-Transformar los datos en imágenes, luces o sonidos
+    Transformar los datos en imágenes, luces o sonidos
 
-Mostrar en tiempo real la actividad detectada por la planta
+    Mostrar en tiempo real la actividad detectada por la planta
+    
 ---
 
 ### Códigos de prueba (verificación por etapas)
