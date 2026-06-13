@@ -158,21 +158,24 @@ Primero se trabajó únicamente con el sensor ultrasónico, definiendo sus pines
 
 >https://naylampmechatronics.com/blog/10_tutorial-de-arduino-y-sensor-ultrasonico-hc-sr04.html 
 
-
-
-
+<img src="imagenes/sensorultrasonico.jpg" style="width: 50%;" alt="Mi imagen">  
+<img src="imagenes/sensordirecto.jpg" style="width: 50%;" alt="Mi imagen">   
 
 A partir de esto, se programó la lectura de distancia en centímetros y se establecieron distintas condiciones según la proximidad de la persona frente al tótem. Durante esta etapa, compañeros del *LID* nos ayudaron a revisar el funcionamiento del sensor y nos recomendaron no utilizar **delay()** como método principal para controlar los tiempos, ya que podía volver más lento o poco fluido el comportamiento del sistema. En su lugar, nos sugirieron trabajar con **millis()**, porque permite medir el paso del tiempo sin detener completamente el Arduino. 
 
 Inicialmente se probaron cuatro rangos de distancia, pero luego se simplificó el sistema a tres estados principales para hacerlo más claro y funcional:
 
-**Entre 150 cm y 230 cm: hay alguien lejano.**
-**Entre 50 cm y 150 cm: alguien se acerca.**
-**Menor o igual a 50 cm: hay alguien cerca.** 
+**Entre 150 cm y 230 cm: hay alguien lejano.**  
+**Entre 50 cm y 150 cm: alguien se acerca.**  
+**Menor o igual a 50 cm: hay alguien cerca.**   
+
+<img src="imagenes/led.gif" style="width: 100%;" alt="Mi imagen">  
 
 Posteriormente se incorporó el **LED** como salida visual del sistema, conectado al pin 6, permitiendo que la luz respondiera a las condiciones detectadas por el sensor. En una primera prueba se intentó regular la intensidad lumínica por porcentaje, pero la diferencia visual entre los valores no era suficientemente clara. Por esto, se decidió cambiar la lógica de la luz hacia un comportamiento de parpadeo, ya que permitía representar de manera más evidente los distintos niveles de cercanía.  
 
 >https://docs.arduino.cc/built-in-examples/basics/Fade/
+
+<img src="imagenes/led.jpg" style="width: 50%;" alt="Mi imagen"> 
 
 De esta forma, el comportamiento lumínico quedó definido así:
 
@@ -181,6 +184,10 @@ De esta forma, el comportamiento lumínico quedó definido así:
 **Cuando alguien se acerca, el LED parpadea a una velocidad media.**   
 **Cuando hay alguien cerca, el LED se mantiene encendido de forma fija y brillante.**    
 
+<img src="imagenes/leduso.gif" style="width: 100%;" alt="Mi imagen">  <img src="imagenes/corazonled.gif" style="width: 100%;" alt="Mi imagen">   
+
+>Agradecimientos a Carlita y Jesu, que hicieron el corazón en 3D para el tótem. Son unos secos y les quedó bello bello.
+ 
 Además, se agregó una condición adicional relacionada con la **ausencia**. Si el sistema no detecta presencia durante **2 minutos**, el **LED** comienza a encenderse progresivamente y de manera lenta. Esta condición busca representar la idea de una presencia ausente o latente, vinculada al concepto del proyecto, donde *el tótem no solo responde a la cercanía física, sino también al paso del tiempo sin interacción*. 
 
 
