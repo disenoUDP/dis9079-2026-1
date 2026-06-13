@@ -106,22 +106,7 @@ Antes de integrar todo el sistema, se verificará cada subsistema por separado:
 | `test_recepcion_pico.py` | Recepción y parseo en Pico 2 W | Thonny / MicroPython |
 
 ---
-
-PLANTA
-   │
-   ▼
-ADS1115
-   │
-   ▼
-Arduino UNO R4 WiFi
-   │
-   │ WiFi
-   ▼
-Raspberry Pi Pico 2 W / PC
-   │
-   ├──► Música generativa
-   │
-   └──► Visualización gráfica
+   
 ### Siguiente clase — Programación definitiva
 
 Con el pseudocódigo validado y las pruebas aprobadas, se procederá a:
