@@ -90,6 +90,7 @@ se activa el humidificador
 | Pack 40 cables dupont | $2.735 | 1 | <https://altronics.cl/jumper-dupont-20cm-mm?search=cables%20dupont> |
 | Módulo RGB led de 8 bits 5050 | $1.990 | 1 | <https://www.mechatronicstore.cl/modulo-rgb-led-de-8-bits-5050/> |
 | Interruptor Switch 2 Pines ON-OFF Corto | $570 | 1 | <https://www.katode.cl/switches/1339-interruptor-switch-2-pines-on-off-corto.html> |
+| Módulo LCD 1602 con interfaz I2C | $4.490 | 1 | <https://www.katode.cl/arduino/477-modulo-lcd-1602-con-interfaz-i2c.html> |
 
 
 lunes 08 junio 2026
