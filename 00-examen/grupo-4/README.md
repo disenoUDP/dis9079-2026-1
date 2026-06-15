@@ -25,6 +25,12 @@
 
 Inicio de ideación de examen, estuvimos leyendo e investigando sobre varios sensores, para ver si nos gustaba alguno para realizar nuestro proyectop de examen, nos decidimos por un sensor de pulso, específicamente el Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma, con la idea de obtener registros en vivo de los latidos por minuto del usuario, usaremos la API -> Adafruit IO, que ya conocemos y sabemos su funcionamiento, por el lado de recepción de datos, pensamos en una pantalla LCD que muestre los latidos por minuto, usaremos 2 arduinos, uno paras enviar y otro para recibir la información.
 
+![Modulo Sensor](./imagenes/modulo-sensor.webp)
+
+*Modulo Sensor AD8232 - Imagen extraída de página web de AFEL*
+
+https://afel.cl/cdn/shop/files/modulo-sensor-ad8232.jpg?v=1720904051&width=713
+
 
 ### Interacción entre grupos vía Discord
 
@@ -41,6 +47,12 @@ Grupo 04: Queremos lograr una exploración sobre la capacidad de las tecnología
 - Jesús Miranda nos pregunta: ¿qué pasa en este caso en el dispositivo receptor? ya que en el párrafo dice que los latidos "son observados" pero no queda claro si es una pantalla LED, sonido, ¿cómo se ve esa presencia remota?
 
     - Resp: Estamos considerando el uso de la pantalla led del arduino o anexar una pantalla LCD para la visualización de los datos, que en este caso son las pulsaciones por minuto
+
+![Registro Discord 1](./imagenes/discord-1.png)
+
+![Registro Discord 2](./imagenes/discord-2.png)
+
+*Registro de Interacción en Discord*
 
 -----
 
@@ -154,6 +166,16 @@ Red WiFi
 
 Cuenta Adafruit IO
 
+![Compra Afel](./imagenes/compra-afel.gif)
+
+*Compra de Sensor AD8282 en AFEL*
+
+
+## Inicio de Trabajo con Sensor
+
+### Día Lunes 15-06
+
+Iniciamos en en lid, tenemos todos los materiales necesarios para poder trabajar, tenemos pendiente realizar el modelado 3D para la pantalla
 
 
 

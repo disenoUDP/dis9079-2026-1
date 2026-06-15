@@ -62,13 +62,25 @@ REPETIR TODO EL TIEMPO
 
 ### Lista de materiales
 
-|Lista|Materiales|
-|----|-------|
-| 1 | a |
-| 2 | a |
-| 3 | a | 
-| 4 | a | 
-| 5 | a |
-| 6 | a |
-| 7 | a |
-| 8 | a |
+| Cantidad | Material                          | Función                                          |
+| -------- | --------------------------------- | ------------------------------------------------ |
+| 1        | Raspberry Pi Pico 2 W             | Controla la interfaz, menús y comunicación Wi-Fi |
+| 1        | ESP32-CAM (con cámara OV2640)     | Captura las fotografías                          |
+| 1        | Antena Wi-Fi externa IPEX         | Mejora el alcance de la conexión inalámbrica     |
+| 1        | Pantalla OLED SSD1306 128×64      | Muestra menús e información de la cámara         |
+| 1        | Potenciómetro de 1 kΩ             | Permite navegar por las opciones                 |
+| 1        | Botón pulsador                    | Disparador de la cámara                          |
+| 1        | Batería LiPo 3.7 V                | Alimentación portátil del sistema                |
+| 1        | Módulo TP4056 con protección      | Carga segura de la batería                       |
+| 1        | Interruptor deslizante de 3 pines | Encendido y apagado del sistema                  |
+| 1        | Arduino UNO R4 WiFi               | Recibe y muestra las fotografías                 |
+| 1        | Pantalla TFT LCD SPI 320×240      | Visualización de imágenes en la galería          |
+| 3        | Botones pulsadores                | Navegación y generación de código QR             |
+| 1        | Cable USB de alimentación         | Alimentación permanente de la galería            |
+| 1        | Adaptador FTDI USB a TTL          | Programación del ESP32-CAM                       |
+| 1        | Jumper de cortocircuito           | Configuración del FTDI y modo grabación          |
+| 1        | Protoboard grande (o 2 medianas)  | Montaje temporal del circuito                    |
+| Varios   | Cables Dupont macho-macho         | Conexiones en la protoboard                      |
+| Varios   | Cables Dupont macho-hembra        | Conexiones entre módulos                         |
+
+y en la carpeta del exámen está la investigación de que es una API y cal utilizamos nosotros en nuestro proyecto (Grupo-5)
