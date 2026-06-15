@@ -154,6 +154,8 @@ Red WiFi
 
 Cuenta Adafruit IO
 
+![Compra Afel](./imagenes/compra-afel.gif)
+
 
 
 
