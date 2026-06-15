@@ -9,7 +9,9 @@ Alcance corto -> generalmente entre 2 y 30 cm.
 La gente entra y sale por la misma puerta.
 
 
-# Solución: 
+# Solución: investigación funcionamiento
+
+se puede solucionar ya que un sendor detecta entrada o salida, si quisieramos registrar ambos datos necesitariamos 2 sensores.
 
 ## Opción 1: Aprovecgar el sentido de la puerta 
 
@@ -166,50 +168,6 @@ void actualizarAnillo(float nivelEnergia) {
 ```
 
 Resultado visual: Si el LID está vacío, el anillo estará completamente apagado. Si entra un grupo de 3 personas seguidas, el anillo se encenderá de golpe hasta la mitad en color naranja. Si el flujo se detiene, se vera cómo los LEDs se van apagando uno a uno, como un eco que se desvanece, reflejando que el ritmo bajó. Si la sala se llena por completo de eventos, los 16 LEDs brillarán en un rojo intenso estático.
-
-# Opción 4: Agregar el segundo Sensor Infrarrojo
-
-Agregar un segundo sensor idéntico resuelve esto de forma limpia, económica y sin alterar la puerta. Anillo de LEDs en la FADD pretende mostrar qué tan "lleno" o "desbordado" está el LID, necesitas calcular el aforo neto 
-
-Gente adentro = Entradas - Salidas.
-
-Para que el sistema funcione, los dos sensores deben instalarse en fila (en serie), siguiendo la línea de la dirección en la que camina la gente.
-
-Los llamaremos Sensor A (Exterior / Pasillo) y Sensor B (Interior / LID).
-
-
-PASILLO (Exterior)
----------------------------------
-
-       [ Sensor A ]  <-- Lado Pasillo
-         |  10-15 cm de distancia
-       [ Sensor B ]  <-- Lado LID
-       
----------------------------------
-   INTERIOR DEL LID
-
-
-   Requisitos:
-   
-- Distancia entre sensores (10 a 15 cm).
-
-- Altura de montaje (1.10 a 1.20 metros - Altura de la cadera/torso).
-
-- Calibración del rango (Con el potenciómetro): Los sensores traen un pequeño tornillo. Ajústalos para que solo detecten objetos a una distancia de 20 a 30 cm.
-
-
-[LID: Paso de persona] 
-   --> Si activa A primero y luego B = ENTRADA (+1)
-   --> Si activa B primero y luego A = SALIDA (-1)
-   --> Raspberry Pi Pico 2W calcula: Aforo_Neto
-   
-[Internet]
-   --> Pico 2W sube el valor "Aforo_Neto" por Wi-Fi a Adafruit IO o tu API.
-
-[FADD: Rep180]
-   --> El Arduino UNO R4 WiFi descarga el valor "Aforo_Neto" desde internet.
-   --> Mapea ese número (ej. de 0 a 30 personas) en tus 16 LEDs del anillo.
-
 
 Si el aforo es 0, el anillo en la FADD está apagado. Si el aforo sube a 15, el anillo se enciende hasta la mitad. Si hay un evento en el LID y entra mucha gente, el anillo se completará y brillará por completo en República 180, alertando del "desborde".
        

@@ -6,7 +6,7 @@ lunes 01 junio 2026
 - Renata Arévalo
 - Isidora Pérez
 
-# Atistas mencionadas en clases
+# Artistas mencionadas en clases
 
 ## Yeseul Song
 - Artista de medios, tecnóloga creativa.

@@ -1,4 +1,9 @@
-# sesion-13
+# ⋆⭒˚.⋆ └[∵┌] Clase 12: Inasistencia... con avances [┐∵]┘ ⋆.˚⭒⋆
 
-lunes 08 junio 2026
+Lunes 08 de junio 2026
+
+## Observaciones
+
+Lamentablemente no asistí a esta clase puesto que me encontraba con un resfriado.
+Sin embargo, ello no me detuvo de hacer algún que otro avance.
 

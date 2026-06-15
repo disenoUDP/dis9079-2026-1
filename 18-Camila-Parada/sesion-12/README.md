@@ -7,11 +7,11 @@ Lunes 01 de junio 2026
 Para esta clase.
 Vania me preguntó si volveríamos a ser juntas. Yo le dije que bueno.
 
-Planteamos una propuesta a partir de sensores que pudieran detectar presencia humana para trabajar con visualizaciones en TouchDesigner.
+Planteamos una propuesta a partir de sensores que pudieran detectar "presencia humana" para trabajar con visualizaciones en TouchDesigner.
 
-"¿Cómo presenciamos el "habitar" de los espacios a través del sonido presente en ambas facultades?"
+A partir de ello nos surge la duda "¿Cómo presenciamos el "habitar" de los espacios a través del sonido presente en ambas facultades?"
 
-Lugares con poca presencia humana mantienen más momentos de silencio.
+Lugares con poca presencia humana mantienen más momentos de silencio, por lo que presenta un menor nivel de "anormalidades sonoras".
 
 ## Escrito de Vania
 
