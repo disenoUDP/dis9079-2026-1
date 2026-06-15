@@ -202,6 +202,7 @@ La distancia de detección suele ajustarse con el potenciómetro azul.
 
 
 
+
 - Anillo LED RGB WS2812 de 16 leds (más economico) -> Matriz LED RGB 8×8 con WS2812B – 64 píxeles direccionables (menos economico).
 
 Nos quedaremos con el Anillo LED RGB WS2812 de 16 leds
