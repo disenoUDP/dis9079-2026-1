@@ -8,6 +8,7 @@ lunes 15 junio 2026
 Hoy pudimos trabajar por primera vez juntas con Cami, ella compró otros micrófonos, que funcionan mejor para sonido ambiente, son estos:
 
 <https://hubot.cl/producto/sensor-analogico-audio-max9812-sku-614/>
+
 ![mic](./imagenes/sensoraudio.png)
 
 > los mic anteriores no detectaban tan bien los sonidos ambiente
