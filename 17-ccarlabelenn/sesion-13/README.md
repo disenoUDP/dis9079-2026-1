@@ -111,4 +111,6 @@ FIN
 Durante la semana nos dedicamos a probar los códigos y los elementos que utilizaremos para la muestra: LED, sensor ultrasónico, Arduino y un corazón muy lindo que imprimimos en 3D en el LID jejeje.
 
 ![imagenes](./imagenes/corazonled.gif)
+![imagenes](./imagenes/sensorultrasonico.jpg
+)
 
