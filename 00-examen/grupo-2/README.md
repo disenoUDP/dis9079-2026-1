@@ -58,10 +58,10 @@ import adafruit_minimqtt.adafruit_minimqtt as MQTT
 # ============================================================
 
 EDIFICIO      = "grupo02-rep" # Dirección del feed (cambia según el edificio)
-WIFI_SSID     = "tallervertical" # Nombre wifi
-WIFI_PASSWORD = "loremipsum" # Clave wifi
+WIFI_SSID     = "Nombre wifi" # Nombre wifi
+WIFI_PASSWORD = "01234" # Clave wifi
 
-AIO_USERNAME  = "udpmontoyamoraga" # Nombre del usuario de la cuenta
+AIO_USERNAME  = "loremipsum" # Nombre del usuario de la cuenta
 AIO_KEY       = "aio_secret" # AIO Key del usuario de la cuenta
 
 # ============================================================
