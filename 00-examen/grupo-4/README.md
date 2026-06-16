@@ -176,8 +176,159 @@ Cuenta Adafruit IO
 ### Día Lunes 15-06
 
 Iniciamos en en lid, tenemos todos los materiales necesarios para poder trabajar, tenemos pendiente realizar el modelado 3D para la pantalla
+### Lunes 15 Junio 
 
+#### 1 Semana para el examen
 
+Hoy trabajamos en el LID en la mañana, consiguiendónos protoboard y cables (gracias LID <3). Luego conectamos nuestra Pantalla TFT LCD redonda de 1.28" a una proto y luego el Sensor ECG AD8232 a otra proto y a isipm.
+
+(foto)
+
+Entre varios intentos de códigos, llegamos a uno final para TRNSMISOR y RECEPTOR. 
+(realizar tinkercad)
+
+---- 
+
+Mateo y Aarón nos revisaron nuestro proyecto, nos comentaron que estaba bueno, solo que podíamos mejorar que la pantalla no refrescara.
+Aún no hemos podido mejorar la pantalla (si está buena pero creemos que son los cables), además mejorar la calidad de la visualización de los datos. Estaremos informando...
+
+---- 
+
+**CÓDIGO TRANSMISOR**
+
+```cpp
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+
+#include <Arduino_GFX_Library.h>
+
+// ---------------- WIFI ----------------
+#define WIFI_SSID "iPhone de Renata"
+#define WIFI_PASS "arevalo1234"
+
+// ---------------- ADAFRUIT ----------------
+#define IO_USERNAME "arevalourra"
+#define IO_KEY "TU_KEY"
+
+// FEEDS
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+
+AdafruitIO_Feed *bpmFeed =
+  io.feed("examen-grupo04-bpm");
+
+AdafruitIO_Feed *estadoFeed =
+  io.feed("examen-grupo04-ecg");
+
+// ---------------- PANTALLA GC9A01 ----------------
+
+Arduino_DataBus *bus =
+  new Arduino_HWSPI(
+    9,    // DC
+    10    // CS
+  );
+
+Arduino_GFX *gfx =
+  new Arduino_GC9A01(
+    bus,
+    8,    // RESET
+    0,    // rotación
+    true
+  );
+
+// ---------------- VARIABLES ----------------
+
+String bpm = "--";
+String estado = "---";
+
+void dibujarPantalla()
+{
+  gfx->fillScreen(0x0000);
+
+  gfx->setTextColor(0xFFFF);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(30, 40);
+  gfx->println("ECG");
+
+  gfx->setTextSize(4);
+  gfx->setCursor(40, 90);
+  gfx->println(bpm);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(20, 170);
+  gfx->println(estado);
+}
+
+// ---------- CALLBACK BPM ----------
+
+void handleBPM(AdafruitIO_Data *data)
+{
+  bpm = data->toString();
+
+  Serial.print("BPM recibido: ");
+  Serial.println(bpm);
+
+  dibujarPantalla();
+}
+
+// ---------- CALLBACK ESTADO ----------
+
+void handleEstado(AdafruitIO_Data *data)
+{
+  estado = data->toString();
+
+  Serial.print("Estado recibido: ");
+  Serial.println(estado);
+
+  dibujarPantalla();
+}
+
+void setup()
+{
+  Serial.begin(115200);
+
+  gfx->begin();
+
+  gfx->fillScreen(0x0000);
+
+  gfx->setTextColor(0xFFFF);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(20,120);
+  gfx->println("Conectando...");
+
+  Serial.println("Conectando Adafruit IO");
+
+  io.connect();
+
+  while(io.status() < AIO_CONNECTED)
+  {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println("Conectado!");
+
+  bpmFeed->onMessage(handleBPM);
+  estadoFeed->onMessage(handleEstado);
+
+  bpmFeed->get();
+  estadoFeed->get();
+
+  dibujarPantalla();
+}
+
+void loop()
+{
+  io.run();
+}
+```
+
+**CÓDIGO RECEPTOR**
+```cpp
+
+```
 
 
 
