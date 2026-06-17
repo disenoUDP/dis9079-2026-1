@@ -73,6 +73,8 @@ Apps Script
 
 Suena fácil porque fue la solución que encontramos, ya que entre medio hubo muchos flujos de trabajo y descubrimos que lo mejor por ahora era repartir así las funciones de cada microchip para no saturarlos.
 
+Usamos el GitHub oficial de [ESP32](https://github.com/espressif/arduino-esp32) en Arduino para la compatibilidad con el programa.  
+
 En la semana anterior a ese día realicé todo el código de la ESP32-CAM junto a la Raspberry Pi Pico 2 W; más que nada era una maqueta funcional. Ya en otro día mejoré los filtros y añadí un flash a la cámara que permitía saber cuándo iba a sacar la foto.
 
 #### Evolución de pruebas
