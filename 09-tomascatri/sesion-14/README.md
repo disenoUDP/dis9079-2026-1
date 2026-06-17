@@ -6,7 +6,7 @@ Hola, tanto tiempo. Sinceramente, estuve tan metido con el código y con que fun
 
 ## Proceso
 
-### Clase de 1 de junio
+### Clase 1 de junio
 
 
 Ya que falté ese día, mi grupo puso sobre la mesa usar la API de los sismos en Chile. Investigando, me di cuenta de que existe una API que toma de referencia los datos de sismología de la Universidad de Chile y que se podría utilizar para el proyecto. Tenía pensado que podríamos usar unos motores que tenía Kiara de un examen que tuvo para simular la magnitud en miniatura.
