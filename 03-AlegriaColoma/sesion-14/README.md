@@ -53,3 +53,4 @@ Por lo tanto, este problema se mantiene activo y sin resolver.
 
 <img width="610" height="350" alt="image" src="https://github.com/user-attachments/assets/3775a569-6400-44fe-b34b-5b121efba16b" />
 
+
