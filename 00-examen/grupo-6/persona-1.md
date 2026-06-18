@@ -12,6 +12,8 @@ de otro sistema sin tener que entender cómo está hecho por dentro. Gracias a e
 desarrolladores pueden crear aplicaciones más rápido, reutilizar herramientas ya
 existentes y hacer que distintos sistemas trabajen juntos de forma más fácil.
 
+<img src="./imagenes/sofia_imagenes/API.jpg" alt="final" width="500">
+
 ### Tipos de APIs
 
 - API web: Una API Web es una herramienta que permite que dos aplicaciones intercambien
