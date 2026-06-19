@@ -204,6 +204,17 @@ Luego, el 15 de junio, comenzamos a armar nuestros códigos y definir bien las c
 |GND|GND|
 |DIN (dato)|Pin digital 6|
 
+### Colores rgb para el anillo
+
+- Magenta (255, 0, 255) <--
+- Rojo (255, 0, 0)
+- Verde (0, 255, 0) <--
+- Azul (0, 0, 255)
+- Cian (0, 255, 255) <--
+- Rosa pastel (255, 182, 193)
+- Verde Neón (57, 255, 20)
+- Rosa Neón (255, 20, 147)
+
 `Puntos importantes a considerar:`
 
 - Adafruit IO: generar un feed llamado lid-conteo, y obtener mi AIO Username y AIO Key desde la sección "My Key" del dashboard. Reemplazar esos valores en ambos códigos junto con el SSID/contraseña de WiFi.
