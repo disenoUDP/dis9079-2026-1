@@ -8,7 +8,7 @@ La evaluación del examen será hecha en 6 criterios, cada uno vale 1 punto, 3 g
 
 3 criterios grupales:
 
-- demo en video entre rep180 y salvsanf2221
+- demo en video entre rep180 y salvsanf2221, o entre distintos pisos de alguno de esos edificios
 - demo en vivo entre extremos de la sala de examen
 - documentación y código ordenado
 
