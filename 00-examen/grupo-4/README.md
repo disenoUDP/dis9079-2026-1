@@ -5,6 +5,10 @@
 - Renata Arévalo Urra / [arevalourra](<https://github.com/isipm08/dis9079-2026-1/tree/main/06-arevalourra>)
 - Isidora Pérez Maulén / [isipm08](<https://github.com/isipm08/dis9079-2026-1/tree/main/21-isipm08>)
 
+## Descripción del proyecto
+
+Nuestro proyecto nace del deseo de transformar cada latido en un puente de conexión. Mediante el sensor ECG AD8232, la actividad cardíaca deja de ser una señal invisible para convertirse en información que viaja en cuestión de segundos. A través de Adafruit IO, cada pulso encuentra un camino seguro hasta una pantalla LCD conectada a un segundo microcontrolador, donde los datos cobran vida nuevamente. Así, este sistema no solo captura y transmite información: crea una nueva forma de acompañar, observar, demostrando que incluso el ritmo silencioso del corazón puede trascender la distancia y hacerse presente allí donde más se necesita.
+
 ## Materiales usados
 
 | Componente | Valor Unidad | Cantidad | Link |
@@ -23,7 +27,9 @@
 
 #### 3 Semanas para el examen
 
-Inicio de ideación de examen, estuvimos leyendo e investigando sobre varios sensores, para ver si nos gustaba alguno para realizar nuestro proyectop de examen, nos decidimos por un sensor de pulso, específicamente el Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma, con la idea de obtener registros en vivo de los latidos por minuto del usuario, usaremos la API -> Adafruit IO, que ya conocemos y sabemos su funcionamiento, por el lado de recepción de datos, pensamos en una pantalla LCD que muestre los latidos por minuto, usaremos 2 arduinos, uno paras enviar y otro para recibir la información.
+Inicio de ideación de examen, estuvimos leyendo e investigando sobre varios sensores, para ver si nos gustaba alguno para realizar nuestro proyectop de examen, nos decidimos por un sensor de pulso, específicamente el Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma,  que es un módulo diseñado para medir la actividad eléctrica del corazón y generar lecturas similares a un electrocardiograma (ECG). Funcionando como una interfaz que extrae, amplifica y filtra las señales eléctricas muy débiles que genera el cuerpo humano al latir. 
+
+Con  este sensor teníamos la idea de obtener registros en vivo de los latidos por minuto del usuario, usaremos la API -> Adafruit IO, que ya conocemos y sabemos su funcionamiento, por el lado de recepción de datos, pensamos en una pantalla LCD que muestre los latidos por minuto, usaremos 2 arduinos, uno paras enviar y otro para recibir la información.
 
 ![Modulo Sensor](./imagenes/modulo-sensor.webp)
 
@@ -144,7 +150,7 @@ Cuenta Adafruit IO
 
 ---- 
 
-Mateo viene a nuestros puestos a consultar como va el avancwe de nuestro proyecto, le comentamos nuestra idea definida y le gusta, nos da la idea de hacer una carcasa para la opantalla donde se muestran los datos (BPM), y nos presta una Pantalla TFT LCD Redonda de 1,28", lo cual nos quedaría super con una carcasa, en forma de corazón, ya estamos trabajando en un modelo de impresión 3D e imprimir entre esta semana y la siguiente en el LID; Gracias Mateo!!
+Mateo viene a nuestros puestos a consultar como va el avance de nuestro proyecto, le comentamos nuestra idea definida y le gusta, nos da la idea de hacer una carcasa para la opantalla donde se muestran los datos (BPM), y nos presta una Pantalla TFT LCD Redonda de 1,28", lo cual nos quedaría super con una carcasa, en forma de corazón, ya estamos trabajando en un modelo de impresión 3D e imprimir entre esta semana y la siguiente en el LID; Gracias Mateo!!
 
 -----
 
@@ -173,19 +179,17 @@ Cuenta Adafruit IO
 
 ## Inicio de Trabajo con Sensor
 
-### Día Lunes 15-06
-
-Iniciamos en en lid, tenemos todos los materiales necesarios para poder trabajar, tenemos pendiente realizar el modelado 3D para la pantalla
 ### Lunes 15 Junio 
 
 #### 1 Semana para el examen
 
-Hoy trabajamos en el LID en la mañana, consiguiendónos protoboard y cables (gracias LID <3). Luego conectamos nuestra Pantalla TFT LCD redonda de 1.28" a una proto y luego el Sensor ECG AD8232 a otra proto y a isipm.
+Iniciamos en el LID, tenemos todos los materiales necesarios para poder trabajar, tenemos pendiente realizar el modelado 3D para la pantalla.
+
+Luego conectamos nuestra Pantalla TFT LCD redonda de 1.28" a una proto y luego el Sensor ECG AD8232 a otra proto y a la isipm.
 
 (foto)
 
-Entre varios intentos de códigos, llegamos a uno final para TRNSMISOR y RECEPTOR. 
-(realizar tinkercad)
+Entre varios intentos de códigos, llegamos a uno final para TRANSMISOR y RECEPTOR. (más adelante verán nuestro error)
 
 ---- 
 
@@ -464,6 +468,8 @@ El día de hoy realizamos denuevo la prueba para la pantalla y efectivamente era
 
 Nos dimos cuenta que los datos que nos tiraba eran solo datos aleatorios y no detectaba los pulsos reales...
 
+Probando distintos códigos, aún no pudimos realizar que los pulsos fueran en tiempo real y de nosotras. 
+
 > CÓDIGO DE PRUEBA PANTALLA TFT LCD redonda de 1.28"
 
 - Utilizamos este código para probar la pantalla con los cables nuevos y si funcionó, refeljaba los colores respectivos.
@@ -565,11 +571,18 @@ void mostrarColor(uint16_t color, const char *texto) {
   delay(2000);
 }
 ```
+FOTO DE COMO FUNCIONA LA PANTALLA 
+
+### Viernes 19 de Junio 
+
+### 3 días para el examen
 
 **CÓDIGO TRANSMISOR**
 ```cpp
 ```
 
+
+### DEMO EN VIDEO REPU-SS
 **CÓDIGO RECEPTOR**
 ```cpp
 ```
