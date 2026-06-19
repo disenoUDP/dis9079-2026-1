@@ -15,7 +15,7 @@ isipm08 ♡
 
 ## Sus diferentes funcionamientos
 
-![titulo](./imagenes/procesoapis.png)
+![titulo](./imagenes/procesoapi.png)
 
 *Créditos Imagen:* https://dossetenta.com/que-es-una-api-rest/ 
 
@@ -29,7 +29,7 @@ isipm08 ♡
 
 ## Tipos de APIs
 
-![titulo](./imagenes/tipoapis.png)
+![titulo](./imagenes/tiposapis.png)
 
 *Créditos Imagen:* https://www.deltaprotect.com/blog/que-es-una-api
 
