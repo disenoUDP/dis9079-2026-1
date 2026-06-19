@@ -394,7 +394,7 @@ void actualizarAnillo(int conteo) {
 }
 ```
 
-`Arduino`
+### Arduino
 
 - Teníamos este código para el anillo led, donde Arduino se tardaba en leer los valores desde Adafruit IO.
   - El problema es que `mqttClient.poll()` en el loop() compite con otras tareas (reconexión WiFi, actualización del anillo, etc.), y MQTT sobre TCP tiene latencia natural. Entonces, lo que hicimos fue: reducir `keep alive`así evitamos "bloqueos" en el loop.
@@ -538,7 +538,7 @@ void actualizarAnillo(int conteo) {
 
 ---
 
-`Raspberry`
+### Raspberry
 
 - Por el lado de la Raspberry, la conexión fue demasiado inestable cuando la probamos en clases. Nos demoramos mucho en conectar al wifi y que mandara los datos a adafruit.
 - El puerto 8883 (SSL/MQTT) estaba siendo bloqueado por la red de la universidad, por eso salía el mensaje:
