@@ -652,6 +652,136 @@ while True:
 
 **Recomendaciones:**
 
+- No subir tu clave Adafruit a github, ni a ninguna parte!!
+- Utilizar un wifi solo para la Raspberry
+- No pasar tan lejos del sensor
+
+```cpp
+# PUENTE DIGITAL - Grupo 6 - Examen
+# Lunes 22 de junio
+# Raspberry Pi Pico 2W (CircuitPython)
+# Lee el Sensor Infrarrojo Evasor de Obstaculos y publica el
+# conteo de personas ("entrada") a Adafruit IO via MQTT.
+
+import time
+import board # type: ignore
+import digitalio # type: ignore
+import wifi # type: ignore
+import socketpool # type: ignore
+import ssl
+import adafruit_minimqtt.adafruit_minimqtt as MQTT # type: ignore
+
+# CONFIGURACION WIFI 
+WIFI_SSID = "blabla"
+WIFI_PASSWORD = "blabla"
+
+# CONFIGURACION ADAFRUIT IO 
+ADAFRUIT_IO_USER = "blabla"
+ADAFRUIT_IO_KEY  = "blabla"
+FEED_ID = "lid-conteo"   # nombre del feed creado en Adafruit IO
+
+# CONFIGURACION SENSOR 
+# El sensor IR evasor de obstaculos entrega:
+#  - HIGH (3.3V) cuando NO hay obstaculo
+#  - LOW  (0V)   cuando detecta un obstaculo (persona pasando)
+ir_sensor = digitalio.DigitalInOut(board.GP15)
+ir_sensor.direction = digitalio.Direction.INPUT
+ir_sensor.pull = digitalio.Pull.UP
+
+# VARIABLES DE CONTEO 
+contador = 0
+MAX_CONTEO = 16          # tope = cantidad de LEDs del anillo
+estado_anterior = True   # True = sin obstaculo (reposo)
+ANTIREBOTE = 0.2         # segundos; baja si necesitas detectar personas muy rapidas
+
+# FUNCION DE CONEXION (sirve para reconectar)
+def conectar_wifi():
+    print("Conectando a WiFi...")
+    intentos = 0
+    while not wifi.radio.connected and intentos < 10:
+        try:
+            wifi.radio.connect(WIFI_SSID, WIFI_PASSWORD)
+        except ConnectionError as e:
+            print("Fallo WiFi, reintentando...", e)
+            intentos += 1
+            time.sleep(2)
+    print("WiFi conectado. IP:", wifi.radio.ipv4_address)
+
+# FUNCION DE CONEXION MQTT (adafruit io)
+def conectar_mqtt(client):
+    print("Conectando a Adafruit IO...")
+    intentos = 0
+    conectado = False
+    while not conectado and intentos < 5:
+        try:
+            client.connect()
+            conectado = True
+            print("Conectado a Adafruit IO.")
+        except (MQTT.MMQTTException, OSError) as e:
+            intentos += 1
+            print("Fallo MQTT (intento {}), reintentando...".format(intentos), e)
+            time.sleep(3)
+    return conectado
+
+
+# CONEXION WIFI
+conectar_wifi()
+
+# CONEXION MQTT (ADAFRUIT IO)
+# Puerto 1883 (sin SSL): mas compatible con redes universitarias
+# que suelen bloquear el puerto 8883 (SSL/TLS) para MQTT.
+pool = socketpool.SocketPool(wifi.radio)
+mqtt_client = MQTT.MQTT(
+    broker="io.adafruit.com",
+    port=1883,
+    username=ADAFRUIT_IO_USER,
+    password=ADAFRUIT_IO_KEY,
+    socket_pool=pool,
+)
+
+conectar_mqtt(mqtt_client)
+
+# aqui se define el topic completo para publicar el conteo en el feed de Adafruit IO
+feed_topic = ADAFRUIT_IO_USER + "/feeds/" + FEED_ID
+
+# BUCLE PRINCIPAL / FUNCION PRINCIPAL DEL CODIGO
+while True:
+    try:
+        mqtt_client.loop()
+
+        estado_actual = ir_sensor.value
+
+        # detecta flanco de bajada: HIGH -> LOW = persona pasando
+        if estado_anterior is True and estado_actual is False:
+            contador += 1
+
+            # si llega al maximo, vuelve a 0 (ciclo)
+            if contador > MAX_CONTEO:
+                contador = 0
+
+            print("Persona detectada -> conteo:", contador)
+            mqtt_client.publish(feed_topic, contador)
+
+            # antirebote reducido: evita contar la misma persona dos
+            # veces sin perder detecciones rapidas consecutivas
+            time.sleep(ANTIREBOTE)
+
+        estado_anterior = estado_actual
+        time.sleep(0.02)  # lectura mas frecuente del sensor
+
+# si llegase a fallar la conexion MQTT, intenta reconectar sin reiniciar el dispositivo
+    except (ValueError, RuntimeError, OSError, MQTT.MMQTTException) as e:
+        print("Error de conexión, reintentando...", e)
+        time.sleep(2)
+        try:
+            mqtt_client.reconnect()
+        except (RuntimeError, OSError, MQTT.MMQTTException):
+            # si reconnect() falla, reintenta conexion completa
+            if not wifi.radio.connected:
+                conectar_wifi()
+            conectar_mqtt(mqtt_client)
+```
+
 ---
 
 ## OUTput - Anillo LED (código en Arduino) / código que recibe
