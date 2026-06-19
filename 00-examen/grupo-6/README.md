@@ -826,6 +826,8 @@ while True:
 - No subir tu clave Adafruit a github, ni a ninguna parte!!
 - Utilizar un wifi solo para la Raspberry
 - No pasar tan lejos del sensor
+- Pasar de a poquitos y lento, porque el Sensor Infrarojo le cuesta un poquito, pero se puede!!
+- No te estreses con la Raspberry, a veces no se conecta a WIFI, pero solo reinicienlo y funcionará
 
 ```cpp
 # PUENTE DIGITAL - Grupo 6 - Examen
@@ -958,6 +960,168 @@ while True:
 ## OUTput - Anillo LED (código en Arduino) / código que recibe
 
 **Recomendaciones:**
+
+- Tratar con cariño y calma el Arduino...
+- Se demora en leer los valores de Adafruit, así que no se estresen!!
+- Le pueden cambiar los colores
+
+```cpp
+// PUENTE DIGITAL — Grupo 6 - Examen
+// Lunes 22 de junio
+// Recibe el conteo desde Adafruit IO (MQTT) y lo representa
+// encendiendo el Anillo LED RGB WS2812 de 16 LEDs ("salida").
+// Librerias necesarias:
+//  - WiFiS3 (incluida con el core de UNO R4)
+//  - ArduinoMqttClient
+//  - Adafruit NeoPixel
+
+#include <WiFiS3.h>
+#include <ArduinoMqttClient.h>
+#include <Adafruit_NeoPixel.h>
+
+// CONFIGURACION ANILLO LED
+// definir el pin digital al que va conectado
+#define LED_PIN   6
+#define NUM_LEDS  16
+
+Adafruit_NeoPixel ring(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
+
+// CONFIGURACION WIFI - anota tu wifi
+char ssid[] = "blabla";
+char pass[] = "blabla";
+
+// CONFIGURACION ADAFRUIT IO - anota tu adafruit
+const char broker[]  = "io.adafruit.com";
+int        port      = 1883;
+const char* aio_user = "blabla";
+const char* aio_key  = "blabla";
+
+// se crea el feed en Adafruit
+String feedTopic = String(aio_user) + "/feeds/lid-conteo";
+
+WiFiClient   wifiClient;
+MqttClient   mqttClient(wifiClient);
+
+// COMENZAMOS CON LOS PASOS DEL CODIGO
+void setup() {
+  Serial.begin(115200);
+
+   // inicializar anillo LED
+  ring.begin();
+  ring.setBrightness(50);
+  ring.show(); // apagado al inicio
+
+  // conectar WiFi
+  Serial.print("Conectando a WiFi");
+  while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
+    Serial.print(".");
+    delay(1000);
+  }
+
+  // se imprime en el serial monitor si esta conectado o no
+  Serial.println();
+  Serial.println("WiFi conectado");
+  Serial.print("IP: ");
+  Serial.println(WiFi.localIP());
+
+  // conectar a Adafruit IO via MQTT
+  mqttClient.setUsernamePassword(aio_user, aio_key);
+
+  Serial.print("Conectando a Adafruit IO");
+  while (!mqttClient.connect(broker, port)) {
+    Serial.print(".");
+    delay(1000);
+  }
+  Serial.println();
+  Serial.println("Conectado a Adafruit IO");
+
+  // suscribirse al feed
+  // imprime si ya se conecto al feed correspondiente
+  mqttClient.subscribe(feedTopic);
+  Serial.print("Suscrito a: ");
+  Serial.println(feedTopic);
+}
+
+// esto fue lo que se agrego para que arduino leyera
+// mejor los valores de adafruit
+// sirve para estabilizar la conexion wifi
+unsigned long ultimaRevisionConexion = 0;
+const unsigned long INTERVALO_REVISION = 5000; // revisa conexión cada 5s, no cada loop
+
+// COMENZAMOS CON LAS FUNCIONES DEL CODIGO
+void loop() {
+  // mqttClient.poll() debe llamarse lo mas seguido posible,
+  // sin delays que la bloqueen entremedio.
+  mqttClient.poll();
+
+// se realiza la conexion mqtt para captar los datos de Adafruit IO
+  int messageSize = mqttClient.parseMessage();
+  if (messageSize > 0) {
+    String payload = "";
+    while (mqttClient.available()) {
+      payload += (char)mqttClient.read();
+    }
+
+    // al recibir los datos, los imprime como "conteo recibido"
+    int conteo = payload.toInt();
+    Serial.print("Conteo recibido: ");
+    Serial.println(conteo);
+
+    actualizarAnillo(conteo);
+
+    // revisa si quedo otro mensaje mas encolado
+    messageSize = mqttClient.parseMessage();
+  }
+
+  // revisa la conexion solo cada cierto intervalo, no en cada
+  // vuelta del loop -> evita overhead y delays innecesarios
+  unsigned long ahora = millis();
+  if (ahora - ultimaRevisionConexion >= INTERVALO_REVISION) {
+    ultimaRevisionConexion = ahora;
+
+    if (WiFi.status() != WL_CONNECTED) {
+      Serial.println("WiFi perdido, reconectando...");
+      WiFi.begin(ssid, pass);
+    }
+
+    if (!mqttClient.connected()) {
+      Serial.println("MQTT desconectado, reconectando...");
+      if (mqttClient.connect(broker, port)) {
+        mqttClient.subscribe(feedTopic);
+      }
+    }
+  }
+}
+
+// Enciende los LEDs correspondientes según el conteo recibido
+// Relacion directa: 1 persona = 1 LED encendido
+//   1 persona  -> LED 1 encendido
+//   2 personas -> LEDs 1 y 2 encendidos
+//   ...
+//   16 personas -> los 16 LEDs encendidos (anillo lleno)
+// Color segun nivel de ocupacion:
+//   1-5   -> verde   (poco ocupado)
+//   6-10  -> amarillo (ocupación media)
+//   11-16 -> rojo    (casi lleno / lleno)
+void actualizarAnillo(int conteo) {
+  int ledsActivos = constrain(conteo, 0, NUM_LEDS);
+
+  for (int i = 0; i < NUM_LEDS; i++) {
+    if (i < ledsActivos) {
+      if (ledsActivos <= 5) {
+        ring.setPixelColor(i, ring.Color(0, 255, 0));     // verde
+      } else if (ledsActivos <= 10) {
+        ring.setPixelColor(i, ring.Color(255, 255, 0));   // amarillo
+      } else {
+        ring.setPixelColor(i, ring.Color(255, 0, 0));     // rojo
+      }
+    } else {
+      ring.setPixelColor(i, ring.Color(0, 0, 0));         // apagado
+    }
+  }
+  ring.show();
+}
+```
 
 ---
 
