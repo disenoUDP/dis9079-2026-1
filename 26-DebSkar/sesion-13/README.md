@@ -27,6 +27,42 @@ Ciudades de Chile elegidas:
 * Punta Arenas
 * Antártica 
 
+#### Pseudocódigo:
+
+##### Código enviar Raspi: 
+
+Verificar si el Wi Fi está conectado,verificar si API está funcionando,verificar conexión con la nube,nombre WIFI,contraseña WIFI,user nube,contraseña nube,interruptor LEDS.
+
+Al mover el interruptor de la izquierda a la derecha se encienden leds y empieza a enviar la información de la API al arduino a través de AIO.
+
+Envía la información de la humedad de 8 ciudades de Chile:
+
+* Arica
+* Copiapó
+* Santiago
+* Valparaíso
+* Isla de Pascua
+* Juan Fernández
+* Punta Arenas
+* Antártica
+
+Deja de enviar información al girar el interruptor de derecha a izquierda.
+
+##### Código recibir Arduino:
+
+Definir módulo LED,definir pantalla,definir humidificador,verificar si Wi Fi conectado,verificar si API está funcionando,verificar conexión con la nube,definir componentes conectados al arduino.
+
+Recibir información de la humedad de las 8 ciudades,asignarle un valor y relacionarlo a un LED del módulo.Con dado digital elegir al azar un valor y encender el LED correspondiente de la ciudad,detectar el porcentaje de humedad del lugar y se activa el humidificador.
+
+#### Ideas para el concepto de "Bruma Compacta"
+
+![maguito](imagenes/mago.jpeg)
+
+![ruleta](imagenes/ruleta.jpeg)
+
+![control](imagenes/sol.jpeg)
+
+
 
 
 

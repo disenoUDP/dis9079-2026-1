@@ -2,7 +2,7 @@
 
 lunes 01 junio 2026
 
-### Exámen !! 
+### Examen !! 
 
 Requisitos:
 
