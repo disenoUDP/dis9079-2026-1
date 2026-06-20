@@ -62,7 +62,7 @@ Este fue el error que más me costó detectar, porque la API estaba funcionando 
 
 Como consecuencia del punto anterior, me di cuenta de que el topic `planta/humedad` ya no representaba correctamente lo que estaba transmitiendo. Lo renombré a `planta/voz`, ya que el payload que publicaba dejó de ser información de humedad y pasó a ser la señal eléctrica de la planta interpretada como actividad.
 
-### Lo que aprendí sobre el uso de la API
+### Que aprendí sobre el uso de la API
 
 Al revisar todo mi proceso, me di cuenta de que ninguno de los errores que tuve fue, en rigor, un fallo del protocolo MQTT ni del servicio HiveMQ Cloud — ambos funcionaron de forma estable durante todo el desarrollo. Mis errores fueron, en cambio, de **configuración del entorno** (no tener seleccionado el puerto USB) y de **diseño del payload** (interpretar mal qué tipo de dato estaba publicando). Esto me dejó una idea clara: una API puede estar funcionando perfectamente bien a nivel de transporte de datos, mientras el contenido que viaja a través de ella sigue siendo conceptualmente incorrecto. Verificar la conexión y verificar el significado de los datos son dos pasos de depuración distintos, y ambos fueron necesarios para que mi proyecto llegara a funcionar.
 
