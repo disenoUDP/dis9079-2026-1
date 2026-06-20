@@ -4,7 +4,7 @@
 
 Una API (Interfaz de Programación de Aplicaciones) es el conjunto de reglas que permite que dos sistemas distintos —en este caso, el Arduino y la nube— se comuniquen entre sí sin que cada uno necesite conocer los detalles internos del otro. En el proyecto trabajé específicamente con el protocolo **MQTT** y el servicio en la nube **HiveMQ Cloud**, que implementa ese protocolo como servicio gestionado.
 
-### MQTT (Message Queuing Telemetry Transport)
+### MQTT 
 
 Según JustProtocols (2026), MQTT es un protocolo de mensajería liviano basado en el patrón **publicador/suscriptor (pub/sub)**, diseñado originalmente en 1999 por Andy Stanford-Clark (IBM) y Arlen Nipper para monitorear oleoductos vía satélite, donde el ancho de banda era costoso y las conexiones poco confiables. El mismo autor señala que desde entonces el protocolo se convirtió en el estándar dominante para el Internet de las Cosas (IoT), siendo ahora un estándar abierto de OASIS, con MQTT 5.0 como su versión más reciente, publicada en 2019. De acuerdo con esta fuente, MQTT corre sobre TCP, usando el puerto 1883 sin cifrar y el puerto 8883 cuando se asegura con TLS — este último es el que usé en mi proyecto.
 
