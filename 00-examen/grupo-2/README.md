@@ -25,6 +25,26 @@ De esta manera, aquello que normalmente percibimos solo con el oído podrá mani
 
 Buscamos hacer visible una dimensión cotidiana que suele pasar desapercibida: la manera en que habitamos los espacios y cómo nuestra presencia los transforma a través de la relación entre sonido e imagen, la visualización funcionará como un retrato vivo de ambos lugares.
 
+## Pseudocódigo Raspberry (input)
+
+1. Conectar Raspberry Pi Pico a WiFi
+2. Conectar Raspberry Pi Pico a Adafruit IO mediante MQTT
+-  MIENTRAS el sistema esté funcionando
+5. Leer datos del micrófono
+6. Calcular nivel de sonido
+7. Convertir nivel de sonido a porcentaje (0% a 100%)
+8. Enviar porcentaje al feed MQTT en adafruit
+
+## Pseudocódigo Touchdesigner (output)
+
+1. Conectarse a Adafruit IO mediante MQTT
+2. Suscribirse a los feeds de ambos lugares
+- CUANDO llegue un mensaje
+  4. Leer valor recibido
+  5. Identificar de qué lugar proviene
+  6. Actualizar la variable correspondiente
+  7. Mostrar el dato en la visualización
+
 ## Primeros acercamientos
 
 En un inicio se utilizaron varias
@@ -273,17 +293,15 @@ while True:
 
 ## Output: Touchdesigner
 
-Al tener los datos recopilados ...
+[![Ver video](https://img.youtube.com/vi/n-fH_hPftp4/maxresdefault.jpg)](https://youtu.be/n-fH_hPftp4)
 
 ## Demostraciones en vivo
 
 ### Video en el mismo edificio (distintos espacios)
 
-Video 1
+[![Ver video](https://img.youtube.com/vi/wxTEaNKYboA/maxresdefault.jpg)](https://youtube.com/shorts/wxTEaNKYboA)
 
-### Video en distintos edificios
-
-Video 2
+---
 
 ## Bill of materials (listado de materiales)
 
@@ -295,20 +313,32 @@ Video 2
 | Sensor Analógico Sonido/Audio MAX9812 | Sensor | 1 | $3.790 | <https://hubot.cl/producto/sensor-analogico-audio-max9812-sku-614/> |
 | Pantalla LCD OLED 0,96 | Componente | 1 | $4.500 | <https://afel.cl/products/pantalla-lcd-oled-azul-y-amarillo-0-96> |
 
+---
+
 ## Mapa de flujo
 
-```mermaid
----
-config:
-  layout: fixed
----
-flowchart TB
-    A["Se da energía a todo el circuito"] --> n19["Se conectan a internet ambas placas"]
-    n19 --> n5["El proyecto queda a la espera de un usuario"]
 
-    A@{ shape: rect}
-    n19@{ shape: rect}
-    n5@{ shape: rect}
+```mermaid
+flowchart TD
+
+A[Micrófono en el LID] --> B[Raspberry Pi Pico 2W]
+C[Micrófono en pañol] --> D[Raspberry Pi Pico 2W]
+
+B --> E[Procesar nivel de sonido]
+D --> F[Procesar nivel de sonido]
+
+E --> G[Enviar datos por MQTT]
+F --> G
+
+G --> H[Adafruit IO]
+
+H --> I[TouchDesigner]
+
+I --> J[Recibir datos de REP180]
+I --> K[Recibir datos de SS]
+
+J --> L[Actualizar visualización]
+K --> L
 ```
 
 ## Investigaciones individuales
