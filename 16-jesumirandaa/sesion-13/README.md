@@ -26,11 +26,6 @@ El **Tótem 01** funciona como dispositivo de entrada. En su base se encuentra e
 
 El **Tótem 02** funciona como dispositivo receptor. Incorpora un servomotor cuyo movimiento está vinculado a la distancia registrada por el sensor del Tótem 01: a medida que la persona se acerca, el servo se mueve gradualmente. Cuando la presencia es reconocida por completo, el Tótem 02 recibe un mensaje que se muestra en pantalla como señal de compañía. La comunicación entre ambos tótems ocurre de forma inalámbrica a través de Adafruit IO.
 
-
-En esta clase nos dedicamos a definir de forma más concreta lo que haríamos para el examen. Retomamos la propuesta del altar y la ordenamos mejor, separando la descripción en una parte conceptual y una técnica, que era justamente una de las correcciones que nos habían dado.
-
-Lo que más me gustó fue la dirección que tomó el proyecto: decidimos presentarlo como una especie de muestra museográfica, dos módulos separados como si fueran objetos de exhibición. El primero tiene un sensor ultrasónico y un LED que responde progresivamente a la cercanía de una persona. El segundo tiene una pantalla OLED y un servomotor que recibe lo que detecta el primero y lo traduce en movimiento y en un mensaje. La comunicación entre ambos ocurre de forma inalámbrica a través de Adafruit IO.
-
 ---
 
 ## Bocetos y composición de los tótems
@@ -134,7 +129,7 @@ Diagrama representativo de distancia hecho por la magda!!
 
 ## Avance durante la semana en grupito
 
-Durante la semana dedicamos tiempo a avanzar en el código y a probar los elementos que vamos a usar en el proyecto. El foco estuvo en el Tótem 01, que es el dispositivo encargado de detectar la presencia de una persona mediante un sensor ultrasónico HC-SR04 y traducir esa proximidad en una respuesta lumínica con un LED. Jota, compañero del LID ofreció ayudarnos con la primera prueba de impresión del corazón, ya cuando esta quedó impresa en filamento blanco comenzamos a probar como funcionaba en conjunto con el LED de color rojo, teniendo ya nuestros primeros resgistros y resultados. 
+Durante la semana dedicamos tiempo a avanzar en el código y a probar los elementos que vamos a usar en el proyecto. El foco estuvo en el Tótem 01, que es el dispositivo encargado de detectar la presencia de una persona mediante un sensor ultrasónico HC-SR04 y traducir esa proximidad en una respuesta lumínica con un LED. Jota, compañero del LID ofreció ayudarnos con la primera prueba de impresión del corazón, ya cuando esta quedó impresa en filamento blanco comenzamos a probar como funcionaba en conjunto con el LED de color rojo, teniendo ya nuestros primeros registros y resultados. 
 
 Primero trabajamos solo con el sensor, definiendo TRIG en el pin 2 y ECHO en el pin 3. A partir de ahí programamos la lectura de distancia en centímetros y fuimos probando distintos rangos según qué tan cerca estaba la persona del tótem. Compañeros del LID nos ayudaron a revisar el funcionamiento del sensor y nos recomendaron no usar `delay()` como método principal para controlar los tiempos, porque eso vuelve el sistema más lento y poco fluido. Nos sugirieron usar `millis()` en su lugar, ya que permite medir el paso del tiempo sin detener completamente el Arduino.
 
@@ -146,11 +141,11 @@ En un comienzo definimos cuatro rangos de distancia, pero terminamos simplifican
 - Entre 50 cm y 150 cm → alguien se acerca
 - 50 cm o menos → hay alguien cerca
 
-<img src="imagenes/led.gif" style="width: 100%;" alt="Mi imagen">  
+<img src="imagenes/pruebaled.gif" style="width: 100%;" alt="Mi imagen">  
 
-Aquí registros de unas primeras pruebas de distancia con el LED y sensor en funcionaiento: 
+Aquí registros de unas primeras pruebas de distancia con el LED y sensor en funcionamiento: 
 
-<img src="imagenes/leduso.gif" style="width: 100%;" alt="Mi imagen"> 
+<img src="imagenes/distancialed.gif" style="width: 100%;" alt="Mi imagen"> 
 
 Así quedó definido el comportamiento del LED:
 
