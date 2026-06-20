@@ -4,12 +4,6 @@ lunes 08 junio 2026
 
 Avance en clase exámen
 
-
-
-
-
-
-
 ### Qué es nuestro proyecto?
 
 #### Semáforo de Ocupación Remota
@@ -38,34 +32,16 @@ Arduino
 Raspberry
 
 - módulo del semaforo RGB
-- 2 resistencias 220Ω
-- cables macho macho (varios)
-- 1 Protoboard 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- 4 cables macho-macho 
 
 
 ### Pseudo Código
 
 #### Arduino
 
+```
 INICIO
-  contador = 0
+  contador = 0 o +
   conectarse a WiFi
   conectarse a Adafruit IO
 
@@ -79,31 +55,33 @@ INICIO
         contador = contador - 1
       publicar contador en Adafruit IO
 FIN
-
+```
 #### Raspberry
 
+```
 INICIO
-  conectarse a Adafruit IO (por el PC)
+  conectarse a WiFi
+  conectarse a Adafruit IO
 
   REPETIR SIEMPRE:
-    leer valor del feed "ocupacion" desde Adafruit IO
+    leer valor del feed "pruebasemaforo" desde Adafruit IO
 
-    SI valor es 0, 1 a 4:
+    SI valor es 0 a 5:
       encender LED VERDE
       apagar LED amarillo
       apagar LED rojo
 
-    SI valor es 5 o 9:
+    SI valor es 6 a 10:
       apagar LED verde
       encender LED AMARILLO
       apagar LED rojo
 
-    SI valor es 10 o más:
+    SI valor es 11 o más:
       apagar LED verde
       apagar LED amarillo
       encender LED ROJO
 FIN
-
+```
 
 
 me fui antes de clase porque me sentía mal :C
