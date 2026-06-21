@@ -60,7 +60,9 @@ Cliente / App <--- (4) Entrega Datos en Pantalla <-- Bridge  <--- (3) Responde c
 
 
 
+
 El funcionamiento de una puede entenderse en cuatro pasos básicos:
+
 
 
 1. Solicitud: Una aplicación envía una solicitud, especificando qué información o acción necesita.
