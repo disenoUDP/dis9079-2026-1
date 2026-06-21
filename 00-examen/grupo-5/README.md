@@ -141,6 +141,31 @@ Otro fue que el texto que te indica el número de la foto en la pantalla no apar
 
 ### Fotos proceso
 
+![proceso 1](./imagenes/proceso_1.jpeg)
+
+![proceso 2](./imagenes/proceso_2.jpeg)
+
+![proceso 3](./imagenes/proceso_4.jpeg)
+
+![proceso 4](./imagenes/proceso_5.jpeg)
+
+![proceso 5](./imagenes/proceso_5.jpeg)
+
+![proceso 6](./imagenes/proceso_6.jpeg)
+
+![proceso 7](./imagenes/proceso_7.jpeg)
+
+![proceso 8](./imagenes/proceso_8.gif)
+
+![proceso filtros 0](./imagenes/prueba_sin_filto.jpg)
+![proceso filtros 1](./imagenes/prueba_con_filtro_1.jpg)
+![proceso filtros 2](./imagenes/prueba_con_filtro_2.jpg)
+![proceso filtros 3](./imagenes/prueba_con_filtro_3.jpg)
+![proceso filtros 4](./imagenes/prueba_con_filtro_4.jpg)
+![proceso filtros 6](./imagenes/prueba_con_filtro_6.jpg)
+![proceso filtros 7](./imagenes/prueba_con_filtro_7.jpg)
+
+
 ### Códigos 
 
 #### ESP32-CAM
