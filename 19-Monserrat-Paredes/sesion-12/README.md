@@ -128,13 +128,23 @@ Este proyecto consiste en un sistema que conecta el LID y la biblioteca para med
 ## Referentes de apis -> visto en clases
 
 https://eroft.decontextualize.com/
+
 https://metmuseum.github.io/
+
 https://github.com/public-apis/public-apis
+
 https://developer.nytimes.com/apis
+
 https://api.nasa.gov/
+
 https://www.reddit.com/r/webdev/comments/194rfia/api_hidden_gems/
+
 https://openweathermap.org/api
+
 https://en.wikipedia.org/wiki/API
+
 https://everest-pipkin.com/projects/corsicana
+
 https://yeseul.com/Slow-Dimming-Study-Rice-Dimmer
+
 https://yeseul.com/Invisible-Sculpture-On-Wheels-GimHae
