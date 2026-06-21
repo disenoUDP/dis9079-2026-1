@@ -1,8 +1,14 @@
-# grupo-1
+# Examen / grupo-1
 
-- magdalenabalart
-- jesumirandaa
-- ccarlabelenn
+lunes 22 junio 2026
+
+## Integrantes
+
+- Magdalena Balart / https://github.com/magdalenabalart
+- Jesús Miranda / https://github.com/jesumirandaa
+- Carla Núñez / https://github.com/ccarlabelenn
+
+## Descripción textual del proyecto
 
 El proyecto consiste en un altar lumínico compuesto por dos tótems conectados inalámbricamente entre sí, donde la presencia física de una persona se transforma en una señal luminosa, mecánica y afectiva. La interacción principal ocurre en el Tótem 01, construido como un altar vertical. En su base se encuentra resguardado el Arduino, mientras que en su estructura se integra un sensor ultrasónico capaz de medir la distancia entre el objeto y la persona que se aproxima.
 
