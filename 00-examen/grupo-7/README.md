@@ -1175,6 +1175,10 @@ Lo que diferencia este proyecto de otros similares en el mundo (Mileece, PlantWa
 
 Claude no tomó decisiones creativas. Todas las decisiones sobre concepto, estética, qué planta usar, qué colores, qué tipo de visualización, fueron del grupo. Claude funcionó como un profesor técnico disponible en cualquier momento.
 
+## Demo video en SS
+
+## Demo video SS-república 180
+
 ## Conclusión
 
 "La Voz de las Plantas" partió de un problema de infraestructura —un servicio caído— y terminó convirtiéndose en un sistema propio, más robusto y mejor entendido en cada una de sus capas: hardware, conectividad y visualización.
