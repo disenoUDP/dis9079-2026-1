@@ -16,10 +16,10 @@ lunes 08 junio 2026
 1. Conectar Raspberry Pi Pico a WiFi
 2. Conectar Raspberry Pi Pico a Adafruit IO mediante MQTT
 3. MIENTRAS el sistema esté funcionando
-   4. Leer datos del micrófono
-   5. Calcular nivel de sonido
-   6. Convertir nivel de sonido a porcentaje (0% a 100%)
-   7. Enviar porcentaje al feed MQTT en adafruit
+4. Leer datos del micrófono
+5. Calcular nivel de sonido
+6. Convertir nivel de sonido a porcentaje (0% a 100%)
+7. Enviar porcentaje al feed MQTT en adafruit
 
 ## Pseudocódigo Touchdesigner (output)
 

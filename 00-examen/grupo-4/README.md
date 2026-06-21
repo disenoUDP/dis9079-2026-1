@@ -5,6 +5,10 @@
 - Renata Arévalo Urra / [arevalourra](<https://github.com/isipm08/dis9079-2026-1/tree/main/06-arevalourra>)
 - Isidora Pérez Maulén / [isipm08](<https://github.com/isipm08/dis9079-2026-1/tree/main/21-isipm08>)
 
+## Descripción del proyecto
+
+Nuestro proyecto nace del deseo de transformar cada latido en un puente de conexión. Mediante el sensor ECG AD8232, la actividad cardíaca deja de ser una señal invisible para convertirse en información que viaja en cuestión de segundos. A través de Adafruit IO, cada pulso encuentra un camino seguro hasta una pantalla LCD conectada a un segundo microcontrolador, donde los datos cobran vida nuevamente. Así, este sistema no solo captura y transmite información: crea una nueva forma de acompañar, observar, demostrando que incluso el ritmo silencioso del corazón puede trascender la distancia y hacerse presente allí donde más se necesita.
+
 ## Materiales usados
 
 | Componente | Valor Unidad | Cantidad | Link |
@@ -23,7 +27,15 @@
 
 #### 3 Semanas para el examen
 
-Inicio de ideación de examen, estuvimos leyendo e investigando sobre varios sensores, para ver si nos gustaba alguno para realizar nuestro proyectop de examen, nos decidimos por un sensor de pulso, específicamente el Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma, con la idea de obtener registros en vivo de los latidos por minuto del usuario, usaremos la API -> Adafruit IO, que ya conocemos y sabemos su funcionamiento, por el lado de recepción de datos, pensamos en una pantalla LCD que muestre los latidos por minuto, usaremos 2 arduinos, uno paras enviar y otro para recibir la información.
+Inicio de ideación de examen, estuvimos leyendo e investigando sobre varios sensores, para ver si nos gustaba alguno para realizar nuestro proyectop de examen, nos decidimos por un sensor de pulso, específicamente el Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma,  que es un módulo diseñado para medir la actividad eléctrica del corazón y generar lecturas similares a un electrocardiograma (ECG). Funcionando como una interfaz que extrae, amplifica y filtra las señales eléctricas muy débiles que genera el cuerpo humano al latir. 
+
+Con  este sensor teníamos la idea de obtener registros en vivo de los latidos por minuto del usuario, usaremos la API -> Adafruit IO, que ya conocemos y sabemos su funcionamiento, por el lado de recepción de datos, pensamos en una pantalla LCD que muestre los latidos por minuto, usaremos 2 arduinos, uno paras enviar y otro para recibir la información.
+
+![Modulo Sensor](./imagenes/modulo-sensor.webp)
+
+*Modulo Sensor AD8232 - Imagen extraída de página web de AFEL*
+
+https://afel.cl/cdn/shop/files/modulo-sensor-ad8232.jpg?v=1720904051&width=713
 
 
 ### Interacción entre grupos vía Discord
@@ -41,6 +53,12 @@ Grupo 04: Queremos lograr una exploración sobre la capacidad de las tecnología
 - Jesús Miranda nos pregunta: ¿qué pasa en este caso en el dispositivo receptor? ya que en el párrafo dice que los latidos "son observados" pero no queda claro si es una pantalla LED, sonido, ¿cómo se ve esa presencia remota?
 
     - Resp: Estamos considerando el uso de la pantalla led del arduino o anexar una pantalla LCD para la visualización de los datos, que en este caso son las pulsaciones por minuto
+
+![Registro Discord 1](./imagenes/discord-1.png)
+
+![Registro Discord 2](./imagenes/discord-2.png)
+
+*Registro de Interacción en Discord*
 
 -----
 
@@ -132,7 +150,7 @@ Cuenta Adafruit IO
 
 ---- 
 
-Mateo viene a nuestros puestos a consultar como va el avancwe de nuestro proyecto, le comentamos nuestra idea definida y le gusta, nos da la idea de hacer una carcasa para la opantalla donde se muestran los datos (BPM), y nos presta una Pantalla TFT LCD Redonda de 1,28", lo cual nos quedaría super con una carcasa, en forma de corazón, ya estamos trabajando en un modelo de impresión 3D e imprimir entre esta semana y la siguiente en el LID; Gracias Mateo!!
+Mateo viene a nuestros puestos a consultar como va el avance de nuestro proyecto, le comentamos nuestra idea definida y le gusta, nos da la idea de hacer una carcasa para la opantalla donde se muestran los datos (BPM), y nos presta una Pantalla TFT LCD Redonda de 1,28", lo cual nos quedaría super con una carcasa, en forma de corazón, ya estamos trabajando en un modelo de impresión 3D e imprimir entre esta semana y la siguiente en el LID; Gracias Mateo!!
 
 -----
 
@@ -155,7 +173,420 @@ Red WiFi
 Cuenta Adafruit IO
 
 
+### Martes 09 de Junio
+
+![Compra Afel](./imagenes/compra-afel.gif)
+
+*Compra de Sensor AD8282 en AFEL*
 
 
+## Inicio de Trabajo con Sensor
 
+### Lunes 15 Junio 
+
+#### 1 Semana para el examen
+
+Iniciamos en el LID, tenemos todos los materiales necesarios para poder trabajar, tenemos pendiente realizar el modelado 3D para la pantalla.
+
+Luego conectamos nuestra Pantalla TFT LCD redonda de 1.28" a una proto y luego el Sensor ECG AD8232 a otra proto y a la isipm.
+
+(foto)
+
+Entre varios intentos de códigos, llegamos a uno final para TRANSMISOR y RECEPTOR. (más adelante verán nuestro error)
+
+---- 
+
+Mateo y Aarón nos revisaron nuestro proyecto, nos comentaron que estaba bueno, solo que podíamos mejorar que la pantalla no refrescara.
+Aún no hemos podido mejorar la pantalla (si está buena pero creemos que son los cables), además mejorar la calidad de la visualización de los datos. Estaremos informando...
+
+---- 
+
+> CÓDIGO FALLIDO
+
+```cpp
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+
+#include <Arduino_GFX_Library.h>
+
+// ---------------- WIFI ----------------
+#define WIFI_SSID "iPhone de Renata"
+#define WIFI_PASS "arevalo1234"
+
+// ---------------- ADAFRUIT ----------------
+#define IO_USERNAME "arevalourra"
+#define IO_KEY "TU_KEY"
+
+// FEEDS
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+
+AdafruitIO_Feed *bpmFeed =
+  io.feed("examen-grupo04-bpm");
+
+AdafruitIO_Feed *estadoFeed =
+  io.feed("examen-grupo04-ecg");
+
+// ---------------- PANTALLA GC9A01 ----------------
+
+Arduino_DataBus *bus =
+  new Arduino_HWSPI(
+    9,    // DC
+    10    // CS
+  );
+
+Arduino_GFX *gfx =
+  new Arduino_GC9A01(
+    bus,
+    8,    // RESET
+    0,    // rotación
+    true
+  );
+
+// ---------------- VARIABLES ----------------
+
+String bpm = "--";
+String estado = "---";
+
+void dibujarPantalla()
+{
+  gfx->fillScreen(0x0000);
+
+  gfx->setTextColor(0xFFFF);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(30, 40);
+  gfx->println("ECG");
+
+  gfx->setTextSize(4);
+  gfx->setCursor(40, 90);
+  gfx->println(bpm);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(20, 170);
+  gfx->println(estado);
+}
+
+// ---------- CALLBACK BPM ----------
+
+void handleBPM(AdafruitIO_Data *data)
+{
+  bpm = data->toString();
+
+  Serial.print("BPM recibido: ");
+  Serial.println(bpm);
+
+  dibujarPantalla();
+}
+
+// ---------- CALLBACK ESTADO ----------
+
+void handleEstado(AdafruitIO_Data *data)
+{
+  estado = data->toString();
+
+  Serial.print("Estado recibido: ");
+  Serial.println(estado);
+
+  dibujarPantalla();
+}
+
+void setup()
+{
+  Serial.begin(115200);
+
+  gfx->begin();
+
+  gfx->fillScreen(0x0000);
+
+  gfx->setTextColor(0xFFFF);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(20,120);
+  gfx->println("Conectando...");
+
+  Serial.println("Conectando Adafruit IO");
+
+  io.connect();
+
+  while(io.status() < AIO_CONNECTED)
+  {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println("Conectado!");
+
+  bpmFeed->onMessage(handleBPM);
+  estadoFeed->onMessage(handleEstado);
+
+  bpmFeed->get();
+  estadoFeed->get();
+
+  dibujarPantalla();
+}
+
+void loop()
+{
+  io.run();
+}
+```
+
+> CÓDIGO FALLIDO
+
+```cpp
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+
+#include <Arduino_GFX_Library.h>
+
+// ---------------- WIFI ----------------
+#define WIFI_SSID "TU_WIFI"
+#define WIFI_PASS "TU_CLAVE"
+
+// ---------------- ADAFRUIT ----------------
+#define IO_USERNAME "TU_USUARIO"
+#define IO_KEY "TU_KEY"
+
+// FEEDS
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+
+AdafruitIO_Feed *bpmFeed =
+  io.feed("examen-grupo04-bpm");
+
+AdafruitIO_Feed *estadoFeed =
+  io.feed("examen-grupo04-ecg");
+
+// ---------------- PANTALLA GC9A01 ----------------
+
+Arduino_DataBus *bus =
+  new Arduino_HWSPI(
+    9,    // DC
+    10    // CS
+  );
+
+Arduino_GFX *gfx =
+  new Arduino_GC9A01(
+    bus,
+    8,    // RESET
+    0,    // rotación
+    true
+  );
+
+// ---------------- VARIABLES ----------------
+
+String bpm = "--";
+String estado = "---";
+
+void dibujarPantalla()
+{
+  gfx->fillScreen(0x0000);
+
+  gfx->setTextColor(0xFFFF);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(30, 40);
+  gfx->println("ECG");
+
+  gfx->setTextSize(4);
+  gfx->setCursor(40, 90);
+  gfx->println(bpm);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(20, 170);
+  gfx->println(estado);
+}
+
+// ---------- CALLBACK BPM ----------
+
+void handleBPM(AdafruitIO_Data *data)
+{
+  bpm = data->toString();
+
+  Serial.print("BPM recibido: ");
+  Serial.println(bpm);
+
+  dibujarPantalla();
+}
+
+// ---------- CALLBACK ESTADO ----------
+
+void handleEstado(AdafruitIO_Data *data)
+{
+  estado = data->toString();
+
+  Serial.print("Estado recibido: ");
+  Serial.println(estado);
+
+  dibujarPantalla();
+}
+
+void setup()
+{
+  Serial.begin(115200);
+
+  gfx->begin();
+
+  gfx->fillScreen(0x0000);
+
+  gfx->setTextColor(0xFFFF);
+
+  gfx->setTextSize(2);
+  gfx->setCursor(20,120);
+  gfx->println("Conectando...");
+
+  Serial.println("Conectando Adafruit IO");
+
+  io.connect();
+
+  while(io.status() < AIO_CONNECTED)
+  {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println("Conectado!");
+
+  bpmFeed->onMessage(handleBPM);
+  estadoFeed->onMessage(handleEstado);
+
+  bpmFeed->get();
+  estadoFeed->get();
+
+  dibujarPantalla();
+}
+
+void loop()
+{
+  io.run();
+}
+```
+
+### Miércoles 17 Junio 
+
+### 5 días para el examen
+
+El día de hoy realizamos denuevo la prueba para la pantalla y efectivamente eran los cables!!
+
+Nos dimos cuenta que los datos que nos tiraba eran solo datos aleatorios y no detectaba los pulsos reales...
+
+Probando distintos códigos, aún no pudimos realizar que los pulsos fueran en tiempo real y de nosotras. 
+
+> CÓDIGO DE PRUEBA PANTALLA TFT LCD redonda de 1.28"
+
+- Utilizamos este código para probar la pantalla con los cables nuevos y si funcionó, refeljaba los colores respectivos.
+
+```cpp
+#include <Arduino_GFX_Library.h>
+
+// Pines de control
+#define TFT_DC   9
+#define TFT_CS   10
+#define TFT_RST  8
+
+// Colores RGB565
+#define TFT_BLACK   0x0000
+#define TFT_BLUE    0x001F
+#define TFT_RED     0xF800
+#define TFT_GREEN   0x07E0
+#define TFT_WHITE   0xFFFF
+#define TFT_YELLOW  0xFFE0
+#define TFT_CYAN    0x07FF
+#define TFT_MAGENTA 0xF81F
+
+// Configuración SPI por hardware
+Arduino_DataBus *bus = new Arduino_HWSPI(
+  TFT_DC,
+  TFT_CS
+);
+
+// Configuración pantalla GC9A01
+Arduino_GFX *gfx = new Arduino_GC9A01(
+  bus,
+  TFT_RST,
+  0,      // Rotación (0-3)
+  true    // IPS
+);
+
+void setup() {
+
+  Serial.begin(115200);
+
+  if (!gfx->begin()) {
+    Serial.println("Error al iniciar la pantalla");
+    while (1);
+  }
+
+  gfx->fillScreen(TFT_BLACK);
+
+  gfx->setTextSize(2);
+  gfx->setTextColor(TFT_WHITE);
+  gfx->setCursor(45, 110);
+  gfx->println("TEST RGB");
+
+  delay(2000);
+}
+
+void loop() {
+
+  mostrarColor(TFT_RED, "ROJO");
+  mostrarColor(TFT_GREEN, "VERDE");
+  mostrarColor(TFT_BLUE, "AZUL");
+  mostrarColor(TFT_WHITE, "BLANCO");
+  mostrarColor(TFT_YELLOW, "AMARILLO");
+  mostrarColor(TFT_CYAN, "CIAN");
+  mostrarColor(TFT_MAGENTA, "MAGENTA");
+  mostrarColor(TFT_BLACK, "NEGRO");
+}
+
+void mostrarColor(uint16_t color, const char *texto) {
+
+  gfx->fillScreen(color);
+
+  if (color == TFT_BLACK) {
+    gfx->setTextColor(TFT_WHITE);
+  } else {
+    gfx->setTextColor(TFT_BLACK);
+  }
+
+  gfx->setTextSize(3);
+
+  int16_t x1, y1;
+  uint16_t w, h;
+
+  gfx->getTextBounds(
+    texto,
+    0,
+    0,
+    &x1,
+    &y1,
+    &w,
+    &h
+  );
+
+  int16_t x = (240 - w) / 2;
+  int16_t y = (240 - h) / 2;
+
+  gfx->setCursor(x, y);
+  gfx->println(texto);
+
+  delay(2000);
+}
+```
+FOTO DE COMO FUNCIONA LA PANTALLA 
+
+### Viernes 19 de Junio 
+
+### 3 días para el examen
+
+**CÓDIGO TRANSMISOR**
+```cpp
+```
+
+
+### DEMO EN VIDEO REPU-SS
+**CÓDIGO RECEPTOR**
+```cpp
+```
 

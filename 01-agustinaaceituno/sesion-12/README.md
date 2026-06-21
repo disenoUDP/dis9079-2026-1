@@ -6,7 +6,14 @@ lunes 01 junio 2026
 
 lunes 25 mayo 2026
 
-## Examen -  Estudios inalambricos sobre 
+## ¿Que es una API?
+
+Interfaz de Programación de Aplicaciones
+
+Una herramienta que permite que distintos programas, plataformas o dispositivos intercambien información y trabajen en conjunto. Se pueden incorporar funciones o servicios ya existentes dentro de sus proyectos, evitando tener que programar todo desde el principio. Las API ayudan a proteger los sistemas, ya que solo entregan los datos necesarios para cada petición, sin revelar el funcionamiento completo de la plataforma o servidor.
+
+
+## Examen -  Estudios inalámbricos  
 
 Explicación un parrafo min 4 líneas, **que** hace el proyecto
 

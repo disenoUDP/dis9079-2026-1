@@ -36,7 +36,9 @@ Nuestro proyecto parte desde la pregunta `¿Cuántos habitan los lugares de trab
 
 `Idea de mateo:` Hacer un totém mini que esté la pantalla Oled o el Anillo de leds, en la oficina de Aarón, para que vea cuánta gente está en el LID
 
-### Pseudocódigo
+### Pseudocódigo hecho con Claude
+
+- Cabe recalcar que lo modificamos, pero ese lo colocamos en el examen :)
 
 ```bash
 PROYECTO: Puente Digital

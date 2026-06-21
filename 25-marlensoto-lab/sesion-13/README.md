@@ -2,7 +2,7 @@
 
 lunes 08 junio 2026
 
-### Clase actual — Pseudocódigo y pruebas
+### Clase — Pseudocódigo y pruebas
 
 #### ¿Qué es el pseudocódigo?
 El pseudocódigo es una descripción estructurada del algoritmo escrita en lenguaje natural,
@@ -81,17 +81,18 @@ Flujo General
 
 Lógica del Proyecto
 
-Capturar señales eléctricas de la planta
+    Capturar señales eléctricas de la planta
 
-Convertir señales en datos digitales
+    Convertir señales en datos digitales
 
-Transmitir datos de forma inalámbrica
+    Transmitir datos de forma inalámbrica
 
-Recibir y procesar la información
+    Recibir y procesar la información
 
-Transformar los datos en imágenes, luces o sonidos
+    Transformar los datos en imágenes, luces o sonidos
 
-Mostrar en tiempo real la actividad detectada por la planta
+    Mostrar en tiempo real la actividad detectada por la planta
+    
 ---
 
 ### Códigos de prueba (verificación por etapas)
@@ -106,22 +107,7 @@ Antes de integrar todo el sistema, se verificará cada subsistema por separado:
 | `test_recepcion_pico.py` | Recepción y parseo en Pico 2 W | Thonny / MicroPython |
 
 ---
-
-PLANTA
-   │
-   ▼
-ADS1115
-   │
-   ▼
-Arduino UNO R4 WiFi
-   │
-   │ WiFi
-   ▼
-Raspberry Pi Pico 2 W / PC
-   │
-   ├──► Música generativa
-   │
-   └──► Visualización gráfica
+   
 ### Siguiente clase — Programación definitiva
 
 Con el pseudocódigo validado y las pruebas aprobadas, se procederá a:

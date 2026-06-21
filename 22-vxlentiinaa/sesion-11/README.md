@@ -63,3 +63,8 @@ En mezcladores como el TX-6 también se aplica detección de umbral: solo se rep
 - Problema de rango al inicio/fin de recorrido: Los potenciómetros físicos raramente llegan al 0% o 100% exacto de Vcc en sus extremos. El firmware debe calibrar y mapear el rango real de lectura al rango deseado de parámetros, evitando zonas muertas en los extremos.
 
 En conclusión, la distinción más crítica para el TX-6 es que sus 18 knobs son potenciómetros con inicio y fin de recorrido (no encoders). Eso significa que siempre tienen una posición absoluta, lo que es ideal para un mezclador: al encenderlo, el firmware puede leer inmediatamente en qué posición está cada knob sin necesidad de "inicialización".
+
+---
+
+- En esta sesión vimos los proyectos de todos!!
+- Estaban muy buenos

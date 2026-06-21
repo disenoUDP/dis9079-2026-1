@@ -10,12 +10,15 @@ Grupo de 3 a 4 personas
 
 INDIVIDUAL
 
-Investigación sobre apis 
-Bitacoras y procesos 
+- Investigación sobre apis
+
+- Bitacoras y procesos 
+
 
 GRUPAL
 
 Demo entre rep180 y ss2221 en video funcionamiento en vivio entre extremos de la sala docs y código ordenadito
+
 
 REQUISITOS
 
@@ -43,9 +46,11 @@ REQUISITOS
 - Puente Digital
 
 
-## PÁRRAFO DE CONTEXTO
+## PRIMER PÁRRAFO DE CONTEXTO
 
-Grupo 6: Dos edificios que actúan al unísono, sin saberlo. Un sensor en el LID, otro  en la biblioteca, cada uno contando y midiendo presencia, traduciendo lo humano a pulsos digitales. Entre ellos, no está vacío: viaja un protocolo, una API recibe el conteo, lo procesa, lo devuelve transformado; y un actuador responde: una pantalla que se ilumina, un LED que cambia de color, una señal que dice aquí hay vida. El sistema nervioso oculto de los lugares donde pensamos, construido sobre microcontroladores, WiFi y la pregunta técnicamente precisa pero profundamente humana: ¿cuántos habitan tus pasillos ahora mismo?
+Grupo 6
+
+Dos edificios que actúan al unísono, sin saberlo. Un sensor en el LID, otro  en la biblioteca, cada uno contando y midiendo presencia, traduciendo lo humano a pulsos digitales. Entre ellos, no está vacío: viaja un protocolo, una API recibe el conteo, lo procesa, lo devuelve transformado; y un actuador responde: una pantalla que se ilumina, un LED que cambia de color, una señal que dice aquí hay vida. El sistema nervioso oculto de los lugares donde pensamos, construido sobre microcontroladores, WiFi y la pregunta técnicamente precisa pero profundamente humana: ¿cuántos habitan tus pasillos ahora mismo?
 
 
 ## PREGUNTAS / RESPUESTAS
@@ -71,9 +76,17 @@ Imagen sacada de: https://afel.cl/products/sensor-infrarrojo-evasor-de-obstaculo
 
 Cómo funciona: Es un sensor de reflexión activa. Tiene dos "ojos" pequeños: un LED emisor que lanza un haz de luz infrarroja invisible y un fotodiodo receptor que espera a que esa luz rebote en un objeto (el cuerpo de una persona).
 
-Área de visión: Un haz lineal muy estrecho y directo. Su rango es corto y ajustable mediante un pequeño tornillo (típicamente de 2 a 30 cm.
+Área de visión: Un haz lineal muy estrecho y directo. 
 
-Para el proyecto: Es ideal si quieres esconder la tecnología. Al ser tan pequeño (como un pulgar), puedes perforar el marco de una puerta o un tótem de madera en el acceso del LID y dejar asomados solo los dos pequeños LEDs. Funciona muy bien en pasillos estrechos o torniquetes dinámicos. Su punto débil es que si el pasillo es muy ancho más de 40 cm, la luz no alcanzará a rebotar en la persona y no registrará el tránsito.
+Su rango es corto y ajustable mediante un pequeño tornillo (típicamente de 2 a 30 cm.
+
+
+Para el proyecto: Es ideal si se busca que el sensor este oculto. Al ser tan pequeño (como un pulgar), se puede poner en el acceso del LID tipo totem y dejar asomados solo los dos pequeños LEDs. Este sensor funciona muy bien en pasillos estrechos o torniquetes dinámicos. Su punto débil es que si el pasillo es muy ancho más de 40 cm, la luz no alcanzará a rebotar en la persona y no registrará el tránsito.
+
+Problema que se puede tener: La puerta es bidireccional, registra el dato de una persona más de una vez, si entro y salgo me registre dos veces, cómo si fueran 2 personas. El sensor es "ciego" a la dirección.
+
+Alcance del sensor corto -> generalmente entre 2 y 30 cm
+
   
 - Sensor de Proximidad Infrarrojo E18-D80NK
 
@@ -85,13 +98,17 @@ Cómo funciona: Utiliza el mismo principio de reflexión activa que el evasor de
 
 Área de visión: Un haz directo, milimétrico y de largo alcance. Su potenciómetro trasero permite calibrar el disparo con precisión quirúrgica desde los 3 cm hasta 80 cm.
 
-Para el proyecto: Es la mejor opción técnica para un conteo real. Al tener un alcance de hasta 80 cm, cubre perfectamente el ancho estándar del paso de una persona en una puerta. Su precisión es digital: en cuanto el cuerpo corta el haz, el sensor manda un pulso instantáneo al Arduino R4 WiFi. Al ser robusto, puedes fijarlo firmemente a los muros o estructuras de los accesos sin temor a que se descalibre si alguien lo pasa a llevar.
+Para el proyecto: Es la mejor opción técnica para un conteo real. Al tener un alcance de hasta 80 cm, cubre perfectamente el ancho estándar del paso de una persona en una puerta. 
+
+Su precisión es digital: en cuanto el cuerpo corta el haz, el sensor manda un pulso instantáneo al Arduino R4 WiFi. Al ser robusto, puedes fijarlo firmemente a los muros o estructuras de los accesos sin temor a que se descalibre si alguien lo pasa a llevar.
+
   
 - Sensor de Movimiento HC-SR501:
 
 <img width="498" height="439" alt="sensorPir" src="https://github.com/user-attachments/assets/24d67823-2f06-4da0-b48d-7d81aba65b82" />
 
 Imagen sacada de: https://afel.cl/products/sensor-de-movimiento-hc-sr501?_pos=1&_sid=50d2fe854&_ss=r 
+
 
 El sensor PIR cuenta "siluetas". Técnicamente, un sensor PIR detecta cambio de calor en movimiento (es un interruptor ciego: hay o no hay movimiento), no formas.
 
