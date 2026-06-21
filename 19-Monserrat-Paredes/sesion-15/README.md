@@ -4,6 +4,14 @@ lunes 22 junio 2026
 
 Examen-grupo 6
 
+
+### criterios individuales
+
+- Investigación textual sobre API.
+- Bitácoras junio: evaluación de 4 sesiones (25 mayo, 01 junio, 08 de junio, 15 junio).
+- Bitácoras junio (la misma nota que punto anterior).
+
+
 ## Conexiones finales -> Puente digital 
 
 1. Conectar el anillo led al arduino
@@ -178,6 +186,9 @@ La plataforma de OpenWeather muestra los tres pasos estándar de la industria pa
 - Integración: Se programa la llamada dentro del código de la aplicación para automatizar la solicitud de datos.
 
 En resumen, las API son el tejido conectivo de internet. Permiten que un diseñador o programador cree una aplicación que muestre mapas interactivos, procese pagos o dé el pronóstico del tiempo en tiempo real, delegando la complejidad de los datos a servicios expertos externos.
+
+
+### Pueste digital: Codigo y proceso
 
 
 ## Bibliografía (citar)
