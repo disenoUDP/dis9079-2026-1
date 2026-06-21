@@ -14,10 +14,12 @@ Nuestro proyecto nace del deseo de transformar cada latido en un puente de conex
 | Componente | Valor Unidad | Cantidad | Link |
 | --- | --- | --- | --- |
 | Arduino UNO R4 WiFi | $38.990 | 2 | <https://arduino.cl/producto/arduino-uno-r4-wifi/?srsltid=AfmBOopyyargcSiTQeFlT3cTN5ide380bxZlQXRZVP4u_op0O-qJcENB> |
-| Protoboard 400 puntos | $2.100 | 1 | <https://afel.cl/products/mini-protoboard-400-puntos?pr_prod_strat=e5_desc&pr_rec_id=b8ead05f1&pr_rec_pid=8382004101272&pr_ref_pid=8381979852952&pr_seq=uniform> |
+| Mini protoboard 170 puntos | $990 | 2 | <https://afel.cl/products/mini-protoboard-170-puntos?_pos=4&_sid=aa0b39e11&_ss=r |
 | Cables Dupont (Pack 20 unidades) | $1.000 | 1 | <https://afel.cl/products/pack-20-cables-de-conexion-macho-macho> |
 | Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma | $9.990 | 1 | <https://afel.cl/products/sensor-de-frecuencia-cardiaca-ecg-ad8232-electrocardiograma> |
-| Cable USB C | $ | 2 | <> |
+| Pantalla TFT LCD redonda de 1.28" | $4.990 | 1 | <https://www.mechatronicstore.cl/pantalla-tft-lcd-redonda-de-1-28/?srsltid=AfmBOormrgaJyuZokh0vmjczLkHKXalCX8OpIDNKoXI-k0D8GjpyM3mX
+| Electrodos PACH ECG TENS 5 unidades | $1.500 | 1 | <https://rambal.com/biometricos/1238-electrodo-ecg.html
+| Cable USB C | X | 2 | X
 
 
 ## Proceso de Proyecto
@@ -27,9 +29,9 @@ Nuestro proyecto nace del deseo de transformar cada latido en un puente de conex
 
 #### 3 Semanas para el examen
 
-Inicio de ideación de examen, estuvimos leyendo e investigando sobre varios sensores, para ver si nos gustaba alguno para realizar nuestro proyectop de examen, nos decidimos por un sensor de pulso, específicamente el Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma,  que es un módulo diseñado para medir la actividad eléctrica del corazón y generar lecturas similares a un electrocardiograma (ECG). Funcionando como una interfaz que extrae, amplifica y filtra las señales eléctricas muy débiles que genera el cuerpo humano al latir. 
+Inicio de ideación de examen, estuvimos leyendo e investigando sobre varios sensores, para ver si nos gustaba alguno para realizar nuestro proyecto de examen, nos decidimos por un sensor de pulso, específicamente el Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma,  que es un módulo diseñado para medir la actividad eléctrica del corazón y generar lecturas similares a un electrocardiograma (ECG). Funcionando como una interfaz que extrae, amplifica y filtra las señales eléctricas muy débiles que genera el cuerpo humano al latir. 
 
-Con  este sensor teníamos la idea de obtener registros en vivo de los latidos por minuto del usuario, usaremos la API -> Adafruit IO, que ya conocemos y sabemos su funcionamiento, por el lado de recepción de datos, pensamos en una pantalla LCD que muestre los latidos por minuto, usaremos 2 arduinos, uno paras enviar y otro para recibir la información.
+Con  este sensor teníamos la idea de obtener registros en vivo de los latidos por minuto del usuario, usaremos la API -> Adafruit IO, que ya conocemos y sabemos su funcionamiento, por el lado de recepción de datos, pensamos en una pantalla LCD que muestre los latidos por minuto, usaremos 2 arduinos, uno para enviar y otro para recibir la información.
 
 ![Modulo Sensor](./imagenes/modulo-sensor.webp)
 
@@ -188,9 +190,29 @@ Cuenta Adafruit IO
 
 Iniciamos en el LID, tenemos todos los materiales necesarios para poder trabajar, tenemos pendiente realizar el modelado 3D para la pantalla.
 
+![titulo](./imagenes/conexiones-sensor-chat-gpt.png)
+
+*Primeras conexiones del Sensor a Arduino sugeridas por ChatGPT*
+
+Utilizamos estos Electrodos para realizar la conexión directamente entre el cuerpo de isipm --> Sensor ECG AD8232
+
+![titulo](./imagenes/electrodos.jpeg)
+
+*Electrodos*
+
 Luego conectamos nuestra Pantalla TFT LCD redonda de 1.28" a una proto y luego el Sensor ECG AD8232 a otra proto y a la isipm.
 
-(foto)
+![titulo](./imagenes/abdomen-isi.jpeg)
+
+*Conexión del Sensor ECG AD8238 a abdomen de isi*
+
+![titulo](./imagenes/clavicula-der-isi.jpeg)
+
+*Conexión del Sensor ECG AD8238 a clavícula derecha de isi*
+
+![titulo](./imagenes/clavicula-izq-isi.jpeg)
+
+*Conexión del Sensor ECG AD8238 a clavícula izquierda de isi*
 
 Entre varios intentos de códigos, llegamos a uno final para TRANSMISOR y RECEPTOR. (más adelante verán nuestro error)
 
@@ -200,6 +222,14 @@ Mateo y Aarón nos revisaron nuestro proyecto, nos comentaron que estaba bueno, 
 Aún no hemos podido mejorar la pantalla (si está buena pero creemos que son los cables), además mejorar la calidad de la visualización de los datos. Estaremos informando...
 
 ---- 
+
+![titulo](./imagenes/pantalla-letras-rojas.jpeg)
+
+*Pantalla reflejando los datos pero con mala visualización (cambiar cables)*
+
+![titulo](./imagenes/mateo-help.jpeg)
+
+*Mateo ayudándonos en nuestro proyecto :) gracias Mateo!*
 
 > CÓDIGO FALLIDO
 
@@ -463,19 +493,57 @@ void loop()
 }
 ```
 
+> Adjuntamos registro de nuestras conexiones realizadas el día Lunes, que estas despúes fueron cambiadas, ya que el día Miércoles nos dimos cuenta que los datos visualizados en Adafruit y Arduino eran datos aleatorios.
+
+![titulo](./imagenes/conexiones-lunes.jpeg)
+
+*Conexiones día Lunes*
+
+> Tuvimos que considerar la compra de más parches, debido a su desgaste y la adherencia con el cuerpo, ya que sin unos parches nuevos, los datos no tomarían de buena forma.
+
+![titulo](./imagenes/comprar-electrodos.png)
+
+*Imagen electrodos sacada de https://rambal.com/biometricos/1238-electrodo-ecg.html*
+
+![titulo](./imagenes/ilusas-oficial.jpeg)
+
+*Ilusas creyendo con que los datos que se reflejaban eran reales*
+
 ### Miércoles 17 Junio 
 
 ### 5 días para el examen
 
-El día de hoy realizamos denuevo la prueba para la pantalla y efectivamente eran los cables!!
+El día de hoy realizamos denuevo la prueba para la pantalla y efectivamente eran los cables!!. El día anterior la Rena realizó la compra de estos cables, para así poder realizar la prueba nuevamente con la pantalla y comprobar nuestra teoría.
 
-Nos dimos cuenta que los datos que nos tiraba eran solo datos aleatorios y no detectaba los pulsos reales...
+![titulo](./imagenes/cables-nuevos.jpeg)
 
-Probando distintos códigos, aún no pudimos realizar que los pulsos fueran en tiempo real y de nosotras. 
+*Nuevos cables*
+
+Nos dimos cuenta que los datos que nos tiraba en el monitor serial de Arduino y en Adafruit eran solo datos aleatorios y no detectaba los pulsos reales... Tras varios intentos de nuevas pruebas con nuevos códigos no pudimos realizar que los pulsos fueran en tiempo real y de nosotras. (Por hoy nos rendimos, seguiremos en esta lucha)...
+
+![titulo](./imagenes/frustradas-oficial.jpeg)
+
+*Conexiones día Miércoles, probando nuevos cables*
+
+![titulo](./imagenes/pantalla-funcionando.jpeg)
+
+*Prueba pantalla con nuevos cables*
+
+![titulo](./imagenes/pantalla-fondo-rojo.jpeg)
+
+*Prueba pantalla con nuevos cables*
+
+![titulo](./imagenes/intento-3-pantalla-tft.gif)
+
+*Acá nos funcionó tanto la pantalla como el código, solo que este código despúes no lo utilizamos debido a los datos no reales*
+
+![titulo](./imagenes/ilusas-pt2.jpeg)
+
+*Foto riendo pero por dentro llorando*
 
 > CÓDIGO DE PRUEBA PANTALLA TFT LCD redonda de 1.28"
 
-- Utilizamos este código para probar la pantalla con los cables nuevos y si funcionó, refeljaba los colores respectivos.
+- Utilizamos este código para probar la pantalla con los cables nuevos y si funcionó, reflejaba los colores respectivos.
 
 ```cpp
 #include <Arduino_GFX_Library.h>
@@ -574,19 +642,22 @@ void mostrarColor(uint16_t color, const char *texto) {
   delay(2000);
 }
 ```
-FOTO DE COMO FUNCIONA LA PANTALLA 
+
 
 ### Viernes 19 de Junio 
 
 ### 3 días para el examen
 
+El día de hoy tratamos de mejorar los códigos, tuvimos un tiempo corto para poder avanzar, debido a nuestro acotado tiempo entre clases. No pudimos mejorar el código...
+
 **CÓDIGO TRANSMISOR**
 ```cpp
 ```
 
-
-### DEMO EN VIDEO REPU-SS
 **CÓDIGO RECEPTOR**
 ```cpp
 ```
+
+### DEMO EN VIDEO REPU-SS
+
 
