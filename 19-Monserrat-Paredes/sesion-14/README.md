@@ -170,7 +170,13 @@ void actualizarAnillo(float nivelEnergia) {
 Resultado visual: Si el LID está vacío, el anillo estará completamente apagado. Si entra un grupo de 3 personas seguidas, el anillo se encenderá de golpe hasta la mitad en color naranja. Si el flujo se detiene, se vera cómo los LEDs se van apagando uno a uno, como un eco que se desvanece, reflejando que el ritmo bajó. Si la sala se llena por completo de eventos, los 16 LEDs brillarán en un rojo intenso estático.
 
 Si el aforo es 0, el anillo en la FADD está apagado. Si el aforo sube a 15, el anillo se enciende hasta la mitad. Si hay un evento en el LID y entra mucha gente, el anillo se completará y brillará por completo en República 180, alertando del "desborde".
-       
+
+
+## Puntos importantes
+
+Adafruit IO: genera un feed llamado lid-conteo, y obtén mi AIO Username y AIO Key desde la sección "My Key" del tablero. Reemplazar esos valores en ambos códigos junto con el SSID/contraseña de WiFi.
+Lógica del sensor: el código actual incrementa el contador cada vez que detecta un objeto (cada persona = +1) y reinicia a 0 al llegar a 16. Si quieren un conteo neto real (entradas - salidas), necesitarían dos sensores (uno detectando dirección de entrada, otro de salida) ya que un solo sensor IR no puede distinguir la dirección del movimiento.
+Colores del anillo: verde (1-5 personas), amarillo (6-10), rojo (11-16). Pueden cambiar los rangos o usar un solo color según su mensaje visual.
 
 
 ## Investigación sobre Apis

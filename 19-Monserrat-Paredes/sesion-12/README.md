@@ -123,3 +123,28 @@ Para el proyecto: No sirve para contar. Al tener un ángulo tan abierto, si tres
 ## PARRAFO ARREGLADO
 
 Este proyecto consiste en un sistema que conecta el LID y la biblioteca para medir cuántas personas entran y salen de cada lugar en tiempo real. En la puerta de cada edificio se instalan dos sensores infrarrojos industriales conectados a una placa Arduino con WiFi. Al colocar dos sensores en fila, el sistema detecta de forma automática la dirección de la persona: si pasa primero por el de afuera y luego por el de adentro, cuenta como una entrada; si lo hace al revés, cuenta como una salida. Esta información se envía de manera inalámbrica a través de internet a una base de datos (API) que lleva el conteo exacto. Finalmente, el sistema responde encendiendo una pantalla o luces LED en el otro edificio; de esta forma, las personas que están en la biblioteca pueden ver mediante una señal visual qué tan lleno está el LID, y viceversa, automatizando el registro de ocupación de los espacios del campus.
+
+
+## Referentes de apis -> visto en clases
+
+https://eroft.decontextualize.com/
+
+https://metmuseum.github.io/
+
+https://github.com/public-apis/public-apis
+
+https://developer.nytimes.com/apis
+
+https://api.nasa.gov/
+
+https://www.reddit.com/r/webdev/comments/194rfia/api_hidden_gems/
+
+https://openweathermap.org/api
+
+https://en.wikipedia.org/wiki/API
+
+https://everest-pipkin.com/projects/corsicana
+
+https://yeseul.com/Slow-Dimming-Study-Rice-Dimmer
+
+https://yeseul.com/Invisible-Sculpture-On-Wheels-GimHae
