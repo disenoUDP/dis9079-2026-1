@@ -352,7 +352,7 @@ while True:
  ```
 
 
-Settings exapmle
+Settings example
 
 
 ```ccp
