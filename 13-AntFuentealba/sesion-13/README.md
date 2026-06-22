@@ -82,7 +82,7 @@ FIN
 
 ### Dibujo
 
-![diagrama](./imagenes/diagrama.png)
+![diagrama](./imagenes/digrama.png)
 
 En nuestro caso, trabajamos en todos estos puntos a partir de la definición del proyecto “El Oráculo”, desarrollando su lógica, materiales y flujo de funcionamiento. Logramos redactar el concepto general del sistema, donde el usuario realiza una pregunta en voz alta, activa el sistema mediante un aplauso y recibe una respuesta generada por una entidad remota, la cual es presentada tanto en pantalla OLED como en audio.
 
