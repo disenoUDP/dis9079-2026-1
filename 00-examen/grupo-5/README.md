@@ -1488,8 +1488,9 @@ def main():
 
 main()   # punto de entrada: MicroPython ejecuta este archivo al arrancar
 ```
+--- 
 
-### Script de Google para carpeta de Drive
+## Script de Google para carpeta de Drive
 
 ```
 // =================================================================
@@ -1628,10 +1629,21 @@ function respJson(obj) {
 
 ## Fotos finales y video demo
 
+| Luagr 1 | Lugar 2 |
+|-----------------|--------------------|
+| ![GIF DEMO](./imagenes/demolugar1.gif) | ![GIF DEMO](./imagenes/demolugar2.gif) |
+
+[Link video demo completa]()
+
+![foto final 1](./imagenes/foto1.jpg)
+![foto final 2](./imagenes/foto2.jpg)
+![foto final 3](./imagenes/foto3.jpg)
+![foto final 4](./imagenes/foto4.jpg)
+
 ### Bibliografía
 
-- Adafruit Industries. (s.f.). Adafruit_SSD1306. GitHub. https://github.com/adafruit/Adafruit_SSD1306
-- Espressif Systems. (s.f.). ESP32 Camera Driver. GitHub. https://github.com/espressif/esp32-camera
-- Google. (s.f.). Google Developers. https://developers.google.com/apps-script
-- Pimoroni. (s.f.). pimoroni-pico. GitHub. https://github.com/pimoroni/pimoroni-pico
-- rai_lander. (s.f.). Pixela. itch.io. https://rai-lander.itch.io/pixela
+- Adafruit Industries. (s.f.). Adafruit_SSD1306. GitHub. <https://github.com/adafruit/Adafruit_SSD1306>
+- Espressif Systems. (s.f.). ESP32 Camera Driver. GitHub. <https://github.com/espressif/esp32-camera>
+- Google. (s.f.). Google Developers. <https://developers.google.com/apps-script>
+- Pimoroni. (s.f.). pimoroni-pico. GitHub. <https://github.com/pimoroni/pimoroni-pico>
+- rai_lander. (s.f.). Pixela. itch.io. <https://rai-lander.itch.io/pixela>
