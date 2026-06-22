@@ -493,13 +493,13 @@ void loop()
 }
 ```
 
-> Adjuntamos registro de nuestras conexiones realizadas el día Lunes, que estas despúes fueron cambiadas, ya que el día Miércoles nos dimos cuenta que los datos visualizados en Adafruit y Arduino eran datos aleatorios.
+Adjuntamos registro de nuestras conexiones realizadas el día lunes, que estas despúes fueron cambiadas, ya que el día miércoles nos dimos cuenta que los datos visualizados en Adafruit y Arduino eran datos aleatorios.
 
 ![titulo](./imagenes/conexiones-lunes.jpeg)
 
 *Conexiones día Lunes*
 
-> Tuvimos que considerar la compra de más parches, debido a su desgaste y la adherencia con el cuerpo, ya que sin unos parches nuevos, los datos no tomarían de buena forma.
+Tuvimos que considerar la compra de más parches, debido a su desgaste y la adherencia con el cuerpo, ya que sin unos parches nuevos, los datos no tomarían de buena forma.
 
 ![titulo](./imagenes/comprar-electrodos.png)
 
@@ -648,15 +648,469 @@ void mostrarColor(uint16_t color, const char *texto) {
 
 ### 3 días para el examen
 
-El día de hoy tratamos de mejorar los códigos, tuvimos un tiempo corto para poder avanzar, debido a nuestro acotado tiempo entre clases. No pudimos mejorar el código...
+El día de hoy tratamos de mejorar los códigos, tuvimos un tiempo corto para poder avanzar, debido a nuestro acotado tiempo entre clases. No pudimos mejorar el código... Seguiremos informando.
 
-**CÓDIGO TRANSMISOR**
+### Domingo 21 de Junio
+
+### 1 día para el examen
+
+El día de hoy nos ayudó la Carla (gracias Carla) a realizar nuestras últimas conexiones y hacer que la señal de los BPM llegara a la pantalla que estaba conectada en la casa de Isipm. 
+
+De partida probamos los códigos mostrados a continuación para realizar tanto demostraciones de la pantalla como los BPM en modo demo.
+
+**CÓDIGO PANTALLA COLOR**
 ```cpp
+#include <Arduino_GFX_Library.h>
+
+#define TFT_CS 10
+#define TFT_DC 9
+#define TFT_RST 8
+
+Arduino_DataBus *bus = new Arduino_HWSPI(TFT_DC, TFT_CS);
+Arduino_GFX *tft = new Arduino_GC9A01(bus, TFT_RST, 0, false);
+
+void setup() {
+
+  tft->begin();
+
+  tft->fillScreen(0xF800);
+
+}
+
+void loop() {
+}
 ```
 
-**CÓDIGO RECEPTOR**
+
+**CÓDIGO PANTALLA AZUL**
 ```cpp
+#include <Arduino_GFX_Library.h>
+
+#define TFT_CS 10
+#define TFT_DC 9
+#define TFT_RST 8
+
+Arduino_DataBus *bus = new Arduino_HWSPI(TFT_DC, TFT_CS);
+Arduino_GFX *tft = new Arduino_GC9A01(bus, TFT_RST, 0, true);
+
+void setup() {
+
+  tft->begin();
+
+  tft->fillScreen(0x001F);
+
+}
+
+void loop() {
+}
 ```
+
+Este código nos sirvió para comprobar si la pantalla estaba buena, realizando pruebas de color. Tal como el anterior.
+
+**CÓDIGO PRUEBA BPM DEMO**
+```cpp
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+#include "config.h"
+#include <Arduino_GFX_Library.h>
+
+// Colores ajustados para tu pantalla
+#define BLACK 0x0000
+#define WHITE 0xFFFF
+#define RED   0x001F
+#define GREEN 0x07E0
+
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+AdafruitIO_Feed *bpmFeed = io.feed("pulsaciones");
+
+// Pines pantalla
+#define TFT_CS   10
+#define TFT_DC   9
+#define TFT_RST  8
+
+Arduino_DataBus *bus = new Arduino_HWSPI(TFT_DC, TFT_CS);
+Arduino_GFX *tft = new Arduino_GC9A01(bus, TFT_RST, 0, false);
+
+int bpm = 75;
+int x = 0;
+int lastY = 190;
+
+unsigned long ultimoDibujo = 0;
+unsigned long ultimoDemo = 0;
+
+bool conectadoAdafruit = false;
+bool corazonGrande = false;
+
+void setup() {
+  Serial.begin(115200);
+  delay(2000);
+
+  tft->begin();
+  tft->fillScreen(BLACK);
+
+  tft->setTextColor(WHITE);
+  tft->setTextSize(2);
+  tft->setCursor(35, 105);
+  tft->print("Conectando...");
+
+  Serial.println("Conectando Adafruit...");
+  io.connect();
+
+  unsigned long inicio = millis();
+
+  while (io.status() < AIO_CONNECTED && millis() - inicio < 15000) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  if (io.status() == AIO_CONNECTED) {
+    conectadoAdafruit = true;
+    Serial.println("\nAdafruit conectado");
+    bpmFeed->onMessage(recibirBPM);
+  } else {
+    conectadoAdafruit = false;
+    Serial.println("\nSin nube, modo demo");
+  }
+
+  tft->fillScreen(BLACK);
+  dibujarPantalla();
+}
+
+void loop() {
+  if (conectadoAdafruit) {
+    io.run();
+  }
+
+  if (!conectadoAdafruit && millis() - ultimoDemo > 5000) {
+    ultimoDemo = millis();
+    bpm++;
+    if (bpm > 82) bpm = 74;
+    dibujarPantalla();
+  }
+
+  if (millis() - ultimoDibujo > 80) {
+    ultimoDibujo = millis();
+    dibujarOnda();
+  }
+}
+
+void recibirBPM(AdafruitIO_Data *data) {
+  bpm = data->toInt();
+
+  if (bpm < 55 || bpm > 130) {
+    bpm = 75;
+  }
+
+  Serial.print("BPM recibido: ");
+  Serial.println(bpm);
+
+  dibujarPantalla();
+}
+
+void dibujarPantalla() {
+  tft->fillScreen(BLACK);
+
+  tft->setTextColor(WHITE);
+  tft->setTextSize(3);
+  tft->setCursor(55, 30);
+  tft->print(bpm);
+  tft->print(" BPM");
+
+  tft->setTextSize(1);
+  tft->setCursor(78, 65);
+
+  if (conectadoAdafruit) {
+    tft->print("Pulso en nube");
+  } else {
+    tft->print("Modo demo");
+  }
+
+  dibujarCorazon(120, 115, false);
+  tft->drawLine(20, 190, 220, 190, GREEN);
+}
+
+void dibujarCorazon(int cx, int cy, bool grande) {
+  int r = grande ? 18 : 15;
+
+  tft->fillCircle(cx - r / 2, cy, r, RED);
+  tft->fillCircle(cx + r / 2, cy, r, RED);
+
+  tft->fillTriangle(
+    cx - r - 8, cy + 5,
+    cx + r + 8, cy + 5,
+    cx, cy + r + 25,
+    RED
+  );
+}
+
+void dibujarOnda() {
+  corazonGrande = !corazonGrande;
+
+  tft->fillRect(65, 85, 110, 85, BLACK);
+  dibujarCorazon(120, 115, corazonGrande);
+
+  int fase = x % 48;
+  int y = 190;
+
+  if (fase < 8) y = 190;
+  else if (fase < 12) y = 178;
+  else if (fase < 16) y = 210;
+  else if (fase < 20) y = 150;
+  else y = 190;
+
+  tft->drawLine(x, lastY, x + 2, y, GREEN);
+
+  lastY = y;
+  x += 2;
+
+  if (x > 235) {
+    x = 0;
+    lastY = 190;
+    tft->fillRect(0, 175, 240, 65, BLACK);
+  }
+}
+```
+
+![titulo](./imagenes/demo-bpm.jpeg)
+
+![imagenes](./imagenes/bpm-prueba.gif) 
+
+Este código nos funcionó de prueba para ver como se mostraban los BPM en la pantalla. Simulando BPM reales.
+
+```cpp
+#include <Arduino_GFX_Library.h>
+
+#define TFT_CS 10
+#define TFT_DC 9
+#define TFT_RST 8
+
+Arduino_DataBus *bus = new Arduino_HWSPI(TFT_DC, TFT_CS);
+Arduino_GFX *tft = new Arduino_GC9A01(bus, TFT_RST, 0, false);
+
+void setup() {
+  tft->begin();
+  tft->fillScreen(0xF800);
+  tft->setTextColor(0xFFFF);
+  tft->setTextSize(3);
+  tft->setCursor(50, 100);
+  tft->print("TEST");
+}
+
+void loop() {}
+```
+
+![titulo](./imagenes/test.jpeg)
+
+## FUNCIONÓ!
+
+Realizamos la prueba de distintos códigos, tanto para ver el funcionamiento de la pantalla nuevamente, como también para realizar una prueba de los BPM. La prueba que realizamos fue de San Bernardo - Maipú, logrando una exitosa conexión entre ambos dispositivos y que en la nube de Adafruit y en la pantalla se pudiera registrar de manera simultánea los datos. !!! De igual forma en el Arduino con la pantalla mantuvimos siempre las conexiones iniciales, pero en el Arduino con el Sensor fuimos cambiando de conexiones hasta llegar a una definitiva e ir mejorando los códigos.
+
+![imagenes](./imagenes/transmisor.gif) 
+
+> DEMO EN VIVO REALIZADA DESDE MAIPÚ
+
+Esta es la demo en vivo del transmisor.
+
+![imagenes](./imagenes/receptor.gif) 
+
+> DEMO EN VIVO REALIZADA DESDE SAN BERNARDO
+
+Esta es la demo en vivo del receptor.
+
+**CÓDIGO FINAL TRANSMISOR**
+```cpp
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+#include "config.h"
+
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+AdafruitIO_Feed *bpmFeed = io.feed("pulsaciones");
+
+#define ECG_PIN A0
+
+float ecgFiltrado = 0;
+float anteriorECG = 0;
+
+unsigned long ultimoLatido = 0;
+unsigned long ultimoEnvio = 0;
+
+bool detectando = false;
+
+float bpm = 75;
+float ultimoBPMValido = 75;
+
+// Ajustado a tu señal actual: sube aprox. a 235–236
+int umbral = 233;
+
+void setup() {
+  Serial.begin(115200);
+  delay(2000);
+
+  Serial.println("Iniciando emisor ECG");
+  Serial.println("Conectando Adafruit...");
+
+  io.connect();
+
+  while (io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println("\nAdafruit conectado");
+}
+
+void loop() {
+  io.run();
+
+  int lectura = analogRead(ECG_PIN);
+
+  ecgFiltrado = 0.75 * anteriorECG + 0.25 * lectura;
+  anteriorECG = ecgFiltrado;
+
+  Serial.print("ECG: ");
+  Serial.print(ecgFiltrado);
+  Serial.print(" | BPM: ");
+  Serial.println(ultimoBPMValido);
+
+  unsigned long ahora = millis();
+
+  if (ecgFiltrado > umbral && !detectando) {
+    unsigned long intervalo = ahora - ultimoLatido;
+
+    if (intervalo > 450 && intervalo < 1200) {
+      float bpmDetectado = 60000.0 / intervalo;
+
+      if (bpmDetectado > 55 && bpmDetectado < 130) {
+        bpm = bpmDetectado;
+        ultimoBPMValido = (0.7 * ultimoBPMValido) + (0.3 * bpm);
+
+        Serial.print("BPM valido: ");
+        Serial.println(ultimoBPMValido);
+      } else {
+        Serial.print("BPM descartado: ");
+        Serial.println(bpmDetectado);
+      }
+    }
+
+    ultimoLatido = ahora;
+    detectando = true;
+  }
+
+  if (ecgFiltrado < umbral - 2) {
+    detectando = false;
+  }
+
+  if (ahora - ultimoEnvio > 5000) {
+    ultimoEnvio = ahora;
+
+    int bpmEnviar = (int)ultimoBPMValido;
+
+    if (bpmEnviar < 55 || bpmEnviar > 130) {
+      bpmEnviar = 75;
+    }
+
+    bpmFeed->save(bpmEnviar);
+
+    Serial.print("ENVIADO A ADAFRUIT: ");
+    Serial.println(bpmEnviar);
+  }
+
+  delay(10);
+}
+```
+
+**CÓDIGO FINAL RECEPTOR**
+```cpp
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+#include "config.h"
+#include <Arduino_GFX_Library.h>
+
+#define BLACK 0x0000
+#define WHITE 0xFFFF
+#define RED   0x001F
+#define GREEN 0x07E0
+
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+AdafruitIO_Feed *bpmFeed = io.feed("pulsaciones");
+
+#define TFT_CS 10
+#define TFT_DC 9
+#define TFT_RST 8
+
+Arduino_DataBus *bus = new Arduino_HWSPI(TFT_DC, TFT_CS);
+Arduino_GFX *tft = new Arduino_GC9A01(bus, TFT_RST, 0, false);
+
+int bpm = 75;
+
+void setup() {
+  Serial.begin(115200);
+  delay(2000);
+
+  tft->begin();
+  tft->fillScreen(BLACK);
+  tft->setTextColor(WHITE);
+  tft->setTextSize(2);
+  tft->setCursor(35, 105);
+  tft->print("Conectando...");
+
+  io.connect();
+
+  while (io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println("\nAdafruit conectado");
+  bpmFeed->onMessage(recibirBPM);
+
+  dibujarPantalla();
+}
+
+void loop() {
+  io.run();
+}
+
+void recibirBPM(AdafruitIO_Data *data) {
+  bpm = data->toInt();
+  if (bpm < 55 || bpm > 130) bpm = 75;
+
+  Serial.print("BPM recibido: ");
+  Serial.println(bpm);
+
+  dibujarPantalla();
+}
+
+void dibujarPantalla() {
+  tft->fillScreen(BLACK);
+
+  tft->setTextColor(WHITE);
+  tft->setTextSize(3);
+  tft->setCursor(55, 30);
+  tft->print(bpm);
+  tft->print(" BPM");
+
+  tft->setTextSize(1);
+  tft->setCursor(78, 65);
+  tft->print("Pulso en nube");
+
+  tft->fillCircle(112, 115, 18, RED);
+  tft->fillCircle(128, 115, 18, RED);
+  tft->fillTriangle(88, 125, 152, 125, 120, 170, RED);
+
+  tft->drawLine(20, 200, 60, 200, GREEN);
+  tft->drawLine(60, 200, 75, 175, GREEN);
+  tft->drawLine(75, 175, 90, 220, GREEN);
+  tft->drawLine(90, 220, 110, 160, GREEN);
+  tft->drawLine(110, 160, 130, 200, GREEN);
+  tft->drawLine(130, 200, 220, 200, GREEN);
+}
+```
+Finalmente pudimos terminar nuestro examen de manera exitosa y pacientemente. Además de que nuestro prueba y error constante nos hizo seguir adelante a pesar de las muchas frustraciones que se pusieron en nuestros caminos. Aprendimos bastante y de eso nos nutrimos! Gracias LID, Aarón y Mateo! 
+
+GRACIAS INTERACCIONES INALÁMBRICAS
+
+fin mientras...
 
 ### DEMO EN VIDEO REPU-SS
 
