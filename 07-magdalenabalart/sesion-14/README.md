@@ -257,7 +257,9 @@ Además, se ajustaron los rangos de distancia para que la detección fuera más 
 40 a 69 cm = distancia 02  
 menos de 40 cm = distancia 03  
 
-Para evitar lecturas inestables, se incorporó un promedio de mediciones del sensor. Esto permite que el sistema no reaccione frente a una sola lectura aislada, sino que calcule un valor más estable antes de cambiar de estado. También se agregó una confirmación temporal para que el cambio de estado ocurra solo cuando la condición se mantiene durante un breve periodo. 
+Para evitar lecturas inestables, se incorporó un promedio de mediciones del sensor. Esto permite que el sistema no reaccione frente a una sola lectura aislada, sino que calcule un valor más estable antes de cambiar de estado. También se agregó una confirmación temporal para que el cambio de estado ocurra solo cuando la condición se mantiene durante un breve periodo.  
+
+<img src="imagenes/elementos.jpg" width="30%">
 
 ### Modo demo con botón 
 
@@ -272,6 +274,9 @@ Cuarta presión = ausencia prolongada
 Quinta presión = vuelve al modo sensor  
 
 Esto permite recorrer todos los estados del sistema de forma manual y controlada. 
+
+
+<img src="imagenes/mododemo.gif" width="10%"> <img src="imagenes/boton.gif" width="10%">
 
 ### Comportamiento del LED 
 
@@ -306,6 +311,9 @@ La lógica propuesta para el servo es:
 4 = ausencia prolongada → movimiento irregular automático  
 
 Para la ausencia prolongada, se propuso que el servo no quede fijo, sino que se mueva de manera irregular entre distintos ángulos. Esto busca generar una reacción más extraña o inquietante, diferenciándola de los estados normales de cercanía. 
+
+Demo de prueba funcionando: https://youtube.com/shorts/HgHZLUtbaVY?feature=share
+Demo de prueba 02 https://youtube.com/shorts/3fTnl5YWiGM?feature=share
 
 # Tótem 02 Código
 ```cpp
