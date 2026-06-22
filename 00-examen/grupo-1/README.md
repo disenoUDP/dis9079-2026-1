@@ -386,6 +386,7 @@ La respuesta final del Tótem 02 queda centrada únicamente en la pantalla OLED,
 ## Registro 
 
 + Demo de prueba funcionando: <https://youtube.com/shorts/HgHZLUtbaVY?feature=share>
++ Demo de prueba 02 <https://youtube.com/shorts/3fTnl5YWiGM?feature=share>
 
 
 ## Reflexión
