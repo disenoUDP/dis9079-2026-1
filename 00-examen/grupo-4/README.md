@@ -1144,6 +1144,18 @@ GRACIAS INTERACCIONES INALÁMBRICAS
 
 fin mientras...
 
-### DEMO EN VIDEO REPU-SS
+### Lunes 22 de Junio 
+
+### Horas antes de el examen
+
+El día de hoy realizamos nuestra prueba final y la demo en video sobre nuestro proyecto.
+
+Primero realizamos la prueba pero hicimos un cambio en las conexiones del Sensor con el Arduino, conectándolos directamente los cables al Sensor. Nos dimos cuenta que las conexiones y los BPM no realizaban cambios y se mantenían en 75 (que es el BPM base). Lueego volvimos a nuestras conexiones del día de ayer y de esta forma los BPM cambiaban, no de manera constante pero tampoco se mantenía en 75. 
+
+Acá se muestra el cambio de BPM, demostrando que si cambiaba, pero se demoraba mucho al cambiar, aproximadamente 2-3 minutos.
+
+![imagenes](./imagenes/cambio-bpm.jpeg) 
+
+### DEMO EN VIDEO SS PISO 2 - SS PISO 3 
 
 
