@@ -382,3 +382,16 @@ La respuesta final del Tótem 02 queda centrada únicamente en la pantalla OLED,
 | Tótem receptor | “Preparar el Tótem 02 como un dispositivo receptor que no mide directamente la distancia, sino que interpreta los estados enviados por el Tótem 01.” |
 | Revisión del feed | “Revisar que el feed utilizado por el Tótem 02 sea el mismo que el del Tótem 01, para asegurar que ambos dispositivos se comuniquen correctamente.” |
 | Versión final | “Construir una versión final del código del Tótem 02 sin servo, centrada únicamente en recibir mensajes desde Adafruit IO y mostrarlos en pantalla OLED.” |
+
+## Reflexión
+
+Los tótems responden a la decisión de quedarse. Nos recuerdan que acompañar a alguien no siempre requiere palabras ni grandes gestos, a veces basta con estar. Incluso cuando una persona ya no está, algo de su presencia permanece en la memoria, en el espacio y en quienes compartieron ese momento con ella.
+Más que conectar dos dispositivos, este proyecto busca conectar dos presencias. Es una invitación a detenerse, a habitar el momento y a recordar que, incluso a la distancia, seguimos dejando huellas en los demás.
+
+**Sobre los totems**
+
+Inicialmente, los tótems fueron diseñados para ser impresos en 3D. Durante el proceso nos encontramos con problemas de medidas y ensamblaje que hicieron imposible continuar con esa propuesta dentro de los tiempos del proyecto. Frente a esa dificultad, tuvimos que replantear la construcción y recurrir a materiales que teníamos a mano, como ramas, cuerdas, cinta y componentes electrónicos visibles.
+
+En un comienzo vimos esta solución como algo temporal, una forma de resolver el problema rápidamente. Sin embargo, con el tiempo entendimos que esta condición dialogaba mejor con el proyecto y con la referencia de *Hechizos, por mientras para siempre*. Los tótems dejaron de ser objetos precisos y controlados para convertirse en estructuras construidas a partir de adaptaciones, decisiones improvisadas y huellas del proceso.
+
+De alguna manera, esta transformación también refleja el sentido del proyecto. Así como la presencia de una persona deja rastros y permanece en la memoria, los tótems conservan las marcas de su propia construcción. Lo que comenzó como una solución provisoria terminó dándole identidad y significado a la propuesta final.
