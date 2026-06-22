@@ -384,7 +384,7 @@ Esa línea descarga la API de p5.js desde internet y la usa para dibujar todo lo
 
 Durante el proceso de conectar todo el sistema directamente a la planta, se detectó que las hojas y el tallo se rompían con facilidad al manipular las pinzas, por lo que fue necesario colocarlas con mucho cuidado para no dañar el organismo que se estaba midiendo.
 
-![planta](./imagenes/cuidadoPlanta.JPG)
+![planta](./imagenes/cuidado-planta.jpg)
 
 ### Pruebas con otra gráfica y sonido en el HTML
 
@@ -396,17 +396,17 @@ Aquí nos dimos cuenta de que, al querer conectar el Arduino (con el ADS1115 y l
 
 En la imagen de prueba se veía que el Arduino se conectaba al WiFi, pero la IP marcaba 0.0.0.0, lo que significa que el router no le había asignado dirección todavía. Tampoco aparecía el mensaje "Enviado a dweet.io OK", lo que confirmaba que dweet.io no estaba respondiendo bien.
 
-![errordweet](./imagenes/dweet1.JPG)
+![errordweet](./imagenes/dweet-1.jpg)
 
 **Imagen 16** *Error en Dweet*
 
 Le preguntamos a Claude cómo solucionar esto, y luego tratamos de resolverlo usando Visual Studio Code, ya que el HTML seguía sin conectarse. Claude guió la instalación y uso de la extensión Live Server (de Ritwik Dey) para servir el archivo HTML localmente. Aun así, el problema de fondo persistía, por lo que se decidió migrar de dweet.io a HiveMQ Cloud.
 
-![errordweet](./imagenes/dweetError.JPG)
+![errordweet](./imagenes/dweet-error.jpg)
 
 **Imagen 17** *Guía de Claude en uso de Dweet*
 
-![errordwet](./imagenes/dweetError2.JPG)
+![errordwet](./imagenes/dweet-error2.jpg)
 
 **Imagen 18** *Visualización en visualstudiocode, seguía sin funcionar*
 
@@ -591,47 +591,47 @@ Solución final aplicada:
 
 ### Imágenes del proceso en HiveMQ
 
-![hivemq1](./imagenes/hiveMq1.JPG)
+![hivemq1](./imagenes/hive-mq1.jpg)
 
 **Imagen 19** *Proceso en HiveMQ*
 
-![hivemq2](./imagenes/hiveMq2.JPG)
+![hivemq2](./imagenes/hive-mq2.jpg)
 
 **Imagen 20** *Proceso en HiveMQ*
 
-![hivemq3](./imagenes/hiveMq3.JPG)
+![hivemq3](./imagenes/hive-mq3.jpg)
 
 **Imagen 21** *Proceso en HiveMQ*
 
-![hivemq4](./imagenes/hiveMq4.JPG)
+![hivemq4](./imagenes/hive-mq4.jpg)
 
 **Imagen 22** *Proceso en HiveMQ*
 
-![hivemq5](./imagenes/hiveMq5.JPG)
+![hivemq5](./imagenes/hive-mq5.jpg)
 
 **Imagen 23** *Proceso en HiveMQ*
 
-![hivemq6](./imagenes/hiveMq6.JPG)
+![hivemq6](./imagenes/hive-mq6.jpg)
 
 **Imagen 24** *Proceso en HiveMQ*
 
-![hivemq7](./imagenes/hiveMq7.JPG)
+![hivemq7](./imagenes/hive-mq7.jpg)
 
 **Imagen 25** *Proceso en HiveMQ*
 
-![hivemq8](./imagenes/hiveMq8.JPG)
+![hivemq8](./imagenes/hive-mq8.jpg)
 
 **Imagen 26** *Proceso en HiveMQ*
 
-![hivemq9](./imagenes/hiveMq9.JPG)
+![hivemq9](./imagenes/hive-mq9.jpg)
 
 **Imagen 27** *Proceso en HiveMQ*
 
-![hivemq10](./imagenes/hiveMq10.JPG)
+![hivemq10](./imagenes/hive-mq10.jpg)
 
 **Imagen 28** Proceso en HiveMQ*
 
-![hivemq11](./imagenes/hiveMq11.JPG)
+![hivemq11](./imagenes/hive-mq11.jpg)
 
 **Imagen 29** *Proceso en HiveMQ*
 
@@ -648,7 +648,7 @@ Solución final aplicada:
 
 Una vez adoptado HiveMQ, fue necesario configurar el código de Arduino correctamente, lo que implicó resolver distintos errores que fueron apareciendo durante la integración. Se descubrió que era necesario agregar las credenciales específicas de HiveMQ (host, usuario y contraseña del clúster) directamente en el código del Arduino para que la conexión MQTT con TLS se autenticara correctamente.
 
-![errorhivemq](./ïmagenes/hivemq-error1.jpg)
+![errorhivemq](./imagenes/hivemq-error1.jpg)
 
 **Imagen 30** *Error al utilizar HiveMQ en Arduino*
 
@@ -656,11 +656,11 @@ Una vez adoptado HiveMQ, fue necesario configurar el código de Arduino correcta
 
 **Imagen 31** *Error al utilizar HiveMQ en Arduino*
 
-![credenciales](./imagenes/hivemqCredenciales.JPG)
+![credenciales](./imagenes/hivemq-credenciales.jpg)
 
 **Imagen 32** *Implementación de credenciales de HiveMQ dentro de Arduino*
 
-![hivemq12](./imagenes/hiveMq12.JPG)
+![hivemq12](./imagenes/hive-mq12.jpg)
 
 **Imagen 33**
 
@@ -848,17 +848,17 @@ void conectarMQTT() {
 }
 ```
 
-![hivemqurl](./imagenes/hivemqUrl.JPG)
+![hivemqurl](./imagenes/hivemq-url.jpg)
 
 **Imagen 34** *Configuración y URL de HiveMQ*
 
 Las credenciales generadas en HiveMQ (host, usuario, contraseña) tuvieron que copiarse directamente en este código del Arduino para que la autenticación funcionara. En el Cliente Web de HiveMQ se confirmó que la información sí estaba llegando correctamente.
 
-![hivemqconexión](./imagenes/hivemqConexion.JPG)
+![hivemqconexión](./imagenes/hivemq-conexion.jpg)
 
 **Imagen 35** *Conexión de HiveMQ realizada*
 
-![hivemqultimo](./imagenes/hivemqConexion2.JPG)
+![hivemqultimo](./imagenes/hivemq-conexion2.jpg)
 
 **Imagen 36** *HiveMQ recibiendo la información*
 
