@@ -1003,3 +1003,368 @@ void encendidoProgresivoAusencia(
   analogWrite(ledPin, brilloAusencia);
 }
 ```
+## Tótem 02 
+
+### Qué necesitábamos lograr con el código
+
+El objetivo principal del Tótem 02 era recibir la información enviada por el Tótem 01 a través de Adafruit IO y mostrar el mensaje correspondiente en una pantalla OLED. A diferencia del Tótem 01, este segundo tótem no detecta directamente la distancia, sino que interpreta los códigos recibidos desde el feed TOTEM01.
+
+En una primera etapa, el Tótem 02 también consideraba el uso de un servo que se movía según la cercanía detectada. Sin embargo, después de probar la interacción, se decidió retirarlo porque su movimiento agregaba ruido visual y mecánico. Como el proyecto buscaba una respuesta más limpia, silenciosa y contemplativa, se prefirió dejar únicamente el mensaje en pantalla.
+
+De esta forma, el Tótem 02 funciona como un dispositivo receptor: escucha los datos enviados por Adafruit IO, traduce cada código en un mensaje textual y lo muestra de manera clara en la pantalla OLED.
+
+Componentes considerados
+
+<ins> Para el Tótem 02, trabajamos con: </ins>
+
+| Elemento | Función dentro del proyecto |
+|---|---|
+| Pantalla OLED | Muestra el mensaje correspondiente al estado recibido desde Adafruit IO. |
+| Arduino con WiFi | Recibe los datos enviados desde Adafruit IO y controla la pantalla. |
+| Adafruit IO | Plataforma que permite recibir los estados enviados por el Tótem 01. |
+| Feed `TOTEM01` | Canal de comunicación donde el Tótem 01 envía los códigos y el Tótem 02 los recibe. |
+
+<ins>La conexión principal quedó pensada así:</ins>
+
+| Conexión | Pin |
+|---|---|
+| OLED VCC | 3.3V o 5V, según la pantalla |
+| OLED GND | GND |
+| OLED SDA | SDA de la placa |
+| OLED SCL | SCL de la placa |
+
+El Tótem 02 recibe códigos simples desde Adafruit IO. Cada código representa un estado detectado previamente por el Tótem 01.
+
+**0** = sin presencia  
+**1** = distancia 01  
+**2** = distancia 02  
+**3** = distancia 03  
+**4** = ausencia prolongada  
+
+<ins>Mensajes mostrados en pantalla:</ins>
+
+**0**	Sin presencia  
+**1**	Distancia 01  
+**2**	Distancia 02  
+**3**	Distancia 03  
+**4**	Ausencia prolongada  
+**Otro valor	Código no válido**  
+
+El Tótem 02 no recibe la distancia exacta en centímetros, sino un código resumido. Esto permite que la comunicación sea más limpia y que la pantalla muestre mensajes claros sin saturar el sistema con datos innecesarios.
+
+### Funciones principales del código
+
+| Función | Descripción |
+|---|---|
+| `setup()` | Prepara el sistema al iniciar. Inicia el monitor serial, configura la pantalla OLED, muestra el mensaje de inicio, prepara la recepción del feed de Adafruit IO y llama a la conexión con internet. |
+| `loop()` | Mantiene viva la conexión con Adafruit IO mediante `io.run()`. Como ya no hay servo, el loop queda más simple y solo se encarga de escuchar nuevos datos. |
+| `conectarAdafruit()` | Conecta el Arduino a Adafruit IO. Tiene un tiempo máximo de espera para que el código no quede bloqueado si falla internet. Si conecta, muestra “Conectado”; si no conecta, muestra un mensaje de error en la pantalla. |
+| `recibirEstado()` | Se ejecuta cada vez que llega un nuevo dato desde Adafruit IO. Lee el código recibido, lo imprime en el monitor serial y evita repetir la acción si llega el mismo código anterior. |
+| `interpretarCodigo()` | Traduce el código recibido en un mensaje textual. Por ejemplo, si recibe `1`, lo interpreta como “Distancia 01”; si recibe `4`, lo interpreta como “Ausencia prolongada”. |
+| `mostrarTextoInicio()` | Muestra mensajes generales de inicio, conexión o error en la pantalla OLED. Se usa para estados como “Iniciando”, “Conectando” o “No conecta”. |
+| `mostrarEnPantalla()` | Limpia la pantalla OLED y muestra el mensaje correspondiente al código recibido desde Adafruit IO. También muestra el código para verificar qué dato llegó. |
+
+
+Aunque inicialmente el Tótem 02 fue programado con un servo, finalmente se decidió eliminarlo del código y del funcionamiento del prototipo. Esta decisión permitió simplificar la interacción y evitar elementos que pudieran distraer del mensaje principal.
+
+Al retirar el servo, el código quedó más limpio: se eliminaron la librería Servo.h, el pin del servo, los grados de movimiento, las funciones de movimiento fijo y las funciones de movimiento irregular en ausencia prolongada.
+
+La respuesta final del Tótem 02 queda centrada únicamente en la pantalla OLED, reforzando una comunicación más silenciosa, directa y coherente con la atmósfera del proyecto. 
+
+### Prompts de trabajo utilizados para el código del Tótem 02
+
+| Etapa / área de trabajo | Prompt utilizado |
+|---|---|
+| Código base receptor | “Generar un código base para el Tótem 02 que reciba datos desde Adafruit IO utilizando el mismo feed del Tótem 01.” |
+| Conexión a Adafruit IO | “Configurar el Tótem 02 para conectarse a Adafruit IO mediante WiFi y mantenerse escuchando los datos enviados desde el feed `TOTEM01`.” |
+| Recepción de códigos | “Crear una lógica de recepción de códigos desde Adafruit IO, donde cada número recibido represente un estado enviado por el Tótem 01.” |
+| Traducción de datos | “Traducir los códigos recibidos desde Adafruit IO en mensajes textuales claros para mostrarlos en una pantalla OLED.” |
+| Pantalla de inicio | “Configurar la pantalla OLED para que muestre un mensaje de inicio mientras el sistema se conecta a internet y a Adafruit IO.” |
+| Mensajes por estado | “Mostrar en pantalla el mensaje correspondiente a cada estado recibido: sin presencia, distancia 01, distancia 02, distancia 03 y ausencia prolongada.” |
+| Interpretación de códigos | “Agregar una función que interprete el código recibido y lo convierta en el mensaje correspondiente para la pantalla.” |
+| Actualización de pantalla | “Incorporar una función específica para limpiar la pantalla OLED y actualizar el mensaje cada vez que llegue un nuevo dato desde Adafruit IO.” |
+| Evitar repeticiones | “Evitar que el sistema repita la misma acción si recibe nuevamente el mismo código desde Adafruit IO.” |
+| Monitor serial | “Agregar mensajes en el monitor serial para revisar qué código está llegando desde Adafruit IO y verificar si la comunicación funciona correctamente.” |
+| Conexión no bloqueante | “Programar una conexión a Adafruit IO con tiempo máximo de espera, para evitar que el código quede bloqueado permanentemente si falla internet.” |
+| Mensaje de error | “Modificar el código para que, si Adafruit IO no conecta, la pantalla muestre un mensaje de error como ‘No conecta’ o ‘Revisar WiFi/IO’.” |
+| Rol del Tótem 02 | “Ajustar el código del Tótem 02 para que funcione como receptor del sistema, dependiendo de la información enviada por el Tótem 01.” |
+| Prueba con servo | “Probar inicialmente el Tótem 02 con pantalla OLED y servo, donde el servo se moviera en distintos grados según la cercanía detectada por el Tótem 01.” |
+| Movimiento por cercanía | “Programar el servo para que se moviera a distintos ángulos según el código recibido: 0°, 45°, 90° y 135°.” |
+| Ausencia con servo | “Agregar una condición especial para que, en ausencia prolongada, el servo realizara un movimiento irregular automático.” |
+| Evaluación del servo | “Evaluar si el movimiento del servo aportaba a la interacción del Tótem 02 o si generaba ruido visual y mecánico.” |
+| Retiro del servo | “Modificar el código para eliminar el servo del Tótem 02, dejando únicamente la pantalla OLED como respuesta principal.” |
+| Limpieza del código | “Eliminar del código la librería `Servo.h`, el pin del servo, los grados de movimiento y las funciones relacionadas con movimiento fijo o irregular.” |
+| Simplificación del `loop()` | “Simplificar el `loop()` del Tótem 02 para que solo mantenga viva la conexión con Adafruit IO y escuche nuevos datos.” |
+| Respuesta limpia | “Ajustar la interfaz de la pantalla OLED para que la respuesta del Tótem 02 sea más limpia, silenciosa y directa.” |
+| Organización por funciones | “Mantener el código organizado por funciones, separando la conexión a Adafruit IO, la recepción de datos, la interpretación del código y la visualización en pantalla.” |
+| Tótem receptor | “Preparar el Tótem 02 como un dispositivo receptor que no mide directamente la distancia, sino que interpreta los estados enviados por el Tótem 01.” |
+| Revisión del feed | “Revisar que el feed utilizado por el Tótem 02 sea el mismo que el del Tótem 01, para asegurar que ambos dispositivos se comuniquen correctamente.” |
+| Versión final | “Construir una versión final del código del Tótem 02 sin servo, centrada únicamente en recibir mensajes desde Adafruit IO y mostrarlos en pantalla OLED.” |
+
+### Código tótem 02
+
+```cpp
+// -----------------------------
+// TOTEM 02
+// Recibe datos desde Adafruit IO
+// Pantalla OLED
+//
+// Recibe códigos desde TOTEM01:
+// 0 = sin presencia
+// 1 = distancia 01
+// 2 = distancia 02
+// 3 = distancia 03
+// 4 = ausencia prolongada
+//
+// Pantalla: muestra mensaje recibido/traducido
+// -----------------------------
+
+#include "AdafruitIO_WiFi.h"
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+// -----------------------------
+// DATOS ADAFRUIT IO
+// -----------------------------
+
+#define IO_USERNAME  "TU_USUARIO_ADAFRUIT"
+#define IO_KEY       "TU_KEY_ADAFRUIT"
+
+#define WIFI_SSID    "TU_WIFI"
+#define WIFI_PASS    "TU_CLAVE_WIFI"
+
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+
+// Debe ser el mismo feed que usa el Totem 01
+AdafruitIO_Feed *estadoFeed = io.feed("TOTEM01");
+
+bool adafruitConectado = false;
+
+// -----------------------------
+// CÓDIGOS RECIBIDOS
+// -----------------------------
+
+const int COD_SIN_PRESENCIA = 0;
+const int COD_DISTANCIA_01 = 1;
+const int COD_DISTANCIA_02 = 2;
+const int COD_DISTANCIA_03 = 3;
+const int COD_AUSENCIA = 4;
+
+// -----------------------------
+// PANTALLA OLED
+// -----------------------------
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define OLED_RESET -1
+
+Adafruit_SSD1306 display(
+  SCREEN_WIDTH,
+  SCREEN_HEIGHT,
+  &Wire,
+  OLED_RESET
+);
+
+// -----------------------------
+// VARIABLES GENERALES
+// -----------------------------
+
+int codigoActual = -1;
+int codigoAnterior = -2;
+
+String mensajeActual = "Esperando datos...";
+
+// -----------------------------
+// SETUP
+// -----------------------------
+
+void setup() {
+  Serial.begin(9600);
+
+  // -----------------------------
+  // INICIAR PANTALLA
+  // -----------------------------
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println("No se encontro pantalla OLED");
+    while (true);
+  }
+
+  mostrarTextoInicio("Totem 02", "Iniciando...");
+
+  // -----------------------------
+  // CONFIGURAR ADAFRUIT IO
+  // -----------------------------
+
+  estadoFeed->onMessage(recibirEstado);
+
+  conectarAdafruit();
+
+  if (adafruitConectado) {
+    // Pide el último valor del feed
+    estadoFeed->get();
+  }
+}
+
+// -----------------------------
+// LOOP
+// -----------------------------
+
+void loop() {
+  // Mantiene viva la conexión con Adafruit IO
+  if (adafruitConectado) {
+    io.run();
+  }
+}
+
+// -----------------------------
+// CONECTAR A ADAFRUIT IO
+// SIN QUEDARSE PEGADO
+// -----------------------------
+
+void conectarAdafruit() {
+  Serial.print("Conectando a Adafruit IO");
+
+  mostrarTextoInicio("Conectando", "Adafruit IO...");
+
+  io.connect();
+
+  unsigned long inicioConexion = millis();
+  const unsigned long tiempoMaximoConexion = 15000;
+  // Espera máximo 15 segundos
+
+  while (
+    io.status() < AIO_CONNECTED &&
+    millis() - inicioConexion < tiempoMaximoConexion
+  ) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+
+  if (io.status() >= AIO_CONNECTED) {
+    adafruitConectado = true;
+
+    Serial.println("Conectado a Adafruit IO");
+    Serial.println("-------------------------");
+
+    mostrarTextoInicio("Conectado", "Esperando datos...");
+  } 
+  
+  else {
+    adafruitConectado = false;
+
+    Serial.println("No conecto a Adafruit IO");
+    Serial.println("Revisar WiFi / IO Key");
+    Serial.println("-------------------------");
+
+    mostrarTextoInicio("No conecta", "Revisar WiFi/IO");
+  }
+}
+
+// -----------------------------
+// RECIBIR ESTADO DESDE ADAFRUIT IO
+// -----------------------------
+
+void recibirEstado(AdafruitIO_Data *data) {
+  int codigoRecibido = data->toInt();
+
+  Serial.print("Codigo recibido: ");
+  Serial.println(codigoRecibido);
+
+  // Evita repetir la misma acción si llega el mismo código
+  if (codigoRecibido == codigoAnterior) {
+    return;
+  }
+
+  codigoActual = codigoRecibido;
+  codigoAnterior = codigoActual;
+
+  interpretarCodigo(codigoActual);
+}
+
+// -----------------------------
+// INTERPRETAR CÓDIGO RECIBIDO
+// -----------------------------
+
+void interpretarCodigo(int codigo) {
+  if (codigo == COD_SIN_PRESENCIA) {
+    mensajeActual = "Sin presencia";
+  }
+
+  else if (codigo == COD_DISTANCIA_01) {
+    mensajeActual = "Distancia 01";
+  }
+
+  else if (codigo == COD_DISTANCIA_02) {
+    mensajeActual = "Distancia 02";
+  }
+
+  else if (codigo == COD_DISTANCIA_03) {
+    mensajeActual = "Distancia 03";
+  }
+
+  else if (codigo == COD_AUSENCIA) {
+    mensajeActual = "Ausencia prolongada";
+  }
+
+  else {
+    mensajeActual = "Codigo no valido";
+  }
+
+  Serial.print("Mensaje: ");
+  Serial.println(mensajeActual);
+  Serial.println("-------------------------");
+
+  mostrarEnPantalla(mensajeActual, codigo);
+}
+
+// -----------------------------
+// PANTALLA DE INICIO / ESTADO
+// -----------------------------
+
+void mostrarTextoInicio(String linea1, String linea2) {
+  display.clearDisplay();
+
+  display.setTextColor(SSD1306_WHITE);
+  display.setTextSize(1);
+
+  display.setCursor(0, 0);
+  display.println(linea1);
+
+  display.setCursor(0, 18);
+  display.println(linea2);
+
+  display.display();
+}
+
+// -----------------------------
+// MOSTRAR MENSAJE EN PANTALLA
+// -----------------------------
+
+void mostrarEnPantalla(String mensaje, int codigo) {
+  display.clearDisplay();
+
+  display.setTextColor(SSD1306_WHITE);
+
+  display.setTextSize(1);
+  display.setCursor(0, 0);
+  display.println("Totem 02");
+
+  display.setCursor(0, 14);
+  display.println("Mensaje:");
+
+  display.setTextSize(1);
+  display.setCursor(0, 30);
+  display.println(mensaje);
+
+  display.setTextSize(1);
+  display.setCursor(0, 54);
+  display.print("Cod:");
+  display.print(codigo);
+
+  display.display();
+}
+```
