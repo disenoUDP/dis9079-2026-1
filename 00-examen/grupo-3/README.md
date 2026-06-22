@@ -37,16 +37,16 @@ El resultado se muestra en el módulo LED, mientras la Raspberry recopila los po
 
 Open Meteo es una API de código abierto y gratuita, nos permite tener acceso a los datos meteorológicos globales, es decir, los datos están disponibles para cualquier coordenada del mundo. Las APIs que nos ofrece incluyen información como:
 
-Condiciones meteorológicas actuales
-Datos sobre el clima marítimo 
-Pronósticos por hora y diarios
-Perspectivas a corto y largo plazo
-Alerta de inundaciónes
-Más de 47 años de observaciones históricas
-Archivos históricos de pronósticos
-Datos estadísticos sobre el clima 
-Datos sobre la calidad del aire
-Información sobre la radiación satelital 
++ Condiciones meteorológicas actuales
++ Datos sobre el clima marítimo 
++ Pronósticos por hora y diarios
++ Perspectivas a corto y largo plazo
++ Alerta de inundaciónes
++ Más de 47 años de observaciones históricas
++ Archivos históricos de pronósticos
++ Datos estadísticos sobre el clima 
++ Datos sobre la calidad del aire
++ Información sobre la radiación satelital 
 
 Algo que diferencia a Open Meteo API es que dan los créditos correspondientes a los medios donde recopilan sus datos climáticos y son totalmente transparentes con su código base, la gracia de esto es que cualquier persona pueda desarrollar su propio sistema rapidamente
 
