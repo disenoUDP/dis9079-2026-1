@@ -107,3 +107,8 @@ Si queremos ejecutarlo manualmente desde el REPL para ver el error exacto
 ```bash
 import code
 ```
+#### Imagenes proceso
+
+![conexion](./imagenes/conexionAnilloLed.jpg)
+
+![anilloLed](./imagenes/anilloLed.gif)

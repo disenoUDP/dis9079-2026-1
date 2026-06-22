@@ -12,21 +12,23 @@ de otro sistema sin tener que entender cómo está hecho por dentro. Gracias a e
 desarrolladores pueden crear aplicaciones más rápido, reutilizar herramientas ya
 existentes y hacer que distintos sistemas trabajen juntos de forma más fácil.
 
+`API:` Application Programming Interface
+
 <img src="./imagenes/sofia_imagenes/API.jpg" alt="final" width="500">
 
-Imagen de: <https://itsqmet.edu.ec/api/>
+Imagen sacada de: <https://itsqmet.edu.ec/api/>
 
 ### Tipos de APIs
 
-- API web: Una API Web es una herramienta que permite que dos aplicaciones intercambien
-información por Internet de forma rápida y automática.
-- REST: Permite que los sistemas intercambien información de manera simple y rápida,
+- HTTP: `Hypertext Transfer Protocol` Es el protocolo de capa de aplicación, utilizado para transmitir documentos hipermedia como HTML,
+- REST: `Representational State Transfer` Graph Query Language Permite que los sistemas intercambien información de manera simple y rápida,
 generalmente utilizando HTTP y formato JSON.
-- SOAP: Es un protocolo más estructurado y estricto para intercambiar información entre
-- sistemas. Utiliza XML y suele emplearse en servicios empresariales donde se requiere
-mayor seguridad y control.
+- SOAP: `Simple Object Access Protocol` Es un protocolo más estructurado y estricto para intercambiar información entre
+- JSON-RCP: `Remote Procedure Call` Es un protocolo de llamada a procedimiento remoto (RPC) ligero y sin estado, codificado en JSON, que permite a las aplicaciones realicen funciones en un servidor remoto como si fueran locales.
+- GraphQL: `Graph Query Language` Es un lenguaje de consulta de datos de código abierto y un entorno de ejecución del lado del servidor diseñado para API. 
 
-¿Cómo funcionan las APIs?
+
+### ¿Cómo funcionan las APIs?
 
 Funcionan como un puente que permite que diferentes aplicaciones se comuniquen entre sí.
 Cuando una aplicación necesita información o una función de otra, envía una solicitud a
@@ -36,13 +38,15 @@ datos necesarios. Para intercambiar información, las APIs utilizan formatos est
 Gracias a las APIs, es posible reutilizar funciones ya existentes, integrar diferentes
 servicios y desarrollar aplicaciones de manera más rápida, flexible y escalable.
 
-### Protocolos más comunes
+#### Categorias de APIS
 
-- `HTTP` Hypertext Transfer Protocol
-- `REST` Representational State Transfer
-- `JSON-RPC` Remote Procedure Call
-- `SOAP` Simple Object Access Protocol
-- `GraphQL` Graph Query Language
+- API privada: forma interna
+- API pública: utilizada por cualquier desarrollador
+- API para partners: solo desarrolladores externos autorizados
+
+También pueden ser APIS locales, para aplicaciones que se comunican dentro de un mismo
+ecosistema y Apis remotas, para conexiones que se realizan desde un sistema en un punto
+diferente.
 
 ¿Porqué son importantes las APIs?
 
@@ -54,3 +58,4 @@ existentes, lo que reduce el tiempo y esfuerzo de desarrollo
 
 - <https://immune.institute/blog/que-es-la-api/>
 - <https://itsqmet.edu.ec/api/>
+- <https://outvio.com/es/blog/que-es-una-api/>

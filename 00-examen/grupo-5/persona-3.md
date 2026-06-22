@@ -220,3 +220,17 @@ Terminar llamada de Google y sumar +1 al contador de fotos
 El doble "disparo", porque si el Wi-Fi es lento y se vuelve a oprimir el botón, el ESP32 recibirá la petición /disparo, donde intentará asignar más RAM a otra foto y podría colapsar por falta de memoria.
 
 O que después de accionar la Raspberry Pi falle la subida de la foto a Drive. En la pantalla se verá como "Subiendo a Drive" y se creería que se guardó en la nube, pero en realidad solo se guardó en la microSD.
+
+---
+
+Al pasar de las semanas fuimos completando parte del código y nos dimos cuenta de que era mejor sacar las fotos con la ESP32-CAM conectada al Arduino, y que el sistema de visualización tipo galería, manejado por botones y que recibe las imágenes editadas en la nube de Drive, era mejor implementarlo con la Raspberry Pi.
+
+Lo que queremos expresar es este Archivo Retro completo que integramos al sistema de captura, donde implementamos materiales como:
+
+| Componente            |
+| --------------------- |
+| Arduino Uno R4 WiFi   |
+| ESP32-CAM             |
+| Raspberry Pi Pico 2 W |
+
+Comunicación inalámbrica, procesamiento de imágenes con efectos retro y sincronización con Google Drive. Mostrando los procesos y errores que tuvimos al momento de implementar esta idea en el proyecto, hasta lograr un sistema estable y funcional.

@@ -9,6 +9,7 @@ En esta clase nos dedicamos a definir de forma más concreta lo que haríamos pa
 Lo que más me gustó fue la dirección que tomó el proyecto: decidimos presentarlo como una especie de muestra museográfica, dos módulos separados como si fueran objetos de exhibición. El primero tiene un sensor ultrasónico y un LED que responde progresivamente a la cercanía de una persona. El segundo tiene una pantalla OLED y un servomotor que recibe lo que detecta el primero y lo traduce en movimiento y en un mensaje. La comunicación entre ambos ocurre de forma inalámbrica a través de Adafruit IO.
 
 También trabajamos el pseudocódigo de ambos módulos y seguimos afinando los textos del proyecto.
+
 ## Descripción conceptual proyecto
 
 El proyecto consiste en un altar lumínico compuesto por dos tótems conectados inalámbricamente entre sí, donde la presencia física de una persona se transforma en una señal luminosa, mecánica y afectiva.
@@ -25,12 +26,23 @@ El **Tótem 01** funciona como dispositivo de entrada. En su base se encuentra e
 
 El **Tótem 02** funciona como dispositivo receptor. Incorpora un servomotor cuyo movimiento está vinculado a la distancia registrada por el sensor del Tótem 01: a medida que la persona se acerca, el servo se mueve gradualmente. Cuando la presencia es reconocida por completo, el Tótem 02 recibe un mensaje que se muestra en pantalla como señal de compañía. La comunicación entre ambos tótems ocurre de forma inalámbrica a través de Adafruit IO.
 
+---
 
-En esta clase nos dedicamos a definir de forma más concreta lo que haríamos para el examen. Retomamos la propuesta del altar y la ordenamos mejor, separando la descripción en una parte conceptual y una técnica, que era justamente una de las correcciones que nos habían dado.
+## Bocetos y composición de los tótems
 
-Lo que más me gustó fue la dirección que tomó el proyecto: decidimos presentarlo como una especie de muestra museográfica, dos módulos separados como si fueran objetos de exhibición. El primero tiene un sensor ultrasónico y un LED que responde progresivamente a la cercanía de una persona. El segundo tiene una pantalla OLED y un servomotor que recibe lo que detecta el primero y lo traduce en movimiento y en un mensaje. La comunicación entre ambos ocurre de forma inalámbrica a través de Adafruit IO.
+Entre las distintas ideas que fueron surgiendo, empezaron a aparecer los primeros bocetos que le dieron forma al proyecto. También definimos la composición de los materiales: pensamos en impresión 3D o madera para la estructura central, donde irían la protoboard y el sensor ultrasónico; impresión 3D para la base, donde iría el Arduino; y acrílico transparente para la superficie donde iría el corazoncito impreso en 3D junto al LED rojo.
 
-También trabajamos el pseudocódigo de ambos módulos y seguimos afinando los textos del proyecto.
+Créditos a Carlita por el boceto:
+
+<img src="imagenes/bocetototem01.jpg" style="width: 40%;" alt="Boceto Tótem 01">
+
+---
+
+### Tótem 02
+
+También surgió la idea y la función principal del Tótem 02, donde irían la pantalla OLED junto al servomotor, actuando como receptor de la información enviada desde el Tótem 01. La información captada por el sensor del Tótem 01 se traduce en movimiento mediante el servo, generando una respuesta física a la distancia de la persona. Cuando la presencia se completa, el Tótem 02 recibe un mensaje que indica que alguien estuvo ahí, recordó o decidió hacerse presente.
+
+Dejamos pendiente la definición formal de su forma y material.
 
 ---
 
@@ -114,3 +126,40 @@ FIN
 Diagrama representativo de distancia hecho por la magda!!
 
 <img src="imagenes/diagrama.distancia.jpg" style="width: 50%;" alt="Mi imagen">
+
+## Avance durante la semana en grupito
+
+Durante la semana dedicamos tiempo a avanzar en el código y a probar los elementos que vamos a usar en el proyecto. El foco estuvo en el Tótem 01, que es el dispositivo encargado de detectar la presencia de una persona mediante un sensor ultrasónico HC-SR04 y traducir esa proximidad en una respuesta lumínica con un LED. Jota, compañero del LID ofreció ayudarnos con la primera prueba de impresión del corazón, ya cuando esta quedó impresa en filamento blanco comenzamos a probar como funcionaba en conjunto con el LED de color rojo, teniendo ya nuestros primeros registros y resultados. 
+
+Primero trabajamos solo con el sensor, definiendo TRIG en el pin 2 y ECHO en el pin 3. A partir de ahí programamos la lectura de distancia en centímetros y fuimos probando distintos rangos según qué tan cerca estaba la persona del tótem. Compañeros del LID nos ayudaron a revisar el funcionamiento del sensor y nos recomendaron no usar `delay()` como método principal para controlar los tiempos, porque eso vuelve el sistema más lento y poco fluido. Nos sugirieron usar `millis()` en su lugar, ya que permite medir el paso del tiempo sin detener completamente el Arduino.
+
+
+
+En un comienzo definimos cuatro rangos de distancia, pero terminamos simplificando a tres estados para que quedara más claro y funcional:
+
+- Entre 150 cm y 230 cm → hay alguien lejano
+- Entre 50 cm y 150 cm → alguien se acerca
+- 50 cm o menos → hay alguien cerca
+
+<img src="imagenes/pruebaled.gif" style="width: 100%;" alt="Mi imagen">  
+
+Aquí registros de unas primeras pruebas de distancia con el LED y sensor en funcionamiento: 
+
+<img src="imagenes/distancialed.gif" style="width: 100%;" alt="Mi imagen"> 
+
+Así quedó definido el comportamiento del LED:
+
+- Sin presencia → LED apagado
+- Alguien lejano → parpadeo lento
+- Alguien se acerca → parpadeo medio
+- Alguien cerca → encendido fijo y brillante
+
+<img src="imagenes/corazonled.gif" style="width: 100%;" alt="Mi imagen">
+
+También agregamos una condición relacionada con la ausencia: si el sistema no detecta presencia durante 2 minutos, el LED empieza a encenderse progresivamente y de forma lenta. Esa condición busca representar una presencia ausente o latente, conectado con la idea central del proyecto, donde el tótem no solo responde a la cercanía física sino también al paso del tiempo sin interacción.
+
+---
+
+## Correcciones para la siguiente etapa
+
+Aarón nos recomendó pensar en incorporar botones físicos que permitan activar rápidamente las distintas condiciones durante el examen, como herramienta de demostración para no depender completamente de las distancias reales frente al sensor.
