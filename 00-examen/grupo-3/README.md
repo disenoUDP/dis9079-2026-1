@@ -28,29 +28,36 @@ El resultado se muestra en el módulo LED, mientras la Raspberry recopila los po
 
 # API utilizada
 
-<img src="./imagenes/Api_Open_Weather_Map.png" alt="install" width="500">
+###### Página web de Open Meteo
+
+<img src="./imagenes/open-meteo.png" alt="install" width="500">
 
 
-Open Weather Map nos permite tener acceso a los datos meteorológicos globales mediante APIs, es decir, los datos están disponibles para cualquier coordenada del mundo. Las APIs que nos ofrece incluyen información como:
 
-+ Condiciones meteorológicas actuales
-+ Pronósticos minuto a minuto
-+ Pronósticos por hora y diarios
-+ Perspectivas a corto y largo plazo
-+ Alertas meteorológicas del gobierno
-+ Más de 47 años de observaciones históricas
-+ Archivos históricos de pronósticos
-+ Datos estadísticos sobre el clima 
-+ Datos sobre la calidad del aire
-+ Mapas meteorológicos capas geoespaciales
 
-Los servicios de Open Weather Map se ofrecen a través de _API REST_ con respuestas _JSON_ estructuradas, adecuadas para su integración en entornos web, móviles, análisis, IoT y empresariales.
+Open Meteo es una API de código abierto y gratuita, nos permite tener acceso a los datos meteorológicos globales, es decir, los datos están disponibles para cualquier coordenada del mundo. Las APIs que nos ofrece incluyen información como:
+
+Condiciones meteorológicas actuales
+Datos sobre el clima marítimo 
+Pronósticos por hora y diarios
+Perspectivas a corto y largo plazo
+Alerta de inundaciónes
+Más de 47 años de observaciones históricas
+Archivos históricos de pronósticos
+Datos estadísticos sobre el clima 
+Datos sobre la calidad del aire
+Información sobre la radiación satelital 
+
+Algo que diferencia a Open Meteo API es que dan los créditos correspondientes a los medios donde recopilan sus datos climáticos y son totalmente transparentes con su código base, la gracia de esto es que cualquier persona pueda desarrollar su propio sistema rapidamente
+
+Los servicios de Open Meteo se ofrecen a través de _API REST_ con respuestas _JSON_ estructuradas, adecuadas para su integración en entornos web, móviles, análisis, IoT y empresariales.
 
 > **API REST**: Interfaz de programación de aplicaciones que sigue los principios de REST, el cual significa transferencia de estado representacional y consiste en un conjunto de reglas y recomendaciones para diseñar una API web.
 Fuente: <https://www.redhat.com/es/topics/api/what-is-a-rest-api> 
 
 > **JSON**: Formato ligero de intercambio de datos, basado en un subconjunto del lenguaje JavaScript.
 Fuente: <https://www.json.org/json-es.html>
+
 
 ---
 
@@ -141,10 +148,16 @@ Luego de crear nuestros pseudocódigos, nos dedicamos a buscar APIs que nos dier
 En este punto como ya habíamos solucionado el tema de la API, decidimos probar códigos con los componentes que teníamos pensados utilizar en este proyecto los cuales eran los siguientes:
 
 Módulo RGB LED de 8 bits 5050
+
 Módulo LCD 1602 con interfaz I2C
+
 KIT humidificador USB M020
+
 Push button 4 pines
+
 LED 5mm
+
+<img src="./imagenes/pedido-componentes1.jpg" alt="install" width="500">
 
 ## Prompts creados para claude AI
 
@@ -374,7 +387,7 @@ OPENWEATHER_API_KEY = "TU_API_KEY_DE_OPENWEATHERMAP"
 AIO_USERNAME = "TU_USUARIO_DE_ADAFRUIT_IO"
 AIO_KEY = "TU_AIO_KEY"
 
-
+```
 
 
 #### Prompt 2
@@ -614,3 +627,193 @@ Helpers nuevos — set_todos_actuadores(), parpadeo_actuadores() y leer_sensores
 Loop principal — ahora itera sobre SENSORES con for i, s in enumerate(SENSORES) y mantiene ultimo_estado como arreglo paralelo.
 
 Para agregar un segundo LED o switch basta con añadir una línea al arreglo correspondiente, sin tocar ninguna otra función
+
+
+#### Prompt 3
+
+Este prompt lo hicimos luego de que desistieramos de usar el relé, el transistor y la pantalla:
+
+Antes de que me digas algo necesito contextualizar lo que estoy haciendo; tenemos conectada una Raspberry Pi Pico 2 W con un interruptor switch de 3 pines y una luz led con un código de python con circuit python que te podemos enviar, este usa OpenWeatherMap y por Adafruit IO usa un feed por ciudad (ciudades: Arica, Copiapó, Santiago, Valparaíso, Isla de Pascua, Juan Fernández, Punta Arenas, Antártica) y la Raspberry Pi Pico 2W publicará en esos feeds los datos de la humedad. El switch se usa para empezar a enviar los datos y la luz led para mostrar que se están enviando. Recibiendo estaría un Arduino UNO R4 WiFi conectado a un Módulo RGB led de 8 bits 505 (cada led representa una ciudad) sortea los datos de las ciudades mediante un dado digital mostrando este sorteo en el módulo rgb tipo una ruleta, se iluminarán de manera aleatoria las luces y se detendrá en una indicando la ciudad seleccionada la cual según el porcentaje de humedad actuará el KIT Humidificador USB (Placa de control para humidificador y membrana ultrasónica) conectado directamente al Arduino r4 wifi
+Te enviaré el código que estamos usando en Visual Studio Code, el switch se gira a un lado para enviar, por el arduino este activa el humidificador (Ahora el humidificador está conectado sólo a ground y cinco voltios.) por sobre el 35 porciento de humedad, el Arduino ya recibe los 8 feeds antes de sortear.
+circuit python.
+
+```ccp
+import time
+import wifi
+import socketpool
+import ssl
+import board
+import digitalio
+import adafruit_requests
+import adafruit_minimqtt.adafruit_minimqtt as MQTT
+
+# ─── COMUNICACIÓN SERIAL ─────────────────────────────────────────────────────
+# PuTTY → Connection type: Serial | Speed: 115200 | Puerto: COMx
+BAUD_RATE = 115200
+print(f"Baudios: {BAUD_RATE}")
+
+# ─── CONFIGURACIÓN ───────────────────────────────────────────────────────────
+
+WIFI_SSID     = "si"
+WIFI_PASSWORD = "mailo-6192"
+
+AIO_USER      = "AIO-USER"
+AIO_KEY       = "aio_Key"
+AIO_BROKER    = "io.adafruit.com"
+AIO_PORT      = 1883
+
+OWM_BASE_URL  = "https://api.open-meteo.com/v1/forecast"
+
+# Ciudades: (Nombre, latitud, longitud, nombre-del-feed)
+CIUDADES = [
+    ("Arica",               -18.48, -70.33,  "arica-humidity"),
+    ("Copiapo",             -27.37, -70.33,  "copiapo-humidity"),
+    ("Santiago",            -33.45, -70.67,  "santiago-humidity"),
+    ("Valparaiso",          -33.05, -71.62,  "valparaiso-humidity"),
+    ("Isla de Pascua",      -27.11, -109.35, "isla-pascua-humidity"),
+    ("Juan Fernandez",      -33.65, -78.83,  "juan-fernandez-humidity"),
+    ("Punta Arenas",        -53.16, -70.91,  "punta-arenas-humidity"),
+    ("Villa Las Estrellas", -62.19, -58.98,  "antartica-humidity"),
+]
+
+# ─── HARDWARE ────────────────────────────────────────────────────────────────
+
+# Switch ON/OFF en GP14 con pull-up interna
+# Switch ON  → GP14 conectado a GND → valor = False
+# Switch OFF → GP14 desconectado    → valor = True (pull-up)
+switch = digitalio.DigitalInOut(board.GP14)
+switch.direction = digitalio.Direction.INPUT
+switch.pull = digitalio.Pull.UP
+
+# LED en GP16
+led = digitalio.DigitalInOut(board.GP16)
+led.direction = digitalio.Direction.OUTPUT
+led.value = False
+
+# ─── FUNCIONES DE RED ────────────────────────────────────────────────────────
+
+def conectar_wifi():
+    """Conecta al WiFi y devuelve True si tiene éxito."""
+    print(f"Conectando a {WIFI_SSID}...")
+    intentos = 0
+    while not wifi.radio.connected and intentos < 20:
+        try:
+            wifi.radio.connect(WIFI_SSID, WIFI_PASSWORD)
+        except Exception as e:
+            print(f"  Intento {intentos + 1} fallido: {e}")
+        intentos += 1
+        led.value = not led.value   # parpadeo durante conexión
+        time.sleep(0.5)
+
+    if wifi.radio.connected:
+        led.value = False
+        print(f"WiFi conectado: {wifi.radio.ipv4_address}")
+        return True
+
+    print("ERROR: no se pudo conectar al WiFi")
+    return False
+
+def obtener_humedad(requests, nombre, lat, lon):
+    """Consulta Open-Meteo y devuelve la humedad (int) o None."""
+    url = (
+        f"{OWM_BASE_URL}"
+        f"?latitude={lat}"
+        f"&longitude={lon}"
+        f"&current=relative_humidity_2m"
+    )
+    try:
+        res = requests.get(url)
+        datos = res.json()
+        res.close()
+        humedad = datos["current"]["relative_humidity_2m"]
+        print(f"  {nombre}: {humedad}%")
+        return humedad
+    except Exception as e:
+        print(f"  {nombre}: error → {e}")
+    return None
+
+# ─── FUNCIÓN PRINCIPAL ───────────────────────────────────────────────────────
+
+def publicar_todas(requests, mqtt):
+    """Obtiene humedad de todas las ciudades y las publica en Adafruit IO."""
+    print("\n── Iniciando ciclo de publicación ──")
+    led.value = True
+
+    # Reconectar MQTT si es necesario
+    if not mqtt.is_connected():
+        try:
+            mqtt.connect()
+            print("MQTT conectado a Adafruit IO")
+        except Exception as e:
+            print(f"Error MQTT: {e}")
+            led.value = False
+            return
+
+    # Recorrer ciudades
+    for nombre, lat, lon, feed in CIUDADES:
+        humedad = obtener_humedad(requests, nombre, lat, lon)
+        if humedad is not None:
+            topic = f"{AIO_USER}/feeds/{feed}"
+            try:
+                mqtt.publish(topic, str(humedad))
+                print(f"  → Publicado {feed}: {humedad}%")
+            except Exception as e:
+                print(f"  → Error publicando {feed}: {e}")
+        time.sleep(0.5)
+
+    led.value = False
+    print("── Ciclo completado ──\n")
+
+# ─── SETUP ───────────────────────────────────────────────────────────────────
+
+if not conectar_wifi():
+    while True:
+        led.value = not led.value
+        time.sleep(0.2)
+
+pool     = socketpool.SocketPool(wifi.radio)
+requests = adafruit_requests.Session(pool, ssl.create_default_context())
+
+mqtt = MQTT.MQTT(
+    broker=AIO_BROKER,
+    port=AIO_PORT,
+    username=AIO_USER,
+    password=AIO_KEY,
+    socket_pool=pool,
+)
+
+try:
+    mqtt.connect()
+    print("MQTT conectado a Adafruit IO")
+except Exception as e:
+    print(f"Error MQTT inicial: {e}")
+
+print("Sistema listo. Activa el switch para publicar datos.")
+
+# ─── LOOP PRINCIPAL ──────────────────────────────────────────────────────────
+
+# True  = switch estaba OFF (pull-up activa)
+# False = switch estaba ON  (conectado a GND)
+ultimo_estado = True
+DEBOUNCE_SEG  = 0.05
+
+while True:
+    # Pequeña pausa para estabilizar lectura del switch
+    time.sleep(DEBOUNCE_SEG)
+    estado_actual = switch.value   # False = ON, True = OFF
+
+    # Switch recién activado (OFF → ON): publicar una vez
+    if not estado_actual and ultimo_estado:
+        print("Switch activado → publicando datos...")
+        publicar_todas(requests, mqtt)
+
+    # Switch apagado: apagar LED
+    if estado_actual and not ultimo_estado:
+        led.value = False
+        print("Switch apagado.")
+
+    ultimo_estado = estado_actual
+```
+
+#### Respuesta 3
+Flujo completo
