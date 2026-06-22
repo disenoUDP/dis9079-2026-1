@@ -45,14 +45,30 @@ De esta manera, aquello que normalmente percibimos solo con el oído puede ser m
 
 ## Primeros acercamientos
 
-En un inicio se utilizaron otros sensores de audio que necesitaban que el sonido estuviera muy cerca para poder detectar estas fluctuaciones, por lo que no funcionaba como esperábamos.
+En un inicio se utilizaron otros sensores de audio "ky38" y vs "ky37" presentes en el laboratorio. Tras haber puesto a prueba cáda mósul nos enteramos que no captaban el sonido como esperabamos, puesto que estos no estaban preparados para detectar de forma continua los ruidos ambientes (sólo se utilizan para captar info por un corto periodo de tiempo) además de necesitar que el sonido estuviera muy cerca para poder detectar, por lo que no funcionaba como esperábamos. Todo el resto del proceso se encuentra documentado.
 
 ## Input: Micrófono 
 
 ### Qué hace
 
-Mide el sonido ambiente con dos micrófonos MAX9812, calcula qué tan fuerte fue ese sonido, y cada un segundo manda ese dato a Adafruit IO, que actúa como intermediario en la nube entre la Pico y TouchDesigner.
+Cada Pico tiene un micrófono MAX9812 conectado al pin GP26. El código mide el sonido de forma continua tomando ráfagas de 150 lecturas seguidas, y calcula la diferencia entre la lectura más alta y la más baja de esa ráfaga, eso se llama amplitud, y refleja qué tan fuerte fue el sonido en ese instante. Ese valor se convierte a un porcentaje de 0 a 100.
+ 
+Como Adafruit IO limita el envío de datos a uno cada un segundo, el código no manda cada medición: mide todo el tiempo sin parar, guarda el nivel más alto detectado durante ese segundo, y cuando llega el momento de publicar manda ese máximo. Así, un sonido breve como un aplauso queda capturado aunque haya pasado entre dos envíos.
+ 
+Cada Pico publica en su propio feed de Adafruit IO (`grupo02-rep` o `grupo02-ss`) y se reconecta sola si el wifi o la conexión MQTT se caen.
 
+### El arreglo y el bucle
+ 
+```python
+PINES_SENSORES = [board.GP26]
+sensores = [analogio.AnalogIn(pin) for pin in PINES_SENSORES]
+ 
+for i in range(len(sensores)):      # recorre cada sensor del arreglo
+   for j in range(NUM_MUESTRAS):   # toma 150 lecturas por sensor
+       v = sensores[i].value
+```
+ 
+El arreglo `sensores` se construye a partir de `PINES_SENSORES`. El bucle `for i` recorre todos los sensores declarados, si se agrega un segundo micrófono, solo se suma el pin a la lista y el bucle lo incluye automáticamente
 ---
 
 ### Código Rasberry pi pico 2W
@@ -296,7 +312,18 @@ while True:
 
 Recibe los datos que llegan desde Adafruit IO (los que mandan las dos Picos) y los deja disponibles como valores que se pueden usar dentro de la red de TouchDesigner para controlar las visuales.
 
-Este código vive dentro de un `Callbacks DAT`, conectado a un `MQTT Client DAT`. TouchDesigner llama automáticamente a estas funciones cuando ocurre el evento correspondiente.
+El código vive en un `Callbacks DAT` conectado a un `MQTT Client DAT`. Usa un diccionario que relaciona cada feed con su `Constant CHOP` correspondiente:
+ 
+```python
+FEEDS = {
+   'grupo02-rep': 'constant_rep',
+   'grupo02-ss':  'constant_ss',
+}
+```
+
+Al conectarse, un bucle recorre ese diccionario y se suscribe a los dos feeds automáticamente. Cada vez que llega un dato nuevo, otro bucle recorre el diccionario para identificar de qué edificio viene y actualizar el `Constant CHOP` que corresponde.
+ 
+Los `Constant CHOP` guardan el último valor recibido de cada Pico y lo mantienen disponible en todo momento, aunque los datos no lleguen al mismo tiempo desde los dos edificios. Desde ahí se conectan directamente a los parámetros de las visuales.
 
 ---
 
@@ -373,26 +400,28 @@ Este video fué grabado con uno de los micrófonos en el Laboratorio de interacc
 
 
 ```mermaid
-flowchart TD
-
-A[Micrófono en el LID] --> B[Raspberry Pi Pico 2W]
-C[Micrófono en pañol] --> D[Raspberry Pi Pico 2W]
-
-B --> E[Procesar nivel de sonido]
-D --> F[Procesar nivel de sonido]
-
-E --> G[Enviar datos por MQTT]
-F --> G
-
-G --> H[Adafruit IO]
-
-H --> I[TouchDesigner]
-
-I --> J[Recibir datos de REP180]
-I --> K[Recibir datos de SS]
-
-J --> L[Actualizar visualización]
-K --> L
+---
+config:
+  layout: dagre
+---
+flowchart TB
+    A["Micrófono en LID"] --> n1["Recibe audio"]
+    C["Micrófono en Pañol"] --> n4["Recibe audio"]
+    B["Raspberry Pi Pico 2W - LID"] --> n7["Conexión a internet"]
+    D["Raspberry Pi Pico 2W - Pañol"] --> n7
+    n7 --> n8["Procesar nivel de sonido de forma independiente"]
+    n8 --> G["Envía datos por MQTT"]
+    G --> H["Adafruit IO"]
+    H --> I["TouchDesigner"]
+    I --> J["Procesamiento datos de REP180"] & K["Procesamiento datos de SS"]
+    J --> L["Actualizar visualización"]
+    K --> L
+    n1 --> n2["Si"] & n3["No"]
+    n2 --> B
+    n4 --> n5["Si"] & n6["No"]
+    n6 --> n9["Mantiene el último dato recibido"]
+    n5 --> D
+    n3 --> n9
 ```
 
 ---
@@ -420,3 +449,4 @@ Aportes, información y exploraciones personales compartidas con el equipo.
 * <https://mct-master.github.io/networked-music/2024/03/17/thomaseo-intro_to_OSC.html>
 * <https://ccrma.stanford.edu/groups/osc/index.html>
 *  <https://arduinomodules.info/ky-037-high-sensitivity-sound-detection-module/>
+
