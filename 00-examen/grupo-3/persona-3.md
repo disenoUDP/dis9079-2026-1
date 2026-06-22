@@ -33,6 +33,18 @@ Las APIs definen cómo interactúan las aplicaciones entregando detalles que inc
 + Parámetros: Son detalles necesarios para la solicitud, como por ejemplo lo es la ubicación de los datos meteorológicos o credenciales de inicio de sesión en páginas o redes sociales.
 + Respuestas: Es el formato de los datos devueltos por la aplicación, como lo son _JSON_ o _XML_.
 
+#### ¿Qué pueden hacer?
+
+Hay distintos tipos de APIs, por lo que cada una hace una cosa distinta. Las que se utilizan con más frecuencia son las siguientes:
+
++ APIs para manipular documentos cargados en el navegador: Un ejemplo de esto es [API DOM (_Document Object Model_)](<https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model>), el cual te permite manipular HTML y CSS, ya sea crear, eliminar, modificar HTML o aplicar distintos estilos a una página. Cada vez que ves una ventana emergente dentro de una página, es el DOM haciendo su trabajo.
++ APIs que obtienen datos del servidos: Estas se utilizan normalmente para actualizar pequeñas secciones de una página web. Las APIs logran hacer esto debido a que incluyen [XMLHttpRequest](<https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest>) y [Fetch API](<https://developer.mozilla.org/es/docs/Web/API/Fetch_API>).
++ APIs para dibujar y manipular gráficos: Las más utilizadas son [Canvas](<https://developer.mozilla.org/es/docs/Web/API/Canvas_API> y [WebGL](https://developer.mozilla.org/es/docs/Web/API/WebGL_API>), las cuales permiten actualizar información de los píxeles contenidos en un canvas HTML, lo cual genera objetos 2D y 3D.
++ APIs de audio y video: Un ejemplo es [Web Audio API](<https://developer.mozilla.org/es/docs/Web/API/Web_Audio_API>), en donde puedes crear una interfaz personalizada para los controles de reproducción de audio y video, mostrar pistas de texto con subtítulos junto con el video, capturar video de la cámara web para ser manipulado en un canvas, etc.
++ APIs de dispositivos: Son APIs para manipular y recuperar información de dispositivos modernos de hardware, de manera en la que sean útiles para aplicaciones web. Un ejemplo sería el indicar al usuario que una actualización está disponible mediante notificaciones del sistema, como lo hace [Notifications API](<https://developer.mozilla.org/es/docs/Web/API/Notifications_API>).
++ APIs de almacenamiento en el lado del cliente: Estas APIs tienen la habilidad de almacenar información en el lado del cliente, para así lograr por ejemplo que se guarde su estado entre carga de páginas, como lo hace [Web Storage API](<https://developer.mozilla.org/es/docs/Web/API/Web_Storage_API>).
+
+
 # Fuentes:
 
 + <https://www.ibm.com/think/topics/api>
