@@ -110,9 +110,9 @@ https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces
 - Oracle. (s. f.). *¿Qué es una API?*.
 https://www.oracle.com/cloud/cloud-native/api-management/what-is-api/
 
-- Cecilia Aguilera (Septiembre, 2021). API testing: guía práctica introductoria. https://es.abstracta.us/blog/api-testing-guia-practica/
+- Cecilia Aguilera (Septiembre, 2021). *API testing: guía práctica introductoria.* https://es.abstracta.us/blog/api-testing-guia-practica/
 
-- REST-API – The easy way to access your machine and process data - TekniskFOKUS. (2025, 29 enero). TekniskFOKUS. https://www.tekniskfokus.dk/blogs/rest-api-the-easy-way-to-access-your-machine-and-process-data/
+- REST-API – *The easy way to access your machine and process data* - TekniskFOKUS. (2025, 29 enero). TekniskFOKUS. https://www.tekniskfokus.dk/blogs/rest-api-the-easy-way-to-access-your-machine-and-process-data/
 
-- Cómo usar OAuth 2.0 para acceder a las API de Google. (s. f.). Google For Developers. https://developers.google.com/identity/protocols/oauth2?hl=es-419
+- Google For Developers. (s. f.) *Cómo usar OAuth 2.0 para acceder a las API de Google.* https://developers.google.com/identity/protocols/oauth2?hl=es-419
 
