@@ -11,7 +11,7 @@ API viene de *Application Programming Interface*, que traducido al español ser�
 permite que dos programas o sistemas se comuniquen entre sí sin que el usuario
 vea lo que está pasando.
 
-agregar foto**
+
 
 Una API funciona como un contrato entre dos aplicaciones, si una manda una
 solicitud de cierta forma, la otra sabe exactamente cómo responder. Hay reglas
@@ -42,16 +42,16 @@ mientras la API se comporte igual.
 
 ## tipos de API
 
-- **REST** — el estándar actual, el más usado en aplicaciones web. (el que usamos en el examen)
+- **REST**: el estándar actual, el más usado en aplicaciones web. (el que usamos en el examen)
 
 
-- **GraphQL** — más eficiente porque permite pedir exactamente los datos que
+- **GraphQL**: más eficiente porque permite pedir exactamente los datos que
   necesitas y nada más.
 
-- **WebSocket** — ideal para comunicación en tiempo real, como chats o
+- **WebSocket**: ideal para comunicación en tiempo real, como chats o
   notificaciones en vivo.
 
-- **SOAP** — el más antiguo, menos flexible, intercambia mensajes en formato XML.
+- **SOAP**: el más antiguo, menos flexible, intercambia mensajes en formato XML.
 
 ## sobre API REST
 
@@ -100,9 +100,19 @@ incluir mis credenciales en cada solicitud, no solo en la primera.
 
 - Amazon Web Services. (s. f.). *¿Qué es una API?*. AWS.
   https://aws.amazon.com/what-is/api/
+
 - Red Hat. (s. f.). *¿Qué son las interfaces de programación de aplicaciones?*.
-  https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces
+https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces
+
 - IBM. (s. f.). *¿Qué es una API?*. IBM Think.
   https://www.ibm.com/think/topics/api
+
 - Oracle. (s. f.). *¿Qué es una API?*.
-  https://www.oracle.com/cloud/cloud-native/api-management/what-is-api/
+https://www.oracle.com/cloud/cloud-native/api-management/what-is-api/
+
+- Cecilia Aguilera (Septiembre, 2021). API testing: guía práctica introductoria. https://es.abstracta.us/blog/api-testing-guia-practica/
+
+- REST-API – The easy way to access your machine and process data - TekniskFOKUS. (2025, 29 enero). TekniskFOKUS. https://www.tekniskfokus.dk/blogs/rest-api-the-easy-way-to-access-your-machine-and-process-data/
+
+- Cómo usar OAuth 2.0 para acceder a las API de Google. (s. f.). Google For Developers. https://developers.google.com/identity/protocols/oauth2?hl=es-419
+
