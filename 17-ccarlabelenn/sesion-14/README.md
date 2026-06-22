@@ -4,7 +4,7 @@ lunes 15 junio 2026
 
 ## última antes de examen...
 
-> la clase pasada fue de resolver dudas y probar los códigos para nuestro proyecto...
+> la clase pasada fue de resolver dudas y probar los códigos para nuestro proyecto
 
 **con este código quedamos la clase pasada**
 
