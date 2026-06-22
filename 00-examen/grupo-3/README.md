@@ -157,7 +157,7 @@ Push button 4 pines
 
 LED 5mm
 
-<img src="./imagenes/pedido-componentes1.jpg" alt="install" width="500">
+<img src="./imagenes/pedido-componentes1.jpeg" alt="install" width="500">
 
 ## Prompts creados para claude AI
 
