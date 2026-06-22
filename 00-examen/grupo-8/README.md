@@ -27,12 +27,15 @@ Parámetros del semáforo
 
 ### Materiales 
 
-* Arduino UNO R4 WiFi 
-* Raspberry Pi Pico 2 W 
-* 2 botones
-* 1 módulo semáforo RGB (con pines GND, R, Y, G integrados)
-* Protoboards y cables jumper
-* Resistencias de 10kΩ 
+| materiales | costo | cantidad|
+|------------|-------|---------|
+|Modulo Luz Led de Semaforo ( (con pines GND, R, Y, G integrados)| 1.500 | 1       |
+|Raspberry Pi Pico 2 W         | 14.990 | 1        |
+|arduino UNO R4 wifi        | 38.990  | 1       |
+|botones         | 100 c/u  | 2       |
+|Protoboards     | 1.500c/u  | 2       |
+|cables jumper (pack de 20 cables de conexión macho macho)  | 1.000  |    1  |
+
 
 ## Proceso 
 
@@ -120,6 +123,8 @@ while True:
 <img width="1600" height="1544" alt="WhatsApp Image 2026-06-22 at 11 05 44" src="https://github.com/user-attachments/assets/6296b9c9-cc42-4daf-8ab4-8fdaf618cffd" />
 
 
+#### Video Raspberry Pi Pico 2w
+
 https://youtube.com/shorts/gFcf4EqzTzc?si=k5rP9XQtdY6noI2l
 
 #### Proceso Arduino UNO R4 WiFI
@@ -155,6 +160,86 @@ Posteriormente realizamos la conexión de cableado y botones (resistencia a GND,
 
 Segundo problema, el contador se actualiza si se conecta o desconecta el cable manualmente, pero no responde al presionar el botón físico. Al mover el Arduino, los valores fluctúan por sí solos (señal "flotante"), lo que indica que el circuito de pull-down no está cerrando correctamente hacia GND, aunque se revisó la disposición del circuito (A3 conectado a D2, B3 con una resistencia de 10 kΩ, C3 y E3 con las patitas del botón, y A8 conectado al riel positivo) y parecía estar correcta si embargo no era posible controlar el envio de datos, por lo que buscamos otras opciones para los botones y al buscar otras opciones nos quedamos esta opcion que no se necesita necesita resistencias.
 
+```
+#include <WiFiS3.h>
+#include "AdafruitIO_WiFi.h"
+
+#define WIFI_SSID "x"
+#define WIFI_PASS "x"
+
+#define IO_USERNAME  "x"
+#define IO_KEY       "x"
+
+AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
+AdafruitIO_Feed *ocupacion = io.feed("pruebasemaforo");
+
+const int pinEntro = 2;
+const int pinSalio = 3;
+
+int contador = 0;
+
+bool estadoAnteriorEntro = HIGH;
+bool estadoAnteriorSalio = HIGH;
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(pinEntro, INPUT_PULLUP);
+  pinMode(pinSalio, INPUT_PULLUP);
+
+  Serial.print("Conectando a Adafruit IO");
+  io.connect();
+
+  while (io.status() < AIO_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.println(io.statusText());
+  ocupacion->save(contador);
+}
+
+void loop() {
+  io.run();
+
+  bool estadoEntro = digitalRead(pinEntro);
+  bool estadoSalio = digitalRead(pinSalio);
+
+  if (estadoEntro == LOW && estadoAnteriorEntro == HIGH) {
+    if (contador < 50) {
+      contador++;
+      Serial.print("Entro -> contador: ");
+      Serial.println(contador);
+      ocupacion->save(contador);
+    }
+    delay(200);
+  }
+
+  if (estadoSalio == LOW && estadoAnteriorSalio == HIGH) {
+    if (contador > 0) {
+      contador--;
+      Serial.print("Salio -> contador: ");
+      Serial.println(contador);
+      ocupacion->save(contador);
+    }
+    delay(200);
+  }
+
+  estadoAnteriorEntro = estadoEntro;
+  estadoAnteriorSalio = estadoSalio;
+}
+```
+
+
+|Componente | Pin del componente	| Conecta a |
+|-----------|---------------------|-----------|
+|Botón SUMA |	Pin 1	| Pin D2 del Arduino|
+Botón SUMA |	Pin 2	| Riel GND de la protoboard|
+Botón RESTA	|Pin 1	| Pin D3 del Arduino|
+Botón RESTA	|Pin 2 |	Riel GND de la protoboard|
+Protoboard|	Riel GND |	Pin GND del Arduino|
+
 
 *foto del proyecto, especifico ARDUINO+BOTONES*
 <img width="900" height="1600" alt="WhatsApp Image 2026-06-22 at 11 10 36 (1)" src="https://github.com/user-attachments/assets/60f0d5c3-d86c-46fb-8795-d79f75d66b1c" />
@@ -163,7 +248,7 @@ Segundo problema, el contador se actualiza si se conecta o desconecta el cable m
 *prueba en adafruit, sumando y restando personas*
 <img width="1912" height="855" alt="Captura de pantalla 2026-06-18 161901" src="https://github.com/user-attachments/assets/c0c32417-e97f-4fe3-9612-d75ae046a6aa" />
 
-
+#### Video Arduino UNO R4
 
 https://youtube.com/shorts/AJlLrTNiS2I?si=OBioyqRRyYEKV35q
 
