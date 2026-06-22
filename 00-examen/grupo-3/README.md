@@ -37,16 +37,16 @@ El resultado se muestra en el módulo LED, mientras la Raspberry recopila los po
 
 Open Meteo es una API de código abierto y gratuita, nos permite tener acceso a los datos meteorológicos globales, es decir, los datos están disponibles para cualquier coordenada del mundo. Las APIs que nos ofrece incluyen información como:
 
-Condiciones meteorológicas actuales
-Datos sobre el clima marítimo 
-Pronósticos por hora y diarios
-Perspectivas a corto y largo plazo
-Alerta de inundaciónes
-Más de 47 años de observaciones históricas
-Archivos históricos de pronósticos
-Datos estadísticos sobre el clima 
-Datos sobre la calidad del aire
-Información sobre la radiación satelital 
++ Condiciones meteorológicas actuales
++ Datos sobre el clima marítimo 
++ Pronósticos por hora y diarios
++ Perspectivas a corto y largo plazo
++ Alerta de inundaciónes
++ Más de 47 años de observaciones históricas
++ Archivos históricos de pronósticos
++ Datos estadísticos sobre el clima 
++ Datos sobre la calidad del aire
++ Información sobre la radiación satelital 
 
 Algo que diferencia a Open Meteo API es que dan los créditos correspondientes a los medios donde recopilan sus datos climáticos y son totalmente transparentes con su código base, la gracia de esto es que cualquier persona pueda desarrollar su propio sistema rapidamente
 
@@ -1390,7 +1390,7 @@ Al correr este código, en el monitor serial solo nos aparecía que se estaba re
 Para confirmar que el problema es que el módulo no recibe información, volvimos a correr el código escáner con el LCD conectado a la placa Arduino de la siguiente manera:
 
 | Pin LCD | Pin Arduino UNO R4 WiFi |
-| — | — |
+| --- | --- |
 | GND | GND |
 | Vcc | 5 V |
 | SDA | A4 |
@@ -1526,3 +1526,8 @@ Luego la creación del maguito, su ropa se hizo con con paño lenci color rojo c
 + Mi pantalla LCD I2C 16x2 solo muestra cuadrados en la primera fila - International / Español - Arduino Forum. (junio 20, 2023). Arduino Forum. https://forum.arduino.cc/t/mi-pantalla-lcd-i2c-16x2-solo-muestra-cuadrados-en-la-primera-fila/1139718
 + JSON. (n.d.). https://www.json.org/json-es.html
 + ¿Qué es una API REST? (julio 31, 2023). https://www.redhat.com/es/topics/api/what-is-a-rest-api
++ Maximum Pin current! - UNO Family / UNO R4 Minima - Arduino Forum. (julio 8, 2023). Arduino Forum. https://forum.arduino.cc/t/maximum-pin-current/1145859
++ ELECTROJUANYU. (junio 7, 2019). REVISIÓN ICSTATION MINI HUMIDIFICADOR CON DISCOS CERÁMICOS [Video]. YouTube. https://www.youtube.com/watch?v=k25P8RUv9UU
++ AlexGyver. (n.d.). GitHub - AlexGyver/autoHumidifier: Автоматический увлажнитель воздуха на Arduino. GitHub. https://github.com/AlexGyver/autoHumidifier
++ digitalWrite Pin HIGH = LOW and LOW = HIGH . . .Please help - Projects / Programming - Arduino Forum. (junio 19, 2016). Arduino Forum. https://forum.arduino.cc/t/digitalwrite-pin-high-low-and-low-high-please-help/392847
++ Problema I2C con Arduino UNO r4 Wifi - International / Español - Arduino Forum. (junio 5, 2024). Arduino Forum. https://forum.arduino.cc/t/problema-i2c-con-arduino-uno-r4-wifi/1268458

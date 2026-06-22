@@ -2,99 +2,108 @@
 
 lunes 01 junio 2026
 
-# Explicación del examen 
+# Explicación del examen
 
-### 📋 Introducción y Explicación del Examen
+### Introducción
 
-Hoy se presentó el **examen final**: *Estudios inalámbricos poéticos*. Debemos crear un sistema que comunique información de forma inalámbrica.
+En la clase de hoy el profesor explicó el examen final del curso, llamado **"Estudios inalámbricos poéticos"**. El objetivo general es desarrollar un sistema capaz de comunicar información de forma inalámbrica y presentar una experiencia o interacción a partir de esos datos.
 
-**Requisitos obligatorios:**
+También se explicaron algunos requisitos mínimos que deben estar presentes en el proyecto.
 
-| ✅ Requisito | Descripción |
-|---|---|
-| `arreglos (arrays)` | Uso obligatorio en la lógica del sistema |
-| `iteraciones` | Ciclos para procesar y mapear datos |
-| `transparencia` | Documentar todo: código, decisiones y prompts de IA |
+| Requisito         | Descripción                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------- |
+| Arreglos (arrays) | Deben utilizarse dentro de la lógica del sistema.                                        |
+| Iteraciones       | Uso de ciclos para procesar información.                                                 |
+| Transparencia     | Documentar el proceso, decisiones tomadas, código utilizado y uso de herramientas de IA. |
 
+## Investigación y referentes
 
-## 🔍 Investigación y Referentes
+Durante la clase se mostraron algunos ejemplos relacionados con APIs y sistemas que utilizan información proveniente de fuentes externas.
 
-Se exploró cómo las **APIs conectan sistemas**. Dos ejemplos clave:
+Uno de los ejemplos fue **The Cat API**, que sirve para entender cómo un sistema puede recibir datos desde internet y utilizarlos para generar distintas acciones.
 
-> 🐱 **The Cat API** — un dato que gatilla acciones poéticas o visuales desde una fuente externa.
+También se mencionó **Patrimonio Bot**, un proyecto que utiliza información disponible en línea para generar contenido de manera automática.
 
-> 🏛️ **Patrimonio Bot** *(Claudio Ruiz)* — ejemplo local de datos que generan experiencias significativas de forma automatizada.
+Estos ejemplos ayudaron a entender cómo los datos pueden convertirse en experiencias o interacciones más allá de una simple visualización.
 
+## Propuesta del Grupo 07: "La Voz de las Plantas"
 
-## 🌱 Propuesta del Grupo 07 — *"La Voz de las Plantas"*
+Nuestro grupo presentó la idea llamada **"La Voz de las Plantas"**.
 
-El proyecto busca **traducir el mundo invisible de las plantas y hongos**, dándoles una voz sonora para mostrarlos como organismos vivos que interactúan con su entorno.
+La propuesta consiste en captar señales eléctricas provenientes de una planta y utilizar esos datos para generar respuestas visuales o sonoras. La idea inicial es que los cambios detectados puedan transformarse en sonido, permitiendo representar de alguna forma la actividad de la planta y su relación con el entorno.
 
-### 💬 Dinámica de Feedback en Clase
+## Conversación y retroalimentación
 
-El profe planteó una actividad donde cada grupo subía su idea y el resto de los compañeros preguntaba para ayudar a aterrizarla.
+Después de presentar la propuesta, los demás grupos hicieron preguntas para ayudarnos a definir mejor algunos aspectos técnicos.
 
-<br>
+### Pregunta
 
-**❓ `@nicolas-valdes` preguntó:**
-> *"¿Qué es lo que detectará la frecuencia?"*
+> ¿Qué es lo que va a detectar la frecuencia?
 
-**💬 Respuesta del grupo:**
-> Vamos a medir el **voltaje interno de la planta**. Como la Raspberry Pi Pico no tiene suficiente resolución, usaremos un módulo **ADS1115** para captar los micro-cambios eléctricos que ocurren cuando hay vibraciones o gente cerca.
+### Respuesta
 
-<br>
+Explicamos que la idea es medir pequeñas variaciones de voltaje presentes en la planta. Para lograrlo será necesario utilizar un módulo ADS1115, ya que ofrece una mayor precisión que la disponible directamente en la Raspberry Pi Pico.
 
-**❓ `@nicolas-valdes` preguntó:**
-> *"¿A qué tipo de sonidos se traduciría lo que dice la planta? ¿Algo direccionado a lo musical?"*
+### Pregunta
 
-**💬 Respuesta de Braulio:**
-> La idea es hacer **música generativa**. Si el entorno está en calma, suena suave, si hay movimiento, el sonido se vuelve activo o agudo. La planta será como un *sintetizador en vivo* reaccionando a estímulos.
+> ¿A qué tipo de sonidos se traducirían esos datos? ¿Tendría un enfoque musical?
 
-<br>
+### Respuesta
 
-> [!IMPORTANT]
-> Este intercambio fue clave para decidir que el **ADS1115 es indispensable** para la propuesta técnica.
+Se comentó que la intención es trabajar con música generativa. Dependiendo de las variaciones registradas por la planta, el sistema podría modificar parámetros como intensidad, ritmo o tono para producir diferentes resultados sonoros.
 
-## 👥  Organización del Equipo y Roles
+A partir de esta conversación quedó más claro que el ADS1115 será una pieza importante dentro del proyecto, ya que permitirá obtener lecturas más precisas para las pruebas.
 
-| Rol | Responsabilidad |
-|---|---|
-| 🔧 **Hardware** | Conectar el ADS1115 y estabilizar la lectura de voltajes en la planta |
-| 💻 **Software** | Lógica en MicroPython: arreglos para promediar voltajes y mapearlos a sonidos |
-| 📡 **Comunicación** | Transmisión inalámbrica y salida vía sintetizador |
-| 📝 **Documentación** | Bitácoras, video de la demo y declaración de prompts de IA |
+## Organización del equipo
 
-## 💭 Reflexión y Próximos Pasos
+Durante la clase también conversamos sobre las áreas principales de trabajo.
 
-El feedback confirmó que la **"planta-sintetizador"** es una idea atractiva, pero requiere precisión técnica.
+| Área          | Responsabilidad                                                          |
+| ------------- | ------------------------------------------------------------------------ |
+| Hardware      | Conectar el ADS1115 y realizar pruebas de lectura.                       |
+| Software      | Procesar los datos obtenidos y transformarlos en información utilizable. |
+| Comunicación  | Resolver la transmisión inalámbrica entre dispositivos.                  |
+| Documentación | Mantener las bitácoras y registrar el proceso de trabajo.                |
 
-> [!NOTE]
-> La precisión en la captura de señales eléctricas es tan importante como el diseño.
+## Reflexión
 
-**Tareas pendientes:**
+La retroalimentación de los compañeros ayudó a identificar algunos puntos que todavía necesitan mayor definición, especialmente en la forma en que los datos serán interpretados y transformados en sonido.
 
-- [ ] Investigar más respecto al tema
+Por ahora, uno de los desafíos principales será conseguir mediciones estables y entender qué información realmente estamos obteniendo desde la planta antes de diseñar la experiencia final.
 
+## Tareas pendientes
 
-## 📌 Anexo — Punteo del Profe *(apuntes literales de clase)*
+* [ ] Investigar más sobre medición de señales eléctricas en plantas.
+* [ ] Revisar opciones de generación sonora.
+* [ ] Profundizar en el uso del ADS1115.
+* [ ] Definir la comunicación inalámbrica entre dispositivos.
 
-> [!NOTE]
-> Estas son las instrucciones tal como fueron entregadas en clases. Se conservan como referencia oficial del encargo.
+---
 
-**Presentación del proyecto:**
-- Explicar en **1 párrafo de al menos 4 líneas** qué hace el proyecto 
-- Encontrar referentes y palabras clave
+### Anexo: Apuntes de clase
 
-**Grupos:**
-- De 3 a 4 personas
-- Excepciones puntuales si tienen notas sobre **6.7**
+Estas son las indicaciones entregadas por el profesor para el examen.
 
-**Entregables individuales:**
-- [ ] Investigación sobre APIs
-- [ ] Bitácoras y proceso **×2**
+## Presentación del proyecto
 
-**Entregables grupales:**
-- [ ] Demo en video entre `rep180` y `salvsanf2221`
-- [ ] Funcionamiento en vivo entre extremos de la sala
-- [ ] Docs y código ordenado
+* Explicar el proyecto en un párrafo de al menos cuatro líneas.
+* Buscar referentes relacionados.
+* Definir palabras clave para orientar la propuesta.
+
+## Organización de grupos
+
+* Grupos de 3 a 4 integrantes.
+* Excepciones puntuales para estudiantes con promedio superior a 6,7.
+
+## Entregables individuales
+
+* [ ] Investigación sobre APIs.
+* [ ] Dos bitácoras de proceso.
+
+## Entregables grupales
+
+* [ ] Video demostrativo.
+* [ ] Funcionamiento en vivo entre dos extremos de la sala.
+* [ ] Código y documentación ordenados.
+
 
