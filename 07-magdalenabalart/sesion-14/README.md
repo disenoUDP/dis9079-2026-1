@@ -312,7 +312,7 @@ La lógica propuesta para el servo es:
 
 Para la ausencia prolongada, se propuso que el servo no quede fijo, sino que se mueva de manera irregular entre distintos ángulos. Esto busca generar una reacción más extraña o inquietante, diferenciándola de los estados normales de cercanía. 
 
-Demo de prueba funcionando: https://youtube.com/shorts/HgHZLUtbaVY?feature=share
+Demo de prueba funcionando: https://youtube.com/shorts/HgHZLUtbaVY?feature=share   
 Demo de prueba 02 https://youtube.com/shorts/3fTnl5YWiGM?feature=share
 
 # Tótem 02 Código
