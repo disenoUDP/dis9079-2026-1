@@ -248,7 +248,7 @@ Protoboard|	Riel GND |	Pin GND del Arduino|
 *prueba en adafruit, sumando y restando personas*
 <img width="1912" height="855" alt="Captura de pantalla 2026-06-18 161901" src="https://github.com/user-attachments/assets/c0c32417-e97f-4fe3-9612-d75ae046a6aa" />
 
-# Video Arduino UNO R4
+#### Video Arduino UNO R4
 
 https://youtube.com/shorts/AJlLrTNiS2I?si=OBioyqRRyYEKV35q
 
