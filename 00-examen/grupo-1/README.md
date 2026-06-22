@@ -389,6 +389,9 @@ La respuesta final del Tótem 02 queda centrada únicamente en la pantalla OLED,
 + Demo de prueba 02 <https://youtube.com/shorts/3fTnl5YWiGM?feature=share>
 
 
+<img src="imagenes/hechizototem.gif" width="80%">
+<img src="imagenes/hechizototem02.gif" width="80%">
+
 ## Reflexión
 
 Los tótems responden a la decisión de quedarse. Nos recuerdan que acompañar a alguien no siempre requiere palabras ni grandes gestos, a veces basta con estar. Incluso cuando una persona ya no está, algo de su presencia permanece en la memoria, en el espacio y en quienes compartieron ese momento con ella.
