@@ -1693,10 +1693,10 @@ function respJson(obj) {
 
 [Link video demo completa](https://youtube.com/shorts/0qfTay4SbsY?si=pTMcKAUAlJDzuTUe)
 
-![foto final 1](./imagenes/foto1.jpg)
-![foto final 2](./imagenes/foto2.jpg)
-![foto final 3](./imagenes/foto3.jpg)
-![foto final 4](./imagenes/foto4.jpg)
+![foto final 1](./imagenes/foto1.jpeg)
+![foto final 2](./imagenes/foto2.jpeg)
+![foto final 3](./imagenes/foto3.jpeg)
+![foto final 4](./imagenes/foto4.jpeg)
 
 ### Bibliografía
 
