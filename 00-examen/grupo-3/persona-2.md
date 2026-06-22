@@ -88,15 +88,15 @@ tanto para desarrolladores como para organizaciones:
 
 Si bien las APIs presentan ventajas, también existen aspectos a considerar al trabajar con ellas:
 
-Dependencia de terceros: Al integrar APIs externas, el funcionamiento de una aplicación queda a la disponibilidad y estabilidad del proveedor de la API.
+* Dependencia de terceros: Al integrar APIs externas, el funcionamiento de una aplicación queda a la disponibilidad y estabilidad del proveedor de la API.
 
-Seguridad y privacidad: Las APIs mal configuradas pueden convertirse en puntos vulnerables. Es importante implementar autenticación y pruebas de seguridad adecuadas.
+* Seguridad y privacidad: Las APIs mal configuradas pueden convertirse en puntos vulnerables. Es importante implementar autenticación y pruebas de seguridad adecuadas.
 
-Complejidad de mantenimiento: Cuando una API externa cambia su versión o deja de funcionar, las aplicaciones que dependen de ella requieren actualizaciones. 
+* Complejidad de mantenimiento: Cuando una API externa cambia su versión o deja de funcionar, las aplicaciones que dependen de ella requieren actualizaciones. 
 
-Costos: Muchas APIs de uso intensivo son de pago. El consumo elevado puede generar costos significativos, especialmente en aplicaciones a escala.
+* Costos: Muchas APIs de uso intensivo son de pago. El consumo elevado puede generar costos significativos, especialmente en aplicaciones a escala.
 
-Limitaciones de rendimiento: Las APIs REST pueden presentar problemas de recuperación excesiva o insuficiente de datos.
+* Limitaciones de rendimiento: Las APIs REST pueden presentar problemas de recuperación excesiva o insuficiente de datos.
 
 Las APIs son un componente fundamental de la arquitectura del software moderno. Su capacidad para conectar sistemas, acelerar el desarrollo y  la innovación las convierte en una herramienta indispensable en aplicaciones personales y también empresariales.  
 
