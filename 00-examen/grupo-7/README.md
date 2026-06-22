@@ -672,21 +672,21 @@ Una vez adoptado HiveMQ, fue necesario configurar el código de Arduino correcta
 #include <Wire.h>
 #include <Adafruit_ADS1X15.h>
 #include <WiFiS3.h>
-#include <ArduinoMqttClient.h>   // librería MQTT con TLS para UNO R4
+#include <ArduinoMqttClient.h>
 #include <ArduinoJson.h>
 
 Adafruit_ADS1115 ads;
 
-const char* ssid       = XXXXXXXXXXXXXX";
-const char* password   = "XXXXXXXXXXXXXX";
-const char* broker     = "XXXXXXXXXXXXXXXXXXXXXXXX";
-const int   port       = 8883;
-const char* mqtt_user  = "XXXXXXXXXXXXXXXXXXXXX";
-const char* mqtt_pass  = "XXXXXXXXXXXXXXXXXXXXXXXX";
-const char* topic      = "planta/electrodos";
+const char* ssid      = "xxxxxxxxxxxxxx";
+const char* password  = "xxxxxxxxxxx";
+const char* broker    = "xxxxxxxxxxxxxxxxxxxx";
+const int   port      = 8883;
+const char* mqtt_user = "xxxxxxxxxxxxxxxxxxxxxxx";
+const char* mqtt_pass = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+const char* topic     = "planta/electrodos";
 
-WiFiSSLClient wifiClient;          // WiFiSSLClient = TLS en UNO R4
-MqttClient mqttClient(wifiClient);
+WiFiSSLClient wifiClient;
+MqttClient    mqttClient(wifiClient);
 
 void setup() {
   Serial.begin(115200);
@@ -695,13 +695,13 @@ void setup() {
   Serial.print("Conectando WiFi");
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500); Serial.print(".");
+    delay(500);
+    Serial.print(".");
   }
   Serial.println("\nWiFi conectado — IP: " + WiFi.localIP().toString());
 
   mqttClient.setUsernamePassword(mqtt_user, mqtt_pass);
   mqttClient.setId("UNO_R4_Planta");
-
   Serial.print("Conectando MQTT...");
   while (!mqttClient.connect(broker, port)) {
     Serial.print("Error: ");
@@ -714,18 +714,16 @@ void setup() {
 void loop() {
   mqttClient.poll();
 
-  // Leer los 4 canales crudos
-  int16_t raw_hojaGrande = ads.readADC_SingleEnded(0);  // A0 = hoja grande
-  int16_t raw_hojaChica  = ads.readADC_SingleEnded(1);  // A1 = hoja chica
-  int16_t raw_tallo      = ads.readADC_SingleEnded(2);  // A2 = tallo
-  int16_t raw_tierra     = ads.readADC_SingleEnded(3);  // A3 = tierra
+  int16_t raw_hojaGrande = ads.readADC_SingleEnded(0);  // A0 — hoja grande
+  int16_t raw_hojaChica  = ads.readADC_SingleEnded(1);  // A1 — hoja chica
+  int16_t raw_tallo      = ads.readADC_SingleEnded(2);  // A2 — tallo
+  int16_t raw_tierra     = ads.readADC_SingleEnded(3);  // A3 — tierra
 
   Serial.print("HojaG: "); Serial.print(raw_hojaGrande);
   Serial.print(" | HojaC: "); Serial.print(raw_hojaChica);
   Serial.print(" | Tallo: "); Serial.print(raw_tallo);
   Serial.print(" | Tierra: "); Serial.println(raw_tierra);
 
-  // Armar JSON
   StaticJsonDocument<200> doc;
   doc["hoja_grande"] = raw_hojaGrande;
   doc["hoja_chica"]  = raw_hojaChica;
@@ -736,7 +734,6 @@ void loop() {
   char payload[200];
   serializeJson(doc, payload);
 
-  // Publicar
   mqttClient.beginMessage(topic);
   mqttClient.print(payload);
   mqttClient.endMessage();
