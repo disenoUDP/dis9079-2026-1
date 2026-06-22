@@ -9,6 +9,10 @@
 
 Nuestro proyecto nace del deseo de transformar cada latido en un puente de conexión. Mediante el sensor ECG AD8232, la actividad cardíaca deja de ser una señal invisible para convertirse en información que viaja en cuestión de segundos. A través de Adafruit IO, cada pulso encuentra un camino seguro hasta una pantalla LCD conectada a un segundo microcontrolador, donde los datos cobran vida nuevamente. Así, este sistema no solo captura y transmite información: crea una nueva forma de acompañar, observar, demostrando que incluso el ritmo silencioso del corazón puede trascender la distancia y hacerse presente allí donde más se necesita.
 
+Más allá de la transmisión de datos, el proyecto busca demostrar cómo las tecnologías inalámbricas pueden convertirse en herramientas para acercar a las personas. La información obtenida por el sensor es procesada por un Arduino UNO R4 WiFi y enviada mediante internet hacia un segundo dispositivo, permitiendo visualizar en tiempo real la frecuencia cardíaca sin necesidad de una conexión física entre ambos sistemas. Esta arquitectura evidencia el potencial de las plataformas IoT para compartir información biomédica de forma rápida, confiable y accesible.
+
+El desarrollo integra hardware, programación y comunicación en la nube en una solución funcional que combina precisión técnica con una experiencia visual intuitiva. La pantalla TFT circular presenta los datos de manera clara mediante indicadores gráficos y numéricos, facilitando la interpretación de la información por parte del usuario. De esta forma, el proyecto no solo cumple con el objetivo de establecer una interacción inalámbrica entre dos microcontroladores, sino que también propone una aplicación con proyección hacia ámbitos educativos, de monitoreo remoto y de apoyo al bienestar de las personas.
+
 ## Materiales usados
 
 | Componente | Valor Unidad | Cantidad | Link |
@@ -32,6 +36,10 @@ Nuestro proyecto nace del deseo de transformar cada latido en un puente de conex
 Inicio de ideación de examen, estuvimos leyendo e investigando sobre varios sensores, para ver si nos gustaba alguno para realizar nuestro proyecto de examen, nos decidimos por un sensor de pulso, específicamente el Sensor de Frecuencia Cardíaca ECG AD8232 Electrocardiograma,  que es un módulo diseñado para medir la actividad eléctrica del corazón y generar lecturas similares a un electrocardiograma (ECG). Funcionando como una interfaz que extrae, amplifica y filtra las señales eléctricas muy débiles que genera el cuerpo humano al latir. 
 
 Con  este sensor teníamos la idea de obtener registros en vivo de los latidos por minuto del usuario, usaremos la API -> Adafruit IO, que ya conocemos y sabemos su funcionamiento, por el lado de recepción de datos, pensamos en una pantalla LCD que muestre los latidos por minuto, usaremos 2 arduinos, uno para enviar y otro para recibir la información.
+
+Durante esta primera etapa también evaluamos distintas alternativas para la comunicación entre ambos dispositivos. Consideramos diferentes formas de transmitir la información, pero finalmente optamos por utilizar Adafruit IO debido a que ya contábamos con experiencia previa trabajando con la plataforma, lo que nos permitiría concentrarnos en el desarrollo de la lógica del proyecto en lugar de invertir tiempo en aprender una nueva tecnología. Además, la posibilidad de enviar y recibir datos en tiempo real mediante internet se ajustaba perfectamente a la idea que buscábamos desarrollar.
+
+Una vez definida la arquitectura general del sistema, comenzamos a distribuir las tareas y a planificar las siguientes semanas de trabajo. Establecimos como primer objetivo lograr una lectura estable de la señal del sensor AD8232, para posteriormente procesar la información, calcular los latidos por minuto y transmitirlos hacia un segundo Arduino encargado de la visualización. En esta etapa también realizamos un listado preliminar de los componentes necesarios y definimos una metodología de trabajo basada en pruebas progresivas, validando cada parte del sistema antes de integrarlas en un único proyecto.
 
 ![Modulo Sensor](./imagenes/modulo-sensor.webp)
 
@@ -62,13 +70,21 @@ Grupo 04: Queremos lograr una exploración sobre la capacidad de las tecnología
 
 *Registro de Interacción en Discord*
 
+La interacción vía Discord con Aarón y los demás grupos fue una instancia clave para el inicio de nuestro proyecto. Como la idea había sido definida ese mismo día, las preguntas y observaciones que recibimos nos ayudaron a identificar aspectos que, al estar inmersas en la conversación y en la construcción de la propuesta, dábamos por entendidos, pero que no quedaban claros para quienes la conocían por primera vez.
+
+Esta retroalimentación nos permitió mirar el proyecto desde otras perspectivas, aclarar el funcionamiento del sistema y definir con mayor precisión cómo se transmitirían y visualizarían los datos. Gracias a estas observaciones, pudimos fortalecer la propuesta desde sus primeras etapas y comenzar el desarrollo con una idea más clara, mejor estructurada y más fácil de comunicar.
+
+Gracias equipo curso!!
+
 -----
 
 ### Lunes 08 Junio
 
 #### 2 Semanas para el examen
 
-Proyecto de examen definido
+***Proyecto de examen definido***
+
+Durante esta semana logramos definir completamente el rumbo de nuestro proyecto. Luego de analizar las observaciones recibidas en la instancia de interacción con el profesor y nuestros compañeros, consolidamos la idea inicial y establecimos cómo funcionaría el sistema de principio a fin. Definimos el objetivo principal, la arquitectura de comunicación entre ambos Arduino, la plataforma que utilizaríamos para la transmisión de datos y la forma en que la información sería presentada al usuario. Con estas decisiones, el proyecto dejó de ser una idea conceptual y pasó a contar con una planificación clara para comenzar su desarrollo e implementación.
 
 
 ###### Nombre Formal
@@ -96,6 +112,8 @@ Diseñar un sistema capaz de capturar la actividad cardíaca de una persona medi
 - Un segundo Arduino consulta la información.
 
 - La pantalla LCD muestra los latidos por minuto en tiempo real.
+
+Con esta estructura definida, ya contábamos con una visión completa del funcionamiento del sistema y de las tareas que debíamos abordar durante las semanas siguientes. A partir de este punto, el trabajo se enfocaría en el montaje del circuito, el desarrollo del código para ambos microcontroladores y las pruebas de comunicación mediante Adafruit IO, con el objetivo de validar cada etapa antes de integrar el sistema completo.
 
 
 ### Pseudocódigo 
@@ -152,7 +170,9 @@ Cuenta Adafruit IO
 
 ---- 
 
-Mateo viene a nuestros puestos a consultar como va el avance de nuestro proyecto, le comentamos nuestra idea definida y le gusta, nos da la idea de hacer una carcasa para la opantalla donde se muestran los datos (BPM), y nos presta una Pantalla TFT LCD Redonda de 1,28", lo cual nos quedaría super con una carcasa, en forma de corazón, ya estamos trabajando en un modelo de impresión 3D e imprimir entre esta semana y la siguiente en el LID; Gracias Mateo!!
+Mateo se acercó a nuestro puesto para conocer el avance del proyecto. Le presentamos la propuesta que habíamos definido y, tras conversar sobre su funcionamiento, nos sugirió incorporar una carcasa para la pantalla donde se visualizarían los latidos por minuto (BPM). Además, nos prestó una pantalla TFT LCD redonda de 1,28", lo que abrió la posibilidad de replantear el diseño del dispositivo y darle una identidad visual mucho más atractiva mediante una carcasa con forma de corazón impresa en 3D.
+
+Esta conversación marcó un punto importante en el desarrollo del proyecto. Al tratarse de un área completamente nueva para nosotras, la experiencia y disposición de Mateo para orientarnos durante el semestre han sido un apoyo constante. Sus comentarios no solo validaron la idea que estábamos desarrollando, sino que también nos ayudaron a pensar en aspectos de diseño y presentación que inicialmente no habíamos considerado. Motivadas por esta propuesta, comenzamos el modelado 3D de la carcasa con la intención de imprimirla en el LID. Aunque no tenemos la certeza de que el tiempo alcance para concretar la impresión antes de la entrega final, haremos todo lo posible por lograrlo, ya que creemos que este elemento aportará un valor importante tanto a la experiencia del usuario como a la presentación final del proyecto.
 
 -----
 
@@ -188,48 +208,58 @@ Cuenta Adafruit IO
 
 #### 1 Semana para el examen
 
-Iniciamos en el LID, tenemos todos los materiales necesarios para poder trabajar, tenemos pendiente realizar el modelado 3D para la pantalla.
+Este día marcó el inicio del trabajo práctico con el proyecto. Ya contábamos con todos los componentes necesarios, por lo que comenzamos el montaje de los primeros circuitos y las pruebas de funcionamiento del sensor ECG AD8232. Nuestro objetivo era validar que la lectura de la señal cardíaca fuera estable antes de avanzar con la comunicación entre ambos Arduino. Aunque el modelado e impresión 3D de la carcasa aún estaba pendiente, decidimos priorizar el correcto funcionamiento del sistema electrónico para construir una base sólida sobre la cual seguir desarrollando el proyecto.
 
 ![titulo](./imagenes/conexiones-sensor-chat-gpt.png)
 
-*Primeras conexiones del Sensor a Arduino sugeridas por ChatGPT*
+Como era la primera vez que trabajábamos con un sensor ECG AD8232, investigamos distintas referencias para comprender su funcionamiento y la forma correcta de realizar las conexiones. Entre ellas utilizamos ChatGPT como apoyo para resolver dudas sobre el cableado y verificar que la distribución de los pines fuera correcta antes de energizar el circuito. Esto nos permitió comenzar las pruebas con mayor seguridad y disminuir el riesgo de cometer errores de conexión que pudieran afectar los componentes.
 
-Utilizamos estos Electrodos para realizar la conexión directamente entre el cuerpo de isipm --> Sensor ECG AD8232
+Para obtener una lectura correcta de la actividad eléctrica del corazón utilizamos electrodos adhesivos desechables, conectados directamente al módulo AD8232. Antes de comenzar las mediciones revisamos la ubicación recomendada de cada electrodo, ya que una mala posición puede generar ruido en la señal o impedir que el sensor detecte correctamente los impulsos eléctricos del corazón.
 
 ![titulo](./imagenes/electrodos.jpeg)
 
 *Electrodos*
 
+Con el objetivo de validar el funcionamiento del sensor, realizamos la instalación de los electrodos siguiendo la configuración recomendada por el fabricante. Cada uno fue ubicado en un punto específico del cuerpo para obtener una señal lo más estable posible durante las pruebas.
+
 Luego conectamos nuestra Pantalla TFT LCD redonda de 1.28" a una proto y luego el Sensor ECG AD8232 a otra proto y a la isipm.
 
 ![titulo](./imagenes/abdomen-isi.jpeg)
 
-*Conexión del Sensor ECG AD8238 a abdomen de isi*
+*Electrodo de referencia ubicado en el abdomen de isipm08, encargado de estabilizar la medición del sistema.*
 
 ![titulo](./imagenes/clavicula-der-isi.jpeg)
 
-*Conexión del Sensor ECG AD8238 a clavícula derecha de isi*
+*Electrodo conectado a la clavícula derecha de isipm08, utilizado para captar parte de la diferencia de potencial generada por la actividad eléctrica del corazón.*
 
 ![titulo](./imagenes/clavicula-izq-isi.jpeg)
 
-*Conexión del Sensor ECG AD8238 a clavícula izquierda de isi*
+*Electrodo instalado en la clavícula izquierda de isipm08, completando la configuración necesaria para que el sensor pudiera registrar la señal ECG.*
 
-Entre varios intentos de códigos, llegamos a uno final para TRANSMISOR y RECEPTOR. (más adelante verán nuestro error)
+----
+
+![Feeds_adafruit](./imagenes/feeds-adafruit.jpeg)
+
+Este fue uno de los días más importantes del proyecto, ya que pasamos de la planificación a ver el sistema funcionando en la práctica. Lograr que la información recorriera todo el proceso, desde la captura de la señal hasta su visualización, nos dio mayor confianza para continuar con el desarrollo. Terminamos la jornada muy contentas y satisfechas con los resultados obtenidos, ya que el trabajo realizado durante las semanas anteriores comenzó a materializarse en un sistema funcional.
+
+Al finalizar las pruebas, Mateo y Aarón revisaron el avance de nuestro proyecto y valoraron positivamente el funcionamiento general del sistema. Sin embargo, nos hicieron algunas observaciones para seguir mejorándolo, principalmente relacionadas con el refresco de la pantalla y la calidad de la visualización de los datos. Aunque la información se estaba transmitiendo y mostrando correctamente, identificamos que aún había aspectos por optimizar para ofrecer una experiencia más fluida. Sospechamos que parte de este comportamiento podría deberse al cableado utilizado durante las pruebas, por lo que decidimos continuar investigando y realizando ajustes en las siguientes jornadas con el objetivo de perfeccionar el resultado final.
 
 ---- 
 
-Mateo y Aarón nos revisaron nuestro proyecto, nos comentaron que estaba bueno, solo que podíamos mejorar que la pantalla no refrescara.
-Aún no hemos podido mejorar la pantalla (si está buena pero creemos que son los cables), además mejorar la calidad de la visualización de los datos. Estaremos informando...
+![Pantalla_Letras_Rojas](./imagenes/pantalla-letras-rojas.jpeg)
 
----- 
+*Durante las pruebas nos dimos cuenta de que, si bien el sistema estaba funcionando y los datos se transmitían correctamente, la visualización en la pantalla TFT aún no era la esperada. La información se actualizaba, pero el refresco no era completamente fluido, lo que afectaba la experiencia de uso. En ese momento pensamos que el problema podía estar relacionado con el cableado o con la calidad de algunas conexiones realizadas en la protoboard, por lo que decidimos revisar cada componente y realizar nuevas pruebas para identificar la causa.*
 
-![titulo](./imagenes/pantalla-letras-rojas.jpeg)
+![Ayuda_Mateo](./imagenes/mateo-help.jpeg)
 
-*Pantalla reflejando los datos pero con mala visualización (cambiar cables)*
+*En este proceso, Mateo nuevamente nos brindó su apoyo revisando tanto el montaje como el código desarrollado hasta ese momento. Sus observaciones y sugerencias nos ayudaron a analizar el proyecto desde otra perspectiva, desarmando todo e iniciando de nuevo y así descartar posibles causas del problema. Aunque todavía quedaban aspectos por optimizar, esta instancia nos permitió comprender mejor el comportamiento del sistema y definir los siguientes pasos para seguir mejorándolo. Una vez más, el trabajo colaborativo fue fundamental para continuar avanzando con mayor seguridad y confianza en el desarrollo del proyecto.*
 
-![titulo](./imagenes/mateo-help.jpeg)
+----
+Antes de finalizar la clase, realizamos una última prueba utilizando otra pantalla TFT para descartar que el problema estuviera en el propio módulo. Sin embargo, el comportamiento fue exactamente el mismo: la información seguía mostrándose con una visualización deficiente. Esto nos permitió concluir que la pantalla no era la causa del inconveniente y reforzó nuestra hipótesis de que el problema estaba relacionado con el cableado utilizado durante las pruebas. Como siguiente paso, decidimos comprar nuevos cables Dupont en AFEL para reemplazar los actuales y verificar si con ello logramos mejorar la estabilidad y la calidad de la visualización del sistema.
 
-*Mateo ayudándonos en nuestro proyecto :) gracias Mateo!*
+![Cables_dupont](./imagenes/cables-macho.webp)
+
+----
 
 > CÓDIGO FALLIDO
 

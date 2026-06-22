@@ -8,11 +8,11 @@
 
 ## Descripción textual del proyecto
 
-Nuestro proyecto consiste en enviar información entre 2 microcontroladores a través de WiFi, estando separados físicamente. 
+Nuestro proyecto consiste en enviar información entre 2 microcontroladores a través de WiFi, estando separados físicamente.
 
-Para esto usamos una Raspberry Pi Pico 2 W como la placa emisora y un Arduino Uno R4 WiFi como placa receptora. 
-La Raspberry lee los valores de un potenciómetro conectado mediante una protoboard y sube esa información a la nube utilizando Adafruit IO. 
-Por otro lado el Arduino lee el feed de datos creado en la nube y según el valor que reciba, mueve un servomotor en distintos ángulos. 
+Para esto usamos una Raspberry Pi Pico 2 W como la placa emisora y un Arduino Uno R4 WiFi como placa receptora.
+La Raspberry lee los valores de un potenciómetro conectado mediante una protoboard y sube esa información a la nube utilizando Adafruit IO.
+Por otro lado el Arduino lee el feed de datos creado en la nube y según el valor que reciba, mueve un servomotor en distintos ángulos.
 
 Para poder controlar el envío de información y no saturar la nube, cuenta con un botón pulsador conectado a la Raspberry permitiendo que solo se envíen los datos pulsando brevemente el botón, Arduino lo recibe y mueve el servomotor al último dato enviado.
 
@@ -41,8 +41,8 @@ A la Raspberry le sumamos una pantalla OLED de 128x64 px para poder ver los dato
 - Servomotor: Motor pequeño que puede moverse y quedarse fijo en un ángulo entre 0° y 180°.
   - Utilizado en el Arduino Uno para realizar un movimiento en un ángulo exacto dependiendo del valor recibido desde Adafruit IO.
 
-- Pantalla OLED 128x64 px: Pantalla pequeña que sirve para mostrar textos, números o gráficos simples programados desde el microcontrolador. 
-  - Es el monitor del proyecto, utilizada para mostrar la información recibida del potenciómetro y el ángulo en el que moveremos el servo que se enviará a través de Adafruit IO, permitiendo saber en tiempo real los datos que vamos enviando a la nube. 
+- Pantalla OLED 128x64 px: Pantalla pequeña que sirve para mostrar textos, números o gráficos simples programados desde el microcontrolador.
+  - Es el monitor del proyecto, utilizada para mostrar la información recibida del potenciómetro y el ángulo en el que moveremos el servo que se enviará a través de Adafruit IO, permitiendo saber en tiempo real los datos que vamos enviando a la nube.
 
 ## Proceso y errores
 
@@ -78,7 +78,7 @@ Para el Arduino también se usó IA para el código, pero tomando de referencia 
 
 ## Código usado para enviar
 
-```cpp 
+```cpp
 # Código hecho usando de base el código de Mateo y del profesor, con ayuda de Gemini para implementar componentes y uso de pantalla OLED.
 # Se usó un archivo diferente para los codigo y acceso al WiFi
 
@@ -424,7 +424,7 @@ void MQTT_connect() {
 
 ![Proceso 7](./imagenes/funcionando-todo.gif)
 
-### gif's proceso
+### gifs proceso
 
 ![Proceso 1](./imagenes/ejemplo1.gif)
 
@@ -435,7 +435,6 @@ void MQTT_connect() {
 ![Proceso 4](./imagenes/ejemplo4.gif)
 
 ![Proceso 5](./imagenes/ejemplo5.gif)
-
 
 ## Bibliografía
 

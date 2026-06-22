@@ -38,7 +38,7 @@ Screenshot tomado por mi en la web de PokéAPI
 
 Es una API de Chuck Norris donde puedes encontrar datos sobre él. Puedes preguntar por una broma de él y te la entrega en formato JSON.
 
-![chuck](./imagenes/chuck-norris.png)
+![chuck](./imagenes/chuck_norris.png)
 
 Screenshot tomado por mi en la web de la API de Chuck Norris
 
