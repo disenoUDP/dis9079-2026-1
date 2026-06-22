@@ -17,7 +17,7 @@ Lunes 22 de junio 2026
 
 Nos interesa observar en vivo las huellas sonoras (conversaciones, pasos, risas, silencios, etc) que dejan las personas al ocupar o transitar un lugar (espacio físico). Esta "identidad acústica" cambiante nos habla de cómo se vive y se comparte un espacio . Estos registros en tiempo real son la materia prima para la producción de visualizaciones experimentales producidas en Touchdesigner,
 
-La dimensión material del proyecto abarca el uso de 2 placas rapsberry pi pico 2W, cada una con un sensor analógico de sonido "MAX9812". Estos módulos reúnen información del ruido ambiente y la sube en 2 feeds en Adafruit IO. Cada uno de estos se encuentran ubicados en distintos edificios y sectores de la "Facultad de Artes, Arquitectura y Diseño" (República 180 y Salvador Sanfuentes 2221), en el que un micrófono se ubicará en el "Casino" y el otro en el "Laboratorio de interacción digital (LID)". Por otra parte, se requiere un computador con Touchdesigner, sowftware que se conecta a los feeds de Adafruit y recibe dichos datos para posteriormente procesarlos. 
+La dimensión material del proyecto abarca el uso de 2 placas rapsberry pi pico 2W, cada una con un sensor analógico de sonido "MAX9812". Estos módulos reúnen información del ruido ambiente y la sube en 2 feeds en Adafruit IO. Cada uno de estos se encuentran ubicados en el mismo edificio, y distintos sectores de la "Facultad de Artes, Arquitectura y Diseño" (Salvador Sanfuentes 2221), en el que un micrófono se ubicará en el "Pañol" y el otro en el "Laboratorio de interacción digital (LID)". Por otra parte, se requiere un computador con Touchdesigner, sowftware que se conecta a los feeds de Adafruit y recibe dichos datos para posteriormente procesarlos. 
 
 La visualización generativa en tiempo real posee variables como el movimiento, las formas y los colores que responden a la actividad sonora de cada lugar.
 
@@ -366,7 +366,6 @@ Este video fué grabado con uno de los micrófonos en el Laboratorio de interacc
 | Mini Protoboard 400 Puntos | Placa prototipado | 2  | $1.500 | <https://afel.cl/products/mini-protoboard-400-puntos> |
 | Cable Dupont Macho Macho 10cm | Cable | Pack 40 | $2.590 | <https://mcielectronics.cl/shop/product/cable-dupont-macho-macho-20cm-pack-40-unidades/> |
 | Sensor Analógico Sonido/Audio MAX9812 | Sensor | 1 | $3.790 | <https://hubot.cl/producto/sensor-analogico-audio-max9812-sku-614/> |
-| Pantalla LCD OLED 0,96 | Componente | 1 | $4.500 | <https://afel.cl/products/pantalla-lcd-oled-azul-y-amarillo-0-96> |
 
 ---
 
