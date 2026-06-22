@@ -15,7 +15,7 @@ Cami muy amablemente nos explico que en esa instancia ellos le sacaron el botón
 
 Ya con la información que nos dio Cami, fuimos al LID a soldar ambos puntos para probar controlarlo.
 
-![Placa soldada](./imagenes/placa-soldada.jpeg)
+![Placa soldada](./imagenes/placa-soldada.jpg)
 
 Después al conectar el humi ya no prendía la luz LED que trae la placa y probamos de varias maneras, probamos con el multimetro, conectándome directo a la corriente y allí prendía un poquito la luz. 
 
