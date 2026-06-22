@@ -12,7 +12,7 @@ Es un proyecto electrónico interactivo que fusiona la fotografía digital con e
 
 Por un lado cuenta con un potenciómetro que permite elegir un filtro, y un botón que al mantenerlo presionado cambias el estilo del tramado. Al pulsarlo rápidamente se envía la orden de disparo a la cámara y la pantalla OLED muestra una animación para avisarte que la foto se está subiendo a la nube. 
 
-Las fotos procesadas se suben a un script de Google Drive y se almacenan en una carpeta como una galería de fotos. Por otro lado podremos ver las fotos en una pantalla TFT la cual está programada para revisar la carpeta de Drive cada 60 segundos y descargar automáticamente las últimas fotos tomadas, y cuenta con dos botones que permiten navegar hacia adelante o hacia atrás en este archivo de fotos estilo retro.
+Las fotos procesadas se suben a un script de Google Drive y se almacenan en una carpeta como una galería de fotos. Por otro lado podremos ver las fotos en una pantalla TFT la cual está programada para revisar la carpeta de Drive cada 10 segundos y descargar automáticamente las últimas fotos tomadas, y cuenta con dos botones que permiten navegar hacia adelante o hacia atrás en este archivo de fotos estilo retro.
 
 ### Lista de materiales
 
@@ -39,9 +39,13 @@ Nos basamos en un proyecto llamado "Pixela" de rai_lander que es una cámara DIY
 
 Utiliza un script de Google Drive como nube para almacenar las imágenes y así nosotros también poder hacer nuestra propia galería pública. A partir de esa base lo pensamos para hacerlo interactivo, una persona en el lugar 1 (Rep180) pueda seleccionar una paleta de color (vibe) y tratado de imagen (dither), tome una foto sin saber cómo se verá y que la persona en el lugar 2 (SalvSanf2221) pueda navegar en la galería y ver las últimas imágenes que se van tomando.
 
+link del Drive donde se creará el "Archivo Retro" a medida que se vayan tomando las fotos: <https://drive.google.com/drive/folders/1SUIurSYrSJvULb5bxX92DnnLRRc22yIt>
+
+### Filtros y Dithering
+
 1. Paletas de Colores (Vibe):
 
-El sistema descarta los colores reales de la foto y busca el tono más cercano dentro de una paleta de 4 colores predefinidos. Estas son las paletas (tomadas de Pixela) que puedes seleccionar girando el potenciómetro:
+El vibe es la paleta de 4 colores que se aplica a la foto y se puede cambiar con el potenciómetro del Arduino. El sistema descarta los colores reales de la foto y busca el tono más cercano dentro de una paleta de 4 colores predefinidos. Estas son las paletas (tomadas de Pixela) que puedes seleccionar girando el potenciómetro:
 
 - wish-gb
 - kirokaze-gameboy
@@ -49,6 +53,17 @@ El sistema descarta los colores reales de la foto y busca el tono más cercano d
 -  ice-cream-gb
 - hollow
 - crimson
+
+El ESP32 tiene 6 paletas definidas, todas inspiradas en la Game Boy:
+
+| Vibe      | Colores                                                    | Sensación               |
+| --------- | ---------------------------------------------------------- | ----------------------- |
+| wish-gb   | Morado oscuro, lila, azul celeste, cian claro              | Frío, nocturno, digital |
+| kirokaze  | Morado profundo, verde azulado, verde lima, cian brillante | Cyberpunk, neón         |
+| ayy4      | Verde muy oscuro, salmón, durazno, crema                   | Cálido, retro suave     |
+| ice-cream | Vino, coral, melocotón, crema amarilla                     | Dulce, analógico        |
+| hollow    | Negro azulado, gris pizarra, gris perla, blanco hueso      | Minimalista, frío       |
+| crimson   | Negro violeta, rojo oscuro, terracota, verde pálido        | Dramático, oscuro       |
 
 2. Tratado de imagen (Dither):
 
@@ -61,8 +76,24 @@ Como la imagen ahora tiene solo 4 colores se generan cortes cromáticos muy brus
 - ordered2
 - halftone
 - block
--  random
--  earest
+- random
+- nearest
+
+Hay 9 algoritmos con resultados muy distintos:
+
+| Dith       | Cómo funciona                                                                    | Resultado visual                         |
+| ---------- | -------------------------------------------------------------------------------- | ---------------------------------------- |
+| Nearest    | Reemplaza cada píxel por el color más cercano de la paleta sin calcular nada más | Bloques duros, cero grano, más abstracto |
+| Block      | Promedia los colores de bloques de NxN píxeles y los reemplaza juntos            | Pixelado grande, efecto mosaico          |
+| Bayer      | Usa una matriz matemática 4x4 para agregar un patrón de puntos ordenado          | Trama geométrica, muy reconocible        |
+| Ordered2x2 | Como Bayer pero con una matriz 2x2, patrón más simple                            | Menos trama, transiciones suaves         |
+| Halftone   | Usa una matriz que imita los puntos de impresión de periódicos                   | Efecto tipográfico, muy retro            |
+| Floyd      | Difunde el error de color a los píxeles vecinos según pesos específicos          | Más detalle, grano orgánico natural      |
+| Atkinson   | Variante del anterior usada en los primeros Mac, difunde menos error             | Contraste más fuerte, icónico años 80    |
+| SierraLite | Difusión de error simplificada, menos costosa en procesamiento                   | Entre Floyd y Bayer, equilibrado         |
+| Random     | Agrega ruido aleatorio antes de buscar el color más cercano                      | Grano caótico, aspecto analógico         |
+
+#### Lógica de funcionamiento entre microcontroladores y edificios
 
 ```text
 Arduino UNO R4 WiFi [Lugar 1: Rep180]
@@ -85,7 +116,7 @@ Google Apps Script (nube)
          ▼
 Raspberry Pi Pico 2W [Lugar 2: SalvSanf2221]
    │
-   ├── Realiza una consulta HTTPS cada 60 segundos
+   ├── Realiza una consulta HTTPS cada 10 segundos
    ├── Descarga las fotos nuevas automáticamente
    └── Muestra la galería en la pantalla TFT
 ```
@@ -139,9 +170,9 @@ Algunos errores con la Raspberry fue al descargar las fotos de Google Drive porq
 
 Otro fue que el texto que te indica el número de la foto en la pantalla no aparecía porque le estábamos asignando coordenadas muy altas y el texto se estaba dibujando fuera del límite visual de la pantalla. 
 
-### Fotos proceso
+Decidimos cambiar el tiempo en el que se revisa el Drive para mostrar las nuevas fotos, de 60 segundos lo reducimos a 10 segundos, para que la persona en el lugar 2 no tenga que esperar tanto para ver la foto enviada desde el lugar 1.
 
-![proceso 1](./imagenes/proceso_1.jpeg)
+### Fotos proceso
 
 ![proceso 2](./imagenes/proceso_2.jpeg)
 
@@ -149,15 +180,6 @@ Otro fue que el texto que te indica el número de la foto en la pantalla no apar
 
 ![proceso 4](./imagenes/proceso_5.jpeg)
 
-![proceso 5](./imagenes/proceso_5.jpeg)
-
-![proceso 6](./imagenes/proceso_6.jpeg)
-
-![proceso 7](./imagenes/proceso_7.jpeg)
-
-![proceso 8](./imagenes/proceso_8.gif)
-
-![proceso filtros 0](./imagenes/prueba_sin_filto.jpg)
 ![proceso filtros 1](./imagenes/prueba_con_filtro_1.jpg)
 ![proceso filtros 2](./imagenes/prueba_con_filtro_2.jpg)
 ![proceso filtros 3](./imagenes/prueba_con_filtro_3.jpg)
@@ -165,52 +187,11 @@ Otro fue que el texto que te indica el número de la foto en la pantalla no apar
 ![proceso filtros 6](./imagenes/prueba_con_filtro_6.jpg)
 ![proceso filtros 7](./imagenes/prueba_con_filtro_7.jpg)
 
-### Filtros y Dithering
-**VIBE: paleta de color**
-
-El vibe es la paleta de 4 colores que se aplica a la foto. Viene del potenciómetro del Arduino.
-
-El ESP32 tiene 6 paletas definidas, todas inspiradas en la Game Boy:
-
-| Vibe      | Colores                                                    | Sensación               |
-| --------- | ---------------------------------------------------------- | ----------------------- |
-| wish-gb   | Morado oscuro, lila, azul celeste, cian claro              | Frío, nocturno, digital |
-| kirokaze  | Morado profundo, verde azulado, verde lima, cian brillante | Cyberpunk, neón         |
-| ayy4      | Verde muy oscuro, salmón, durazno, crema                   | Cálido, retro suave     |
-| ice-cream | Vino, coral, melocotón, crema amarilla                     | Dulce, analógico        |
-| hollow    | Negro azulado, gris pizarra, gris perla, blanco hueso      | Minimalista, frío       |
-| crimson   | Negro violeta, rojo oscuro, terracota, verde pálido        | Dramático, oscuro       |
-
-Girar el potenciómetro cambia entre estas 6 opciones.
-
----
-
-**DITH: algoritmo de dithering**
-
-El dithering es la técnica que usa el ESP32 para convertir los colores originales a solo esos 4 colores de la paleta.
-
-Hay 9 algoritmos con resultados muy distintos:
-
-| Dith       | Cómo funciona                                                                    | Resultado visual                         |
-| ---------- | -------------------------------------------------------------------------------- | ---------------------------------------- |
-| Nearest    | Reemplaza cada píxel por el color más cercano de la paleta sin calcular nada más | Bloques duros, cero grano, más abstracto |
-| Block      | Promedia los colores de bloques de NxN píxeles y los reemplaza juntos            | Pixelado grande, efecto mosaico          |
-| Bayer      | Usa una matriz matemática 4x4 para agregar un patrón de puntos ordenado          | Trama geométrica, muy reconocible        |
-| Ordered2x2 | Como Bayer pero con una matriz 2x2, patrón más simple                            | Menos trama, transiciones suaves         |
-| Halftone   | Usa una matriz que imita los puntos de impresión de periódicos                   | Efecto tipográfico, muy retro            |
-| Floyd      | Difunde el error de color a los píxeles vecinos según pesos específicos          | Más detalle, grano orgánico natural      |
-| Atkinson   | Variante del anterior usada en los primeros Mac, difunde menos error             | Contraste más fuerte, icónico años 80    |
-| SierraLite | Difusión de error simplificada, menos costosa en procesamiento                   | Entre Floyd y Bayer, equilibrado         |
-| Random     | Agrega ruido aleatorio antes de buscar el color más cercano                      | Grano caótico, aspecto analógico         |
-
-La pulsación larga del botón del Arduino cicla entre estos 9 algoritmos.
-
-
 ### Códigos
 
-**Declaración de IA**
+#### Declaración de IA
 
-Para acelerar el proceso de creación del proyecto, se utilizó inteligencia artificial para generar los códigos, los cuales fuimos probando y corrigiendo a medida que los necesitábamos.
+Para acelerar el proceso de creación del proyecto, se utilizó inteligencia artificial para generar los códigos, los cuales fuimos probando y corrigiendo a medida que los necesitábamos. IA's utilizadas: Gemini y Claude.
 
 A continuación, dejamos los prompts utilizados, de los cuales obtuvimos los códigos.
 
@@ -222,7 +203,7 @@ A continuación, dejamos los prompts utilizados, de los cuales obtuvimos los có
 
 Posteriormente, en los mismos códigos se incluyó una explicación de lo que hace cada uno.
 
-## ESP32-CAM
+### ESP32-CAM
 
 ```
 // =================================================================
@@ -234,9 +215,9 @@ Posteriormente, en los mismos códigos se incluyó una explicación de lo que ha
 #pragma GCC optimize ("Os")   // Compila priorizando tamaño de código sobre velocidad (más espacio libre en flash)
 
 // ──────────────────────────────────────────────
-// LIBRERÍAS
+// BIBLIOTECAS
 // ──────────────────────────────────────────────
-#include "esp_camera.h"          // Driver de bajo nivel de la cámara OV2640 del AI-Thinker
+#include "esp_camera.h"           // Driver de bajo nivel de la cámara OV2640 del AI-Thinker
 #include <WiFi.h>                 // Conexión WiFi del ESP32
 #include <WiFiUdp.h>               // Envío de paquetes UDP (usado para el beacon de descubrimiento)
 #include <WiFiClientSecure.h>      // Cliente TCP con TLS (necesario para hablar HTTPS con Google)
@@ -785,16 +766,16 @@ void loop() {
 }
 ```
 
-## Arduino
+### Arduino
 
 ```
 // ──────────────────────────────────────────────
-// LIBRERÍAS
+// BIBLIOTECAS
 // ──────────────────────────────────────────────
 #include <WiFi.h>                 // Conexión WiFi del Uno R4
 #include <WiFiUdp.h>               // Escucha el beacon UDP que emite el ESP32-CAM para descubrir su IP
 #include <Wire.h>                  // Bus I2C, usado por el OLED
-#include <Adafruit_GFX.h>          // Librería gráfica base (texto, formas) sobre la que corre el driver del OLED
+#include <Adafruit_GFX.h>          // Biblioteca gráfica base (texto, formas) sobre la que corre el driver del OLED
 #include <Adafruit_SSD1306.h>      // Driver específico del controlador SSD1306 del display
 
 // ──────────────────────────────────────────────
@@ -1161,7 +1142,7 @@ void loop() {
 }
 ```
 
-## Raspberry
+### Raspberry
 
 ```
 # ============================================================
@@ -1187,7 +1168,7 @@ import ujson as json  # version liviana de JSON para MicroPython
 from machine import Pin, SPI          # control de pines GPIO y bus SPI
 from pimoroni_bus import SPIBus       # bus SPI de alto nivel de Pimoroni para la pantalla
 from picographics import PicoGraphics, DISPLAY_PICO_DISPLAY_2, PEN_RGB565
-                                      # libreria grafica de Pimoroni: display, tipo de pantalla y formato de color
+                                      # biblioteca grafica de Pimoroni: display, tipo de pantalla y formato de color
 import jpegdec    # decodificador JPEG de Pimoroni/BitBank, escribe directo al framebuffer
 from sdcard import SDCard             # driver MicroPython para tarjetas SD via SPI
 
@@ -1197,9 +1178,9 @@ from sdcard import SDCard             # driver MicroPython para tarjetas SD via 
 # ─────────────────────────────────────────────────────────────
 
 WIFI_SSID        = "wenakiara"                      # nombre de la red WiFi a conectar
-WIFI_PASS        = "tomas123"                       # contrasena de la red WiFi
-GDRIVE_FOLDER_ID = "1SUIurSYrSJvULb5bxX92DnnLRRc22yIt"  # ID de la carpeta de Google Drive con las fotos
-GOOGLE_API_KEY   = "AIzaSyB1jQ1CmLxIgNyUrw2aSETBW3ScH-AWnD8"  # clave de API de Google para Drive v3
+WIFI_PASS        = "tomas123"                       # contraseña de la red WiFi
+GDRIVE_FOLDER_ID = "blabla"  # ID de la carpeta de Google Drive con las fotos
+GOOGLE_API_KEY   = "blabla"  # clave de API de Google para Drive v3
 
 CHECK_EVERY_SEC  = 10                # segundos entre cada revision de fotos nuevas en Drive
 JPEG_SCALE       = jpegdec.JPEG_SCALE_FULL  # escala de decodificacion JPEG: FULL = resolucion original
@@ -1906,7 +1887,7 @@ def main():
 main()   # punto de entrada: MicroPython ejecuta este archivo al arrancar
 ```
 
-## API de imágenes
+### Script de Google para carpeta de Drive
 
 ```
 // =================================================================
@@ -1916,7 +1897,7 @@ main()   # punto de entrada: MicroPython ejecuta este archivo al arrancar
 
 const FOLDER_ID = "1SUIurSYrSJvULb5bxX92DnnLRRc22yIt"; // ID de la carpeta de Google Drive (fija para todo el script)
 
-// ── 📸 ENLACE CON LA CÁMARA (ESP32-CAM) — RECIBE Y GUARDA FOTOS ──
+// ── ENLACE CON LA CÁMARA (ESP32-CAM) — RECIBE Y GUARDA FOTOS ──
 function doPost(e) {
   // doPost se ejecuta automáticamente cuando alguien hace una petición HTTP POST a la URL del script
   try {
@@ -1977,7 +1958,7 @@ function doPost(e) {
   }
 }
 
-// ── 📺 ENLACE CON EL VISOR (ARDUINO UNO R4 WiFi) — ENVÍA FOTOS PARA MOSTRAR ──
+// ─ ENLACE CON EL VISOR (ARDUINO UNO R4 WiFi) — ENVÍA FOTOS PARA MOSTRAR ──
 function doGet(e) {
   // doGet se ejecuta cuando alguien hace una petición HTTP GET (el visor pidiendo una imagen)
   try {
@@ -2043,6 +2024,12 @@ function respJson(obj) {
 }
 ```
 
-### Fotos finales y video demo
+## Fotos finales y video demo
 
 ### Bibliografía
+
+- Adafruit Industries. (s.f.). Adafruit_SSD1306. GitHub. https://github.com/adafruit/Adafruit_SSD1306
+- Espressif Systems. (s.f.). ESP32 Camera Driver. GitHub. https://github.com/espressif/esp32-camera
+- Google. (s.f.). Google Developers. https://developers.google.com/apps-script
+- Pimoroni. (s.f.). pimoroni-pico. GitHub. https://github.com/pimoroni/pimoroni-pico
+- rai_lander. (s.f.). Pixela. itch.io. https://rai-lander.itch.io/pixela
