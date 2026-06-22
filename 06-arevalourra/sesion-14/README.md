@@ -15,3 +15,5 @@ Al finalizar la clase, Mateo y Aarón revisaron el avance que habíamos logrado.
 Para comprobar esa posibilidad, realizamos una última prueba utilizando otra pantalla TFT. Sin embargo, el resultado fue exactamente el mismo, por lo que llegamos a la conclusión de que el inconveniente probablemente no estaba en la pantalla, sino en los cables Dupont que habíamos utilizado para las conexiones. Decidimos que durante la semana compraríamos un nuevo juego de cables en AFEL para descartar completamente esa posibilidad antes de seguir modificando el código.
 
 Terminamos la clase muy contentas y satisfechas con todo lo que habíamos logrado. Sentíamos que el proyecto estaba avanzando exactamente como lo habíamos planificado y que el esfuerzo de las semanas anteriores estaba comenzando a dar resultados. Ver los datos viajar entre ambos Arduino y aparecer en la pantalla fue un momento muy emocionante para nosotras. Nos fuimos con la tranquilidad de haber dado un gran paso y con muchas ganas de seguir mejorando el proyecto durante las clases siguientes.
+
+### Este registro se complementa con la descripción grupal de examen --> Grupo 4
