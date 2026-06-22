@@ -34,7 +34,7 @@ Parámetros del semáforo
 |arduino UNO R4 wifi        | 38.990  | 1       |
 |botones         | 100c/u  | 2       |
 |Protoboards     | 1.500c/u  | 2       |
-|cables jumper (pack de 20 cables de conexión macho macho)  | 1.000  |         |
+|cables jumper (pack de 20 cables de conexión macho macho)  | 1.000  |    1  |
 
 
 ## Proceso 
