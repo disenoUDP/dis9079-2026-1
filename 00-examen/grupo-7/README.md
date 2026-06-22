@@ -1178,14 +1178,13 @@ Claude no tomó decisiones creativas. Todas las decisiones sobre concepto, esté
 ## Demo video en sala
 
 - demostración de prueba en sala de salvador sanfuentes
-[demoss]([https://youtube.com/shorts/H2X1xayq0s8?si=_cKhxB6TC0V4_3Be](https://youtube.com/shorts/7G1QFqo8DAA?si=x4Kj8n_G6tMJ3Nzy)) 
-
+[demoss](https://youtube.com/shorts/7G1QFqo8DAA?si=x4Kj8n_G6tMJ3Nzy) 
 
 ## Demo video SS piso 1 - pañol
 
 [demosspañol](https://www.youtube.com/shorts/Hh6tSR9Zxnw) 
 [demoss](https://youtube.com/shorts/H2X1xayq0s8?si=_cKhxB6TC0V4_3Be) 
-[demoss]([https://youtube.com/shorts/H2X1xayq0s8?si=_cKhxB6TC0V4_3Be](https://youtube.com/shorts/7V4tm9dL1Pg?si=IMiIpCeYupOx-oC6)) 
+[demoss](https://youtube.com/shorts/7V4tm9dL1Pg?si=IMiIpCeYupOx-oC6) 
 
 ## Conclusión
 
