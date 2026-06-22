@@ -27,12 +27,15 @@ Parámetros del semáforo
 
 ### Materiales 
 
-* Arduino UNO R4 WiFi 
-* Raspberry Pi Pico 2 W 
-* 2 botones
-* 1 módulo semáforo RGB (con pines GND, R, Y, G integrados)
-* Protoboards y cables jumper
-* Resistencias de 10kΩ 
+| materiales | costo | cantidad|
+|------------|-------|---------|
+|Modulo Luz Led de Semaforo ( (con pines GND, R, Y, G integrados)| 1.500 | 1       |
+|Raspberry Pi Pico 2 W         | 14.990 | 1        |
+|arduino UNO R4 wifi        | 38.990  | 1       |
+|botones         | 100 c/u  | 2       |
+|Protoboards     | 1.500c/u  | 2       |
+|cables jumper (pack de 20 cables de conexión macho macho)  | 1.000  |    1  |
+
 
 ## Proceso 
 
@@ -154,6 +157,14 @@ Primer problema, necesitábamos hacer que el Arduino se conectara al hotspot de 
 Posteriormente realizamos la conexión de cableado y botones (resistencia a GND, botón a 5 V)
 
 Segundo problema, el contador se actualiza si se conecta o desconecta el cable manualmente, pero no responde al presionar el botón físico. Al mover el Arduino, los valores fluctúan por sí solos (señal "flotante"), lo que indica que el circuito de pull-down no está cerrando correctamente hacia GND, aunque se revisó la disposición del circuito (A3 conectado a D2, B3 con una resistencia de 10 kΩ, C3 y E3 con las patitas del botón, y A8 conectado al riel positivo) y parecía estar correcta si embargo no era posible controlar el envio de datos, por lo que buscamos otras opciones para los botones y al buscar otras opciones nos quedamos esta opcion que no se necesita necesita resistencias.
+
+|Componente | Pin del componente	| Conecta a |
+|-----------|---------------------|-----------|
+|Botón SUMA |	Pin 1	| Pin D2 del Arduino|
+Botón SUMA |	Pin 2	| Riel GND de la protoboard|
+Botón RESTA	|Pin 1	| Pin D3 del Arduino|
+Botón RESTA	|Pin 2 |	Riel GND de la protoboard|
+Protoboard|	Riel GND |	Pin GND del Arduino|
 
 
 *foto del proyecto, especifico ARDUINO+BOTONES*

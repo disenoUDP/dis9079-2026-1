@@ -17,13 +17,11 @@ Lunes 22 de junio 2026
 
 Nos interesa observar en vivo las huellas sonoras (conversaciones, pasos, risas, silencios, etc) que dejan las personas al ocupar o transitar un lugar (espacio físico). Esta "identidad acústica" cambiante nos habla de cómo se vive y se comparte un espacio . Estos registros en tiempo real son la materia prima para la producción de visualizaciones experimentales producidas en Touchdesigner,
 
-La dimensión material del proyecto abarca el uso de 2 placas rapsberry pi pico 2W, cada una con un "Sensor de Sonido (LM393)" que reúne información y la sube en 2 feeds en Adafruit IO. Cada uno de estos módulos se encuentran ubicados en distintos pisos de la Facultad de Artes, Arquitectura y Diseño Salvador Sanfuentes 2221, un micrófono ubicado en pañol y el otro en el Laboratorio de interacción digital (LID).
+La dimensión material del proyecto abarca el uso de 2 placas rapsberry pi pico 2W, cada una con un sensor analógico de sonido "MAX9812". Estos módulos reúnen información del ruido ambiente y la sube en 2 feeds en Adafruit IO. Cada uno de estos se encuentran ubicados en distintos edificios y sectores de la "Facultad de Artes, Arquitectura y Diseño" (República 180 y Salvador Sanfuentes 2221), en el que un micrófono se ubicará en el "Casino" y el otro en el "Laboratorio de interacción digital (LID)". Por otra parte, se requiere un computador con Touchdesigner, sowftware que se conecta a los feeds de Adafruit y recibe dichos datos para posteriormente procesarlos. 
 
-Por otra parte, el computador (o el Arduino) recibirá dichos datos para posteriormente entregarlos a Touchdesigner. La visualización generativa en tiempo real posee variables como el movimiento, las formas y los colores que responden a la actividad sonora de cada lugar.
+La visualización generativa en tiempo real posee variables como el movimiento, las formas y los colores que responden a la actividad sonora de cada lugar.
 
-De esta manera, aquello que normalmente percibimos solo con el oído podrá manifestarse visualmente frente a nosotros.
-
-Buscamos hacer visible una dimensión cotidiana que suele pasar desapercibida: la manera en que habitamos los espacios y cómo nuestra presencia los transforma a través de la relación entre sonido e imagen, la visualización funcionará como un retrato vivo de ambos lugares.
+De esta manera, aquello que normalmente percibimos solo con el oído puede ser manifestado visualmente frente a nosotros. Trazando una dimensión de la cotidianeidad que suele pasar desapercibida: la manera en que habitamos los espacios y cómo nuestra presencia los transforma a través de la relación entre sonido e imagen, la visualización funcionará como un retrato vivo de ambos lugares.
 
 ## Pseudocódigo Raspberry (input)
 
