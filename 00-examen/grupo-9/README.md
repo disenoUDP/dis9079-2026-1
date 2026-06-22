@@ -5,14 +5,19 @@
 * Anaysval
 * AntFuentealba
 
-## ORÁCULO, CROCARDO EL SABIO
+---
+
+## ORÁCULO, CROACARDO EL SABIO
+
+![gif](./imagenes/banner_noche.gif)
 
 ### Descripción conceptual
+
 El Oráculo es una experiencia interactiva y compartida, donde una misma pregunta es realizada en voz alta desde distintos lugares. Para esto, dos participantes deben ponerse de acuerdo previamente y formularla de manera simultánea.
 
 La propuesta se plantea como una reinterpretación de los oráculos tradicionales, que suelen entregar respuestas abiertas que cada quien interpreta a su manera. En este caso, esa lógica se aborda desde una perspectiva más ligera y paródica, generando mensajes ambiguos, irónicos o graciosos.
 
-Luego, mediante la intervención de una tercera persona —representación de Crocardo el Sabio — se activa la consulta a través de un soplido, dando inicio al proceso de respuesta. Esta respuesta se entrega tanto en formato de audio como mediante texto en una pantalla OLED, donde además se visualiza al Sabio saltando.
+Luego, mediante la intervención de una tercera persona —representación de Croacardo el Sabio — se activa la consulta a través de un soplido, dando inicio al proceso de respuesta. Esta respuesta se entrega tanto en formato de audio como mediante texto en una pantalla OLED, donde además se visualiza al Sabio saltando.
 
 Durante la experiencia, el sistema incorpora mensajes que orientan el uso. Al inicio, una frase de bienvenida —“Di tu pregunta y sopla, el Sabio te responderá”— Posteriormente, tras la primera interacción, un segundo mensaje —“Alakasim, Alakasom, otra preguntita por favor”— indicando que ya es posible realizar una nueva pregunta. 
 
@@ -744,7 +749,7 @@ Por último, entendimos que los archivos de audio del DFPlayer deben tener nombr
 
 Uno de los errores que cometimos fue conectar el módulo PAM8403 únicamente entre el DFPlayer y los parlantes. Debido a esta conexión incorrecta, al principio no se escuchaba ningún sonido. Posteriormente, nos dimos cuenta de que el PAM8403 también debía estar alimentado, por lo que lo conectamos a la alimentación positiva y a tierra. Después de realizar esta corrección, el audio comenzó a funcionar correctamente.
 
-Otro de los problemas que enfrentamos fue que el sistema quedaba detenido en una sola frase y, después de reproducirla, no volvía a leer los nuevos dígitos recibidos. Tras revisar el funcionamiento del código, identificamos que el Arduino solo leía la información de Adafruit IO al momento de establecer la conexión. Para solucionar este problema, modificamos el programa para que el Arduino estuviera consultando constantemente los datos recibidos desde Adafruit IO y pudiera detectar nuevos valores en todo momento.
+Otro de los problemas que enfrentamos fue que el sistema quedaba detenido en una sola frase y, después de reproducirla, no volvía a leer los nuevos dígitos recibidos. Tras revisar el funcionamiento del código, identificamos que el Arduino solo leía la información de Adafruit IO al momento de establecer la conexión. Para solucionar este problema, modificamos el código para que el Arduino estuviera consultando constantemente los datos recibidos desde Adafruit IO y pudiera detectar nuevos valores en todo momento.
 
 Posteriormente, surgió otro inconveniente: aunque el sistema ya leía los nuevos datos, en ocasiones se quedaba "pegado" en un mismo número y aparecía en la pantalla la misma frase continuamente. Para evitar este comportamiento, incorporamos un pequeño delay en el código, permitiendo que el sistema tuviera el tiempo suficiente para actualizar la lectura y evitar la repetición constante del mismo dígito.
 
@@ -772,18 +777,261 @@ En este trabajo usamos 3 IAs distintas. Principalmente utilizamos ChatGPT para g
 
 ## Respuestas obtenidas
 
-falta poner
+1. “Si ya tienes:
+
+- Un GIF animado en la OLED (`actualizarAnimacion()`).
+- Un feed `pruebaMicro` que recibe la intensidad del aplauso.
+- Un feed `cerebro` que devuelve una respuesta.
+
+Entonces la lógica puede ser:
+
+- Mostrar el GIF de forma continua.
+- Esperar una respuesta desde Adafruit IO.
+- Guardar el texto recibido.
+- Mostrar la respuesta durante algunos segundos.
+- Volver automáticamente al GIF.”
+
+2. “El problema probablemente estaba relacionado con que el programa dejaba de actualizar la conexión con Adafruit IO después de recibir el primer mensaje.
+
+Algunas causas comunes pueden ser:
+
+- Utilizar `delay()` largos para mantener una respuesta en pantalla.
+- Crear ciclos `while` que bloqueen la ejecución normal del programa.
+- No ejecutar `io.run()` de forma continua dentro del `loop()`.
+
+Como solución se recomendó utilizar una máquina de estados controlada con `millis()`, separando el funcionamiento en dos modos:
+
+- Estado GIF: mostrar la animación mientras se sigue ejecutando `io.run()`.
+- Estado MENSAJE: mostrar la respuesta recibida sin detener la comunicación.
+
+Además, el tiempo de visualización debía controlarse con `millis()` en lugar de usar retrasos bloqueantes.
+
+La recomendación principal fue mantener el `loop()` funcionando constantemente para que la conexión con Adafruit IO nunca se interrumpiera y el sistema pudiera seguir recibiendo nuevos mensajes.”
+
+3. “Sí bro, aquí va el código completo en CircuitPython para la Raspberry Pi Pico 2 W + MAX4466, enviando al feed `cerebro` y sin random:”
+
+```python
+import time
+import wifi
+import socketpool
+import ssl
+import analogio
+import board
+
+import adafruit_minimqtt.adafruit_minimqtt as MQTT
+
+# ==========================
+# WIFI
+# ==========================
+
+SSID = "bla"
+PASSWORD = "bla"
+
+# ==========================
+# ADAFRUIT IO
+# ==========================
+
+AIO_USERNAME = "bla"
+AIO_KEY = "bla"
+
+FEED_CEREBRO = f"{AIO_USERNAME}/feeds/cerebro"
+
+# ==========================
+# MICROFONO MAX4466
+# ==========================
+
+mic = analogio.AnalogIn(board.GP26)
+
+# Ajusta este valor según tus pruebas
+UMBRAL = 40000
+
+# ==========================
+# WIFI
+# ==========================
+
+print("Conectando WiFi...")
+wifi.radio.connect(SSID, PASSWORD)
+
+print("WiFi OK")
+print("IP:", wifi.radio.ipv4_address)
+
+# ==========================
+# MQTT / ADAFRUIT IO
+# ==========================
+
+pool = socketpool.SocketPool(wifi.radio)
+
+mqtt = MQTT.MQTT(
+    broker="io.adafruit.com",
+    username=AIO_USERNAME,
+    password=AIO_KEY,
+    socket_pool=pool,
+    ssl_context=ssl.create_default_context()
+)
+
+print("Conectando MQTT...")
+mqtt.connect()
+
+print("Conectado a Adafruit IO")
+print("Esperando soplidos...")
+
+# ==========================
+# LOOP
+# ==========================
+
+while True:
+
+    lectura = mic.value
+
+    if lectura > UMBRAL:
+
+        maximo = lectura
+        suma = 0
+        cantidad = 0
+
+        inicio = time.monotonic()
+
+        # Captura varias muestras del soplido durante 150 ms
+        while (time.monotonic() - inicio) < 0.15:
+
+            muestra = mic.value
+
+            suma += muestra
+            cantidad += 1
+
+            if muestra > maximo:
+                maximo = muestra
+
+        promedio = suma // cantidad
+
+        # Sigue dependiendo del soplido, pero varía más que solo maximo % 10
+        ultimo_digito = (maximo + promedio) % 10
+
+        print("----------------")
+        print("Maximo:", maximo)
+        print("Promedio:", promedio)
+        print("Ultimo digito:", ultimo_digito)
+
+        mqtt.publish(FEED_CEREBRO, str(ultimo_digito))
+
+        print("Enviado a feed cerebro")
+
+        # Evita múltiples detecciones del mismo soplido
+        time.sleep(5)
+
+    time.sleep(0.01)
+```
+
+4. “El MAX4466 no mide decibeles reales (`dB`), sino que entrega un valor analógico de voltaje proporcional a la intensidad del sonido.
+
+Para una primera prueba, el objetivo era detectar un aplauso y enviar por el Monitor Serie el valor de intensidad capturado por el sensor.”
+
+### Conexiones Arduino UNO R4 WiFi + MAX4466
+
+| MAX4466 | Arduino UNO R4 WiFi |
+|---|---|
+| VCC | 5V |
+| GND | GND |
+| OUT | A0 |
+
+### Código de prueba
+
+```cpp
+const int micPin = A0;
+
+void setup() {
+ Serial.begin(115200);
+}
+
+void loop() {
+ int valor = analogRead(micPin);
+
+ Serial.println(valor);
+
+ delay(10);
+}
+```
+
+### Valores esperados
+
+```text
+500–520 → silencio
+Más alto o más bajo → ruido
+Pico importante → aplauso cerca del micrófono
+```
+
+### Detección de aplauso
+
+```cpp
+const int micPin = A0;
+const int umbral = 650;
+
+void setup() {
+ Serial.begin(115200);
+}
+
+void loop() {
+
+ int valor = analogRead(micPin);
+
+ if (valor > umbral) {
+   Serial.print("Aplauso detectado. Valor: ");
+   Serial.println(valor);
+
+   delay(500);
+ }
+}
+```
+
+### Lógica recomendada
+
+```text
+Detectar ruido
+↓
+Durante 100 ms guardar el valor máximo
+↓
+Enviar valor máximo
+↓
+Generar respuesta
+```
+
+```text
+620 → respuesta A
+750 → respuesta B
+900 → respuesta C
+```
+
+“El Oráculo puede usar la intensidad del aplauso para elegir distintas respuestas.”
 
 ## Demo Video
 
-poner video
+[![Croacardo](https://img.youtube.com/vi/yxu-TvtT8hc/hqdefault.jpg)](https://www.youtube.com/watch?v=yxu-TvtT8hc)
 
 ## Bibliografía
 
+Adafruit. (s.f.-a). Adafruit IO Basics: Feeds. <https://learn.adafruit.com/adafruit-io-basics-feeds>
+
+Adafruit. (s.f.-b). Adafruit SSD1306 OLED Displays for Arduino. <https://learn.adafruit.com/monochrome-oled-breakouts>
+
 AG Electrónica. (s.f.). Módulo MP3 player - Hoja técnica. <https://agelectronica.lat/pdfs/textos/M/MP3-PLAYER-MODULE.PDF>
+
+DFRobot. (s.f.). DFPlayer Mini MP3 Player Module For Arduino. <https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299>
 
 GitHub. (s.f.). Repositorio dis8645-2025-2-proyectos, grupo 06. <https://github.com/disenoUDP/dis8645-2025-2-proyectos/tree/main/00-examen/grupo-06>
 
+HiveMQ. (s.f.). What is MQTT and Why is it so Popular in IoT? <https://www.hivemq.com/mqtt/>
+
+Javl. (s.f.). image2cpp [Software]. GitHub. <https://github.com/javl/image2cpp>
+
 Pixilart. (s.f.). Pond. <https://www.pixilart.com/art/pond-sr5z6be59ee9f2aws3?ft=topic&ft_id=5>
 
+Raspberry Pi Foundation. (s.f.-a). Getting Started with Raspberry Pi Pico. <https://projects.raspberrypi.org/en/projects/getting-started-with-the-pico>
+
+Raspberry Pi Foundation. (s.f.-b). Raspberry Pi Pico 2 W Documentation. <https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html>
+
+SparkFun Electronics. (s.f.). Electret Microphone Amplifier - MAX4466 Hookup Guide. <https://learn.sparkfun.com/tutorials/electret-mic-breakout-board-hookup-guide>
+
 Tecneu. (s.f.). Cómo utilizar el DFPlayer Mini con Arduino para proyectos de audio. <https://www.tecneu.com/blogs/tutoriales-de-electronica/como-utilizar-el-dfplayer-mini-con-arduino-para-proyectos-de-audio>
+
+Texas Instruments. (s.f.). PAM8403 Class-D Audio Amplifier Datasheet. <https://www.ti.com/>
+
