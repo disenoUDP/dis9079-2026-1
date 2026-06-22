@@ -240,8 +240,6 @@ Luego conectamos nuestra Pantalla TFT LCD redonda de 1.28" a una proto y luego e
 
 ![Feeds_adafruit](./imagenes/feeds-adafruit.jpeg)
 
-Este fue uno de los días más importantes del proyecto, ya que pasamos de la planificación a ver el sistema funcionando en la práctica. Lograr que la información recorriera todo el proceso, desde la captura de la señal hasta su visualización, nos dio mayor confianza para continuar con el desarrollo. Terminamos la jornada muy contentas y satisfechas con los resultados obtenidos, ya que el trabajo realizado durante las semanas anteriores comenzó a materializarse en un sistema funcional.
-
 Al finalizar las pruebas, Mateo y Aarón revisaron el avance de nuestro proyecto y valoraron positivamente el funcionamiento general del sistema. Sin embargo, nos hicieron algunas observaciones para seguir mejorándolo, principalmente relacionadas con el refresco de la pantalla y la calidad de la visualización de los datos. Aunque la información se estaba transmitiendo y mostrando correctamente, identificamos que aún había aspectos por optimizar para ofrecer una experiencia más fluida. Sospechamos que parte de este comportamiento podría deberse al cableado utilizado durante las pruebas, por lo que decidimos continuar investigando y realizando ajustes en las siguientes jornadas con el objetivo de perfeccionar el resultado final.
 
 ---- 
@@ -257,7 +255,11 @@ Al finalizar las pruebas, Mateo y Aarón revisaron el avance de nuestro proyecto
 ----
 Antes de finalizar la clase, realizamos una última prueba utilizando otra pantalla TFT para descartar que el problema estuviera en el propio módulo. Sin embargo, el comportamiento fue exactamente el mismo: la información seguía mostrándose con una visualización deficiente. Esto nos permitió concluir que la pantalla no era la causa del inconveniente y reforzó nuestra hipótesis de que el problema estaba relacionado con el cableado utilizado durante las pruebas. Como siguiente paso, decidimos comprar nuevos cables Dupont en AFEL para reemplazar los actuales y verificar si con ello logramos mejorar la estabilidad y la calidad de la visualización del sistema.
 
-![Cables_dupont](./imagenes/cables-macho.webp)
+![Cables Dupont](./imagenes/cable-macho.webp)
+
+Cables Dupont Macho-Macho a comprar en AFEL
+
+###### https://afel.cl/products/pack-20-cables-de-conexion-macho-macho?variant=45125080645784&country=CL&currency=CLP&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&utm_term=&utm_campaign=@+Smart+Shopping+2&utm_source=adwords&utm_medium=ppc&hsa_acc=1808722794&hsa_cam=19569174895&hsa_grp=&hsa_ad=&hsa_src=x&hsa_tgt=&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=19560974580&gbraid=0AAAAADBMsFSaa_EjN1agdLXJ4UzuE0ksu&gclid=CjwKCAjwuuPRBhAnEiwA2Ji8ejSXsewTZy0tTe8hjs1s3oJWQck6Ym9LjiydHCA4FiohQWOpc2zXchoCIY0QAvD_BwE
 
 ----
 
@@ -537,7 +539,7 @@ Tuvimos que considerar la compra de más parches, debido a su desgaste y la adhe
 
 ![titulo](./imagenes/ilusas-oficial.jpeg)
 
-*Ilusas creyendo con que los datos que se reflejaban eran reales*
+*Este fue uno de los días más importantes del proyecto, ya que pasamos de la planificación a ver el sistema funcionando en la práctica. Lograr que la información recorriera todo el proceso, desde la captura de la señal hasta su visualización, nos dio mayor confianza para continuar con el desarrollo. Terminamos la jornada muy contentas y satisfechas con los resultados obtenidos, ya que el trabajo realizado durante las semanas anteriores comenzó a materializarse en un sistema funcional.*
 
 ### Miércoles 17 Junio 
 
