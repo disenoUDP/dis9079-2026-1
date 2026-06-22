@@ -1175,13 +1175,17 @@ Lo que diferencia este proyecto de otros similares en el mundo (Mileece, PlantWa
 
 Claude no tomó decisiones creativas. Todas las decisiones sobre concepto, estética, qué planta usar, qué colores, qué tipo de visualización, fueron del grupo. Claude funcionó como un profesor técnico disponible en cualquier momento.
 
-## Demo video en SS
+## Demo video en sala
 
-- demostración de prueba en salvador sanfuentes 
+- demostración de prueba en sala de salvador sanfuentes
 
-[demoss](https://www.youtube.com/shorts/Hh6tSR9Zxnw) 
 
-## Demo video SS-república 180
+
+## Demo video SS piso 1 - pañol
+
+[demosspañol](https://www.youtube.com/shorts/Hh6tSR9Zxnw) 
+[demoss](https://youtube.com/shorts/H2X1xayq0s8?si=_cKhxB6TC0V4_3Be) 
+[demoss]([https://youtube.com/shorts/H2X1xayq0s8?si=_cKhxB6TC0V4_3Be](https://youtube.com/shorts/7V4tm9dL1Pg?si=IMiIpCeYupOx-oC6)) 
 
 ## Conclusión
 

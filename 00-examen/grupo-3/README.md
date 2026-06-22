@@ -24,6 +24,10 @@ Estos datos son recibidos por un Arduino UNO R4 WiFi, que también utiliza array
 
 El resultado se muestra en el módulo LED, mientras la Raspberry recopila los porcentajes, se iluminan todos los LED en azul, luego comienza a funcionar como una ruleta que barre los 8 LEDs en secuencia, frenando gradualmente hasta detenerse en la ciudad ganadora. La ruleta, sostenida por un mago, ilumina ese LED en verde si la humedad de la ciudad supera el 35%, o en rojo si es inferior. Una serie de letreros indica al usuario que si la luz es verde puede presionar el botón del humidificador, activando una membrana ultrasónica que libera una bruma en el espacio.
 
+# Video demostrativo
+
+<https://youtube.com/shorts/ZtsMf3ECQKI?feature=share>
+
 ---
 
 # API utilizada
@@ -186,12 +190,8 @@ Pico 2 W: botón en GP15, LED en GP16
 
 Arduino: módulo RGB en D2, control del relé (vía transistor) en pin 5, igual a como ya lo tenías armado
 
-Created 2 files, ran a command
-Created 2 files, ran a command
-
 Ahora el receptor en el Arduino UNO R4 WiFi:
 
-Created a file, ran a command, read a file
 Created a file, ran a command, read a file
 
 Cómo instalarlo:
