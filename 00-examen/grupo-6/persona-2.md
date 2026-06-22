@@ -22,7 +22,7 @@ En la década de los 70, las API experimentaron su primer gran salto en progreso
 
 
 
-### ¿Qué es una API?
+## ¿Qué es una API?
 
 Una API (por sus siglas en inglés Application Programming Interface , en español Interfaz de Programación de Aplicaciones ) es un conjunto de definiciones, reglas y protocolos que permite la comunicación entre diferentes aplicaciones o softwares. A diferencia de una interfaz de usuario que conecta una persona con un ordenador, una API conecta dos softwares o partes de un software.
 
@@ -43,13 +43,13 @@ Imagen sacada de: https://itsqmet.edu.ec/api/
 
 
 
-### El concepto de "Caja Negra" y Seguridad
+## El concepto de "Caja Negra" y Seguridad
 
 Las API permiten compartir únicamente la información necesaria para una solicitud específica, manteniendo ocultos los detalles internos del código, el servidor o la base de datos. Esto añade una capa crítica de seguridad, ya que los dispositivos externos no tienen acceso total al sistema, sino solo a pequeños paquetes de datos autorizados.
 
 
 
-### ¿Cómo funciona una API?
+## ¿Cómo funciona una API?
 
 El funcionamiento básico de una API sigue el modelo de Cliente y Servidor a través de la infraestructura de Internet, normalmente mediante el protocolo HTTP (sistema de reglas mediante el cual un cliente (como una app o web) y un servidor se comunican). 
 
@@ -62,9 +62,7 @@ Cliente / App <--- (4) Entrega Datos en Pantalla <-- Bridge  <--- (3) Responde c
 
 
 
-
 El funcionamiento de una puede entenderse en cuatro pasos básicos:
-
 
 
 1. Solicitud: Una aplicación envía una solicitud, especificando qué información o acción necesita.
@@ -84,7 +82,7 @@ Imagen sacada de: https://outvio.com/es/blog/que-es-una-api/
 
 
 
-### Tipos de API -> Quién las usa
+## Tipos de API -> Quién las usa
 
 Según su Alcance y Accesibilidad. IBM (International Business Machines) clasifica las API principalmente bajo dos criterios: su accesibilidad (casos de uso en la web) y su arquitectura técnica.
 
@@ -121,7 +119,7 @@ Existen muchos tipos de API: segun du entorno Tecnológico (Dónde operan)
 
 
 
-### Protocolos y estilos arquitectónicos:
+## Protocolos y estilos arquitectónicos:
 
  `REST` Arquitectura web altamente escalable que transmite datos mediante el protocolo HTTP. Se caracteriza por **no tener estado** (*stateless*), lo que significa que el servidor no almacena datos del cliente entre solicitudes, facilitando conexiones rápidas y ligeras.
 
@@ -135,19 +133,19 @@ Existen muchos tipos de API: segun du entorno Tecnológico (Dónde operan)
 
 
 
-### ¿Qué ventajas ofrecen las API?
+## ¿Qué ventajas ofrecen las API?
 
 Para muchas empresas, las API son activos esenciales para el negocio que ayudan a digitalizar los procesos, permitir la automatización, acelerar los flujos de trabajo, conectar personas y aplicaciones, e innovar en nuevos productos y servicios. Las API pueden ayudar a ofrecer experiencias de cliente excepcionales y mejorar la agilidad operativa.
 
 
 
-### ¿A qué amenazas se enfrentan las API?
+## ¿A qué amenazas se enfrentan las API?
 
 Las APIs son blancos atractivos para los hackers porque actúan como puertas de acceso a datos valiosos. Si carecen de la seguridad adecuada o están obsoletas (heredadas), los atacantes las explotan para robar información confidencial, tumbar servicios (interrupción) o secuestrar sistemas.
 
 
 
-### ¿Cómo se empieza a usar una API?
+## ¿Cómo se empieza a usar una API?
 
 La plataforma de OpenWeather muestra los tres pasos estándar de la industria para trabajar con este recurso:
 
@@ -159,12 +157,12 @@ La plataforma de OpenWeather muestra los tres pasos estándar de la industria pa
 
 
 
-### Conclusión
+## Conclusión
 Las API son un pilar del desarrollo de software moderno que promueven la conectividad y la innovación. Desde aplicaciones móviles hasta sistemas empresariales, su capacidad para integrar funcionalidades y servicios las hace imprescindibles. Comprender y aprovechar las API no solo mejora la eficiencia del desarrollo, sino que también abre puertas a nuevas oportunidades en el mundo digital. 
 
 
 
-### Bibliografia
+## Bibliografia
 
 Instituto Superior Tecnológico Quito Metropolitano [ITSQMET]. (s.f.). ¿Qué es una API y para qué sirve? https://itsqmet.edu.ec/api/
 
