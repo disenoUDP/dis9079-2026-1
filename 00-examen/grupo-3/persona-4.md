@@ -23,11 +23,8 @@ CIUDADES = [
     ("Arica",               -18.48, -70.33,  "humedad-arica"),
     ("Copiapo",             -27.37, -70.33,  "humedad-copiapo"),
 
-<img src="./imagenes/OpenMeteo.png" alt="install" width="500">
+<img src="./imagenes/openmeteo.png" alt="install" width="500">
 
-
-
----
 ### Tipos de Apis
 
 Existen distintos tipos de APIs, algunas pueden ser públicas o privadas, y también locales o remotas. Son útiles para la creación de apps.
@@ -51,7 +48,7 @@ La API REST es un tipo de arquitectura, se comunican mediante solicitudes HTTP p
 
 Puede guardar el caché que es la función de almacenamiento temporal que tienen algunos sitios, el servidor puede almacenar una copia de la respuesta y reutilizarla para solicitudes posteriores, mejorando el rendimiento y reduciendo el tráfico de red. También se puede seleccionar qué datos se envían y cuáles no, y definir los permisos. Usa XML y JSON (*JavaScript Object Notation*) como formatos para enviar datos, además como el cliente y el servidor están separados, el sistema puede escalar sin mayor complejidad, permitiendo agregar funcionalidades sin rehacer todo desde cero.
 
-<img src="./imagenes/Api_Rest.png" alt="install" width="500">
+<img src="./imagenes/api-rest.png" alt="install" width="500">
 
 Imagen: API REST- Autor: Seobility – Licencia: CC BY-SA 4.0
 
@@ -61,7 +58,7 @@ Imagen: API REST- Autor: Seobility – Licencia: CC BY-SA 4.0
 
 ### Fuentes
 
-Como funcionan las APIs: https://www.ibm.com/think/topics/rest-apis
+https://www.ibm.com/think/topics/rest-apis
 
 https://open-meteo.com/en/features
 
