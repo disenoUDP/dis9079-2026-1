@@ -1687,11 +1687,11 @@ function respJson(obj) {
 
 ## Fotos finales y video demo
 
-| Luagr 1 | Lugar 2 |
+| Lugar 1 | Lugar 2 |
 |-----------------|--------------------|
 | ![GIF DEMO](./imagenes/demolugar1.gif) | ![GIF DEMO](./imagenes/demolugar2.gif) |
 
-[Link video demo completa](https://youtube.com/shorts/0qfTay4SbsY?si=pTMcKAUAlJDzuTUe)
+[Link video demo completa](https://www.youtube.com/shorts/Lo83NxmDKfo)
 
 ![foto final 1](./imagenes/foto1.jpeg)
 ![foto final 2](./imagenes/foto2.jpeg)
