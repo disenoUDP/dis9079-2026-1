@@ -732,3 +732,10 @@ menos de 40 cm = distancia 03
 
 A partir de esta sensibilidad, se planteó la necesidad de generar una especie de recorrido marcado en el suelo. La idea es señalar visualmente las distancias frente al tótem para que la interacción sea más clara, controlada y limpia. De esta manera, la persona usuaria puede ubicarse dentro de cada rango sin confusión, y el sistema puede responder de forma más estable durante la demostración o presentación del proyecto.
 
+# Ajuste del Tótem 02: decisión de retirar el servo
+
+En una primera etapa, el Tótem 02 fue pensado como un dispositivo receptor que respondiera mediante dos elementos: una pantalla OLED y un servo. La pantalla mostraría el mensaje recibido desde Adafruit IO, mientras que el servo se movería en distintos grados según la cercanía detectada por el Tótem 01.
+
+Sin embargo, luego de probar esta interacción, consideramos que el movimiento del servo no aportaba de forma significativa a la experiencia que buscábamos construir. Si bien técnicamente funcionaba, su presencia generaba una respuesta más mecánica y visible de lo esperado, lo que podía interferir con la atmósfera silenciosa, limpia y contemplativa del proyecto.
+
+Por esta razón, decidimos simplificar la respuesta del Tótem 02 y dejar únicamente el mensaje en pantalla. Esta decisión permite que la comunicación entre ambos tótems sea más clara y directa, evitando sumar elementos que puedan confundir o distraer del mensaje principal. En vez de agregar más estímulos físicos, preferimos trabajar con una respuesta visual más mínima, donde el texto en pantalla funcione como una señal precisa y silenciosa de lo que está ocurriendo en el sistema.
