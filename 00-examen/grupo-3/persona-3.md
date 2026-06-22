@@ -32,3 +32,11 @@ Las APIs definen cómo interactúan las aplicaciones entregando detalles que inc
 + Métodos: Instrucciones como _GET_ para recuperar datos, _POST_ para enviarlos, _PUT_ para actualizarlos y _DELETE_ para eliminarlos.
 + Parámetros: Son detalles necesarios para la solicitud, como por ejemplo lo es la ubicación de los datos meteorológicos o credenciales de inicio de sesión en páginas o redes sociales.
 + Respuestas: Es el formato de los datos devueltos por la aplicación, como lo son _JSON_ o _XML_.
+
+# Fuentes:
+
++ <https://www.ibm.com/think/topics/api>
++ <https://www.oracle.com/latam/cloud/cloud-native/api-management/what-is-api/>
++ <https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction>
++ <https://aws.amazon.com/es/what-is/xml/>
++ <https://www.arsys.es/blog/archivo-json-que-es-y-para-que-sirve>
