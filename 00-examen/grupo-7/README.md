@@ -106,21 +106,21 @@ Una segunda prueba consistió en acercar la mano a una hoja sin tocarla directam
 3. Pinzas de cocodrilo al ADS1115.
 4. Sistema completo armado y funcionando.
 
-![monitorserial1](./imagenes/adsConexion5.JPG)
+![monitorserial1](./imagenes/ads-conexion5.jpg)
 
 **Imagen 6** *Datos del monitor serial al completar las conexiones*
 
-![funcionamiento](./imagenes/adsConexion6.JPG)
+![funcionamiento](./imagenes/ads-conexion6.jpg)
 
 **Imagen 7** *Se comprueba que la lectura funciona*
 
-![monitorserial2](./imagenes/adsConexion7.JPG)
+![monitorserial2](./imagenes/ads-conexion7.jpg)
 
 **Imagen 8** *Monitor serial al acercar la mano a la planta*
 
 ¡Funciona perfectamente! El Canal 0 subió más de 1000 puntos sin tocar la planta, solo acercando la mano.
 
-![funciona](./imagenes/adsConexion8.JPG)
+![funciona](./imagenes/ads-conexion8.jpg)
 
 **Imagen 9** *Lectura al acercar la mano*
 
@@ -216,7 +216,7 @@ void loop() {
 
 Esta versión se probó tanto sin acercar la mano a la planta como acercando la mano o tocando la tierra, lo que permitió observar en vivo el cambio de estado de "calma" a "¡actividad!" directamente en el Monitor Serial.
 
-![adscodigo2](./imagenes/adsCodigo2.JPG)
+![adscodigo2](./imagenes/ads-codigo2.jpg)
 
 **Imagen 10** *Prueba del segundo código y lectura en monitor serial*
 
@@ -348,7 +348,7 @@ void loop() {
 
 Se logró conectar, pero surgieron varios problemas: el código mandaba datos muy rápido (la luz del Arduino parpadeaba casi sin pausa), y existía la duda de cómo manejar la conexión si el PC que visualiza los datos está a varios metros de distancia del Arduino, cada uno en redes distintas. También se necesitaba que la visualización mostrara formas y colores tipo animación en vez de solo texto plano.
 
-![adserror](./imagenes/adsCodigo2error.JPG)
+![adserror](./imagenes/ads-codigo2-error.jpg)
 
 **Imagen 11** *Error en código*
 
