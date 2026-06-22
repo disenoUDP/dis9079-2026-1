@@ -117,6 +117,11 @@ while True:
 
 *foto del proyecto, especifico del semáforo*
 
+<img width="1600" height="1544" alt="WhatsApp Image 2026-06-22 at 11 05 44" src="https://github.com/user-attachments/assets/6296b9c9-cc42-4daf-8ab4-8fdaf618cffd" />
+
+
+https://youtube.com/shorts/gFcf4EqzTzc?si=k5rP9XQtdY6noI2l
+
 #### Proceso Arduino UNO R4 WiFI
 
 
@@ -148,12 +153,19 @@ Primer problema, necesitábamos hacer que el Arduino se conectara al hotspot de 
 
 Posteriormente realizamos la conexión de cableado y botones (resistencia a GND, botón a 5 V)
 
-Segundo problema, el contador se actualiza si se conecta o desconecta el cable manualmente, pero no responde al presionar el botón físico. Al mover el Arduino, los valores fluctúan por sí solos (señal "flotante"), lo que indica que el circuito de pull-down no está cerrando correctamente hacia GND, aunque se revisó la disposición del circuito (A3 conectado a D2, B3 con una resistencia de 10 kΩ, C3 y E3 con las patitas del botón, y A8 conectado al riel positivo) y parecía estar correcta si embargo no era posible controlar el envio de datos, por lo que....
+Segundo problema, el contador se actualiza si se conecta o desconecta el cable manualmente, pero no responde al presionar el botón físico. Al mover el Arduino, los valores fluctúan por sí solos (señal "flotante"), lo que indica que el circuito de pull-down no está cerrando correctamente hacia GND, aunque se revisó la disposición del circuito (A3 conectado a D2, B3 con una resistencia de 10 kΩ, C3 y E3 con las patitas del botón, y A8 conectado al riel positivo) y parecía estar correcta si embargo no era posible controlar el envio de datos, por lo que buscamos otras opciones para los botones y al buscar otras opciones nos quedamos esta opcion que no se necesita necesita resistencias.
 
 
 *foto del proyecto, especifico ARDUINO+BOTONES*
+<img width="900" height="1600" alt="WhatsApp Image 2026-06-22 at 11 10 36 (1)" src="https://github.com/user-attachments/assets/60f0d5c3-d86c-46fb-8795-d79f75d66b1c" />
+<img width="900" height="1600" alt="WhatsApp Image 2026-06-22 at 11 10 36" src="https://github.com/user-attachments/assets/b68a869c-b2e9-40c9-ac88-7e6a252eaa8d" />
+
+*prueba en adafruit, sumando y restando personas*
+<img width="1912" height="855" alt="Captura de pantalla 2026-06-18 161901" src="https://github.com/user-attachments/assets/c0c32417-e97f-4fe3-9612-d75ae046a6aa" />
 
 
+
+https://youtube.com/shorts/AJlLrTNiS2I?si=OBioyqRRyYEKV35q
 
 ### IA (claude.ai)
 
