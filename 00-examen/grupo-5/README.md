@@ -203,6 +203,64 @@ A continuación, dejamos los prompts utilizados, de los cuales obtuvimos los có
 
 - Necesito realizar un proyecto en una Raspberry Pi Pico W 2 con CircuitPython 10, en donde usaremos una pantalla OLED SSD1306 I2C, un potenciómetro de 100k y un botón. La idea es hacer una cámara pixel basada en Pixela de Rai-Lander conectada a wifi. El potenciómetro lo usaremos como una perilla para elegir entre 6 paletas de colores (wish-gb, kirokaze-gameboy, ayy4, ice-cream-gb, hollow, crimson) y que se actualice el nombre en la pantalla. El botón tiene que hacer dos cosas: si lo dejo apretado más de 0.6 segundos (pulsación larga), tiene que cambiar entre 9 tipos de dither de una lista en la pantalla, y si le doy un click corto, tiene que mandar una orden al ESP32-CAM para que saque la foto. También necesito que, cuando dispare, la pantalla OLED muestre una barra de progreso horizontal que diga "Subiendo...", simulando el tiempo que tarda el ESP32. Para que el usuario vea que está trabajando.
 
+Luego de realizar los cambios necesarios para que el Arduino capturara las fotografías, dejamos en la Raspberry Pi la tarea de gestionar la visualización de las imágenes y la capacidad de avanzar o retroceder en la galería guardada en el drive.
+
+A continuación, se presentan los prompts finales utilizados para este microcontrolador:
+
+### PROMPT PARA CLAUDE:
+
+Actúa como un ingeniero experto en sistemas embebidos y desarrollo con Raspberry Pi Pico. Necesito que me ayudes a diseñar e implementar un proyecto completo de visor de fotos digital con las siguientes especificaciones:
+
+HARDWARE:
+
+- Microcontrolador: Raspberry Pi Pico 2 W (con WiFi integrado)
+- Almacenamiento: Módulo MH-SD Card Module (lector de tarjetas microSD)
+- Pantalla: Módulo TFT LCD 2" con controlador ST7789V, resolución 240x320px, interfaz SPI RGB
+- Conectores de la pantalla: BL (retroiluminación), CS (Chip Select), DC (Data/Command), RST (Reset), SDA (datos SPI), SCL (clock SPI), VCC, GND
+- Dos botones físicos para navegación (anterior/siguiente imagen)
+
+FUNCIONALIDAD REQUERIDA:
+
+- El sistema debe conectarse a WiFi y acceder a una carpeta específica de Google Drive
+- Debe monitorear automáticamente esa carpeta y descargar nuevas imágenes cuando se detecten cambios
+- Las imágenes estarán optimizadas a exactamente 240x320 píxeles (formato JPEG o BMP)
+- Las imágenes descargadas se almacenarán en la tarjeta microSD local
+- La pantalla debe mostrar las imágenes con la mejor calidad posible
+- Los dos botones permitirán navegar entre las imágenes almacenadas (anterior/siguiente)
+- El sistema debe ser eficiente en consumo de RAM y almacenamiento
+
+ENTREGABLES QUE NECESITO:
+
+- Diagrama de conexiones completo (pinout detallado entre Pico 2 W, pantalla, lector SD y botones)
+- Lista de bibliotecas MicroPython necesarias y cómo instalarlas
+- Código completo en MicroPython estructurado en módulos:
+- Módulo de configuración WiFi y credenciales
+- Módulo de conexión a Google Drive API
+- Módulo de monitoreo y descarga de imágenes
+- Módulo de control de pantalla ST7789V
+- Módulo de manejo de sistema de archivos en SD
+- Módulo de navegación con botones
+- Programa principal integrador
+- Instrucciones paso a paso para configurar el proyecto Google Cloud y obtener credenciales
+- Explicación del formato de almacenamiento en la SD y lógica de sincronización
+- Consideraciones de memoria y optimización específicas para Pico 2 W
+
+REQUISITOS TÉCNICOS ESPECÍFICOS:
+
+- Usar SPI0 para la pantalla y SPI1 para el lector SD (o viceversa, justifica la mejor opción)
+- Implementar doble buffer si es viable con la RAM disponible del Pico 2 W
+- Manejar errores de conexión, descarga y lectura de archivos con reintentos y mensajes en pantalla
+- Implementar debounce por software en los botones
+- La retroiluminación debe ser controlable (encendido/apagado por inactividad)
+- Incluir watchdog timer para recuperación ante fallos
+
+Por favor, proporciona el código completo, bien comentado en español, y todas las explicaciones necesarias para que el proyecto funcione sin modificaciones adicionales.
+
+Necesito que adaptes este código de Python a la placa Arduino R4 WiFi. La idea original del código es que se conecte al ESP-32-CAM por WiFi, permitiendo elegir qué filtro poner en el ESP-32-CAM. Tambien necesito que se conecten ambos sin necesidad de cambiar la ip internamente con codigo, usando protocolo UDP, Te paso ambos códigos.
+
+Debido a la complejidad de integrar tres plataformas distintas (Arduino Uno R4, ESP32-CAM y Raspberry Pi Pico W), el desarrollo fue un proceso puramente iterativo y modular. Fuimod construyendo el sistema por capas: primero resolviendo la comunicación de red, luego optimizando el codigo y resolviendo errores continuos de los microcontorladores para ya finalmente diseñarla interfaz de usuario.
+
+
 Posteriormente, en los mismos códigos se incluyó una explicación de lo que hace cada uno.
 
 ### ESP32-CAM
@@ -1633,12 +1691,12 @@ function respJson(obj) {
 |-----------------|--------------------|
 | ![GIF DEMO](./imagenes/demolugar1.gif) | ![GIF DEMO](./imagenes/demolugar2.gif) |
 
-[Link video demo completa]()
+[Link video demo completa](https://youtube.com/shorts/0qfTay4SbsY?si=pTMcKAUAlJDzuTUe)
 
-![foto final 1](./imagenes/foto1.jpg)
-![foto final 2](./imagenes/foto2.jpg)
-![foto final 3](./imagenes/foto3.jpg)
-![foto final 4](./imagenes/foto4.jpg)
+![foto final 1](./imagenes/foto1.jpeg)
+![foto final 2](./imagenes/foto2.jpeg)
+![foto final 3](./imagenes/foto3.jpeg)
+![foto final 4](./imagenes/foto4.jpeg)
 
 ### Bibliografía
 
