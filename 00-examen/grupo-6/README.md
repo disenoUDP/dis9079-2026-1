@@ -829,9 +829,9 @@ while True:
 
 ### Procesos imagenes / videos
 
-<img src="./imagenes/video5.gif" alt="video" width="400"> <img src="./imagenes/proceso1.gif" alt="video" width="400">
+<img src="./imagenes/video5.gif" alt="video" width="300"> <img src="./imagenes/proceso1.gif" alt="video" width="300"> <img src="./imagenes/proceso3.jpeg" alt="video" width="300">
 
-<img src="./imagenes/proceso2.jpeg" alt="video" width="400">  <img src="./imagenes/proceso3.jpeg" alt="video" width="400">
+<img src="./imagenes/video6.gif" alt="video" width="300"> <img src="./imagenes/proceso2.jpeg" alt="video" width="300">
 
 ---
 
