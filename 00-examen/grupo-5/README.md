@@ -207,7 +207,7 @@ Luego de realizar los cambios necesarios para que el Arduino capturara las fotog
 
 A continuación, se presentan los prompts finales utilizados para este microcontrolador:
 
-PROMPT PARA CLAUDE:
+### PROMPT PARA CLAUDE:
 
 Actúa como un ingeniero experto en sistemas embebidos y desarrollo con Raspberry Pi Pico. Necesito que me ayudes a diseñar e implementar un proyecto completo de visor de fotos digital con las siguientes especificaciones:
 
