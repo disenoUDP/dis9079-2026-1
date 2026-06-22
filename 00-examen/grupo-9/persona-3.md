@@ -146,7 +146,7 @@ Omg foto del día 22 de junio 2026!!!
 
 ![foto](./imagenes/nasa.png)
 
->Foto por: NASA. (s.f.). Astronomy Picture of the Day (APOD). https://apod.nasa.gov/apod/astropix.html 
+>Foto por: NASA. (s.f.). Astronomy Picture of the Day (APOD). <https://apod.nasa.gov/apod/astropix.html> 
 
 ### Conclusión
 
@@ -160,6 +160,7 @@ No tenía idea de lo útiles y cool que son, (ya que no conocía este término) 
 - Amazon Web Services. (s.f.). What is an API. <https://aws.amazon.com/what-is/api/>
 - Delta Protect. (s.f.). Introducción a APIs. <https://www.deltaprotect.com/blog/que-es-una-api>
 - IBM. (2024). What is an API. <https://www.ibm.com/think/topics/api>
+- NASA. (s.f.). Astronomy Picture of the Day (APOD). <https://apod.nasa.gov/apod/astropix.html>
 - NASA. (s.f.). NASA APIs. <https://api.nasa.gov/>
 - Outvio. (s.f.). ¿Qué es una API?. <https://outvio.com/es/blog/que-es-una-api>
 - Traefik Labs. (2023, 7 de febrero). The history and evolution of APIs. <https://traefik.io/blog/the-history-and-evolution-of-apis>
