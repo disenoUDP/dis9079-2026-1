@@ -5,6 +5,8 @@
 - Renata Arévalo Urra / [arevalourra](<https://github.com/isipm08/dis9079-2026-1/tree/main/06-arevalourra>)
 - Isidora Pérez Maulén / [isipm08](<https://github.com/isipm08/dis9079-2026-1/tree/main/21-isipm08>)
 
+### Fecha Examen: Lunes 22 de Junio
+
 ## Descripción del proyecto
 
 Nuestro proyecto nace del deseo de transformar cada latido en un puente de conexión. Mediante el sensor ECG AD8232, la actividad cardíaca deja de ser una señal invisible para convertirse en información que viaja en cuestión de segundos. A través de Adafruit IO, cada pulso encuentra un camino seguro hasta una pantalla LCD conectada a un segundo microcontrolador, donde los datos cobran vida nuevamente. Así, este sistema no solo captura y transmite información: crea una nueva forma de acompañar, observar, demostrando que incluso el ritmo silencioso del corazón puede trascender la distancia y hacerse presente allí donde más se necesita.
@@ -27,9 +29,8 @@ El desarrollo integra hardware, programación y comunicación en la nube en una 
 
 
 ## Proceso de Proyecto
----
 
-### Lunes 01 Junio 
+### Lunes 01 de Junio 
 
 #### 3 Semanas para el examen
 
@@ -43,7 +44,7 @@ Una vez definida la arquitectura general del sistema, comenzamos a distribuir la
 
 ![Modulo Sensor](./imagenes/modulo-sensor.webp)
 
-*Modulo Sensor AD8232 - Imagen extraída de página web de AFEL*
+*Módulo Sensor AD8232 - Imagen extraída de página web de AFEL*
 
 https://afel.cl/cdn/shop/files/modulo-sensor-ad8232.jpg?v=1720904051&width=713
 
@@ -78,7 +79,7 @@ Gracias equipo curso!!
 
 -----
 
-### Lunes 08 Junio
+### Lunes 08 de Junio
 
 #### 2 Semanas para el examen
 
@@ -204,7 +205,7 @@ Cuenta Adafruit IO
 
 ## Inicio de Trabajo con Sensor
 
-### Lunes 15 Junio 
+### Lunes 15 de Junio 
 
 #### 1 Semana para el examen
 
@@ -237,8 +238,6 @@ Luego conectamos nuestra Pantalla TFT LCD redonda de 1.28" a una proto y luego e
 *Electrodo instalado en la clavícula izquierda de isipm08, completando la configuración necesaria para que el sensor pudiera registrar la señal ECG.*
 
 ----
-
-![Feeds_adafruit](./imagenes/feeds-adafruit.jpeg)
 
 Al finalizar las pruebas, Mateo y Aarón revisaron el avance de nuestro proyecto y valoraron positivamente el funcionamiento general del sistema. Sin embargo, nos hicieron algunas observaciones para seguir mejorándolo, principalmente relacionadas con el refresco de la pantalla y la calidad de la visualización de los datos. Aunque la información se estaba transmitiendo y mostrando correctamente, identificamos que aún había aspectos por optimizar para ofrecer una experiencia más fluida. Sospechamos que parte de este comportamiento podría deberse al cableado utilizado durante las pruebas, por lo que decidimos continuar investigando y realizando ajustes en las siguientes jornadas con el objetivo de perfeccionar el resultado final.
 
@@ -525,7 +524,7 @@ void loop()
 }
 ```
 
-Adjuntamos registro de nuestras conexiones realizadas el día lunes, que estas despúes fueron cambiadas, ya que el día miércoles nos dimos cuenta que los datos visualizados en Adafruit y Arduino eran datos aleatorios.
+Adjuntamos registro de nuestras conexiones realizadas el día lunes, que estas después fueron cambiadas, ya que el día miércoles nos dimos cuenta que los datos visualizados en Adafruit y Arduino eran datos aleatorios.
 
 ![titulo](./imagenes/conexiones-lunes.jpeg)
 
@@ -541,25 +540,25 @@ Tuvimos que considerar la compra de más parches, debido a su desgaste y la adhe
 
 *Este fue uno de los días más importantes del proyecto, ya que pasamos de la planificación a ver el sistema funcionando en la práctica. Lograr que la información recorriera todo el proceso, desde la captura de la señal hasta su visualización, nos dio mayor confianza para continuar con el desarrollo. Terminamos la jornada muy contentas y satisfechas con los resultados obtenidos, ya que el trabajo realizado durante las semanas anteriores comenzó a materializarse en un sistema funcional.*
 
-### Miércoles 17 Junio 
+### Miércoles 17 de Junio
 
 ### 5 días para el examen
 
-El día de hoy realizamos denuevo la prueba para la pantalla y efectivamente eran los cables!!. El día anterior la Rena realizó la compra de estos cables, para así poder realizar la prueba nuevamente con la pantalla y comprobar nuestra teoría.
+El día de hoy realizamos nuevamente las pruebas con la pantalla y efectivamente eran los cables!!. El día anterior la arevalourra realizó la compra de estos cables, para así poder realizar la prueba nuevamente con la pantalla y comprobar nuestra teoría.
 
 ![titulo](./imagenes/cables-nuevos.jpeg)
 
 *Nuevos cables*
 
-Nos dimos cuenta que los datos que nos tiraba en el monitor serial de Arduino y en Adafruit eran solo datos aleatorios y no detectaba los pulsos reales... Tras varios intentos de nuevas pruebas con nuevos códigos no pudimos realizar que los pulsos fueran en tiempo real y de nosotras. (Por hoy nos rendimos, seguiremos en esta lucha)...
+Durante el tiempo de trabajo que tuvimos hoy vivimos uno de los momentos más importantes y desafiantes de todo el proyecto. Después de revisar con mayor detalle los datos que se estaban transmitiendo entre ambos Arduino, nos dimos cuenta de que los valores que observábamos tanto en el Monitor Serial como en Adafruit IO no correspondían a los latidos reales del usuario. Hasta ese momento pensábamos que el sistema estaba funcionando correctamente, ya que existía comunicación entre el transmisor y el receptor; sin embargo, al analizar las mediciones comprendimos que los datos enviados eran valores aleatorios y no representaban la frecuencia cardíaca capturada por el sensor ECG AD8232.
 
 ![titulo](./imagenes/frustradas-oficial.jpeg)
 
-*Conexiones día Miércoles, probando nuevos cables*
+*Aquí empezó a invadir la frustración*
+
+Este descubrimiento significó un cambio importante en nuestra planificación. Por un momento sentimos frustración al comprender que gran parte de los avances que habíamos celebrado durante la jornada anterior no eran realmente el resultado que buscábamos. Aun así, decidimos tomar esta situación como parte del proceso de aprendizaje y concentrarnos en encontrar el origen del problema. Durante aproximadamente dos horas realizamos numerosas pruebas, modificando el código, revisando el procesamiento de la señal y comparando distintas versiones de la programación con la esperanza de obtener lecturas reales. A pesar del esfuerzo invertido, no logramos resolver el problema durante esa jornada.
 
 ![titulo](./imagenes/pantalla-funcionando.jpeg)
-
-*Prueba pantalla con nuevos cables*
 
 ![titulo](./imagenes/pantalla-fondo-rojo.jpeg)
 
@@ -567,11 +566,13 @@ Nos dimos cuenta que los datos que nos tiraba en el monitor serial de Arduino y 
 
 ![titulo](./imagenes/intento-3-pantalla-tft.gif)
 
-*Acá nos funcionó tanto la pantalla como el código, solo que este código despúes no lo utilizamos debido a los datos no reales*
+*Acá nos funcionó tanto la pantalla como el código, solo que este código después no lo utilizamos debido a que los datos no eran reales.*
 
 ![titulo](./imagenes/ilusas-pt2.jpeg)
 
-*Foto riendo pero por dentro llorando*
+*Foto riendo pero por dentro llorando, tratando de mantener siempre el optimismo*
+
+Aunque terminamos el día sin la solución esperada, esta experiencia nos permitió comprender mucho mejor el funcionamiento del sistema y nos hizo ver la importancia de validar no solo que los datos se transmitan correctamente, sino también que representen información real y confiable. Antes de finalizar, organizamos las tareas para continuar trabajando el día viernes con una nueva estrategia, convencidas de que identificar la causa del problema sería un paso fundamental para completar exitosamente el proyecto. En lugar de abandonar la idea, este desafío reforzó nuestro compromiso con el desarrollo y nos motivó a seguir buscando una solución.
 
 > CÓDIGO DE PRUEBA PANTALLA TFT LCD redonda de 1.28"
 
@@ -680,13 +681,17 @@ void mostrarColor(uint16_t color, const char *texto) {
 
 ### 3 días para el examen
 
-El día de hoy tratamos de mejorar los códigos, tuvimos un tiempo corto para poder avanzar, debido a nuestro acotado tiempo entre clases. No pudimos mejorar el código... Seguiremos informando.
+Llegamos al viernes con la esperanza de resolver el problema detectado en la jornada anterior. Durante varias horas continuamos realizando pruebas, modificando el código y revisando cada parte del sistema para lograr que el sensor entregara datos reales. Sin embargo, a pesar de todos los intentos, no conseguimos encontrar una solución.
+
+Esta fue, probablemente, la etapa más difícil del proyecto. Además de la frustración por no lograr avances, comenzamos a sentir la presión del tiempo, ya que la fecha de entrega se acercaba y el principal problema seguía sin resolverse. Frente a esta situación, decidimos replantear nuestras prioridades y dejar de lado, por el momento, la impresión 3D de la carcasa. Aunque era una idea que nos entusiasmaba mucho, entendimos que lo más importante era asegurar el correcto funcionamiento del sistema. Preferimos concentrar todo nuestro tiempo y esfuerzo en conseguir que el proyecto entregara datos reales y funcionara de manera confiable antes de dedicarnos a los aspectos estéticos.
 
 ### Domingo 21 de Junio
 
 ### 1 día para el examen
 
-El día de hoy nos ayudó la Carla (gracias Carla) a realizar nuestras últimas conexiones y hacer que la señal de los BPM llegara a la pantalla que estaba conectada en la casa de Isipm. 
+Hoy queremos hacer una mención muy especial a Carla. A pesar de que ella también debía seguir avanzando en su propio proyecto grupal, se dio el tiempo de ayudarnos a distancia, revisando nuestro código, respondiendo nuestras dudas y guiándonos para encontrar una solución al problema que nos tenía estancadas desde hacía varios días. Valoramos enormemente su disposición, ya que nunca dudó en apoyarnos incluso teniendo sus propias responsabilidades.
+
+Gracias a su ayuda, finalmente conseguimos cumplir el principal objetivo del proyecto: establecer una conexión exitosa entre el Arduino transmisor ubicado en la casa de ccarlabelenn y el Arduino receptor instalado en la casa de isipm08, logrando que los BPM se visualizaran correctamente en la pantalla. Después de tantos intentos, este resultado fue un gran alivio y una enorme satisfacción para ambas. Sin duda, este logro no habría sido el mismo sin su apoyo, por lo que estaremos siempre muy agradecidas.
 
 De partida probamos los códigos mostrados a continuación para realizar tanto demostraciones de la pantalla como los BPM en modo demo.
 
@@ -935,7 +940,7 @@ void loop() {}
 
 ## FUNCIONÓ!
 
-Realizamos la prueba de distintos códigos, tanto para ver el funcionamiento de la pantalla nuevamente, como también para realizar una prueba de los BPM. La prueba que realizamos fue de San Bernardo - Maipú, logrando una exitosa conexión entre ambos dispositivos y que en la nube de Adafruit y en la pantalla se pudiera registrar de manera simultánea los datos. !!! De igual forma en el Arduino con la pantalla mantuvimos siempre las conexiones iniciales, pero en el Arduino con el Sensor fuimos cambiando de conexiones hasta llegar a una definitiva e ir mejorando los códigos.
+Realizamos la prueba de distintos códigos, tanto para ver el funcionamiento de la pantalla nuevamente, como también para realizar una prueba de los BPM. La prueba se realizó entre San Bernardo y Maipú, logrando una exitosa conexión entre ambos dispositivos y que en la nube de Adafruit y en la pantalla se pudiera registrar de manera simultánea los datos. !!! En el Arduino receptor mantuvimos las conexiones iniciales, mientras que en el Arduino transmisor fuimos realizando distintos cambios
 
 ![imagenes](./imagenes/transmisor.gif) 
 
@@ -1138,12 +1143,24 @@ void dibujarPantalla() {
   tft->drawLine(130, 200, 220, 200, GREEN);
 }
 ```
-Finalmente pudimos terminar nuestro examen de manera exitosa y pacientemente. Además de que nuestro prueba y error constante nos hizo seguir adelante a pesar de las muchas frustraciones que se pusieron en nuestros caminos. Aprendimos bastante y de eso nos nutrimos! Gracias LID, Aarón y Mateo! 
+Finalmente pudimos terminar nuestro examen de manera exitosa y pacientemente. Además de que nuestro proceso de prueba y error constante nos hizo seguir adelante a pesar de las muchas frustraciones que se pusieron en nuestros caminos. Aprendimos muchísimo durante este proceso y cada desafío nos permitió seguir creciendo.! Gracias LID, Aarón y Mateo! 
 
 GRACIAS INTERACCIONES INALÁMBRICAS
 
 fin mientras...
 
-### DEMO EN VIDEO REPU-SS
+### Lunes 22 de Junio 
+
+### Horas antes de el examen
+
+El día de hoy realizamos nuestra prueba final y la demo en video sobre nuestro proyecto.
+
+Primero realizamos la prueba pero hicimos un cambio en las conexiones del Sensor con el Arduino, conectándolos directamente los cables al Sensor. Nos dimos cuenta que las conexiones y los BPM no realizaban cambios y se mantenían en 75 (que es el BPM base). Lueego volvimos a nuestras conexiones del día de ayer y de esta forma los BPM cambiaban, no de manera constante pero tampoco se mantenía en 75. 
+
+Acá se muestra el cambio de BPM, demostrando que si cambiaba, pero se demoraba mucho al cambiar, aproximadamente 2-3 minutos.
+
+![imagenes](./imagenes/cambio-bpm.jpeg) 
+
+### DEMO EN VIDEO SS PISO 2 - SS PISO 3 
 
 

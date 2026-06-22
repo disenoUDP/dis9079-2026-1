@@ -49,6 +49,23 @@ Hay distintos tipos de APIs, por lo que cada una hace una cosa distinta. Las que
 + APIs de dispositivos: Son APIs para manipular y recuperar información de dispositivos modernos de hardware, de manera en la que sean útiles para aplicaciones web. Un ejemplo sería el indicar al usuario que una actualización está disponible mediante notificaciones del sistema, como lo hace [Notifications API](<https://developer.mozilla.org/es/docs/Web/API/Notifications_API>).
 + APIs de almacenamiento en el lado del cliente: Estas APIs tienen la habilidad de almacenar información en el lado del cliente, para así lograr por ejemplo que se guarde su estado entre carga de páginas, como lo hace [Web Storage API](<https://developer.mozilla.org/es/docs/Web/API/Web_Storage_API>).
 
+---
+
+# API Transformice !! no lo puedo creer
+
+Para subir algo más a esta bitácora (ya que sentí que estaba muy vacía), empecé a buscar APIs de juegos en los que me metía cuando chico y encontré una de Transformice!! la verdad no recuerdo mucho del juego, ya que mi memoria solo guardó recuerdos fotográficos de mi ratoncito cayendo al vacío luego de conseguir el queso.. pero filo, aquí dejo una foto del juego al que me refiero LOL:
+
+![Imagen de transformice, no me pertenece, la rescaté de aquí <https://www.transformice.com/>](./imagenes/transformice.png)
+
+![Imagen de transformice, no me pertenece, la rescaté de aquí <https://www.transformice.com/>](./imagenes/transformice2.jpg)
+
+El juego es simple, solo tienes que ir con un ratón a buscar el queso que se encuentra normalmente al otro lado del mapa o en altura, para lo que necesitarás ayuda de un _Shaman_, que son ratones más pro con poderes!! ellos te facilitan el poder llegar tanto al queso como a tu meta. Es muy lindo y entretenido por lo que recuerdo.
+
+Volviendo a la API, la encontré en el siguiente link: <https://atelier801.com/topic?f=6&t=843935>, en donde (por lo que entiendo) se creó la API para ofrecer una biblioteca de _ClubMice_ en donde se pueden ver los stats de las tribus formadas dentro del juego, las cuales son el equivalente a los clanes de otros juegos (yo nunca pude meterme a una tribu porque no sabía cómo LOL). Aquí dejo ScreenShots de lo que mencionan en la página!! Debo aclarar que la última vez que fue actualizada fue en 2018, por lo que es muy probable que ya no esté activa la API debido a que el creador mencionó que no tenía un lugar estable en donde dejarla para que sea más accesible.
+
+![Screenshot de la página en donde se habla de la API <https://atelier801.com/topic?f=6&t=843935>](./imagenes/api-transformice.png)
+
+![Screenshot de la página en donde se habla de la API <https://atelier801.com/topic?f=6&t=843935>](./imagenes/stats-tribus.png)
 
 # Fuentes:
 
@@ -57,3 +74,4 @@ Hay distintos tipos de APIs, por lo que cada una hace una cosa distinta. Las que
 + <https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction>
 + <https://aws.amazon.com/es/what-is/xml/>
 + <https://www.arsys.es/blog/archivo-json-que-es-y-para-que-sirve>
++ <https://atelier801.com/topic?f=6&t=843935>
