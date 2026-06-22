@@ -1,8 +1,10 @@
-# persona-3
+# catalina salinas
 
 catasal
 
-## ¿Qué es una API?
+## API
+
+# ¿Qué es una API?
 
 Una API (Application Programming Interface o Interfaz de Programación de Aplicaciones) es un conjunto de reglas y protocolos que permite que diferentes aplicaciones de software se comuniquen entre sí para intercambiar datos, funciones y servicios. Las API facilitan el desarrollo de software porque permiten reutilizar funcionalidades existentes en lugar de programarlas desde cero. Además, ayudan a mantener la seguridad de los sistemas al compartir únicamente la información necesaria entre aplicaciones.
 

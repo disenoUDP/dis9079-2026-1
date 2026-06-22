@@ -2,31 +2,126 @@
 
 lunes 08 junio 2026
 
-# Avance 
+### La planta como nodo biológico - Avance
 
-### 🧠 El Concepto: La Planta como Nodo Biológico
+Durante la clase seguimos conversando sobre el enfoque del proyecto y llegamos a la conclusión de que no queríamos hacer solamente una traducción de señales de la planta a sonidos. La idea empezó a tomar otra forma y pensamos en usar la planta como una especie de sensor ambiental que pudiera detectar actividad dentro de la facultad sin necesidad de utilizar cámaras.
 
-Hoy definimos que nuestro proyecto no es solo una "traducción sonora", sino un **sistema de bio-monitoreo ambiental**: convertir una planta en un sensor de presencia y actividad para la facultad, **sin usar cámaras**.
+Lo que nos llamó la atención es que las plantas reaccionan a distintos estímulos de su entorno y generan pequeñas variaciones eléctricas. Por eso comenzamos a pensar en la planta como una especie de intermediaria entre el espacio y las personas que lo habitan. Más que medir algo específico, nos interesa capturar esos cambios y transformarlos en una experiencia visual y sonora.
 
-> 🌱 **¿Por qué es especial?**
-> Aprovechamos la **bio-conductividad**. Las plantas cambian sus micro-voltajes internos según estímulos externos: vibraciones del suelo, ruido ambiental, estática de personas pasando cerca. La planta actúa como una **antena biológica** que "siente" el ritmo de la facultad.
+## Decisiones sobre el hardware
 
-### ⚙️ Arquitectura de Hardware y Justificación
+También discutimos qué plataforma utilizar. En un principio apareció la posibilidad de trabajar solamente con Raspberry, pero después de revisar las características de cada dispositivo decidimos usar una combinación de componentes.
 
-Tuvimos una discusión técnica sobre si usar Raspberry o Arduino. Decidimos por un **sistema híbrido** que aprovecha lo mejor de cada mundo:
+| Componente                         | Función                                          |
+| ---------------------------------- | ------------------------------------------------ |
+| Planta + ADS1115                   | Capturar las variaciones eléctricas de la planta |
+| Arduino UNO R4 WiFi                | Leer los datos y enviarlos por WiFi              |
+| Raspberry Pi Pico 2 W o computador | Recibir los datos y generar la visualización     |
 
-| # | Componente | Rol | Justificación |
-|---|---|---|---|
-| 1 | **Planta + ADS1115** | Captura de señal | ADC de **16 bits** — la Raspberry Pi Pico solo tiene 12 bits, insuficiente para detectar cambios de micro-voltios (μV) |
-| 2 | **Arduino UNO R4 WiFi** | Cerebro emisor | WiFi integrado + estabilidad para mantener conexión constante a la red de la facultad |
-| 3 | **Raspberry Pi Pico 2 W / PC** | Nodo receptor | Recibe los paquetes inalámbricos y genera la experiencia visual/sonora final |
+La razón principal para incorporar el ADS1115 fue que necesitábamos una lectura más precisa de las señales. Además, el Arduino UNO R4 ya tiene conectividad WiFi integrada, lo que simplifica bastante la transmisión de datos.
 
-> [!NOTE]
-> Los electrodos irán clavados tanto en el **sustrato** como en las **hojas** de la planta para maximizar la captura de señal.
+Otro acuerdo fue instalar electrodos tanto en las hojas como en el sustrato para probar distintas zonas de medición y comparar los resultados.
 
-### 🔁 Flujo Lógico y Seudocódigo Detallado
+## Flujo general del sistema
 
-Diseñamos un flujo que asegura que los datos no se pierdan en el camino.
+La idea general del funcionamiento quedó definida de esta manera:
+
+```text
+Planta
+ ↓
+Electrodos
+ ↓
+ADS1115
+ ↓
+Arduino UNO R4 WiFi
+ ↓
+WiFi
+ ↓
+Computador / Raspberry Pi Pico 2 W
+ ↓
+Procesamiento
+ ↓
+Visualización y sonido
+```
+
+## Funcionamiento esperado
+
+Pensamos el sistema en dos partes: un emisor y un receptor.
+
+### Emisor
+
+El Arduino será el encargado de leer constantemente las señales provenientes de la planta y enviarlas por WiFi.
+
+```text
+INICIO
+
+Conectar sensores
+Conectar WiFi
+
+Mientras el sistema esté funcionando:
+
+- Leer señal de la planta
+- Convertir la lectura a datos digitales
+- Enviar información
+- Esperar un instante
+
+FIN
+```
+
+### Receptor
+
+El computador o la Raspberry recibirán esos datos y los transformarán en imágenes y sonido.
+
+```text
+INICIO
+
+Conectarse a la red
+Esperar datos
+
+Mientras el sistema esté funcionando:
+
+- Recibir información
+- Analizar intensidad de la señal
+- Actualizar visualización
+- Actualizar sonido
+
+FIN
+```
+
+## Ideas para la visualización
+
+Todavía no definimos el diseño final, pero conversamos algunas posibilidades.
+
+| Estado      | Comportamiento visual                        | Sonido                       |
+| ----------- | -------------------------------------------- | ---------------------------- |
+| Señal alta  | Más movimiento y mayor cantidad de elementos | Sonidos más intensos         |
+| Señal media | Comportamiento estable                       | Sin grandes cambios          |
+| Señal baja  | Movimiento más lento y menos elementos       | Sonidos suaves y ambientales |
+
+La intención es evitar una visualización que parezca solamente un gráfico científico. Queremos que se vea más orgánica y que transmita la sensación de que la planta está reaccionando a lo que ocurre a su alrededor.
+
+## Organización del grupo
+
+Como esta semana era difícil juntarnos presencialmente, repartimos las tareas para poder avanzar en paralelo.
+
+| Persona   | Tarea                                                       |
+| --------- | ----------------------------------------------------------- |
+| Luisa     | Comprar el ADS1115 para comenzar las pruebas                |
+| Compañera | Conseguir una planta de hojas grandes para los experimentos |
+
+Además, dividimos el trabajo en dos áreas.
+
+### Grupo de hardware y transmisión
+
+* Revisar la librería ADS1115.
+* Probar lecturas desde Arduino UNO R4.
+* Verificar la conexión WiFi.
+
+### Grupo de visualización
+
+* Investigar herramientas para mostrar los datos en tiempo real.
+* Explorar opciones como p5.js, D3.js y Canvas.
+* Pensar formas de representar visualmente la actividad de la planta.
 
 ### Flujo General del Sistema
 
@@ -114,46 +209,19 @@ INICIO
 FIN
 ```
 
-**Visualización Generativa:**
+## Reflexión
 
-| Estado | Valores | Visual | Sonido |
-|---|---|---|---|
-| 🔴 **Excitación** | Altos | Movimiento rápido, colores intensos, más elementos gráficos | Agudo y rítmico |
-| 🟡 **Normal** | Medios | Comportamiento estable | Sin cambios |
-| 🟢 **Calma** | Bajos | Formas orgánicas lentas | Ambiental / suave |
+Lo que más discutimos hoy fue cómo representar los datos. Técnicamente podríamos mostrar números o gráficos, pero sentimos que eso no comunica realmente la idea del proyecto.
+
+Por ahora la pregunta que nos está guiando es cómo hacer que esos datos se perciban como algo vivo y no solamente como información técnica. Creo que ese será uno de los desafíos más importantes de las próximas semanas.
+
+## Tareas pendientes
+
+* [ ] Comprar ADS1115.
+* [ ] Conseguir una planta de hojas grandes.
+* [ ] Revisar librerías para Arduino UNO R4.
+* [ ] Realizar pruebas básicas de conexión WiFi.
+* [ ] Investigar herramientas de visualización en tiempo real.
+* [ ] Definir cómo se comunicarán emisor y receptor.
 
 
-### 🗂️ Plan de Trabajo y Logística *(Acuerdos de Grupo)*
-
-Como esta semana no podemos coincidir físicamente, establecimos una hoja de ruta estricta para llegar con avances a la próxima clase.
-
-### 📦 Gestión de Materiales
-
-| Persona | Tarea |
-|---|---|
-| **Luisa** *(yo)* | Compra del **ADS1115** — componente crítico, debe estar listo para las primeras pruebas de soldadura y lectura |
-| **Compañera** | Traer la planta — buscamos una de **hojas grandes** para mejor conductividad |
-
-### ⚙️ Desarrollo en Paralelo
-
-**Subgrupo A — Código Emisor:**
-> Trabajará en la librería del **ADS1115 para Arduino R4**, asegurando que la conexión WiFi sea robusta.
-
-**Subgrupo B — Código Receptor y Visualización:**
-> Investigará cómo crear una **página web o interfaz que funcione como API de visualización**, para que los datos de la planta se "dibujen" en tiempo real en la pantalla del PC.
-
-### 💭 Reflexión Técnica
-
-El mayor desafío identificado hoy fue la **abstracción de los datos**. No queremos mostrar solo un gráfico de líneas aburrido; queremos que la visualización se sienta *"viva"*.
-
-> [!IMPORTANT]
-> El trabajo de esta semana en buscar **APIs de visualización** es clave para cumplir con el concepto de *"Estudios inalámbricos poéticos"*. La pregunta que guía el diseño no es *¿cómo graficamos el dato?* sino *¿cómo hacemos que el dato se sienta?*
-
-**Tareas pendientes:**
-
-- [ ] Comprar el ADS1115 *(Luisa)*
-- [ ] Conseguir planta de hojas grandes
-- [ ] Investigar librería ADS1115 para Arduino R4
-- [ ] Probar conexión WiFi básica en Arduino UNO R4
-- [ ] Explorar APIs / librerías de visualización en tiempo real *(p5.js, D3, Canvas API)*
-- [ ] Definir protocolo de red: WebSockets vs HTTP POST

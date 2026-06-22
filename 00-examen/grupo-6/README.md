@@ -827,6 +827,12 @@ while True:
 2. Cambiar claves WIFI (funciona mejor que cada microcontrolador tenga su propio wifi)
 3. Y listo, dejamos que fluya!
 
+### Procesos imagenes / videos
+
+<img src="./imagenes/video5.gif" alt="video" width="300"> <img src="./imagenes/proceso1.gif" alt="video" width="300"> <img src="./imagenes/proceso3.jpeg" alt="video" width="300">
+
+<img src="./imagenes/video6.gif" alt="video" width="300"> <img src="./imagenes/proceso2.jpeg" alt="video" width="300">
+
 ---
 
 ## INput - Sensor Infrarrojo (código en Raspberry) / código que envía
@@ -1135,15 +1141,23 @@ void actualizarAnillo(int conteo) {
 
 ---
 
-## Demostraciones en vivo 
+## Demostraciones en vivo e imágenes finales
 
-<img src="./imagenes/video1.gif" alt="video" width="400"> <img src="./imagenes/video2.gif" alt="video" width="400">
+<img src="./imagenes/video1.gif" alt="video" width="200"> <img src="./imagenes/video2.gif" alt="video" width="200"> <img src="./imagenes/IMG_0836.jpeg" alt="foto" width="200"> 
 
-<img src="./imagenes/IMG_0836.jpeg" alt="foto" width="400">
+<img src="./imagenes/final2.jpeg" alt="foto" width="300"> <img src="./imagenes/final1.jpeg" alt="foto" width="300"> <img src="./imagenes/final3.jpeg" alt="foto" width="300"> 
+
+<img src="./imagenes/final4.jpeg" alt="foto" width="300"> <img src="./imagenes/final5.jpeg" alt="foto" width="300"> <img src="./imagenes/video8.gif" alt="foto" width="300">
 
 | LID (casa sofi) | Rep180 (casa vale) |
 |-----------------|--------------------|
 | <img src="./imagenes/video3.gif" alt="video" width="400"> | <img src="./imagenes/video4.gif" alt="video" width="400"> |
+
+### Demo en youtube!! (denle like)
+
+<https://youtu.be/cWNfBj_alZY?si=6f3cac41AVroJFfL>
+
+<https://youtube.com/shorts/jm4P8DSYX4A?si=dVZS4DouvTOfm34j>
 
 ---
 
