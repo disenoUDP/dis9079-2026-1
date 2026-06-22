@@ -401,3 +401,22 @@ Inicialmente, los tótems fueron diseñados para ser impresos en 3D. Durante el 
 En un comienzo vimos esta solución como algo temporal, una forma de resolver el problema rápidamente. Sin embargo, con el tiempo entendimos que esta condición dialogaba mejor con el proyecto y con la referencia de *Hechizos, por mientras para siempre*. Los tótems dejaron de ser objetos precisos y controlados para convertirse en estructuras construidas a partir de adaptaciones, decisiones improvisadas y huellas del proceso.
 
 De alguna manera, esta transformación también refleja el sentido del proyecto. Así como la presencia de una persona deja rastros y permanece en la memoria, los tótems conservan las marcas de su propia construcción. Lo que comenzó como una solución provisoria terminó dándole identidad y significado a la propuesta final.
+
+## Bibliografía
+
+Adafruit. (s. f.). [Adafruit IO MQTT API](https://io.adafruit.com/api/docs/mqtt.html). *Adafruit IO Documentation*.  
+Adafruit. (s. f.). [Adafruit MQTT Library](https://github.com/adafruit/Adafruit_MQTT_Library). *GitHub*.  
+Arduino. (s. f.). [Fading a LED](https://www.arduino.cc/en/Tutorial/Fade). *Arduino Documentation*.  
+Arduino. (2025). [analogWrite()](https://docs.arduino.cc/language-reference/en/functions/analog-io/analogWrite/). *Arduino Documentation*.  
+Arduino. (2025). [millis()](https://docs.arduino.cc/language-reference/en/functions/time/millis/). *Arduino Documentation*.  
+Arduino. (2025). [pulseIn()](https://docs.arduino.cc/language-reference/en/functions/advanced-io/pulseIn/). *Arduino Documentation*.  
+Arduino. (2025). [pinMode()](https://docs.arduino.cc/language-reference/en/functions/digital-io/pinMode/). *Arduino Documentation*.  
+Arduino. (s. f.). [Arduino UNO R4 WiFi](https://docs.arduino.cc/hardware/uno-r4-wifi/). *Arduino Documentation*.  
+Igoe, T. (2011). [Making Things Talk: Using Sensors, Networks, and Arduino to See, Hear, and Feel Your World](https://www.oreilly.com/library/view/making-things-talk/9781449392437/). *Maker Media*.  
+Margolis, M., Jepson, B., & Weldin, N. R. (2020). [Arduino Cookbook](https://www.oreilly.com/library/view/arduino-cookbook-3rd/9781491903513/). *O’Reilly Media*.  
+Naylamp Mechatronics. (s. f.). [Tutorial de Arduino y sensor ultrasónico HC-SR04](https://naylampmechatronics.com/blog/10_tutorial-de-arduino-y-sensor-ultrasonico-hc-sr04.html). *Naylamp Mechatronics*.  
+Olikraus. (s. f.). [U8g2: Monochrome graphics library for embedded devices](https://github.com/olikraus/u8g2). *GitHub*.  
+Preece, J., Rogers, Y., & Sharp, H. (2019). [Interaction Design: Beyond Human-Computer Interaction](https://www.wiley.com/en-us/Interaction+Design%3A+Beyond+Human+Computer+Interaction%2C+5th+Edition-p-9781119547259). *Wiley*.  
+SparkFun. (s. f.). [HC-SR04 Ultrasonic Ranging Module Datasheet](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf). *SparkFun*.  
+Trabajos de Utilidad Pública [T.U.P.]. (2022). [Hechizos, por mientras para siempre](https://artishockrevista.com/2022/07/13/hechizos-por-mientras-para-siempre/). *Palabra Ilustrada*.  
+
