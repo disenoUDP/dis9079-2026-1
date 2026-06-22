@@ -1163,7 +1163,6 @@ Acá se muestra el cambio de BPM, demostrando que si cambiaba, pero se demoraba 
 
 ### DEMO EN VIDEO SS PISO 2 - SS PISO 3 
 
-https://drive.google.com/drive/folders/1xZwjEk1NwIj9lXhs58fxxq45FNyxC5TLrealizamos nuevamente las pruebas con la pantalla.
-
+https://drive.google.com/drive/folders/1xZwjEk1NwIj9lXhs58fxxq45FNyxC5TL
 # Gracias Aarón, Mateo y todos quienes hicieron esto posible <3
 
