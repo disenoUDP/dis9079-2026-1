@@ -123,7 +123,7 @@ while True:
 <img width="1600" height="1544" alt="WhatsApp Image 2026-06-22 at 11 05 44" src="https://github.com/user-attachments/assets/6296b9c9-cc42-4daf-8ab4-8fdaf618cffd" />
 
 
-# video 
+#### Video Raspberry Pi Pico 2w
 
 https://youtube.com/shorts/gFcf4EqzTzc?si=k5rP9XQtdY6noI2l
 
@@ -248,7 +248,7 @@ Protoboard|	Riel GND |	Pin GND del Arduino|
 *prueba en adafruit, sumando y restando personas*
 <img width="1912" height="855" alt="Captura de pantalla 2026-06-18 161901" src="https://github.com/user-attachments/assets/c0c32417-e97f-4fe3-9612-d75ae046a6aa" />
 
-# video
+#### Video Arduino UNO R4
 
 https://youtube.com/shorts/AJlLrTNiS2I?si=OBioyqRRyYEKV35q
 

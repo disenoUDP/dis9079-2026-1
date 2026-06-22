@@ -383,6 +383,12 @@ La respuesta final del Tótem 02 queda centrada únicamente en la pantalla OLED,
 | Revisión del feed | “Revisar que el feed utilizado por el Tótem 02 sea el mismo que el del Tótem 01, para asegurar que ambos dispositivos se comuniquen correctamente.” |
 | Versión final | “Construir una versión final del código del Tótem 02 sin servo, centrada únicamente en recibir mensajes desde Adafruit IO y mostrarlos en pantalla OLED.” |
 
+## Registro 
+
++ Demo de prueba funcionando: <https://youtube.com/shorts/HgHZLUtbaVY?feature=share>
++ Demo de prueba 02 <https://youtube.com/shorts/3fTnl5YWiGM?feature=share>
+
+
 ## Reflexión
 
 Los tótems responden a la decisión de quedarse. Nos recuerdan que acompañar a alguien no siempre requiere palabras ni grandes gestos, a veces basta con estar. Incluso cuando una persona ya no está, algo de su presencia permanece en la memoria, en el espacio y en quienes compartieron ese momento con ella.
