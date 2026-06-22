@@ -95,11 +95,6 @@ ls /Volumes/CIRCUITPY/lib/
 import code
 ```
 
-## criterios individuales examen 
-
-- Investigación textual sobre API.
-- Bitácoras junio: evaluación de 4 sesiones (25 mayo, 01 junio, 08 de junio, 15 junio).
-- Bitácoras junio (la misma nota que punto anterior).
 
 ## Investigación sobre API
 
@@ -326,6 +321,29 @@ while True:
             conectar_mqtt(mqtt_client)
 ```
 
+
+### Resumen del código entrada (para que se entienda mejor)
+
+INICIO
+    Configurar WiFi, MQTT, Sensor IR y Contador = 0
+    Conectar a WiFi y Servidor MQTT (Adafruit IO)
+
+    BUCLE PRINCIPAL:
+        INTENTAR:
+            Leer sensor IR
+            SI cambia de Reposo a Obstáculo (Persona pasando) ENTONCES
+                Incrementar Contador (si supera 16, vuelve a 0)
+                Publicar Contador en Adafruit IO vía MQTT
+                Esperar antirebote (0.2s)
+            FIN SI
+            Esperar 0.02s
+        
+        EXCEPCIÓN (Si cae la red):
+            Esperar 2s e intentar reconectar WiFi y MQTT
+FIN
+
+
+
 ### SALIDA - Anillo LED (código en Arduino) / código que recibe
 
 Recomendaciones:
@@ -492,6 +510,33 @@ void actualizarAnillo(int conteo) {
 }
 ```
 
+### Resumen del código de salida (para que se entienda mejor)
+
+INICIO
+    Configurar WiFi, MQTT y Anillo de 16 LEDs
+    Conectar a WiFi y Servidor MQTT (Adafruit IO)
+    Suscribirse al feed "lid-conteo"
+
+    BUCLE PRINCIPAL:
+        Mantener activa la sesión MQTT
+        
+        SI llega un mensaje nuevo de Adafruit IO ENTONCES
+            Leer el valor (Conteo)
+            Actualizar Anillo LED:
+                - Encender cantidad de LEDs igual al Conteo
+                - Si es de 1-5: Color Verde
+                - Si es de 6-10: Color Amarillo
+                - Si es de 11-16: Color Rojo
+                - Apagar el resto de los LEDs
+        FIN SI
+
+        CADA 5 SEGUNDOS:
+            SI se pierde la señal de WiFi o MQTT ENTONCES
+                Intentar reconectar y volver a suscribirse
+            FIN SI
+FIN
+
+
 ### Demostraciones en vivo (gif/foto)
 
 
@@ -502,13 +547,40 @@ void actualizarAnillo(int conteo) {
 <img width="576" height="1024" alt="digiprueba" src="https://github.com/user-attachments/assets/6bc2e232-1aa4-4880-9632-bc30a04dd6e3" />
 
 
+### Demostraciones en vivo de Peñalolén y Quilicura :)
 
-## Bibliografía (citar)
+Decidimos elevar el nivel de dificultad del proyecto probando la conexión inalámbrica a grandes distancias. La infraestructura se distribuyó geográficamente de esta forma:
 
-https://openweathermap.org/api
+EDIFICIO A → LID (Salvador Sanfuentes) → Peñalolén (casa sofi)
 
-https://www.ibm.com/es-es/think/topics/api
+EDIFICIO B → Rep180 (oficina Aarón) → Quilicura (casa vale)
 
-https://outvio.com/es/blog/que-es-una-api/
+Lo destacable es que la conexión remota funcionó perfectamente a pesar de los kilómetros de distancia. Además, el sistema demostró ser altamente adaptable, ya que para cambiarlo de lugar solo se requiere modificar la red Wi-Fi y contraseña en el código, sin perder la vinculación ni el flujo de datos hacia Adafruit IO.
 
-https://itsqmet.edu.ec/api/
+
+<img width="576" height="1024" alt="locura1" src="https://github.com/user-attachments/assets/3c4e01f6-ccc0-4fb0-a544-3f559d06d3bd" />
+
+
+## Bibliografía
+
+Instituto Superior Tecnológico Quito Metropolitano [ITSQMET]. (sf). ¿Qué es una API y para qué sirve? https://itsqmet.edu.ec/api/
+
+Outvio. (sf). ¿Qué es una API y cómo funciona en desarrollo y logística? https://outvio.com/es/blog/que-es-una-api/
+
+OpenWeatherMap. (sf). API meteorológica: Datos meteorológicos actuales y pronóstico. https://openweathermap.org/api
+
+Wikipedia. (2026, 21 de junio). API. https://en.wikipedia.org/wiki/API
+
+Reclutar. (sf). Historia y evolución de las API. https://recluit.com/historia-y-evolucion-de-las-api/
+
+Akamai. (sf). ¿Cómo funcionan las API? Conceptos básicos y seguridad. Recuperado el 21 de junio de 2026, de https://www.akamai.com/es/glossary/how-do-apis-work
+
+Afel Electrónica. (s.f.). Inicio: Componentes electrónicos y robótica en Chile. Recuperado el 21 de junio de 2026, de https://afel.cl/
+
+Adafruit Industries. (s.f.). Adafruit: Electronics, kits, and open-source hardware. Recuperado el 21 de junio de 2026, de https://www.adafruit.com/
+
+Arduino. (s.f.). Arduino: Open-source electronic prototyping platform. Recuperado el 21 de junio de 2026, de https://www.arduino.cc/
+
+MCI Electronics. (s.f.). MCI Electronics: Soluciones tecnológicas y componentes para ingeniería. Recuperado el 21 de junio de 2026, de https://mcielectronics.cl/
+
+Raspberry Pi Foundation. (s.f.). Raspberry Pi: Computing for everyone. Recuperado el 21 de junio de 2026, de https://www.raspberrypi.com/
