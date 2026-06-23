@@ -1149,6 +1149,8 @@ void actualizarAnillo(int conteo) {
 
 <img src="./imagenes/final4.jpeg" alt="foto" width="300"> <img src="./imagenes/final5.jpeg" alt="foto" width="300"> <img src="./imagenes/video8.gif" alt="foto" width="300">
 
+<img src="./imagenes/final6.jpeg" alt="foto" width="300"> <img src="./imagenes/video7.gif" alt="foto" width="300">
+
 | LID (casa sofi) | Rep180 (casa vale) |
 |-----------------|--------------------|
 | <img src="./imagenes/video3.gif" alt="video" width="400"> | <img src="./imagenes/video4.gif" alt="video" width="400"> |
@@ -1158,6 +1160,8 @@ void actualizarAnillo(int conteo) {
 <https://youtu.be/cWNfBj_alZY?si=6f3cac41AVroJFfL>
 
 <https://youtube.com/shorts/jm4P8DSYX4A?si=dVZS4DouvTOfm34j>
+
+<https://youtube.com/shorts/POW3fldnTCc?si=BgnZOfojfDPnSmCL>
 
 ---
 
