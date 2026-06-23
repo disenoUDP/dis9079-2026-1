@@ -18,7 +18,7 @@ solicitud de cierta forma, la otra sabe exactamente cómo responder. Hay reglas
 claras para ambos lados. Lo que más me llamó la atención al investigar esto es
 que las APIs están en absolutamente todos lados, cuando uno inicia sesión con Google en otra plataforma, cuando una app muestra el clima, cuando se paga con WebPay en una tienda online, en todos esos casos hay una API funcionando en el fondo.
 
-![Como funciona el API de inicio sesión de Goole, gráfico de la documentación de Google](./imagenes/api-google.jpeg)
+![Como funciona el API de inicio sesión de Goole, gráfico de la documentación de Google](./imagenes/google-api.jpeg)
 
 Desde el punto de vista del desarrollo, las APIs evitan tener que construir todo
 desde cero. Si necesito integrar un sistema de pagos o geolocalización, puedo

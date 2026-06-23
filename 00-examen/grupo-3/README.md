@@ -163,6 +163,13 @@ LED 5mm
 
 <img src="./imagenes/pedido-componentes1.jpeg" alt="install" width="500">
 
+
+<img src="./imagenes/lucy-lu-bjork.jpeg" alt="install" width="500">
+
+
+<img src="./imagenes/nico-cris-amigos.jpeg" alt="install" width="500">
+
+
 ## Prompts creados para claude AI
 
 Luego de crear nuestro pseudocódigo, decidir los componentes y elegir la API, creamos los siguientes prompts para pedirle ayuda a Claude AI:
@@ -1457,6 +1464,14 @@ Cuando íbamos a medir el voltaje con el multímetro, nos dimos cuenta de que en
 
 Como no sabíamos cómo hacerlo, pedimos ayuda a nuestros compañeros que se encontraban dentro del LID y nos enseñaron que era con la opción de _Voltaje Contínuo_. Cuando logramos identificar cuál es el que manda (el que recibe 5V) y cuál es el que sigue, soldamos el cable, volvimos a intentar con el código y no pasó nada, razón por la cual decidimos abandonar la idea de poder controlar el humidificador con el Arduino y preferimos dejar que el usuario interactúe directamente con el botón de humidificador para que visualicen la bruma.
 
+La verdad es que cómo somos tercos seguimos toda la tarde hasta como las 21:00 hrs en el LID intentando con el relé hasta que en honor al tiempo y a una charla motivadora que nos dió Aaron decidimos desisitir de usarlo ya que con todo lo que habiamos logrado era suficiente.
+
+<img src="./imagenes/aaron-nos-alimenta.jpeg" alt="install" width="500">
+
+<img src="./imagenes/dulcecitos-arabes.jpeg" alt="install" width="500">
+
+
+
 ### Carcasa 
 
 Como ya habíamos abandonado todos nuestros sueños en honor al tiempo, decidimos quedarnos con todas las conexiones que ya teníamos y los últimos códigos que habíamos probado para ahora seguir con la carcasa, en donde nuestra compañera Débora Soto sugirió las siguientes ideas: 
@@ -1514,6 +1529,10 @@ Luego la creación del maguito, su ropa se hizo con con paño lenci color rojo c
 | Pack 40 cables dupont | $2.735 | 1 | <https://altronics.cl/jumper-dupont-20cm-mm?search=cables%20dupont> |
 | Módulo RGB led de 8 bits 5050 | $1.990 | 1 | <https://www.mechatronicstore.cl/modulo-rgb-led-de-8-bits-5050/> |
 | Interruptor Switch 2 Pines ON-OFF Corto | $570 | 1 | <https://www.katode.cl/switches/1339-interruptor-switch-2-pines-on-off-corto.html> |
+
+
+
+
 
 # Bibliografía
 
