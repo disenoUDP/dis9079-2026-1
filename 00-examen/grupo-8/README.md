@@ -158,7 +158,15 @@ Primer problema, necesitábamos hacer que el Arduino se conectara al hotspot de 
 
 Posteriormente realizamos la conexión de cableado y botones (resistencia a GND, botón a 5 V)
 
-Segundo problema, el contador se actualiza si se conecta o desconecta el cable manualmente, pero no responde al presionar el botón físico. Al mover el Arduino, los valores fluctúan por sí solos (señal "flotante"), lo que indica que el circuito de pull-down no está cerrando correctamente hacia GND, aunque se revisó la disposición del circuito (A3 conectado a D2, B3 con una resistencia de 10 kΩ, C3 y E3 con las patitas del botón, y A8 conectado al riel positivo) y parecía estar correcta si embargo no era posible controlar el envio de datos, por lo que buscamos otras opciones para los botones y al buscar otras opciones nos quedamos esta opcion que no se necesita necesita resistencias.
+Segundo problema, el contador se actualiza si se conecta o desconecta el cable manualmente, pero no responde al presionar el botón físico. Al mover el Arduino, los valores fluctúan por sí solos (señal "flotante"), lo que indica que el circuito de pull-down no está cerrando correctamente hacia GND, aunque se revisó la disposición del circuito (A3 conectado a D2, B3 con una resistencia de 10 kΩ, C3 y E3 con las patitas del botón, y A8 conectado al riel positivo) y parecía estar correcta si embargo no era posible controlar el envio de datos, por lo que buscamos otras opciones para los botones y al buscar otras opciones nos quedamos con esta opción que no se necesita necesitan resistencias en la cual el boton blanco es el que aumenta y el azul que disminuye. 
+
+|Componente | Pin del componente	| Conecta a |
+|-----------|---------------------|-----------|
+|Botón SUMA |	Pin 1	| Pin D2 del Arduino (cable verde)|
+Botón SUMA |	Pin 2	| Riel GND de la protoboard (cable azul)|
+Botón RESTA	|Pin 1	| Pin D3 del Arduino (cable rojo)|
+Botón RESTA	|Pin 2 |	Riel GND de la protoboard (cable azul)|
+Protoboard|	Riel GND |	Pin GND del Arduino (cable negro)|
 
 ```
 #include <WiFiS3.h>
@@ -232,13 +240,6 @@ void loop() {
 ```
 
 
-|Componente | Pin del componente	| Conecta a |
-|-----------|---------------------|-----------|
-|Botón SUMA |	Pin 1	| Pin D2 del Arduino|
-Botón SUMA |	Pin 2	| Riel GND de la protoboard|
-Botón RESTA	|Pin 1	| Pin D3 del Arduino|
-Botón RESTA	|Pin 2 |	Riel GND de la protoboard|
-Protoboard|	Riel GND |	Pin GND del Arduino|
 
 
 *foto del proyecto, especifico ARDUINO+BOTONES*
