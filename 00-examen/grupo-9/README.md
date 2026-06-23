@@ -722,7 +722,7 @@ FIN
 
 ## Diagrama de Flujo
 
-![Diagrama de Flujo](./imagenes/diagrama.png)
+![Diagrama de Flujo](./imagenes/diagrama_final.png)
 
 ## BOM (Bill of Materials)
 
