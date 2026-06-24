@@ -15,13 +15,13 @@ Lunes 22 de junio 2026
 
 ### _"¿Cómo presenciamos el "habitar" de los espacios a través del sonido presente en los edificios de la FAAD?"_
 
-Nos interesa observar en vivo las huellas sonoras (conversaciones, pasos, risas, silencios, etc) que dejan las personas al ocupar o transitar un lugar (espacio físico). Esta "identidad acústica" cambiante nos habla de cómo se vive y se comparte un espacio . Estos registros en tiempo real son la materia prima para la producción de visualizaciones experimentales producidas en Touchdesigner,
+Nos interesa observar en vivo las huellas sonoras (conversaciones, pasos, risas, silencios, etc.) que dejan las personas al ocupar o transitar un lugar (espacio físico). Esta "identidad acústica" cambiante nos habla de cómo se vive y se comparte un espacio. Estos registros en tiempo real son la materia prima para la producción de visualizaciones experimentales producidas en TouchDesigner.
 
-La dimensión material del proyecto abarca el uso de 2 placas rapsberry pi pico 2W, cada una con un sensor analógico de sonido "MAX9812". Estos módulos reúnen información del ruido ambiente y la sube en 2 feeds en Adafruit IO. Cada uno de estos se encuentran ubicados en el mismo edificio, y distintos sectores de la "Facultad de Artes, Arquitectura y Diseño" (Salvador Sanfuentes 2221), en el que un micrófono se ubicará en el "Pañol" y el otro en el "Laboratorio de interacción digital (LID)". Por otra parte, se requiere un computador con Touchdesigner, sowftware que se conecta a los feeds de Adafruit y recibe dichos datos para posteriormente procesarlos. 
+La dimensión material del proyecto abarca el uso de 2 placas Raspberry Pi Pico 2W, cada una con un sensor analógico de sonido MAX9812. Estos módulos reúnen información del ruido ambiente y la suben a 2 feeds en Adafruit IO. Cada uno se encuentra ubicado en el mismo edificio, pero en distintos sectores de la Facultad de Artes, Arquitectura y Diseño (Salvador Sanfuentes 2221): un micrófono en el Pañol y el otro en el Laboratorio de Interacción Digital (LID). Por otra parte, se requiere un computador con TouchDesigner, software que se conecta a los feeds de Adafruit y recibe dichos datos para posteriormente procesarlos.
 
 La visualización generativa en tiempo real posee variables como el movimiento, las formas y los colores que responden a la actividad sonora de cada lugar.
 
-De esta manera, aquello que normalmente percibimos solo con el oído puede ser manifestado visualmente frente a nosotros. Trazando una dimensión de la cotidianeidad que suele pasar desapercibida: la manera en que habitamos los espacios y cómo nuestra presencia los transforma a través de la relación entre sonido e imagen, la visualización funcionará como un retrato vivo de ambos lugares.
+De esta manera, aquello que normalmente percibimos solo con el oído puede ser manifestado visualmente frente a nosotros, trazando una dimensión de la cotidianeidad que suele pasar desapercibida: la manera en que habitamos los espacios y cómo nuestra presencia los transforma. A través de la relación entre sonido e imagen, la visualización funcionará como un retrato vivo de ambos lugares.
 
 ## Pseudocódigo Raspberry (input)
 
@@ -31,9 +31,9 @@ De esta manera, aquello que normalmente percibimos solo con el oído puede ser m
 3. Leer datos del micrófono
 4. Calcular nivel de sonido
 5. Convertir nivel de sonido a porcentaje (0% a 100%)
-6. Enviar porcentaje al feed MQTT en adafruit
+6. Enviar porcentaje al feed MQTT en Adafruit
 
-## Pseudocódigo Touchdesigner (output)
+## Pseudocódigo TouchDesigner (output)
 
 1. Conectarse a Adafruit IO mediante MQTT
 2. Suscribirse a los feeds de ambos lugares
@@ -45,38 +45,39 @@ De esta manera, aquello que normalmente percibimos solo con el oído puede ser m
 
 ## Primeros acercamientos
 
-En un inicio se utilizaron otros sensores de audio "ky38" y vs "ky37" presentes en el laboratorio. Tras haber puesto a prueba cáda mósul nos enteramos que no captaban el sonido como esperabamos, puesto que estos no estaban preparados para detectar de forma continua los ruidos ambientes (sólo se utilizan para captar info por un corto periodo de tiempo) además de necesitar que el sonido estuviera muy cerca para poder detectar, por lo que no funcionaba como esperábamos. Todo el resto del proceso se encuentra documentado.
+En un inicio se utilizaron otros sensores de audio KY-038 y KY-037 presentes en el laboratorio. Tras haber puesto a prueba cada módulo, nos enteramos de que no captaban el sonido como esperábamos, puesto que no estaban preparados para detectar de forma continua los ruidos ambientes (solo se utilizan para captar información durante un periodo corto de tiempo), además de requerir que el sonido estuviera muy cerca para poder captarlo. Por estas razones, no funcionaban como necesitábamos. Todo el resto del proceso se encuentra documentado.
 
-## Input: Micrófono 
+## Input: Micrófono
 
 ### Qué hace
 
-Cada Pico tiene un micrófono MAX9812 conectado al pin GP26. El código mide el sonido de forma continua tomando ráfagas de 150 lecturas seguidas, y calcula la diferencia entre la lectura más alta y la más baja de esa ráfaga, eso se llama amplitud, y refleja qué tan fuerte fue el sonido en ese instante. Ese valor se convierte a un porcentaje de 0 a 100.
- 
-Como Adafruit IO limita el envío de datos a uno cada un segundo, el código no manda cada medición: mide todo el tiempo sin parar, guarda el nivel más alto detectado durante ese segundo, y cuando llega el momento de publicar manda ese máximo. Así, un sonido breve como un aplauso queda capturado aunque haya pasado entre dos envíos.
- 
-Cada Pico publica en su propio feed de Adafruit IO (`grupo02-rep` o `grupo02-ss`) y se reconecta sola si el wifi o la conexión MQTT se caen.
+Cada Pico tiene un micrófono MAX9812 conectado al pin GP26. El código mide el sonido de forma continua tomando ráfagas de 150 lecturas seguidas y calcula la diferencia entre la lectura más alta y la más baja de esa ráfaga; eso se llama amplitud, y refleja qué tan fuerte fue el sonido en ese instante. Ese valor se convierte a un porcentaje de 0 a 100.
+
+Como Adafruit IO limita el envío de datos a uno por segundo, el código no manda cada medición: mide todo el tiempo sin parar, guarda el nivel más alto detectado durante ese segundo, y cuando llega el momento de publicar, manda ese máximo. Así, un sonido breve como un aplauso queda capturado aunque haya ocurrido entre dos envíos.
+
+Cada Pico publica en su propio feed de Adafruit IO (`grupo02-rep` o `grupo02-ss`) y se reconecta por sí sola si el WiFi o la conexión MQTT se caen.
 
 ### El arreglo y el bucle
- 
+
 ```python
 PINES_SENSORES = [board.GP26]
 sensores = [analogio.AnalogIn(pin) for pin in PINES_SENSORES]
- 
+
 for i in range(len(sensores)):      # recorre cada sensor del arreglo
    for j in range(NUM_MUESTRAS):   # toma 150 lecturas por sensor
        v = sensores[i].value
 ```
- 
-El arreglo `sensores` se construye a partir de `PINES_SENSORES`. El bucle `for i` recorre todos los sensores declarados, si se agrega un segundo micrófono, solo se suma el pin a la lista y el bucle lo incluye automáticamente
+
+El arreglo `sensores` se construye a partir de `PINES_SENSORES`. El bucle `for i` recorre todos los sensores declarados; si se agrega un segundo micrófono, solo se suma el pin a la lista y el bucle lo incluye automáticamente.
+
 ---
 
-### Código Rasberry pi pico 2W
+### Código Raspberry Pi Pico 2W
 
 ```cpp
 # ============================================================
 # SENSOR DE SONIDO - Raspberry Pi Pico 2W + 2x MAX9812
-# Examen interacciones inalambricas
+# Examen interacciones inalámbricas
 # ============================================================
 # CONEXIONES MAX9812 A:
 #   VCC -> Pin 36 (3V3)
@@ -306,14 +307,14 @@ while True:
         time.sleep(2)
 ```
 
-## Output: Touchdesigner
+## Output: TouchDesigner
 
 ### Qué hace
 
 Recibe los datos que llegan desde Adafruit IO (los que mandan las dos Picos) y los deja disponibles como valores que se pueden usar dentro de la red de TouchDesigner para controlar las visuales.
 
 El código vive en un `Callbacks DAT` conectado a un `MQTT Client DAT`. Usa un diccionario que relaciona cada feed con su `Constant CHOP` correspondiente:
- 
+
 ```python
 FEEDS = {
    'grupo02-rep': 'constant_rep',
@@ -321,13 +322,13 @@ FEEDS = {
 }
 ```
 
-Al conectarse, un bucle recorre ese diccionario y se suscribe a los dos feeds automáticamente. Cada vez que llega un dato nuevo, otro bucle recorre el diccionario para identificar de qué edificio viene y actualizar el `Constant CHOP` que corresponde.
- 
+Al conectarse, un bucle recorre ese diccionario y se suscribe a los dos feeds automáticamente. Cada vez que llega un dato nuevo, otro bucle recorre el diccionario para identificar de qué edificio proviene y actualizar el `Constant CHOP` correspondiente.
+
 Los `Constant CHOP` guardan el último valor recibido de cada Pico y lo mantienen disponible en todo momento, aunque los datos no lleguen al mismo tiempo desde los dos edificios. Desde ahí se conectan directamente a los parámetros de las visuales.
 
 ---
 
-## Codigo Mqtt client / touch designer
+## Código MQTT Client / TouchDesigner
 
 ```python
 # mqttclient1_callbacks
@@ -377,7 +378,7 @@ def onUnsubscribe(dat, *args):
 
 ### Video en el mismo edificio (distintos espacios)
 
-Este video fué grabado con uno de los micrófonos en el Laboratorio de interacción digital, otro en pañol y el output en la sala 102 de Salvador Sanfuentes 2221, en el proyector de la sala. Todo en el mismo edificio.
+Este video fue grabado con uno de los micrófonos en el Laboratorio de Interacción Digital, otro en el Pañol, y el output en la sala 102 de Salvador Sanfuentes 2221, en el proyector de la sala. Todo en el mismo edificio.
 
 [![Ver video](https://img.youtube.com/vi/wxTEaNKYboA/maxresdefault.jpg)](https://youtube.com/shorts/wxTEaNKYboA)
 
@@ -387,17 +388,16 @@ Este video fué grabado con uno de los micrófonos en el Laboratorio de interacc
 
 ## Bill of materials (listado de materiales)
 
-| Componentes         | Tipo  | Cantidad | Precio  | Enlace            |
-| ------------------- | ----- | -------- | ------- | ----------------  |
-| Raspberry Pi Pico 2 W | Placa de desarrollo | 2   | $14.990 | <https://mcielectronics.cl/shop/product/74358//> |
-| Mini Protoboard 400 Puntos | Placa prototipado | 2  | $1.500 | <https://afel.cl/products/mini-protoboard-400-puntos> |
+| Componentes | Tipo | Cantidad | Precio | Enlace |
+| ------------------- | ----- | -------- | ------- | ---------------- |
+| Raspberry Pi Pico 2W | Placa de desarrollo | 2 | $14.990 | <https://mcielectronics.cl/shop/product/74358//> |
+| Mini Protoboard 400 Puntos | Placa de prototipado | 2 | $1.500 | <https://afel.cl/products/mini-protoboard-400-puntos> |
 | Cable Dupont Macho Macho 10cm | Cable | Pack 40 | $2.590 | <https://mcielectronics.cl/shop/product/cable-dupont-macho-macho-20cm-pack-40-unidades/> |
 | Sensor Analógico Sonido/Audio MAX9812 | Sensor | 1 | $3.790 | <https://hubot.cl/producto/sensor-analogico-audio-max9812-sku-614/> |
 
 ---
 
 ## Mapa de flujo
-
 
 ```mermaid
 ---
@@ -430,15 +430,15 @@ flowchart TB
 
 Aportes, información y exploraciones personales compartidas con el equipo.
 
-- [Camila Parada.md](./persona-01.md) 
+- [Camila Parada.md](./persona-01.md)
 
 - [Vania Paredes.md](./persona-02.md)
 
 ## Links a conversaciones con la IA durante el proceso de trabajo
 
-* <https://claude.ai/share/908f5fc8-04b0-407a-ad07-761d9c147662>
-* <https://chatgpt.com/share/6a270e2e-6ed0-83e9-9219-f21ec0dc3f2f>
-* <https://claude.ai/chat/7cd64083-1322-4b08-8168-85c80d8ea3de>
+* [pdf Conversación Vania](./ia/claude-vania.pdf) <https://claude.ai/share/76b89e2e-c428-4158-8f2e-ccad7250c132> 
+* Conversación Mateo: <https://chatgpt.com/share/6a270e2e-6ed0-83e9-9219-f21ec0dc3f2f>
+* [pdf Conversación Cami](./ia/claude-cami.pdf) <https://claude.ai/chat/7cd64083-1322-4b08-8168-85c80d8ea3de>
 
 ## Bibliografía
 
@@ -448,5 +448,4 @@ Aportes, información y exploraciones personales compartidas con el equipo.
 * <https://derivative.ca/UserGuide/OSC>
 * <https://mct-master.github.io/networked-music/2024/03/17/thomaseo-intro_to_OSC.html>
 * <https://ccrma.stanford.edu/groups/osc/index.html>
-*  <https://arduinomodules.info/ky-037-high-sensitivity-sound-detection-module/>
-
+* <https://arduinomodules.info/ky-037-high-sensitivity-sound-detection-module/>
