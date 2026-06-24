@@ -256,4 +256,4 @@ Representa la idea del mini totém.
 
 <img width="1158" height="912" alt="referencia" src="https://github.com/user-attachments/assets/5ad78df5-9a85-4614-a2ba-2cc527fa1239" />
 
-
+Imagen hecha con Inteligencia artificial Gemini
