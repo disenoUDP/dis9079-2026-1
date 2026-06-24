@@ -436,9 +436,9 @@ Aportes, información y exploraciones personales compartidas con el equipo.
 
 ## Links a conversaciones con la IA durante el proceso de trabajo
 
-* [pdf Conversación Vania](./ia/claude-vania.pdf) <https://claude.ai/share/76b89e2e-c428-4158-8f2e-ccad7250c132> 
+* [pdf Conversación Vania](./ia/claude-vania.pdf) // Link conversación: <https://claude.ai/share/76b89e2e-c428-4158-8f2e-ccad7250c132> 
 * Conversación Mateo: <https://chatgpt.com/share/6a270e2e-6ed0-83e9-9219-f21ec0dc3f2f>
-* [pdf Conversación Cami](./ia/claude-cami.pdf) <https://claude.ai/chat/7cd64083-1322-4b08-8168-85c80d8ea3de>
+* [pdf Conversación Cami](./ia/claude-cami.pdf) // Link conversación: <https://claude.ai/chat/7cd64083-1322-4b08-8168-85c80d8ea3de>
 
 ## Bibliografía
 
