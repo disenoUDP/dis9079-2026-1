@@ -2,9 +2,6 @@
 
 lunes 15 junio 2026
 
-Aquí va, más directo y sin tanto protocolo:
-
-```markdown
 # Semáforo de Ocupación — Sala Alpha
 UDP · 2025
 
@@ -223,4 +220,3 @@ Los dos edificios se comunican solo por internet, sin cables físicos entre ello
 ### Pendiente
 - Probar código completo de la Pico con Adafruit IO en vivo
 - Prueba de integración end-to-end: botón en Arduino → semáforo en Pico
-```
