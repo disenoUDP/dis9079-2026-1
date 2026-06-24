@@ -250,7 +250,7 @@ Poner datos al azar y cuando funcione cambiarlo los datos reales y rangos buscad
 
 No alcanzamos, pero fui Afel a comprar lo que nos faltaba -> Anillo led y Sensor infrarrojo 
 
-# Dibujos (imagen de referencia)
+# Dibujos (imagen de referencia con IA)
 
 Representa la idea del mini totém.
 
