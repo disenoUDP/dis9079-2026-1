@@ -4,8 +4,6 @@ lunes 15 junio 2026
 
 # Semáforo de Ocupación — Sala Alpha
 
----
-
 ## ¿Qué hace?
 
 Dos botones en un Arduino cuentan personas que entran/salen de la Sala Alpha. Según el contador, una Raspberry Pi Pico 2 W prende un LED de semáforo. Todo se comunica por WiFi usando Adafruit IO (MQTT).
