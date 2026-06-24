@@ -3,7 +3,6 @@
 lunes 15 junio 2026
 
 # Semáforo de Ocupación — Sala Alpha
-UDP · 2025
 
 ---
 
