@@ -20,4 +20,4 @@ Ya con nuestra placa lista sólo la configuré nuevamente, le agregué las libre
 
 ### Foto placa
 
-<img width="1280" height="1009" alt="placa_acu-visual" src="https://github.com/user-attachments/assets/d5a5319e-a6d4-4c79-9669-9f5feaef1d85" />
+<img src="./imagenes/placa_acu-visual.jpeg" />
