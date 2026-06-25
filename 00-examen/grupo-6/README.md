@@ -109,7 +109,7 @@ BUCLE PRINCIPAL:
     conteo ← conteo + 1
     
     SI conteo > umbral:
-      conteo ← umbral                    // tope máximo: 16 leds
+      conteo ← umbral                    // tope máximo: 16 LEDs
 
     PUBLICAR conteo → Adafruit IO (feed: "lid-conteo")
     esperar 500ms                        // evitar lecturas duplicadas
@@ -124,7 +124,7 @@ VARIABLES:
 INICIALIZAR:
   conectar WiFi (SSID, PASSWORD)
   conectar Adafruit IO (usuario, clave, feed: "lid-conteo")
-  configurar anillo LED WS2812 (16 leds)
+  configurar anillo LED WS2812 (16 LEDs)
   apagar todos los LEDs
 
 BUCLE PRINCIPAL:
@@ -254,7 +254,7 @@ ls /Volumes/
 cp pico_sensor_entrada.py /Volumes/CIRCUITPY/code.py
 ```
 
-8. Para instalar la librería adafruit_minimqtt, desde la terminal
+8. Para instalar la biblioteca adafruit_minimqtt, desde la terminal
 
 ```bash
 bashcp -r adafruit_minimqtt /Volumes/CIRCUITPY/lib/
@@ -311,7 +311,7 @@ import code
 Primero, probamos con este código que nos generó claude, para ver si el anillo led funcionaba. Y si, funcionaba, no tenía ningún led quemado :D
 
 ```cpp
-// Librería necesaria (Library Manager):
+// Biblioteca necesaria (Biblioteca Manager):
 // Adafruit NeoPixel
 
 #include <Adafruit_NeoPixel.h>
@@ -486,8 +486,8 @@ void loop() {
     Serial.print("Conteo recibido: ");
     Serial.println(conteo);
 
-// Si se llena el led y pasa una persona mas
-// el led vuelve a cero
+// Si se llena el LED y pasa una persona mas
+// el LED vuelve a cero
     actualizarAnillo(conteo);
   }
 
@@ -545,7 +545,7 @@ Este código a continuación, está bien, pero los LEDS no se prenden hasta que 
 // Lunes 22 de junio
 // Recibe el conteo desde Adafruit IO (MQTT) y lo representa
 // encendiendo el Anillo LED RGB WS2812 de 16 LEDs ("salida").
-// Librerias necesarias:
+// Bibliotecas necesarias:
 //  - WiFiS3 (incluida con el core de UNO R4)
 //  - ArduinoMqttClient
 //  - Adafruit NeoPixel
@@ -670,7 +670,7 @@ void loop() {
 //   8  personas  -> 8  LEDs  (medio lleno)
 //   16 personas  -> 16 LEDs  (lleno)
 
-int conteoALeds(int conteo) {
+int conteoALEDs(int conteo) {
   conteo = constrain(conteo, 0, 16);
 
   if (conteo <= 8) {
@@ -840,10 +840,10 @@ while True:
 **Recomendaciones:**
 
 - No subir tu clave Adafruit a github, ni a ninguna parte!!
-- Utilizar un wifi solo para la Raspberry
-- No pasar tan lejos del sensor
+- Utilizar un wifi solo para la Raspberry.
+- No pasar tan lejos del sensor.
 - Pasar de a poquitos y lento, porque el Sensor Infrarojo le cuesta un poquito, pero se puede!!
-- No te estreses con la Raspberry, a veces no se conecta a WIFI, pero solo reinicienlo y funcionará
+- No te estreses con la Raspberry, a veces no se conecta a WIFI, pero solo reinicienlo y funcionará.
 
 ```cpp
 # PUENTE DIGITAL - Grupo 6 - Examen
@@ -977,16 +977,16 @@ while True:
 
 **Recomendaciones:**
 
-- Tratar con cariño y calma el Arduino...
+- Tratar con cariño y calma el Arduino.
 - Se demora en leer los valores de Adafruit, así que no se estresen!!
-- Le pueden cambiar los colores
+- Le pueden cambiar los colores.
 
 ```cpp
 // PUENTE DIGITAL — Grupo 6 - Examen
 // Lunes 22 de junio
 // Recibe el conteo desde Adafruit IO (MQTT) y lo representa
 // encendiendo el Anillo LED RGB WS2812 de 16 LEDs ("salida").
-// Librerias necesarias:
+// Bibliotecas necesarias:
 //  - WiFiS3 (incluida con el core de UNO R4)
 //  - ArduinoMqttClient
 //  - Adafruit NeoPixel
