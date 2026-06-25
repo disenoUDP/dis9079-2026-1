@@ -14,7 +14,7 @@ Lunes 22 de junio.
 
 `PUENTE DIGITAL:`
 
-Nuestro proyecto parte desde la pregunta ¿Cuántos habitan los lugares de trabajo?, nos interesa capturar el conteo de personas que entran al lugar de trabajo en la Universidad; y visualizarlo en el otro edificio. En este caso, ver cuanta gente entra al LID en Salvador Sanfuentes y visualizarlo en Rep180. Dos edificios, dos espacios de trabajo que coexisten sin saber cuánta gente entra en cada una. En la puerta del LID se instala un Sensor Infrarrojo Evasor de Obstáculos conectado a una Raspberry PI Pico 2W, que mide el flujo de gente que entra a este espacio; esto lo denominaremos entrada. Esta información se envía de manera inalámbrica a través de wifi a una base de datos (API o Adafruit) que lleva el conteo de la gente. Finalmente, en Rep180, el sistema responde encendiendo y completando cada píxel de un Anillo LED RGB WS2812 de 16 leds conectada al Arduino UNO R4 wifi; de esta manera, las personas que están en Rep180 pueden ver mediante una señal visual qué tan rápido se va llenando el LID, esto lo denominaremos salida. El mensaje que queremos transmitir es hacer visible el ritmo con que los espacios se llenan, los momentos en que el LID se desborda; es una fluctuación constante que todos vivimos pero nadie registra.
+Nuestro proyecto parte desde la pregunta ¿Cuántos habitan los lugares de trabajo?, nos interesa capturar el conteo de personas que entran al lugar de trabajo en la Universidad; y visualizarlo en el otro edificio. En este caso, ver cuanta gente entra al LID en Salvador Sanfuentes y visualizarlo en Rep180. Dos edificios, dos espacios de trabajo que coexisten sin saber cuánta gente entra en cada una. En la puerta del LID se instala un Sensor Infrarrojo Evasor de Obstáculos conectado a una Raspberry Pi Pico 2 W, que mide el flujo de gente que entra a este espacio; esto lo denominaremos entrada. Esta información se envía de manera inalámbrica a través de wifi a una base de datos (API o Adafruit) que lleva el conteo de la gente. Finalmente, en Rep180, el sistema responde encendiendo y completando cada píxel de un Anillo LED RGB WS2812 de 16 leds conectada al Arduino UNO R4 wifi; de esta manera, las personas que están en Rep180 pueden ver mediante una señal visual qué tan rápido se va llenando el LID, esto lo denominaremos salida. El mensaje que queremos transmitir es hacer visible el ritmo con que los espacios se llenan, los momentos en que el LID se desborda; es una fluctuación constante que todos vivimos pero nadie registra.
 
 | Entrada | Salida | Medio de visualización |
 |----|----|----|
@@ -28,7 +28,7 @@ Nuestro proyecto parte desde la pregunta ¿Cuántos habitan los lugares de traba
 ```mermaid
 flowchart LR
 
-    subgraph A["MÓDULO A — Arduino UNO R4 WiFi (LID)"]
+    subgraph A["MÓDULO A — Raspberry Pi Pico 2 W (LID)"]
         A1[Sensor Infrarrojo]
         A2[Detectar persona]
         A3[Esperar que el sensor quede libre]
@@ -87,7 +87,7 @@ flowchart LR
 ```bash
 PROYECTO: Puente Digital
 EDIFICIO A → LID (Salvador Sanfuentes)
-EDIFICIO B → Rep180 (oficina Aarón)
+EDIFICIO B → Rep180 (Oficina Aarón)
 
 // Raspberry Pi Pico 2 W - Sensor Infrarrojo (LID)
 
@@ -158,7 +158,7 @@ BUCLE PRINCIPAL:
 
 |Componente|Cantidad|Precio|Link|
 |---|---|---|---|
-|Raspberry Pi Pico 2W|1|$14.990|<https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers>|
+|Raspberry Pi Pico 2 W|1|$14.990|<https://raspberrypi.cl/products/raspberry-pi-pico-2-w-con-headers>|
 |Arduino UNO R4 WIFI|1|$38.990|<https://mcielectronics.cl/shop/product/arduino-uno-r4-minima>|
 |Anillo LED RGB WS2812 de 16 leds|1|$3.990|<https://afel.cl/products/anillo-led-rgb-neopixel-16-leds-ws2812?_pos=3&_sid=3a945a998&_ss=r>|
 |Sensor Infrarrojo Evasor de Obstáculos|1|$2.000|<https://afel.cl/products/sensor-infrarrojo-evasor-de-obstaculos?_pos=1&_sid=96b6bad10&_ss=r>|
@@ -188,9 +188,9 @@ Luego, el 15 de junio, comenzamos a armar nuestros códigos y definir bien las c
 
 ### Conexiones
 
-**Sensor IR → Raspberry Pi Pico 2W**
+**Sensor IR → Raspberry Pi Pico 2 W**
 
-|Pin del sensor|Pin de la Pico 2W|
+|Pin del sensor|Pin de la Pico 2 W|
 |---|---|
 |VCC|3.3V (pin 36)|
 |GND|GND (cualquier pin GND)|
@@ -204,7 +204,7 @@ Luego, el 15 de junio, comenzamos a armar nuestros códigos y definir bien las c
 |GND|GND|
 |DIN (dato)|Pin digital 6|
 
-### Colores rgb para el anillo
+### Colores rgb para el anillo LED
 
 - Magenta (255, 0, 255) <--
 - Rojo (255, 0, 0)
@@ -308,7 +308,7 @@ import code
 
 ### Códigos anteriores
 
-Primero, probamos con este código que nos generó claude, para ver si el anillo led funcionaba. Y si, funcionaba, no tenía ningún led quemado :D
+Primero, probamos con este código que nos generó Claude, para ver si el anillo LED funcionaba. Y si, funcionaba, no tenía ningún LED quemado :D
 
 ```cpp
 // Librería necesaria (Library Manager):
@@ -398,7 +398,7 @@ void actualizarAnillo(int conteo) {
 
 ### Arduino
 
-- Teníamos este código para el anillo led, donde Arduino se tardaba en leer los valores desde Adafruit IO.
+- Teníamos este código para el anillo LED, donde Arduino se tardaba en leer los valores desde Adafruit IO.
   - El problema es que `mqttClient.poll()` en el loop() compite con otras tareas (reconexión WiFi, actualización del anillo, etc.), y MQTT sobre TCP tiene latencia natural. Entonces, lo que hicimos fue: reducir `keep alive`así evitamos "bloqueos" en el loop.
   - El problema principal está en las líneas 95-107: cada vuelta del loop() revisa WiFi.status() y mqttClient.connected(), lo cual añade overhead constante incluso cuando todo está bien. Es decir, vuelve a conectar cada vez que se manda un dato.
 
@@ -538,7 +538,7 @@ void actualizarAnillo(int conteo) {
 
 - **Debemos tener en cuenta que:** la verdadera limitación es Adafruit IO, no el código. La cuenta gratuita de Adafruit IO tiene un límite de 30 mensajes por minuto (1 cada 2 segundos aprox). Si el sensor cuenta personas más rápido que eso, los mensajes se encolan o se descartan del lado del servidor, sin importar qué tan optimizado esté el Arduino.
 
-Este código a continuación, está bien, pero los LEDS no se prenden hasta que pasen 4 personas. Cuándo pasan estas 4 personas, se prenden los 4 leds.
+Este código a continuación, está bien, pero los LEDS no se prenden hasta que pasen 4 personas. Cuándo pasan estas 4 personas, se prenden los 4 LEDS.
 
 ```cpp
 // PUENTE DIGITAL — Grupo 6 - Examen
@@ -713,7 +713,7 @@ void actualizarAnillo(int conteo) {
 
 ### Raspberry
 
-- Por el lado de la Raspberry, la conexión fue demasiado inestable cuando la probamos en clases. Nos demoramos mucho en conectar al wifi y que mandara los datos a adafruit.
+- Por el lado de la Raspberry, la conexión fue demasiado inestable cuando la probamos en clases. Nos demoramos mucho en conectar al wifi y que mandara los datos a Adafruit IO.
 - El puerto 8883 (SSL/MQTT) estaba siendo bloqueado por la red de la universidad, por eso salía el mensaje:
 
 ```bash
@@ -728,7 +728,7 @@ Exception: ('Unable to receive 1 bytes within 10 seconds.', None)
 
 ```cpp
 # PUENTE DIGITAL — Grupo 6
-# Raspberry Pi Pico 2W (CircuitPython)
+# Raspberry Pi Pico 2 W (CircuitPython)
 # Lee el Sensor Infrarrojo Evasor de Obstáculos y publica el
 # conteo de personas ("entrada") a Adafruit IO via MQTT.
 # y Arduino lee los valores para luego encender el Anillo led
@@ -848,7 +848,7 @@ while True:
 ```cpp
 # PUENTE DIGITAL - Grupo 6 - Examen
 # Lunes 22 de junio
-# Raspberry Pi Pico 2W (CircuitPython)
+# Raspberry Pi Pico 2 W (CircuitPython)
 # Lee el Sensor Infrarrojo Evasor de Obstaculos y publica el
 # conteo de personas ("entrada") a Adafruit IO via MQTT.
 
@@ -1151,7 +1151,7 @@ void actualizarAnillo(int conteo) {
 
 <img src="./imagenes/final6.jpeg" alt="foto" width="300"> <img src="./imagenes/video7.gif" alt="foto" width="300">
 
-| LID (casa sofi) | Rep180 (casa vale) |
+| LID (simulación casa sofi) | Rep180 (simulación casa vale) |
 |-----------------|--------------------|
 | <img src="./imagenes/video3.gif" alt="video" width="400"> | <img src="./imagenes/video4.gif" alt="video" width="400"> |
 
