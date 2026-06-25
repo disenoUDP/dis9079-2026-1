@@ -1,4 +1,4 @@
-# ⋆⭒˚.⋆ └[∵┌] Clase 12: Inasistencia... con avances [┐∵]┘ ⋆.˚⭒⋆
+# ⋆⭒˚.⋆ └[∵┌] Clase 13: Inasistencia... con avances [┐∵]┘ ⋆.˚⭒⋆
 
 Lunes 08 de junio 2026
 
