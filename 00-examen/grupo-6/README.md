@@ -223,7 +223,7 @@ Luego, el 15 de junio, comenzamos a armar nuestros códigos y definir bien las c
 
 ### Pasos para conectar todo :)
 
-1. Conectar el anillo led al arduino
+1. Conectar el anillo LED al arduino
 
 |Pin del anillo|Pin del Arduino|
 |---|---|
@@ -1150,6 +1150,18 @@ void actualizarAnillo(int conteo) {
 <img src="./imagenes/final4.jpeg" alt="foto" width="300"> <img src="./imagenes/final5.jpeg" alt="foto" width="300"> <img src="./imagenes/video8.gif" alt="foto" width="300">
 
 <img src="./imagenes/final6.jpeg" alt="foto" width="300"> <img src="./imagenes/video7.gif" alt="foto" width="300">
+
+
+## Demostraciones en vivo de Peñalolén y Quilicura :)
+
+Decidimos elevar el nivel de dificultad del proyecto probando la conexión inalámbrica a grandes distancias. La infraestructura se distribuyó geográficamente de esta forma:
+
+EDIFICIO A → LID (Salvador Sanfuentes) → Peñalolén (casa sofi)
+
+EDIFICIO B → Rep180 (oficina Aarón) → Quilicura (casa vale)
+
+Lo destacable es que la conexión remota funcionó perfectamente a pesar de los kilómetros de distancia. Además, el sistema demostró ser altamente adaptable, ya que para cambiarlo de lugar solo se requiere modificar la red Wi-Fi y contraseña en el código, sin perder la vinculación ni el flujo de datos hacia Adafruit IO.
+
 
 | LID (casa sofi) | Rep180 (casa vale) |
 |-----------------|--------------------|
