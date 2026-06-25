@@ -14,7 +14,7 @@ Examen-grupo 6
 
 # Conexiones finales -> Puente digital 
 
-1. Conectar el anillo led al arduino
+1. Conectar el anillo LED al arduino
 
 |Pin del anillo|Pin del Arduino|
 |---|---|
@@ -45,7 +45,7 @@ ls /Volumes/
 cp pico_sensor_entrada.py /Volumes/CIRCUITPY/code.py
 ```
 
-8. Para instalar la librería adafruit_minimqtt, desde la terminal
+8. Para instalar la biblioteca adafruit_minimqtt, desde la terminal
 
 ```bash
 bashcp -r adafruit_minimqtt /Volumes/CIRCUITPY/lib/
