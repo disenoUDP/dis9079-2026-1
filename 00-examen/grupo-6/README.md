@@ -1159,11 +1159,11 @@ void actualizarAnillo(int conteo) {
 <img width="960" height="1280" alt="rojo" src="https://github.com/user-attachments/assets/24197f1c-587d-44fc-b953-92bb131b4dcf" />
 
 
-1-5  -> verde (poco ocupado) | 6-10  -> amarillo (ocupación media) | 11-16 -> rojo (casi lleno / lleno)
+| 1-5  -> verde (poco ocupado) | 6-10  -> amarillo (ocupación media) | 11-16 -> rojo (casi lleno / lleno) |
 |-----------------|--------------------|-----------------|
 
-<img width="484" height="619" alt="verde" src="https://github.com/user-attachments/assets/94487fc0-2ff3-4d82-b605-6e8c7b677f0f" /> | <img width="476" height="586" alt="amarillo" src="https://github.com/user-attachments/assets/d1f1b913-cc2f-4027-a202-89e83def0460" /> | 
-<img width="960" height="1280" alt="rojo" src="https://github.com/user-attachments/assets/24197f1c-587d-44fc-b953-92bb131b4dcf" />
+| <img width="484" height="619" alt="verde" src="https://github.com/user-attachments/assets/94487fc0-2ff3-4d82-b605-6e8c7b677f0f" /> | <img width="476" height="586" alt="amarillo" src="https://github.com/user-attachments/assets/d1f1b913-cc2f-4027-a202-89e83def0460" /> | 
+<img width="960" height="1280" alt="rojo" src="https://github.com/user-attachments/assets/24197f1c-587d-44fc-b953-92bb131b4dcf" /> |
 
 
 
