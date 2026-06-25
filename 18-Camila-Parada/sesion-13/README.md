@@ -16,7 +16,7 @@ En un comienzo se consiguió unos sensores del laboratorio de interacción digit
 Pese a las dudas, con este módulo surgieron los primeros intentos para captar información sonora a través de la raspberry pi pico 2w. 
 Para poder asegurarnos que el módulo se centrara en obtener de sonido ambiental, es que decidí adquirir este producto de Afel basándome en su descripción: [“Sensor de Sonido Analógico Digital KY-038”](https://afel.cl/products/sensor-de-sonido-analogico-digital).
 
-<img width="1920" height="875" alt="modulo_ky_38" src="https://github.com/user-attachments/assets/279722ea-9950-4119-ba9a-5311ede09b6a" />
+<img src=./imagenes/modulo_ky_38.png />
 
 Ya al momento de hacer el código es que trabajé en conjunto con la ia de [Claude](https://github.com/Camila-Parada/dis9079-2026-1/blob/main/00-examen/grupo-2/ia/claude-cami.pdf), preguntándole acerca de cuál era el mejor módulo a usar entre los que tenía y pidiendole un código de prueba para probar los módulos.
 
@@ -66,7 +66,7 @@ Tras una consulta rápida me dio el visto bueno para usar la pieza en el proyect
 ### [MAX9812]( https://hubot.cl/producto/sensor-analogico-audio-max9812-sku-614/)
 
 
-<img width="1920" height="860" alt="modulo_max9812" src="https://github.com/user-attachments/assets/cce5be45-1c34-4538-97e8-de3609999e37" />
+<img src=./imagenes/modulo_max9812.png />
 
 
 Con el sensor adquirido, procedí a consultar sobre cómo hacer las conexiones y pedirle el código anterior, pero modificado.
@@ -242,4 +242,4 @@ while True:
 
 #### Página web
 
-<img width="1456" height="735" alt="web_sound-plotter" src="https://github.com/user-attachments/assets/68c71520-d8cb-4c4b-8ae0-029b8764095d" />
+<img src=./imagenes/web_sound-plotter.png />
