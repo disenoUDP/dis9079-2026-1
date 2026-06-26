@@ -4,9 +4,9 @@ Nicolás Elías Valdés Greve / [nicolasvaldesgreve](https://github.com/disenoUD
 
 ---
 
-# Investigación personal APIs
+Investigación personal APIs
 
-#### ¿Qué son las APIs?
+## ¿Qué son las APIs?
 
 Las APIs (_Interfaces de Programación de Aplicaciones_) son un conjunto de protocolos que permiten que las aplicaciones de software logren comunicarse entre sí, actuando como puentes entre aplicaciones ya sea para intercambiar datos, características o funcionalidades.
 
@@ -16,7 +16,7 @@ En el proceso de intercambio participan tres partes:
 + Servidor: Es en donde se cumple la solicitud.
 + API: Es el puente entre ambos que los logra conectar de manera documentada y predecible.
 
-#### ¿Para qué se utilizan?
+## ¿Para qué se utilizan?
 
 Las personas que navegan por internet se benefician constantemente de las APIs sin siquiera saberlo. Las APIs logran hacer una conexión en las fuentes públicas de datos, como lo son los sitios de previsión meteorológica (omg como lo que estamos usando con mi grupo, guiño guiño), con aplicaciones comerciales para advertirnos los próximos eventos meteorológicos. En el caso más común se pueden observar el uso de APIs de Google Maps para integrar mapas y servicios de ubicación en sitios web.
 
@@ -51,7 +51,7 @@ Hay distintos tipos de APIs, por lo que cada una hace una cosa distinta. Las que
 
 ---
 
-# API Transformice !! no lo puedo creer
+## API Transformice !! no lo puedo creer
 
 Para subir algo más a esta bitácora (ya que sentí que estaba muy vacía), empecé a buscar APIs de juegos en los que me metía cuando chico y encontré una de Transformice!! la verdad no recuerdo mucho del juego, ya que mi memoria solo guardó recuerdos fotográficos de mi ratoncito cayendo al vacío luego de conseguir el queso.. pero filo, aquí dejo una foto del juego al que me refiero LOL:
 
@@ -67,7 +67,7 @@ Volviendo a la API, la encontré en el siguiente link: <https://atelier801.com/t
 
 ![Screenshot de la página en donde se habla de la API <https://atelier801.com/topic?f=6&t=843935>](./imagenes/stats-tribus.png)
 
-# Fuentes:
+## Fuentes
 
 + <https://www.ibm.com/think/topics/api>
 + <https://www.oracle.com/latam/cloud/cloud-native/api-management/what-is-api/>

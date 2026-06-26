@@ -30,7 +30,7 @@ Las APIs se clasifican de dos maneras: por su arquitectura (protocolo de comunic
 
 #### Por arquitectura
 
-* SOAP(Simple Object Access Protocol): 
+* SOAP(Simple Object Access Protocol):
 Protocolo basado en mensajes XML. Es menos flexible y fue más popular en el pasado. Ofrece verificación de tipos estricta, siendo preferido en entornos con altos requisitos de integridad de datos.
 
 * RPC(Remote Procedure Call): El cliente ejecuta un procedimiento en el servidor y recibe el resultado. Existen variantes como XML-RPC (usa XML, más simple y ligero) y JSON-RPC (usa JSON, compatible con cualquier lenguaje de programación).
@@ -67,7 +67,7 @@ El diseño de una API de calidad requiere seguir un proceso ordenado de cinco et
 
 ### Beneficios de las APIs
 
-Las APIs ofrecen ventajas significativas 
+Las APIs ofrecen ventajas significativas
 tanto para desarrolladores como para organizaciones:
 
 * Integración: Permiten conectar nuevas aplicaciones con sistemas existentes, eliminando la necesidad de desarrollar funcionalidades desde cero y acelerando los tiempos de desarrollo.
@@ -92,7 +92,7 @@ Si bien las APIs presentan ventajas, también existen aspectos a considerar al t
 
 * Seguridad y privacidad: Las APIs mal configuradas pueden convertirse en puntos vulnerables. Es importante implementar autenticación y pruebas de seguridad adecuadas.
 
-* Complejidad de mantenimiento: Cuando una API externa cambia su versión o deja de funcionar, las aplicaciones que dependen de ella requieren actualizaciones. 
+* Complejidad de mantenimiento: Cuando una API externa cambia su versión o deja de funcionar, las aplicaciones que dependen de ella requieren actualizaciones.
 
 * Costos: Muchas APIs de uso intensivo son de pago. El consumo elevado puede generar costos significativos, especialmente en aplicaciones a escala.
 
@@ -102,6 +102,6 @@ Las APIs son un componente fundamental de la arquitectura del software moderno. 
 
 #### Fuentes
 
-* https://aws.amazon.com/es/what-is/api/
+* <https://aws.amazon.com/es/what-is/api/>
 
-* https://www.ibm.com/es-es/think/topics/api
+* <https://www.ibm.com/es-es/think/topics/api>

@@ -2,10 +2,9 @@
 
 josefa-kristina
 
-# APIs 
+# APIs
 
 ¿Qué son y para qué sirven?
-
 
 API viene de *Application Programming Interface*, que traducido al español sería Interfaz de Programación de Aplicaciones. Es un intermediario que
 permite que dos programas o sistemas se comuniquen entre sí sin que el usuario
@@ -43,7 +42,6 @@ mientras la API se comporte igual.
 ## tipos de API
 
 - **REST**: el estándar actual, el más usado en aplicaciones web. (el que usamos en el examen)
-
 
 - **GraphQL**: más eficiente porque permite pedir exactamente los datos que
   necesitas y nada más.
@@ -94,25 +92,22 @@ Esto significa que cada solicitud es completamente independiente — el servidor
 no recuerda nada de solicitudes anteriores. Si necesito autenticarme, tengo que
 incluir mis credenciales en cada solicitud, no solo en la primera.
 
-
-
 ### Bibliografía
 
 - Amazon Web Services. (s. f.). *¿Qué es una API?*. AWS.
-  https://aws.amazon.com/what-is/api/
+  <https://aws.amazon.com/what-is/api/>
 
 - Red Hat. (s. f.). *¿Qué son las interfaces de programación de aplicaciones?*.
-https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces
+<https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces>
 
 - IBM. (s. f.). *¿Qué es una API?*. IBM Think.
-  https://www.ibm.com/think/topics/api
+  <https://www.ibm.com/think/topics/api>
 
 - Oracle. (s. f.). *¿Qué es una API?*.
-https://www.oracle.com/cloud/cloud-native/api-management/what-is-api/
+<https://www.oracle.com/cloud/cloud-native/api-management/what-is-api/>
 
-- Cecilia Aguilera (Septiembre, 2021). *API testing: guía práctica introductoria.* https://es.abstracta.us/blog/api-testing-guia-practica/
+- Cecilia Aguilera (Septiembre, 2021). *API testing: guía práctica introductoria.* <https://es.abstracta.us/blog/api-testing-guia-practica/>
 
-- REST-API – *The easy way to access your machine and process data* - TekniskFOKUS. (2025, 29 enero). TekniskFOKUS. https://www.tekniskfokus.dk/blogs/rest-api-the-easy-way-to-access-your-machine-and-process-data/
+- REST-API – *The easy way to access your machine and process data* - TekniskFOKUS. (2025, 29 enero). TekniskFOKUS. <https://www.tekniskfokus.dk/blogs/rest-api-the-easy-way-to-access-your-machine-and-process-data/>
 
-- Google For Developers. (s. f.) *Cómo usar OAuth 2.0 para acceder a las API de Google.* https://developers.google.com/identity/protocols/oauth2?hl=es-419
-
+- Google For Developers. (s. f.) *Cómo usar OAuth 2.0 para acceder a las API de Google.* <https://developers.google.com/identity/protocols/oauth2?hl=es-419>

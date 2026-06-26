@@ -16,7 +16,7 @@ El funcionamiento básico es que un cliente hace una solicitud y un servidor res
 
 En el código se vería algo así:
 
-OWM_BASE_URL = "https://api.open-meteo.com/v1/forecast" 
+OWM_BASE_URL = "<https://api.open-meteo.com/v1/forecast>"
 
 Ciudades: (Nombre, latitud, longitud, nombre-del-feed)
 CIUDADES = [
@@ -37,10 +37,9 @@ Existen distintos tipos de APIs, algunas pueden ser públicas o privadas, y tamb
 
 +Las API remotas interactúan a través de una red de comunicación para manipular recursos fuera del ordenador que realiza la solicitud. A diferencia de la local, cada solicitud debe viajar por la red hasta un servidor externo, que la procesa y devuelve una respuesta.
 
-### Arquitectura de software 
+### Arquitectura de software
 
 Una arquitectura de software es cómo se organiza y estructura un sistema. No es código en sí mismo, sino más bien las reglas o guías que determinan cómo deben relacionarse los componentes de un software entre sí.
-
 
 #### API REST *Representational State Transfer*
 
@@ -54,18 +53,16 @@ Imagen: API REST- Autor: Seobility – Licencia: CC BY-SA 4.0
 
 ---
 
-
-
 ### Fuentes
 
-https://www.ibm.com/think/topics/rest-apis
+<https://www.ibm.com/think/topics/rest-apis>
 
-https://open-meteo.com/en/features
+<https://open-meteo.com/en/features>
 
-https://www.computerweekly.com/es/definicion/Interfaz-de-programacion-de-aplicaciones-API
+<https://www.computerweekly.com/es/definicion/Interfaz-de-programacion-de-aplicaciones-API>
 
-https://www.youtube.com/watch?v=u2Ms34GE14U
+<https://www.youtube.com/watch?v=u2Ms34GE14U>
 
-https://www.xataka.com/basics/api-que-sirve
+<https://www.xataka.com/basics/api-que-sirve>
 
-https://aws.amazon.com/es/what-is/api/
+<https://aws.amazon.com/es/what-is/api/>
