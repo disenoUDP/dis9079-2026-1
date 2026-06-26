@@ -27,7 +27,7 @@ Las API simplifican y aceleran el desarrollo de aplicaciones y software permitie
 
 Las API permiten compartir solo la información necesaria, manteniendo ocultos otros detalles internos del sistema, lo que ayuda a la seguridad del sistema. Los servidores o dispositivos no tienen que exponer completamente los datos: las API permiten compartir pequeños paquetes de datos, relevantes para la solicitud específica.
 
-A diferencia de una interfaz de usuario (UX), que conecta a una persona con un computador, una *API* conecta a dos softwares o partes de un software. 
+A diferencia de una interfaz de usuario (UX), que conecta a una persona con un computador, una *API* conecta a dos softwares o partes de un software.
 
 ---
 
@@ -64,7 +64,6 @@ Entonces, las APIs actúan como intermediarios que permiten la comunicación y l
 5. `Documentación y versionado:` las APIs suelen estar documentadas para que los desarrolladores comprendan cómo utilizarlas correctamente. Además, pueden tener diferentes versiones para garantizar la retrocompatibilidad y permitir la evolución de las aplicaciones sin romper la funcionalidad existente.
 6. `Reutilización y escalabilidad:` fomentan la reutilización de código y la modularidad en el desarrollo de software. Las aplicaciones pueden utilizar múltiples APIs para acceder a diferentes servicios y funcionalidades, lo que facilita la creación de sistemas escalables y flexibles.
 
-
 ---
 
 **Tipos de APIs**
@@ -85,7 +84,7 @@ Según el nivel de acceso que permitan, podemos diferenciar entre:
 
 Según la localización de ambos sistemas, pueden ser:
 
-- [ ] APIs locales: para aplicaciones que se comunican dentro de un mismo ecosistema 
+- [ ] APIs locales: para aplicaciones que se comunican dentro de un mismo ecosistema
 - [ ] APIs remotas: para aquellas conexiones que se realizan desde un sistema en un punto diferente
 
 ---

@@ -2,7 +2,7 @@
 
 lunes 15 junio 2026
 
-## Trabajo en clases 
+## Trabajo en clases
 
 **Sensor IR → Raspberry Pi Pico 2W**
 
@@ -46,7 +46,7 @@ Conectar el sensor infrarrojo a la Raspberry Pi
 
 - Mantener presionado el botón `BOOTSEL` de la Pico mientras lo conectamos al Mac por USB.
 - Descargar el archivo *.uf2* de `CircuitPython` para Pico 2W desde su página oficial.
--  Arrastrar el archivo *.uf2* a la carpeta de la Raspberry desde el Finder.
+- Arrastrar el archivo *.uf2* a la carpeta de la Raspberry desde el Finder.
 - La Pico se reiniciará y aparecerá como una nueva unidad llamada CIRCUITPY.
 - Subir el código UNA vez con Circuit python como se mostrará:
 
@@ -107,6 +107,7 @@ Si queremos ejecutarlo manualmente desde el REPL para ver el error exacto
 ```bash
 import code
 ```
+
 #### Imagenes proceso
 
 ![conexion](./imagenes/conexionAnilloLed.jpg)

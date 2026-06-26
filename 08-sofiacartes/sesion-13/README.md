@@ -2,7 +2,7 @@
 
 lunes 08 junio 2026
 
-## Corrección 
+## Corrección
 
 Este proyecto consiste en un sistema que conecta el LID y la biblioteca para medir cuántas
 personas entran y salen de cada lugar en tiempo real. En la puerta de cada edificio se
@@ -43,10 +43,9 @@ Nuestro proyecto parte desde la pregunta ¿Cuántos habitan los lugares de traba
 
 `Salida:` Anillo LED RGB WS2812 de 16 LEDS.
 
-
 ### Pseudocódigo
 
-```
+```txt
 PROYECTO: Puente Digital
 EDIFICIO A → LID (Salvador Sanfuentes)
 EDIFICIO B → Rep180
@@ -194,6 +193,6 @@ flowchart LR
 
 ### Código
 
-No alcanzamos hoy :( 
+No alcanzamos hoy :(
 
 La mose se encago de ir afel a comprar los componentes que queremos ocupar.

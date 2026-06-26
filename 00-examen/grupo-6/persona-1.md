@@ -25,8 +25,7 @@ Imagen sacada de: <https://itsqmet.edu.ec/api/>
 generalmente utilizando HTTP y formato JSON.
 - SOAP: `Simple Object Access Protocol` Es un protocolo más estructurado y estricto para intercambiar información entre
 - JSON-RCP: `Remote Procedure Call` Es un protocolo de llamada a procedimiento remoto (RPC) ligero y sin estado, codificado en JSON, que permite a las aplicaciones realicen funciones en un servidor remoto como si fueran locales.
-- GraphQL: `Graph Query Language` Es un lenguaje de consulta de datos de código abierto y un entorno de ejecución del lado del servidor diseñado para API. 
-
+- GraphQL: `Graph Query Language` Es un lenguaje de consulta de datos de código abierto y un entorno de ejecución del lado del servidor diseñado para API.
 
 ### ¿Cómo funcionan las APIs?
 

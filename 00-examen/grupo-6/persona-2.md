@@ -1,10 +1,8 @@
 # persona-2
 
-Monserrat-Paredes / https://github.com/Monserrat-Paredes
+Monserrat-Paredes / <https://github.com/Monserrat-Paredes>
 
-
-# Investigación sobre API (Interfaz de Programación de Aplicaciones)
-
+Investigación sobre API (Interfaz de Programación de Aplicaciones)
 
 ## Origen
 
@@ -20,8 +18,6 @@ En la década de los 70, las API experimentaron su primer gran salto en progreso
 
 - 2000 : Roy Fielding define REST, transformando APIs en interfaces globales basadas en web.
 
-
-
 ## ¿Qué es una API?
 
 Una API (por sus siglas en inglés Application Programming Interface , en español Interfaz de Programación de Aplicaciones ) es un conjunto de definiciones, reglas y protocolos que permite la comunicación entre diferentes aplicaciones o softwares. A diferencia de una interfaz de usuario que conecta una persona con un ordenador, una API conecta dos softwares o partes de un software.
@@ -36,23 +32,17 @@ Analogía del restaurante (Para entenderlo mejor):
 
 - El cocinero = el servidor que procesa y responde con la información.
 
-
 <img width="654" height="605" alt="api3" src="https://github.com/user-attachments/assets/e738b63f-c125-4ba0-a14a-ca3196c8c5e6" />
 
-Imagen sacada de: https://itsqmet.edu.ec/api/
-
-
+Imagen sacada de: <https://itsqmet.edu.ec/api/>
 
 ## El concepto de "Caja Negra" y Seguridad
 
 Las API permiten compartir únicamente la información necesaria para una solicitud específica, manteniendo ocultos los detalles internos del código, el servidor o la base de datos. Esto añade una capa crítica de seguridad, ya que los dispositivos externos no tienen acceso total al sistema, sino solo a pequeños paquetes de datos autorizados.
 
-
-
 ## ¿Cómo funciona una API?
 
-El funcionamiento básico de una API sigue el modelo de Cliente y Servidor a través de la infraestructura de Internet, normalmente mediante el protocolo HTTP (sistema de reglas mediante el cual un cliente (como una app o web) y un servidor se comunican). 
-
+El funcionamiento básico de una API sigue el modelo de Cliente y Servidor a través de la infraestructura de Internet, normalmente mediante el protocolo HTTP (sistema de reglas mediante el cual un cliente (como una app o web) y un servidor se comunican).
 
 IBM lo ejemplifica de manera sencilla a través de los siguientes pasos:
 
@@ -60,32 +50,25 @@ Cliente / App  --- (1) Envía Petición (URI/HTTP) --->  API ---> (2) Llama al p
 
 Cliente / App <--- (4) Entrega Datos en Pantalla <-- Bridge  <--- (3) Responde con la información <--- Servidor Externo
 
-
-
 El funcionamiento de una puede entenderse en cuatro pasos básicos:
-
 
 1. Solicitud: Una aplicación envía una solicitud, especificando qué información o acción necesita.
 
 2. Procesamiento: La API recibe la solicitud y la procesa, validando que los permisos sean correctos.
-   
+
 3. Respuesta: La API recupera los datos o ejecuta la acción requerida.
-   
+
 4. Devolución: Los datos o resultados son enviados de vuelta a la aplicación solicitante en un formato entendible (como JSON o XML).
 
 Un ejemplo cotidiano es cuando compras en una tienda online y seleccionas "Pagar con PayPal". La tienda no conoce tus claves bancarias; utiliza una API para comunicarse con PayPal, procesar el pago de forma segura y recibir de vuelta la confirmación de que el pago fue exitoso.
 
-
 <img width="645" height="285" alt="api1" src="https://github.com/user-attachments/assets/63890e96-2b1a-448a-9591-995a404ca794" />
 
-Imagen sacada de: https://outvio.com/es/blog/que-es-una-api/
-
-
+Imagen sacada de: <https://outvio.com/es/blog/que-es-una-api/>
 
 ## Tipos de API -> Quién las usa
 
 Según su Alcance y Accesibilidad. IBM (International Business Machines) clasifica las API principalmente bajo dos criterios: su accesibilidad (casos de uso en la web) y su arquitectura técnica.
-
 
 | Tipo de API | Descripción Técnica | Caso de Uso Principal |
 | :--- | :--- | :--- |
@@ -94,14 +77,13 @@ Según su Alcance y Accesibilidad. IBM (International Business Machines) clasifi
 | **API Internas (Privadas)** | Permanecen completamente ocultas para el público general. Las empresas las desarrollan y utilizan internamente para comunicar sus propios sistemas o bases de datos. | Conectar el departamento de inventario con el sistema de ventas de una misma empresa para mejorar la productividad. |
 | **API Compuestas** | Combinan múltiples APIs de datos o servicios diferentes. Permiten que un programador haga una única llamada y obtenga información agrupada de varias fuentes a la vez. | Optimizar el rendimiento en arquitecturas de microservicios, reduciendo el tráfico de red en aplicaciones móviles. |
 
-
 Existen muchos tipos de API: segun du entorno Tecnológico (Dónde operan)
 
 - API web se utilizan para crear aplicaciones web y móviles, y se accede a ellas a través de la web mediante protocolos estándar como HTTP.
   
 - API de biblioteca permiten a los programadores acceder a bibliotecas de código que pueden proporcionar una funcionalidad específica a medida que crean nuevas aplicaciones.
 
- - API del sistema operativo permiten que el software interactúe con un sistema operativo subyacente.
+- API del sistema operativo permiten que el software interactúe con un sistema operativo subyacente.
   
 - API abiertas (o API públicas) las crean desarrolladores externos y permiten que cualquier persona acceda a un sitio web o una aplicación, y pueda usarlos.
   
@@ -117,9 +99,7 @@ Existen muchos tipos de API: segun du entorno Tecnológico (Dónde operan)
 
 - API remotas permiten que las aplicaciones que se ejecutan en diferentes equipos interactúen mediante la comunicación remota.
 
-
-
-## Protocolos y estilos arquitectónicos:
+## Protocolos y estilos arquitectónicos
 
  `REST` Arquitectura web altamente escalable que transmite datos mediante el protocolo HTTP. Se caracteriza por **no tener estado** (*stateless*), lo que significa que el servidor no almacena datos del cliente entre solicitudes, facilitando conexiones rápidas y ligeras.
 
@@ -131,19 +111,13 @@ Existen muchos tipos de API: segun du entorno Tecnológico (Dónde operan)
 
 `Webhooks` Herramientas orientadas a eventos que envían información de forma automática e inmediata en el momento exacto en que ocurre una acción activadora.
 
-
-
 ## ¿Qué ventajas ofrecen las API?
 
 Para muchas empresas, las API son activos esenciales para el negocio que ayudan a digitalizar los procesos, permitir la automatización, acelerar los flujos de trabajo, conectar personas y aplicaciones, e innovar en nuevos productos y servicios. Las API pueden ayudar a ofrecer experiencias de cliente excepcionales y mejorar la agilidad operativa.
 
-
-
 ## ¿A qué amenazas se enfrentan las API?
 
 Las APIs son blancos atractivos para los hackers porque actúan como puertas de acceso a datos valiosos. Si carecen de la seguridad adecuada o están obsoletas (heredadas), los atacantes las explotan para robar información confidencial, tumbar servicios (interrupción) o secuestrar sistemas.
-
-
 
 ## ¿Cómo se empieza a usar una API?
 
@@ -155,23 +129,20 @@ La plataforma de OpenWeather muestra los tres pasos estándar de la industria pa
 
 - Integración: Se programa la llamada dentro del código de la aplicación para automatizar la solicitud de datos.
 
-
-
 ## Conclusión
-Las API son un pilar del desarrollo de software moderno que promueven la conectividad y la innovación. Desde aplicaciones móviles hasta sistemas empresariales, su capacidad para integrar funcionalidades y servicios las hace imprescindibles. Comprender y aprovechar las API no solo mejora la eficiencia del desarrollo, sino que también abre puertas a nuevas oportunidades en el mundo digital. 
 
-
+Las API son un pilar del desarrollo de software moderno que promueven la conectividad y la innovación. Desde aplicaciones móviles hasta sistemas empresariales, su capacidad para integrar funcionalidades y servicios las hace imprescindibles. Comprender y aprovechar las API no solo mejora la eficiencia del desarrollo, sino que también abre puertas a nuevas oportunidades en el mundo digital.
 
 ## Bibliografia
 
-Instituto Superior Tecnológico Quito Metropolitano [ITSQMET]. (s.f.). ¿Qué es una API y para qué sirve? https://itsqmet.edu.ec/api/
+Instituto Superior Tecnológico Quito Metropolitano [ITSQMET]. (s.f.). ¿Qué es una API y para qué sirve? <https://itsqmet.edu.ec/api/>
 
-Outvio. (s.f.). ¿Qué es una API y cómo funciona en desarrollo y logística? https://outvio.com/es/blog/que-es-una-api/
+Outvio. (s.f.). ¿Qué es una API y cómo funciona en desarrollo y logística? <https://outvio.com/es/blog/que-es-una-api/>
 
-OpenWeatherMap. (s.f.). Weather API: Current weather data and forecast. https://openweathermap.org/api
+OpenWeatherMap. (s.f.). Weather API: Current weather data and forecast. <https://openweathermap.org/api>
 
-Wikipedia. (2026, 21 de junio). API. https://en.wikipedia.org/wiki/API
+Wikipedia. (2026, 21 de junio). API. <https://en.wikipedia.org/wiki/API>
 
-Recluit. (s.f.). Historia y evolución de las API. https://recluit.com/historia-y-evolucion-de-las-api/
+Recluit. (s.f.). Historia y evolución de las API. <https://recluit.com/historia-y-evolucion-de-las-api/>
 
-Akamai. (s.f.). ¿Cómo funcionan las API? Conceptos básicos y seguridad. Recuperado el 21 de junio de 2026, de https://www.akamai.com/es/glossary/how-do-apis-work
+Akamai. (s.f.). ¿Cómo funcionan las API? Conceptos básicos y seguridad. Recuperado el 21 de junio de 2026, de <https://www.akamai.com/es/glossary/how-do-apis-work>
