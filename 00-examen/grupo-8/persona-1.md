@@ -10,12 +10,11 @@ Las API (interfaces de programación de aplicaciones) son mecanismos que permite
 
 Para que una API sea fácil de utilizar, es fundamental contar con una documentación clara que explique sus funciones, protocolos, métodos de autenticación y la forma correcta de estructurar las solicitudes y respuestas.
 
-### Flujo de trabajo 
+### Flujo de trabajo
 
 <img width="453" height="186" alt="image" src="https://github.com/user-attachments/assets/fd7a82ab-eba5-4804-89b3-a6d4d659ad01" />
 
 *Fuente: Finerio Connect*
-
 
 Una app hace una solicitud (request) a la API
 La API procesa esa solicitud y la envía al sistema correspondiente
@@ -34,16 +33,15 @@ La API te devuelve esa respuesta en un formato estándar
 
 ### Ejemplos cotidianos de APIs
 
-- Tú ingresas tu número de tarjeta en un formulario --> Ese número va directamente a la API de Stripe (nunca lo ve la tienda) --> Stripe valida con el banco y devuelve: "aprobado" o "rechazado" --> La tienda solo recibe ese resultado, jamás tus datos bancarios.
+* Tú ingresas tu número de tarjeta en un formulario --> Ese número va directamente a la API de Stripe (nunca lo ve la tienda) --> Stripe valida con el banco y devuelve: "aprobado" o "rechazado" --> La tienda solo recibe ese resultado, jamás tus datos bancarios.
 
-- Cuando Uber, Rappi o cualquier app muestra un mapa. La app envía a la API: "dame el mapa de esta zona con estas coordenadas" --> Google Maps devuelve los datos visuales del mapa --> La app los muestra como si fueran propios
+* Cuando Uber, Rappi o cualquier app muestra un mapa. La app envía a la API: "dame el mapa de esta zona con estas coordenadas" --> Google Maps devuelve los datos visuales del mapa --> La app los muestra como si fueran propios
 
-- Cuando abres una app del clima: La app detecta tu ubicación (coordenadas GPS) --> Le pregunta a la API: "¿qué clima hay en latitud X, longitud Y?" --> La API responde con temperatura, humedad, pronóstico, etc. en formato JSON ---> La app toma esos números y los muestra de forma bonita}
-
+* Cuando abres una app del clima: La app detecta tu ubicación (coordenadas GPS) --> Le pregunta a la API: "¿qué clima hay en latitud X, longitud Y?" --> La API responde con temperatura, humedad, pronóstico, etc. en formato JSON ---> La app toma esos números y los muestra de forma bonita
 
 ## Bibliografía
 
-- Amazon Web Services. s.f. ¿Qué es una interfaz de programación de aplicaciones (API)? AWS. https://aws.amazon.com/es/what-is/api/
-- Bengochea, D. Marzo, 2022. API: qué es, para qué sirve, cómo funciona y ejemplos. Outvio. https://outvio.com/es/blog/que-es-una-api/
-- Goodwin, M. Abril, 2024. What is an API (application programming interface)? IBM. https://www.ibm.com/think/topics/api
+* Amazon Web Services. s.f. ¿Qué es una interfaz de programación de aplicaciones (API)? AWS. <https://aws.amazon.com/es/what-is/api/>
+* Bengochea, D. Marzo, 2022. API: qué es, para qué sirve, cómo funciona y ejemplos. Outvio. <https://outvio.com/es/blog/que-es-una-api/>
+* Goodwin, M. Abril, 2024. What is an API (application programming interface)? IBM. <https://www.ibm.com/think/topics/api>
   

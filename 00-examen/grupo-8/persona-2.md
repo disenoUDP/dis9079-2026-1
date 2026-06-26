@@ -2,7 +2,7 @@
 
 antolavalle
 
-# APIs Web
+APIs Web
 
 ## ¿Qué es una API?
 
@@ -21,9 +21,11 @@ tú  →  API  →  sistema complejo (GPS, servidor, hardware...)
 ## Tipos de APIs en el navegador
 
 **De navegador** → ya vienen incluidas, no hay que instalar nada
+
 - Geolocation API, DOM, Canvas, Web Audio...
 
 **De terceros** → hay que traerlas de afuera
+
 - Twitter API, Google Maps, Twilio...
 
 ---
@@ -31,7 +33,7 @@ tú  →  API  →  sistema complejo (GPS, servidor, hardware...)
 ## ¿Para qué sirven? (por categoría)
 
 | qué quieres hacer | API que usas |
-|---|---|
+|---|---|---|
 | manipular HTML/CSS | DOM API |
 | pedir datos a un servidor | Fetch API / XMLHttpRequest |
 | dibujar en pantalla | Canvas / WebGL |
@@ -119,4 +121,8 @@ otros      → Bluetooth, USB, NFC, Payments...
 
 ---
 
-*fuentes: [MDN](https://developer.mozilla.org/es/docs/Web/API) · [MDN intro](https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction) · [Parasoft](https://es.parasoft.com/blog/web-api-vs-web-services-microservices-basics-differences/)*
+fuentes:
+
+- [MDN](https://developer.mozilla.org/es/docs/Web/API)
+- [MDN intro](https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction)
+- [Parasoft](https://es.parasoft.com/blog/web-api-vs-web-services-microservices-basics-differences/)
