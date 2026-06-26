@@ -10,7 +10,7 @@ arevalourra ✩
 
 *Significado sigla API en inglés*
 
-###### Créditos Imagen: https://outvio.com/es/blog/que-es-una-api/
+###### Créditos Imagen: <https://outvio.com/es/blog/que-es-una-api/>
 
 ## ¿Qué es una API?
 
@@ -26,7 +26,7 @@ Gracias a las APIs, los desarrolladores pueden integrar servicios externos en su
 
 *Las APIs son consideradas como el pegamento que une todos los servicios web que usamos*
 
-###### Créditos Imagen: https://fourier.com.mx/las-apis-el-pegamento-que-une-todos-los-servicios-web-que-usas/
+###### Créditos Imagen: <https://fourier.com.mx/las-apis-el-pegamento-que-une-todos-los-servicios-web-que-usas/>
 
 ## Funcionamiento de una API
 
@@ -40,7 +40,7 @@ En las APIs web, esta comunicación se realiza generalmente mediante los protoco
 
 *Funcionamiento General de una API*
 
-###### Créditos Imagen: https://www.deltaprotect.com/blog/que-es-una-api
+###### Créditos Imagen: <https://www.deltaprotect.com/blog/que-es-una-api>
 
 ## Tipos de API
 
@@ -48,7 +48,7 @@ En las APIs web, esta comunicación se realiza generalmente mediante los protoco
 
 *Tipos de API*
 
-###### Créditos Imagen: https://www.deltaprotect.com/blog/que-es-una-api
+###### Créditos Imagen: <https://www.deltaprotect.com/blog/que-es-una-api>
 
 #### API de Datos
 
@@ -92,7 +92,7 @@ Las APIs ofrecen numerosos beneficios para empresas y desarrolladores:
 
 *Resumen de beneficios del uso de APIs dentro de la tecnología empresarial*
 
-###### Créditos Imagen: https://blog.factoringsecurity.cl/articulos/api-que-es-y-para-que-sirve
+###### Créditos Imagen: <https://blog.factoringsecurity.cl/articulos/api-que-es-y-para-que-sirve>
 
 ### APIs y la Transformación Digital
 
@@ -102,7 +102,7 @@ Las APIs son consideradas un componente fundamental de la transformación digita
 
 *APIs como motor de la transformación digital.*
 
-###### Créditos Imagen: https://azulschool.net/diferencias-entre-una-api-y-rest-api/
+###### Créditos Imagen: <https://azulschool.net/diferencias-entre-una-api-y-rest-api/>
 
 *Las APIs constituyen una tecnología clave para el desarrollo de aplicaciones modernas y la integración de sistemas digitales. Gracias a su capacidad para facilitar la comunicación entre diferentes plataformas, permiten crear soluciones más eficientes, escalables y centradas en las necesidades de los usuarios. Su importancia continúa creciendo a medida que las organizaciones avanzan hacia modelos cada vez más conectados e interdependientes.*
 
@@ -126,7 +126,7 @@ Framer es una plataforma de diseño y desarrollo web que permite crear interface
 
 *Uso de la API web de Spotify en Framer*
 
-###### Créditos Imagen: https://blog.prototypr.io/have-you-heard-about-the-spotify-web-api-8e8d1dac9eaf
+###### Créditos Imagen: <https://blog.prototypr.io/have-you-heard-about-the-spotify-web-api-8e8d1dac9eaf>
 
 ### Funcionamiento
 
@@ -136,8 +136,7 @@ La Spotify Web API opera mediante solicitudes realizadas por una aplicación cli
 
 *Panel interactivo que visualiza datos y métricas musicales obtenidas mediante la Spotify Web API para analizar tendencias del ranking Spotify Top 200.*
 
-###### Créditos Imagen: https://www.thedataschool.com.au/blogs/spotify-api/
-
+###### Créditos Imagen: <https://www.thedataschool.com.au/blogs/spotify-api/>
 
 ### Ventajas de la Spotify Web API
 
@@ -157,7 +156,7 @@ La Spotify Web API opera mediante solicitudes realizadas por una aplicación cli
 
 *Dashboard analítico de datos de reproducción de Spotify.*
 
-###### Créditos Imagen: https://medium.com/@aruljennifer2000/how-i-turned-my-spotify-history-into-an-interactive-power-bi-dashboard-e67ea879de49
+###### Créditos Imagen: <https://medium.com/@aruljennifer2000/how-i-turned-my-spotify-history-into-an-interactive-power-bi-dashboard-e67ea879de49>
 
 ### Relevancia para el diseño y la experiencia de usuario
 
@@ -167,29 +166,28 @@ La Spotify Web API representa una de las plataformas más completas para el acce
 
 ![Relevancia](./imagenes/uso-web-api-spotify.png)
 
-*Uso de API web de Spotify* ***https://developer.spotify.com/documentation/web-api***
+*Uso de API web de Spotify* ***<https://developer.spotify.com/documentation/web-api>***
 
-###### Créditos Imagen: https://www.digitalmusicnews.com/2024/12/01/spotify-tightens-api-access-removes-several-data-points/
+###### Créditos Imagen: <https://www.digitalmusicnews.com/2024/12/01/spotify-tightens-api-access-removes-several-data-points/>
+
 ---
 
 ## Bibliografía
 
-###### https://www.deltaprotect.com/blog/que-es-una-api
+###### <https://www.deltaprotect.com/blog/que-es-una-api>
 
-###### https://nbxsoluciones.com/2022/06/17/que-es-una-api-y-para-que-sirven/
+###### <https://nbxsoluciones.com/2022/06/17/que-es-una-api-y-para-que-sirven/>
 
-###### https://beecrowd.com/es/blog-posts/api-3/
+###### <https://beecrowd.com/es/blog-posts/api-3/>
 
-###### https://outvio.com/es/blog/que-es-una-api/
+###### <https://outvio.com/es/blog/que-es-una-api/>
 
-###### https://www.appleute.de/es/biblioteca-para-desarrolladores-de-aplicaciones/what-is-rest-api/
+###### <https://www.appleute.de/es/biblioteca-para-desarrolladores-de-aplicaciones/what-is-rest-api/>
 
-###### https://fourier.com.mx/las-apis-el-pegamento-que-une-todos-los-servicios-web-que-usas/
+###### <https://fourier.com.mx/las-apis-el-pegamento-que-une-todos-los-servicios-web-que-usas/>
 
-###### https://developer.spotify.com/
+###### <https://developer.spotify.com/>
 
-###### https://blog.prototypr.io/have-you-heard-about-the-spotify-web-api-8e8d1dac9eaf
+###### <https://blog.prototypr.io/have-you-heard-about-the-spotify-web-api-8e8d1dac9eaf>
 
-###### https://medium.com/@aruljennifer2000/how-i-turned-my-spotify-history-into-an-interactive-power-bi-dashboard-e67ea879de49
-
-
+###### <https://medium.com/@aruljennifer2000/how-i-turned-my-spotify-history-into-an-interactive-power-bi-dashboard-e67ea879de49>
