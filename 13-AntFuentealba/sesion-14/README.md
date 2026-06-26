@@ -3,6 +3,7 @@
 lunes 15 junio 2026
 
 ## Clase
+
 Hoy día fuimos a comprar el sensor de sonido “MAX4466”, el módulo “PAM8403” y el “DF PLAYER”, este último no lo encontramos.
 
 El código del micrófono funciona pero marca mucho “1023”, por lo que estamos viendo si es buena idea seguir con el aplauso o cambiarlo a un chasquido, también estamos regulando a qué distancia del micrófono se debe aplaudir para que no tire el máximo tan seguido. Finalmente nos quedamos con chasquear los dedos.
@@ -50,6 +51,7 @@ void loop() {
   }
 }
 ```
+
 ```cpp
 const int micPin = A0;
 
@@ -135,6 +137,7 @@ void loop() {
 }
 
 ```
+
 ```cpp
 const int micPin = A0;
 
@@ -177,6 +180,7 @@ void loop() {
 }
 
 ```
+
 ```cpp
 const int micPin = A0;
 
@@ -350,5 +354,3 @@ void loop() {
 }
 
 ```
-
-
