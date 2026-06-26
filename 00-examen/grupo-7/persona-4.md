@@ -2,7 +2,7 @@
 
 marcezm  
 
-# Investigación textual: Uso de APIs
+Investigación textual: Uso de APIs
 
 ## Introducción
 
@@ -64,7 +64,7 @@ Las APIs constituyen una herramienta fundamental en el desarrollo tecnológico c
 
 ## Bibliografía
 
-- Mozilla Developer Network. *Introduction to Web APIs*. https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction
-- IBM. *What is an API?* https://www.ibm.com/topics/api
-- Red Hat. *What is an API?* https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces
-- Postman. *API Fundamentals*. https://www.postman.com/api-platform/api-fundamentals/
+- Mozilla Developer Network. *Introduction to Web APIs*. <https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs/Introduction>
+- IBM. *What is an API?* <https://www.ibm.com/topics/api>
+- Red Hat. *What is an API?* <https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces>
+- Postman. *API Fundamentals*. <https://www.postman.com/api-platform/api-fundamentals/>

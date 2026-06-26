@@ -1,10 +1,10 @@
-## Investigación textual sobre la API: MQTT y HiveMQ Cloud
+# Investigación textual sobre la API: MQTT y HiveMQ Cloud
 
-### ¿Qué es una API en este contexto?
+## ¿Qué es una API en este contexto?
 
 Una API (Interfaz de Programación de Aplicaciones) es el conjunto de reglas que permite que dos sistemas distintos —en este caso, el Arduino y la nube— se comuniquen entre sí sin que cada uno necesite conocer los detalles internos del otro. En el proyecto trabajé específicamente con el protocolo **MQTT** y el servicio en la nube **HiveMQ Cloud**, que implementa ese protocolo como servicio gestionado.
 
-### MQTT 
+### MQTT
 
 Según JustProtocols (2026), MQTT es un protocolo de mensajería liviano basado en el patrón **publicador/suscriptor (pub/sub)**, diseñado originalmente en 1999 por Andy Stanford-Clark (IBM) y Arlen Nipper para monitorear oleoductos vía satélite, donde el ancho de banda era costoso y las conexiones poco confiables. El mismo autor señala que desde entonces el protocolo se convirtió en el estándar dominante para el Internet de las Cosas (IoT), siendo ahora un estándar abierto de OASIS, con MQTT 5.0 como su versión más reciente, publicada en 2019. De acuerdo con esta fuente, MQTT corre sobre TCP, usando el puerto 1883 sin cifrar y el puerto 8883 cuando se asegura con TLS — este último es el que usé en mi proyecto.
 
@@ -22,7 +22,7 @@ De acuerdo con HiveMQ (s.f.-a), el plan gratuito incluye hasta 100 conexiones si
 
 ---
 
-### Por qué esta combinación fue adecuada para el proyecto 
+### Por qué esta combinación fue adecuada para el proyecto
 
 La elección de MQTT sobre HiveMQ Cloud resolvió el problema central que detectamos al inicio del proyecto: la necesidad de comunicar dos ubicaciones físicas distintas sin depender de que ambas estuvieran en la misma red local. Al ser un protocolo orientado a IoT, de bajo consumo de datos y con conexión persistente, MQTT fue una elección natural frente a alternativas como HTTP, que habría requerido que el navegador consultara constantemente al servidor (polling) en lugar de recibir los datos de forma instantánea apenas el Arduino los publicaba.
 
@@ -78,18 +78,18 @@ Usar el plan gratuito Serverless de HiveMQ Cloud me demostró además que es pos
 
 ## Referencias bibliográficas
 
-AWS. (s.f.). *What is MQTT? MQTT protocol explained*. Amazon Web Services. https://aws.amazon.com/what-is/mqtt/
+AWS. (s.f.). *What is MQTT? MQTT protocol explained*. Amazon Web Services. <https://aws.amazon.com/what-is/mqtt/>
 
-HiveMQ. (s.f.). *MQTT publish/subscribe architecture (pub/sub) – MQTT essentials: Part 2*. https://www.hivemq.com/blog/mqtt-essentials-part2-publish-subscribe/
+HiveMQ. (s.f.). *MQTT publish/subscribe architecture (pub/sub) – MQTT essentials: Part 2*. <https://www.hivemq.com/blog/mqtt-essentials-part2-publish-subscribe/>
 
-HiveMQ. (s.f.). *HiveMQ Cloud – Fully-managed MQTT platform on the cloud*. https://www.hivemq.com/products/mqtt-cloud-broker/
+HiveMQ. (s.f.). *HiveMQ Cloud – Fully-managed MQTT platform on the cloud*. <https://www.hivemq.com/products/mqtt-cloud-broker/>
 
-HiveMQ. (s.f.). *Getting started with HiveMQ Cloud*. HiveMQ Documentation. https://docs.hivemq.com/hivemq-cloud/quick-start-guide.html
+HiveMQ. (s.f.). *Getting started with HiveMQ Cloud*. HiveMQ Documentation. <https://docs.hivemq.com/hivemq-cloud/quick-start-guide.html>
 
-HiveMQ. (s.f.). *HiveMQ Console*. HiveMQ Documentation. https://docs.hivemq.com/hivemq-cloud/console.html
+HiveMQ. (s.f.). *HiveMQ Console*. HiveMQ Documentation. <https://docs.hivemq.com/hivemq-cloud/console.html>
 
-JustProtocols. (2026, 25 de marzo). *MQTT protocol explained: Publish-subscribe, QoS levels, topics & retained messages*. https://justprotocols.com/protocols/mqtt
+JustProtocols. (2026, 25 de marzo). *MQTT protocol explained: Publish-subscribe, QoS levels, topics & retained messages*. <https://justprotocols.com/protocols/mqtt>
 
-MQTTfy. (2026, 15 de marzo). *Understanding the MQTT publish-subscribe model*. https://mqttfy.com/resources/understanding-mqtt-client-publish-subscribe
+MQTTfy. (2026, 15 de marzo). *Understanding the MQTT publish-subscribe model*. <https://mqttfy.com/resources/understanding-mqtt-client-publish-subscribe>
 
-RisingWave. (s.f.). *Ingest data from HiveMQ broker*. https://docs.risingwave.com/integrations/sources/hivemq
+RisingWave. (s.f.). *Ingest data from HiveMQ broker*. <https://docs.risingwave.com/integrations/sources/hivemq>

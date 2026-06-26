@@ -2,11 +2,11 @@
 
 Luisaatoro9
 
-# Investigación sobre APIs
+Investigación sobre APIs
 
-### Introducción
+## Introducción
 
-Cuando empecé a pensar en cómo hacer que las plantas "hablen", me di cuenta de que necesitaba una forma de conectar datos del mundo real con algo que la gente pudiera ver, escuchar o sentir. Ahí fue cuando las APIs aparecieron como una herramienta central del proyecto. Al principio el término sonaba técnico y lejano, pero investigando fui entendiendo que en realidad ya las usamos todo el tiempo sin saberlo, ya que, cuando una app del clima te muestra la temperatura, cuando Spotify te recomienda una canción, o cuando un mapa calcula tu ruta en tiempo real, todo eso ocurre gracias a una API, cosa que no tenia idea. 
+Cuando empecé a pensar en cómo hacer que las plantas "hablen", me di cuenta de que necesitaba una forma de conectar datos del mundo real con algo que la gente pudiera ver, escuchar o sentir. Ahí fue cuando las APIs aparecieron como una herramienta central del proyecto. Al principio el término sonaba técnico y lejano, pero investigando fui entendiendo que en realidad ya las usamos todo el tiempo sin saberlo, ya que, cuando una app del clima te muestra la temperatura, cuando Spotify te recomienda una canción, o cuando un mapa calcula tu ruta en tiempo real, todo eso ocurre gracias a una API, cosa que no tenia idea.
 
 Esta investigación busca entender qué son las APIs, cómo funcionan, y sobre todo, cómo pueden ser relevantes para un proyecto como *La Voz de las Plantas*, donde los datos de las plantas, humedad del suelo, temperatura, luz, necesitan conectarse con una experiencia que tenga sentido para las personas.
 
@@ -92,7 +92,7 @@ Este es uno de los referentes que más me impactó porque demuestra cómo una in
 
 Everest Pipkin es una artista y desarrolladora que trabaja en la intersección entre sistemas digitales, naturaleza y poesía computacional. Su proyecto *Corsicana* es un generador de texto que crea pequeñas historias sobre objetos cotidianos, paisajes y seres vivos usando datos y algoritmos.
 
-Pipkin no solo usa datos para informar, sino para crear narrativas, para hacer que el espectador sienta algo. 
+Pipkin no solo usa datos para informar, sino para crear narrativas, para hacer que el espectador sienta algo.
 
 ---
 
