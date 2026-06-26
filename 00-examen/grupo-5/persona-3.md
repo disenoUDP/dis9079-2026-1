@@ -24,11 +24,11 @@ JSON: Formato de texto ligero diseñado para almacenar e intercambiar datos estr
 
 **Es fácil de leer y escribir para los humanos, y fácil de procesar para las máquinas**
 
-2. APIs de bibliotecas o frameworks
+1. APIs de bibliotecas o frameworks
 
 Son conjuntos de funciones que los programadores utilizan dentro de un lenguaje de programación para realizar tareas específicas sin tener que programarlas desde cero.
 
-3. APIs de sistema operativo
+1. APIs de sistema operativo
 
 Funcionan como una especie de traductor entre los programas y el sistema operativo. Permiten solicitar servicios sin necesidad de conocer todos los detalles complejos del hardware.
 
@@ -38,7 +38,7 @@ Ejemplos:
 - Leer el teclado.
 - Acceder al sistema de archivos.
 
-4. APIs de hardware
+1. APIs de hardware
 
 Sirven para controlar dispositivos físicos como cámaras, micrófonos, GPS o sensores. El software envía comandos al controlador del dispositivo para obtener datos o ejecutar acciones.
 
@@ -49,7 +49,7 @@ Ejemplos:
 - GPS.
 - Sensores.
 
-5. APIs de bases de datos
+1. APIs de bases de datos
 
 Permiten leer, escribir y modificar la información almacenada en una base de datos. El programa envía consultas y recibe resultados para trabajar con los datos.
 
@@ -144,7 +144,6 @@ luego procedimos a investigar los materiales que en un principio categorizamos d
 | Varios   | Cables Dupont macho-macho         | Conexiones en la protoboard                      |
 | Varios   | Cables Dupont macho-hembra        | Conexiones entre módulos                         |
 
-
 ### Dibujo
 
 Esta es más una ejemplificación visual de cómo funciona el proyecto.
@@ -155,7 +154,6 @@ Esta es más una ejemplificación visual de cómo funciona el proyecto.
 
 Acá un ejemplo bastante funcional del pseudocódigo:
 
-
 // ================================================================= // LOGICA DE COOPERACIÓN: PIXELA V7 HYBRID // =================================================================
 MÓDULO RASPBERRY PI PICO 2 W (Bucle Infinito): Leer valor_potenciometro Calcular paleta_actual ("wish-gb", "ayy4", etc.) según el potenciómetro
 Si paleta_actual cambió:
@@ -163,7 +161,7 @@ Si paleta_actual cambió:
 
 Si el Botón Shutter es presionado:
     Medir tiempo de presión
-    
+
     Si el tiempo es mayor a 0.6 segundos (Pulsación Larga):
         Cambiar al siguiente algoritmo de Dither de la lista (Bayer, Floyd, Atkinson, etc.)
         Actualizar pantalla OLED con el nuevo Dither

@@ -53,15 +53,15 @@ Además, es una API de solo lectura, lo que significa que únicamente permite so
 
 Lo interesante de esta API es que posee una base de datos muy extensa. Se puede encontrar información sobre:
 
-- Pokémon.
-- Sprites e ilustraciones.
-- Tipos de Pokémon.
-- Movimientos o ataques.
-- Cadenas evolutivas.
-- Grupos huevo.
-- Versiones de los juegos.
-- Objetos e ítems.
-- Bayas.
+* Pokémon.
+* Sprites e ilustraciones.
+* Tipos de Pokémon.
+* Movimientos o ataques.
+* Cadenas evolutivas.
+* Grupos huevo.
+* Versiones de los juegos.
+* Objetos e ítems.
+* Bayas.
 
 Por ejemplo, esta sería una parte de la información entregada por la API para el Pokémon **Blaziken**:
 
@@ -86,12 +86,12 @@ Por ejemplo, esta sería una parte de la información entregada por la API para 
 
 ## Bibliografía
 
-Google Developers. (s.f.). *Google Drive API*. Recuperado el 21 de junio de 2026, de https://developers.google.com/drive
+Google Developers. (s.f.). *Google Drive API*. Recuperado el 21 de junio de 2026, de <https://developers.google.com/drive>
 
-PokéAPI. (s.f.). *PokéAPI: The RESTful Pokémon API*. Recuperado el 21 de junio de 2026, de https://pokeapi.co/
+PokéAPI. (s.f.). *PokéAPI: The RESTful Pokémon API*. Recuperado el 21 de junio de 2026, de <https://pokeapi.co/>
 
-IBM. (s.f.). *¿Qué es una API (interfaz de programación de aplicaciones)?*. Recuperado el 21 de junio de 2026, de https://www.ibm.com/es-es/topics/api
+IBM. (s.f.). *¿Qué es una API (interfaz de programación de aplicaciones)?*. Recuperado el 21 de junio de 2026, de <https://www.ibm.com/es-es/topics/api>
 
-Red Hat. (2023). *¿Qué es una API y cómo funciona?*. Recuperado el 21 de junio de 2026, de https://www.redhat.com/es/topics/api/what-are-application-programming-interfaces
+Red Hat. (2023). *¿Qué es una API y cómo funciona?*. Recuperado el 21 de junio de 2026, de <https://www.redhat.com/es/topics/api/what-are-application-programming-interfaces>
 
-IBM. (s.f.). *¿Qué es un endpoint de API?*. Recuperado el 21 de junio de 2026, de https://www.ibm.com/es-es/topics/api-endpoint
+IBM. (s.f.). *¿Qué es un endpoint de API?*. Recuperado el 21 de junio de 2026, de <https://www.ibm.com/es-es/topics/api-endpoint>

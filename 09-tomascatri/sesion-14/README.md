@@ -8,7 +8,6 @@ Hola, tanto tiempo. Sinceramente, estuve tan metido con el código y con que fun
 
 ### Clase 1 de junio
 
-
 Ya que falté ese día, mi grupo puso sobre la mesa usar la API de los sismos en Chile. Investigando, me di cuenta de que existe una API que toma de referencia los datos de sismología de la Universidad de Chile y que se podría utilizar para el proyecto. Tenía pensado que podríamos usar unos motores que tenía Kiara de un examen que tuvo para simular la magnitud en miniatura.
 
 * [Documentación API Earthquake](https://docs.boostr.cl/reference/earthquake)
@@ -293,7 +292,6 @@ Hubo algunos fallos de código, pero principalmente fueron errores de escritura 
           ¡La foto se guarda con éxito en tu Drive!
 ```
 
-
 ---
 
 ### Controlador
@@ -344,6 +342,3 @@ Finalmente se le aplicó el protocolo UDP y solo tuvimos un problema con el pote
 ```
 
 * Se me olvidó mencionar que, para poder proporcionar información del proyecto de manera más profunda a mi grupo, creé un [NotebookLM](https://notebooklm.google.com/notebook/4f74ab24-d664-4222-bcea-7a99c820a673) en donde dejé todo el proceso, así como los errores, los códigos usados y el pseudocódigo. Lo dejaré aquí por si desean también verlo y preguntar acerca de algo más técnico sobre el proyecto.
-
-
-
