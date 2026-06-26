@@ -1,6 +1,6 @@
 # Examen / grupo-06
 
-Lunes 22 de junio. 
+Lunes 22 de junio.
 
 **Integrantes:**
 
@@ -23,7 +23,6 @@ Nuestro proyecto parte desde la pregunta ¿Cuántos habitan los lugares de traba
 ---
 
 ## Pseudocódigo
-
 
 ```mermaid
 flowchart LR
@@ -171,8 +170,8 @@ BUCLE PRINCIPAL:
 
 Comenzamos armando nuestro primer párrafo, que de hecho lo mandamos por discord. Luego Aarón y compañeros nos hicieron preguntas para modificar y mejorar el párrafo ya hecho.
 
-- Grupo 6: Dos edificios que actúan al unísono, sin saberlo. Un sensor en el LID, otro  en la biblioteca, cada uno contando y midiendo presencia, traduciendo lo humano a pulsos digitales. Entre ellos, no está vacío: viaja un protocolo, una API recibe el conteo, lo procesa, lo devuelve transformado; y un actuador responde: una pantalla que se ilumina, un LED que cambia de color, una señal que dice aquí hay vida. El sistema nervioso oculto de los lugares donde pensamos, construido sobre microcontroladores, WiFi y la pregunta técnicamente precisa pero profundamente humana: ¿cuántos habitan tus pasillos ahora mismo?
-- *Párrafo de prueba:* Este proyecto consiste en un sistema que conecta el LID y la biblioteca para medir cuántas personas entran y salen de cada lugar en tiempo real. En la puerta de cada edificio se instalan dos sensores infrarrojos industriales conectados a una placa Arduino con WiFi. Al colocar dos sensores en fila, el sistema detecta de forma automática la dirección de la persona: si pasa primero por el de afuera y luego por el de adentro, cuenta como una entrada; si lo hace al revés, cuenta como una salida. Esta información se envía de manera inalámbrica a través de Internet a una base de datos (API) que lleva el conteo exacto. Finalmente, el sistema responde encendiendo una pantalla o luces LED en el otro edificio; de esta forma, las personas que están en la biblioteca pueden ver mediante una señal visual qué tan lleno está el LID, y viceversa, automatizando el registro de ocupación de los espacios del campus.
+* Grupo 6: Dos edificios que actúan al unísono, sin saberlo. Un sensor en el LID, otro  en la biblioteca, cada uno contando y midiendo presencia, traduciendo lo humano a pulsos digitales. Entre ellos, no está vacío: viaja un protocolo, una API recibe el conteo, lo procesa, lo devuelve transformado; y un actuador responde: una pantalla que se ilumina, un LED que cambia de color, una señal que dice aquí hay vida. El sistema nervioso oculto de los lugares donde pensamos, construido sobre microcontroladores, WiFi y la pregunta técnicamente precisa pero profundamente humana: ¿cuántos habitan tus pasillos ahora mismo?
+* *Párrafo de prueba:* Este proyecto consiste en un sistema que conecta el LID y la biblioteca para medir cuántas personas entran y salen de cada lugar en tiempo real. En la puerta de cada edificio se instalan dos sensores infrarrojos industriales conectados a una placa Arduino con WiFi. Al colocar dos sensores en fila, el sistema detecta de forma automática la dirección de la persona: si pasa primero por el de afuera y luego por el de adentro, cuenta como una entrada; si lo hace al revés, cuenta como una salida. Esta información se envía de manera inalámbrica a través de Internet a una base de datos (API) que lleva el conteo exacto. Finalmente, el sistema responde encendiendo una pantalla o luces LED en el otro edificio; de esta forma, las personas que están en la biblioteca pueden ver mediante una señal visual qué tan lleno está el LID, y viceversa, automatizando el registro de ocupación de los espacios del campus.
 
 Sensor Infrarrojo Evasor de Obstáculos y Anillo LED RGB WS2812 de 16 leds.
 
@@ -180,11 +179,11 @@ Dos edificios que actúan al unísono, sin saberlo. **¿Cuántos habitan los lug
 
 `Preguntas hechas por compañeros y Aarón:`
 
-- [ ] está a medio camino entre no tener implementación técnica concreta, hablando de sensor y actuador, pero solamente mencionar presencia, pero no describir el contexto de uso, los mensajes que quieran transmitir, las velocidades que quieran usar, o la poética detrás, recomiendo nombrar el proyecto
-- [ ] ¿cómo se comunica visualmente el conteo al usuario final? ¿qué significan los distintos colores del led?
-- [ ] ¿qué sensor van a ocupar para detectar a un ser vivo?
+* [ ] está a medio camino entre no tener implementación técnica concreta, hablando de sensor y actuador, pero solamente mencionar presencia, pero no describir el contexto de uso, los mensajes que quieran transmitir, las velocidades que quieran usar, o la poética detrás, recomiendo nombrar el proyecto
+* [ ] ¿cómo se comunica visualmente el conteo al usuario final? ¿qué significan los distintos colores del led?
+* [ ] ¿qué sensor van a ocupar para detectar a un ser vivo?
 
-Luego, el 15 de junio, comenzamos a armar nuestros códigos y definir bien las conexiones de cada componente. Además nos preocupamos de escribir todos los pasos para la conexión de ambos códigos. 
+Luego, el 15 de junio, comenzamos a armar nuestros códigos y definir bien las conexiones de cada componente. Además nos preocupamos de escribir todos los pasos para la conexión de ambos códigos.
 
 ### Conexiones
 
@@ -206,20 +205,20 @@ Luego, el 15 de junio, comenzamos a armar nuestros códigos y definir bien las c
 
 ### Colores rgb para el anillo LED
 
-- Magenta (255, 0, 255) <--
-- Rojo (255, 0, 0)
-- Verde (0, 255, 0) <--
-- Azul (0, 0, 255)
-- Cian (0, 255, 255) <--
-- Rosa pastel (255, 182, 193)
-- Verde Neón (57, 255, 20)
-- Rosa Neón (255, 20, 147)
+* Magenta (255, 0, 255) <--
+* Rojo (255, 0, 0)
+* Verde (0, 255, 0) <--
+* Azul (0, 0, 255)
+* Cian (0, 255, 255) <--
+* Rosa pastel (255, 182, 193)
+* Verde Neón (57, 255, 20)
+* Rosa Neón (255, 20, 147)
 
 `Puntos importantes a considerar:`
 
-- Adafruit IO: generar un feed llamado lid-conteo, y obtener mi AIO Username y AIO Key desde la sección "My Key" del dashboard. Reemplazar esos valores en ambos códigos junto con el SSID/contraseña de WiFi.
-- Lógica del sensor: el código actual incrementa el contador cada vez que detecta un objeto (cada persona = +1) y reinicia a 0 al llegar a 16. Si quieren un conteo neto real (entradas - salidas), necesitarían dos sensores (uno detectando dirección de entrada, otro de salida) ya que un solo sensor IR no puede distinguir la dirección del movimiento.
-- Colores del anillo: verde (1-5 personas), amarillo (6-10), rojo (11-16). Pueden cambiar los rangos o usar un solo color según su mensaje visual.
+* Adafruit IO: generar un feed llamado lid-conteo, y obtener mi AIO Username y AIO Key desde la sección "My Key" del dashboard. Reemplazar esos valores en ambos códigos junto con el SSID/contraseña de WiFi.
+* Lógica del sensor: el código actual incrementa el contador cada vez que detecta un objeto (cada persona = +1) y reinicia a 0 al llegar a 16. Si quieren un conteo neto real (entradas - salidas), necesitarían dos sensores (uno detectando dirección de entrada, otro de salida) ya que un solo sensor IR no puede distinguir la dirección del movimiento.
+* Colores del anillo: verde (1-5 personas), amarillo (6-10), rojo (11-16). Pueden cambiar los rangos o usar un solo color según su mensaje visual.
 
 ### Pasos para conectar todo :)
 
@@ -231,20 +230,20 @@ Luego, el 15 de junio, comenzamos a armar nuestros códigos y definir bien las c
 |GND|GND|
 |INPUT (dato)|Pin digital 6|
 
-2. Conectar el sensor infrarojo a la Raspberry PI
-   
+1. Conectar el sensor infrarojo a la Raspberry PI
+
 |Pin del sensor|Pin de la Pico 2W|
 |---|---|
 |VCC|3.3V (pin 36)|
 |GND|GND (cualquier pin GND)|
 |OUT (señal digital)|GP15 (pin 20)|
 
-3. Mantener presionado el botón `BOOTSEL` de la Pico mientras lo conectamos al Mac por USB.
+1. Mantener presionado el botón `BOOTSEL` de la Pico mientras lo conectamos al Mac por USB.
 
-4. Descargar el archivo *.uf2* de `CircuitPython` para Pico 2W desde su página oficial. 
-5. Arrastrar el archivo *.uf2* a la carpeta de la Raspberry desde el Finder.
-6. La Pico se reiniciará y aparecerá como una nueva unidad llamada CIRCUITPY.
-7. Subir el código UNA vez con Circuit python de la siguiente manera
+2. Descargar el archivo *.uf2* de `CircuitPython` para Pico 2W desde su página oficial.
+3. Arrastrar el archivo *.uf2* a la carpeta de la Raspberry desde el Finder.
+4. La Pico se reiniciará y aparecerá como una nueva unidad llamada CIRCUITPY.
+5. Subir el código UNA vez con Circuit python de la siguiente manera
 
 ```bash
 # Ver dónde está montada
@@ -254,13 +253,13 @@ ls /Volumes/
 cp pico_sensor_entrada.py /Volumes/CIRCUITPY/code.py
 ```
 
-8. Para instalar la biblioteca adafruit_minimqtt, desde la terminal
+1. Para instalar la biblioteca adafruit_minimqtt, desde la terminal
 
 ```bash
 bashcp -r adafruit_minimqtt /Volumes/CIRCUITPY/lib/
 ```
 
-9. Para ver donde se ubica el usb es:
+1. Para ver donde se ubica el usb es:
 
 ```bash
 # Encuentra el puerto serie
@@ -270,13 +269,13 @@ ls /dev/tty.*
 screen /dev/tty.usbmodem* 115200
 ```
 
-10. Para verificar que el archivo esté ahí:
+1. Para verificar que el archivo esté ahí:
 
 ```bash
 ls /Volumes/CIRCUITPY/
 ```
 
-11. Revisar los mensajes (logs) en tiempo real:
+1. Revisar los mensajes (logs) en tiempo real:
 
 ```bash
 ls /dev/tty.*
@@ -288,17 +287,17 @@ Y luego buscar algo tipo:
 screen /dev/tty.usbmodem14201 115200
 ```
 
-12. Para verificar el nombre exacto del archivo:
+1. Para verificar el nombre exacto del archivo:
 
-- Presionar Ctrl+D para recargar
-- Revisa el contenido de CIRCUITPY desde otra terminal (sin cerrar screen, abre una pestaña nueva en Terminal):
+* Presionar Ctrl+D para recargar
+* Revisa el contenido de CIRCUITPY desde otra terminal (sin cerrar screen, abre una pestaña nueva en Terminal):
 
 ```bash
 ls -la /Volumes/CIRCUITPY/
 ls /Volumes/CIRCUITPY/lib/
 ```
 
-13. Si queremos ejecutarlo manualmente desde el REPL para ver el error exacto:
+1. Si queremos ejecutarlo manualmente desde el REPL para ver el error exacto:
 
 ```bash
 import code
@@ -398,9 +397,9 @@ void actualizarAnillo(int conteo) {
 
 ### Arduino
 
-- Teníamos este código para el anillo LED, donde Arduino se tardaba en leer los valores desde Adafruit IO.
-  - El problema es que `mqttClient.poll()` en el loop() compite con otras tareas (reconexión WiFi, actualización del anillo, etc.), y MQTT sobre TCP tiene latencia natural. Entonces, lo que hicimos fue: reducir `keep alive`así evitamos "bloqueos" en el loop.
-  - El problema principal está en las líneas 95-107: cada vuelta del loop() revisa WiFi.status() y mqttClient.connected(), lo cual añade overhead constante incluso cuando todo está bien. Es decir, vuelve a conectar cada vez que se manda un dato.
+* Teníamos este código para el anillo LED, donde Arduino se tardaba en leer los valores desde Adafruit IO.
+  * El problema es que `mqttClient.poll()` en el loop() compite con otras tareas (reconexión WiFi, actualización del anillo, etc.), y MQTT sobre TCP tiene latencia natural. Entonces, lo que hicimos fue: reducir `keep alive`así evitamos "bloqueos" en el loop.
+  * El problema principal está en las líneas 95-107: cada vuelta del loop() revisa WiFi.status() y mqttClient.connected(), lo cual añade overhead constante incluso cuando todo está bien. Es decir, vuelve a conectar cada vez que se manda un dato.
 
 ```cpp
 #include <WiFiS3.h>
@@ -536,7 +535,7 @@ void actualizarAnillo(int conteo) {
 
 `¿Qué cambió?:` Antes, cada vez que entraba al if de reconexión (línea 95-107 original), había delay(1000) que bloqueaba completamente el loop() por 1 segundo entero. Durante ese segundo, mqttClient.poll() no se llamaba, así que cualquier mensaje nuevo de Adafruit IO se acumulaba o se perdía. Ahora la revisión de conexión solo ocurre cada 5 segundos y sin delay(), dejando que mqttClient.poll() corra libremente en cada vuelta del loop
 
-- **Debemos tener en cuenta que:** la verdadera limitación es Adafruit IO, no el código. La cuenta gratuita de Adafruit IO tiene un límite de 30 mensajes por minuto (1 cada 2 segundos aprox). Si el sensor cuenta personas más rápido que eso, los mensajes se encolan o se descartan del lado del servidor, sin importar qué tan optimizado esté el Arduino.
+* **Debemos tener en cuenta que:** la verdadera limitación es Adafruit IO, no el código. La cuenta gratuita de Adafruit IO tiene un límite de 30 mensajes por minuto (1 cada 2 segundos aprox). Si el sensor cuenta personas más rápido que eso, los mensajes se encolan o se descartan del lado del servidor, sin importar qué tan optimizado esté el Arduino.
 
 Este código a continuación, está bien, pero los LEDS no se prenden hasta que pasen 4 personas. Cuándo pasan estas 4 personas, se prenden los 4 LEDS.
 
@@ -713,18 +712,18 @@ void actualizarAnillo(int conteo) {
 
 ### Raspberry
 
-- Por el lado de la Raspberry, la conexión fue demasiado inestable cuando la probamos en clases. Nos demoramos mucho en conectar al wifi y que mandara los datos a Adafruit IO.
-- El puerto 8883 (SSL/MQTT) estaba siendo bloqueado por la red de la universidad, por eso salía el mensaje:
+* Por el lado de la Raspberry, la conexión fue demasiado inestable cuando la probamos en clases. Nos demoramos mucho en conectar al wifi y que mandara los datos a Adafruit IO.
+* El puerto 8883 (SSL/MQTT) estaba siendo bloqueado por la red de la universidad, por eso salía el mensaje:
 
 ```bash
 Exception: ('Unable to receive 1 bytes within 10 seconds.', None)
 ```
 
- - Esto se debe a que la conexión TCP nunca se completaba, los datos se enviaba pero nunca llegaba respuesta. Según claude: "Las redes académicas (eduroam y similares) suelen tener firewalls que solo permiten tráfico saliente por puertos estándar (80, 443) y bloquean o limitan puertos no comunes como 1883/8883, especialmente para dispositivos IoT no gestionados por la universidad."
- - Por otra parte, el puerto serie quedaba "atrapado" por sesiones de screen sin cerrar:
-   - El error `Resource busy` que tuvimos varias veces fue porque cada vez que abríamos `screen` y lo cerrábamos mal (cerrando la ventana de Terminal en vez de salir con (Ctrl+A + K), la sesión quedaba corriendo en background, reteniendo el puerto. Esto no es un problema de la Pico ni de WiFi, es un problema de gestión de procesos en el Mac, pero genera la sensación de "se desconectó todo".
-- Y por último, `mqtt_client.reconnect()` no maneja bien fallos repetidos.
-  - En el código original, si fallaba la reconexión, simplemente lo volvíamos a intentar sin límites, esto puede generar bucles donde la Pico parece "colgada" pero en realidad está reintentando sin parar contra una red que sigue bloqueando el puerto.
+* Esto se debe a que la conexión TCP nunca se completaba, los datos se enviaba pero nunca llegaba respuesta. Según claude: "Las redes académicas (eduroam y similares) suelen tener firewalls que solo permiten tráfico saliente por puertos estándar (80, 443) y bloquean o limitan puertos no comunes como 1883/8883, especialmente para dispositivos IoT no gestionados por la universidad."
+* Por otra parte, el puerto serie quedaba "atrapado" por sesiones de screen sin cerrar:
+  * El error `Resource busy` que tuvimos varias veces fue porque cada vez que abríamos `screen` y lo cerrábamos mal (cerrando la ventana de Terminal en vez de salir con (Ctrl+A + K), la sesión quedaba corriendo en background, reteniendo el puerto. Esto no es un problema de la Pico ni de WiFi, es un problema de gestión de procesos en el Mac, pero genera la sensación de "se desconectó todo".
+* Y por último, `mqtt_client.reconnect()` no maneja bien fallos repetidos.
+  * En el código original, si fallaba la reconexión, simplemente lo volvíamos a intentar sin límites, esto puede generar bucles donde la Pico parece "colgada" pero en realidad está reintentando sin parar contra una red que sigue bloqueando el puerto.
 
 ```cpp
 # PUENTE DIGITAL — Grupo 6
@@ -839,11 +838,11 @@ while True:
 
 **Recomendaciones:**
 
-- No subir tu clave Adafruit a github, ni a ninguna parte!!
-- Utilizar un wifi solo para la Raspberry.
-- No pasar tan lejos del sensor.
-- Pasar de a poquitos y lento, porque el Sensor Infrarojo le cuesta un poquito, pero se puede!!
-- No te estreses con la Raspberry, a veces no se conecta a WIFI, pero solo reinicienlo y funcionará.
+* No subir tu clave Adafruit a github, ni a ninguna parte!!
+* Utilizar un wifi solo para la Raspberry.
+* No pasar tan lejos del sensor.
+* Pasar de a poquitos y lento, porque el Sensor Infrarojo le cuesta un poquito, pero se puede!!
+* No te estreses con la Raspberry, a veces no se conecta a WIFI, pero solo reinicienlo y funcionará.
 
 ```cpp
 # PUENTE DIGITAL - Grupo 6 - Examen
@@ -977,9 +976,9 @@ while True:
 
 **Recomendaciones:**
 
-- Tratar con cariño y calma el Arduino.
-- Se demora en leer los valores de Adafruit, así que no se estresen!!
-- Le pueden cambiar los colores.
+* Tratar con cariño y calma el Arduino.
+* Se demora en leer los valores de Adafruit, así que no se estresen!!
+* Le pueden cambiar los colores.
 
 ```cpp
 // PUENTE DIGITAL — Grupo 6 - Examen
@@ -1145,35 +1144,30 @@ void actualizarAnillo(int conteo) {
 
 El anillo se completa píxel a píxel y cambia de color según la ocupación: verde para flujo bajo, amarillo para medio, y rojo cuando se desborda.
 
-
 1-5  -> verde (poco ocupado)
 
 <img width="484" height="619" alt="verde" src="https://github.com/user-attachments/assets/94487fc0-2ff3-4d82-b605-6e8c7b677f0f" />
-
 
 6-10  -> amarillo (ocupación media)
 
 <img width="476" height="586" alt="amarillo" src="https://github.com/user-attachments/assets/d1f1b913-cc2f-4027-a202-89e83def0460" />
 
-
 11-16 -> rojo (casi lleno / lleno)
 
 <img width="960" height="1280" alt="rojo" src="https://github.com/user-attachments/assets/24197f1c-587d-44fc-b953-92bb131b4dcf" />
-
 
 ---
 
 ## Demostraciones en vivo e imágenes finales
 
-<img src="./imagenes/video1.gif" alt="video" width="200"> <img src="./imagenes/video2.gif" alt="video" width="200"> <img src="./imagenes/IMG_0836.jpeg" alt="foto" width="200"> 
+<img src="./imagenes/video1.gif" alt="video" width="200"> <img src="./imagenes/video2.gif" alt="video" width="200"> <img src="./imagenes/IMG_0836.jpeg" alt="foto" width="200">
 
-<img src="./imagenes/final2.jpeg" alt="foto" width="300"> <img src="./imagenes/final1.jpeg" alt="foto" width="300"> <img src="./imagenes/final3.jpeg" alt="foto" width="300"> 
+<img src="./imagenes/final2.jpeg" alt="foto" width="300"> <img src="./imagenes/final1.jpeg" alt="foto" width="300"> <img src="./imagenes/final3.jpeg" alt="foto" width="300">
 
 <img src="./imagenes/final4.jpeg" alt="foto" width="300"> <img src="./imagenes/final5.jpeg" alt="foto" width="300"> <img src="./imagenes/video8.gif" alt="foto" width="300">
 
 <img src="./imagenes/final6.jpeg" alt="foto" width="300"> <img src="./imagenes/video7.gif" alt="foto" width="300">
 
-
 ## Demostraciones en vivo de Peñalolén y Quilicura :)
 
 Decidimos elevar el nivel de dificultad del proyecto probando la conexión inalámbrica a grandes distancias. La infraestructura se distribuyó geográficamente de esta forma:
@@ -1184,8 +1178,6 @@ EDIFICIO B → Rep180 (oficina Aarón) → Quilicura (casa vale)
 
 Lo destacable es que la conexión remota funcionó perfectamente a pesar de los kilómetros de distancia. Además, el sistema demostró ser altamente adaptable, ya que para cambiarlo de lugar solo se requiere modificar la red Wi-Fi y contraseña en el código, sin perder la vinculación ni el flujo de datos hacia Adafruit IO.
 
-
-
 ## Demostraciones en vivo de Peñalolén y Quilicura :)
 
 Decidimos elevar el nivel de dificultad del proyecto probando la conexión inalámbrica a grandes distancias. La infraestructura se distribuyó geográficamente de esta forma:
@@ -1195,7 +1187,6 @@ EDIFICIO A → LID (Salvador Sanfuentes) → Peñalolén (casa sofi)
 EDIFICIO B → Rep180 (oficina Aarón) → Quilicura (casa vale)
 
 Lo destacable es que la conexión remota funcionó perfectamente a pesar de los kilómetros de distancia. Además, el sistema demostró ser altamente adaptable, ya que para cambiarlo de lugar solo se requiere modificar la red Wi-Fi y contraseña en el código, sin perder la vinculación ni el flujo de datos hacia Adafruit IO.
-
 
 | LID (simulación casa sofi) | Rep180 (simulación casa vale) |
 |-----------------|--------------------|
@@ -1213,8 +1204,8 @@ Lo destacable es que la conexión remota funcionó perfectamente a pesar de los 
 
 ### Bibliografía
 
-- <https://afel.cl/>
-- <https://www.adafruit.com/>
-- <https://www.arduino.cc/>
-- <https://mcielectronics.cl/>
-- <https://www.raspberrypi.com/>
+* <https://afel.cl/>
+* <https://www.adafruit.com/>
+* <https://www.arduino.cc/>
+* <https://mcielectronics.cl/>
+* <https://www.raspberrypi.com/>

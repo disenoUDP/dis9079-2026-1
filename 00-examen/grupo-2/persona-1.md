@@ -18,7 +18,7 @@ Este último es un software que, personalmente, conozco por información asociad
 
 En un comienzo se consiguió un sensor del laboratorio de interacción digital, tratándose de un módulo que posee un circuito con un potenciómerto en conjunto con un micrófono. Desconozco el tipo de sensor que era, dado que no poseía nombre en la placa, pero se asemejaba al KY-037.
 
-Pese a las dudas, con este módulo surgieron los primeros intentos para captar información sonora a través de la raspberry pi pico 2w. 
+Pese a las dudas, con este módulo surgieron los primeros intentos para captar información sonora a través de la raspberry pi pico 2w.
 Para poder asegurarnos que el módulo se centrara en obtener de sonido ambiental, es que decidí adquirir este producto de Afel basándome en su descripción: [“Sensor de Sonido Analógico Digital KY-038”](https://afel.cl/products/sensor-de-sonido-analogico-digital).
 
 <img width="1920" height="875" alt="modulo_ky_38" src="https://github.com/user-attachments/assets/279722ea-9950-4119-ba9a-5311ede09b6a" />
@@ -48,7 +48,7 @@ while True:
     time.sleep(0.1)
 ```
 
-Tras este primer intento (siguiendo los pasos indicados) fui mostrandole los resultados a la ia, para poder ir verificando si el funcionamiento del módulo era el esperado. Tras algunas ideas, es que decidí el pedirle a la ia que agregara un sistema de calibración y un tiempo para aplicarlo con la finalidad de primero detectar el sonido ambiente y establecer un valor promedio a registrar. 
+Tras este primer intento (siguiendo los pasos indicados) fui mostrandole los resultados a la ia, para poder ir verificando si el funcionamiento del módulo era el esperado. Tras algunas ideas, es que decidí el pedirle a la ia que agregara un sistema de calibración y un tiempo para aplicarlo con la finalidad de primero detectar el sonido ambiente y establecer un valor promedio a registrar.
 
 Tras varios errores y problemas con respecto a este módulo, se llegó a un punto en el que fue necesario cambiar de sensor de audio dada las limitantes de estos módulos, dado que pese a contar con amplificadores incluidos sólo podían detectar sonido para "activar o desactivar" similar al funcionamiento de un botón.
 
@@ -61,7 +61,7 @@ Para ello, Claude me entrego un listado de sensores que podían servir para el p
 | INMP441 | Digital I2S | Excelente~ | $3–6 USD | Alta precisión, sin ruido |
 | ADCSPH0645 | Digital I2S | Excelente~ | $5–8 USD | Similar al INMP441 |
 
-De todas las alternativas, me sugirió usar el "MAX9814". 
+De todas las alternativas, me sugirió usar el "MAX9814".
 
 Entre la búsqueda de dicho sensor di con la variante "MAX9812" en la tienda ["hubot"](https://hubot.cl/).
 Tras una consulta rápida me dio el visto bueno para usar la pieza en el proyecto.
@@ -70,9 +70,7 @@ Tras una consulta rápida me dio el visto bueno para usar la pieza en el proyect
 
 ### [MAX9812]( https://hubot.cl/producto/sensor-analogico-audio-max9812-sku-614/)
 
-
 <img width="1920" height="860" alt="modulo_max9812" src="https://github.com/user-attachments/assets/cce5be45-1c34-4538-97e8-de3609999e37" />
-
 
 Con el sensor adquirido, procedí a consultar sobre cómo hacer las conexiones y pedirle el código anterior, pero modificado.
 
@@ -268,4 +266,3 @@ Ya con nuestra placa lista sólo la configuré nuevamente, le agregué las libre
 Para la última parte del proyecto, tuve el interés de desarrollar una mini carcasa a partir de un [modelo 3D existente](https://www.printables.com/model/1368704-raspberry-pi-pico-case-1-2-wireless/files). Lo que pude hacer por tiempo fue adaptar la carcasa para que no tuviera inconvenientes en encajar.
 
 <img width="1920" height="1021" alt="case_raspberry-pi-pico-2w" src="https://github.com/user-attachments/assets/b437a7dc-1540-44ed-ac7e-a31aca006c78" />
-

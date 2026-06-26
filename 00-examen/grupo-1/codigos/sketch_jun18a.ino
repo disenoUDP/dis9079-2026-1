@@ -23,11 +23,11 @@
 // DATOS ADAFRUIT IO
 // -----------------------------
 
-#define IO_USERNAME  "Magdalena"
-#define IO_KEY       ""
+#define IO_USERNAME "Magdalena"
+#define IO_KEY ""
 
-#define WIFI_SSID    "Jesu"
-#define WIFI_PASS    "slay321"
+#define WIFI_SSID "Jesu"
+#define WIFI_PASS "slay321"
 
 AdafruitIO_WiFi io(IO_USERNAME, IO_KEY, WIFI_SSID, WIFI_PASS);
 
@@ -157,7 +157,8 @@ const unsigned long tiempoRebote = 50;
 // SETUP
 // -----------------------------
 
-void setup() {
+void setup()
+{
   Serial.begin(9600);
 
   pinMode(trigPin, OUTPUT);
@@ -183,19 +184,23 @@ void setup() {
 // LOOP
 // -----------------------------
 
-void loop() {
+void loop()
+{
   unsigned long tiempoActual = millis();
 
   // Mantiene activa la conexión con Adafruit IO
   // solo si logró conectarse.
-  if (adafruitConectado) {
+  if (adafruitConectado)
+  {
     io.run();
   }
 
   leerBoton(tiempoActual);
 
-  if (!modoDemoActivo) {
-    if (tiempoActual - tiempoAnteriorSensor >= intervaloSensor) {
+  if (!modoDemoActivo)
+  {
+    if (tiempoActual - tiempoAnteriorSensor >= intervaloSensor)
+    {
       tiempoAnteriorSensor = tiempoActual;
 
       float lecturaActual = medirDistanciaSimple();
@@ -208,16 +213,14 @@ void loop() {
       String estadoDetectado;
 
       decodificarDistancia(
-        distancia,
-        codigoDetectado,
-        estadoDetectado
-      );
+          distancia,
+          codigoDetectado,
+          estadoDetectado);
 
       confirmarEstadoSensor(
-        codigoDetectado,
-        estadoDetectado,
-        tiempoActual
-      );
+          codigoDetectado,
+          estadoDetectado,
+          tiempoActual);
 
       actualizarAusencia(tiempoActual);
     }
@@ -235,7 +238,8 @@ void loop() {
 // SIN BLOQUEAR PARA SIEMPRE
 // -----------------------------
 
-void conectarAdafruit() {
+void conectarAdafruit()
+{
   Serial.print("Conectando a Adafruit IO");
 
   io.connect();
@@ -245,19 +249,22 @@ void conectarAdafruit() {
   // Espera máximo 15 segundos
 
   while (
-    io.status() < AIO_CONNECTED &&
-    millis() - inicioConexion < tiempoMaximoConexion
-  ) {
+      io.status() < AIO_CONNECTED &&
+      millis() - inicioConexion < tiempoMaximoConexion)
+  {
     Serial.print(".");
     delay(500);
   }
 
   Serial.println();
 
-  if (io.status() >= AIO_CONNECTED) {
+  if (io.status() >= AIO_CONNECTED)
+  {
     adafruitConectado = true;
     Serial.println("Conectado a Adafruit IO");
-  } else {
+  }
+  else
+  {
     adafruitConectado = false;
     Serial.println("No conecto a Adafruit IO");
     Serial.println("El sistema seguira funcionando sin enviar datos");
@@ -270,7 +277,8 @@ void conectarAdafruit() {
 // MEDICIÓN SIMPLE DEL SENSOR
 // -----------------------------
 
-float medirDistanciaSimple() {
+float medirDistanciaSimple()
+{
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
 
@@ -280,7 +288,8 @@ float medirDistanciaSimple() {
 
   duracion = pulseIn(echoPin, HIGH, 30000);
 
-  if (duracion == 0) {
+  if (duracion == 0)
+  {
     return -1;
   }
 
@@ -293,20 +302,26 @@ float medirDistanciaSimple() {
 // REGISTRAR LECTURA EN EL PROMEDIO
 // -----------------------------
 
-void registrarLectura(float nuevaLectura) {
-  if (nuevaLectura >= 2 && nuevaLectura <= 300) {
+void registrarLectura(float nuevaLectura)
+{
+  if (nuevaLectura >= 2 && nuevaLectura <= 300)
+  {
     muestrasDistancia[indiceMuestra] = nuevaLectura;
-  } else {
+  }
+  else
+  {
     muestrasDistancia[indiceMuestra] = -1;
   }
 
   indiceMuestra++;
 
-  if (indiceMuestra >= CANTIDAD_MUESTRAS) {
+  if (indiceMuestra >= CANTIDAD_MUESTRAS)
+  {
     indiceMuestra = 0;
   }
 
-  if (muestrasRegistradas < CANTIDAD_MUESTRAS) {
+  if (muestrasRegistradas < CANTIDAD_MUESTRAS)
+  {
     muestrasRegistradas++;
   }
 }
@@ -315,18 +330,22 @@ void registrarLectura(float nuevaLectura) {
 // CALCULAR PROMEDIO
 // -----------------------------
 
-float calcularPromedioDistancia() {
+float calcularPromedioDistancia()
+{
   float sumaDistancias = 0;
   int cantidadValidas = 0;
 
-  for (int i = 0; i < muestrasRegistradas; i++) {
-    if (muestrasDistancia[i] >= 2) {
+  for (int i = 0; i < muestrasRegistradas; i++)
+  {
+    if (muestrasDistancia[i] >= 2)
+    {
       sumaDistancias += muestrasDistancia[i];
       cantidadValidas++;
     }
   }
 
-  if (cantidadValidas < MINIMO_MUESTRAS_VALIDAS) {
+  if (cantidadValidas < MINIMO_MUESTRAS_VALIDAS)
+  {
     return -1;
   }
 
@@ -337,8 +356,10 @@ float calcularPromedioDistancia() {
 // REINICIAR PROMEDIO
 // -----------------------------
 
-void reiniciarPromedioSensor() {
-  for (int i = 0; i < CANTIDAD_MUESTRAS; i++) {
+void reiniciarPromedioSensor()
+{
+  for (int i = 0; i < CANTIDAD_MUESTRAS; i++)
+  {
     muestrasDistancia[i] = -1;
   }
 
@@ -352,26 +373,30 @@ void reiniciarPromedioSensor() {
 // -----------------------------
 
 void decodificarDistancia(
-  float d,
-  int &codigoDetectado,
-  String &estadoDetectado
-) {
-  if (d < 0 || d >= 100) {
+    float d,
+    int &codigoDetectado,
+    String &estadoDetectado)
+{
+  if (d < 0 || d >= 100)
+  {
     estadoDetectado = "sin presencia";
     codigoDetectado = COD_SIN_PRESENCIA;
   }
 
-  else if (d >= 70) {
+  else if (d >= 70)
+  {
     estadoDetectado = "distancia 01";
     codigoDetectado = COD_DISTANCIA_01;
   }
 
-  else if (d >= 40) {
+  else if (d >= 40)
+  {
     estadoDetectado = "distancia 02";
     codigoDetectado = COD_DISTANCIA_02;
   }
 
-  else {
+  else
+  {
     estadoDetectado = "distancia 03";
     codigoDetectado = COD_DISTANCIA_03;
   }
@@ -382,28 +407,30 @@ void decodificarDistancia(
 // -----------------------------
 
 void confirmarEstadoSensor(
-  int codigoDetectado,
-  String estadoDetectado,
-  unsigned long tiempoActual
-) {
-  if (codigoDetectado != codigoCandidato) {
+    int codigoDetectado,
+    String estadoDetectado,
+    unsigned long tiempoActual)
+{
+  if (codigoDetectado != codigoCandidato)
+  {
     codigoCandidato = codigoDetectado;
     estadoCandidato = estadoDetectado;
     tiempoInicioCandidato = tiempoActual;
   }
 
   if (
-    codigoActual == COD_AUSENCIA &&
-    codigoCandidato == COD_SIN_PRESENCIA
-  ) {
+      codigoActual == COD_AUSENCIA &&
+      codigoCandidato == COD_SIN_PRESENCIA)
+  {
     return;
   }
 
   if (
-    tiempoActual - tiempoInicioCandidato >=
-    tiempoConfirmacionEstado
-  ) {
-    if (codigoActual != codigoCandidato) {
+      tiempoActual - tiempoInicioCandidato >=
+      tiempoConfirmacionEstado)
+  {
+    if (codigoActual != codigoCandidato)
+    {
       codigoActual = codigoCandidato;
       estadoActual = estadoCandidato;
     }
@@ -414,28 +441,35 @@ void confirmarEstadoSensor(
 // ACTUALIZAR MENSAJE
 // -----------------------------
 
-void actualizarMensaje() {
-  if (codigoActual == COD_SIN_PRESENCIA) {
+void actualizarMensaje()
+{
+  if (codigoActual == COD_SIN_PRESENCIA)
+  {
     mensajeActual = "Sin presencia";
   }
 
-  else if (codigoActual == COD_DISTANCIA_01) {
+  else if (codigoActual == COD_DISTANCIA_01)
+  {
     mensajeActual = "Distancia 01";
   }
 
-  else if (codigoActual == COD_DISTANCIA_02) {
+  else if (codigoActual == COD_DISTANCIA_02)
+  {
     mensajeActual = "Distancia 02";
   }
 
-  else if (codigoActual == COD_DISTANCIA_03) {
+  else if (codigoActual == COD_DISTANCIA_03)
+  {
     mensajeActual = "Distancia 03";
   }
 
-  else if (codigoActual == COD_AUSENCIA) {
+  else if (codigoActual == COD_AUSENCIA)
+  {
     mensajeActual = "Ausencia prolongada";
   }
 
-  else {
+  else
+  {
     mensajeActual = "Esperando lectura";
   }
 }
@@ -444,31 +478,35 @@ void actualizarMensaje() {
 // CONTROL DE AUSENCIA PROLONGADA
 // -----------------------------
 
-void actualizarAusencia(unsigned long tiempoActual) {
+void actualizarAusencia(unsigned long tiempoActual)
+{
   bool sinPresencia =
-    codigoActual == COD_SIN_PRESENCIA;
+      codigoActual == COD_SIN_PRESENCIA;
 
   bool hayPresencia =
-    codigoActual == COD_DISTANCIA_01 ||
-    codigoActual == COD_DISTANCIA_02 ||
-    codigoActual == COD_DISTANCIA_03;
+      codigoActual == COD_DISTANCIA_01 ||
+      codigoActual == COD_DISTANCIA_02 ||
+      codigoActual == COD_DISTANCIA_03;
 
-  if (sinPresencia) {
-    if (!contandoAusencia) {
+  if (sinPresencia)
+  {
+    if (!contandoAusencia)
+    {
       contandoAusencia = true;
       tiempoInicioSinPresencia = tiempoActual;
     }
 
     if (
-      tiempoActual - tiempoInicioSinPresencia >=
-      tiempoAusencia
-    ) {
+        tiempoActual - tiempoInicioSinPresencia >=
+        tiempoAusencia)
+    {
       estadoActual = "ausencia prolongada";
       codigoActual = COD_AUSENCIA;
     }
   }
 
-  if (hayPresencia) {
+  if (hayPresencia)
+  {
     contandoAusencia = false;
     brilloAusencia = 0;
   }
@@ -478,21 +516,25 @@ void actualizarAusencia(unsigned long tiempoActual) {
 // LEER BOTÓN CON DEBOUNCE
 // -----------------------------
 
-void leerBoton(unsigned long tiempoActual) {
+void leerBoton(unsigned long tiempoActual)
+{
   bool lecturaBoton = digitalRead(botonPin);
 
-  if (lecturaBoton != ultimaLecturaBoton) {
+  if (lecturaBoton != ultimaLecturaBoton)
+  {
     tiempoUltimoRebote = tiempoActual;
   }
 
   if (
-    tiempoActual - tiempoUltimoRebote >
-    tiempoRebote
-  ) {
-    if (lecturaBoton != estadoEstableBoton) {
+      tiempoActual - tiempoUltimoRebote >
+      tiempoRebote)
+  {
+    if (lecturaBoton != estadoEstableBoton)
+    {
       estadoEstableBoton = lecturaBoton;
 
-      if (estadoEstableBoton == HIGH) {
+      if (estadoEstableBoton == HIGH)
+      {
         avanzarModoBoton();
       }
     }
@@ -505,10 +547,12 @@ void leerBoton(unsigned long tiempoActual) {
 // CICLO DEL BOTÓN
 // -----------------------------
 
-void avanzarModoBoton() {
+void avanzarModoBoton()
+{
   pasoBoton++;
 
-  if (pasoBoton == 1) {
+  if (pasoBoton == 1)
+  {
     modoDemoActivo = true;
 
     estadoActual = "distancia 01";
@@ -519,7 +563,8 @@ void avanzarModoBoton() {
     Serial.println("Boton: modo demo distancia 01");
   }
 
-  else if (pasoBoton == 2) {
+  else if (pasoBoton == 2)
+  {
     modoDemoActivo = true;
 
     estadoActual = "distancia 02";
@@ -530,7 +575,8 @@ void avanzarModoBoton() {
     Serial.println("Boton: modo demo distancia 02");
   }
 
-  else if (pasoBoton == 3) {
+  else if (pasoBoton == 3)
+  {
     modoDemoActivo = true;
 
     estadoActual = "distancia 03";
@@ -541,7 +587,8 @@ void avanzarModoBoton() {
     Serial.println("Boton: modo demo distancia 03");
   }
 
-  else if (pasoBoton == 4) {
+  else if (pasoBoton == 4)
+  {
     modoDemoActivo = true;
 
     estadoActual = "ausencia prolongada";
@@ -552,7 +599,8 @@ void avanzarModoBoton() {
     Serial.println("Boton: modo demo ausencia prolongada");
   }
 
-  else if (pasoBoton == 5) {
+  else if (pasoBoton == 5)
+  {
     modoDemoActivo = false;
     pasoBoton = 0;
 
@@ -580,7 +628,8 @@ void avanzarModoBoton() {
 // REINICIAR VALORES DEL MODO DEMO
 // -----------------------------
 
-void reiniciarValoresDemo() {
+void reiniciarValoresDemo()
+{
   contandoAusencia = false;
   brilloAusencia = 0;
 
@@ -593,37 +642,47 @@ void reiniciarValoresDemo() {
 // ENVIAR / IMPRIMIR SOLO CUANDO CAMBIA
 // -----------------------------
 
-void enviarEstadoSiCambio(unsigned long tiempoActual) {
+void enviarEstadoSiCambio(unsigned long tiempoActual)
+{
   if (
-    codigoActual != codigoAnterior &&
-    codigoActual != -1
-  ) {
+      codigoActual != codigoAnterior &&
+      codigoActual != -1)
+  {
     Serial.print("Estado actual: ");
     Serial.println(estadoActual);
 
     Serial.print("Mensaje: ");
     Serial.println(mensajeActual);
 
-    if (!modoDemoActivo) {
+    if (!modoDemoActivo)
+    {
       Serial.print("Promedio de distancia: ");
 
-      if (distancia >= 0) {
+      if (distancia >= 0)
+      {
         Serial.print(distancia);
         Serial.println(" cm");
-      } else {
+      }
+      else
+      {
         Serial.println("sin lectura valida");
       }
-    } else {
+    }
+    else
+    {
       Serial.println("Activado mediante boton demo");
     }
 
     Serial.print("Codigo enviado a Adafruit IO: ");
     Serial.println(codigoActual);
 
-    if (adafruitConectado) {
+    if (adafruitConectado)
+    {
       estadoFeed->save(codigoActual);
       Serial.println("Enviado a Adafruit IO");
-    } else {
+    }
+    else
+    {
       Serial.println("No se envio a Adafruit IO porque no esta conectado");
     }
 
@@ -638,11 +697,14 @@ void enviarEstadoSiCambio(unsigned long tiempoActual) {
 // CONTROL DEL LED
 // -----------------------------
 
-void controlarLed(unsigned long tiempoActual) {
-  if (codigoActual != codigoLedAnterior) {
+void controlarLed(unsigned long tiempoActual)
+{
+  if (codigoActual != codigoLedAnterior)
+  {
     tiempoInicioLatido = tiempoActual;
 
-    if (codigoActual == COD_AUSENCIA) {
+    if (codigoActual == COD_AUSENCIA)
+    {
       brilloAusencia = 0;
       tiempoInicioFade = tiempoActual;
     }
@@ -652,31 +714,34 @@ void controlarLed(unsigned long tiempoActual) {
     codigoLedAnterior = codigoActual;
   }
 
-  if (codigoActual == COD_SIN_PRESENCIA) {
+  if (codigoActual == COD_SIN_PRESENCIA)
+  {
     analogWrite(ledPin, 0);
   }
 
-  else if (codigoActual == COD_DISTANCIA_01) {
+  else if (codigoActual == COD_DISTANCIA_01)
+  {
     latirLed(
-      tiempoActual,
-      latidoDistancia01,
-      brilloDistancia01
-    );
+        tiempoActual,
+        latidoDistancia01,
+        brilloDistancia01);
   }
 
-  else if (codigoActual == COD_DISTANCIA_02) {
+  else if (codigoActual == COD_DISTANCIA_02)
+  {
     latirLed(
-      tiempoActual,
-      latidoDistancia02,
-      brilloDistancia02
-    );
+        tiempoActual,
+        latidoDistancia02,
+        brilloDistancia02);
   }
 
-  else if (codigoActual == COD_DISTANCIA_03) {
+  else if (codigoActual == COD_DISTANCIA_03)
+  {
     analogWrite(ledPin, brilloDistancia03);
   }
 
-  else if (codigoActual == COD_AUSENCIA) {
+  else if (codigoActual == COD_AUSENCIA)
+  {
     encendidoProgresivoAusencia(tiempoActual);
   }
 }
@@ -686,21 +751,25 @@ void controlarLed(unsigned long tiempoActual) {
 // -----------------------------
 
 void latirLed(
-  unsigned long tiempoActual,
-  unsigned long intervaloLatido,
-  int brillo
-) {
+    unsigned long tiempoActual,
+    unsigned long intervaloLatido,
+    int brillo)
+{
   unsigned long tiempoDentroDelLatido =
-    tiempoActual - tiempoInicioLatido;
+      tiempoActual - tiempoInicioLatido;
 
-  if (tiempoDentroDelLatido >= intervaloLatido) {
+  if (tiempoDentroDelLatido >= intervaloLatido)
+  {
     tiempoInicioLatido = tiempoActual;
     tiempoDentroDelLatido = 0;
   }
 
-  if (tiempoDentroDelLatido < duracionPulso) {
+  if (tiempoDentroDelLatido < duracionPulso)
+  {
     analogWrite(ledPin, brillo);
-  } else {
+  }
+  else
+  {
     analogWrite(ledPin, 0);
   }
 }
@@ -711,21 +780,23 @@ void latirLed(
 // -----------------------------
 
 void encendidoProgresivoAusencia(
-  unsigned long tiempoActual
-) {
+    unsigned long tiempoActual)
+{
   unsigned long tiempoTranscurrido =
-    tiempoActual - tiempoInicioFade;
+      tiempoActual - tiempoInicioFade;
 
-  if (tiempoTranscurrido >= duracionFadeAusencia) {
+  if (tiempoTranscurrido >= duracionFadeAusencia)
+  {
     brilloAusencia = 255;
-  } else {
+  }
+  else
+  {
     brilloAusencia = map(
-      tiempoTranscurrido,
-      0,
-      duracionFadeAusencia,
-      0,
-      255
-    );
+        tiempoTranscurrido,
+        0,
+        duracionFadeAusencia,
+        0,
+        255);
   }
 
   analogWrite(ledPin, brilloAusencia);

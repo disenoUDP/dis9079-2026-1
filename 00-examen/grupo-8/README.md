@@ -18,14 +18,13 @@ Arduino R4 WiFi                                             Raspi Pico 2
                                   
 ```
 
-Parámetros del semáforo 
+Parámetros del semáforo
 
-- 0-5 personas → 🟢 Verde
-- 6-10 personas → 🟡 Amarillo
-- 11+ personas → 🔴 Rojo
+* 0-5 personas → 🟢 Verde
+* 6-10 personas → 🟡 Amarillo
+* 11+ personas → 🔴 Rojo
   
-
-### Materiales 
+### Materiales
 
 | materiales | costo | cantidad|
 |------------|-------|---------|
@@ -36,12 +35,11 @@ Parámetros del semáforo
 |Protoboards     | 1.500c/u  | 2       |
 |cables jumper (pack de 20 cables de conexión macho macho)  | 1.000  |    1  |
 
-
-## Proceso 
+## Proceso
 
 Creamos un feed en Adafruit IO llamado ```pruebasemaforo```, posteriormente pasamos a el desarrollo de códigos en con ayuda de la IA.
 
-#### Proceso Raspberry Pi Pico 2 w 
+#### Proceso Raspberry Pi Pico 2 w
 
 ##### Pseudocódigo
 
@@ -70,7 +68,7 @@ INICIO
 FIN
 ```
 
-Una vez obtenido el código procedimos a probarlo en la placa y surgieron un par de problemas en el proceso 
+Una vez obtenido el código procedimos a probarlo en la placa y surgieron un par de problemas en el proceso
 
 Como primer problema, la placa no se conectaba al WiFi. Se probó con distintos hotspots y ninguno dio resultados. Sin embargo, durante un momento creemos que sí logró conectarse a uno de ellos. No obstante, al volver a intentarlo con el teléfono de mi compañera, nuevamente no se conectaba.
 
@@ -82,7 +80,7 @@ Segundo problema, la Pico recibía bien los valores de Adafruit IO, pero ningún
 
 Se probó un código simple LED por LED, descartando errores de código. Se probó conectar un cable directo a 3.3V → tampoco prendía → se sospechó del GND y el cable de GND no estaba bien conectado. Al corregirlo, los 3 LEDs (verde, amarillo, rojo) parpadearon correctamente con un código de prueba simple.
 
-#### Código de prueba de los LEDS 
+#### Código de prueba de los LEDS
 
 ```
 import time
@@ -122,13 +120,11 @@ while True:
 
 <img width="1600" height="1544" alt="WhatsApp Image 2026-06-22 at 11 05 44" src="https://github.com/user-attachments/assets/6296b9c9-cc42-4daf-8ab4-8fdaf618cffd" />
 
-
 #### Video Raspberry Pi Pico 2w
 
-https://youtube.com/shorts/gFcf4EqzTzc?si=k5rP9XQtdY6noI2l
+<https://youtube.com/shorts/gFcf4EqzTzc?si=k5rP9XQtdY6noI2l>
 
 #### Proceso Arduino UNO R4 WiFI
-
 
 #### Pseudocódigo
 
@@ -150,23 +146,21 @@ INICIO
 FIN
 ```
 
-
 Una vez obtenido el código para ARDUINO realizamos la prueba para ver si es que el código tenía algún fallo
-
 
 Primer problema, necesitábamos hacer que el Arduino se conectara al hotspot de un iPhone, pero no lo lograba. Por lo que averiguamos, una posible causa era que los iPhone comparten la conexión en 5 GHz, mientras que las placas se conectan en 2,4 GHz. Por ello, procedimos a activar la opción *"Maximizar compatibilidad"* en el teléfono.
 
 Posteriormente realizamos la conexión de cableado y botones (resistencia a GND, botón a 5 V)
 
-Segundo problema, el contador se actualiza si se conecta o desconecta el cable manualmente, pero no responde al presionar el botón físico. Al mover el Arduino, los valores fluctúan por sí solos (señal "flotante"), lo que indica que el circuito de pull-down no está cerrando correctamente hacia GND, aunque se revisó la disposición del circuito (A3 conectado a D2, B3 con una resistencia de 10 kΩ, C3 y E3 con las patitas del botón, y A8 conectado al riel positivo) y parecía estar correcta si embargo no era posible controlar el envio de datos, por lo que buscamos otras opciones para los botones y al buscar otras opciones nos quedamos con esta opción que no se necesita necesitan resistencias en la cual el boton blanco es el que aumenta y el azul que disminuye. 
+Segundo problema, el contador se actualiza si se conecta o desconecta el cable manualmente, pero no responde al presionar el botón físico. Al mover el Arduino, los valores fluctúan por sí solos (señal "flotante"), lo que indica que el circuito de pull-down no está cerrando correctamente hacia GND, aunque se revisó la disposición del circuito (A3 conectado a D2, B3 con una resistencia de 10 kΩ, C3 y E3 con las patitas del botón, y A8 conectado al riel positivo) y parecía estar correcta si embargo no era posible controlar el envio de datos, por lo que buscamos otras opciones para los botones y al buscar otras opciones nos quedamos con esta opción que no se necesita necesitan resistencias en la cual el boton blanco es el que aumenta y el azul que disminuye.
 
-|Componente | Pin del componente	| Conecta a |
+|Componente | Pin del componente | Conecta a |
 |-----------|---------------------|-----------|
-|Botón SUMA |	Pin 1	| Pin D2 del Arduino (cable verde)|
-Botón SUMA |	Pin 2	| Riel GND de la protoboard (cable azul)|
-Botón RESTA	|Pin 1	| Pin D3 del Arduino (cable rojo)|
-Botón RESTA	|Pin 2 |	Riel GND de la protoboard (cable azul)|
-Protoboard|	Riel GND |	Pin GND del Arduino (cable negro)|
+|Botón SUMA | Pin 1 | Pin D2 del Arduino (cable verde)|
+Botón SUMA | Pin 2 | Riel GND de la protoboard (cable azul)|
+Botón RESTA |Pin 1 | Pin D3 del Arduino (cable rojo)|
+Botón RESTA |Pin 2 | Riel GND de la protoboard (cable azul)|
+Protoboard| Riel GND | Pin GND del Arduino (cable negro)|
 
 ```
 #include <WiFiS3.h>
@@ -239,9 +233,6 @@ void loop() {
 }
 ```
 
-
-
-
 *foto del proyecto, especifico ARDUINO+BOTONES*
 <img width="900" height="1600" alt="WhatsApp Image 2026-06-22 at 11 10 36 (1)" src="https://github.com/user-attachments/assets/60f0d5c3-d86c-46fb-8795-d79f75d66b1c" />
 <img width="900" height="1600" alt="WhatsApp Image 2026-06-22 at 11 10 36" src="https://github.com/user-attachments/assets/b68a869c-b2e9-40c9-ac88-7e6a252eaa8d" />
@@ -251,7 +242,7 @@ void loop() {
 
 #### Video Arduino UNO R4
 
-https://youtube.com/shorts/AJlLrTNiS2I?si=OBioyqRRyYEKV35q
+<https://youtube.com/shorts/AJlLrTNiS2I?si=OBioyqRRyYEKV35q>
 
 ### IA (claude.ai)
 
@@ -261,11 +252,10 @@ El proyecto fue realizado con ayuda de la IA
 
 Hola, necesito hacer un proyecto de electrónica sencillo, ojalá enviando datos de un arduino a una raspi o viceversa. Ya logramos que apretando un botón se encendiera un LED en el arduino enviando datos desde una raspi, a través de Adafruit. Ahora nosotras estábamos pensando en hacer un semáforo, ya con un módulo de semáforo, pero me imagino hacer que el semáforo se encienda con el movimiento de algo. Qué podría ser que no fuese tan complejo?, considerando que soy principiante en el mundo de la electrónica.
 
-
-Chat con la IA: https://claude.ai/share/7fa2216c-bc66-4692-97b5-6d00640cb57d
+Chat con la IA: <https://claude.ai/share/7fa2216c-bc66-4692-97b5-6d00640cb57d>
 
 ## Bibliografía
 
-- https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf
-- https://docs.arduino.cc/resources/pinouts/ABX00087-full-pinout.pdf
-- https://docs.arduino.cc/hardware/uno-r4-wifi/
+* <https://pip-assets.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w/documents/RP-008305-DS-1-pico-2-w-pinout.pdf>
+* <https://docs.arduino.cc/resources/pinouts/ABX00087-full-pinout.pdf>
+* <https://docs.arduino.cc/hardware/uno-r4-wifi/>

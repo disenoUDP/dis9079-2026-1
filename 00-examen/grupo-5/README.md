@@ -10,9 +10,9 @@
 
 ### Descripción del proyecto
 
-Es un proyecto electrónico interactivo que fusiona la fotografía digital con el estilo gráfico de las consolas antiguas. Funciona de manera inalámbrica mediante 2 microcontroladores; un Arduino (UNO R4 WiFi) y una Raspberry (PI Pico 2W), y además un módulo ESP32 con cámara integrada que funciona de manera independiente. 
+Es un proyecto electrónico interactivo que fusiona la fotografía digital con el estilo gráfico de las consolas antiguas. Funciona de manera inalámbrica mediante 2 microcontroladores; un Arduino (UNO R4 WiFi) y una Raspberry (PI Pico 2W), y además un módulo ESP32 con cámara integrada que funciona de manera independiente.
 
-Por un lado cuenta con un potenciómetro que permite elegir un filtro, y un botón que al mantenerlo presionado cambias el estilo del tramado. Al pulsarlo rápidamente se envía la orden de disparo a la cámara y la pantalla OLED muestra una animación para avisarte que la foto se está subiendo a la nube. 
+Por un lado cuenta con un potenciómetro que permite elegir un filtro, y un botón que al mantenerlo presionado cambias el estilo del tramado. Al pulsarlo rápidamente se envía la orden de disparo a la cámara y la pantalla OLED muestra una animación para avisarte que la foto se está subiendo a la nube.
 
 Las fotos procesadas se suben a un script de Google Drive y se almacenan en una carpeta como una galería de fotos. Por otro lado podremos ver las fotos en una pantalla TFT la cual está programada para revisar la carpeta de Drive cada 10 segundos y descargar automáticamente las últimas fotos tomadas, y cuenta con dos botones que permiten navegar hacia adelante o hacia atrás en este archivo de fotos estilo retro.
 
@@ -31,9 +31,9 @@ Las fotos procesadas se suben a un script de Google Drive y se almacenan en una 
 | Botón pulsador | 3 |
 | Cables dupont | 20 |
 
-### Proceso 
+### Proceso
 
-Nos basamos en un proyecto llamado "Pixela" de rai_lander que es una cámara DIY de código abierto. Tomamos como base su lógica interna para la captura y el procesamiento de las imágenes (la reducción de resolución, las paletas de colores y el efecto de dithering). 
+Nos basamos en un proyecto llamado "Pixela" de rai_lander que es una cámara DIY de código abierto. Tomamos como base su lógica interna para la captura y el procesamiento de las imágenes (la reducción de resolución, las paletas de colores y el efecto de dithering).
 
 ![Proyecto Pixela](./imagenes/pixela.png)
 
@@ -49,12 +49,12 @@ link del Drive donde se creará el "Archivo Retro" a medida que se vayan tomando
 
 El vibe es la paleta de 4 colores que se aplica a la foto y se puede cambiar con el potenciómetro del Arduino. El sistema descarta los colores reales de la foto y busca el tono más cercano dentro de una paleta de 4 colores predefinidos. Estas son las paletas (tomadas de Pixela) que puedes seleccionar girando el potenciómetro:
 
-- wish-gb
-- kirokaze-gameboy
-- ayy4
--  ice-cream-gb
-- hollow
-- crimson
+* wish-gb
+* kirokaze-gameboy
+* ayy4
+* ice-cream-gb
+* hollow
+* crimson
 
 El ESP32 tiene 6 paletas definidas, todas inspiradas en la Game Boy:
 
@@ -67,19 +67,19 @@ El ESP32 tiene 6 paletas definidas, todas inspiradas en la Game Boy:
 | hollow    | Negro azulado, gris pizarra, gris perla, blanco hueso      | Minimalista, frío       |
 | crimson   | Negro violeta, rojo oscuro, terracota, verde pálido        | Dramático, oscuro       |
 
-2. Tratado de imagen (Dither):
+1. Tratado de imagen (Dither):
 
 Como la imagen ahora tiene solo 4 colores se generan cortes cromáticos muy bruscos. Para suavizar esto y dar la textura clásica de "pixel art", se aplica un algoritmo de dithering (dispersión de error), que mezcla matemáticamente los píxeles para simular nuevas texturas. Se puede cambiar este efecto manteniendo presionado el botón. Estos son los estilos disponibles:
 
-- bayer
-- floyd
-- atkinson
-- sierra
-- ordered2
-- halftone
-- block
-- random
-- nearest
+* bayer
+* floyd
+* atkinson
+* sierra
+* ordered2
+* halftone
+* block
+* random
+* nearest
 
 Hay 9 algoritmos con resultados muy distintos:
 
@@ -122,6 +122,7 @@ Raspberry Pi Pico 2W [Lugar 2: SalvSanf2221]
    ├── Descarga las fotos nuevas automáticamente
    └── Muestra la galería en la pantalla TFT
 ```
+
 ### Conexiones
 
 #### ESP32-CAM
@@ -168,9 +169,9 @@ Tuvimos algunos problemas con esto porque a veces la IP llegaba con "basura" o l
 
 En la cámara (ESP32) al principio intentamos que las fotos se guardaran en una tarjeta SD antes de subirse a la nube, pero nos daba errores de lectura. La mejor solución fue eliminar la dependencia de la tarjeta SD y usar una instrucción (ps_malloc) para guardar los bytes de la foto directamente en la memoria RAM externa (PSRAM) del módulo.
 
-Algunos errores con la Raspberry fue al descargar las fotos de Google Drive porque estábamos usando una función estándar de Python (.isalnum()) para limpiar los nombres de los archivos y la versión de MicroPython de Pimoroni que instalamos no incluye esa función para ahorrar espacio de memoria, así que el código colapsaba. Lo arreglamos creando un filtro manual que verifica si las letras están en el rango correcto ('a' <= c <= 'z'). 
+Algunos errores con la Raspberry fue al descargar las fotos de Google Drive porque estábamos usando una función estándar de Python (.isalnum()) para limpiar los nombres de los archivos y la versión de MicroPython de Pimoroni que instalamos no incluye esa función para ahorrar espacio de memoria, así que el código colapsaba. Lo arreglamos creando un filtro manual que verifica si las letras están en el rango correcto ('a' <= c <= 'z').
 
-Otro fue que el texto que te indica el número de la foto en la pantalla no aparecía porque le estábamos asignando coordenadas muy altas y el texto se estaba dibujando fuera del límite visual de la pantalla. 
+Otro fue que el texto que te indica el número de la foto en la pantalla no aparecía porque le estábamos asignando coordenadas muy altas y el texto se estaba dibujando fuera del límite visual de la pantalla.
 
 Decidimos cambiar el tiempo en el que se revisa el Drive para mostrar las nuevas fotos, de 60 segundos lo reducimos a 10 segundos, para que la persona en el lugar 2 no tenga que esperar tanto para ver la foto enviada desde el lugar 1.
 
@@ -197,69 +198,68 @@ Para acelerar el proceso de creación del proyecto, se utilizó inteligencia art
 
 A continuación, dejamos los prompts utilizados, de los cuales obtuvimos los códigos.
 
-- Quiero hacer un proyecto en un ESP32-CAM con el Arduino IDE. Usaremos la tarjeta microSD interna de la placa. Tiene que conectarse al wifi. Cuando la pico 2 W le mande la señal con la vibe y el dither por parámetros, el ESP32 tiene que sacar la foto JPEG, mandar un OK rápido de respuesta a la pico. En segundo plano tiene que agregar filtro a la foto, por lo que tiene que aplicar el dither que le pidieron. Después guarda la foto ya pixelada en la SD con nombre correlativo, la convierte a base64 y la envía a Google Drive. Te adjunto los filtros usados por el referente.
+* Quiero hacer un proyecto en un ESP32-CAM con el Arduino IDE. Usaremos la tarjeta microSD interna de la placa. Tiene que conectarse al wifi. Cuando la pico 2 W le mande la señal con la vibe y el dither por parámetros, el ESP32 tiene que sacar la foto JPEG, mandar un OK rápido de respuesta a la pico. En segundo plano tiene que agregar filtro a la foto, por lo que tiene que aplicar el dither que le pidieron. Después guarda la foto ya pixelada en la SD con nombre correlativo, la convierte a base64 y la envía a Google Drive. Te adjunto los filtros usados por el referente.
 
-- Necesito realizar un proyecto en un Arduino R4 WiFi, en donde usaremos una pantalla para visualizar imágenes de un Google Drive; usaremos pantalla TFT LCD 2 pulgadas ST7789V 240x320 RGB y 2 botones, uno para retroceder la imagen y otro para avanzar. Las imágenes son de 240x320 y no tengo SD para usar.
+* Necesito realizar un proyecto en un Arduino R4 WiFi, en donde usaremos una pantalla para visualizar imágenes de un Google Drive; usaremos pantalla TFT LCD 2 pulgadas ST7789V 240x320 RGB y 2 botones, uno para retroceder la imagen y otro para avanzar. Las imágenes son de 240x320 y no tengo SD para usar.
 
-- Necesito realizar un proyecto en una Raspberry Pi Pico W 2 con CircuitPython 10, en donde usaremos una pantalla OLED SSD1306 I2C, un potenciómetro de 100k y un botón. La idea es hacer una cámara pixel basada en Pixela de Rai-Lander conectada a wifi. El potenciómetro lo usaremos como una perilla para elegir entre 6 paletas de colores (wish-gb, kirokaze-gameboy, ayy4, ice-cream-gb, hollow, crimson) y que se actualice el nombre en la pantalla. El botón tiene que hacer dos cosas: si lo dejo apretado más de 0.6 segundos (pulsación larga), tiene que cambiar entre 9 tipos de dither de una lista en la pantalla, y si le doy un click corto, tiene que mandar una orden al ESP32-CAM para que saque la foto. También necesito que, cuando dispare, la pantalla OLED muestre una barra de progreso horizontal que diga "Subiendo...", simulando el tiempo que tarda el ESP32. Para que el usuario vea que está trabajando.
+* Necesito realizar un proyecto en una Raspberry Pi Pico W 2 con CircuitPython 10, en donde usaremos una pantalla OLED SSD1306 I2C, un potenciómetro de 100k y un botón. La idea es hacer una cámara pixel basada en Pixela de Rai-Lander conectada a wifi. El potenciómetro lo usaremos como una perilla para elegir entre 6 paletas de colores (wish-gb, kirokaze-gameboy, ayy4, ice-cream-gb, hollow, crimson) y que se actualice el nombre en la pantalla. El botón tiene que hacer dos cosas: si lo dejo apretado más de 0.6 segundos (pulsación larga), tiene que cambiar entre 9 tipos de dither de una lista en la pantalla, y si le doy un click corto, tiene que mandar una orden al ESP32-CAM para que saque la foto. También necesito que, cuando dispare, la pantalla OLED muestre una barra de progreso horizontal que diga "Subiendo...", simulando el tiempo que tarda el ESP32. Para que el usuario vea que está trabajando.
 
 Luego de realizar los cambios necesarios para que el Arduino capturara las fotografías, dejamos en la Raspberry Pi la tarea de gestionar la visualización de las imágenes y la capacidad de avanzar o retroceder en la galería guardada en el drive.
 
 A continuación, se presentan los prompts finales utilizados para este microcontrolador:
 
-### PROMPT PARA CLAUDE:
+### PROMPT PARA CLAUDE
 
 Actúa como un ingeniero experto en sistemas embebidos y desarrollo con Raspberry Pi Pico. Necesito que me ayudes a diseñar e implementar un proyecto completo de visor de fotos digital con las siguientes especificaciones:
 
 HARDWARE:
 
-- Microcontrolador: Raspberry Pi Pico 2 W (con WiFi integrado)
-- Almacenamiento: Módulo MH-SD Card Module (lector de tarjetas microSD)
-- Pantalla: Módulo TFT LCD 2" con controlador ST7789V, resolución 240x320px, interfaz SPI RGB
-- Conectores de la pantalla: BL (retroiluminación), CS (Chip Select), DC (Data/Command), RST (Reset), SDA (datos SPI), SCL (clock SPI), VCC, GND
-- Dos botones físicos para navegación (anterior/siguiente imagen)
+* Microcontrolador: Raspberry Pi Pico 2 W (con WiFi integrado)
+* Almacenamiento: Módulo MH-SD Card Module (lector de tarjetas microSD)
+* Pantalla: Módulo TFT LCD 2" con controlador ST7789V, resolución 240x320px, interfaz SPI RGB
+* Conectores de la pantalla: BL (retroiluminación), CS (Chip Select), DC (Data/Command), RST (Reset), SDA (datos SPI), SCL (clock SPI), VCC, GND
+* Dos botones físicos para navegación (anterior/siguiente imagen)
 
 FUNCIONALIDAD REQUERIDA:
 
-- El sistema debe conectarse a WiFi y acceder a una carpeta específica de Google Drive
-- Debe monitorear automáticamente esa carpeta y descargar nuevas imágenes cuando se detecten cambios
-- Las imágenes estarán optimizadas a exactamente 240x320 píxeles (formato JPEG o BMP)
-- Las imágenes descargadas se almacenarán en la tarjeta microSD local
-- La pantalla debe mostrar las imágenes con la mejor calidad posible
-- Los dos botones permitirán navegar entre las imágenes almacenadas (anterior/siguiente)
-- El sistema debe ser eficiente en consumo de RAM y almacenamiento
+* El sistema debe conectarse a WiFi y acceder a una carpeta específica de Google Drive
+* Debe monitorear automáticamente esa carpeta y descargar nuevas imágenes cuando se detecten cambios
+* Las imágenes estarán optimizadas a exactamente 240x320 píxeles (formato JPEG o BMP)
+* Las imágenes descargadas se almacenarán en la tarjeta microSD local
+* La pantalla debe mostrar las imágenes con la mejor calidad posible
+* Los dos botones permitirán navegar entre las imágenes almacenadas (anterior/siguiente)
+* El sistema debe ser eficiente en consumo de RAM y almacenamiento
 
 ENTREGABLES QUE NECESITO:
 
-- Diagrama de conexiones completo (pinout detallado entre Pico 2 W, pantalla, lector SD y botones)
-- Lista de bibliotecas MicroPython necesarias y cómo instalarlas
-- Código completo en MicroPython estructurado en módulos:
-- Módulo de configuración WiFi y credenciales
-- Módulo de conexión a Google Drive API
-- Módulo de monitoreo y descarga de imágenes
-- Módulo de control de pantalla ST7789V
-- Módulo de manejo de sistema de archivos en SD
-- Módulo de navegación con botones
-- Programa principal integrador
-- Instrucciones paso a paso para configurar el proyecto Google Cloud y obtener credenciales
-- Explicación del formato de almacenamiento en la SD y lógica de sincronización
-- Consideraciones de memoria y optimización específicas para Pico 2 W
+* Diagrama de conexiones completo (pinout detallado entre Pico 2 W, pantalla, lector SD y botones)
+* Lista de bibliotecas MicroPython necesarias y cómo instalarlas
+* Código completo en MicroPython estructurado en módulos:
+* Módulo de configuración WiFi y credenciales
+* Módulo de conexión a Google Drive API
+* Módulo de monitoreo y descarga de imágenes
+* Módulo de control de pantalla ST7789V
+* Módulo de manejo de sistema de archivos en SD
+* Módulo de navegación con botones
+* Programa principal integrador
+* Instrucciones paso a paso para configurar el proyecto Google Cloud y obtener credenciales
+* Explicación del formato de almacenamiento en la SD y lógica de sincronización
+* Consideraciones de memoria y optimización específicas para Pico 2 W
 
 REQUISITOS TÉCNICOS ESPECÍFICOS:
 
-- Usar SPI0 para la pantalla y SPI1 para el lector SD (o viceversa, justifica la mejor opción)
-- Implementar doble buffer si es viable con la RAM disponible del Pico 2 W
-- Manejar errores de conexión, descarga y lectura de archivos con reintentos y mensajes en pantalla
-- Implementar debounce por software en los botones
-- La retroiluminación debe ser controlable (encendido/apagado por inactividad)
-- Incluir watchdog timer para recuperación ante fallos
+* Usar SPI0 para la pantalla y SPI1 para el lector SD (o viceversa, justifica la mejor opción)
+* Implementar doble buffer si es viable con la RAM disponible del Pico 2 W
+* Manejar errores de conexión, descarga y lectura de archivos con reintentos y mensajes en pantalla
+* Implementar debounce por software en los botones
+* La retroiluminación debe ser controlable (encendido/apagado por inactividad)
+* Incluir watchdog timer para recuperación ante fallos
 
 Por favor, proporciona el código completo, bien comentado en español, y todas las explicaciones necesarias para que el proyecto funcione sin modificaciones adicionales.
 
 Necesito que adaptes este código de Python a la placa Arduino R4 WiFi. La idea original del código es que se conecte al ESP-32-CAM por WiFi, permitiendo elegir qué filtro poner en el ESP-32-CAM. Tambien necesito que se conecten ambos sin necesidad de cambiar la ip internamente con codigo, usando protocolo UDP, Te paso ambos códigos.
 
 Debido a la complejidad de integrar tres plataformas distintas (Arduino Uno R4, ESP32-CAM y Raspberry Pi Pico W), el desarrollo fue un proceso puramente iterativo y modular. Fuimod construyendo el sistema por capas: primero resolviendo la comunicación de red, luego optimizando el codigo y resolviendo errores continuos de los microcontorladores para ya finalmente diseñarla interfaz de usuario.
-
 
 Posteriormente, en los mismos códigos se incluyó una explicación de lo que hace cada uno.
 
@@ -1546,7 +1546,8 @@ def main():
 
 main()   # punto de entrada: MicroPython ejecuta este archivo al arrancar
 ```
---- 
+
+---
 
 ## Script de Google para carpeta de Drive
 
@@ -1700,8 +1701,8 @@ function respJson(obj) {
 
 ### Bibliografía
 
-- Adafruit Industries. (s.f.). Adafruit_SSD1306. GitHub. <https://github.com/adafruit/Adafruit_SSD1306>
-- Espressif Systems. (s.f.). ESP32 Camera Driver. GitHub. <https://github.com/espressif/esp32-camera>
-- Google. (s.f.). Google Developers. <https://developers.google.com/apps-script>
-- Pimoroni. (s.f.). pimoroni-pico. GitHub. <https://github.com/pimoroni/pimoroni-pico>
-- rai_lander. (s.f.). Pixela. itch.io. <https://rai-lander.itch.io/pixela>
+* Adafruit Industries. (s.f.). Adafruit_SSD1306. GitHub. <https://github.com/adafruit/Adafruit_SSD1306>
+* Espressif Systems. (s.f.). ESP32 Camera Driver. GitHub. <https://github.com/espressif/esp32-camera>
+* Google. (s.f.). Google Developers. <https://developers.google.com/apps-script>
+* Pimoroni. (s.f.). pimoroni-pico. GitHub. <https://github.com/pimoroni/pimoroni-pico>
+* rai_lander. (s.f.). Pixela. itch.io. <https://rai-lander.itch.io/pixela>

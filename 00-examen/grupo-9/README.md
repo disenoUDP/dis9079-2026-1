@@ -19,9 +19,9 @@ La propuesta se plantea como una reinterpretación de los oráculos tradicionale
 
 Luego, mediante la intervención de una tercera persona —representación de Croacardo el Sabio — se activa la consulta a través de un soplido, dando inicio al proceso de respuesta. Esta respuesta se entrega tanto en formato de audio como mediante texto en una pantalla OLED, donde además se visualiza al Sabio saltando.
 
-Durante la experiencia, el sistema incorpora mensajes que orientan el uso. Al inicio, una frase de bienvenida —“Di tu pregunta y sopla, el Sabio te responderá”— Posteriormente, tras la primera interacción, un segundo mensaje —“Alakasim, Alakasom, otra preguntita por favor”— indicando que ya es posible realizar una nueva pregunta. 
+Durante la experiencia, el sistema incorpora mensajes que orientan el uso. Al inicio, una frase de bienvenida —“Di tu pregunta y sopla, el Sabio te responderá”— Posteriormente, tras la primera interacción, un segundo mensaje —“Alakasim, Alakasom, otra preguntita por favor”— indicando que ya es posible realizar una nueva pregunta.
 
-### Descripción técnica 
+### Descripción técnica
 
 Todo comienza con una Raspberry Pi Pico 2 W conectada a un sensor de sonido MAX4466. Cuando una persona sopla hacia el sensor, la señal capturada es procesada calculando tanto el valor máximo como el promedio de las mediciones obtenidas durante el soplido. A partir de estos datos se genera un valor numérico y se obtiene su último dígito, resultando en un número entre 0 y 9.
 
@@ -728,18 +728,18 @@ FIN
 
 | Componentes | Cantidad | Valor unitario (CLP) | Link |
 |------------|----------|----------------------|------|
-| Arduino UNO R4 WiFi | 2 | $38.990 | https://mcielectronics.cl/shop/product/43402/ |
-| Raspberry Pi Pico 2 W | 1 | $14.990 | https://mcielectronics.cl/shop/product/74358/ |
-| Sensor de sonido MAX4466 | 1 | $2.990 | https://afel.cl/products/modulo-microfono-amplificador-max4466 |
-| PAM8403 | 1 | $1.000 | https://afel.cl/products/amplificador-stereo-clase-d-2x3w-pam8403 |
-| Parlante 8 ohms 1 W | 1 | $2.590 | https://www.mechatronicstore.cl/altavoz-8-ohm-1w/ |
-| Pantalla OLED | 1 | $4.500 | https://mcielectronics.cl/shop/product/display-oled-de-128-x-64-pixeles-controlable-por-i2c-29546/ |
-| Protoboard grande | 1 | $2.500 | https://afel.cl/products/protoboard-mb-102-830-puntos |
-| Protoboard pequeña | 2 | $1.500 | https://afel.cl/products/mini-protoboard-400-puntos |
-| Micro SD | 1 | $10.440 | https://www.fsnstore.cl/producto/microsdhc-sandisk-ultra-32gb-class10-uhs1 |
-| DFPlayer Mini | 1 | $2.990 | https://afel.cl/products/modulo-reproductor-mp3-dfplayer-mini |
-| Cables Dupont (pack 20 unidades) | 1 | $1.000 | https://afel.cl/products/pack-20-cables-de-conexion-macho-macho |
-| Kit 10 Cables Conectores Tipo Caimán | 1 | $3.000 | https://afel.cl/products/kit-10-cables-conectores-tipo-caiman |
+| Arduino UNO R4 WiFi | 2 | $38.990 | <https://mcielectronics.cl/shop/product/43402/> |
+| Raspberry Pi Pico 2 W | 1 | $14.990 | <https://mcielectronics.cl/shop/product/74358/> |
+| Sensor de sonido MAX4466 | 1 | $2.990 | <https://afel.cl/products/modulo-microfono-amplificador-max4466> |
+| PAM8403 | 1 | $1.000 | <https://afel.cl/products/amplificador-stereo-clase-d-2x3w-pam8403> |
+| Parlante 8 ohms 1 W | 1 | $2.590 | <https://www.mechatronicstore.cl/altavoz-8-ohm-1w/> |
+| Pantalla OLED | 1 | $4.500 | <https://mcielectronics.cl/shop/product/display-oled-de-128-x-64-pixeles-controlable-por-i2c-29546/> |
+| Protoboard grande | 1 | $2.500 | <https://afel.cl/products/protoboard-mb-102-830-puntos> |
+| Protoboard pequeña | 2 | $1.500 | <https://afel.cl/products/mini-protoboard-400-puntos> |
+| Micro SD | 1 | $10.440 | <https://www.fsnstore.cl/producto/microsdhc-sandisk-ultra-32gb-class10-uhs1> |
+| DFPlayer Mini | 1 | $2.990 | <https://afel.cl/products/modulo-reproductor-mp3-dfplayer-mini> |
+| Cables Dupont (pack 20 unidades) | 1 | $1.000 | <https://afel.cl/products/pack-20-cables-de-conexion-macho-macho> |
+| Kit 10 Cables Conectores Tipo Caimán | 1 | $3.000 | <https://afel.cl/products/kit-10-cables-conectores-tipo-caiman> |
 
 ## Aprendizajes
 
@@ -789,52 +789,52 @@ En este trabajo usamos 3 IAs distintas. Principalmente utilizamos ChatGPT para g
 
 ## Prompts
 
-- “arreglame este código para que haya un gif constante hasta que el arduino lea el último dígito de los números y de las respuestas según el número para después volver al gif:”  
+* “arreglame este código para que haya un gif constante hasta que el arduino lea el último dígito de los números y de las respuestas según el número para después volver al gif:”  
   Usado para arreglar la lectura de los dígitos de los números y la duración del gif.
 
-- “tengo un arduino uno r4 wifi con una pantalla oled ssd1306 y adafruit io y quiero que: un gif se reproduzca continuamente como estado de reposo, el arduino reciba datos desde el feed "prueba-micro", al recibir un valor, obtenga el último dígito (abs(valor) % 10), según ese dígito (0-9), muestre una frase distinta en la oled, también envíe ese dígito al feed "cerebro", la frase permanezca visible 5 segundos, luego vuelva automáticamente al gif, no debe usar delay() largos. Pero el problema actual es que recibe un mensaje, muestra la frase y vuelve al gif, pero después deja de recibir nuevos datos desde adafruit io. necesito encontrar y corregir el problema.”  
+* “tengo un arduino uno r4 wifi con una pantalla oled ssd1306 y adafruit io y quiero que: un gif se reproduzca continuamente como estado de reposo, el arduino reciba datos desde el feed "prueba-micro", al recibir un valor, obtenga el último dígito (abs(valor) % 10), según ese dígito (0-9), muestre una frase distinta en la oled, también envíe ese dígito al feed "cerebro", la frase permanezca visible 5 segundos, luego vuelva automáticamente al gif, no debe usar delay() largos. Pero el problema actual es que recibe un mensaje, muestra la frase y vuelve al gif, pero después deja de recibir nuevos datos desde adafruit io. necesito encontrar y corregir el problema.”  
   Usado para que reciba todos los datos de Adafruit IO.
 
-- “puedes hacer un código en circuit python, la idea es que al soplar el sensor max4466 detecte la intensidad y envíe solo el último dígito, la idea es que se dependa del soplido por lo que no quiero que sea random el resultado, estoy usando una raspberry pi pico 2 w y un sensor de sonido max4466, aparte estoy mandando la señal a adafruit io en un feed llamado cerebro”  
+* “puedes hacer un código en circuit python, la idea es que al soplar el sensor max4466 detecte la intensidad y envíe solo el último dígito, la idea es que se dependa del soplido por lo que no quiero que sea random el resultado, estoy usando una raspberry pi pico 2 w y un sensor de sonido max4466, aparte estoy mandando la señal a adafruit io en un feed llamado cerebro”  
   Código usado para Raspberry Pi Pico 2 W con sensor MAX4466.
 
-- “queremos probar el sensor de sonido y que mande el decibel del aplauso recibido”  
+* “queremos probar el sensor de sonido y que mande el decibel del aplauso recibido”  
   Código de los primeros intentos con aplauso.
 
 ## Respuestas obtenidas
 
 1. “Si ya tienes:
 
-- Un GIF animado en la OLED (`actualizarAnimacion()`).
-- Un feed `pruebaMicro` que recibe la intensidad del aplauso.
-- Un feed `cerebro` que devuelve una respuesta.
+* Un GIF animado en la OLED (`actualizarAnimacion()`).
+* Un feed `pruebaMicro` que recibe la intensidad del aplauso.
+* Un feed `cerebro` que devuelve una respuesta.
 
 Entonces la lógica puede ser:
 
-- Mostrar el GIF de forma continua.
-- Esperar una respuesta desde Adafruit IO.
-- Guardar el texto recibido.
-- Mostrar la respuesta durante algunos segundos.
-- Volver automáticamente al GIF.”
+* Mostrar el GIF de forma continua.
+* Esperar una respuesta desde Adafruit IO.
+* Guardar el texto recibido.
+* Mostrar la respuesta durante algunos segundos.
+* Volver automáticamente al GIF.”
 
-2. “El problema probablemente estaba relacionado con que el programa dejaba de actualizar la conexión con Adafruit IO después de recibir el primer mensaje.
+1. “El problema probablemente estaba relacionado con que el programa dejaba de actualizar la conexión con Adafruit IO después de recibir el primer mensaje.
 
 Algunas causas comunes pueden ser:
 
-- Utilizar `delay()` largos para mantener una respuesta en pantalla.
-- Crear ciclos `while` que bloqueen la ejecución normal del programa.
-- No ejecutar `io.run()` de forma continua dentro del `loop()`.
+* Utilizar `delay()` largos para mantener una respuesta en pantalla.
+* Crear ciclos `while` que bloqueen la ejecución normal del programa.
+* No ejecutar `io.run()` de forma continua dentro del `loop()`.
 
 Como solución se recomendó utilizar una máquina de estados controlada con `millis()`, separando el funcionamiento en dos modos:
 
-- Estado GIF: mostrar la animación mientras se sigue ejecutando `io.run()`.
-- Estado MENSAJE: mostrar la respuesta recibida sin detener la comunicación.
+* Estado GIF: mostrar la animación mientras se sigue ejecutando `io.run()`.
+* Estado MENSAJE: mostrar la respuesta recibida sin detener la comunicación.
 
 Además, el tiempo de visualización debía controlarse con `millis()` en lugar de usar retrasos bloqueantes.
 
 La recomendación principal fue mantener el `loop()` funcionando constantemente para que la conexión con Adafruit IO nunca se interrumpiera y el sistema pudiera seguir recibiendo nuevos mensajes.”
 
-3. “Sí bro, aquí va el código completo en CircuitPython para la Raspberry Pi Pico 2 W + MAX4466, enviando al feed `cerebro` y sin random:”
+1. “Sí bro, aquí va el código completo en CircuitPython para la Raspberry Pi Pico 2 W + MAX4466, enviando al feed `cerebro` y sin random:”
 
 ```python
 import time
@@ -948,7 +948,7 @@ while True:
     time.sleep(0.01)
 ```
 
-4. “El MAX4466 no mide decibeles reales (`dB`), sino que entrega un valor analógico de voltaje proporcional a la intensidad del sonido.
+1. “El MAX4466 no mide decibeles reales (`dB`), sino que entrega un valor analógico de voltaje proporcional a la intensidad del sonido.
 
 Para una primera prueba, el objetivo era detectar un aplauso y enviar por el Monitor Serie el valor de intensidad capturado por el sensor.”
 
@@ -1060,4 +1060,3 @@ SparkFun Electronics. (s.f.). Electret Microphone Amplifier - MAX4466 Hookup Gui
 Tecneu. (s.f.). Cómo utilizar el DFPlayer Mini con Arduino para proyectos de audio. <https://www.tecneu.com/blogs/tutoriales-de-electronica/como-utilizar-el-dfplayer-mini-con-arduino-para-proyectos-de-audio>
 
 Texas Instruments. (s.f.). PAM8403 Class-D Audio Amplifier Datasheet. <https://www.ti.com/>
-

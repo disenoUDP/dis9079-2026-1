@@ -1,8 +1,8 @@
 # persona-2
 
-Jesús Miranda / https://github.com/jesumirandaa 
+Jesús Miranda / <https://github.com/jesumirandaa>
 
-# Investigación individual: APIs
+Investigación individual: APIs
 
 ---
 
@@ -48,8 +48,6 @@ Ejemplo de comunicación:
 | API | Puente o intermediario que recibe la solicitud y permite la comunicación entre sistemas |
 | Servidor / Servicio | Sistema que procesa la información solicitada y genera una respuesta |
 | Respuesta con datos | Información que vuelve al dispositivo o aplicación para ser utilizada |
-
-
 
 La comunicación ocurre rápidamente y normalmente no es visible para el usuario final.
 
@@ -203,7 +201,7 @@ Ejemplos:
 
 ---
 
-# APIs y dispositivos físicos
+APIs y dispositivos físicos
 
 Las APIs también son importantes dentro de proyectos relacionados con electrónica e Internet de las Cosas (**IoT**).
 
@@ -218,7 +216,6 @@ Ejemplo:
 | API | Permite conectar el dispositivo con otros sistemas o servicios |
 | Servidor | Recibe, procesa o almacena los datos enviados |
 | Otro dispositivo | Utiliza la información recibida para mostrar datos o ejecutar una acción |
-
 
 ## Bibliografía
 

@@ -85,7 +85,7 @@ Debido a que las API permiten a las organizaciones abrir el acceso a sus recurso
 
 **A continuación, se presentan algunos ejemplos de API que los usuarios encuentran con frecuencia:**
 
-### inicios de sesión universales 
+### inicios de sesión universales
 
 - un ejemplo popular de API es la función que permite a las personas iniciar sesión en sitios web utilizando los datos de acceso de sus perfiles de Facebook, X o Google. Esta práctica funcionalidad permite que cualquier sitio web utilice la API de uno de estos servicios populares para realizar una autenticación rápida.
 
@@ -135,13 +135,13 @@ Debido a que las API permiten a las organizaciones abrir el acceso a sus recurso
 
 ### redes sociales
 
- - las empresas de redes sociales utilizan API para permitir que otras organizaciones compartan e integren contenido publicado en sus plataformas dentro de sus propios sitios web.
+- las empresas de redes sociales utilizan API para permitir que otras organizaciones compartan e integren contenido publicado en sus plataformas dentro de sus propios sitios web.
 
- - por ejemplo, la API de Instagram permite a las empresas insertar su cuadrícula de publicaciones de Instagram en su sitio web y actualizarla automáticamente cada vez que se publica nuevo contenido.
+- por ejemplo, la API de Instagram permite a las empresas insertar su cuadrícula de publicaciones de Instagram en su sitio web y actualizarla automáticamente cada vez que se publica nuevo contenido.
 
  **ejemplos concretos**
 
- - una tienda en línea que muestra automáticamente sus últimas publicaciones de Facebook en su página principal.
+- una tienda en línea que muestra automáticamente sus últimas publicaciones de Facebook en su página principal.
 
 ### aplicaciones SaaS
 

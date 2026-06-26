@@ -7,18 +7,16 @@
 
 ---
 
-
 # Bruma compacta
 
 Chile es un territorio con climas muy distintos el uno con el otro, en algunas localidades puede llegar a ser muy desértico mientras en el otro extremo del país existen bosques frondosos y ríos que demuestran la riqueza ecosistémica de nuestro país.
 Nos parece interesante crear una experiencia donde por medio de componentes electrónicos y programación se pueda sentir que interactuamos con nuestro patrimonio natural, por eso es que a través de nuestro proyecto queremos provocar una escena inmersiva entre el agua y el usuario, reinterpretando el clima de 8 localidades distintas de Chile, totalmente al azar con la intención de utilizar datos concretos para generar una instancia divertida.
 
-
 El punto de partida para materializar nuestro proyecto fue conectar una Raspberry Pi Pico 2W en una protoboard, junto a un switch que activa el envío de datos y un LED que indica cuándo el microcontrolador está conectado al WiFi y transmitiendo información. Usamos el terminal serial de PuTTY para ver los prints.
 
 En este proceso de envío se recopila información climática desde la API de [Open Meteo](<https://open-meteo.com/>), donde seleccionamos 8 ciudades de Chile distribuidas a lo largo del territorio: Arica, Copiapó, Santiago, Valparaíso, Isla de Pascua, Juan Fernández, Punta Arenas y Villa Las Estrellas en la Antártica. Los porcentajes de humedad de cada localidad se almacenan en un array de 8 posiciones (una por ciudad) y se publican en Adafruit IO a través de feeds individuales, también recorridos con un for.
 
-Para armar el código, utilizamos **arrays**  que son como listas ordenadas de datos las que nos permiten manejar las 8 ciudades y sus valores de humedad eficientemente en lugar de tener que escribir el mismo código ocho veces, para utilizar los arrays un **for** recorre cada ciudad automáticamente y realiza la misma operación para todas: consultar la API, guardar el dato y publicarlo. 
+Para armar el código, utilizamos **arrays**  que son como listas ordenadas de datos las que nos permiten manejar las 8 ciudades y sus valores de humedad eficientemente en lugar de tener que escribir el mismo código ocho veces, para utilizar los arrays un **for** recorre cada ciudad automáticamente y realiza la misma operación para todas: consultar la API, guardar el dato y publicarlo.
 
 Estos datos son recibidos por un Arduino UNO R4 WiFi, que también utiliza arrays para gestionar los 8 feeds simultáneamente: suscribirse a todos, esperar que lleguen los 8 valores y confirmar cada recepción encendiendo el LED correspondiente en un módulo RGB de 8 bits. Una vez llegados los datos de las 8 ciudades el Arduino ejecuta el sorteo.
 
@@ -36,42 +34,38 @@ El resultado se muestra en el módulo LED, mientras la Raspberry recopila los po
 
 <img src="./imagenes/open-meteo.png" alt="install" width="500">
 
-
-
-
 Open Meteo es una API de código abierto y gratuita, nos permite tener acceso a los datos meteorológicos globales, es decir, los datos están disponibles para cualquier coordenada del mundo. Las APIs que nos ofrece incluyen información como:
 
-+ Condiciones meteorológicas actuales
-+ Datos sobre el clima marítimo 
-+ Pronósticos por hora y diarios
-+ Perspectivas a corto y largo plazo
-+ Alerta de inundaciónes
-+ Más de 47 años de observaciones históricas
-+ Archivos históricos de pronósticos
-+ Datos estadísticos sobre el clima 
-+ Datos sobre la calidad del aire
-+ Información sobre la radiación satelital 
+* Condiciones meteorológicas actuales
+* Datos sobre el clima marítimo
+* Pronósticos por hora y diarios
+* Perspectivas a corto y largo plazo
+* Alerta de inundaciónes
+* Más de 47 años de observaciones históricas
+* Archivos históricos de pronósticos
+* Datos estadísticos sobre el clima
+* Datos sobre la calidad del aire
+* Información sobre la radiación satelital
 
 Algo que diferencia a Open Meteo API es que dan los créditos correspondientes a los medios donde recopilan sus datos climáticos y son totalmente transparentes con su código base, la gracia de esto es que cualquier persona pueda desarrollar su propio sistema rapidamente
 
 Los servicios de Open Meteo se ofrecen a través de _API REST_ con respuestas _JSON_ estructuradas, adecuadas para su integración en entornos web, móviles, análisis, IoT y empresariales.
 
 > **API REST**: Interfaz de programación de aplicaciones que sigue los principios de REST, el cual significa transferencia de estado representacional y consiste en un conjunto de reglas y recomendaciones para diseñar una API web.
-Fuente: <https://www.redhat.com/es/topics/api/what-is-a-rest-api> 
+Fuente: <https://www.redhat.com/es/topics/api/what-is-a-rest-api>
 
 > **JSON**: Formato ligero de intercambio de datos, basado en un subconjunto del lenguaje JavaScript.
 Fuente: <https://www.json.org/json-es.html>
 
-
 ---
 
-# Proceso 
+## Proceso
 
 Durante la primera clase de avance en examen, se nos indicó realizar un párrafo descriptivo (conceptual, no técnico) de lo que queríamos lograr con nuestro proyecto. La razón por la que se hizo esta actividad fue para poder recibir dudas y críticas de otros compañeros, para así lograr hacer la versión mejorada de este texto en base a su retroalimentación.
 
 El párrafo inicial fue el siguiente:
 
-“Bruma compacta: Queremos expresar y materializar el clima a través de un humidificador alimentado de los datos de humedad en el ambiente (datos de un API), provocando una escena inmersiva entre el agua y el usuario.” 
+“Bruma compacta: Queremos expresar y materializar el clima a través de un humidificador alimentado de los datos de humedad en el ambiente (datos de un API), provocando una escena inmersiva entre el agua y el usuario.”
 
 Luego de enviar el texto, nuestros compañeros del grupo 9 realizaron las siguientes preguntas en donde se muestran sus respectivas respuestas:
 
@@ -163,18 +157,15 @@ LED 5mm
 
 <img src="./imagenes/pedido-componentes1.jpeg" alt="install" width="500">
 
-
 <img src="./imagenes/lucy-lu-bjork.jpeg" alt="install" width="500">
 
-
 <img src="./imagenes/nico-cris-amigos.jpeg" alt="install" width="500">
-
 
 ## Prompts creados para claude AI
 
 Luego de crear nuestro pseudocódigo, decidir los componentes y elegir la API, creamos los siguientes prompts para pedirle ayuda a Claude AI:
 
-#### Prompt 1 
+#### Prompt 1
 
 Primero decidimos redactar un panorama completo de lo que era nuestro proyecto hasta ese entonces, asi que le escribimos lo siguiente:
 
@@ -185,6 +176,7 @@ Necesitamos que nuestro código de python use OpenWeatherMap y que en Adafruit I
 Recibiendo estaría un Arduino UNO R4 WiFi conectado a un Módulo RGB led de 8 bits 505 (cada led representaría una ciudad) sorteará los datos de las ciudades mediante un dado digital mostrando este sorteo en el modulo rgb tipo una ruleta, se iluminarán de manera aleatoria las luces y se detendrá en una indicando la ciudad seleccionada la cual según el porcentaje de humedad actuará el KIT Humidificador USB (Placa de control para humidificador y membrana ultrasónica) todas estas conecciones en una Protoboard 400 puntos, esto pero con putty, en 115200 bauds y en circuitpython
 
 #### Respuesta 1
+
 Lado emisor (Raspberry Pi Pico 2 W, CircuitPython):
 
 Botón presiona → enciende LED → se conecta a WiFi → consulta OpenWeatherMap para las 8 ciudades → publica cada humedad en su feed de Adafruit IO → apaga LED.
@@ -231,7 +223,8 @@ GND de la placa → GND común
 
 # Codigos sugeridos por Claude
 
-Raspberry pi, envío 
+Raspberry pi, envío
+
 ```ccp
 # ===================================================================
 # EMISOR - Raspberry Pi Pico 2 W (CircuitPython)
@@ -371,9 +364,7 @@ while True:
    time.sleep(0.05)
  ```
 
-
 Settings example
-
 
 ```ccp
 
@@ -396,10 +387,9 @@ AIO_KEY = "TU_AIO_KEY"
 
 ```
 
-
 #### Prompt 2
 
-en este código se administra la info de los sensores y actuadores con arreglos y bucles (arrays y for)? de no ser así, haz que lo tenga 
+en este código se administra la info de los sensores y actuadores con arreglos y bucles (arrays y for)? de no ser así, haz que lo tenga
 
 #### Respuesta 2
 
@@ -414,6 +404,7 @@ visualize
 V
 visualize show_widget
 Y aquí el código refactorizado completo:
+
 ```ccp
 import time
 import wifi
@@ -621,6 +612,7 @@ while True:
 
         ultimo_estado[i] = estado_actual
 ```
+
 Los cambios concretos que se hicieron:
 
 SENSORES — arreglo de dicts con pin, pull, nombre e io (el objeto DigitalInOut se guarda ahí mismo al inicializar con un for).
@@ -634,7 +626,6 @@ Helpers nuevos — set_todos_actuadores(), parpadeo_actuadores() y leer_sensores
 Loop principal — ahora itera sobre SENSORES con for i, s in enumerate(SENSORES) y mantiene ultimo_estado como arreglo paralelo.
 
 Para agregar un segundo LED o switch basta con añadir una línea al arreglo correspondiente, sin tocar ninguna otra función
-
 
 #### Prompt 3
 
@@ -823,6 +814,7 @@ while True:
 ```
 
 #### Respuesta 3
+
 Flujo completo
 
 Al arrancar, el Arduino se conecta al WiFi y a Adafruit IO, y se suscribe a los 8 feeds simultáneamente.
@@ -841,9 +833,11 @@ ArduinoMqttClient — Arduino (oficial)
 Adafruit NeoPixel — Adafruit
 WiFiS3 ya viene incluida con el soporte de placa del UNO R4
 
-#include <WiFiS3.h>           // maneja la conexión WiFi del UNO R4
-#include <ArduinoMqttClient.h>// maneja la comunicación con Adafruit IO por MQTT
-#include <Adafruit_NeoPixel.h>// maneja el módulo de 8 LEDs RGB
+# include <WiFiS3.h>           // maneja la conexión WiFi del UNO R4
+
+# include <ArduinoMqttClient.h>// maneja la comunicación con Adafruit IO por MQTT
+
+# include <Adafruit_NeoPixel.h>// maneja el módulo de 8 LEDs RGB
 
 ```ccp
 // ─── CREDENCIALES ────────────────────────────────────────────────────────────
@@ -1288,13 +1282,13 @@ void animacionArranque() {
 
 Al inicio teníamos la idea de utilizar todos estos componentes ya que queríamos mostrar los porcentajes de humedad mediante una pantalla para no tener que depender del monitor serial, pero al momento de intentar usar la pantalla LCD 1602 tuvimos el problema de que la pantalla solo nos mostraba cuadrados blancos y no letras en sí.
 
-###### Fotografía tomada por Josefa Araya, en donde se muestra la pantalla con los cuadrados blancos:
+###### Fotografía tomada por Josefa Araya, en donde se muestra la pantalla con los cuadrados blancos
 
 <img src="./imagenes/probando-pantalla-casino.jpeg" alt="install" width="500">
 
 Por lo que buscamos en foros si alguien tenía el mismo problema y encontramos lo siguiente:
 
-###### Fotografía tomada por 1lpiccaso, no nos pertenece:
+###### Fotografía tomada por 1lpiccaso, no nos pertenece
 
 <img src="./imagenes/1lpiccaso.png" alt="install" width="500">
 
@@ -1410,6 +1404,7 @@ Mientras corría el código, medimos el voltaje entre ``GND`` del módulo y el p
 Como idea inicial queríamos que el humidificador se activara solo cuando llegase el dato de porcentaje de humedad que hay en la ciudad seleccionada, y que se apague cuando termine el ciclo ya que nosotros pensamos que todo esto lo podía controlar Arduino sin nosotros tener que modificar nada en el componente, en lo cual claramente estábamos equivocados ya que en la misma placa por la parte trasera se menciona que al no tener el botón, este se activa de manera automática al recibir alimentación mientras que cuando tiene botón solo se activa cuando tú lo presionas y se apaga cuando vuelves a presionarlo.
 
 ###### Fotografía tomada por Débora Soto, en donde se muestra la parte trasera de la placa del humidificador
+
 <img src="./imagenes/placa-trasera.png" alt="install" width="500">
 
 Como al inicio no entendíamos qué decía debido a que el texto original está en chino, nosotros conectamos la placa del humidificador al arduino mediante GND y 5V, en donde no sucedió nada hasta que presionamos el botón y empezó a generar bruma.
@@ -1418,15 +1413,15 @@ Como al inicio no entendíamos qué decía debido a que el texto original está 
 
 <img src="./imagenes/josefa-se-asusta.gif" alt="install" width="500">
 
-En un inicio estábamos alegres de que funcionara el humidificador, pero luego nos dimos cuenta de que este no funcionaba como nosotros esperábamos que lo hiciera, ya que la idea inicial era poder controlarlo mediante el Arduino y no tener que intervenir en él de manera física para que funcione, por lo que seguimos probando pero no logramos nada. Luego, nos acordamos de que Aarón nos mostró que nuestros compañeros ya habían trabajado con este componente el año pasado en un curso distinto, por lo que decidimos preguntarle a Camila Parada sobre cómo lograron hacer funcionar el componente sin tener que utilizar el botón, en donde ella nos contó que retiraron el botón e hicieron un puente mediante ambos puntos de soldadura y de allí manejaban el cuándo funcionaba y cuándo no, pero no mediante instrucciones directas al humidificador sino que fue mediante instrucciones a la fuente de poder del humidificador, ya que le cortaban la alimentación para que deje de funcionar y le volvían a dar cuando necesitaban que estuviera activo. 
+En un inicio estábamos alegres de que funcionara el humidificador, pero luego nos dimos cuenta de que este no funcionaba como nosotros esperábamos que lo hiciera, ya que la idea inicial era poder controlarlo mediante el Arduino y no tener que intervenir en él de manera física para que funcione, por lo que seguimos probando pero no logramos nada. Luego, nos acordamos de que Aarón nos mostró que nuestros compañeros ya habían trabajado con este componente el año pasado en un curso distinto, por lo que decidimos preguntarle a Camila Parada sobre cómo lograron hacer funcionar el componente sin tener que utilizar el botón, en donde ella nos contó que retiraron el botón e hicieron un puente mediante ambos puntos de soldadura y de allí manejaban el cuándo funcionaba y cuándo no, pero no mediante instrucciones directas al humidificador sino que fue mediante instrucciones a la fuente de poder del humidificador, ya que le cortaban la alimentación para que deje de funcionar y le volvían a dar cuando necesitaban que estuviera activo.
 
 Gracias a la información que nos dio Cami, decidimos ir al LID a hacer el puente entre ambos puntos del botón del humidificador para poder probar si nos funcionaba, pero al momento de conectarlo al Arduino no se prendía la luz LED que indicaba que estaba activo, lo cual nos preocupó. Como no entendíamos qué estaba sucediendo realmente, probamos con un multímetro para probar si estaba pasando la corriente o no, pero cuando hicimos contacto con la placa notamos que se encendía ligeramente el LED pero no mostraba nada el multímetro, lo cual nos confundió aún más pero asumimos que el hecho de que se prendiese un poco la luz significaba que el componente seguía funcionando pero no estaba reaccionando a nuestro código que le decía cuándo prenderse y cuándo apagarse, lo cual nos preocupó.
 
 Como no logramos controlarlo de manera directa, probamos lo que nos dijo Cami sobre controlarlo mediante la alimentación, por lo que incorporamos un transistor tal como se menciona en el siguiente foro: <https://forum.arduino.cc/t/using-an-arduino-uno-to-control-a-usb-powered-device-with-a-transistor-switch/247091>, en donde dicen que para controlar cuándo le llega voltaje y cuándo no al componente se utiliza un transistor como un switch, cosa que no estabamos al tanto de que era posible por lo que tuvimos que buscar el cómo se tenía que ubicar el componente. En el momento que encontramos esta información, el único transistor que teníamos a mano era un 2n2222, el cual se puede ver en el siguiente blog cómo se tiene que poner en la protoboard para poder hacerlo funcionar como switch junto con un código de prueba: <https://www.origin-ic.com/blog/how-to-use-2n2222-transistor-as-a-switch/48138>.
 
-Cuando probamos códigos con el sistema switch en el transistor, tampoco logramos controlar el humidificador así que decidimos buscar otras maneras en las cuales podríamos controlar el voltaje hasta que llegamos al relay, componente que no teníamos por lo que tuvimos que comprar nuevamente en [Mechatronic Store](<https://www.mechatronicstore.cl/>), esta vez procurando dejar un mensaje en el pedido para que no se tardaran tanto ya que la vez pasada se demoró más de lo esperado (casi 7 días). 
+Cuando probamos códigos con el sistema switch en el transistor, tampoco logramos controlar el humidificador así que decidimos buscar otras maneras en las cuales podríamos controlar el voltaje hasta que llegamos al relay, componente que no teníamos por lo que tuvimos que comprar nuevamente en [Mechatronic Store](<https://www.mechatronicstore.cl/>), esta vez procurando dejar un mensaje en el pedido para que no se tardaran tanto ya que la vez pasada se demoró más de lo esperado (casi 7 días).
 
-Cuando llegaron los componentes nuevos (relay), no sabíamos cómo utilizarlos así que tuvimos que buscar el pinout del modelo que teníamos y encontramos la siguiente imagen en <https://proveedoracano.com/eshop/SRD-05VDC-SL-C>: 
+Cuando llegaron los componentes nuevos (relay), no sabíamos cómo utilizarlos así que tuvimos que buscar el pinout del modelo que teníamos y encontramos la siguiente imagen en <https://proveedoracano.com/eshop/SRD-05VDC-SL-C>:
 
 ###### Pinout relay, rescatado del link mencionado anteriormente, no nos pertenece
 
@@ -1470,13 +1465,11 @@ La verdad es que cómo somos tercos seguimos toda la tarde hasta como las 21:00 
 
 <img src="./imagenes/dulcecitos-arabes.jpeg" alt="install" width="500">
 
+### Carcasa
 
+Como ya habíamos abandonado todos nuestros sueños en honor al tiempo, decidimos quedarnos con todas las conexiones que ya teníamos y los últimos códigos que habíamos probado para ahora seguir con la carcasa, en donde nuestra compañera Débora Soto sugirió las siguientes ideas:
 
-### Carcasa 
-
-Como ya habíamos abandonado todos nuestros sueños en honor al tiempo, decidimos quedarnos con todas las conexiones que ya teníamos y los últimos códigos que habíamos probado para ahora seguir con la carcasa, en donde nuestra compañera Débora Soto sugirió las siguientes ideas: 
-
-###### Dibujos por Débora Soto de ideas para las carcasas de nuestro proyecto 
+###### Dibujos por Débora Soto de ideas para las carcasas de nuestro proyecto
 
 <img src="./imagenes/dibujito-mago.jpeg" alt="install" width="500">
 
@@ -1490,17 +1483,17 @@ Como ya habíamos abandonado todos nuestros sueños en honor al tiempo, decidimo
 
 Primero se fabricó una carcasa para la Raspi con la luz LED y el switch. Esta carcasa esta hecha de cartón, spray plateado y stickers de la maquina para imprimir stickers del LID.
 
-###### Versión 1 carcasa:
+###### Versión 1 carcasa
 
 <img src="./imagenes/carcasa-raspiv1.png" alt="install" width="500">
 
-###### Versión final carcasa:
+###### Versión final carcasa
 
 <img src="./imagenes/carcasa-raspivfinal.jpeg" alt="install" width="500">
 
 Luego la creación del maguito, su ropa se hizo con con paño lenci color rojo con detalles en plateado, la cabeza es de filamento blanco con ojos saltones y barba de napa. El está apoyado sobre una caja plateada con señales y mensajes que indican lo que tiene que hacer la persona que está interactuando con el objeto, como presionar el botón. Dentro de la caja se encuentra el Arduino con el modulo de luces LED y con el humidificador con su membrana led humedecida por una barra de algodón reposada sobre un tiesto con agua.
 
-###### Imágenes del proceso de fabricación del mago Bruma: 
+###### Imágenes del proceso de fabricación del mago Bruma
 
 <img src="./imagenes/proceso-monito.jpeg" alt="install" width="500">
 
@@ -1513,7 +1506,6 @@ Luego la creación del maguito, su ropa se hizo con con paño lenci color rojo c
 ###### Mago Bruma listo
 
 <img src="./imagenes/monito-terminado.jpeg" alt="install" width="500">
-
 
 ---
 
@@ -1530,23 +1522,19 @@ Luego la creación del maguito, su ropa se hizo con con paño lenci color rojo c
 | Módulo RGB led de 8 bits 5050 | $1.990 | 1 | <https://www.mechatronicstore.cl/modulo-rgb-led-de-8-bits-5050/> |
 | Interruptor Switch 2 Pines ON-OFF Corto | $570 | 1 | <https://www.katode.cl/switches/1339-interruptor-switch-2-pines-on-off-corto.html> |
 
-
-
-
-
 # Bibliografía
 
-+ Odg. (noviembre 17, 2025). How to use a 2N2222 transistor as a switch. ODG Electronic. https://www.origin-ic.com/blog/how-to-use-2n2222-transistor-as-a-switch/48138
-+ AR RoboTics. (septiembre 21, 2024). DIY Automatic Humidifier  | Arduino Humidifier #arduino #dht11 [Video]. YouTube. https://www.youtube.com/watch?v=Xo_wxNaZqeY
-+ Arduino Philippines | Permission to ask po ma’am/sir.. | Facebook. (abril 15, 2024.). Grupos De Facebook. https://web.facebook.com/groups/1138837232801938/posts/7803770342975227/?_rdc=1&_rdr#
-+ elevador 5V DC SRD-5VDC-SL-C - Controla Dispositivos de Alta Potencia. (n.d.). https://proveedoracano.com/eshop/SRD-05VDC-SL-C
-+ Battery powered arduino - problems with AnalogIn - Hardware / Troubleshooting - Arduino Forum. (noviembre 13, 2006). Arduino Forum. https://forum.arduino.cc/t/battery-powered-arduino-problems-with-analogin/24709
-+ Arduino Playground - I2CScanner. (noviembre 14, 2018). https://playground.arduino.cc/Main/I2cScanner/
-+ Mi pantalla LCD I2C 16x2 solo muestra cuadrados en la primera fila - International / Español - Arduino Forum. (junio 20, 2023). Arduino Forum. https://forum.arduino.cc/t/mi-pantalla-lcd-i2c-16x2-solo-muestra-cuadrados-en-la-primera-fila/1139718
-+ JSON. (n.d.). https://www.json.org/json-es.html
-+ ¿Qué es una API REST? (julio 31, 2023). https://www.redhat.com/es/topics/api/what-is-a-rest-api
-+ Maximum Pin current! - UNO Family / UNO R4 Minima - Arduino Forum. (julio 8, 2023). Arduino Forum. https://forum.arduino.cc/t/maximum-pin-current/1145859
-+ ELECTROJUANYU. (junio 7, 2019). REVISIÓN ICSTATION MINI HUMIDIFICADOR CON DISCOS CERÁMICOS [Video]. YouTube. https://www.youtube.com/watch?v=k25P8RUv9UU
-+ AlexGyver. (n.d.). GitHub - AlexGyver/autoHumidifier: Автоматический увлажнитель воздуха на Arduino. GitHub. https://github.com/AlexGyver/autoHumidifier
-+ digitalWrite Pin HIGH = LOW and LOW = HIGH . . .Please help - Projects / Programming - Arduino Forum. (junio 19, 2016). Arduino Forum. https://forum.arduino.cc/t/digitalwrite-pin-high-low-and-low-high-please-help/392847
-+ Problema I2C con Arduino UNO r4 Wifi - International / Español - Arduino Forum. (junio 5, 2024). Arduino Forum. https://forum.arduino.cc/t/problema-i2c-con-arduino-uno-r4-wifi/1268458
+* Odg. (noviembre 17, 2025). How to use a 2N2222 transistor as a switch. ODG Electronic. <https://www.origin-ic.com/blog/how-to-use-2n2222-transistor-as-a-switch/48138>
+* AR RoboTics. (septiembre 21, 2024). DIY Automatic Humidifier  | Arduino Humidifier #arduino #dht11 [Video]. YouTube. <https://www.youtube.com/watch?v=Xo_wxNaZqeY>
+* Arduino Philippines | Permission to ask po ma’am/sir.. | Facebook. (abril 15, 2024.). Grupos De Facebook. <https://web.facebook.com/groups/1138837232801938/posts/7803770342975227/?_rdc=1&_rdr#>
+* elevador 5V DC SRD-5VDC-SL-C - Controla Dispositivos de Alta Potencia. (n.d.). <https://proveedoracano.com/eshop/SRD-05VDC-SL-C>
+* Battery powered arduino - problems with AnalogIn - Hardware / Troubleshooting - Arduino Forum. (noviembre 13, 2006). Arduino Forum. <https://forum.arduino.cc/t/battery-powered-arduino-problems-with-analogin/24709>
+* Arduino Playground - I2CScanner. (noviembre 14, 2018). <https://playground.arduino.cc/Main/I2cScanner/>
+* Mi pantalla LCD I2C 16x2 solo muestra cuadrados en la primera fila - International / Español - Arduino Forum. (junio 20, 2023). Arduino Forum. <https://forum.arduino.cc/t/mi-pantalla-lcd-i2c-16x2-solo-muestra-cuadrados-en-la-primera-fila/1139718>
+* JSON. (n.d.). <https://www.json.org/json-es.html>
+* ¿Qué es una API REST? (julio 31, 2023). <https://www.redhat.com/es/topics/api/what-is-a-rest-api>
+* Maximum Pin current! - UNO Family / UNO R4 Minima - Arduino Forum. (julio 8, 2023). Arduino Forum. <https://forum.arduino.cc/t/maximum-pin-current/1145859>
+* ELECTROJUANYU. (junio 7, 2019). REVISIÓN ICSTATION MINI HUMIDIFICADOR CON DISCOS CERÁMICOS [Video]. YouTube. <https://www.youtube.com/watch?v=k25P8RUv9UU>
+* AlexGyver. (n.d.). GitHub - AlexGyver/autoHumidifier: Автоматический увлажнитель воздуха на Arduino. GitHub. <https://github.com/AlexGyver/autoHumidifier>
+* digitalWrite Pin HIGH = LOW and LOW = HIGH . . .Please help - Projects / Programming - Arduino Forum. (junio 19, 2016). Arduino Forum. <https://forum.arduino.cc/t/digitalwrite-pin-high-low-and-low-high-please-help/392847>
+* Problema I2C con Arduino UNO r4 Wifi - International / Español - Arduino Forum. (junio 5, 2024). Arduino Forum. <https://forum.arduino.cc/t/problema-i2c-con-arduino-uno-r4-wifi/1268458>

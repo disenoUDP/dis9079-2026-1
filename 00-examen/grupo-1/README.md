@@ -4,9 +4,9 @@ lunes 22 junio 2026
 
 ## Integrantes
 
-- Magdalena Balart / https://github.com/magdalenabalart
-- Jesús Miranda / https://github.com/jesumirandaa
-- Carla Núñez / https://github.com/ccarlabelenn
+- Magdalena Balart / <https://github.com/magdalenabalart>
+- Jesús Miranda / <https://github.com/jesumirandaa>
+- Carla Núñez / <https://github.com/ccarlabelenn>
 
 ## Descripción textual del proyecto
 
@@ -32,17 +32,15 @@ El proyecto también contempla la ausencia. Si durante un periodo prolongado nad
 
 El **Tótem 01** funciona como dispositivo de entrada. En su base se encuentra el Arduino, y en su estructura se integra un sensor ultrasónico que mide la distancia entre el altar y la persona que se aproxima. A partir de esa medición, el sistema interpreta distintos rangos de cercanía y los traduce en intensidad lumínica mediante LEDs. Mientras más cerca se encuentra la persona, mayor es la intensidad de la luz. Si la persona se aleja antes de completar el proceso, la luz disminuye lentamente y no se activa la comunicación.
 
-El **Tótem 02** funciona como dispositivo receptor. Cuando la presencia es reconocida por completo, el Tótem 02 recibe un mensaje que se muestra en pantalla como señal de compañía. La comunicación entre ambos tótems ocurre de forma inalámbrica a través de Adafruit IO. 
+El **Tótem 02** funciona como dispositivo receptor. Cuando la presencia es reconocida por completo, el Tótem 02 recibe un mensaje que se muestra en pantalla como señal de compañía. La comunicación entre ambos tótems ocurre de forma inalámbrica a través de Adafruit IO.
 
 ## Diagrama de flujo
 
 <img src="imagenes/diagrama_de_flujo.png" width="700">
 <img src="imagenes/diagrama_totem01.jpg" width="700">
 
-
-
 ## Lista de compras y materiales
- 
+
 | Elemento | Función dentro de la interacción | Precio |
 |---|---|---|
 | Arduino | Controla el funcionamiento del Tótem 01 y procesa la información del sensor. | |
@@ -58,6 +56,7 @@ El **Tótem 02** funciona como dispositivo receptor. Cuando la presencia es reco
 # Pseudocódigo
 
 ### Tótem 01
+
 ```
 INICIO
 
@@ -107,7 +106,7 @@ Esperar un momento breve antes de volver a medir
 FIN
 ```
 
-### Tótem 02 
+### Tótem 02
 
 ```
 INICIO
@@ -149,19 +148,20 @@ Esperar un momento breve antes de volver a recibir información
 FIN
 ```
 
-# Códigos 
+# Códigos
 
-## Tótem 01 
+## Tótem 01
 
 ### Qué necesitábamos lograr con el código
 
-El objetivo principal era construir un sistema de dos tótems conectados. El **Tótem 01** debía detectar la cercanía de una persona usando un sensor ultrasónico, traducir esa distancia en estados simples, activar un LED según la condición detectada y enviar esa información a Adafruit IO. El Tótem 02 debía recibir esa información desde Adafruit y mostrar el mensaje correspondiente en una pantalla OLED. 
+El objetivo principal era construir un sistema de dos tótems conectados. El **Tótem 01** debía detectar la cercanía de una persona usando un sensor ultrasónico, traducir esa distancia en estados simples, activar un LED según la condición detectada y enviar esa información a Adafruit IO. El Tótem 02 debía recibir esa información desde Adafruit y mostrar el mensaje correspondiente en una pantalla OLED.
 
-Al principio se pensó que el Tótem 02 también tendría un servo, pero después decidimos retirarlo porque su movimiento agregaba ruido visual y mecánico. Como el proyecto buscaba una respuesta más limpia, silenciosa y contemplativa, **se prefirió dejar solamente el mensaje en pantalla.** 
+Al principio se pensó que el Tótem 02 también tendría un servo, pero después decidimos retirarlo porque su movimiento agregaba ruido visual y mecánico. Como el proyecto buscaba una respuesta más limpia, silenciosa y contemplativa, **se prefirió dejar solamente el mensaje en pantalla.**
 
 ### Componentes considerados
 
  <ins> Para el Tótem 01, trabajamos con: </ins>
+
 | Elemento | Función dentro del proyecto |
 |---|---|
 | Sensor ultrasónico HC-SR04 | Detecta la distancia o cercanía de la persona frente al tótem. |
@@ -169,7 +169,6 @@ Al principio se pensó que el Tótem 02 también tendría un servo, pero despué
 | Botón demo | Permite activar manualmente los estados del sistema para la presentación. |
 | Arduino con WiFi | Controla el sistema y permite enviar/recibir datos por internet. |
 | Adafruit IO | Plataforma que conecta el Tótem 01 con el Tótem 02 mediante envío de datos. |
-
 
  <ins> La conexión principal quedó pensada así: </ins>
 
@@ -184,23 +183,22 @@ Al principio se pensó que el Tótem 02 también tendría un servo, pero despué
 
  <ins> Lógica de estados </ins>
 
-Pedimos que el sensor no enviara las distancias crudas todo el tiempo, porque eso generaba demasiada información. Por eso se transformaron las lecturas en códigos simples: 
+Pedimos que el sensor no enviara las distancias crudas todo el tiempo, porque eso generaba demasiada información. Por eso se transformaron las lecturas en códigos simples:
 
 **0** = sin presencia  
 **1** = distancia 01  
 **2** = distancia 02  
 **3** = distancia 03  
-**4** = ausencia prolongada   
+**4** = ausencia prolongada
 
  <ins> Los rangos finales quedaron así: </ins>
 
 **100 cm o más** = sin presencia  
 **70 a 99 cm** = distancia 01  
 **40 a 69 cm** = distancia 02  
-**menos de 40 cm** = distancia 03   
+**menos de 40 cm** = distancia 03
 
-También consideramos que el sensor era sensible, por lo que estas distancias tenían que ser muy específicas. Por eso se planteó marcar el suelo con un recorrido o zonas de distancia, para que la interacción fuera más clara y limpia. 
-
+También consideramos que el sensor era sensible, por lo que estas distancias tenían que ser muy específicas. Por eso se planteó marcar el suelo con un recorrido o zonas de distancia, para que la interacción fuera más clara y limpia.
 
 ### Funciones principales del código
 
@@ -225,14 +223,12 @@ También consideramos que el sensor era sensible, por lo que estas distancias te
 | `latirLed()` | Genera el efecto de titileo o latido del LED para las primeras distancias. La distancia 01 tiene un latido más lento y la distancia 02 uno más rápido. |
 | `encendidoProgresivoAusencia()` | Genera el fade de ausencia prolongada. El LED no se prende de golpe, sino que sube progresivamente hasta llegar al brillo máximo en 10 segundos. |
 
-
 **Decisiones importantes que tomamos**:
 
 También fuimos ajustando varias cosas durante la construcción:
 
-
 - No enviar lecturas crudas del sensor.  
-- Enviar solo códigos simples a Adafruit IO.   
+- Enviar solo códigos simples a Adafruit IO.
 - Usar promedio para estabilizar el sensor.  
 - Usar confirmación temporal antes de cambiar de estado.  
 - Agregar botón demo para el examen.  
@@ -245,7 +241,6 @@ También fuimos ajustando varias cosas durante la construcción:
 ### Prompts utilizados para el desarrollo del código del Tótem 01
 
 Durante el desarrollo del código del **Tótem 01**, se trabajó con ChatGPT mediante una serie de prompts orientados a construir, probar y ajustar progresivamente el funcionamiento del sistema. Estos prompts permitieron organizar el proceso por etapas, desde la lectura del sensor ultrasónico hasta la integración de respuestas lumínicas mediante LED.
-
 
 ### Prompts de trabajo utilizados
 
@@ -284,8 +279,7 @@ Durante el desarrollo del código del **Tótem 01**, se trabajó con ChatGPT med
 | Código modular | “Organizar el código en funciones separadas para facilitar su lectura, modificación y explicación: lectura del sensor, promedio, clasificación de distancia, botón demo, control del LED, ausencia prolongada y envío a Adafruit IO.” |
 | Tótem 01 como emisor | “Preparar el código para que el Tótem 01 funcione como dispositivo emisor, enviando estados simplificados al Tótem 02 a través de Adafruit IO.” |
 
-
-## Tótem 02 
+## Tótem 02
 
 ### Qué necesitábamos lograr con el código
 
@@ -325,12 +319,12 @@ El Tótem 02 recibe códigos simples desde Adafruit IO. Cada código representa 
 
 <ins>Mensajes mostrados en pantalla:</ins>
 
-**0**	Sin presencia  
-**1**	Distancia 01  
-**2**	Distancia 02  
-**3**	Distancia 03  
-**4**	Ausencia prolongada  
-**Otro valor	Código no válido**  
+**0** Sin presencia  
+**1** Distancia 01  
+**2** Distancia 02  
+**3** Distancia 03  
+**4** Ausencia prolongada  
+**Otro valor Código no válido**  
 
 El Tótem 02 no recibe la distancia exacta en centímetros, sino un código resumido. Esto permite que la comunicación sea más limpia y que la pantalla muestre mensajes claros sin saturar el sistema con datos innecesarios.
 
@@ -346,12 +340,11 @@ El Tótem 02 no recibe la distancia exacta en centímetros, sino un código resu
 | `mostrarTextoInicio()` | Muestra mensajes generales de inicio, conexión o error en la pantalla OLED. Se usa para estados como “Iniciando”, “Conectando” o “No conecta”. |
 | `mostrarEnPantalla()` | Limpia la pantalla OLED y muestra el mensaje correspondiente al código recibido desde Adafruit IO. También muestra el código para verificar qué dato llegó. |
 
-
 Aunque inicialmente el Tótem 02 fue programado con un servo, finalmente se decidió eliminarlo del código y del funcionamiento del prototipo. Esta decisión permitió simplificar la interacción y evitar elementos que pudieran distraer del mensaje principal.
 
 Al retirar el servo, el código quedó más limpio: se eliminaron la librería Servo.h, el pin del servo, los grados de movimiento, las funciones de movimiento fijo y las funciones de movimiento irregular en ausencia prolongada.
 
-La respuesta final del Tótem 02 queda centrada únicamente en la pantalla OLED, reforzando una comunicación más silenciosa, directa y coherente con la atmósfera del proyecto. 
+La respuesta final del Tótem 02 queda centrada únicamente en la pantalla OLED, reforzando una comunicación más silenciosa, directa y coherente con la atmósfera del proyecto.
 
 ### Prompts de trabajo utilizados para el código del Tótem 02
 
@@ -383,11 +376,10 @@ La respuesta final del Tótem 02 queda centrada únicamente en la pantalla OLED,
 | Revisión del feed | “Revisar que el feed utilizado por el Tótem 02 sea el mismo que el del Tótem 01, para asegurar que ambos dispositivos se comuniquen correctamente.” |
 | Versión final | “Construir una versión final del código del Tótem 02 sin servo, centrada únicamente en recibir mensajes desde Adafruit IO y mostrarlos en pantalla OLED.” |
 
-## Registro 
+## Registro
 
-+ Demo de prueba funcionando: <https://youtube.com/shorts/HgHZLUtbaVY?feature=share>
-+ Demo de prueba 02 <https://youtube.com/shorts/3fTnl5YWiGM?feature=share>
-
+- Demo de prueba funcionando: <https://youtube.com/shorts/HgHZLUtbaVY?feature=share>
+- Demo de prueba 02 <https://youtube.com/shorts/3fTnl5YWiGM?feature=share>
 
 <img src="imagenes/hechizototem.gif" width="80%">
 <img src="imagenes/hechizototem02.gif" width="80%">
@@ -422,4 +414,3 @@ Olikraus. (s. f.). [U8g2: Monochrome graphics library for embedded devices](http
 Preece, J., Rogers, Y., & Sharp, H. (2019). [Interaction Design: Beyond Human-Computer Interaction](https://www.wiley.com/en-us/Interaction+Design%3A+Beyond+Human+Computer+Interaction%2C+5th+Edition-p-9781119547259). *Wiley*.  
 SparkFun. (s. f.). [HC-SR04 Ultrasonic Ranging Module Datasheet](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf). *SparkFun*.  
 Trabajos de Utilidad Pública [T.U.P.]. (2022). [Hechizos, por mientras para siempre](https://artishockrevista.com/2022/07/13/hechizos-por-mientras-para-siempre/). *Palabra Ilustrada*.  
-
