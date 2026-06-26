@@ -28,7 +28,7 @@ También está RCP o llamada de procedimiento remoto, este permite que los usuar
 
 ### PokéAPI
 
-Esta API tiene mucha información de los Pokémon como sus movimientos, habilidades, tipos, poderes, hábitat y más. Puedes enviar una solicitud con el nombre de un Pokémon y recibirás una respuesta en formato JSON con toda su información. 
+Esta API tiene mucha información de los Pokémon como sus movimientos, habilidades, tipos, poderes, hábitat y más. Puedes enviar una solicitud con el nombre de un Pokémon y recibirás una respuesta en formato JSON con toda su información.
 
 ![pokeapi](./imagenes/pokeapi.png)
 
@@ -42,17 +42,16 @@ Es una API de Chuck Norris donde puedes encontrar datos sobre él. Puedes pregun
 
 Screenshot tomado por mi en la web de la API de Chuck Norris
 
-
 ### Bibliografía
 
-Mikula, K. (2023, 7 de febrero). The history and evolution of APIs. Traefik Labs. https://traefik.io/blog/the-history-and-evolution-of-apis 
+Mikula, K. (2023, 7 de febrero). The history and evolution of APIs. Traefik Labs. <https://traefik.io/blog/the-history-and-evolution-of-apis>
 
-Goodwin, M. (2024, 9 de abril). What is an API (application programming interface)? IBM. https://www.ibm.com/think/topics/api 
+Goodwin, M. (2024, 9 de abril). What is an API (application programming interface)? IBM. <https://www.ibm.com/think/topics/api>
 
-Satyaprakash, A. B. (2022, 27 de junio). 15 fun and interesting APIs to use for your next coding project in 2022. Medium (Codex). https://medium.com/codex/15-fun-and-interesting-apis-to-use-for-your-next-coding-project-in-2022-86a4ff3a2742 
+Satyaprakash, A. B. (2022, 27 de junio). 15 fun and interesting APIs to use for your next coding project in 2022. Medium (Codex). <https://medium.com/codex/15-fun-and-interesting-apis-to-use-for-your-next-coding-project-in-2022-86a4ff3a2742>
 
-PokéAPI. (s.f.). PokéAPI. https://pokeapi.co/ 
+PokéAPI. (s.f.). PokéAPI. <https://pokeapi.co/>
 
-chucknorris.io. (s.f.). Chuck Norris jokes API. https://api.chucknorris.io/ 
+chucknorris.io. (s.f.). Chuck Norris jokes API. <https://api.chucknorris.io/>
 
-TICnoticos. (s.f.). Qué es una API | Ejemplos fáciles sobre application programming interface [Video]. YouTube. https://www.youtube.com/watch?v=eQxBA-GtdS8 
+TICnoticos. (s.f.). Qué es una API | Ejemplos fáciles sobre application programming interface [Video]. YouTube. <https://www.youtube.com/watch?v=eQxBA-GtdS8>

@@ -3,6 +3,7 @@
 AntFuentealba
 
 ## Investigación sobre APIs (Application Programming Interface)
+
 ### ¿Qué es una API?
 
 Una API (Application Programming Interface o Interfaz de Programación de Aplicaciones) es un conjunto de reglas, protocolos y definiciones que permite la comunicación entre distintos sistemas, aplicaciones o servicios de software.
@@ -19,17 +20,19 @@ Una forma fácil de entenderlo es mediante la metáfora del restaurante:
 El cliente hace un pedido, el mesero lo transmite, la cocina lo prepara y luego devuelve el resultado.
 
 ### ¿Cómo funciona una API?
+
 El funcionamiento de una API se basa en el modelo de solicitud y respuesta:
 
 1. Una aplicación (cliente) envía una solicitud.
 2. Esa solicitud viaja a un servidor a través de la API.
 3.El servidor procesa la información.
-4. Devuelve una respuesta estructurada.
-5. La aplicación utiliza esos datos para mostrarlos o procesarlos.
+3. Devuelve una respuesta estructurada.
+4. La aplicación utiliza esos datos para mostrarlos o procesarlos.
 
 En APIs web, esta comunicación ocurre mediante protocolos como HTTP o HTTPS, y los datos suelen enviarse en formato JSON o XML.
 
 Ejemplo de respuesta JSON:
+
 ```cpp
 {
   "ciudad": "Santiago",
@@ -37,7 +40,9 @@ Ejemplo de respuesta JSON:
   "estado": "nublado"
 }
 ```
+
 ### Conceptos clave
+
 Endpoint
 
 Un endpoint es una dirección específica dentro de una API donde se solicita una función o dato.
@@ -65,6 +70,7 @@ El flujo general de uso de una API es:
 En lenguajes como C++, el JSON llega como texto y debe ser interpretado antes de usarse como variables reales.
 
 ### Tipos de APIs
+
 1. API REST
 
 Es la más utilizada actualmente. Funciona mediante solicitudes HTTP simples.
@@ -75,7 +81,7 @@ Es la más utilizada actualmente. Funciona mediante solicitudes HTTP simples.
 
 Ejemplo: aplicaciones del clima o redes sociales
 
-2. API SOAP
+1. API SOAP
 
 Es más rígida y estructurada.
 
@@ -85,7 +91,7 @@ Es más rígida y estructurada.
 
 Ejemplo: sistemas bancarios o servicios institucionales como correos corporativos
 
-3. API RPC
+1. API RPC
 
 Permite ejecutar funciones específicas en otro sistema.
 
@@ -94,7 +100,7 @@ Permite ejecutar funciones específicas en otro sistema.
 
 Ejemplo: Discord mostrando actividad de juegos
 
-4. API WebSocket
+1. API WebSocket
 
 Permite comunicación en tiempo real.
 
@@ -104,6 +110,7 @@ Permite comunicación en tiempo real.
 Ejemplo: chats en vivo o videojuegos online
 
 ### Clasificación general de APIs
+
 - APIs de datos: gestionan bases de datos
 - APIs de sistemas operativos: acceden a hardware o sistema
 - APIs web: funcionan por internet
@@ -144,7 +151,7 @@ La Spotify Web API permite acceder a información de:
 - Álbumes
 - Playlists
 
-#### Características principales:
+#### Características principales
 
 - Usa HTTP/HTTPS
 - Devuelve datos en JSON
@@ -173,25 +180,22 @@ Gracias a ellas, es posible construir aplicaciones más rápidas, conectadas, es
 ### Bibliografía
 
 - AWS – What is an API
-https://aws.amazon.com/what-is/api/
+<https://aws.amazon.com/what-is/api/>
 
 - IBM – What is an API (2024)
-https://www.ibm.com/think/topics/api
+<https://www.ibm.com/think/topics/api>
 
 - Spotify Developer Documentation (Web API)
-https://developer.spotify.com/documentation/web-api
+<https://developer.spotify.com/documentation/web-api>
 
 - Prototypr Blog – Spotify Web API
-https://blog.prototypr.io/have-you-heard-about-the-spotify-web-api-8e8d1dac9eaf
+<https://blog.prototypr.io/have-you-heard-about-the-spotify-web-api-8e8d1dac9eaf>
 
 - Delta Protect – Introducción a APIs
-https://www.deltaprotect.com/blog/que-es-una-api
+<https://www.deltaprotect.com/blog/que-es-una-api>
 
 - Outvio – ¿Qué es una API?
-https://outvio.com/es/blog/que-es-una-api/
+<https://outvio.com/es/blog/que-es-una-api/>
 
 - Appleute – REST API explanation
-https://www.appleute.de/es/biblioteca-para-desarrolladores-de-aplicaciones/what-is-rest-api/
-
-
-
+<https://www.appleute.de/es/biblioteca-para-desarrolladores-de-aplicaciones/what-is-rest-api/>

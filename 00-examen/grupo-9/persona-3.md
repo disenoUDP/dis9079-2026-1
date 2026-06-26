@@ -4,7 +4,7 @@ Anaysval
 
 ---
 
-### ¿Qué es una API?
+## ¿Qué es una API?
 
 Una API (Interfaz de Programación de Aplicaciones) es un conjunto de reglas que permite que distintos sistemas se comuniquen entre sí de manera estructurada. Gracias a esto, aplicaciones diferentes pueden intercambiar datos sin necesidad de conocer su funcionamiento interno.
 
@@ -12,7 +12,7 @@ Una definición clave es que una API es “un conjunto de reglas o protocolos qu
 
 También se puede entender como un intermediario, ya que “la interfaz puede considerarse como un contrato de servicio entre dos aplicaciones” (AWS, s.f.), lo que implica que ambas partes siguen una estructura definida para comunicarse correctamente.
 
-### Origen y evolución de las API
+## Origen y evolución de las API
 
 El concepto de API ha evolucionado junto con el desarrollo del software y el crecimiento de internet. En sus inicios, las API eran principalmente internas y servían para conectar componentes dentro de un mismo sistema.
 
@@ -22,13 +22,13 @@ La evolución de las API ha estado marcada por el crecimiento de internet y la n
 
 En etapas posteriores, surgieron enfoques como SOAP y REST, que facilitaron la integración entre sistemas distintos y simplificaron el desarrollo de aplicaciones conectadas. Actualmente, las API son fundamentales en la arquitectura de software moderna, especialmente en servicios web y aplicaciones distribuidas.
 
-### ¿Cómo funcionan las API?
+## ¿Cómo funcionan las API?
 
 Las API funcionan bajo un modelo de cliente-servidor, donde una aplicación solicita información y otra la entrega.
 
 En este sistema, “la aplicación que envía la solicitud se llama cliente, y la que envía la respuesta se llama servidor” (AWS, s.f.). Esto permite entender claramente los roles dentro de la comunicación.
 
-#### Flujo básico:
+### Flujo básico
 
 - El cliente envía una solicitud
 - La API procesa la solicitud
@@ -103,7 +103,7 @@ Las API también se clasifican según quién puede utilizarlas:
 
 Un endpoint es una dirección específica dentro de una API donde se realizan las solicitudes y se reciben respuestas. Es el punto donde ocurre el intercambio de información entre sistemas.
 
-#### Importancia:
+#### Importancia
 
 - Seguridad: pueden representar vulnerabilidades si no se protegen adecuadamente.
 - Rendimiento: un alto número de solicitudes puede generar cuellos de botella.
@@ -112,16 +112,16 @@ Un endpoint es una dirección específica dentro de una API donde se realizan la
 
 Las API permiten acelerar el desarrollo de software al facilitar la integración de servicios externos. También permiten reutilizar funcionalidades sin necesidad de desarrollarlas desde cero.
 
-#### Principales ventajas:
+#### Principales ventajas
 
 - Ahorro de tiempo
 - Reutilización
 - Integración
 - Escalabilidad
 
-### Ejemplo:
+### Ejemplo
 
-### APIs de la NASA 
+### APIs de la NASA
 
 La NASA ofrece distintas APIs que permiten acceder a datos del espacio, la Tierra y otros planetas para usarlos en proyectos interactivos o informativos. Por ejemplo, con APOD se puede ver la imagen astronómica del día junto con su explicación científica, directamente desde la NASA (conocía esta página desde hace años y la usaba harto, las imágenes son hermosas, y recién ahora me entero de que lo que está detrás se llama API, muy cool)
 
@@ -142,11 +142,11 @@ Con esta API también se puede:
 - Obtener datos de órbitas de satélites (API TLE)
 - Explorar mapas de la Luna, Marte y otros cuerpos (Trek WMTS)
 
-Omg foto del día 22 de junio 2026!!! 
+Omg foto del día 22 de junio 2026!!!
 
 ![foto](./imagenes/nasa.png)
 
->Foto por: NASA. (s.f.). Astronomy Picture of the Day (APOD). <https://apod.nasa.gov/apod/astropix.html> 
+>Foto por: NASA. (s.f.). Astronomy Picture of the Day (APOD). <https://apod.nasa.gov/apod/astropix.html>
 
 ### Conclusión
 
