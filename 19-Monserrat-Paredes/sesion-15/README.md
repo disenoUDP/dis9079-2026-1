@@ -179,7 +179,7 @@ Imagen sacada de: https://outvio.com/es/blog/que-es-una-api/
 
 ## Tipos de API -> Quién las usa
 
-Según su Alcance y Accesibilidad. IBM (International Business Machines) clasifica las API principalmente bajo dos criterios: su accesibilidad (casos de uso en la web) y su arquitectura técnica.
+Según su alcance y accesibilidad. IBM (International Business Machines) clasifica las API principalmente bajo dos criterios: su accesibilidad (casos de uso en la web) y su arquitectura técnica.
 
 
 
@@ -192,7 +192,7 @@ Según su Alcance y Accesibilidad. IBM (International Business Machines) clasifi
 
 
 
-Existen muchos tipos de API: segun du entorno Tecnológico (Dónde operan)
+Existen muchos tipos de API: (Dónde operan)
 
 
 - API web se utilizan para crear aplicaciones web y móviles, y se accede a ellas a través de la web mediante protocolos estándar como HTTP.
